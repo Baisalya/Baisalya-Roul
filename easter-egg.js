@@ -412,8 +412,8 @@ class EasterEggManager {
             clearTimeout(this.clickTimer);
         }
         
-        // Check for triple click
-        if (this.clickCount >= 3) {
+        // Check for  click
+        if (this.clickCount >= 1) {
             this.triggerEasterEgg();
             this.clickCount = 0;
             return;
