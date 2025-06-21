@@ -101,6 +101,215 @@ body {
     overflow-x: hidden;
 }
 
+/* Easter Egg Debug Mode Styles */
+.debug-mode {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s ease;
+}
+
+.debug-mode.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.debug-console {
+    background: #1a1a2e;
+    border: 2px solid #ff6b6b;
+    border-radius: 8px;
+    margin: 20px;
+    max-height: 200px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+}
+
+.console-header {
+    background: #ff6b6b;
+    color: white;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+}
+
+.console-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.console-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.console-content {
+    padding: 15px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+}
+
+.error-line {
+    color: #ff6b6b;
+    margin: 5px 0;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s ease;
+}
+
+.error-line:nth-child(2) {
+    color: #ffa726;
+}
+
+.error-line:nth-child(3) {
+    color: #42a5f5;
+}
+
+.error-line:nth-child(4) {
+    color: #66bb6a;
+}
+
+.game-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+}
+
+#gameCanvas {
+    border: 2px solid #42a5f5;
+    border-radius: 8px;
+    background: #1a1a2e;
+    box-shadow: 0 0 20px rgba(66, 165, 245, 0.3);
+    max-width: 100%;
+    height: auto;
+}
+
+.game-ui {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 15px;
+    font-family: 'JetBrains Mono', monospace;
+    color: white;
+}
+
+.score, .lives {
+    background: rgba(66, 165, 245, 0.2);
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #42a5f5;
+    font-weight: bold;
+}
+
+.game-tips {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.tip {
+    font-size: 12px;
+    color: #aaa;
+    text-align: center;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    border: 2px solid #ff6b6b;
+    box-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.game-over.hidden {
+    display: none;
+}
+
+.game-over h2 {
+    color: #ff6b6b;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.final-score {
+    font-size: 18px;
+    margin: 15px 0;
+    color: #42a5f5;
+}
+
+.game-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.game-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.restart-btn {
+    background: #4caf50;
+    color: white;
+}
+
+.restart-btn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+.exit-btn {
+    background: #ff6b6b;
+    color: white;
+}
+
+.exit-btn:hover {
+    background: #ff5252;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
 /* Animated Background */
 .animated-bg {
     position: fixed;
@@ -266,6 +475,7 @@ p {
     background: var(--gradient-primary);
     transform-style: preserve-3d;
     transition: all var(--duration-normal) var(--ease-out-cubic);
+    cursor: pointer;
 }
 
 .logo-3d:hover {
@@ -273,11 +483,16 @@ p {
     box-shadow: var(--shadow-glow);
 }
 
+.logo-3d:active {
+    transform: scale(0.95) rotateY(15deg) rotateX(15deg);
+}
+
 .logo-text {
     font-size: 1.5rem;
     font-weight: 900;
     color: white;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    user-select: none;
 }
 
 .logo-glow {
@@ -1223,6 +1438,7 @@ p {
     display: flex;
     align-items: flex-start;
     gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-3xl);
 }
 
 .education-marker {
@@ -1519,6 +1735,22 @@ p {
     .projects-grid {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
+    
+    #gameCanvas {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+    }
+    
+    .game-ui {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .game-tips {
+        order: -1;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1639,6 +1871,28 @@ p {
     .highlight-item:hover {
         transform: translateY(-5px);
     }
+    
+    .debug-console {
+        margin: 10px;
+    }
+    
+    .game-container {
+        padding: 10px;
+    }
+    
+    #gameCanvas {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .game-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .game-btn {
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1669,6 +1923,28 @@ p {
     
     .highlight-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .debug-console {
+        margin: 5px;
+    }
+    
+    .console-content {
+        padding: 10px;
+        font-size: 10px;
+    }
+    
+    .game-over {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .game-over h2 {
+        font-size: 18px;
+    }
+    
+    .final-score {
+        font-size: 16px;
     }
 }
 
@@ -1774,4 +2050,21 @@ p {
         --border-light: #ffffff;
         --border-medium: #ffffff;
     }
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
