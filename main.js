@@ -19,7 +19,7 @@ class Portfolio3D {
             new NavigationManager();
             new TypingAnimation();
             new ScrollAnimationManager();
-            new SkillsAnimationManager();
+            new EnhancedSkillsAnimationManager();
             new TiltEffectManager();
             new ParticleSystemManager();
             new CounterAnimationManager();
@@ -307,7 +307,7 @@ class ScrollAnimationManager {
             { selector: '.hero-text', animation: 'slide-in-left' },
             { selector: '.hero-visual', animation: 'slide-in-right' },
             { selector: '.about-card', animation: 'fade-in' },
-            { selector: '.skill-category', animation: 'scale-in' },
+            { selector: '.skill-category-enhanced', animation: 'scale-in' },
             { selector: '.project-card', animation: 'fade-in' },
             { selector: '.education-card', animation: 'slide-in-left' },
             { selector: '.contact-card', animation: 'fade-in' }
@@ -328,8 +328,8 @@ class ScrollAnimationManager {
                     entry.target.classList.add('visible');
                     
                     // Trigger specific animations
-                    if (entry.target.classList.contains('skill-category')) {
-                        this.animateSkillBars(entry.target);
+                    if (entry.target.classList.contains('skill-category-enhanced')) {
+                        this.animateSkillCards(entry.target);
                     }
                 }
             });
@@ -341,28 +341,40 @@ class ScrollAnimationManager {
         });
     }
 
-    animateSkillBars(skillCategory) {
-        const skillItems = skillCategory.querySelectorAll('.skill-item');
-        skillItems.forEach((item, index) => {
+    animateSkillCards(skillCategory) {
+        const skillCards = skillCategory.querySelectorAll('.skill-card');
+        skillCards.forEach((card, index) => {
             setTimeout(() => {
-                const level = item.getAttribute('data-level');
-                const progressBar = item.querySelector('.skill-progress');
+                const level = card.getAttribute('data-level');
+                const progressBar = card.querySelector('.skill-progress-modern');
                 if (progressBar) {
                     progressBar.style.width = `${level}%`;
                 }
-            }, index * 200);
+                card.style.transform = 'translateY(0)';
+                card.style.opacity = '1';
+            }, index * 150);
         });
     }
 }
 
-// Skills Animation Manager
-class SkillsAnimationManager {
+// Enhanced Skills Animation Manager
+class EnhancedSkillsAnimationManager {
     constructor() {
         this.init();
     }
 
     init() {
         this.observeSkillCategories();
+        this.setupInitialStates();
+    }
+
+    setupInitialStates() {
+        const skillCards = document.querySelectorAll('.skill-card');
+        skillCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+        });
     }
 
     observeSkillCategories() {
@@ -375,49 +387,56 @@ class SkillsAnimationManager {
             });
         }, { threshold: 0.3 });
 
-        document.querySelectorAll('.skill-category').forEach(category => {
+        document.querySelectorAll('.skill-category-enhanced').forEach(category => {
             observer.observe(category);
         });
     }
 
     animateSkillCategory(category) {
-        const skillItems = category.querySelectorAll('.skill-item');
+        const skillCards = category.querySelectorAll('.skill-card');
         
-        skillItems.forEach((item, index) => {
+        skillCards.forEach((card, index) => {
             setTimeout(() => {
-                const level = parseInt(item.getAttribute('data-level'));
-                const progressBar = item.querySelector('.skill-progress');
+                const level = parseInt(card.getAttribute('data-level'));
+                const progressBar = card.querySelector('.skill-progress-modern');
                 
+                // Animate card appearance
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+                
+                // Animate progress bar
                 if (progressBar) {
-                    // Animate the progress bar
-                    progressBar.style.width = `${level}%`;
-                    
-                    // Add a counter animation
-                    this.animateCounter(item, level);
+                    setTimeout(() => {
+                        progressBar.style.width = `${level}%`;
+                    }, 300);
                 }
-            }, index * 150);
+                
+                // Add hover effect enhancement
+                this.enhanceCardInteraction(card);
+            }, index * 200);
         });
     }
 
-    animateCounter(item, targetLevel) {
-        const skillName = item.querySelector('.skill-name');
-        const originalText = skillName.textContent;
-        let currentLevel = 0;
-        const increment = targetLevel / 30;
-        
-        const counter = setInterval(() => {
-            currentLevel += increment;
-            if (currentLevel >= targetLevel) {
-                currentLevel = targetLevel;
-                clearInterval(counter);
+    enhanceCardInteraction(card) {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-8px) scale(1.02)';
+            
+            // Add glow effect
+            const logo = card.querySelector('.skill-logo');
+            if (logo) {
+                logo.style.boxShadow = '0 0 20px rgba(102, 126, 234, 0.4)';
             }
-            skillName.textContent = `${originalText} (${Math.round(currentLevel)}%)`;
-        }, 50);
-        
-        // Reset to original text after animation
-        setTimeout(() => {
-            skillName.textContent = originalText;
-        }, 3000);
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0) scale(1)';
+            
+            // Remove glow effect
+            const logo = card.querySelector('.skill-logo');
+            if (logo) {
+                logo.style.boxShadow = 'none';
+            }
+        });
     }
 }
 
@@ -432,7 +451,7 @@ class TiltEffectManager {
     }
 
     setupTiltElements() {
-        const tiltElements = document.querySelectorAll('[data-tilt]');
+        const tiltElements = document.querySelectorAll('[data-tilt], .skill-card, .project-card');
         
         tiltElements.forEach(element => {
             this.addTiltEffect(element);
