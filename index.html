@@ -8,6 +8,185 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Buy Me a Coffee component styles -->
+    <style>
+        .bmc-button {
+            --bmc-yellow: #ffdd00;
+            --bmc-yellow-hover: #ffe74d;
+            --bmc-ink: #111111;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            min-height: 52px;
+            padding: 0.85rem 1.2rem;
+            border: 1px solid rgba(17, 17, 17, 0.12);
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--bmc-yellow), #ffc83d);
+            color: var(--bmc-ink);
+            font-family: Inter, sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            line-height: 1;
+            text-decoration: none;
+            white-space: nowrap;
+            box-shadow: 0 12px 30px rgba(255, 221, 0, 0.2),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.65);
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+        }
+
+        .bmc-button::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.65) 48%, transparent 75%);
+            transform: translateX(-130%);
+            transition: transform 550ms ease;
+        }
+
+        .bmc-button:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, var(--bmc-yellow-hover), #ffd451);
+            box-shadow: 0 16px 36px rgba(255, 221, 0, 0.3),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.75);
+        }
+
+        .bmc-button:hover::before {
+            transform: translateX(130%);
+        }
+
+        .bmc-button:focus-visible {
+            outline: 3px solid rgba(255, 221, 0, 0.45);
+            outline-offset: 4px;
+        }
+
+        .bmc-button__icon {
+            width: 23px;
+            height: 23px;
+            flex: 0 0 auto;
+        }
+
+        .bmc-button__label {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 0.28rem;
+        }
+
+        .bmc-button__label strong {
+            font-weight: 900;
+        }
+
+        .hero-buttons .bmc-button {
+            min-width: 205px;
+        }
+
+        .hero-support-note {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: fit-content;
+            margin-top: 0.85rem;
+            color: var(--text-secondary, rgba(255, 255, 255, 0.72));
+            font-size: 0.82rem;
+            line-height: 1.5;
+        }
+
+        .hero-support-note::before {
+            content: "♥";
+            color: #ff5a73;
+            font-size: 0.92rem;
+        }
+
+        .footer-support {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.9rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+            border-radius: 16px;
+            background: var(--card-bg, rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .footer-support__copy {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            min-width: 0;
+        }
+
+        .footer-support__copy strong {
+            color: var(--text-primary, #ffffff);
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+        .footer-support__copy span {
+            color: var(--text-secondary, rgba(255, 255, 255, 0.68));
+            font-size: 0.76rem;
+            line-height: 1.35;
+        }
+
+        .footer-support .bmc-button {
+            min-height: 44px;
+            padding: 0.7rem 0.95rem;
+            border-radius: 12px;
+            font-size: 0.84rem;
+            flex: 0 0 auto;
+        }
+
+        @media (max-width: 900px) {
+            .footer-content {
+                gap: 1.25rem;
+                flex-wrap: wrap;
+            }
+
+            .footer-support {
+                order: 3;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-buttons {
+                align-items: stretch;
+            }
+
+            .hero-buttons .bmc-button {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .hero-support-note {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .footer-support {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-support .bmc-button {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .bmc-button,
+            .bmc-button::before {
+                transition: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Easter Egg Debug Mode Overlay -->
@@ -131,7 +310,20 @@
                             <span class="btn-text">View My Work</span>
                             <div class="btn-particles"></div>
                         </a>
+                        <a
+                            href="https://www.buymeacoffee.com/baisalya"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="bmc-button"
+                            aria-label="Support Baishalya on Buy Me a Coffee (opens in a new tab)"
+                        >
+                            <svg class="bmc-button__icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill="currentColor" d="M4 3h13a2 2 0 0 1 2 2v2h1.25A2.75 2.75 0 0 1 23 9.75v1.5A4.75 4.75 0 0 1 18.25 16H18v1a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V3Zm14 6v5h.25A2.75 2.75 0 0 0 21 11.25v-1.5A.75.75 0 0 0 20.25 9H18ZM6 5v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V5H6Zm2.25 2.25a1 1 0 0 1 1.4.15c.62.77.62 1.68 0 2.45-.14.18-.14.32 0 .5.62.77.62 1.68 0 2.45a1 1 0 1 1-1.55-1.25c.14-.18.14-.32 0-.5-.62-.77-.62-1.68 0-2.45a1 1 0 0 1 .15-1.4Zm4 0a1 1 0 0 1 1.4.15c.62.77.62 1.68 0 2.45-.14.18-.14.32 0 .5.62.77.62 1.68 0 2.45a1 1 0 1 1-1.55-1.25c.14-.18.14-.32 0-.5-.62-.77-.62-1.68 0-2.45a1 1 0 0 1 .15-1.4Z"/>
+                            </svg>
+                            <span class="bmc-button__label">Buy me a <strong>coffee</strong></span>
+                        </a>
                     </div>
+                    <p class="hero-support-note">Support independent apps, experiments, and open-source work.</p>
                     <div class="hero-stats">
                         <div class="stat-item">
                             <div class="stat-number" data-count="50">0</div>
@@ -989,8 +1181,26 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-text">
-                    <p>&copy; 2025 Baishalya Roul. All rights reserved.</p>
+                    <p>&copy; 2026 Baishalya Roul. All rights reserved.</p>
                     <p>Built with passion using HTML, CSS, and JavaScript</p>
+                </div>
+                <div class="footer-support" aria-label="Support my work">
+                    <div class="footer-support__copy">
+                        <strong>Enjoying my work?</strong>
+                        <span>Help me keep building useful apps and open-source projects.</span>
+                    </div>
+                    <a
+                        href="https://www.buymeacoffee.com/baisalya"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="bmc-button"
+                        aria-label="Buy Baishalya a coffee (opens in a new tab)"
+                    >
+                        <svg class="bmc-button__icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="currentColor" d="M4 3h13a2 2 0 0 1 2 2v2h1.25A2.75 2.75 0 0 1 23 9.75v1.5A4.75 4.75 0 0 1 18.25 16H18v1a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V3Zm14 6v5h.25A2.75 2.75 0 0 0 21 11.25v-1.5A.75.75 0 0 0 20.25 9H18ZM6 5v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V5H6Zm2.25 2.25a1 1 0 0 1 1.4.15c.62.77.62 1.68 0 2.45-.14.18-.14.32 0 .5.62.77.62 1.68 0 2.45a1 1 0 1 1-1.55-1.25c.14-.18.14-.32 0-.5-.62-.77-.62-1.68 0-2.45a1 1 0 0 1 .15-1.4Zm4 0a1 1 0 0 1 1.4.15c.62.77.62 1.68 0 2.45-.14.18-.14.32 0 .5.62.77.62 1.68 0 2.45a1 1 0 1 1-1.55-1.25c.14-.18.14-.32 0-.5-.62-.77-.62-1.68 0-2.45a1 1 0 0 1 .15-1.4Z"/>
+                        </svg>
+                        <span class="bmc-button__label">Buy me a <strong>coffee</strong></span>
+                    </a>
                 </div>
                 <div class="footer-social">
                     <a href="https://github.com/Baisalya" target="_blank" rel="noopener noreferrer" class="social-link">
