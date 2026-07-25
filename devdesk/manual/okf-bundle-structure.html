@@ -1,0 +1,125 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Build indexes, logs, directories, concepts, and portable links."><meta name="theme-color" content="#5b47e8"><title>OKF bundle structure · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
+  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Developer workspace</small></span></a>
+  <nav class="top-nav" aria-label="Primary navigation">
+    <a class="" href="../index.html">Home</a>
+    <a class="active" href="../manual/getting-started.html">Manual</a>
+    <a class="" href="../downloads.html">Downloads</a>
+    <a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy</a>
+  </nav>
+  <div class="header-actions">
+    <button class="search-btn" type="button" data-search><span>Search manual</span> <kbd>/</kbd></button>
+    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
+  </div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<a class="" href="../manual/getting-started.html">Getting started</a>
+<a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
+<a class="" href="../manual/interface-tour.html">Interface tour</a>
+<h2>Knowledge and Markdown</h2>
+<a class="" href="../manual/developer-workspaces.html">Developer Workspaces</a>
+<a class="" href="../manual/project-folder-structure.html">Create a project knowledge structure</a>
+<a class="" href="../manual/markdown-basics.html">Markdown basics</a>
+<a class="" href="../manual/frontmatter-properties.html">YAML frontmatter and properties</a>
+<a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
+<a class="" href="../manual/knowledge-workspace.html">Knowledge Workspace</a>
+<a class="" href="../manual/knowledge-graph.html">Knowledge Graph</a>
+<a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
+<a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
+<a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
+<h2>Structured Knowledge / OKF</h2>
+<a class="" href="../manual/structured-knowledge-okf.html">Structured Knowledge and OKF</a>
+<a class="active" href="../manual/okf-bundle-structure.html" aria-current="page">OKF bundle structure</a>
+<a class="" href="../manual/okf-concepts-metadata.html">OKF concepts and metadata</a>
+<a class="" href="../manual/okf-conversion-migration.html">Analyze, convert, and migrate folders</a>
+<a class="" href="../manual/okf-trust-sources-lifecycle.html">Sources, trust, freshness, and lifecycle</a>
+<a class="" href="../manual/okf-attested-computation.html">Attested Computation</a>
+<h2>API and documentation</h2>
+<a class="" href="../manual/readme-generator.html">README Generator</a>
+<a class="" href="../manual/api-workspaces.html">API Workspaces</a>
+<a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
+<a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
+<a class="" href="../manual/quick-api.html">Quick API</a>
+<a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
+<a class="" href="../manual/unified-search.html">Unified Search</a>
+<h2>Developer utilities</h2>
+<a class="" href="../manual/json-tools.html">JSON Tools</a>
+<a class="" href="../manual/jwt-decoder.html">JWT Decoder</a>
+<a class="" href="../manual/regex-tester.html">Regex Tester</a>
+<a class="" href="../manual/base64.html">Base64 Tool</a>
+<a class="" href="../manual/url-tools.html">URL Encoder and Decoder</a>
+<a class="" href="../manual/timestamp.html">Timestamp Converter</a>
+<a class="" href="../manual/uuid.html">UUID Generator</a>
+<a class="" href="../manual/diff-git.html">Diff Workspace and local Git</a>
+<a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
+<h2>Safety and reference</h2>
+<a class="" href="../manual/backup-restore.html">Backup and restore</a>
+<a class="" href="../manual/settings-appearance.html">Settings and appearance</a>
+<a class="" href="../manual/privacy-security.html">Privacy and security</a>
+<a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
+<a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="getting-started.html">Manual</a><span>/</span><span>Structured Knowledge / OKF</span></div><div class="doc-meta"><span class="doc-chip">Structured Knowledge / OKF</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="okf-bundle-structure">OKF bundle structure<a class="heading-anchor" href="#okf-bundle-structure" aria-label="Link to OKF bundle structure">#</a></h1>
+<pre><code class="language-text">my-project-knowledge/
+├── index.md                     # Bundle entry point; may declare okf_version
+├── log.md                       # Optional update history, newest date first
+├── architecture/
+│   ├── index.md                 # Optional directory listing
+│   ├── system-overview.md       # One concept
+│   └── data-flow.md             # One concept
+├── api/
+│   ├── index.md
+│   └── customer-api.md
+├── decisions/
+│   └── adr-001-local-storage.md
+├── runbooks/
+│   └── release-checklist.md
+└── references/                  # Optional mirrored source material or scripts
+    └── api-schema.md
+</code></pre>
+<h2 id="concept-id">Concept ID<a class="heading-anchor" href="#concept-id" aria-label="Link to Concept ID">#</a></h2>
+<p>The concept ID is its path from the bundle root without <code>.md</code>.</p>
+<pre><code class="language-text">api/customer-api.md  →  api/customer-api
+</code></pre>
+<h2 id="reserved-filenames">Reserved filenames<a class="heading-anchor" href="#reserved-filenames" aria-label="Link to Reserved filenames">#</a></h2>
+<ul>
+<li><code>index.md</code> is a directory listing for progressive disclosure.</li>
+<li><code>log.md</code> is an optional update history, newest date first.</li>
+<li>Do not use those names for normal concept documents.</li>
+</ul>
+<h2 id="root-index-and-version">Root index and version<a class="heading-anchor" href="#root-index-and-version" aria-label="Link to Root index and version">#</a></h2>
+<p>A root <code>index.md</code> may declare the version:</p>
+<pre><code class="language-markdown">---
+okf_version: &quot;0.2&quot;
+---
+# Project Knowledge
+
+## Architecture
+
+- [System overview](architecture/system-overview.md) - High-level boundaries.
+</code></pre>
+<p>Subdirectory <code>index.md</code> files should not carry arbitrary concept frontmatter.</p>
+<h2 id="directory-index-example">Directory index example<a class="heading-anchor" href="#directory-index-example" aria-label="Link to Directory index example">#</a></h2>
+<pre><code class="language-markdown"># API concepts
+
+- [Customer API](customer-api.md) - Creates and reads customer records.
+- [Authentication](authentication.md) - Token and permission requirements.
+
+# Related groups
+
+- [Runbooks](../runbooks/) - Operational procedures.
+</code></pre>
+<h2 id="log-example">Log example<a class="heading-anchor" href="#log-example" aria-label="Link to Log example">#</a></h2>
+<pre><code class="language-markdown"># Directory Update Log
+
+## 2026-07-25
+- **Update**: Added [Customer API](api/customer-api.md).
+
+## 2026-07-20
+- **Initialization**: Created the initial bundle structure.
+</code></pre>
+<div class="article-footer"><a class="pager" href="structured-knowledge-okf.html"><small>Previous</small><strong>Structured Knowledge and OKF</strong></a><a class="pager" href="okf-concepts-metadata.html"><small>Next</small><strong>OKF concepts and metadata</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#concept-id">Concept ID</a><a class="level-2" href="#reserved-filenames">Reserved filenames</a><a class="level-2" href="#root-index-and-version">Root index and version</a><a class="level-2" href="#directory-index-example">Directory index example</a><a class="level-2" href="#log-example">Log example</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Local knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">API Workspaces</a></div>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>

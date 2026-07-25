@@ -1,0 +1,81 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Encode query values and path segments without double-encoding complete URLs."><meta name="theme-color" content="#5b47e8"><title>URL Encoder and Decoder · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
+  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Developer workspace</small></span></a>
+  <nav class="top-nav" aria-label="Primary navigation">
+    <a class="" href="../index.html">Home</a>
+    <a class="active" href="../manual/getting-started.html">Manual</a>
+    <a class="" href="../downloads.html">Downloads</a>
+    <a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy</a>
+  </nav>
+  <div class="header-actions">
+    <button class="search-btn" type="button" data-search><span>Search manual</span> <kbd>/</kbd></button>
+    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
+  </div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<a class="" href="../manual/getting-started.html">Getting started</a>
+<a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
+<a class="" href="../manual/interface-tour.html">Interface tour</a>
+<h2>Knowledge and Markdown</h2>
+<a class="" href="../manual/developer-workspaces.html">Developer Workspaces</a>
+<a class="" href="../manual/project-folder-structure.html">Create a project knowledge structure</a>
+<a class="" href="../manual/markdown-basics.html">Markdown basics</a>
+<a class="" href="../manual/frontmatter-properties.html">YAML frontmatter and properties</a>
+<a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
+<a class="" href="../manual/knowledge-workspace.html">Knowledge Workspace</a>
+<a class="" href="../manual/knowledge-graph.html">Knowledge Graph</a>
+<a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
+<a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
+<a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
+<h2>Structured Knowledge / OKF</h2>
+<a class="" href="../manual/structured-knowledge-okf.html">Structured Knowledge and OKF</a>
+<a class="" href="../manual/okf-bundle-structure.html">OKF bundle structure</a>
+<a class="" href="../manual/okf-concepts-metadata.html">OKF concepts and metadata</a>
+<a class="" href="../manual/okf-conversion-migration.html">Analyze, convert, and migrate folders</a>
+<a class="" href="../manual/okf-trust-sources-lifecycle.html">Sources, trust, freshness, and lifecycle</a>
+<a class="" href="../manual/okf-attested-computation.html">Attested Computation</a>
+<h2>API and documentation</h2>
+<a class="" href="../manual/readme-generator.html">README Generator</a>
+<a class="" href="../manual/api-workspaces.html">API Workspaces</a>
+<a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
+<a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
+<a class="" href="../manual/quick-api.html">Quick API</a>
+<a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
+<a class="" href="../manual/unified-search.html">Unified Search</a>
+<h2>Developer utilities</h2>
+<a class="" href="../manual/json-tools.html">JSON Tools</a>
+<a class="" href="../manual/jwt-decoder.html">JWT Decoder</a>
+<a class="" href="../manual/regex-tester.html">Regex Tester</a>
+<a class="" href="../manual/base64.html">Base64 Tool</a>
+<a class="active" href="../manual/url-tools.html" aria-current="page">URL Encoder and Decoder</a>
+<a class="" href="../manual/timestamp.html">Timestamp Converter</a>
+<a class="" href="../manual/uuid.html">UUID Generator</a>
+<a class="" href="../manual/diff-git.html">Diff Workspace and local Git</a>
+<a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
+<h2>Safety and reference</h2>
+<a class="" href="../manual/backup-restore.html">Backup and restore</a>
+<a class="" href="../manual/settings-appearance.html">Settings and appearance</a>
+<a class="" href="../manual/privacy-security.html">Privacy and security</a>
+<a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
+<a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="getting-started.html">Manual</a><span>/</span><span>Developer utilities</span></div><div class="doc-meta"><span class="doc-chip">Developer utilities</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="url-encoder-decoder">URL Encoder / Decoder<a class="heading-anchor" href="#url-encoder-decoder" aria-label="Link to URL Encoder / Decoder">#</a></h1>
+<p>URL Tools encode or decode URL components.</p>
+<h2 id="encode-only-the-right-part">Encode only the right part<a class="heading-anchor" href="#encode-only-the-right-part" aria-label="Link to Encode only the right part">#</a></h2>
+<p>Encode a query value or path segment rather than repeatedly encoding a complete URL. Encoding an already encoded value can produce incorrect <code>%25</code> sequences.</p>
+<h2 id="decode">Decode<a class="heading-anchor" href="#decode" aria-label="Link to Decode">#</a></h2>
+<p>Decode a component when you need to inspect the original characters. Malformed percent sequences should be corrected before use.</p>
+<h2 id="example">Example<a class="heading-anchor" href="#example" aria-label="Link to Example">#</a></h2>
+<p>A space in a query value may become <code>%20</code>. Reserved characters have different meaning depending on whether they appear in a path, query, or fragment.</p>
+<h2 id="privacy">Privacy<a class="heading-anchor" href="#privacy" aria-label="Link to Privacy">#</a></h2>
+<p>Processing is local. Opening a resulting link sends information to the selected destination through the browser or network stack.</p>
+<h2 id="example-2">Example<a class="heading-anchor" href="#example-2" aria-label="Link to Example">#</a></h2>
+<pre><code class="language-text">Original query value: developer workspace
+Encoded value: developer%20workspace
+</code></pre>
+<p>A complete URL might become invalid if the scheme separators and reserved characters are encoded indiscriminately. Encode the component, not the entire already-structured URL.</p>
+<div class="article-footer"><a class="pager" href="base64.html"><small>Previous</small><strong>Base64 Tool</strong></a><a class="pager" href="timestamp.html"><small>Next</small><strong>Timestamp Converter</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#encode-only-the-right-part">Encode only the right part</a><a class="level-2" href="#decode">Decode</a><a class="level-2" href="#example">Example</a><a class="level-2" href="#privacy">Privacy</a><a class="level-2" href="#example-2">Example</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Local knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">API Workspaces</a></div>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>

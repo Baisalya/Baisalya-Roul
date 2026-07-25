@@ -1,0 +1,148 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Install DevDesk, learn the interface, and complete your first useful workflow."><meta name="theme-color" content="#5b47e8"><title>Getting started · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
+  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Developer workspace</small></span></a>
+  <nav class="top-nav" aria-label="Primary navigation">
+    <a class="" href="../index.html">Home</a>
+    <a class="active" href="../manual/getting-started.html">Manual</a>
+    <a class="" href="../downloads.html">Downloads</a>
+    <a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy</a>
+  </nav>
+  <div class="header-actions">
+    <button class="search-btn" type="button" data-search><span>Search manual</span> <kbd>/</kbd></button>
+    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
+  </div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<a class="active" href="../manual/getting-started.html" aria-current="page">Getting started</a>
+<a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
+<a class="" href="../manual/interface-tour.html">Interface tour</a>
+<h2>Knowledge and Markdown</h2>
+<a class="" href="../manual/developer-workspaces.html">Developer Workspaces</a>
+<a class="" href="../manual/project-folder-structure.html">Create a project knowledge structure</a>
+<a class="" href="../manual/markdown-basics.html">Markdown basics</a>
+<a class="" href="../manual/frontmatter-properties.html">YAML frontmatter and properties</a>
+<a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
+<a class="" href="../manual/knowledge-workspace.html">Knowledge Workspace</a>
+<a class="" href="../manual/knowledge-graph.html">Knowledge Graph</a>
+<a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
+<a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
+<a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
+<h2>Structured Knowledge / OKF</h2>
+<a class="" href="../manual/structured-knowledge-okf.html">Structured Knowledge and OKF</a>
+<a class="" href="../manual/okf-bundle-structure.html">OKF bundle structure</a>
+<a class="" href="../manual/okf-concepts-metadata.html">OKF concepts and metadata</a>
+<a class="" href="../manual/okf-conversion-migration.html">Analyze, convert, and migrate folders</a>
+<a class="" href="../manual/okf-trust-sources-lifecycle.html">Sources, trust, freshness, and lifecycle</a>
+<a class="" href="../manual/okf-attested-computation.html">Attested Computation</a>
+<h2>API and documentation</h2>
+<a class="" href="../manual/readme-generator.html">README Generator</a>
+<a class="" href="../manual/api-workspaces.html">API Workspaces</a>
+<a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
+<a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
+<a class="" href="../manual/quick-api.html">Quick API</a>
+<a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
+<a class="" href="../manual/unified-search.html">Unified Search</a>
+<h2>Developer utilities</h2>
+<a class="" href="../manual/json-tools.html">JSON Tools</a>
+<a class="" href="../manual/jwt-decoder.html">JWT Decoder</a>
+<a class="" href="../manual/regex-tester.html">Regex Tester</a>
+<a class="" href="../manual/base64.html">Base64 Tool</a>
+<a class="" href="../manual/url-tools.html">URL Encoder and Decoder</a>
+<a class="" href="../manual/timestamp.html">Timestamp Converter</a>
+<a class="" href="../manual/uuid.html">UUID Generator</a>
+<a class="" href="../manual/diff-git.html">Diff Workspace and local Git</a>
+<a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
+<h2>Safety and reference</h2>
+<a class="" href="../manual/backup-restore.html">Backup and restore</a>
+<a class="" href="../manual/settings-appearance.html">Settings and appearance</a>
+<a class="" href="../manual/privacy-security.html">Privacy and security</a>
+<a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
+<a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="getting-started.html">Manual</a><span>/</span><span>Start here</span></div><div class="doc-meta"><span class="doc-chip">Start here</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="getting-started-with-devdesk">Getting started with DevDesk<a class="heading-anchor" href="#getting-started-with-devdesk" aria-label="Link to Getting started with DevDesk">#</a></h1>
+<p>DevDesk is a local developer workspace for Markdown knowledge, API testing, OpenAPI files, local Git inspection, and practical developer utilities. It is designed to keep ordinary files portable and understandable rather than locking your work into a proprietary cloud database.</p>
+<div class="hero-inline"><img src="../assets/img/welcome.png" alt="DevDesk workspace illustration"><div><strong>Your first goal</strong><p>Open an existing project folder, connect a few Markdown notes, inspect the graph, and send one safe test API request.</p></div></div>
+
+<h2 id="first-launch">First launch<a class="heading-anchor" href="#first-launch" aria-label="Link to First launch">#</a></h2>
+<ol>
+<li>Read the privacy notice and acknowledge it.</li>
+<li>Complete or skip the onboarding tour.</li>
+<li>Open <strong>Developer Workspaces</strong>.</li>
+<li>Register a folder that contains Markdown documentation, or create a small practice folder using the commands below.</li>
+<li>Open the workspace and let DevDesk index headings, tags, properties, links, backlinks, issues, and graph relationships.</li>
+<li>Open <strong>Structured Knowledge</strong> only when you want to analyze or prepare an OKF-compatible bundle.</li>
+<li>Use the <strong>Help</strong> icon inside any tool to open the matching manual topic.</li>
+</ol>
+<aside class="callout note"><strong>Note</strong><p>DevDesk does not upload a project folder to a DevDesk-operated server. Sending an API request, checking a link, fetching supported GitHub content, or opening an external page is still a network action.</p>
+</aside>
+<h2 id="create-a-safe-practice-folder">Create a safe practice folder<a class="heading-anchor" href="#create-a-safe-practice-folder" aria-label="Link to Create a safe practice folder">#</a></h2>
+<h3 id="windows-powershell">Windows PowerShell<a class="heading-anchor" href="#windows-powershell" aria-label="Link to Windows PowerShell">#</a></h3>
+<pre><code class="language-powershell">$root = &quot;$HOME\Documents\DevDesk-Practice&quot;
+New-Item -ItemType Directory -Force $root | Out-Null
+New-Item -ItemType Directory -Force &quot;$root\architecture&quot;, &quot;$root\api&quot;, &quot;$root\runbooks&quot; | Out-Null
+@&quot;
+# DevDesk Practice Workspace
+
+Start with [System Architecture](architecture/system-architecture.md).
+&quot;@ | Set-Content -Encoding utf8 &quot;$root\index.md&quot;
+</code></pre>
+<h3 id="macos-or-linux-terminal">macOS or Linux terminal<a class="heading-anchor" href="#macos-or-linux-terminal" aria-label="Link to macOS or Linux terminal">#</a></h3>
+<pre><code class="language-bash">root=&quot;$HOME/Documents/DevDesk-Practice&quot;
+mkdir -p &quot;$root&quot;/{architecture,api,runbooks}
+cat &gt; &quot;$root/index.md&quot; &lt;&lt;'EOF'
+# DevDesk Practice Workspace
+
+Start with [System Architecture](architecture/system-architecture.md).
+EOF
+</code></pre>
+<p>Then select the new folder in <strong>Developer Workspaces</strong>.</p>
+<h2 id="choose-the-right-tool">Choose the right tool<a class="heading-anchor" href="#choose-the-right-tool" aria-label="Link to Choose the right tool">#</a></h2>
+<table>
+<thead>
+<tr>
+  <th>What you want to do</th>
+  <th>Start here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Work directly with a project folder</td>
+  <td>Developer Workspaces</td>
+</tr>
+<tr>
+  <td>Edit one Markdown file</td>
+  <td>Markdown Editor</td>
+</tr>
+<tr>
+  <td>Keep personal linked notes inside DevDesk</td>
+  <td>Markdown Vault</td>
+</tr>
+<tr>
+  <td>Build a saved API collection</td>
+  <td>API Workspaces</td>
+</tr>
+<tr>
+  <td>Send one quick request</td>
+  <td>Quick API</td>
+</tr>
+<tr>
+  <td>Inspect an OpenAPI file</td>
+  <td>OpenAPI Studio</td>
+</tr>
+<tr>
+  <td>Convert or inspect developer data</td>
+  <td>Explore all tools</td>
+</tr>
+</tbody>
+</table>
+<h2 id="platform-behavior">Platform behavior<a class="heading-anchor" href="#platform-behavior" aria-label="Link to Platform behavior">#</a></h2>
+<ul>
+<li><strong>Android:</strong> compact single-column layouts, sheets, touch-sized actions, and support for portrait, landscape, split-screen, and freeform windows.</li>
+<li><strong>Windows:</strong> persistent navigation and multi-panel workspaces when enough width is available. Resize the window to collapse optional panels.</li>
+<li><strong>macOS:</strong> the current published release is not offered for macOS. The website keeps a macOS download card visible as a transparent availability notice rather than presenting a false download.</li>
+</ul>
+<div class="article-footer"><span></span><a class="pager" href="downloads-installation.html"><small>Next</small><strong>Downloads and installation</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#first-launch">First launch</a><a class="level-2" href="#create-a-safe-practice-folder">Create a safe practice folder</a><a class="level-3" href="#windows-powershell">Windows PowerShell</a><a class="level-3" href="#macos-or-linux-terminal">macOS or Linux terminal</a><a class="level-2" href="#choose-the-right-tool">Choose the right tool</a><a class="level-2" href="#platform-behavior">Platform behavior</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Local knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">API Workspaces</a></div>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>

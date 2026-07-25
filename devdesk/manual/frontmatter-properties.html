@@ -1,0 +1,150 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Add structured metadata without making Markdown unreadable."><meta name="theme-color" content="#5b47e8"><title>YAML frontmatter and properties · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
+  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Developer workspace</small></span></a>
+  <nav class="top-nav" aria-label="Primary navigation">
+    <a class="" href="../index.html">Home</a>
+    <a class="active" href="../manual/getting-started.html">Manual</a>
+    <a class="" href="../downloads.html">Downloads</a>
+    <a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy</a>
+  </nav>
+  <div class="header-actions">
+    <button class="search-btn" type="button" data-search><span>Search manual</span> <kbd>/</kbd></button>
+    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
+  </div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<a class="" href="../manual/getting-started.html">Getting started</a>
+<a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
+<a class="" href="../manual/interface-tour.html">Interface tour</a>
+<h2>Knowledge and Markdown</h2>
+<a class="" href="../manual/developer-workspaces.html">Developer Workspaces</a>
+<a class="" href="../manual/project-folder-structure.html">Create a project knowledge structure</a>
+<a class="" href="../manual/markdown-basics.html">Markdown basics</a>
+<a class="active" href="../manual/frontmatter-properties.html" aria-current="page">YAML frontmatter and properties</a>
+<a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
+<a class="" href="../manual/knowledge-workspace.html">Knowledge Workspace</a>
+<a class="" href="../manual/knowledge-graph.html">Knowledge Graph</a>
+<a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
+<a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
+<a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
+<h2>Structured Knowledge / OKF</h2>
+<a class="" href="../manual/structured-knowledge-okf.html">Structured Knowledge and OKF</a>
+<a class="" href="../manual/okf-bundle-structure.html">OKF bundle structure</a>
+<a class="" href="../manual/okf-concepts-metadata.html">OKF concepts and metadata</a>
+<a class="" href="../manual/okf-conversion-migration.html">Analyze, convert, and migrate folders</a>
+<a class="" href="../manual/okf-trust-sources-lifecycle.html">Sources, trust, freshness, and lifecycle</a>
+<a class="" href="../manual/okf-attested-computation.html">Attested Computation</a>
+<h2>API and documentation</h2>
+<a class="" href="../manual/readme-generator.html">README Generator</a>
+<a class="" href="../manual/api-workspaces.html">API Workspaces</a>
+<a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
+<a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
+<a class="" href="../manual/quick-api.html">Quick API</a>
+<a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
+<a class="" href="../manual/unified-search.html">Unified Search</a>
+<h2>Developer utilities</h2>
+<a class="" href="../manual/json-tools.html">JSON Tools</a>
+<a class="" href="../manual/jwt-decoder.html">JWT Decoder</a>
+<a class="" href="../manual/regex-tester.html">Regex Tester</a>
+<a class="" href="../manual/base64.html">Base64 Tool</a>
+<a class="" href="../manual/url-tools.html">URL Encoder and Decoder</a>
+<a class="" href="../manual/timestamp.html">Timestamp Converter</a>
+<a class="" href="../manual/uuid.html">UUID Generator</a>
+<a class="" href="../manual/diff-git.html">Diff Workspace and local Git</a>
+<a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
+<h2>Safety and reference</h2>
+<a class="" href="../manual/backup-restore.html">Backup and restore</a>
+<a class="" href="../manual/settings-appearance.html">Settings and appearance</a>
+<a class="" href="../manual/privacy-security.html">Privacy and security</a>
+<a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
+<a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="getting-started.html">Manual</a><span>/</span><span>Knowledge and Markdown</span></div><div class="doc-meta"><span class="doc-chip">Knowledge and Markdown</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="yaml-frontmatter-and-properties">YAML frontmatter and properties<a class="heading-anchor" href="#yaml-frontmatter-and-properties" aria-label="Link to YAML frontmatter and properties">#</a></h1>
+<p>Frontmatter is a YAML block at the very top of a Markdown file. The opening and closing lines must each contain exactly three dashes.</p>
+<pre><code class="language-yaml">---
+type: API Endpoint
+title: Create customer
+description: Creates one customer record after validation.
+tags: [api, customer, write]
+status: stable
+---
+</code></pre>
+<h2 id="basic-rules">Basic rules<a class="heading-anchor" href="#basic-rules" aria-label="Link to Basic rules">#</a></h2>
+<ul>
+<li>Use spaces, not tabs.</li>
+<li>Put a space after <code>:</code>.</li>
+<li>Quote text containing special punctuation when uncertain.</li>
+<li>Use YAML lists such as <code>[api, customer]</code> or multi-line <code>- item</code> entries.</li>
+<li>Do not place frontmatter after the Markdown body.</li>
+</ul>
+<h2 id="common-fields-used-by-devdesk-and-okf">Common fields used by DevDesk and OKF<a class="heading-anchor" href="#common-fields-used-by-devdesk-and-okf" aria-label="Link to Common fields used by DevDesk and OKF">#</a></h2>
+<table>
+<thead>
+<tr>
+  <th>Field</th>
+  <th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>type</code></td>
+  <td>Required by OKF concepts; tells consumers what kind of knowledge this is</td>
+</tr>
+<tr>
+  <td><code>title</code></td>
+  <td>Friendly display name</td>
+</tr>
+<tr>
+  <td><code>description</code></td>
+  <td>One-sentence summary for search and indexes</td>
+</tr>
+<tr>
+  <td><code>resource</code></td>
+  <td>Canonical URI or asset path when the concept describes a real resource</td>
+</tr>
+<tr>
+  <td><code>tags</code></td>
+  <td>Cross-cutting categories</td>
+</tr>
+<tr>
+  <td><code>generated</code></td>
+  <td>Who or what produced the current content</td>
+</tr>
+<tr>
+  <td><code>verified</code></td>
+  <td>Human or process verification events</td>
+</tr>
+<tr>
+  <td><code>sources</code></td>
+  <td>Materials from which the concept derives</td>
+</tr>
+<tr>
+  <td><code>status</code></td>
+  <td><code>draft</code>, <code>stable</code>, or <code>deprecated</code></td>
+</tr>
+<tr>
+  <td><code>stale_after</code></td>
+  <td>Absolute date when content should be reviewed</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fix-a-malformed-block">Fix a malformed block<a class="heading-anchor" href="#fix-a-malformed-block" aria-label="Link to Fix a malformed block">#</a></h2>
+<p>Incorrect:</p>
+<pre><code class="language-yaml">---
+type API Endpoint
+ tags: api, customer
+---
+</code></pre>
+<p>Correct:</p>
+<pre><code class="language-yaml">---
+type: API Endpoint
+tags: [api, customer]
+---
+</code></pre>
+<h2 id="properties-panel">Properties panel<a class="heading-anchor" href="#properties-panel" aria-label="Link to Properties panel">#</a></h2>
+<p>In Knowledge Workspace, open <strong>Properties</strong> to inspect parsed metadata. Use the editor or Structured Knowledge workflow for changes that must remain portable in the file itself.</p>
+<div class="article-footer"><a class="pager" href="markdown-basics.html"><small>Previous</small><strong>Markdown basics</strong></a><a class="pager" href="links-backlinks-nodes.html"><small>Next</small><strong>Links, backlinks, and nodes</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#basic-rules">Basic rules</a><a class="level-2" href="#common-fields-used-by-devdesk-and-okf">Common fields used by DevDesk and OKF</a><a class="level-2" href="#fix-a-malformed-block">Fix a malformed block</a><a class="level-2" href="#properties-panel">Properties panel</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Local knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">API Workspaces</a></div>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>

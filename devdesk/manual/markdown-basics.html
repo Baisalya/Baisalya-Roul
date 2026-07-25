@@ -1,0 +1,124 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Create headings, lists, code, tables, links, and readable project documentation."><meta name="theme-color" content="#5b47e8"><title>Markdown basics · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
+  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Developer workspace</small></span></a>
+  <nav class="top-nav" aria-label="Primary navigation">
+    <a class="" href="../index.html">Home</a>
+    <a class="active" href="../manual/getting-started.html">Manual</a>
+    <a class="" href="../downloads.html">Downloads</a>
+    <a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy</a>
+  </nav>
+  <div class="header-actions">
+    <button class="search-btn" type="button" data-search><span>Search manual</span> <kbd>/</kbd></button>
+    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
+  </div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<a class="" href="../manual/getting-started.html">Getting started</a>
+<a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
+<a class="" href="../manual/interface-tour.html">Interface tour</a>
+<h2>Knowledge and Markdown</h2>
+<a class="" href="../manual/developer-workspaces.html">Developer Workspaces</a>
+<a class="" href="../manual/project-folder-structure.html">Create a project knowledge structure</a>
+<a class="active" href="../manual/markdown-basics.html" aria-current="page">Markdown basics</a>
+<a class="" href="../manual/frontmatter-properties.html">YAML frontmatter and properties</a>
+<a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
+<a class="" href="../manual/knowledge-workspace.html">Knowledge Workspace</a>
+<a class="" href="../manual/knowledge-graph.html">Knowledge Graph</a>
+<a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
+<a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
+<a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
+<h2>Structured Knowledge / OKF</h2>
+<a class="" href="../manual/structured-knowledge-okf.html">Structured Knowledge and OKF</a>
+<a class="" href="../manual/okf-bundle-structure.html">OKF bundle structure</a>
+<a class="" href="../manual/okf-concepts-metadata.html">OKF concepts and metadata</a>
+<a class="" href="../manual/okf-conversion-migration.html">Analyze, convert, and migrate folders</a>
+<a class="" href="../manual/okf-trust-sources-lifecycle.html">Sources, trust, freshness, and lifecycle</a>
+<a class="" href="../manual/okf-attested-computation.html">Attested Computation</a>
+<h2>API and documentation</h2>
+<a class="" href="../manual/readme-generator.html">README Generator</a>
+<a class="" href="../manual/api-workspaces.html">API Workspaces</a>
+<a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
+<a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
+<a class="" href="../manual/quick-api.html">Quick API</a>
+<a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
+<a class="" href="../manual/unified-search.html">Unified Search</a>
+<h2>Developer utilities</h2>
+<a class="" href="../manual/json-tools.html">JSON Tools</a>
+<a class="" href="../manual/jwt-decoder.html">JWT Decoder</a>
+<a class="" href="../manual/regex-tester.html">Regex Tester</a>
+<a class="" href="../manual/base64.html">Base64 Tool</a>
+<a class="" href="../manual/url-tools.html">URL Encoder and Decoder</a>
+<a class="" href="../manual/timestamp.html">Timestamp Converter</a>
+<a class="" href="../manual/uuid.html">UUID Generator</a>
+<a class="" href="../manual/diff-git.html">Diff Workspace and local Git</a>
+<a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
+<h2>Safety and reference</h2>
+<a class="" href="../manual/backup-restore.html">Backup and restore</a>
+<a class="" href="../manual/settings-appearance.html">Settings and appearance</a>
+<a class="" href="../manual/privacy-security.html">Privacy and security</a>
+<a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
+<a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="getting-started.html">Manual</a><span>/</span><span>Knowledge and Markdown</span></div><div class="doc-meta"><span class="doc-chip">Knowledge and Markdown</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="markdown-basics">Markdown basics<a class="heading-anchor" href="#markdown-basics" aria-label="Link to Markdown basics">#</a></h1>
+<p>Markdown is plain text with lightweight punctuation. DevDesk stores and edits normal Markdown, so the same files remain readable in GitHub, editors, terminals, and other compatible tools.</p>
+<h2 id="headings">Headings<a class="heading-anchor" href="#headings" aria-label="Link to Headings">#</a></h2>
+<pre><code class="language-markdown"># Page title
+## Major section
+### Smaller section
+</code></pre>
+<p>Use one clear <code>#</code> title and meaningful <code>##</code> sections. Headings power the Outline panel and improve search and agent retrieval.</p>
+<h2 id="lists-and-tasks">Lists and tasks<a class="heading-anchor" href="#lists-and-tasks" aria-label="Link to Lists and tasks">#</a></h2>
+<pre><code class="language-markdown">- First item
+- Second item
+
+1. Open the workspace
+2. Review the change
+3. Save the document
+
+- [ ] Pending review
+- [x] Approved
+</code></pre>
+<h2 id="code">Code<a class="heading-anchor" href="#code" aria-label="Link to Code">#</a></h2>
+<pre><code class="language-markdown">Run the command:
+
+```powershell
+flutter analyze
+```
+</code></pre>
+<p>Use fenced code blocks and name the language when known.</p>
+<h2 id="tables">Tables<a class="heading-anchor" href="#tables" aria-label="Link to Tables">#</a></h2>
+<pre><code class="language-markdown">| Field | Meaning |
+|---|---|
+| `type` | Kind of concept |
+| `status` | Draft, stable, or deprecated |
+</code></pre>
+<h2 id="emphasis-and-inline-code">Emphasis and inline code<a class="heading-anchor" href="#emphasis-and-inline-code" aria-label="Link to Emphasis and inline code">#</a></h2>
+<pre><code class="language-markdown">**Important** text, *emphasis*, and `inline_code`.
+</code></pre>
+<h2 id="images">Images<a class="heading-anchor" href="#images" aria-label="Link to Images">#</a></h2>
+<pre><code class="language-markdown">![Architecture diagram](images/architecture.png)
+</code></pre>
+<p>DevDesk blocks remote Markdown images in safe preview paths to avoid silent tracking requests. Prefer local images inside the selected folder.</p>
+<h2 id="a-readable-document-pattern">A readable document pattern<a class="heading-anchor" href="#a-readable-document-pattern" aria-label="Link to A readable document pattern">#</a></h2>
+<pre><code class="language-markdown"># Title
+
+One-sentence summary.
+
+## Why this exists
+
+Explain the problem.
+
+## How it works
+
+Use steps, diagrams, and examples.
+
+## Related documents
+
+- [API contract](../api/customer-api.md)
+- [Runbook](../runbooks/release-checklist.md)
+</code></pre>
+<div class="article-footer"><a class="pager" href="project-folder-structure.html"><small>Previous</small><strong>Create a project knowledge structure</strong></a><a class="pager" href="frontmatter-properties.html"><small>Next</small><strong>YAML frontmatter and properties</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#headings">Headings</a><a class="level-2" href="#lists-and-tasks">Lists and tasks</a><a class="level-2" href="#code">Code</a><a class="level-2" href="#tables">Tables</a><a class="level-2" href="#emphasis-and-inline-code">Emphasis and inline code</a><a class="level-2" href="#images">Images</a><a class="level-2" href="#a-readable-document-pattern">A readable document pattern</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Local knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">API Workspaces</a></div>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>

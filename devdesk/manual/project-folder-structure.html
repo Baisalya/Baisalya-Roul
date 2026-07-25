@@ -1,0 +1,172 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Build a clean folder from scratch with copyable Windows and macOS/Linux commands."><meta name="theme-color" content="#5b47e8"><title>Create a project knowledge structure · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
+  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Developer workspace</small></span></a>
+  <nav class="top-nav" aria-label="Primary navigation">
+    <a class="" href="../index.html">Home</a>
+    <a class="active" href="../manual/getting-started.html">Manual</a>
+    <a class="" href="../downloads.html">Downloads</a>
+    <a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy</a>
+  </nav>
+  <div class="header-actions">
+    <button class="search-btn" type="button" data-search><span>Search manual</span> <kbd>/</kbd></button>
+    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
+  </div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<a class="" href="../manual/getting-started.html">Getting started</a>
+<a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
+<a class="" href="../manual/interface-tour.html">Interface tour</a>
+<h2>Knowledge and Markdown</h2>
+<a class="" href="../manual/developer-workspaces.html">Developer Workspaces</a>
+<a class="active" href="../manual/project-folder-structure.html" aria-current="page">Create a project knowledge structure</a>
+<a class="" href="../manual/markdown-basics.html">Markdown basics</a>
+<a class="" href="../manual/frontmatter-properties.html">YAML frontmatter and properties</a>
+<a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
+<a class="" href="../manual/knowledge-workspace.html">Knowledge Workspace</a>
+<a class="" href="../manual/knowledge-graph.html">Knowledge Graph</a>
+<a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
+<a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
+<a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
+<h2>Structured Knowledge / OKF</h2>
+<a class="" href="../manual/structured-knowledge-okf.html">Structured Knowledge and OKF</a>
+<a class="" href="../manual/okf-bundle-structure.html">OKF bundle structure</a>
+<a class="" href="../manual/okf-concepts-metadata.html">OKF concepts and metadata</a>
+<a class="" href="../manual/okf-conversion-migration.html">Analyze, convert, and migrate folders</a>
+<a class="" href="../manual/okf-trust-sources-lifecycle.html">Sources, trust, freshness, and lifecycle</a>
+<a class="" href="../manual/okf-attested-computation.html">Attested Computation</a>
+<h2>API and documentation</h2>
+<a class="" href="../manual/readme-generator.html">README Generator</a>
+<a class="" href="../manual/api-workspaces.html">API Workspaces</a>
+<a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
+<a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
+<a class="" href="../manual/quick-api.html">Quick API</a>
+<a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
+<a class="" href="../manual/unified-search.html">Unified Search</a>
+<h2>Developer utilities</h2>
+<a class="" href="../manual/json-tools.html">JSON Tools</a>
+<a class="" href="../manual/jwt-decoder.html">JWT Decoder</a>
+<a class="" href="../manual/regex-tester.html">Regex Tester</a>
+<a class="" href="../manual/base64.html">Base64 Tool</a>
+<a class="" href="../manual/url-tools.html">URL Encoder and Decoder</a>
+<a class="" href="../manual/timestamp.html">Timestamp Converter</a>
+<a class="" href="../manual/uuid.html">UUID Generator</a>
+<a class="" href="../manual/diff-git.html">Diff Workspace and local Git</a>
+<a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
+<h2>Safety and reference</h2>
+<a class="" href="../manual/backup-restore.html">Backup and restore</a>
+<a class="" href="../manual/settings-appearance.html">Settings and appearance</a>
+<a class="" href="../manual/privacy-security.html">Privacy and security</a>
+<a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
+<a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="getting-started.html">Manual</a><span>/</span><span>Knowledge and Markdown</span></div><div class="doc-meta"><span class="doc-chip">Knowledge and Markdown</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="create-a-project-knowledge-structure">Create a project knowledge structure<a class="heading-anchor" href="#create-a-project-knowledge-structure" aria-label="Link to Create a project knowledge structure">#</a></h1>
+<p>A non-developer can create a useful structure with folders and plain text files. Start small; DevDesk can index additional files later.</p>
+<h2 id="recommended-starter-structure">Recommended starter structure<a class="heading-anchor" href="#recommended-starter-structure" aria-label="Link to Recommended starter structure">#</a></h2>
+<pre><code class="language-text">my-project-knowledge/
+├── index.md                     # Bundle entry point; may declare okf_version
+├── log.md                       # Optional update history, newest date first
+├── architecture/
+│   ├── index.md                 # Optional directory listing
+│   ├── system-overview.md       # One concept
+│   └── data-flow.md             # One concept
+├── api/
+│   ├── index.md
+│   └── customer-api.md
+├── decisions/
+│   └── adr-001-local-storage.md
+├── runbooks/
+│   └── release-checklist.md
+└── references/                  # Optional mirrored source material or scripts
+    └── api-schema.md
+</code></pre>
+<h2 id="windows-powershell-command">Windows PowerShell command<a class="heading-anchor" href="#windows-powershell-command" aria-label="Link to Windows PowerShell command">#</a></h2>
+<pre><code class="language-powershell">$root = &quot;$HOME\Documents\MyProjectKnowledge&quot;
+$folders = @(
+  $root,
+  &quot;$root\architecture&quot;,
+  &quot;$root\api&quot;,
+  &quot;$root\decisions&quot;,
+  &quot;$root\runbooks&quot;,
+  &quot;$root\references&quot;
+)
+$folders | ForEach-Object { New-Item -ItemType Directory -Force $_ | Out-Null }
+
+@&quot;
+---
+okf_version: &quot;0.2&quot;
+---
+# My Project Knowledge
+
+## Start here
+
+- [System overview](architecture/system-overview.md)
+- [Customer API](api/customer-api.md)
+- [Release runbook](runbooks/release-checklist.md)
+&quot;@ | Set-Content -Encoding utf8 &quot;$root\index.md&quot;
+
+@&quot;
+# Directory Update Log
+
+## $(Get-Date -Format yyyy-MM-dd)
+- **Initialization**: Created the initial knowledge structure.
+&quot;@ | Set-Content -Encoding utf8 &quot;$root\log.md&quot;
+</code></pre>
+<h2 id="macos-or-linux-command">macOS or Linux command<a class="heading-anchor" href="#macos-or-linux-command" aria-label="Link to macOS or Linux command">#</a></h2>
+<pre><code class="language-bash">root=&quot;$HOME/Documents/MyProjectKnowledge&quot;
+mkdir -p &quot;$root&quot;/{architecture,api,decisions,runbooks,references}
+cat &gt; &quot;$root/index.md&quot; &lt;&lt;'EOF'
+---
+okf_version: &quot;0.2&quot;
+---
+# My Project Knowledge
+
+## Start here
+
+- [System overview](architecture/system-overview.md)
+- [Customer API](api/customer-api.md)
+- [Release runbook](runbooks/release-checklist.md)
+EOF
+
+cat &gt; &quot;$root/log.md&quot; &lt;&lt;EOF
+# Directory Update Log
+
+## $(date +%F)
+- **Initialization**: Created the initial knowledge structure.
+EOF
+</code></pre>
+<h2 id="create-the-first-concept">Create the first concept<a class="heading-anchor" href="#create-the-first-concept" aria-label="Link to Create the first concept">#</a></h2>
+<p>Save this as <code>architecture/system-overview.md</code>:</p>
+<pre><code class="language-markdown">---
+type: Architecture
+
+title: System overview
+
+description: A high-level map of the application and its major boundaries.
+
+tags: [architecture, overview]
+
+status: draft
+---
+
+# Purpose
+
+Explain what the system does and who uses it.
+
+# Components
+
+- Mobile and desktop application
+- Local data storage
+- API destinations selected by the user
+
+# Related knowledge
+
+See the [Customer API](../api/customer-api.md) and the
+[Release runbook](../runbooks/release-checklist.md).
+</code></pre>
+<aside class="callout tip"><strong>Tip</strong><p>Blank lines inside YAML are allowed by YAML, but compact frontmatter is easier to scan. DevDesk preserves unknown fields where possible.</p>
+</aside>
+<div class="article-footer"><a class="pager" href="developer-workspaces.html"><small>Previous</small><strong>Developer Workspaces</strong></a><a class="pager" href="markdown-basics.html"><small>Next</small><strong>Markdown basics</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#recommended-starter-structure">Recommended starter structure</a><a class="level-2" href="#windows-powershell-command">Windows PowerShell command</a><a class="level-2" href="#macos-or-linux-command">macOS or Linux command</a><a class="level-2" href="#create-the-first-concept">Create the first concept</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Local knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">API Workspaces</a></div>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>

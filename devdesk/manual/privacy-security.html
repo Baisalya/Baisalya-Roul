@@ -1,0 +1,100 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Understand local storage, network boundaries, secrets, exports, clipboard, and reporting."><meta name="theme-color" content="#5b47e8"><title>Privacy and security · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
+  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Developer workspace</small></span></a>
+  <nav class="top-nav" aria-label="Primary navigation">
+    <a class="" href="../index.html">Home</a>
+    <a class="active" href="../manual/getting-started.html">Manual</a>
+    <a class="" href="../downloads.html">Downloads</a>
+    <a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy</a>
+  </nav>
+  <div class="header-actions">
+    <button class="search-btn" type="button" data-search><span>Search manual</span> <kbd>/</kbd></button>
+    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
+  </div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<a class="" href="../manual/getting-started.html">Getting started</a>
+<a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
+<a class="" href="../manual/interface-tour.html">Interface tour</a>
+<h2>Knowledge and Markdown</h2>
+<a class="" href="../manual/developer-workspaces.html">Developer Workspaces</a>
+<a class="" href="../manual/project-folder-structure.html">Create a project knowledge structure</a>
+<a class="" href="../manual/markdown-basics.html">Markdown basics</a>
+<a class="" href="../manual/frontmatter-properties.html">YAML frontmatter and properties</a>
+<a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
+<a class="" href="../manual/knowledge-workspace.html">Knowledge Workspace</a>
+<a class="" href="../manual/knowledge-graph.html">Knowledge Graph</a>
+<a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
+<a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
+<a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
+<h2>Structured Knowledge / OKF</h2>
+<a class="" href="../manual/structured-knowledge-okf.html">Structured Knowledge and OKF</a>
+<a class="" href="../manual/okf-bundle-structure.html">OKF bundle structure</a>
+<a class="" href="../manual/okf-concepts-metadata.html">OKF concepts and metadata</a>
+<a class="" href="../manual/okf-conversion-migration.html">Analyze, convert, and migrate folders</a>
+<a class="" href="../manual/okf-trust-sources-lifecycle.html">Sources, trust, freshness, and lifecycle</a>
+<a class="" href="../manual/okf-attested-computation.html">Attested Computation</a>
+<h2>API and documentation</h2>
+<a class="" href="../manual/readme-generator.html">README Generator</a>
+<a class="" href="../manual/api-workspaces.html">API Workspaces</a>
+<a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
+<a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
+<a class="" href="../manual/quick-api.html">Quick API</a>
+<a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
+<a class="" href="../manual/unified-search.html">Unified Search</a>
+<h2>Developer utilities</h2>
+<a class="" href="../manual/json-tools.html">JSON Tools</a>
+<a class="" href="../manual/jwt-decoder.html">JWT Decoder</a>
+<a class="" href="../manual/regex-tester.html">Regex Tester</a>
+<a class="" href="../manual/base64.html">Base64 Tool</a>
+<a class="" href="../manual/url-tools.html">URL Encoder and Decoder</a>
+<a class="" href="../manual/timestamp.html">Timestamp Converter</a>
+<a class="" href="../manual/uuid.html">UUID Generator</a>
+<a class="" href="../manual/diff-git.html">Diff Workspace and local Git</a>
+<a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
+<h2>Safety and reference</h2>
+<a class="" href="../manual/backup-restore.html">Backup and restore</a>
+<a class="" href="../manual/settings-appearance.html">Settings and appearance</a>
+<a class="active" href="../manual/privacy-security.html" aria-current="page">Privacy and security</a>
+<a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
+<a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="getting-started.html">Manual</a><span>/</span><span>Safety and reference</span></div><div class="doc-meta"><span class="doc-chip">Safety and reference</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="privacy-and-security">Privacy and security<a class="heading-anchor" href="#privacy-and-security" aria-label="Link to Privacy and security">#</a></h1>
+<p>DevDesk is local-first, but some tools deliberately communicate with destinations you select.</p>
+<h2 id="local-by-default">Local by default<a class="heading-anchor" href="#local-by-default" aria-label="Link to Local by default">#</a></h2>
+<p>Documents, workspaces, histories, settings, indexes, and snippets are stored locally according to the feature and platform.</p>
+<h2 id="user-initiated-network-actions">User-initiated network actions<a class="heading-anchor" href="#user-initiated-network-actions" aria-label="Link to User-initiated network actions">#</a></h2>
+<p>Network activity can occur when you:</p>
+<ul>
+<li>Send an API request</li>
+<li>Fetch supported public GitHub content</li>
+<li>Validate a link</li>
+<li>Open a store, support, privacy, portfolio, or other external page</li>
+</ul>
+<p>The destination can receive request content, your public IP address, and normal connection information.</p>
+<h2 id="protected-secrets">Protected secrets<a class="heading-anchor" href="#protected-secrets" aria-label="Link to Protected secrets">#</a></h2>
+<p>Android uses a Keystore-backed boundary and Windows uses DPAPI where supported. Protected secrets are excluded from supported portable backups and exports.</p>
+<h2 id="files-and-clipboard">Files and clipboard<a class="heading-anchor" href="#files-and-clipboard" aria-label="Link to Files and clipboard">#</a></h2>
+<p>DevDesk accesses files or folders after you choose them. Exported files and clipboard content are outside DevDesk's private storage boundary.</p>
+<h2 id="reporting-a-problem">Reporting a problem<a class="heading-anchor" href="#reporting-a-problem" aria-label="Link to Reporting a problem">#</a></h2>
+<p>Use the public support repository only for non-sensitive reports. Use the private security-advisory channel or developer email for vulnerabilities and never post tokens, credentials, private bodies, or proprietary code publicly.</p>
+<h2 id="before-sending-an-api-request">Before sending an API request<a class="heading-anchor" href="#before-sending-an-api-request" aria-label="Link to Before sending an API request">#</a></h2>
+<p>Review:</p>
+<ul>
+<li>Final URL and environment</li>
+<li>Authorization and cookies</li>
+<li>Query parameters</li>
+<li>Body and attached files</li>
+<li>Whether HTTPS is used</li>
+<li>Whether the destination is trusted</li>
+</ul>
+<p>Redaction of stored/exported output does not remove credentials from a request you deliberately send.</p>
+<h2 id="public-support-versus-private-security">Public support versus private security<a class="heading-anchor" href="#public-support-versus-private-security" aria-label="Link to Public support versus private security">#</a></h2>
+<p>Use public Issues only for non-sensitive bug reports. Use the private security advisory or developer privacy email for vulnerabilities. Never post tokens, private request bodies, proprietary code, or personal data publicly.</p>
+<h2 id="official-policy">Official policy<a class="heading-anchor" href="#official-policy" aria-label="Link to Official policy">#</a></h2>
+<p>The website links to the canonical hosted Privacy Policy. The policy—not a summary page—is the authoritative disclosure for the released build.</p>
+<div class="article-footer"><a class="pager" href="settings-appearance.html"><small>Previous</small><strong>Settings and appearance</strong></a><a class="pager" href="keyboard-shortcuts.html"><small>Next</small><strong>Keyboard shortcuts and accessibility</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#local-by-default">Local by default</a><a class="level-2" href="#user-initiated-network-actions">User-initiated network actions</a><a class="level-2" href="#protected-secrets">Protected secrets</a><a class="level-2" href="#files-and-clipboard">Files and clipboard</a><a class="level-2" href="#reporting-a-problem">Reporting a problem</a><a class="level-2" href="#before-sending-an-api-request">Before sending an API request</a><a class="level-2" href="#public-support-versus-private-security">Public support versus private security</a><a class="level-2" href="#official-policy">Official policy</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Local knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">API Workspaces</a></div>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>

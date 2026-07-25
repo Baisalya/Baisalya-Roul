@@ -1,0 +1,124 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Create collections, requests, environments, assertions, extraction, history, and reports."><meta name="theme-color" content="#5b47e8"><title>API Workspaces · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
+  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Developer workspace</small></span></a>
+  <nav class="top-nav" aria-label="Primary navigation">
+    <a class="" href="../index.html">Home</a>
+    <a class="active" href="../manual/getting-started.html">Manual</a>
+    <a class="" href="../downloads.html">Downloads</a>
+    <a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy</a>
+  </nav>
+  <div class="header-actions">
+    <button class="search-btn" type="button" data-search><span>Search manual</span> <kbd>/</kbd></button>
+    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
+  </div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<a class="" href="../manual/getting-started.html">Getting started</a>
+<a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
+<a class="" href="../manual/interface-tour.html">Interface tour</a>
+<h2>Knowledge and Markdown</h2>
+<a class="" href="../manual/developer-workspaces.html">Developer Workspaces</a>
+<a class="" href="../manual/project-folder-structure.html">Create a project knowledge structure</a>
+<a class="" href="../manual/markdown-basics.html">Markdown basics</a>
+<a class="" href="../manual/frontmatter-properties.html">YAML frontmatter and properties</a>
+<a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
+<a class="" href="../manual/knowledge-workspace.html">Knowledge Workspace</a>
+<a class="" href="../manual/knowledge-graph.html">Knowledge Graph</a>
+<a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
+<a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
+<a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
+<h2>Structured Knowledge / OKF</h2>
+<a class="" href="../manual/structured-knowledge-okf.html">Structured Knowledge and OKF</a>
+<a class="" href="../manual/okf-bundle-structure.html">OKF bundle structure</a>
+<a class="" href="../manual/okf-concepts-metadata.html">OKF concepts and metadata</a>
+<a class="" href="../manual/okf-conversion-migration.html">Analyze, convert, and migrate folders</a>
+<a class="" href="../manual/okf-trust-sources-lifecycle.html">Sources, trust, freshness, and lifecycle</a>
+<a class="" href="../manual/okf-attested-computation.html">Attested Computation</a>
+<h2>API and documentation</h2>
+<a class="" href="../manual/readme-generator.html">README Generator</a>
+<a class="active" href="../manual/api-workspaces.html" aria-current="page">API Workspaces</a>
+<a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
+<a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
+<a class="" href="../manual/quick-api.html">Quick API</a>
+<a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
+<a class="" href="../manual/unified-search.html">Unified Search</a>
+<h2>Developer utilities</h2>
+<a class="" href="../manual/json-tools.html">JSON Tools</a>
+<a class="" href="../manual/jwt-decoder.html">JWT Decoder</a>
+<a class="" href="../manual/regex-tester.html">Regex Tester</a>
+<a class="" href="../manual/base64.html">Base64 Tool</a>
+<a class="" href="../manual/url-tools.html">URL Encoder and Decoder</a>
+<a class="" href="../manual/timestamp.html">Timestamp Converter</a>
+<a class="" href="../manual/uuid.html">UUID Generator</a>
+<a class="" href="../manual/diff-git.html">Diff Workspace and local Git</a>
+<a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
+<h2>Safety and reference</h2>
+<a class="" href="../manual/backup-restore.html">Backup and restore</a>
+<a class="" href="../manual/settings-appearance.html">Settings and appearance</a>
+<a class="" href="../manual/privacy-security.html">Privacy and security</a>
+<a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
+<a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="getting-started.html">Manual</a><span>/</span><span>API and documentation</span></div><div class="doc-meta"><span class="doc-chip">API and documentation</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="api-workspaces">API Workspaces<a class="heading-anchor" href="#api-workspaces" aria-label="Link to API Workspaces">#</a></h1>
+<p>API Workspaces organize saved HTTP requests, collections, folders, environments, examples, assertions, extraction rules, history, and reports.</p>
+<h2 id="create-a-request">Create a request<a class="heading-anchor" href="#create-a-request" aria-label="Link to Create a request">#</a></h2>
+<ol>
+<li>Create or open a workspace.</li>
+<li>Add a collection or request.</li>
+<li>Choose the HTTP method.</li>
+<li>Enter the destination URL.</li>
+<li>Configure query parameters, headers, authorization, cookies, or body.</li>
+<li>Select an environment.</li>
+<li>Review the destination and select <strong>Send</strong>.</li>
+</ol>
+<h2 id="environments-and-secrets">Environments and secrets<a class="heading-anchor" href="#environments-and-secrets" aria-label="Link to Environments and secrets">#</a></h2>
+<p>Use protected variables for credentials. Protected values use platform security boundaries where available and are excluded from supported portable backups and exports.</p>
+<h2 id="results">Results<a class="heading-anchor" href="#results" aria-label="Link to Results">#</a></h2>
+<p>Inspect status, timing, headers, and bounded response content. Large, binary, malformed, or timed-out responses are handled with limits and safe error states.</p>
+<h2 id="assertions-and-extraction">Assertions and extraction<a class="heading-anchor" href="#assertions-and-extraction" aria-label="Link to Assertions and extraction">#</a></h2>
+<p>Assertions check response conditions. Extraction rules can save selected response values for later requests. Avoid extracting secrets into ordinary unprotected variables.</p>
+<h2 id="history-and-examples">History and examples<a class="heading-anchor" href="#history-and-examples" aria-label="Link to History and examples">#</a></h2>
+<p>History is stored locally with application limits. Saving a history entry as a request or example creates a reusable copy.</p>
+<h2 id="network-privacy">Network privacy<a class="heading-anchor" href="#network-privacy" aria-label="Link to Network privacy">#</a></h2>
+<p>The destination server receives the request content you choose to send and normal connection information such as your public IP address. DevDesk does not proxy requests through a DevDesk server.</p>
+<h2 id="build-a-request-step-by-step">Build a request step by step<a class="heading-anchor" href="#build-a-request-step-by-step" aria-label="Link to Build a request step by step">#</a></h2>
+<ol>
+<li>Open or create an API workspace.</li>
+<li>Create a collection such as <code>Customer Service</code>.</li>
+<li>Create a request and select <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>PATCH</code>, <code>DELETE</code>, or another supported method.</li>
+<li>Enter an HTTPS URL.</li>
+<li>Add query parameters in the parameter editor instead of manually concatenating unescaped values.</li>
+<li>Add headers and authorization.</li>
+<li>Choose the body type expected by the server.</li>
+<li>Select the intended environment.</li>
+<li>Resolve variable previews and check the final destination.</li>
+<li>Select <strong>Send</strong>.</li>
+</ol>
+<h2 id="example-request">Example request<a class="heading-anchor" href="#example-request" aria-label="Link to Example request">#</a></h2>
+<pre><code class="language-http">POST https://api.example.com/customers
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+
+{
+  &quot;name&quot;: &quot;Example Customer&quot;,
+  &quot;email&quot;: &quot;customer@example.com&quot;
+}
+</code></pre>
+<h2 id="response-review">Response review<a class="heading-anchor" href="#response-review" aria-label="Link to Response review">#</a></h2>
+<p>Check all of these—not only a green status color:</p>
+<ul>
+<li>HTTP status code</li>
+<li>Duration</li>
+<li>Headers such as content type and caching</li>
+<li>Body format and error details</li>
+<li>Assertion results</li>
+<li>Extracted values</li>
+<li>Whether the response contains secrets or personal data before copying</li>
+</ul>
+<h2 id="body-modes">Body modes<a class="heading-anchor" href="#body-modes" aria-label="Link to Body modes">#</a></h2>
+<p>Common modes include raw text/JSON and form-based input. For multipart content, use the provided form-field/file UI; do not type a multipart boundary manually.</p>
+<div class="article-footer"><a class="pager" href="readme-generator.html"><small>Previous</small><strong>README Generator</strong></a><a class="pager" href="api-environments-secrets.html"><small>Next</small><strong>API environments and protected secrets</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#create-a-request">Create a request</a><a class="level-2" href="#environments-and-secrets">Environments and secrets</a><a class="level-2" href="#results">Results</a><a class="level-2" href="#assertions-and-extraction">Assertions and extraction</a><a class="level-2" href="#history-and-examples">History and examples</a><a class="level-2" href="#network-privacy">Network privacy</a><a class="level-2" href="#build-a-request-step-by-step">Build a request step by step</a><a class="level-2" href="#example-request">Example request</a><a class="level-2" href="#response-review">Response review</a><a class="level-2" href="#body-modes">Body modes</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Local knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">API Workspaces</a></div>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>

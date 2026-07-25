@@ -1,0 +1,117 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Use the document browser, editor, preview, inspector, and focused graph."><meta name="theme-color" content="#5b47e8"><title>Knowledge Workspace · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
+  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Developer workspace</small></span></a>
+  <nav class="top-nav" aria-label="Primary navigation">
+    <a class="" href="../index.html">Home</a>
+    <a class="active" href="../manual/getting-started.html">Manual</a>
+    <a class="" href="../downloads.html">Downloads</a>
+    <a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy</a>
+  </nav>
+  <div class="header-actions">
+    <button class="search-btn" type="button" data-search><span>Search manual</span> <kbd>/</kbd></button>
+    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
+  </div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<a class="" href="../manual/getting-started.html">Getting started</a>
+<a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
+<a class="" href="../manual/interface-tour.html">Interface tour</a>
+<h2>Knowledge and Markdown</h2>
+<a class="" href="../manual/developer-workspaces.html">Developer Workspaces</a>
+<a class="" href="../manual/project-folder-structure.html">Create a project knowledge structure</a>
+<a class="" href="../manual/markdown-basics.html">Markdown basics</a>
+<a class="" href="../manual/frontmatter-properties.html">YAML frontmatter and properties</a>
+<a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
+<a class="active" href="../manual/knowledge-workspace.html" aria-current="page">Knowledge Workspace</a>
+<a class="" href="../manual/knowledge-graph.html">Knowledge Graph</a>
+<a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
+<a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
+<a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
+<h2>Structured Knowledge / OKF</h2>
+<a class="" href="../manual/structured-knowledge-okf.html">Structured Knowledge and OKF</a>
+<a class="" href="../manual/okf-bundle-structure.html">OKF bundle structure</a>
+<a class="" href="../manual/okf-concepts-metadata.html">OKF concepts and metadata</a>
+<a class="" href="../manual/okf-conversion-migration.html">Analyze, convert, and migrate folders</a>
+<a class="" href="../manual/okf-trust-sources-lifecycle.html">Sources, trust, freshness, and lifecycle</a>
+<a class="" href="../manual/okf-attested-computation.html">Attested Computation</a>
+<h2>API and documentation</h2>
+<a class="" href="../manual/readme-generator.html">README Generator</a>
+<a class="" href="../manual/api-workspaces.html">API Workspaces</a>
+<a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
+<a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
+<a class="" href="../manual/quick-api.html">Quick API</a>
+<a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
+<a class="" href="../manual/unified-search.html">Unified Search</a>
+<h2>Developer utilities</h2>
+<a class="" href="../manual/json-tools.html">JSON Tools</a>
+<a class="" href="../manual/jwt-decoder.html">JWT Decoder</a>
+<a class="" href="../manual/regex-tester.html">Regex Tester</a>
+<a class="" href="../manual/base64.html">Base64 Tool</a>
+<a class="" href="../manual/url-tools.html">URL Encoder and Decoder</a>
+<a class="" href="../manual/timestamp.html">Timestamp Converter</a>
+<a class="" href="../manual/uuid.html">UUID Generator</a>
+<a class="" href="../manual/diff-git.html">Diff Workspace and local Git</a>
+<a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
+<h2>Safety and reference</h2>
+<a class="" href="../manual/backup-restore.html">Backup and restore</a>
+<a class="" href="../manual/settings-appearance.html">Settings and appearance</a>
+<a class="" href="../manual/privacy-security.html">Privacy and security</a>
+<a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
+<a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="getting-started.html">Manual</a><span>/</span><span>Knowledge and Markdown</span></div><div class="doc-meta"><span class="doc-chip">Knowledge and Markdown</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="knowledge-workspace">Knowledge Workspace<a class="heading-anchor" href="#knowledge-workspace" aria-label="Link to Knowledge Workspace">#</a></h1>
+<p>The Knowledge Workspace is the main environment for a registered Markdown project.</p>
+<h2 id="main-areas">Main areas<a class="heading-anchor" href="#main-areas" aria-label="Link to Main areas">#</a></h2>
+<ul>
+<li><strong>Document browser:</strong> find and open Markdown files.</li>
+<li><strong>Editor:</strong> edit the selected document.</li>
+<li><strong>Preview:</strong> render Markdown safely.</li>
+<li><strong>Inspector:</strong> view properties, outline, links, issues, and graph.</li>
+<li><strong>Focused graph:</strong> expand the graph into the main workspace.</li>
+</ul>
+<h2 id="create-or-open-a-document">Create or open a document<a class="heading-anchor" href="#create-or-open-a-document" aria-label="Link to Create or open a document">#</a></h2>
+<ol>
+<li>Select a document from the browser.</li>
+<li>Use the create action for a new Markdown file.</li>
+<li>Edit in the central editor.</li>
+<li>Save before switching when changes are pending.</li>
+</ol>
+<h2 id="inspector">Inspector<a class="heading-anchor" href="#inspector" aria-label="Link to Inspector">#</a></h2>
+<ul>
+<li><strong>Properties:</strong> YAML frontmatter and document metadata.</li>
+<li><strong>Outline:</strong> headings and line navigation.</li>
+<li><strong>Links:</strong> backlinks, outgoing links, unlinked mentions, and related tags.</li>
+<li><strong>Issues:</strong> broken or ambiguous references.</li>
+<li><strong>Graph:</strong> local or workspace relationships.</li>
+</ul>
+<p>The browser and inspector can collapse on Windows. On Android they open as responsive sheets or focused views.</p>
+<h2 id="safe-editing">Safe editing<a class="heading-anchor" href="#safe-editing" aria-label="Link to Safe editing">#</a></h2>
+<p>DevDesk tracks unsaved changes and conflicts. When the file changes outside the app, review before overwriting.</p>
+<h2 id="related-topics">Related topics<a class="heading-anchor" href="#related-topics" aria-label="Link to Related topics">#</a></h2>
+<p>See <strong>Knowledge Graph</strong>, <strong>Structured Knowledge / OKF</strong>, and <strong>Developer Workspaces</strong> for deeper workflows.</p>
+<h2 id="a-productive-windows-layout">A productive Windows layout<a class="heading-anchor" href="#a-productive-windows-layout" aria-label="Link to A productive Windows layout">#</a></h2>
+<p>On a wide window:</p>
+<pre><code class="language-text">Document browser | Editor / preview | Inspector
+</code></pre>
+<p>Collapse the browser or inspector when the center content needs more room. The inspector tabs are contextual—not separate copies of the document.</p>
+<h2 id="a-productive-android-layout">A productive Android layout<a class="heading-anchor" href="#a-productive-android-layout" aria-label="Link to A productive Android layout">#</a></h2>
+<p>On a phone or narrow freeform window:</p>
+<ul>
+<li>The editor remains the primary surface.</li>
+<li>Document browser and inspector open as sheets or focused views.</li>
+<li>Advanced graph controls stay collapsed until requested.</li>
+<li>Save before switching documents when unsaved changes are present.</li>
+</ul>
+<h2 id="external-modification-workflow">External modification workflow<a class="heading-anchor" href="#external-modification-workflow" aria-label="Link to External modification workflow">#</a></h2>
+<p>If another editor changes the file while DevDesk has unsaved text:</p>
+<ol>
+<li>Stop and read the conflict message.</li>
+<li>Copy any unsaved text you need to preserve.</li>
+<li>Compare the external and local versions.</li>
+<li>Save only after choosing which version should win.</li>
+</ol>
+<div class="article-footer"><a class="pager" href="links-backlinks-nodes.html"><small>Previous</small><strong>Links, backlinks, and nodes</strong></a><a class="pager" href="knowledge-graph.html"><small>Next</small><strong>Knowledge Graph</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#main-areas">Main areas</a><a class="level-2" href="#create-or-open-a-document">Create or open a document</a><a class="level-2" href="#inspector">Inspector</a><a class="level-2" href="#safe-editing">Safe editing</a><a class="level-2" href="#related-topics">Related topics</a><a class="level-2" href="#a-productive-windows-layout">A productive Windows layout</a><a class="level-2" href="#a-productive-android-layout">A productive Android layout</a><a class="level-2" href="#external-modification-workflow">External modification workflow</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Local knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">API Workspaces</a></div>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>
