@@ -1,2 +1,219 @@
+(() => {
+  const root = document.documentElement;
+  const storedTheme = localStorage.getItem('devdesk-theme');
+  root.dataset.theme = storedTheme === 'light' ? 'light' : 'dark';
 
-(()=>{const root=document.documentElement;const stored=localStorage.getItem('devdesk-theme');const system=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';root.dataset.theme=stored||system;document.querySelectorAll('[data-theme-toggle]').forEach(b=>b.addEventListener('click',()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;localStorage.setItem('devdesk-theme',n)}));const sidebar=document.querySelector('.docs-sidebar'),backdrop=document.querySelector('.mobile-drawer-backdrop');const closeMenu=()=>{sidebar?.classList.remove('open');backdrop?.classList.remove('open')};document.querySelectorAll('[data-menu]').forEach(b=>b.addEventListener('click',()=>{sidebar?.classList.add('open');backdrop?.classList.add('open')}));backdrop?.addEventListener('click',closeMenu);document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenu();closeSearch()}if(e.key==='/'&&!['INPUT','TEXTAREA'].includes(document.activeElement?.tagName)){e.preventDefault();openSearch()}});document.querySelectorAll('pre').forEach(pre=>{const btn=document.createElement('button');btn.className='copy-code';btn.type='button';btn.textContent='Copy';btn.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(pre.innerText.replace(/^Copy\n/,''));btn.textContent='Copied';setTimeout(()=>btn.textContent='Copy',1400)}catch{btn.textContent='Select text'}});pre.appendChild(btn)});const overlay=document.querySelector('[data-search-overlay]'),input=document.querySelector('[data-search-input]'),results=document.querySelector('[data-search-results]');function openSearch(){if(!overlay)return;overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');setTimeout(()=>input?.focus(),10)}function closeSearch(){overlay?.classList.remove('open');overlay?.setAttribute('aria-hidden','true')}document.querySelectorAll('[data-search]').forEach(b=>b.addEventListener('click',openSearch));overlay?.addEventListener('mousedown',e=>{if(e.target===overlay)closeSearch()});const base=location.pathname.includes('/manual/')?'../':'';function renderSearch(q){if(!results)return;const query=q.trim().toLowerCase();if(!query){results.innerHTML='<div class="empty-search">Start typing to search the complete manual.</div>';return}const words=query.split(/\s+/);const items=(window.DEVDESK_SEARCH_INDEX||[]).map(item=>{const hay=(item.title+' '+item.summary+' '+item.group+' '+item.text).toLowerCase();let score=0;for(const w of words){if(item.title.toLowerCase().includes(w))score+=12;if(item.summary.toLowerCase().includes(w))score+=5;if(item.group.toLowerCase().includes(w))score+=3;if(hay.includes(w))score+=1}return{...item,score}}).filter(x=>x.score>=words.length).sort((a,b)=>b.score-a.score).slice(0,18);results.innerHTML=items.length?items.map(x=>`<a class="search-result" href="${base}${x.url}"><strong>${escapeHtml(x.title)}</strong><span>${escapeHtml(x.group)} · ${escapeHtml(x.summary)}</span></a>`).join(''):'<div class="empty-search">No matching manual topics.</div>'}function escapeHtml(s){return s.replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}input?.addEventListener('input',()=>renderSearch(input.value));const headings=[...document.querySelectorAll('.article h2[id],.article h3[id]')],tocLinks=[...document.querySelectorAll('.toc a')];if(headings.length&&tocLinks.length){const obs=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top)[0];if(!visible)return;tocLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+visible.target.id))},{rootMargin:'-90px 0px -70% 0px'});headings.forEach(h=>obs.observe(h))}if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register(base+'sw.js').catch(()=>{});document.querySelectorAll('[data-download]').forEach(el=>{const key=el.dataset.download;const cfg=window.DEVDESK_SITE_CONFIG?.[key];if(!cfg)return;const label=el.querySelector('[data-download-label]'),note=el.querySelector('[data-download-note]'),link=el.querySelector('a[data-download-link]'),status=el.querySelector('[data-download-status]');if(label)label.textContent=cfg.label;if(note)note.textContent=cfg.note;if(status){status.textContent=cfg.status==='available'?'Available':cfg.status==='testing'?'Testing access':'Coming soon';status.classList.add(cfg.status)}if(link){if(cfg.url){link.href=cfg.url;link.removeAttribute('aria-disabled')}else{link.removeAttribute('href');link.setAttribute('aria-disabled','true');link.classList.add('disabled')}}})})();
+  const themeButtons = [...document.querySelectorAll('[data-theme-toggle]')];
+  const updateThemeButtons = () => {
+    const isDark = root.dataset.theme === 'dark';
+    themeButtons.forEach((button) => {
+      button.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+      button.setAttribute('aria-pressed', String(isDark));
+      button.title = isDark ? 'Switch to light theme' : 'Switch to dark theme';
+    });
+  };
+  updateThemeButtons();
+  themeButtons.forEach((button) => button.addEventListener('click', () => {
+    const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = nextTheme;
+    localStorage.setItem('devdesk-theme', nextTheme);
+    updateThemeButtons();
+  }));
+
+  const menuButtons = [...document.querySelectorAll('[data-menu]')];
+  const docsSidebar = document.querySelector('.docs-sidebar');
+  const homeNavigation = document.querySelector('.top-nav');
+  const drawer = docsSidebar || homeNavigation;
+  const backdrop = document.querySelector('.mobile-drawer-backdrop');
+
+  const setMenuExpanded = (expanded) => {
+    menuButtons.forEach((button) => button.setAttribute('aria-expanded', String(expanded)));
+  };
+  const openMenu = () => {
+    if (!drawer) return;
+    drawer.classList.add('open');
+    backdrop?.classList.add('open');
+    document.body.classList.add('drawer-open');
+    setMenuExpanded(true);
+  };
+  const closeMenu = () => {
+    drawer?.classList.remove('open');
+    backdrop?.classList.remove('open');
+    document.body.classList.remove('drawer-open');
+    setMenuExpanded(false);
+  };
+
+  setMenuExpanded(false);
+  menuButtons.forEach((button) => button.addEventListener('click', () => {
+    if (drawer?.classList.contains('open')) closeMenu();
+    else openMenu();
+  }));
+  backdrop?.addEventListener('click', closeMenu);
+  drawer?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 820) closeMenu();
+  });
+
+  document.querySelectorAll('pre').forEach((pre) => {
+    const button = document.createElement('button');
+    button.className = 'copy-code';
+    button.type = 'button';
+    button.textContent = 'Copy';
+    button.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(pre.innerText.replace(/^Copy\n/, ''));
+        button.textContent = 'Copied';
+        setTimeout(() => { button.textContent = 'Copy'; }, 1400);
+      } catch (_) {
+        button.textContent = 'Select text';
+      }
+    });
+    pre.appendChild(button);
+  });
+
+  const overlay = document.querySelector('[data-search-overlay]');
+  const input = document.querySelector('[data-search-input]');
+  const results = document.querySelector('[data-search-results]');
+
+  function openSearch() {
+    if (!overlay) return;
+    closeMenu();
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    setTimeout(() => input?.focus(), 10);
+  }
+
+  function closeSearch() {
+    overlay?.classList.remove('open');
+    overlay?.setAttribute('aria-hidden', 'true');
+  }
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeMenu();
+      closeSearch();
+    }
+    if (event.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) {
+      event.preventDefault();
+      openSearch();
+    }
+  });
+
+  document.querySelectorAll('[data-search]').forEach((button) => button.addEventListener('click', openSearch));
+  overlay?.addEventListener('mousedown', (event) => {
+    if (event.target === overlay) closeSearch();
+  });
+
+  const base = location.pathname.includes('/manual/') ? '../' : '';
+
+  function escapeHtml(value) {
+    return value.replace(/[&<>'"]/g, (character) => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      "'": '&#39;',
+      '"': '&quot;',
+    }[character]));
+  }
+
+  function renderSearch(value) {
+    if (!results) return;
+    const query = value.trim().toLowerCase();
+    if (!query) {
+      results.innerHTML = '<div class="empty-search">Start typing to search the complete manual.</div>';
+      return;
+    }
+
+    const words = query.split(/\s+/);
+    const items = (window.DEVDESK_SEARCH_INDEX || [])
+      .map((item) => {
+        const haystack = `${item.title} ${item.summary} ${item.group} ${item.text}`.toLowerCase();
+        let score = 0;
+        for (const word of words) {
+          if (item.title.toLowerCase().includes(word)) score += 12;
+          if (item.summary.toLowerCase().includes(word)) score += 5;
+          if (item.group.toLowerCase().includes(word)) score += 3;
+          if (haystack.includes(word)) score += 1;
+        }
+        return { ...item, score };
+      })
+      .filter((item) => item.score >= words.length)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 18);
+
+    results.innerHTML = items.length
+      ? items.map((item) => `<a class="search-result" href="${base}${item.url}"><strong>${escapeHtml(item.title)}</strong><span>${escapeHtml(item.group)} · ${escapeHtml(item.summary)}</span></a>`).join('')
+      : '<div class="empty-search">No matching manual topics.</div>';
+  }
+
+  input?.addEventListener('input', () => renderSearch(input.value));
+
+  const headings = [...document.querySelectorAll('.article h2[id], .article h3[id]')];
+  const tocLinks = [...document.querySelectorAll('.toc a')];
+  if (headings.length && tocLinks.length) {
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+      if (!visible) return;
+      tocLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === `#${visible.target.id}`));
+    }, { rootMargin: '-90px 0px -70% 0px' });
+    headings.forEach((heading) => observer.observe(heading));
+  }
+
+  document.querySelectorAll('[data-download]').forEach((element) => {
+    const key = element.dataset.download;
+    const config = window.DEVDESK_SITE_CONFIG?.[key];
+    if (!config) return;
+    const label = element.querySelector('[data-download-label]');
+    const note = element.querySelector('[data-download-note]');
+    const link = element.querySelector('a[data-download-link]');
+    const status = element.querySelector('[data-download-status]');
+    if (label) label.textContent = config.label;
+    if (note) note.textContent = config.note;
+    if (status) {
+      status.textContent = config.status === 'available' ? 'Available' : config.status === 'testing' ? 'Testing access' : 'Coming soon';
+      status.classList.add(config.status);
+    }
+    if (link) {
+      if (config.url) {
+        link.href = config.url;
+        link.removeAttribute('aria-disabled');
+      } else {
+        link.removeAttribute('href');
+        link.setAttribute('aria-disabled', 'true');
+        link.classList.add('disabled');
+      }
+    }
+  });
+
+  if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+    window.addEventListener('load', async () => {
+      const hadController = Boolean(navigator.serviceWorker.controller);
+      let reloading = false;
+      if (hadController) {
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+          if (reloading) return;
+          reloading = true;
+          location.reload();
+        });
+      }
+
+      try {
+        const registration = await navigator.serviceWorker.register(`${base}sw.js`, { updateViaCache: 'none' });
+        registration.waiting?.postMessage({ type: 'SKIP_WAITING' });
+        registration.addEventListener('updatefound', () => {
+          const worker = registration.installing;
+          worker?.addEventListener('statechange', () => {
+            if (worker.state === 'installed' && navigator.serviceWorker.controller) {
+              worker.postMessage({ type: 'SKIP_WAITING' });
+            }
+          });
+        });
+        await registration.update();
+      } catch (error) {
+        console.warn('DevDesk offline cache registration failed:', error);
+      }
+    });
+  }
+})();

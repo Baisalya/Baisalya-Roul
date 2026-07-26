@@ -21,7 +21,7 @@
 - Folder creation commands for PowerShell and macOS/Linux shell
 - Markdown, YAML frontmatter, links, backlinks, nodes, graph, and graph editing
 - OKF v0.2 bundle, concepts, conversion, migration, trust, sources, lifecycle and Attested Computation
-- API Workspaces, environments, secrets, assertions, extraction, Quick API and OpenAPI
+- API Studio request fidelity, environments, OAuth/secrets, proxy/TLS, import/export, assertions, extraction, runner/CLI, Quick API, and Swagger/OpenAPI
 - Every dashboard utility
 - Backup, settings, privacy, shortcuts, troubleshooting and FAQ
 
@@ -37,3 +37,9 @@
 ## Source note
 
 The website documents currently implemented behavior found in the uploaded project. macOS is not presented as a downloadable release because the app's documented release scope is Android and Windows.
+
+## API Studio documentation update (2026-07-26)
+
+- Rewritten API Workspaces, environments/secrets, assertions/extraction, Quick API, and OpenAPI pages.
+- Added exact request, response streaming, import compatibility, CLI, network, and current-UI boundary guidance.
+- Regenerated the five matching HTML pages and refreshed offline search text.

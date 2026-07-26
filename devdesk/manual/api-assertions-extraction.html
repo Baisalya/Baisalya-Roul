@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Turn a request into a repeatable check and safely reuse response values."><meta name="theme-color" content="#5b47e8"><title>Assertions, extraction, examples, and history · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Build no-code response checks, extraction workflows, examples, history, runner results, and CLI reports."><meta name="theme-color" content="#5b47e8"><title>Assertions, extraction, examples, and history · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
   <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Developer workspace</small></span></a>
@@ -59,30 +59,190 @@
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
 <a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="getting-started.html">Manual</a><span>/</span><span>API and documentation</span></div><div class="doc-meta"><span class="doc-chip">API and documentation</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="assertions-extraction-examples-and-history">Assertions, extraction, examples, and history<a class="heading-anchor" href="#assertions-extraction-examples-and-history" aria-label="Link to Assertions, extraction, examples, and history">#</a></h1>
+<p>These features turn individual requests into repeatable API checks without requiring arbitrary operating-system scripts in the visible request editor.</p>
 <h2 id="assertions">Assertions<a class="heading-anchor" href="#assertions" aria-label="Link to Assertions">#</a></h2>
-<p>Assertions check response conditions such as:</p>
+<p>An assertion checks an observed response condition. Each saved assertion has a type, optional target, and expected value.</p>
+<h3 id="status-and-timing">Status and timing<a class="heading-anchor" href="#status-and-timing" aria-label="Link to Status and timing">#</a></h3>
 <ul>
-<li>Status code equals an expected value</li>
-<li>Header exists or contains a value</li>
-<li>Response body or JSON path matches a condition</li>
-<li>Timing remains under a selected threshold</li>
+<li>Status code equals.</li>
+<li>Status code range.</li>
+<li>Response time less than a threshold.</li>
 </ul>
-<p>An assertion failure means the observed response did not match the rule; it does not necessarily mean DevDesk itself failed.</p>
+<p>Examples:</p>
+<pre><code class="language-text">Status code equals
+Expected: 201
+</code></pre>
+<pre><code class="language-text">Status code range
+Expected: 200-299
+</code></pre>
+<pre><code class="language-text">Response time &lt; ms
+Expected: 750
+</code></pre>
+<h3 id="json">JSON<a class="heading-anchor" href="#json" aria-label="Link to JSON">#</a></h3>
+<ul>
+<li>JSONPath exists.</li>
+<li>JSONPath equals.</li>
+<li>JSON array length.</li>
+<li>Numeric comparison.</li>
+<li>JSON Schema validation.</li>
+</ul>
+<pre><code class="language-text">JSON path exists
+Target: $.data.customer.id
+</code></pre>
+<pre><code class="language-text">JSON path equals
+Target: $.data.customer.status
+Expected: active
+</code></pre>
+<p>Use JSON Schema for structural checks and smaller JSONPath assertions for business-critical values. A schema-valid response can still contain the wrong business data.</p>
+<h3 id="xml">XML<a class="heading-anchor" href="#xml" aria-label="Link to XML">#</a></h3>
+<ul>
+<li>XPath exists.</li>
+<li>XPath equals.</li>
+</ul>
+<pre><code class="language-text">XPath equals
+Target: /customer/status/text()
+Expected: active
+</code></pre>
+<h3 id="headers-and-cookies">Headers and cookies<a class="heading-anchor" href="#headers-and-cookies" aria-label="Link to Headers and cookies">#</a></h3>
+<ul>
+<li>Header exists.</li>
+<li>Header equals.</li>
+<li>Header pattern.</li>
+<li>Cookie exists.</li>
+<li>Cookie equals.</li>
+</ul>
+<pre><code class="language-text">Header pattern
+Target: content-type
+Expected: application/(json|problem\+json)
+</code></pre>
+<p>Header names are case-insensitive at protocol level, but keep documentation spelling consistent.</p>
+<h3 id="body-and-contract">Body and contract<a class="heading-anchor" href="#body-and-contract" aria-label="Link to Body and contract">#</a></h3>
+<ul>
+<li>Body contains.</li>
+<li>Body content type.</li>
+<li>Body size less than a byte limit.</li>
+<li>Snapshot equals.</li>
+<li>OpenAPI contract.</li>
+</ul>
+<p>Snapshot checks are useful for stable fixtures. Update a snapshot only after reviewing the intentional difference. OpenAPI checks compare the live response with the selected API contract; they do not prove that the API's business behavior is correct.</p>
+<h2 id="reading-assertion-results">Reading assertion results<a class="heading-anchor" href="#reading-assertion-results" aria-label="Link to Reading assertion results">#</a></h2>
+<p>The response <strong>Assertions</strong> tab shows the assertion name, pass/fail state, and message. A failed assertion means the observed response did not match the rule. It does not necessarily mean the network request failed or DevDesk crashed.</p>
+<p>The collection runner counts failed assertions as request failures according to run policy.</p>
 <h2 id="extraction-rules">Extraction rules<a class="heading-anchor" href="#extraction-rules" aria-label="Link to Extraction rules">#</a></h2>
-<p>Extraction can save a response value for later requests, for example a created customer ID.</p>
+<p>Extraction stores a selected part of a response for later requests.</p>
+<p>Supported sources are:</p>
+<ul>
+<li>JSONPath.</li>
+<li>Response header.</li>
+<li>Bounded regular-expression match from the response body.</li>
+</ul>
+<p>Each rule defines source, path/header/regex, destination variable, scope, and whether the result is secret.</p>
+<h3 id="example-login-then-use-token">Example: login then use token<a class="heading-anchor" href="#example-login-then-use-token" aria-label="Link to Example: login then use token">#</a></h3>
+<p>Login response:</p>
 <pre><code class="language-json">{
-  &quot;id&quot;: &quot;cus_123&quot;,
-  &quot;name&quot;: &quot;Example Customer&quot;
+  &quot;access_token&quot;: &quot;temporary-token&quot;,
+  &quot;expires_in&quot;: 900
 }
 </code></pre>
-<p>A rule might extract <code>id</code> into <code>customer_id</code>.</p>
-<aside class="callout warning"><strong>Warning</strong><p>Do not extract passwords, access tokens, or personal data into an ordinary unprotected variable.</p>
-</aside>
+<p>Extraction:</p>
+<pre><code class="language-text">Source: JSON path
+Path: $.access_token
+Variable: accessToken
+Scope: temporary
+Secret: yes
+</code></pre>
+<p>Later request:</p>
+<pre><code class="language-text">Authorization: Bearer {{accessToken}}
+</code></pre>
+<h3 id="scope-choice">Scope choice<a class="heading-anchor" href="#scope-choice" aria-label="Link to Scope choice">#</a></h3>
+<ul>
+<li><strong>Temporary</strong>: best for tokens and IDs produced during one run.</li>
+<li><strong>Workspace</strong>: reusable across environments; avoid for target-specific values.</li>
+<li><strong>Environment</strong>: useful for environment-specific IDs or non-secret state.</li>
+</ul>
+<p>Request-local variables have higher resolution priority than temporary, environment, collection/folder, and workspace values.</p>
+<h3 id="extraction-safety">Extraction safety<a class="heading-anchor" href="#extraction-safety" aria-label="Link to Extraction safety">#</a></h3>
+<ul>
+<li>Mark tokens, session IDs, reset links, and password-like values as secret.</li>
+<li>Keep regex bounded and specific.</li>
+<li>Do not extract personal data only because it is convenient.</li>
+<li>Clear or overwrite stale values when changing accounts.</li>
+<li>Review a failed extraction before later requests run with an old value.</li>
+</ul>
 <h2 id="examples">Examples<a class="heading-anchor" href="#examples" aria-label="Link to Examples">#</a></h2>
-<p>Save representative responses as examples when they are safe to retain. Remove live credentials and personal data first.</p>
+<p>A request can save:</p>
+<ul>
+<li>Expected response note.</li>
+<li>Example response body.</li>
+</ul>
+<p>Use examples for onboarding and generated documentation. Replace live values with safe placeholders:</p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;cus_example&quot;,
+  &quot;email&quot;: &quot;customer@example.com&quot;
+}
+</code></pre>
+<p>Never store live passwords, access tokens, private customer data, or proprietary production payloads in an example.</p>
+<h2 id="workspace-documentation">Workspace documentation<a class="heading-anchor" href="#workspace-documentation" aria-label="Link to Workspace documentation">#</a></h2>
+<p>Workspace Settings includes overview Markdown, base URL explanation, and authentication instructions. These notes are included in generated Markdown API documentation and should explain required setup without embedding credentials.</p>
 <h2 id="history">History<a class="heading-anchor" href="#history" aria-label="Link to History">#</a></h2>
-<p>History is stored locally with limits. Treat it as potentially sensitive because request URLs, headers, bodies, and response excerpts can contain confidential information even after conservative redaction.</p>
-<div class="article-footer"><a class="pager" href="api-environments-secrets.html"><small>Previous</small><strong>API environments and protected secrets</strong></a><a class="pager" href="quick-api.html"><small>Next</small><strong>Quick API</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#assertions">Assertions</a><a class="level-2" href="#extraction-rules">Extraction rules</a><a class="level-2" href="#examples">Examples</a><a class="level-2" href="#history">History</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<p>History can contain:</p>
+<ul>
+<li>Final URL.</li>
+<li>Method.</li>
+<li>Status and timing.</li>
+<li>Saved request structure.</li>
+<li>Response preview.</li>
+<li>Assertion and extraction results.</li>
+</ul>
+<p>From History you can filter entries, inspect them, save one as a request, re-run it, or clear the workspace history.</p>
+<p>History is local but still sensitive. Redaction reduces accidental disclosure; it does not guarantee that every ordinary body value is safe to share.</p>
+<h2 id="in-app-collection-runner">In-app collection runner<a class="heading-anchor" href="#in-app-collection-runner" aria-label="Link to In-app collection runner">#</a></h2>
+<p>The visible runner supports:</p>
+<ul>
+<li>Selected collection execution.</li>
+<li>Stop on failure.</li>
+<li>Delay between requests.</li>
+<li>Live and final result summary.</li>
+</ul>
+<p>The summary includes total, passed, failed, skipped, and average response time.</p>
+<h2 id="advanced-automation-and-cli">Advanced automation and CLI<a class="heading-anchor" href="#advanced-automation-and-cli" aria-label="Link to Advanced automation and CLI">#</a></h2>
+<p>The repository automation runner and CLI support:</p>
+<ul>
+<li>Multiple iterations.</li>
+<li>CSV or JSON data rows.</li>
+<li>Folder and tag selection.</li>
+<li>Concurrency from 1 to 32.</li>
+<li>Delay.</li>
+<li>Retries and exponential backoff.</li>
+<li>Global requests-per-second limit.</li>
+<li>Stop-on-error or failed assertion.</li>
+<li>Baseline comparison.</li>
+<li>JSON, JUnit, HTML, and Markdown reports.</li>
+<li>Non-zero failure exit code.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">dart run tool/devdesk_api_cli.dart api run workspace.json \
+  --environment Staging \
+  --data test-data.csv \
+  --iterations 3 \
+  --concurrency 2 \
+  --retries 2 \
+  --report html \
+  --output build/api-report.html
+</code></pre>
+<h2 id="safe-script-boundary">Safe script boundary<a class="heading-anchor" href="#safe-script-boundary" aria-label="Link to Safe script boundary">#</a></h2>
+<p>The repository contains a versioned declarative safe-script model with no direct filesystem or operating-system API, explicit network allowlists, imported-script review gates, cancellation, redacted console output, and operation/state/time limits.</p>
+<p>The current API Workspaces screen does not provide a general JavaScript-like script editor. Do not expect arbitrary Postman scripts to execute automatically after import. Unsupported behavior should appear in the import report rather than run silently.</p>
+<h2 id="sharing-reports">Sharing reports<a class="heading-anchor" href="#sharing-reports" aria-label="Link to Sharing reports">#</a></h2>
+<p>Before sharing a report:</p>
+<ul>
+<li>Search for tokens and cookies.</li>
+<li>Remove private URLs and customer data.</li>
+<li>Review failed assertion messages.</li>
+<li>Confirm that example and snapshot content is safe.</li>
+<li>Prefer a sanitized reproduction with test credentials.</li>
+</ul>
+<div class="article-footer"><a class="pager" href="api-environments-secrets.html"><small>Previous</small><strong>API environments and protected secrets</strong></a><a class="pager" href="quick-api.html"><small>Next</small><strong>Quick API</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#assertions">Assertions</a><a class="level-3" href="#status-and-timing">Status and timing</a><a class="level-3" href="#json">JSON</a><a class="level-3" href="#xml">XML</a><a class="level-3" href="#headers-and-cookies">Headers and cookies</a><a class="level-3" href="#body-and-contract">Body and contract</a><a class="level-2" href="#reading-assertion-results">Reading assertion results</a><a class="level-2" href="#extraction-rules">Extraction rules</a><a class="level-3" href="#example-login-then-use-token">Example: login then use token</a><a class="level-3" href="#scope-choice">Scope choice</a><a class="level-3" href="#extraction-safety">Extraction safety</a><a class="level-2" href="#examples">Examples</a><a class="level-2" href="#workspace-documentation">Workspace documentation</a><a class="level-2" href="#history">History</a><a class="level-2" href="#in-app-collection-runner">In-app collection runner</a><a class="level-2" href="#advanced-automation-and-cli">Advanced automation and CLI</a><a class="level-2" href="#safe-script-boundary">Safe script boundary</a><a class="level-2" href="#sharing-reports">Sharing reports</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Local knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">API Workspaces</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy policy</a></div>

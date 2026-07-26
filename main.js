@@ -37,8 +37,8 @@ class Portfolio3D {
 // Enhanced Theme Management with 3D Effects
 class ThemeManager {
     constructor() {
-        this.theme = localStorage.getItem('theme') || 
-                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        const savedTheme = localStorage.getItem('theme');
+        this.theme = savedTheme === 'light' ? 'light' : 'dark';
         this.init();
     }
 
@@ -109,12 +109,6 @@ class ThemeManager {
             themeToggle.addEventListener('click', () => this.toggle());
         }
 
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            if (!localStorage.getItem('theme')) {
-                this.theme = e.matches ? 'dark' : 'light';
-                this.applyTheme();
-            }
-        });
 
         window.addEventListener('scroll', () => this.updateThemeElements());
     }

@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Inspect OpenAPI 3.x JSON/YAML and generate collections or linked documentation."><meta name="theme-color" content="#5b47e8"><title>OpenAPI Studio · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Validate Swagger/OpenAPI JSON or YAML, inspect operations and schemas, and generate API collections."><meta name="theme-color" content="#5b47e8"><title>OpenAPI Studio · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
   <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Developer workspace</small></span></a>
@@ -59,51 +59,109 @@
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
 <a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="getting-started.html">Manual</a><span>/</span><span>API and documentation</span></div><div class="doc-meta"><span class="doc-chip">API and documentation</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="openapi-studio">OpenAPI Studio<a class="heading-anchor" href="#openapi-studio" aria-label="Link to OpenAPI Studio">#</a></h1>
-<p>OpenAPI Studio loads OpenAPI 3.x documents in JSON or YAML.</p>
-<h2 id="main-workflows">Main workflows<a class="heading-anchor" href="#main-workflows" aria-label="Link to Main workflows">#</a></h2>
+<p>OpenAPI Studio parses an API contract locally, lets you inspect its operations and schemas, and can generate an API Workspaces collection.</p>
+<h2 id="supported-documents">Supported documents<a class="heading-anchor" href="#supported-documents" aria-label="Link to Supported documents">#</a></h2>
+<p>The parser supports:</p>
 <ul>
-<li>Inspect paths, operations, schemas, parameters, and security definitions.</li>
-<li>Generate API workspace collections.</li>
-<li>Produce linked Markdown documentation.</li>
-<li>Compare specification structures.</li>
+<li>Swagger 2.0.</li>
+<li>OpenAPI 3.0.</li>
+<li>OpenAPI 3.1.</li>
+<li>JSON.</li>
+<li>YAML.</li>
 </ul>
-<h2 id="load-a-document">Load a document<a class="heading-anchor" href="#load-a-document" aria-label="Link to Load a document">#</a></h2>
-<ol>
-<li>Open OpenAPI Studio.</li>
-<li>Select a JSON or YAML specification.</li>
-<li>Review validation results.</li>
-<li>Browse operations and schemas.</li>
-<li>Generate a collection or documentation only after reviewing the preview.</li>
-</ol>
-<h2 id="limitations">Limitations<a class="heading-anchor" href="#limitations" aria-label="Link to Limitations">#</a></h2>
-<p>A valid OpenAPI document can describe an API without proving that the endpoint is reachable or safe. Generated requests may still need environment values, credentials, or example bodies.</p>
-<h2 id="privacy">Privacy<a class="heading-anchor" href="#privacy" aria-label="Link to Privacy">#</a></h2>
-<p>Parsing happens locally. A generated request reaches a server only when you deliberately send it from an API tool.</p>
-<h2 id="minimal-openapi-example">Minimal OpenAPI example<a class="heading-anchor" href="#minimal-openapi-example" aria-label="Link to Minimal OpenAPI example">#</a></h2>
+<p>The maximum parsing size is 10 MB. <code>info.title</code> is required. Paths must start with <code>/</code>.</p>
+<p>The visible editor label currently says OpenAPI 3.x. The underlying local parser also converts supported Swagger 2.0 input.</p>
+<h2 id="reference-handling">Reference handling<a class="heading-anchor" href="#reference-handling" aria-label="Link to Reference handling">#</a></h2>
+<p>Local <code>$ref</code> references are resolved with safe depth limits. Remote references are not fetched automatically and must be bundled into the local document set before parsing.</p>
+<p>This keeps parsing deterministic and avoids silently contacting external servers.</p>
+<h2 id="minimal-example">Minimal example<a class="heading-anchor" href="#minimal-example" aria-label="Link to Minimal example">#</a></h2>
 <pre><code class="language-yaml">openapi: 3.0.3
 info:
   title: Customer API
   version: 1.0.0
+servers:
+  - url: https://api.example.com
 paths:
   /customers:
     get:
+      operationId: listCustomers
       summary: List customers
       responses:
         '200':
           description: Successful response
 </code></pre>
+<h2 id="validate-and-inspect">Validate and inspect<a class="heading-anchor" href="#validate-and-inspect" aria-label="Link to Validate and inspect">#</a></h2>
+<ol>
+<li>Open <strong>OpenAPI Studio</strong>.</li>
+<li>Paste the JSON or YAML document.</li>
+<li>Select <strong>Validate and inspect</strong>.</li>
+<li>Review the title, OpenAPI version, operation count, and schema count.</li>
+<li>Inspect every operation's method, path, summary, and source pointer.</li>
+<li>Inspect component schema names, types, and property counts.</li>
+</ol>
+<p>Validation is structural. It does not contact the API and does not prove that the described server is reachable, secure, or safe.</p>
+<h2 id="create-a-collection">Create a collection<a class="heading-anchor" href="#create-a-collection" aria-label="Link to Create a collection">#</a></h2>
+<p>After validation, select <strong>Create collection</strong>. The generated collection can include:</p>
+<ul>
+<li>Stable collection and request identifiers.</li>
+<li>Tag-based folders.</li>
+<li>Methods and paths.</li>
+<li>Operation summary and source pointer.</li>
+<li>Path, query, header, and cookie parameters.</li>
+<li>Required and optional parameter notes.</li>
+<li>Request content type and generated/example body.</li>
+<li>Response examples.</li>
+<li>Supported security scheme mapping.</li>
+<li>Environment <code>baseUrl</code> from the first server URL.</li>
+</ul>
+<p>Generated requests are drafts. Review unresolved variables, credentials, file fields, example bodies, and the exact request preview before sending.</p>
+<h2 id="swagger-2-0-conversion">Swagger 2.0 conversion<a class="heading-anchor" href="#swagger-2-0-conversion" aria-label="Link to Swagger 2.0 conversion">#</a></h2>
+<p>Supported Swagger 2.0 fields are rewritten into the internal OpenAPI model, including definitions, security definitions, body/form parameters, response schemas, host/basePath/schemes, and reference paths where representable.</p>
+<p>Migration can still lose source-specific extensions or behavior. Keep the original Swagger file in version control.</p>
+<h2 id="stable-synchronization">Stable synchronization<a class="heading-anchor" href="#stable-synchronization" aria-label="Link to Stable synchronization">#</a></h2>
+<p>The service layer can synchronize a previously generated collection with a new contract while preserving user-authored request details such as:</p>
+<ul>
+<li>Assertions.</li>
+<li>Extraction rules.</li>
+<li>Local variables.</li>
+<li>Example response.</li>
+<li>Notes and selected editable fields.</li>
+</ul>
+<p>Stable IDs are derived from the API structure to make changes meaningful. The current OpenAPI Studio page does not yet expose a dedicated synchronization button; this capability exists in the service layer.</p>
+<h2 id="markdown-generation">Markdown generation<a class="heading-anchor" href="#markdown-generation" aria-label="Link to Markdown generation">#</a></h2>
+<p>The service can generate linked Markdown documentation from the parsed contract. The current visible page focuses on inspect and create-collection actions, so use the available application export workflow when documentation generation is wired to the UI.</p>
+<h2 id="breaking-change-comparison">Breaking-change comparison<a class="heading-anchor" href="#breaking-change-comparison" aria-label="Link to Breaking-change comparison">#</a></h2>
+<p>The comparison service can identify:</p>
+<ul>
+<li>Removed operations.</li>
+<li>Removed schemas.</li>
+<li>Newly required parameters.</li>
+<li>Removed schema properties.</li>
+<li>Changed property types.</li>
+<li>Added operations as non-breaking changes.</li>
+</ul>
+<p>Complex JSON Schema compatibility and real business compatibility still require human review. For example, narrowing an enum or changing undocumented semantics may be breaking even when a simple structural comparison does not flag it.</p>
+<h2 id="openapi-contract-assertions">OpenAPI contract assertions<a class="heading-anchor" href="#openapi-contract-assertions" aria-label="Link to OpenAPI contract assertions">#</a></h2>
+<p>API Workspaces can use an OpenAPI contract assertion to compare a live response with an expected operation response. Combine it with status, JSONPath, timing, header, and business assertions.</p>
+<p>A contract-valid response can still contain the wrong customer, wrong permission decision, or stale business state.</p>
 <h2 id="recommended-workflow">Recommended workflow<a class="heading-anchor" href="#recommended-workflow" aria-label="Link to Recommended workflow">#</a></h2>
 <ol>
-<li>Load the specification.</li>
-<li>Resolve structural validation errors.</li>
-<li>Inspect servers, paths, operations, parameters, request bodies, schemas, and security schemes.</li>
-<li>Generate a collection preview.</li>
-<li>Add environment values separately; do not bake secrets into the specification.</li>
-<li>Send a request only after checking the destination server.</li>
+<li>Keep the API contract in version control.</li>
+<li>Bundle required references.</li>
+<li>Validate and inspect locally.</li>
+<li>Review servers, parameters, bodies, responses, schemas, examples, and security.</li>
+<li>Create or synchronize a collection.</li>
+<li>Put target values in environments.</li>
+<li>Put credentials in protected variables.</li>
+<li>Add assertions and extraction rules.</li>
+<li>Review the exact prepared request.</li>
+<li>Run against a safe test environment before production.</li>
 </ol>
 <h2 id="openapi-and-okf">OpenAPI and OKF<a class="heading-anchor" href="#openapi-and-okf" aria-label="Link to OpenAPI and OKF">#</a></h2>
-<p>OpenAPI describes the API contract. OKF can describe surrounding knowledge, decisions, runbooks, ownership, trust, and links to the OpenAPI resource. One does not replace the other.</p>
-<div class="article-footer"><a class="pager" href="quick-api.html"><small>Previous</small><strong>Quick API</strong></a><a class="pager" href="unified-search.html"><small>Next</small><strong>Unified Search</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#main-workflows">Main workflows</a><a class="level-2" href="#load-a-document">Load a document</a><a class="level-2" href="#limitations">Limitations</a><a class="level-2" href="#privacy">Privacy</a><a class="level-2" href="#minimal-openapi-example">Minimal OpenAPI example</a><a class="level-2" href="#recommended-workflow">Recommended workflow</a><a class="level-2" href="#openapi-and-okf">OpenAPI and OKF</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<p>OpenAPI describes an API contract. OKF can describe the surrounding knowledge: ownership, decisions, runbooks, sources, trust, lifecycle, and links to the contract. They are complementary and should remain portable files.</p>
+<h2 id="privacy">Privacy<a class="heading-anchor" href="#privacy" aria-label="Link to Privacy">#</a></h2>
+<p>Parsing and collection generation are local. The specification can still contain internal URLs, proprietary schemas, or personal example data. Review it before export, issue attachment, or public sharing. Network activity starts only when a generated request is deliberately sent.</p>
+<div class="article-footer"><a class="pager" href="quick-api.html"><small>Previous</small><strong>Quick API</strong></a><a class="pager" href="unified-search.html"><small>Next</small><strong>Unified Search</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#supported-documents">Supported documents</a><a class="level-2" href="#reference-handling">Reference handling</a><a class="level-2" href="#minimal-example">Minimal example</a><a class="level-2" href="#validate-and-inspect">Validate and inspect</a><a class="level-2" href="#create-a-collection">Create a collection</a><a class="level-2" href="#swagger-2-0-conversion">Swagger 2.0 conversion</a><a class="level-2" href="#stable-synchronization">Stable synchronization</a><a class="level-2" href="#markdown-generation">Markdown generation</a><a class="level-2" href="#breaking-change-comparison">Breaking-change comparison</a><a class="level-2" href="#openapi-contract-assertions">OpenAPI contract assertions</a><a class="level-2" href="#recommended-workflow">Recommended workflow</a><a class="level-2" href="#openapi-and-okf">OpenAPI and OKF</a><a class="level-2" href="#privacy">Privacy</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Local knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">API Workspaces</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy policy</a></div>

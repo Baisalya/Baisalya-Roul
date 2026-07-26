@@ -5,7 +5,7 @@ This folder is a dependency-free static website for GitHub Pages or any static h
 ## Contents
 
 - Landing page and platform download cards
-- 41 detailed manual topics
+- 41 detailed manual topics, including an expanded five-page API Studio section
 - Responsive sidebar and table of contents
 - Offline search index
 - Dark/light theme
@@ -39,4 +39,4 @@ Open `http://localhost:8080/`.
 
 ## Documentation basis
 
-The site content was prepared from the uploaded DevDesk source, its bundled offline manuals, feature code, privacy boundaries, and the official Open Knowledge Format v0.2 specification. Labels can change in later app versions, so update the relevant manual page when the UI changes.
+The site content was prepared from the uploaded DevDesk source, its bundled offline manuals, feature code, privacy boundaries, and the official Open Knowledge Format v0.2 specification. The API Studio section is synchronized with the uploaded 2026-07-26 project state and explicitly distinguishes visible controls from tested service-layer capabilities. Labels can change in later app versions, so update the relevant manual page when the UI changes.

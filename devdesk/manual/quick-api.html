@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Send one-off requests without building a full saved workspace."><meta name="theme-color" content="#5b47e8"><title>Quick API · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Send and inspect one-off HTTP requests with bounded responses, history, streaming, and code snippets."><meta name="theme-color" content="#5b47e8"><title>Quick API · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
   <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Developer workspace</small></span></a>
@@ -59,37 +59,92 @@
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
 <a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="getting-started.html">Manual</a><span>/</span><span>API and documentation</span></div><div class="doc-meta"><span class="doc-chip">API and documentation</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="quick-api">Quick API<a class="heading-anchor" href="#quick-api" aria-label="Link to Quick API">#</a></h1>
-<p>Quick API is a lightweight request screen for one-off HTTP testing.</p>
-<h2 id="use-it-when">Use it when<a class="heading-anchor" href="#use-it-when" aria-label="Link to Use it when">#</a></h2>
+<p>Quick API is a compact screen for one-off HTTP testing. It is useful when you want to diagnose one endpoint without creating a complete saved workspace.</p>
+<h2 id="use-quick-api-when">Use Quick API when<a class="heading-anchor" href="#use-quick-api-when" aria-label="Link to Use Quick API when">#</a></h2>
 <ul>
-<li>You need to test one endpoint quickly.</li>
-<li>You do not need a complete saved workspace.</li>
-<li>You want to import or export a small collection.</li>
+<li>You need one temporary request.</li>
+<li>You are checking a health endpoint.</li>
+<li>You want to reproduce a small cURL request.</li>
+<li>You need a bounded response viewer and code snippets.</li>
+<li>You are working in a small Android, split-screen, freeform, or Windows window.</li>
 </ul>
-<h2 id="steps">Steps<a class="heading-anchor" href="#steps" aria-label="Link to Steps">#</a></h2>
+<p>Move to <a href="api-workspaces.html">API Workspaces</a> when the request needs reusable environments, protected variables, inherited auth, multiple related requests, assertions, extraction, examples, runner reports, or long-term documentation.</p>
+<h2 id="build-the-request">Build the request<a class="heading-anchor" href="#build-the-request" aria-label="Link to Build the request">#</a></h2>
 <ol>
-<li>Select a method.</li>
-<li>Enter an HTTPS URL.</li>
-<li>Add headers, parameters, or body content.</li>
-<li>Send the request.</li>
-<li>Inspect the bounded response and history.</li>
+<li>Select the method.</li>
+<li>Enter the URL.</li>
+<li>Choose the maximum response size.</li>
+<li>Add query parameters.</li>
+<li>Add headers.</li>
+<li>Configure body and authorization/environment helpers.</li>
+<li>Review credentials and files.</li>
+<li>Select <strong>Send</strong>.</li>
 </ol>
-<p>For environments, collections, protected variables, assertions, or reports, use <strong>API Workspaces</strong>.</p>
-<h2 id="multipart-requests">Multipart requests<a class="heading-anchor" href="#multipart-requests" aria-label="Link to Multipart requests">#</a></h2>
-<p>Use the provided form-fields editor. Do not manually provide multipart boundary values.</p>
-<h2 id="privacy">Privacy<a class="heading-anchor" href="#privacy" aria-label="Link to Privacy">#</a></h2>
-<p>Request content is transmitted to the endpoint you select. Review credentials, cookies, files, and body content before sending.</p>
-<h2 id="move-to-a-workspace-when-the-request-grows">Move to a workspace when the request grows<a class="heading-anchor" href="#move-to-a-workspace-when-the-request-grows" aria-label="Link to Move to a workspace when the request grows">#</a></h2>
-<p>Switch to API Workspaces when you need:</p>
+<p>For a large or exact download, use <strong>Send and stream response to file</strong>. An active request can be cancelled.</p>
+<h2 id="request-tabs">Request tabs<a class="heading-anchor" href="#request-tabs" aria-label="Link to Request tabs">#</a></h2>
+<h3 id="params">Params<a class="heading-anchor" href="#params" aria-label="Link to Params">#</a></h3>
+<p>Add query names and values as rows. Use this editor instead of manually joining unescaped values into the URL.</p>
+<h3 id="headers">Headers<a class="heading-anchor" href="#headers" aria-label="Link to Headers">#</a></h3>
+<p>Add request headers. Protect credentials and do not duplicate <code>Content-Type</code> unless the endpoint requires a deliberate override.</p>
+<h3 id="body">Body<a class="heading-anchor" href="#body" aria-label="Link to Body">#</a></h3>
+<p>Enter supported body content. The Quick API screen disables GET request bodies. Use the saved workspace editor for the complete body model, binary files, richer multipart workflows, and request-level tests.</p>
+<h3 id="auth-environments">Auth / Environments<a class="heading-anchor" href="#auth-environments" aria-label="Link to Auth / Environments">#</a></h3>
+<p>Select an environment helper, edit base URL values, insert <code>{{baseUrl}}</code>, and configure request authentication. Quick API is not the best place to maintain multiple production secrets over time.</p>
+<h2 id="send-safely">Send safely<a class="heading-anchor" href="#send-safely" aria-label="Link to Send safely">#</a></h2>
+<p>Before sending, confirm:</p>
 <ul>
-<li>Multiple related requests</li>
-<li>Reusable environments</li>
-<li>Protected variables</li>
-<li>Assertions or extraction</li>
-<li>Organized history, reports, or examples</li>
-<li>A generated collection from OpenAPI</li>
+<li>The scheme and host.</li>
+<li>The environment/base URL.</li>
+<li>Authorization and cookies.</li>
+<li>Query parameters.</li>
+<li>Request body.</li>
+<li>File destination when streaming.</li>
+<li>Maximum response size.</li>
 </ul>
-<div class="article-footer"><a class="pager" href="api-assertions-extraction.html"><small>Previous</small><strong>Assertions, extraction, examples, and history</strong></a><a class="pager" href="openapi-studio.html"><small>Next</small><strong>OpenAPI Studio</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#use-it-when">Use it when</a><a class="level-2" href="#steps">Steps</a><a class="level-2" href="#multipart-requests">Multipart requests</a><a class="level-2" href="#privacy">Privacy</a><a class="level-2" href="#move-to-a-workspace-when-the-request-grows">Move to a workspace when the request grows</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<p>A locally created request still transmits data to the remote endpoint.</p>
+<h2 id="response-summary">Response summary<a class="heading-anchor" href="#response-summary" aria-label="Link to Response summary">#</a></h2>
+<p>Quick API shows:</p>
+<ul>
+<li>Status code.</li>
+<li>Response duration.</li>
+<li>Size.</li>
+<li>Preview-truncated state.</li>
+<li>Saved-to-file state.</li>
+</ul>
+<h2 id="response-tabs">Response tabs<a class="heading-anchor" href="#response-tabs" aria-label="Link to Response tabs">#</a></h2>
+<h3 id="pretty">Pretty<a class="heading-anchor" href="#pretty" aria-label="Link to Pretty">#</a></h3>
+<p>Shows formatted text or a bounded binary preview. Image, hex, and Base64 views are used where appropriate.</p>
+<h3 id="raw">Raw<a class="heading-anchor" href="#raw" aria-label="Link to Raw">#</a></h3>
+<p>Shows the raw bounded response text.</p>
+<h3 id="headers-2">Headers<a class="heading-anchor" href="#headers-2" aria-label="Link to Headers">#</a></h3>
+<p>Shows response headers.</p>
+<h3 id="timeline-info">Timeline / Info<a class="heading-anchor" href="#timeline-info" aria-label="Link to Timeline / Info">#</a></h3>
+<p>Shows method, final URL, status, response time, and header count.</p>
+<h3 id="code-snippets">Code Snippets<a class="heading-anchor" href="#code-snippets" aria-label="Link to Code Snippets">#</a></h3>
+<p>Generates:</p>
+<ul>
+<li>cURL.</li>
+<li>Dart <code>http</code>.</li>
+<li>JavaScript <code>fetch</code>.</li>
+</ul>
+<p>Generated snippets are starting points. Review encoding, platform APIs, file handling, redirects, and secrets before using them in production code.</p>
+<h2 id="history">History<a class="heading-anchor" href="#history" aria-label="Link to History">#</a></h2>
+<p>Quick API keeps a small local history. You can reload, duplicate, or delete an entry. <strong>Clear history</strong> removes all saved Quick API requests.</p>
+<p>Protected request-history handling can omit or redact sensitive values, but ordinary URLs and bodies may still be confidential.</p>
+<h2 id="import-and-export">Import and export<a class="heading-anchor" href="#import-and-export" aria-label="Link to Import and export">#</a></h2>
+<p>Quick API can import a compatible collection after showing a safety preview and can export a small collection. Use API Workspaces for detailed migration reports, nested organization, environments, assertions, and documentation export.</p>
+<h2 id="common-failures">Common failures<a class="heading-anchor" href="#common-failures" aria-label="Link to Common failures">#</a></h2>
+<h3 id="dns-or-connection-error">DNS or connection error<a class="heading-anchor" href="#dns-or-connection-error" aria-label="Link to DNS or connection error">#</a></h3>
+<p>Confirm the hostname, internet connection, VPN, proxy, firewall, and server availability.</p>
+<h3 id="tls-error">TLS error<a class="heading-anchor" href="#tls-error" aria-label="Link to TLS error">#</a></h3>
+<p>Do not disable certificate verification blindly. Confirm date/time, certificate chain, host name, and development CA setup.</p>
+<h3 id="timeout">Timeout<a class="heading-anchor" href="#timeout" aria-label="Link to Timeout">#</a></h3>
+<p>Check server performance and response size. Increase limits only when the endpoint behavior is understood.</p>
+<h3 id="empty-or-malformed-response">Empty or malformed response<a class="heading-anchor" href="#empty-or-malformed-response" aria-label="Link to Empty or malformed response">#</a></h3>
+<p>Review status, headers, content type, raw body, and server logs. A body parser error may be caused by the server returning HTML or plain text instead of JSON.</p>
+<h2 id="privacy">Privacy<a class="heading-anchor" href="#privacy" aria-label="Link to Privacy">#</a></h2>
+<p>The destination receives the selected method, URL, headers, authorization, query values, cookies, body, files, and normal network information such as your public IP address. DevDesk does not relay the request through a DevDesk-operated server.</p>
+<div class="article-footer"><a class="pager" href="api-assertions-extraction.html"><small>Previous</small><strong>Assertions, extraction, examples, and history</strong></a><a class="pager" href="openapi-studio.html"><small>Next</small><strong>OpenAPI Studio</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#use-quick-api-when">Use Quick API when</a><a class="level-2" href="#build-the-request">Build the request</a><a class="level-2" href="#request-tabs">Request tabs</a><a class="level-3" href="#params">Params</a><a class="level-3" href="#headers">Headers</a><a class="level-3" href="#body">Body</a><a class="level-3" href="#auth-environments">Auth / Environments</a><a class="level-2" href="#send-safely">Send safely</a><a class="level-2" href="#response-summary">Response summary</a><a class="level-2" href="#response-tabs">Response tabs</a><a class="level-3" href="#pretty">Pretty</a><a class="level-3" href="#raw">Raw</a><a class="level-3" href="#headers-2">Headers</a><a class="level-3" href="#timeline-info">Timeline / Info</a><a class="level-3" href="#code-snippets">Code Snippets</a><a class="level-2" href="#history">History</a><a class="level-2" href="#import-and-export">Import and export</a><a class="level-2" href="#common-failures">Common failures</a><a class="level-3" href="#dns-or-connection-error">DNS or connection error</a><a class="level-3" href="#tls-error">TLS error</a><a class="level-3" href="#timeout">Timeout</a><a class="level-3" href="#empty-or-malformed-response">Empty or malformed response</a><a class="level-2" href="#privacy">Privacy</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Local knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">API Workspaces</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy policy</a></div>
