@@ -9,7 +9,7 @@ window.DEVDESK_SITE_CONFIG = {
   windows: {
     status: "available",
     label: "View Windows releases",
-    url: "https://github.com/Baisalya/devdesk/releases/latest",
+    url: "https://github.com/Baisalya/devdesk-support/releases/latest",
     note: "Use only packages published by the developer."
   },
   macos: {

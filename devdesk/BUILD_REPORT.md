@@ -12,7 +12,7 @@
 ## Important download-link status
 
 - Android URL: `https://play.google.com/store/apps/details?id=com.baishalya.devdesk` (labelled testing)
-- Windows URL: `https://github.com/Baisalya/devdesk/releases/latest`
+- Windows URL: `https://github.com/Baisalya/devdesk-support/releases/latest`
 - macOS: disabled / not released
 
 ## Documentation coverage
