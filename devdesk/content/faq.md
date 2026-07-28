@@ -1,49 +1,69 @@
 # Frequently asked questions
 
+## Why should I use DevDesk instead of separate planning, notes, and developer apps?
+
+Use DevDesk when those activities belong to the same folder. The same ordinary files can power task views, connected notes, portable project identity, saved API testing, structure checks, and workspace-scoped Git. You can still open the files in other tools.
+
+## Is DevDesk only for developers?
+
+No. Personal, Study, Business, and Research / writing profiles hide developer complexity until it is useful. A normal user can begin with New, Today, Tasks, Notes, and familiar views.
+
+## What is `project.devdesk`?
+
+It is a portable UTF-8 JSON file that stores project identity and project-relative configuration. It is not project content, a secret store, or an executable workspace.
+
+## Must every folder have a manifest?
+
+No. **Open once without writing** registers a folder only on the current device. Add a manifest when you want the identity and settings to travel with the folder.
+
+## Does opening a project run commands?
+
+No. Opening and indexing are data operations. Git status or another bounded execution feature needs separate device-local trust and an explicit user action.
+
 ## Does DevDesk upload my project folder?
 
 No DevDesk-operated project upload or cloud-sync service is included. User-initiated network tools can still send data to destinations you choose.
 
-## Is Structured Knowledge an AI feature?
+## What can Safe automatic change?
 
-The current structured-knowledge workflow uses deterministic local analysis and preview-first file changes. It does not require a bundled online AI provider.
+Only deterministic reversible DevDesk-managed maintenance, such as managed indexes. It cannot invent sources, verification, trust, lifecycle, computation results, or project facts.
+
+## Can I review and undo automation?
+
+Yes. **Review changes** stores a durable accept/reject plan. Managed batches record recovery information first. A successful plan can remain undoable across restart while affected files are unchanged.
 
 ## Does removing a workspace delete the folder?
 
-No. It removes the registration, not the source folder.
+No. It removes only the private DevDesk registration.
 
 ## Can the graph change Markdown?
 
-The connection editor can add or remove links inside a clearly marked DevDesk-managed Markdown block. Manually authored links outside that block are preserved.
+Yes, when you explicitly edit a relationship. New managed relationships use standard Markdown links inside a marked managed block. Manual links and prose outside the block remain untouched.
+
+## Why do graph labels disappear when zoomed out?
+
+The graph collapses distant labels into compact type-colored markers to reduce clutter. The selected note remains labeled, and hovering a node shows its details.
+
+## Is Structured Knowledge an AI feature?
+
+No online AI provider is required. Current validation and managed maintenance use deterministic local rules and do not invent semantic facts.
+
+## Is every OKF warning a failure?
+
+No. Required errors, warnings, DevDesk advice, and extensions are separate. Optional metadata and unknown producer fields are not false conformance errors.
+
+## Can I use wiki links?
+
+Existing wiki links remain readable as a DevDesk extension. Standard Markdown links are the portable form and are used for new graph-managed relationships.
 
 ## Are API requests offline?
 
-No. Building and storing requests is local, but sending a request requires network access and transmits data to the selected server.
+Building and storing a request is local. Sending it uses the network and transmits data to the chosen destination.
 
 ## Are backups encrypted?
 
-DevDesk-generated backup JSON is portable and should be treated as sensitive. Protected secret values are excluded, but other content can remain confidential.
-
-## Can I reopen onboarding?
-
-Yes. Open Settings or the User Manual and select **View onboarding again**.
-
-## Where is help for a specific tool?
-
-Use the help icon in that tool's app bar. It opens the relevant offline manual topic.
-
-## Is OKF owned by DevDesk?
-
-No. DevDesk implements workflows around the open specification. The official OKF v0.2 specification is published in the GoogleCloudPlatform knowledge-catalog repository.
-
-## Does every Markdown file need full trust metadata?
-
-No. `type` is the only always-required OKF concept key. Sources, verification, lifecycle, indexes, and logs are optional signals and navigation aids.
-
-## Can I use wiki links in an OKF bundle?
-
-DevDesk can use wiki-style links for its knowledge workflow, but standard Markdown links are the portable relationship form defined by OKF. Prefer standard links when interoperability is the priority.
+Portable backup JSON should be treated as sensitive. Protected secret values are excluded, but other confidential content may remain.
 
 ## Why is macOS shown without a download?
 
-A platform card communicates current availability. It must not imply that a signed, notarized, tested package exists when one has not been released.
+A platform card communicates availability. It does not claim a signed, notarized package exists before one is released.

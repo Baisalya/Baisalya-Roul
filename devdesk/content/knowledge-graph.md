@@ -1,80 +1,79 @@
-# Knowledge Graph
+# Relationships and graph
 
-The graph visualizes resolved Markdown relationships. Markdown remains the source of truth.
+The graph visualizes relationships resolved from saved Markdown links. Markdown remains the source of truth; DevDesk does not require a separate graph database.
 
-## Local and workspace graphs
+## Local and Workspace views
 
-- **Local graph:** the active note, nearby outgoing links, and backlinks.
-- **Workspace graph:** indexed relationships across the selected workspace.
+- **Local:** active note plus nearby outgoing links and backlinks.
+- **Workspace:** a bounded view of indexed relationships across the active project.
 
-## Navigation
+Use **Depth** to expand the Local neighborhood. Use title, path, type, or tag filters to narrow either view.
+
+## Professional focus behavior
+
+The graph keeps dense projects readable:
+
+- connections remain thin at every zoom level;
+- links use soft curves instead of heavy rods;
+- reciprocal links use separate curved lanes;
+- hovering a node emphasizes only its immediate neighborhood;
+- unrelated nodes and links remain as quiet context;
+- arrows appear on focused connections to show outgoing direction;
+- the selected node uses a clear surface, border, and readable label.
+
+## Navigate and arrange
 
 - Select a node to open its document.
-- Use **+** and **−** to zoom.
-- Use **Fit** to center the visible graph.
-- Pan the canvas with touch or mouse.
-- Filter by title, path, type, or tag where available.
+- Pan with touch, mouse, or trackpad.
+- Use **+** and **-** or a canvas gesture to zoom.
+- Use **Fit view** after changing filters, depth, or window size.
+- Drag a node to save a preferred device-local position.
 
-## Display options
+When zoomed far out, non-selected labels collapse into compact type-colored nodes. The selected note remains labeled. Hover a compact node to see its title, path, and connection count.
 
-Advanced options can show or hide labels, arrows, and orphan notes, and can adjust node size, link thickness, or local depth. They are collapsed by default so the graph remains the primary content.
-
-## Edit connections
-
-Connection editing updates a DevDesk-managed Markdown block in the active document.
-
-- Add an outgoing connection by selecting another node.
-- Remove only DevDesk-managed connections from the graph editor.
-- Manually authored links outside the managed block are preserved.
-- Self-links are blocked.
-- Save and re-index complete the update.
-
-## Direction and neighborhood
-
-Arrow direction represents outgoing Markdown links. Local graph neighborhood can include both outgoing links and backlinks.
-
-## Troubleshooting
-
-If a node is missing, save the file, rebuild the graph, check the link target, and inspect unresolved or ambiguous link issues.
-
-
-<div class="diagram-card" role="img" aria-label="Directed graph example showing Architecture linking to API Contract and Data Model, and both linking to Deployment Runbook">
-<svg class="graph-diagram" viewBox="0 0 920 400" xmlns="http://www.w3.org/2000/svg">
-  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" /></marker></defs>
-  <path class="edge" d="M235 110 C340 110, 360 85, 470 85" marker-end="url(#arrow)"/>
-  <path class="edge" d="M235 132 C345 165, 360 250, 470 260" marker-end="url(#arrow)"/>
-  <path class="edge" d="M635 95 C740 120, 760 170, 765 230" marker-end="url(#arrow)"/>
-  <path class="edge" d="M635 260 C705 260, 730 260, 765 260" marker-end="url(#arrow)"/>
-  <g class="node primary"><rect x="45" y="70" width="190" height="90" rx="22"/><text x="140" y="108">Architecture</text><text class="sub" x="140" y="134">active note</text></g>
-  <g class="node"><rect x="470" y="45" width="165" height="80" rx="20"/><text x="552" y="82">API Contract</text><text class="sub" x="552" y="106">outgoing link</text></g>
-  <g class="node"><rect x="470" y="225" width="165" height="80" rx="20"/><text x="552" y="262">Data Model</text><text class="sub" x="552" y="286">outgoing link</text></g>
-  <g class="node"><rect x="765" y="215" width="130" height="90" rx="20"/><text x="830" y="252">Deployment</text><text x="830" y="274">Runbook</text></g>
-</svg>
-<p class="diagram-caption">Each saved Markdown link becomes a directed edge. The target note receives a backlink automatically.</p>
-</div>
-
-
-## What the graph does not mean
-
-- A larger node normally reflects connection/layout rules, not importance or truth.
-- A link proves only that one file references another; it does not validate the referenced claim.
-- An orphan can be intentional, such as a draft not yet connected.
-- Broken links are useful diagnostics and are tolerated by OKF.
-
-## Local graph spacing
-
-The local view places the active note centrally and distributes nearby nodes around it. Use **Fit** after changing depth, filters, or window size.
-
-## Graph controls
+## Display controls
 
 | Control | Effect |
 |---|---|
-| Local / Workspace | Switches between neighborhood and complete indexed graph |
-| Depth | Expands how many relationship steps appear in a local graph |
-| `+` / `−` | Zooms the complete canvas |
-| Fit | Centers and scales visible nodes |
-| Node size | Changes individual node rendering size |
-| Link thickness | Changes edge rendering width |
-| Labels | Shows or hides text labels |
-| Arrows | Shows outgoing direction |
+| Local / Workspace | Switches between neighborhood and bounded project graph |
+| Depth | Adds relationship steps to the Local view |
+| `+` / `-` | Zooms the complete canvas |
+| Fit view | Centers and scales visible nodes |
+| Node size | Changes node rendering size |
+| Link width | Adjusts connection emphasis inside a safe range |
+| Labels | Shows or hides node titles |
+| Arrows | Shows direction on focused links |
 | Orphans | Includes or hides unconnected notes |
+
+Link width is deliberately bounded so zooming or moving the control cannot turn connections into opaque bands.
+
+## Edit connections
+
+1. Open the source note.
+2. Select **Edit links**.
+3. Select a target node.
+4. Finish link editing.
+
+DevDesk writes portable standard Markdown links inside its managed block. It can remove only links it created there. Manual links, wiki links, and prose outside the block are preserved.
+
+Connection badges distinguish managed outgoing, manual outgoing, incoming, and available targets without relying on color alone.
+
+If the source already has unsaved text, the connection stays in the draft instead of forcing a save. **Undo** restores the previous content while safe. An external edit blocks undo instead of being overwritten.
+
+## What a graph edge means
+
+- A link proves only that one file references another.
+- It does not prove that either claim is correct or verified.
+- Node size reflects layout and connection rules, not truth or priority.
+- An orphan may be an intentional draft.
+- Broken or ambiguous links are diagnostics, not reasons to delete content automatically.
+
+## Troubleshooting
+
+- Save the active Markdown file.
+- Select **Fit view**.
+- Clear filters.
+- Hover one node to isolate its neighborhood.
+- Reduce **Link width** if you increased it.
+- Inspect unresolved and ambiguous links.
+- Refresh the project index when watching is unavailable.

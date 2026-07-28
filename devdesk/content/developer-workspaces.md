@@ -1,66 +1,200 @@
-# Developer Workspaces
+# Folders, portability, and scoped Git
 
-Developer Workspaces register local project folders without copying them into a DevDesk cloud account.
+A Developer Workspace connects DevDesk to a project folder you own. Source files remain in place; DevDesk does not create a private cloud copy.
 
-## When to use
+## Create a new project
 
-Use a workspace when a folder contains Markdown documentation, technical decisions, API notes, runbooks, or project knowledge that should remain in ordinary files.
+1. On Home, select **New workspace**.
+2. Choose Personal, Study, Business, Research / writing, Software, or Blank.
+3. Enter a workspace name.
+4. Review the exact folders, Markdown files, and `project.devdesk` that will be created.
+5. Choose the parent folder.
+6. DevDesk creates one new child folder and opens the unified workspace shell.
 
-## Add a workspace
+If the child folder or a destination file already exists, creation stops safely. A failed transaction is removed only when the transaction marker, exact created paths, and recorded fingerprints still match. If another app or person added or changed anything, DevDesk preserves the folder for review.
 
-1. Open **Developer Workspaces**.
-2. Select **Add workspace**.
-3. Choose **Import existing folder** or create a named workspace.
-4. Select a folder through the platform picker.
-5. Open the registered workspace.
+## Open an existing folder
 
-Removing a workspace registration does not delete its source files.
+### Add `project.devdesk` and open
 
-## What DevDesk indexes
+Use this when you want portable project identity and settings. The manifest is created only when absent and writable.
 
-DevDesk can inspect supported Markdown files, frontmatter, headings, tags, wiki links, normal Markdown links, backlinks, unresolved references, and graph relationships.
+### Open once without writing
 
-## Health and permissions
+Use this when the folder must remain unchanged. The registration exists only on the current device until you later add a manifest.
 
-A workspace can become read-only or unavailable if its folder moves or Android access is lost. Re-select the folder instead of creating a duplicate registration.
+### Open an existing manifest
 
-## Android notes
+Choose `project.devdesk`. DevDesk validates it and restores the project by its stable ID. Moving the folder does not change that identity.
 
-Android access depends on the folder location and the picker permission provided by the operating system. Keep the selected folder available and avoid moving it while DevDesk is open.
+Invalid UTF-8, invalid JSON, duplicate keys, duplicate case variants, mismatched IDs, forbidden content, and unsupported future versions are never silently overwritten. Future versions can open for diagnostic read-only analysis.
 
-## Windows notes
+## What `project.devdesk` contains
 
-Windows workspaces use selected local paths. Network drives, removable drives, permission changes, or antivirus locks can make a workspace temporarily unavailable.
+The schema-v1 file is ordinary UTF-8 JSON. It can contain:
 
-## Safety
+- format and schema version;
+- stable project ID and display name;
+- project-relative knowledge roots;
+- excluded paths;
+- OKF mode;
+- enabled project tools;
+- optional project-relative artifact or source hints.
 
-DevDesk does not delete source files when you remove a workspace. A write action should show a preview or confirmation when it can change multiple documents.
+It cannot contain:
 
-## Recommended first folder
+- passwords, tokens, cookies, credentials, or private keys;
+- absolute paths;
+- commands, scripts, tasks, or environment variables;
+- execution trust;
+- recent files, graph positions, drafts, permissions, or other personal state.
 
-A useful workspace normally contains ordinary `.md` files grouped by purpose:
+## Canonical example
 
-```text
-project-docs/
-├── index.md
-├── architecture/
-├── api/
-├── decisions/
-├── runbooks/
-└── references/
+```json
+{
+  "format": "devdesk.workspace",
+  "knowledge": {
+    "okf": "detect",
+    "roots": ["."]
+  },
+  "name": "Example Project",
+  "projectId": "7f85d807-62af-4cfe-8f1f-d1f0b70c1bc4",
+  "root": ".",
+  "schemaVersion": 1,
+  "tools": {
+    "markdown": {
+      "enabled": true
+    }
+  }
+}
 ```
 
-DevDesk does not require this exact structure. It scans supported Markdown and builds relationships from the content.
+Use DevDesk to create the manifest whenever possible; do not copy the example UUID into multiple projects.
 
-## Register versus copy
+## Unified workspace and advanced explorer
 
-Registering a workspace tells DevDesk where the folder is. It does not create a cloud copy. Removing the registration does not delete the folder.
+The primary workspace combines:
 
-## Re-index after external changes
+- Overview, Inbox, Today, Tasks, Notes, Files, and Views;
+- List, Board, Calendar, Timeline, Outline, and graph projections of ordinary Markdown;
+- selected-item details and typed relationships;
+- suggested changes, developer tools, help, and settings;
+- compact drawer/details-sheet layouts and wide navigation/inspector layouts.
 
-When another editor changes files:
+Opening a compatible tool keeps the active project and selected file attached.
 
-1. Save or discard any unsaved DevDesk edit.
-2. Refresh or rebuild the workspace index.
-3. Review conflict warnings before overwriting.
-4. Re-select the folder if Android permission was lost or the path moved.
+The earlier **Workspace Hub** remains under **Files → Open explorer**. It provides the bounded project tree, breadcrumb navigation, nested-folder browsing, safe **New file**/**New folder** actions, detailed project capabilities, and exact project-file selection.
+
+### Browse a real project, not a copied vault
+
+The explorer enumerates metadata inside the selected root and applies the same hidden/generated/excluded-path policy as other project discovery. It does not load every file into memory. Directories appear before files. Search can find a nested path; selecting a folder opens it, while selecting a file makes that project-relative path available to compatible tools.
+
+The breadcrumb always starts at **Root**. Use it to move back from `docs/architecture` to `docs` or the main project folder without closing the Workspace.
+
+### Create a file or folder
+
+Use the toolbar or explorer actions:
+
+1. Open the destination folder in the breadcrumb.
+2. Select **New file** or **New folder**.
+3. For a file, enter its name and choose Markdown, portable API workspace, JSON, YAML, HTTP request, text, or empty file.
+4. DevDesk adds the selected extension when the name does not already have one.
+5. DevDesk generates minimal starter content and selects the new file.
+
+Creation is exclusive. If the name already exists, the action stops and leaves the existing file untouched. Names containing traversal separators, control characters, Windows-reserved characters, reserved device names, or trailing spaces/dots are rejected before the filesystem call.
+
+Markdown creation is sent directly to the incremental project index. Other files become visible by invalidating the bounded project tree; external watching continues to handle changes made by other developer tools.
+
+### Recover from an incompatible tool selection
+
+A file-specific tool does not silently open unrelated global data. If its project file is missing, unsupported, or unreadable, the page includes a working Back action and **Choose a project file** button. This returns to the same Workspace and does not change project content.
+
+## Git clone and portable reopen
+
+A professional portable project can use the repository root or a nested
+workspace:
+
+```text
+shopdesk/
+  .git/
+  README.md
+  docs/
+    project.devdesk
+    devdesk-api-workspace.json
+    Home.md
+    architecture.md
+  lib/
+    main.dart
+```
+
+The responsibilities are separate:
+
+| Item | Purpose | Share in Git? |
+|---|---|---|
+| `project.devdesk` | Stable DevDesk identity and relative configuration | Yes |
+| Markdown, JSON, YAML, OpenAPI, source | Actual project-owned work | Yes, according to normal project policy |
+| `devdesk-api-workspace.json` | Sanitized API structure | Yes |
+| `.git/` | Local Git metadata created by clone/init | No; Git manages it |
+| tokens, cookies, history, machine network settings, trust, UI state | Device-local private state | No |
+
+After `git clone`, open `docs/project.devdesk`. DevDesk reconstructs the local
+registry from `projectId`, uses the manifest directory as the workspace root,
+discovers the parent Git repository when Git status is explicitly opened, and
+opens the workspace shell. The user does not recreate the project or manually rebuild
+its Markdown graph/API structure.
+
+Opening a valid manifest still performs data-only discovery. It does not run Git, API requests, hooks, project scripts, or build commands.
+
+## Project API artifact
+
+When **Developer tools → API testing** is opened without the portable API artifact, a writable project automatically receives:
+
+```text
+devdesk-api-workspace.json
+```
+
+The initial document has a stable project-derived API workspace ID and valid DevDesk API workspace structure. Opening the file on the same device refreshes the matching local cache instead of making duplicates. Structural API edits are debounced and written back with the fingerprint captured when the file was opened.
+
+Every project write is sanitized. The shareable document excludes:
+
+- tokens, passwords, API keys, protected variables, cookies, and OAuth credentials;
+- request/response history and runner reports;
+- favourite/archive and last-used state;
+- proxy/TLS/Local Agent settings, execution trust, and filesystem permission grants.
+
+Protected local secrets can be reapplied after a project-file refresh. List items are matched by stable `id` (or variable `key`) so a Git reorder cannot redirect one environment or request's credential to another. If an item was removed, its obsolete secret is not copied to a different item.
+
+If Git, an editor, or another DevDesk instance changes the file after it was opened, the expected fingerprint no longer matches. DevDesk stops the save and asks the user to reopen rather than overwriting the external change.
+
+## Automation modes and recovery
+
+| Mode | Project-write behavior |
+|---|---|
+| Safe automatic | Applies only deterministic reversible managed maintenance |
+| Review changes | Stores a durable plan until you accept or reject it |
+| Manual | Requires an explicit action before every write |
+
+Recovery information is recorded before a managed batch. Partial failures roll back only unchanged DevDesk writes. External edits are preserved. A successful managed plan can remain undoable after restarting DevDesk.
+
+## Android access
+
+Select the folder that directly contains `project.devdesk`. Android grants a document-tree URI, not a normal filesystem path. DevDesk keeps that URI opaque and uses only capabilities supplied by the provider.
+
+If permission is revoked, re-select the same folder instead of creating a duplicate workspace.
+
+## Windows folders and Git
+
+Windows local folders can use filtered, debounced file watching. A valid manifest can cold-start DevDesk or activate its project in an already-running window.
+
+Git status requires a separate device-local execution-trust decision. DevDesk
+resolves `git rev-parse --show-toplevel`, then keeps the repository root and
+selected workspace root as separate boundaries. If Git belongs to a parent
+folder, status and recent history use only the repository-relative workspace
+pathspec. Diff, stage, unstage, and protected discard validate every selected
+path against the folder containing `project.devdesk`; changes elsewhere in the
+parent repository are excluded and cannot make a scoped mutation stale.
+
+Opening the manifest never grants trust or runs Git.
+
+Removing a workspace registration never deletes its project folder.

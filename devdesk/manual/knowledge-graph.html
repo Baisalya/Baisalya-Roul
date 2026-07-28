@@ -1,7 +1,7 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Read, filter, zoom, fit, and troubleshoot local and workspace graphs."><meta name="theme-color" content="#5b47e8"><title>Knowledge Graph · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Explore clean local and workspace relationships, filters, accessible lists, link editing, and undo."><meta name="theme-color" content="#5b47e8"><title>Relationships and graph · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
-  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Developer workspace</small></span></a>
+  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Your files. Your workspace.</small></span></a>
   <nav class="top-nav" aria-label="Primary navigation">
     <a class="" href="../index.html">Home</a>
     <a class="active" href="../manual/getting-started.html">Manual</a>
@@ -9,7 +9,7 @@
     <a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy</a>
   </nav>
   <div class="header-actions">
-    <button class="search-btn" type="button" data-search><span>Search manual</span> <kbd>/</kbd></button>
+    <button class="search-btn" type="button" data-search aria-label="Search manual"><span>Search manual</span> <kbd>/</kbd></button>
     <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
   </div>
 </header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
@@ -17,18 +17,18 @@
 <a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
 <a class="" href="../manual/interface-tour.html">Interface tour</a>
 <h2>Knowledge and Markdown</h2>
-<a class="" href="../manual/developer-workspaces.html">Developer Workspaces</a>
+<a class="" href="../manual/developer-workspaces.html">Folders, portability, and Git</a>
 <a class="" href="../manual/project-folder-structure.html">Create a project knowledge structure</a>
 <a class="" href="../manual/markdown-basics.html">Markdown basics</a>
 <a class="" href="../manual/frontmatter-properties.html">YAML frontmatter and properties</a>
 <a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
-<a class="" href="../manual/knowledge-workspace.html">Knowledge Workspace</a>
-<a class="active" href="../manual/knowledge-graph.html" aria-current="page">Knowledge Graph</a>
+<a class="" href="../manual/knowledge-workspace.html">Edit workspace Markdown</a>
+<a class="active" href="../manual/knowledge-graph.html" aria-current="page">Relationships and graph</a>
 <a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
 <a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
 <a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
-<h2>Structured Knowledge / OKF</h2>
-<a class="" href="../manual/structured-knowledge-okf.html">Structured Knowledge and OKF</a>
+<h2>Structure checks (OKF)</h2>
+<a class="" href="../manual/structured-knowledge-okf.html">Structure checks (OKF)</a>
 <a class="" href="../manual/okf-bundle-structure.html">OKF bundle structure</a>
 <a class="" href="../manual/okf-concepts-metadata.html">OKF concepts and metadata</a>
 <a class="" href="../manual/okf-conversion-migration.html">Analyze, convert, and migrate folders</a>
@@ -36,12 +36,12 @@
 <a class="" href="../manual/okf-attested-computation.html">Attested Computation</a>
 <h2>API and documentation</h2>
 <a class="" href="../manual/readme-generator.html">README Generator</a>
-<a class="" href="../manual/api-workspaces.html">API Workspaces</a>
+<a class="" href="../manual/api-workspaces.html">Saved API testing</a>
 <a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
 <a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
 <a class="" href="../manual/quick-api.html">Quick API</a>
 <a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
-<a class="" href="../manual/unified-search.html">Unified Search</a>
+<a class="" href="../manual/unified-search.html">Search this workspace</a>
 <h2>Developer utilities</h2>
 <a class="" href="../manual/json-tools.html">JSON Tools</a>
 <a class="" href="../manual/jwt-decoder.html">JWT Decoder</a>
@@ -50,7 +50,7 @@
 <a class="" href="../manual/url-tools.html">URL Encoder and Decoder</a>
 <a class="" href="../manual/timestamp.html">Timestamp Converter</a>
 <a class="" href="../manual/uuid.html">UUID Generator</a>
-<a class="" href="../manual/diff-git.html">Diff Workspace and local Git</a>
+<a class="" href="../manual/diff-git.html">Compare files and scoped Git</a>
 <a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
 <h2>Safety and reference</h2>
 <a class="" href="../manual/backup-restore.html">Backup and restore</a>
@@ -58,110 +58,115 @@
 <a class="" href="../manual/privacy-security.html">Privacy and security</a>
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
-<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="getting-started.html">Manual</a><span>/</span><span>Knowledge and Markdown</span></div><div class="doc-meta"><span class="doc-chip">Knowledge and Markdown</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="knowledge-graph">Knowledge Graph<a class="heading-anchor" href="#knowledge-graph" aria-label="Link to Knowledge Graph">#</a></h1>
-<p>The graph visualizes resolved Markdown relationships. Markdown remains the source of truth.</p>
-<h2 id="local-and-workspace-graphs">Local and workspace graphs<a class="heading-anchor" href="#local-and-workspace-graphs" aria-label="Link to Local and workspace graphs">#</a></h2>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="getting-started.html">Manual</a><span>/</span><span>Knowledge and Markdown</span></div><div class="doc-meta"><span class="doc-chip">Knowledge and Markdown</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div>
+<h1 id="relationships-and-graph">Relationships and graph<a class="heading-anchor" href="#relationships-and-graph" aria-label="Link to Relationships and graph">#</a></h1>
+<p>The graph visualizes relationships resolved from saved Markdown links. Markdown remains the source of truth; DevDesk does not require a separate graph database.</p>
+<h2 id="local-and-workspace-views">Local and Workspace views<a class="heading-anchor" href="#local-and-workspace-views" aria-label="Link to Local and Workspace views">#</a></h2>
 <ul>
-<li><strong>Local graph:</strong> the active note, nearby outgoing links, and backlinks.</li>
-<li><strong>Workspace graph:</strong> indexed relationships across the selected workspace.</li>
+<li><strong>Local:</strong> active note plus nearby outgoing links and backlinks.</li>
+<li><strong>Workspace:</strong> a bounded view of indexed relationships across the active project.</li>
 </ul>
-<h2 id="navigation">Navigation<a class="heading-anchor" href="#navigation" aria-label="Link to Navigation">#</a></h2>
+<p>Use <strong>Depth</strong> to expand the Local neighborhood. Use title, path, type, or tag filters to narrow either view.</p>
+<h2 id="professional-focus-behavior">Professional focus behavior<a class="heading-anchor" href="#professional-focus-behavior" aria-label="Link to Professional focus behavior">#</a></h2>
+<p>The graph keeps dense projects readable:</p>
+<ul>
+<li>connections remain thin at every zoom level;</li>
+<li>links use soft curves instead of heavy rods;</li>
+<li>reciprocal links use separate curved lanes;</li>
+<li>hovering a node emphasizes only its immediate neighborhood;</li>
+<li>unrelated nodes and links remain as quiet context;</li>
+<li>arrows appear on focused connections to show outgoing direction;</li>
+<li>the selected node uses a clear surface, border, and readable label.</li>
+</ul>
+<h2 id="navigate-and-arrange">Navigate and arrange<a class="heading-anchor" href="#navigate-and-arrange" aria-label="Link to Navigate and arrange">#</a></h2>
 <ul>
 <li>Select a node to open its document.</li>
-<li>Use <strong>+</strong> and <strong>−</strong> to zoom.</li>
-<li>Use <strong>Fit</strong> to center the visible graph.</li>
-<li>Pan the canvas with touch or mouse.</li>
-<li>Filter by title, path, type, or tag where available.</li>
+<li>Pan with touch, mouse, or trackpad.</li>
+<li>Use <strong>+</strong> and <strong>-</strong> or a canvas gesture to zoom.</li>
+<li>Use <strong>Fit view</strong> after changing filters, depth, or window size.</li>
+<li>Drag a node to save a preferred device-local position.</li>
 </ul>
-<h2 id="display-options">Display options<a class="heading-anchor" href="#display-options" aria-label="Link to Display options">#</a></h2>
-<p>Advanced options can show or hide labels, arrows, and orphan notes, and can adjust node size, link thickness, or local depth. They are collapsed by default so the graph remains the primary content.</p>
-<h2 id="edit-connections">Edit connections<a class="heading-anchor" href="#edit-connections" aria-label="Link to Edit connections">#</a></h2>
-<p>Connection editing updates a DevDesk-managed Markdown block in the active document.</p>
-<ul>
-<li>Add an outgoing connection by selecting another node.</li>
-<li>Remove only DevDesk-managed connections from the graph editor.</li>
-<li>Manually authored links outside the managed block are preserved.</li>
-<li>Self-links are blocked.</li>
-<li>Save and re-index complete the update.</li>
-</ul>
-<h2 id="direction-and-neighborhood">Direction and neighborhood<a class="heading-anchor" href="#direction-and-neighborhood" aria-label="Link to Direction and neighborhood">#</a></h2>
-<p>Arrow direction represents outgoing Markdown links. Local graph neighborhood can include both outgoing links and backlinks.</p>
-<h2 id="troubleshooting">Troubleshooting<a class="heading-anchor" href="#troubleshooting" aria-label="Link to Troubleshooting">#</a></h2>
-<p>If a node is missing, save the file, rebuild the graph, check the link target, and inspect unresolved or ambiguous link issues.</p>
-<div class="diagram-card" role="img" aria-label="Directed graph example showing Architecture linking to API Contract and Data Model, and both linking to Deployment Runbook">
-<svg class="graph-diagram" viewBox="0 0 920 400" xmlns="http://www.w3.org/2000/svg">
-  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" /></marker></defs>
-  <path class="edge" d="M235 110 C340 110, 360 85, 470 85" marker-end="url(#arrow)"/>
-  <path class="edge" d="M235 132 C345 165, 360 250, 470 260" marker-end="url(#arrow)"/>
-  <path class="edge" d="M635 95 C740 120, 760 170, 765 230" marker-end="url(#arrow)"/>
-  <path class="edge" d="M635 260 C705 260, 730 260, 765 260" marker-end="url(#arrow)"/>
-  <g class="node primary"><rect x="45" y="70" width="190" height="90" rx="22"/><text x="140" y="108">Architecture</text><text class="sub" x="140" y="134">active note</text></g>
-  <g class="node"><rect x="470" y="45" width="165" height="80" rx="20"/><text x="552" y="82">API Contract</text><text class="sub" x="552" y="106">outgoing link</text></g>
-  <g class="node"><rect x="470" y="225" width="165" height="80" rx="20"/><text x="552" y="262">Data Model</text><text class="sub" x="552" y="286">outgoing link</text></g>
-  <g class="node"><rect x="765" y="215" width="130" height="90" rx="20"/><text x="830" y="252">Deployment</text><text x="830" y="274">Runbook</text></g>
-</svg>
-<p class="diagram-caption">Each saved Markdown link becomes a directed edge. The target note receives a backlink automatically.</p>
-</div>
-
-<h2 id="what-the-graph-does-not-mean">What the graph does not mean<a class="heading-anchor" href="#what-the-graph-does-not-mean" aria-label="Link to What the graph does not mean">#</a></h2>
-<ul>
-<li>A larger node normally reflects connection/layout rules, not importance or truth.</li>
-<li>A link proves only that one file references another; it does not validate the referenced claim.</li>
-<li>An orphan can be intentional, such as a draft not yet connected.</li>
-<li>Broken links are useful diagnostics and are tolerated by OKF.</li>
-</ul>
-<h2 id="local-graph-spacing">Local graph spacing<a class="heading-anchor" href="#local-graph-spacing" aria-label="Link to Local graph spacing">#</a></h2>
-<p>The local view places the active note centrally and distributes nearby nodes around it. Use <strong>Fit</strong> after changing depth, filters, or window size.</p>
-<h2 id="graph-controls">Graph controls<a class="heading-anchor" href="#graph-controls" aria-label="Link to Graph controls">#</a></h2>
+<p>When zoomed far out, non-selected labels collapse into compact type-colored nodes. The selected note remains labeled. Hover a compact node to see its title, path, and connection count.</p>
+<h2 id="display-controls">Display controls<a class="heading-anchor" href="#display-controls" aria-label="Link to Display controls">#</a></h2>
 <table>
 <thead>
 <tr>
-  <th>Control</th>
-  <th>Effect</th>
+<th>Control</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>Local / Workspace</td>
-  <td>Switches between neighborhood and complete indexed graph</td>
+<td>Local / Workspace</td>
+<td>Switches between neighborhood and bounded project graph</td>
 </tr>
 <tr>
-  <td>Depth</td>
-  <td>Expands how many relationship steps appear in a local graph</td>
+<td>Depth</td>
+<td>Adds relationship steps to the Local view</td>
 </tr>
 <tr>
-  <td><code>+</code> / <code>−</code></td>
-  <td>Zooms the complete canvas</td>
+<td><code>+</code> / <code>-</code></td>
+<td>Zooms the complete canvas</td>
 </tr>
 <tr>
-  <td>Fit</td>
-  <td>Centers and scales visible nodes</td>
+<td>Fit view</td>
+<td>Centers and scales visible nodes</td>
 </tr>
 <tr>
-  <td>Node size</td>
-  <td>Changes individual node rendering size</td>
+<td>Node size</td>
+<td>Changes node rendering size</td>
 </tr>
 <tr>
-  <td>Link thickness</td>
-  <td>Changes edge rendering width</td>
+<td>Link width</td>
+<td>Adjusts connection emphasis inside a safe range</td>
 </tr>
 <tr>
-  <td>Labels</td>
-  <td>Shows or hides text labels</td>
+<td>Labels</td>
+<td>Shows or hides node titles</td>
 </tr>
 <tr>
-  <td>Arrows</td>
-  <td>Shows outgoing direction</td>
+<td>Arrows</td>
+<td>Shows direction on focused links</td>
 </tr>
 <tr>
-  <td>Orphans</td>
-  <td>Includes or hides unconnected notes</td>
+<td>Orphans</td>
+<td>Includes or hides unconnected notes</td>
 </tr>
 </tbody>
 </table>
-<div class="article-footer"><a class="pager" href="knowledge-workspace.html"><small>Previous</small><strong>Knowledge Workspace</strong></a><a class="pager" href="graph-connection-editing.html"><small>Next</small><strong>Edit graph connections</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#local-and-workspace-graphs">Local and workspace graphs</a><a class="level-2" href="#navigation">Navigation</a><a class="level-2" href="#display-options">Display options</a><a class="level-2" href="#edit-connections">Edit connections</a><a class="level-2" href="#direction-and-neighborhood">Direction and neighborhood</a><a class="level-2" href="#troubleshooting">Troubleshooting</a><a class="level-2" href="#what-the-graph-does-not-mean">What the graph does not mean</a><a class="level-2" href="#local-graph-spacing">Local graph spacing</a><a class="level-2" href="#graph-controls">Graph controls</a></aside></div><footer class="site-footer"><div class="footer-inner">
-<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Local knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
-<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">API Workspaces</a></div>
+<p>Link width is deliberately bounded so zooming or moving the control cannot turn connections into opaque bands.</p>
+<h2 id="edit-connections">Edit connections<a class="heading-anchor" href="#edit-connections" aria-label="Link to Edit connections">#</a></h2>
+<ol>
+<li>Open the source note.</li>
+<li>Select <strong>Edit links</strong>.</li>
+<li>Select a target node.</li>
+<li>Finish link editing.</li>
+</ol>
+<p>DevDesk writes portable standard Markdown links inside its managed block. It can remove only links it created there. Manual links, wiki links, and prose outside the block are preserved.</p>
+<p>Connection badges distinguish managed outgoing, manual outgoing, incoming, and available targets without relying on color alone.</p>
+<p>If the source already has unsaved text, the connection stays in the draft instead of forcing a save. <strong>Undo</strong> restores the previous content while safe. An external edit blocks undo instead of being overwritten.</p>
+<h2 id="what-a-graph-edge-means">What a graph edge means<a class="heading-anchor" href="#what-a-graph-edge-means" aria-label="Link to What a graph edge means">#</a></h2>
+<ul>
+<li>A link proves only that one file references another.</li>
+<li>It does not prove that either claim is correct or verified.</li>
+<li>Node size reflects layout and connection rules, not truth or priority.</li>
+<li>An orphan may be an intentional draft.</li>
+<li>Broken or ambiguous links are diagnostics, not reasons to delete content automatically.</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting<a class="heading-anchor" href="#troubleshooting" aria-label="Link to Troubleshooting">#</a></h2>
+<ul>
+<li>Save the active Markdown file.</li>
+<li>Select <strong>Fit view</strong>.</li>
+<li>Clear filters.</li>
+<li>Hover one node to isolate its neighborhood.</li>
+<li>Reduce <strong>Link width</strong> if you increased it.</li>
+<li>Inspect unresolved and ambiguous links.</li>
+<li>Refresh the project index when watching is unavailable.</li>
+</ul>
+
+<div class="article-footer"><a class="pager" href="knowledge-workspace.html"><small>Previous</small><strong>Knowledge Workspace</strong></a><a class="pager" href="graph-connection-editing.html"><small>Next</small><strong>Edit graph connections</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#local-and-workspace-views">Local and Workspace views</a><a class="level-2" href="#professional-focus-behavior">Professional focus behavior</a><a class="level-2" href="#navigate-and-arrange">Navigate and arrange</a><a class="level-2" href="#display-controls">Display controls</a><a class="level-2" href="#edit-connections">Edit connections</a><a class="level-2" href="#what-a-graph-edge-means">What a graph edge means</a><a class="level-2" href="#troubleshooting">Troubleshooting</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy policy</a></div>
 <div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
 </div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>

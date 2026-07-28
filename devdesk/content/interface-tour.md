@@ -1,54 +1,47 @@
-# Dashboard and navigation
+# Home, workspace, and navigation
 
-The dashboard presents DevDesk as three workflows rather than an undifferentiated tool grid.
+DevDesk starts with the next useful action instead of giving every utility equal visual weight.
 
-## Core workflows
+## Home
 
-### Knowledge Workspace
-Use local Markdown folders, links, backlinks, graph views, frontmatter, structured knowledge, and search.
+- **New workspace** opens the profile, name, file-preview, and parent-folder flow.
+- **Open folder** opens an existing folder once or adds `project.devdesk` explicitly.
+- **Continue working** reopens recent workspace context.
+- **Search** finds workspaces and tools.
+- **All tools** keeps every specialist utility available without crowding the primary flow.
 
-### API Studio
-Create requests, environments, collections, OpenAPI workflows, examples, assertions, and history.
+## Workspace navigation
 
-### Developer Utilities
-Open JSON, JWT, Regex, Base64, URL, Timestamp, UUID, Diff, README, and snippet tools.
+The workspace has one stable navigation model:
+
+- **Overview:** open work, recent items, and workspace summary.
+- **Inbox / Today:** capture and attention queries over the same Markdown items.
+- **Tasks / Notes:** ordinary work without requiring raw frontmatter.
+- **Files:** visible project files plus the advanced explorer.
+- **Views:** saved List/Board/Calendar/Timeline/Outline/Graph projections.
+- **Suggested changes:** indexing and managed-automation history.
+- **Developer tools:** contextual API, Markdown, JSON, OpenAPI, Diff, README, OKF, Search, and scoped Git entry points.
+- **Help / Settings:** manuals, migration terms, portability, automation, privacy, and application settings.
+
+Selecting an item keeps its workspace-relative path attached when a compatible tool opens. Back returns to the same workspace context.
+
+## Files and the advanced explorer
+
+**Files → Open explorer** opens the earlier Workspace Hub. Use it to browse nested folders, follow breadcrumbs, create a file/folder, or select an exact project file for a specialist tool. A file-specific tool never silently falls back to unrelated global data.
 
 ## Continue working
 
-The dashboard uses existing local state to offer a recent workspace or recently used tool. It does not invent activity metrics.
+- **Pinned** uses your saved favourites.
+- **Recently used** uses local activity history.
+- **All tools** opens the categorized tool library.
+- Opening a recent workspace returns to its unified shell.
 
-## Search, pinned, and recent
+## Screen sizes
 
-- Dashboard search filters available tools.
-- **Pinned** uses your persisted favourites.
-- **Recently used** uses local dashboard history.
-- **Explore all tools** opens the categorized tool library.
-
-## Navigation by screen size
-
-- **Android phone:** use the drawer and stacked dashboard sections.
-- **Tablet, landscape, or freeform:** more cards may appear per row.
-- **Windows:** use the persistent sidebar when enough width is available.
-
-## Manual and onboarding
-
-Open **User manual** from the sidebar or Settings. Open **View onboarding again** from Settings or from the manual home page.
-
-## The three workflow model
-
-DevDesk avoids presenting every utility with equal visual weight:
-
-1. **Knowledge Workspace** groups project folders, Markdown, backlinks, graphs, frontmatter, search, and Structured Knowledge.
-2. **API Studio** groups saved requests, environments, history, assertions, examples, and OpenAPI workflows.
-3. **Developer Utilities** groups focused tools such as JSON, JWT, Regex, Base64, URL, Timestamp, UUID, Diff, README, and Snippets.
-
-## Header actions
-
-Common top-bar actions can include search, Help, theme-aware menus, and tool-specific primary actions. On narrow screens, secondary actions may move into an overflow menu so the main content remains visible.
+- **Android phone:** drawer navigation, stacked content, and touch-sized sheets.
+- **Tablet, landscape, split-screen, or freeform:** more cards and optional side panels appear when space allows.
+- **Windows:** persistent navigation and one-, two-, or three-pane project layouts.
 
 ## Manual navigation
 
-- The left manual sidebar appears on wide layouts.
-- On Android or a narrow freeform window, use the **Contents** button.
-- Use the site-wide search button or press `/` on this website to search documentation.
-- Every heading has a link anchor for sharing a precise section.
+Use the in-app **User manual** for offline help. On this website, press `/` to search, use **Contents** on narrow screens, or use the left navigation and right page outline on wide screens.

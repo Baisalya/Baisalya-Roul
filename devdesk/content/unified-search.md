@@ -1,28 +1,28 @@
-# Unified Search
+# Search this workspace
 
-Unified Search finds indexed content across registered local workspaces.
+Unified Search finds indexed information inside the active project.
 
-## Search behavior
+## Search in project context
 
-Enter a title, path, tag, heading, or other supported indexed text. Results depend on the latest workspace indexes.
+1. Open the workspace.
+2. Use workspace Search for a quick filter, or open
+   **Developer tools → Search workspace** for the full indexed search.
+3. Search titles, project-relative paths, tags, types, or indexed headings.
+4. Open a result to return to that file with project context preserved.
 
-## Improve results
+Search does not silently mix results from unrelated workspaces when a project is active.
 
-- Save edited files.
-- Rebuild or refresh the workspace index.
-- Use distinctive words from the title or path.
-- Check that the folder remains accessible.
+## One shared snapshot
 
-## Open a result
+Search, Graph, backlinks, issues, and OKF health use the same project snapshot. After refresh, these views agree about which documents and links exist.
 
-Select a result to open its workspace and document when the route is available.
+## Keep the index current
 
-## Privacy
+- Supported Windows folders use filtered, debounced watching.
+- Only affected Markdown paths are reparsed when safe.
+- DevDesk suppresses its own file-write echoes.
+- An uncertain incremental update falls back to a bounded full refresh.
+- On roots without live watching, refresh from **Suggested changes** or
+  **Files → Open explorer**.
 
-Search runs against local indexes. It does not send queries to a DevDesk search server.
-
-## Good search terms
-
-Try a distinctive title, file path segment, tag, heading, API name, or phrase that appears in indexed Markdown.
-
-Search results depend on registered and accessible folders. DevDesk does not search arbitrary drives or upload the query to a search server.
+Queries and indexed content remain local. Searching does not make a network request.

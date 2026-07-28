@@ -18,6 +18,12 @@ window.DEVDESK_SITE_CONFIG = {
     url: "",
     note: "No signed and notarized public macOS package is currently advertised."
   },
+  ios: {
+    status: "soon",
+    label: "Not released yet",
+    url: "",
+    note: "No public App Store release is currently advertised."
+  },
   support: "https://github.com/Baisalya/devdesk-support/issues/new/choose",
   repository: "https://github.com/Baisalya/devdesk",
   privacy: "https://baisalya.github.io/devdesk-support/privacy-policy.html",

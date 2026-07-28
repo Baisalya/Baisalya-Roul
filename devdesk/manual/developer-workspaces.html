@@ -1,7 +1,7 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Register local folders, understand access, and keep source files safe."><meta name="theme-color" content="#5b47e8"><title>Developer Workspaces · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Create, clone, and reopen portable workspaces with bounded files, APIs, and Git."><meta name="theme-color" content="#5b47e8"><title>Folders, portability, and scoped Git · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
-  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Developer workspace</small></span></a>
+  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Your files. Your workspace.</small></span></a>
   <nav class="top-nav" aria-label="Primary navigation">
     <a class="" href="../index.html">Home</a>
     <a class="active" href="../manual/getting-started.html">Manual</a>
@@ -9,7 +9,7 @@
     <a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy</a>
   </nav>
   <div class="header-actions">
-    <button class="search-btn" type="button" data-search><span>Search manual</span> <kbd>/</kbd></button>
+    <button class="search-btn" type="button" data-search aria-label="Search manual"><span>Search manual</span> <kbd>/</kbd></button>
     <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
   </div>
 </header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
@@ -17,18 +17,18 @@
 <a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
 <a class="" href="../manual/interface-tour.html">Interface tour</a>
 <h2>Knowledge and Markdown</h2>
-<a class="active" href="../manual/developer-workspaces.html" aria-current="page">Developer Workspaces</a>
+<a class="active" href="../manual/developer-workspaces.html" aria-current="page">Folders, portability, and Git</a>
 <a class="" href="../manual/project-folder-structure.html">Create a project knowledge structure</a>
 <a class="" href="../manual/markdown-basics.html">Markdown basics</a>
 <a class="" href="../manual/frontmatter-properties.html">YAML frontmatter and properties</a>
 <a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
-<a class="" href="../manual/knowledge-workspace.html">Knowledge Workspace</a>
-<a class="" href="../manual/knowledge-graph.html">Knowledge Graph</a>
+<a class="" href="../manual/knowledge-workspace.html">Edit workspace Markdown</a>
+<a class="" href="../manual/knowledge-graph.html">Relationships and graph</a>
 <a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
 <a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
 <a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
-<h2>Structured Knowledge / OKF</h2>
-<a class="" href="../manual/structured-knowledge-okf.html">Structured Knowledge and OKF</a>
+<h2>Structure checks (OKF)</h2>
+<a class="" href="../manual/structured-knowledge-okf.html">Structure checks (OKF)</a>
 <a class="" href="../manual/okf-bundle-structure.html">OKF bundle structure</a>
 <a class="" href="../manual/okf-concepts-metadata.html">OKF concepts and metadata</a>
 <a class="" href="../manual/okf-conversion-migration.html">Analyze, convert, and migrate folders</a>
@@ -36,12 +36,12 @@
 <a class="" href="../manual/okf-attested-computation.html">Attested Computation</a>
 <h2>API and documentation</h2>
 <a class="" href="../manual/readme-generator.html">README Generator</a>
-<a class="" href="../manual/api-workspaces.html">API Workspaces</a>
+<a class="" href="../manual/api-workspaces.html">Saved API testing</a>
 <a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
 <a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
 <a class="" href="../manual/quick-api.html">Quick API</a>
 <a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
-<a class="" href="../manual/unified-search.html">Unified Search</a>
+<a class="" href="../manual/unified-search.html">Search this workspace</a>
 <h2>Developer utilities</h2>
 <a class="" href="../manual/json-tools.html">JSON Tools</a>
 <a class="" href="../manual/jwt-decoder.html">JWT Decoder</a>
@@ -50,7 +50,7 @@
 <a class="" href="../manual/url-tools.html">URL Encoder and Decoder</a>
 <a class="" href="../manual/timestamp.html">Timestamp Converter</a>
 <a class="" href="../manual/uuid.html">UUID Generator</a>
-<a class="" href="../manual/diff-git.html">Diff Workspace and local Git</a>
+<a class="" href="../manual/diff-git.html">Compare files and scoped Git</a>
 <a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
 <h2>Safety and reference</h2>
 <a class="" href="../manual/backup-restore.html">Backup and restore</a>
@@ -58,53 +58,205 @@
 <a class="" href="../manual/privacy-security.html">Privacy and security</a>
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
-<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="getting-started.html">Manual</a><span>/</span><span>Knowledge and Markdown</span></div><div class="doc-meta"><span class="doc-chip">Knowledge and Markdown</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="developer-workspaces">Developer Workspaces<a class="heading-anchor" href="#developer-workspaces" aria-label="Link to Developer Workspaces">#</a></h1>
-<p>Developer Workspaces register local project folders without copying them into a DevDesk cloud account.</p>
-<h2 id="when-to-use">When to use<a class="heading-anchor" href="#when-to-use" aria-label="Link to When to use">#</a></h2>
-<p>Use a workspace when a folder contains Markdown documentation, technical decisions, API notes, runbooks, or project knowledge that should remain in ordinary files.</p>
-<h2 id="add-a-workspace">Add a workspace<a class="heading-anchor" href="#add-a-workspace" aria-label="Link to Add a workspace">#</a></h2>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="getting-started.html">Manual</a><span>/</span><span>Knowledge and Markdown</span></div><div class="doc-meta"><span class="doc-chip">Knowledge and Markdown</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div>
+<h1 id="folders-portability-and-scoped-git">Folders, portability, and scoped Git<a class="heading-anchor" href="#folders-portability-and-scoped-git" aria-label="Link to Folders, portability, and scoped Git">#</a></h1>
+<p>A Developer Workspace connects DevDesk to a project folder you own. Source files remain in place; DevDesk does not create a private cloud copy.</p>
+<h2 id="create-a-new-project">Create a new project<a class="heading-anchor" href="#create-a-new-project" aria-label="Link to Create a new project">#</a></h2>
 <ol>
-<li>Open <strong>Developer Workspaces</strong>.</li>
-<li>Select <strong>Add workspace</strong>.</li>
-<li>Choose <strong>Import existing folder</strong> or create a named workspace.</li>
-<li>Select a folder through the platform picker.</li>
-<li>Open the registered workspace.</li>
+<li>On Home, select <strong>New workspace</strong>.</li>
+<li>Choose Personal, Study, Business, Research / writing, Software, or Blank.</li>
+<li>Enter a workspace name.</li>
+<li>Review the exact folders, Markdown files, and <code>project.devdesk</code> that will be created.</li>
+<li>Choose the parent folder.</li>
+<li>DevDesk creates one new child folder and opens the unified workspace shell.</li>
 </ol>
-<p>Removing a workspace registration does not delete its source files.</p>
-<h2 id="what-devdesk-indexes">What DevDesk indexes<a class="heading-anchor" href="#what-devdesk-indexes" aria-label="Link to What DevDesk indexes">#</a></h2>
-<p>DevDesk can inspect supported Markdown files, frontmatter, headings, tags, wiki links, normal Markdown links, backlinks, unresolved references, and graph relationships.</p>
-<h2 id="health-and-permissions">Health and permissions<a class="heading-anchor" href="#health-and-permissions" aria-label="Link to Health and permissions">#</a></h2>
-<p>A workspace can become read-only or unavailable if its folder moves or Android access is lost. Re-select the folder instead of creating a duplicate registration.</p>
-<h2 id="android-notes">Android notes<a class="heading-anchor" href="#android-notes" aria-label="Link to Android notes">#</a></h2>
-<p>Android access depends on the folder location and the picker permission provided by the operating system. Keep the selected folder available and avoid moving it while DevDesk is open.</p>
-<h2 id="windows-notes">Windows notes<a class="heading-anchor" href="#windows-notes" aria-label="Link to Windows notes">#</a></h2>
-<p>Windows workspaces use selected local paths. Network drives, removable drives, permission changes, or antivirus locks can make a workspace temporarily unavailable.</p>
-<h2 id="safety">Safety<a class="heading-anchor" href="#safety" aria-label="Link to Safety">#</a></h2>
-<p>DevDesk does not delete source files when you remove a workspace. A write action should show a preview or confirmation when it can change multiple documents.</p>
-<h2 id="recommended-first-folder">Recommended first folder<a class="heading-anchor" href="#recommended-first-folder" aria-label="Link to Recommended first folder">#</a></h2>
-<p>A useful workspace normally contains ordinary <code>.md</code> files grouped by purpose:</p>
-<pre><code class="language-text">project-docs/
-├── index.md
-├── architecture/
-├── api/
-├── decisions/
-├── runbooks/
-└── references/
+<p>If the child folder or a destination file already exists, creation stops safely. A failed transaction is removed only when the transaction marker, exact created paths, and recorded fingerprints still match. If another app or person added or changed anything, DevDesk preserves the folder for review.</p>
+<h2 id="open-an-existing-folder">Open an existing folder<a class="heading-anchor" href="#open-an-existing-folder" aria-label="Link to Open an existing folder">#</a></h2>
+<h3 id="add-project-devdesk-and-open">Add <code>project.devdesk</code> and open<a class="heading-anchor" href="#add-project-devdesk-and-open" aria-label="Link to Add project.devdesk and open">#</a></h3>
+<p>Use this when you want portable project identity and settings. The manifest is created only when absent and writable.</p>
+<h3 id="open-once-without-writing">Open once without writing<a class="heading-anchor" href="#open-once-without-writing" aria-label="Link to Open once without writing">#</a></h3>
+<p>Use this when the folder must remain unchanged. The registration exists only on the current device until you later add a manifest.</p>
+<h3 id="open-an-existing-manifest">Open an existing manifest<a class="heading-anchor" href="#open-an-existing-manifest" aria-label="Link to Open an existing manifest">#</a></h3>
+<p>Choose <code>project.devdesk</code>. DevDesk validates it and restores the project by its stable ID. Moving the folder does not change that identity.</p>
+<p>Invalid UTF-8, invalid JSON, duplicate keys, duplicate case variants, mismatched IDs, forbidden content, and unsupported future versions are never silently overwritten. Future versions can open for diagnostic read-only analysis.</p>
+<h2 id="what-project-devdesk-contains">What <code>project.devdesk</code> contains<a class="heading-anchor" href="#what-project-devdesk-contains" aria-label="Link to What project.devdesk contains">#</a></h2>
+<p>The schema-v1 file is ordinary UTF-8 JSON. It can contain:</p>
+<ul>
+<li>format and schema version;</li>
+<li>stable project ID and display name;</li>
+<li>project-relative knowledge roots;</li>
+<li>excluded paths;</li>
+<li>OKF mode;</li>
+<li>enabled project tools;</li>
+<li>optional project-relative artifact or source hints.</li>
+</ul>
+<p>It cannot contain:</p>
+<ul>
+<li>passwords, tokens, cookies, credentials, or private keys;</li>
+<li>absolute paths;</li>
+<li>commands, scripts, tasks, or environment variables;</li>
+<li>execution trust;</li>
+<li>recent files, graph positions, drafts, permissions, or other personal state.</li>
+</ul>
+<h2 id="canonical-example">Canonical example<a class="heading-anchor" href="#canonical-example" aria-label="Link to Canonical example">#</a></h2>
+<pre><code class="language-json">{
+  &quot;format&quot;: &quot;devdesk.workspace&quot;,
+  &quot;knowledge&quot;: {
+    &quot;okf&quot;: &quot;detect&quot;,
+    &quot;roots&quot;: [&quot;.&quot;]
+  },
+  &quot;name&quot;: &quot;Example Project&quot;,
+  &quot;projectId&quot;: &quot;7f85d807-62af-4cfe-8f1f-d1f0b70c1bc4&quot;,
+  &quot;root&quot;: &quot;.&quot;,
+  &quot;schemaVersion&quot;: 1,
+  &quot;tools&quot;: {
+    &quot;markdown&quot;: {
+      &quot;enabled&quot;: true
+    }
+  }
+}
 </code></pre>
-<p>DevDesk does not require this exact structure. It scans supported Markdown and builds relationships from the content.</p>
-<h2 id="register-versus-copy">Register versus copy<a class="heading-anchor" href="#register-versus-copy" aria-label="Link to Register versus copy">#</a></h2>
-<p>Registering a workspace tells DevDesk where the folder is. It does not create a cloud copy. Removing the registration does not delete the folder.</p>
-<h2 id="re-index-after-external-changes">Re-index after external changes<a class="heading-anchor" href="#re-index-after-external-changes" aria-label="Link to Re-index after external changes">#</a></h2>
-<p>When another editor changes files:</p>
+<p>Use DevDesk to create the manifest whenever possible; do not copy the example UUID into multiple projects.</p>
+<h2 id="unified-workspace-and-advanced-explorer">Unified workspace and advanced explorer<a class="heading-anchor" href="#unified-workspace-and-advanced-explorer" aria-label="Link to Unified workspace and advanced explorer">#</a></h2>
+<p>The primary workspace combines:</p>
+<ul>
+<li>Overview, Inbox, Today, Tasks, Notes, Files, and Views;</li>
+<li>List, Board, Calendar, Timeline, Outline, and graph projections of ordinary Markdown;</li>
+<li>selected-item details and typed relationships;</li>
+<li>suggested changes, developer tools, help, and settings;</li>
+<li>compact drawer/details-sheet layouts and wide navigation/inspector layouts.</li>
+</ul>
+<p>Opening a compatible tool keeps the active project and selected file attached.</p>
+<p>The earlier <strong>Workspace Hub</strong> remains under <strong>Files → Open explorer</strong>. It provides the bounded project tree, breadcrumb navigation, nested-folder browsing, safe <strong>New file</strong>/<strong>New folder</strong> actions, detailed project capabilities, and exact project-file selection.</p>
+<h3 id="browse-a-real-project-not-a-copied-vault">Browse a real project, not a copied vault<a class="heading-anchor" href="#browse-a-real-project-not-a-copied-vault" aria-label="Link to Browse a real project, not a copied vault">#</a></h3>
+<p>The explorer enumerates metadata inside the selected root and applies the same hidden/generated/excluded-path policy as other project discovery. It does not load every file into memory. Directories appear before files. Search can find a nested path; selecting a folder opens it, while selecting a file makes that project-relative path available to compatible tools.</p>
+<p>The breadcrumb always starts at <strong>Root</strong>. Use it to move back from <code>docs/architecture</code> to <code>docs</code> or the main project folder without closing the Workspace.</p>
+<h3 id="create-a-file-or-folder">Create a file or folder<a class="heading-anchor" href="#create-a-file-or-folder" aria-label="Link to Create a file or folder">#</a></h3>
+<p>Use the toolbar or explorer actions:</p>
 <ol>
-<li>Save or discard any unsaved DevDesk edit.</li>
-<li>Refresh or rebuild the workspace index.</li>
-<li>Review conflict warnings before overwriting.</li>
-<li>Re-select the folder if Android permission was lost or the path moved.</li>
+<li>Open the destination folder in the breadcrumb.</li>
+<li>Select <strong>New file</strong> or <strong>New folder</strong>.</li>
+<li>For a file, enter its name and choose Markdown, portable API workspace, JSON, YAML, HTTP request, text, or empty file.</li>
+<li>DevDesk adds the selected extension when the name does not already have one.</li>
+<li>DevDesk generates minimal starter content and selects the new file.</li>
 </ol>
-<div class="article-footer"><a class="pager" href="interface-tour.html"><small>Previous</small><strong>Interface tour</strong></a><a class="pager" href="project-folder-structure.html"><small>Next</small><strong>Create a project knowledge structure</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#when-to-use">When to use</a><a class="level-2" href="#add-a-workspace">Add a workspace</a><a class="level-2" href="#what-devdesk-indexes">What DevDesk indexes</a><a class="level-2" href="#health-and-permissions">Health and permissions</a><a class="level-2" href="#android-notes">Android notes</a><a class="level-2" href="#windows-notes">Windows notes</a><a class="level-2" href="#safety">Safety</a><a class="level-2" href="#recommended-first-folder">Recommended first folder</a><a class="level-2" href="#register-versus-copy">Register versus copy</a><a class="level-2" href="#re-index-after-external-changes">Re-index after external changes</a></aside></div><footer class="site-footer"><div class="footer-inner">
-<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Local knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
-<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">API Workspaces</a></div>
+<p>Creation is exclusive. If the name already exists, the action stops and leaves the existing file untouched. Names containing traversal separators, control characters, Windows-reserved characters, reserved device names, or trailing spaces/dots are rejected before the filesystem call.</p>
+<p>Markdown creation is sent directly to the incremental project index. Other files become visible by invalidating the bounded project tree; external watching continues to handle changes made by other developer tools.</p>
+<h3 id="recover-from-an-incompatible-tool-selection">Recover from an incompatible tool selection<a class="heading-anchor" href="#recover-from-an-incompatible-tool-selection" aria-label="Link to Recover from an incompatible tool selection">#</a></h3>
+<p>A file-specific tool does not silently open unrelated global data. If its project file is missing, unsupported, or unreadable, the page includes a working Back action and <strong>Choose a project file</strong> button. This returns to the same Workspace and does not change project content.</p>
+<h2 id="git-clone-and-portable-reopen">Git clone and portable reopen<a class="heading-anchor" href="#git-clone-and-portable-reopen" aria-label="Link to Git clone and portable reopen">#</a></h2>
+<p>A professional portable project can use the repository root or a nested
+workspace:</p>
+<pre><code class="language-text">shopdesk/
+  .git/
+  README.md
+  docs/
+    project.devdesk
+    devdesk-api-workspace.json
+    Home.md
+    architecture.md
+  lib/
+    main.dart
+</code></pre>
+<p>The responsibilities are separate:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Purpose</th>
+<th>Share in Git?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>project.devdesk</code></td>
+<td>Stable DevDesk identity and relative configuration</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Markdown, JSON, YAML, OpenAPI, source</td>
+<td>Actual project-owned work</td>
+<td>Yes, according to normal project policy</td>
+</tr>
+<tr>
+<td><code>devdesk-api-workspace.json</code></td>
+<td>Sanitized API structure</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>.git/</code></td>
+<td>Local Git metadata created by clone/init</td>
+<td>No; Git manages it</td>
+</tr>
+<tr>
+<td>tokens, cookies, history, machine network settings, trust, UI state</td>
+<td>Device-local private state</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>After <code>git clone</code>, open <code>docs/project.devdesk</code>. DevDesk reconstructs the local
+registry from <code>projectId</code>, uses the manifest directory as the workspace root,
+discovers the parent Git repository when Git status is explicitly opened, and
+opens the workspace shell. The user does not recreate the project or manually rebuild
+its Markdown graph/API structure.</p>
+<p>Opening a valid manifest still performs data-only discovery. It does not run Git, API requests, hooks, project scripts, or build commands.</p>
+<h2 id="project-api-artifact">Project API artifact<a class="heading-anchor" href="#project-api-artifact" aria-label="Link to Project API artifact">#</a></h2>
+<p>When <strong>Developer tools → API testing</strong> is opened without the portable API artifact, a writable project automatically receives:</p>
+<pre><code class="language-text">devdesk-api-workspace.json
+</code></pre>
+<p>The initial document has a stable project-derived API workspace ID and valid DevDesk API workspace structure. Opening the file on the same device refreshes the matching local cache instead of making duplicates. Structural API edits are debounced and written back with the fingerprint captured when the file was opened.</p>
+<p>Every project write is sanitized. The shareable document excludes:</p>
+<ul>
+<li>tokens, passwords, API keys, protected variables, cookies, and OAuth credentials;</li>
+<li>request/response history and runner reports;</li>
+<li>favourite/archive and last-used state;</li>
+<li>proxy/TLS/Local Agent settings, execution trust, and filesystem permission grants.</li>
+</ul>
+<p>Protected local secrets can be reapplied after a project-file refresh. List items are matched by stable <code>id</code> (or variable <code>key</code>) so a Git reorder cannot redirect one environment or request's credential to another. If an item was removed, its obsolete secret is not copied to a different item.</p>
+<p>If Git, an editor, or another DevDesk instance changes the file after it was opened, the expected fingerprint no longer matches. DevDesk stops the save and asks the user to reopen rather than overwriting the external change.</p>
+<h2 id="automation-modes-and-recovery">Automation modes and recovery<a class="heading-anchor" href="#automation-modes-and-recovery" aria-label="Link to Automation modes and recovery">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Project-write behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Safe automatic</td>
+<td>Applies only deterministic reversible managed maintenance</td>
+</tr>
+<tr>
+<td>Review changes</td>
+<td>Stores a durable plan until you accept or reject it</td>
+</tr>
+<tr>
+<td>Manual</td>
+<td>Requires an explicit action before every write</td>
+</tr>
+</tbody>
+</table>
+<p>Recovery information is recorded before a managed batch. Partial failures roll back only unchanged DevDesk writes. External edits are preserved. A successful managed plan can remain undoable after restarting DevDesk.</p>
+<h2 id="android-access">Android access<a class="heading-anchor" href="#android-access" aria-label="Link to Android access">#</a></h2>
+<p>Select the folder that directly contains <code>project.devdesk</code>. Android grants a document-tree URI, not a normal filesystem path. DevDesk keeps that URI opaque and uses only capabilities supplied by the provider.</p>
+<p>If permission is revoked, re-select the same folder instead of creating a duplicate workspace.</p>
+<h2 id="windows-folders-and-git">Windows folders and Git<a class="heading-anchor" href="#windows-folders-and-git" aria-label="Link to Windows folders and Git">#</a></h2>
+<p>Windows local folders can use filtered, debounced file watching. A valid manifest can cold-start DevDesk or activate its project in an already-running window.</p>
+<p>Git status requires a separate device-local execution-trust decision. DevDesk
+resolves <code>git rev-parse --show-toplevel</code>, then keeps the repository root and
+selected workspace root as separate boundaries. If Git belongs to a parent
+folder, status and recent history use only the repository-relative workspace
+pathspec. Diff, stage, unstage, and protected discard validate every selected
+path against the folder containing <code>project.devdesk</code>; changes elsewhere in the
+parent repository are excluded and cannot make a scoped mutation stale.</p>
+<p>Opening the manifest never grants trust or runs Git.</p>
+<p>Removing a workspace registration never deletes its project folder.</p>
+
+<div class="article-footer"><a class="pager" href="interface-tour.html"><small>Previous</small><strong>Interface tour</strong></a><a class="pager" href="project-folder-structure.html"><small>Next</small><strong>Create a project knowledge structure</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#create-a-new-project">Create a new project</a><a class="level-2" href="#open-an-existing-folder">Open an existing folder</a><a class="level-3" href="#add-project-devdesk-and-open">Add project.devdesk and open</a><a class="level-3" href="#open-once-without-writing">Open once without writing</a><a class="level-3" href="#open-an-existing-manifest">Open an existing manifest</a><a class="level-2" href="#what-project-devdesk-contains">What project.devdesk contains</a><a class="level-2" href="#canonical-example">Canonical example</a><a class="level-2" href="#unified-workspace-and-advanced-explorer">Unified workspace and advanced explorer</a><a class="level-3" href="#browse-a-real-project-not-a-copied-vault">Browse a real project, not a copied vault</a><a class="level-3" href="#create-a-file-or-folder">Create a file or folder</a><a class="level-3" href="#recover-from-an-incompatible-tool-selection">Recover from an incompatible tool selection</a><a class="level-2" href="#git-clone-and-portable-reopen">Git clone and portable reopen</a><a class="level-2" href="#project-api-artifact">Project API artifact</a><a class="level-2" href="#automation-modes-and-recovery">Automation modes and recovery</a><a class="level-2" href="#android-access">Android access</a><a class="level-2" href="#windows-folders-and-git">Windows folders and Git</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy policy</a></div>
 <div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
 </div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>

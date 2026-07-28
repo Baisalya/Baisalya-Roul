@@ -1,64 +1,55 @@
-# Knowledge Workspace
+# Edit workspace Markdown
 
-The Knowledge Workspace is the main environment for a registered Markdown project.
+Project Markdown is the main editor for files inside an active Developer Workspace. It uses the same bounded project snapshot as Graph, Search, backlinks, issues, and OKF health.
+
+## Open a project document
+
+1. Open the workspace.
+2. Select a Markdown item or select a Markdown file under **Files**.
+3. Open **Developer tools → Edit Markdown**.
+4. Edit, preview, or use split view.
+5. Save before leaving when changes are pending.
+
+For deeper nested-file browsing, use **Files → Open explorer**, select the
+Markdown file, and open **Project Markdown**.
 
 ## Main areas
 
-- **Document browser:** find and open Markdown files.
-- **Editor:** edit the selected document.
+- **Document browser:** project-relative Markdown allowed by the manifest.
+- **Editor:** edit the active file.
 - **Preview:** render Markdown safely.
-- **Inspector:** view properties, outline, links, issues, and graph.
-- **Focused graph:** expand the graph into the main workspace.
+- **Inspector:** properties, outline, outgoing links, backlinks, and issues.
+- **Focused graph:** open the graph as the primary canvas.
 
-## Create or open a document
+## Safe file behavior
 
-1. Select a document from the browser.
-2. Use the create action for a new Markdown file.
-3. Edit in the central editor.
-4. Save before switching when changes are pending.
+- New documents use exclusive creation.
+- Existing documents use fingerprint conflict checks.
+- An external change is reported instead of overwritten.
+- Recoverable unsaved drafts remain device-local.
+- Files outside allowed project roots or inside excluded paths are not silently added.
 
-## Inspector
+## Watch and refresh
 
-- **Properties:** YAML frontmatter and document metadata.
-- **Outline:** headings and line navigation.
-- **Links:** backlinks, outgoing links, unlinked mentions, and related tags.
-- **Issues:** broken or ambiguous references.
-- **Graph:** local or workspace relationships.
+Supported Windows folders use filtered, debounced, coalesced watching. DevDesk suppresses its own write echoes and reparses only affected Markdown paths when safe.
 
-The browser and inspector can collapse on Windows. On Android they open as responsive sheets or focused views.
+If watching is unavailable, refresh derived workspace information from
+**Suggested changes** or the advanced explorer. An uncertain incremental update
+falls back to a bounded full refresh.
 
-## Safe editing
+## Project context in other tools
 
-DevDesk tracks unsaved changes and conflicts. When the file changes outside the app, review before overwriting.
+Compatible tools opened from the workspace receive the active project and
+selected file:
 
-## Related topics
+- JSON can open a compatible JSON file;
+- OpenAPI can open a supported specification;
+- Diff can compare a selected project file;
+- Search remains limited to the active project;
+- Structured Knowledge uses the same configured roots and exclusions.
 
-See **Knowledge Graph**, **Structured Knowledge / OKF**, and **Developer Workspaces** for deeper workflows.
+## Which Markdown editor should I use?
 
-## A productive Windows layout
-
-On a wide window:
-
-```text
-Document browser | Editor / preview | Inspector
-```
-
-Collapse the browser or inspector when the center content needs more room. The inspector tabs are contextual—not separate copies of the document.
-
-## A productive Android layout
-
-On a phone or narrow freeform window:
-
-- The editor remains the primary surface.
-- Document browser and inspector open as sheets or focused views.
-- Advanced graph controls stay collapsed until requested.
-- Save before switching documents when unsaved changes are present.
-
-## External modification workflow
-
-If another editor changes the file while DevDesk has unsaved text:
-
-1. Stop and read the conflict message.
-2. Copy any unsaved text you need to preserve.
-3. Compare the external and local versions.
-4. Save only after choosing which version should win.
+- **Project Markdown:** project files, graph, search, OKF, watching, and conflicts.
+- **Markdown Editor:** one standalone file.
+- **Markdown Vault:** personal notes managed inside DevDesk.

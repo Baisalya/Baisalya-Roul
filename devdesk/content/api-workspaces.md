@@ -1,4 +1,4 @@
-# API Workspaces
+# Saved API testing (API Workspaces)
 
 API Workspaces is the main saved-workflow area of DevDesk API Studio. It is designed for exact, reusable API work while keeping data local by default.
 
@@ -19,6 +19,41 @@ Use API Workspaces when you need any of the following:
 - Exported API documentation.
 
 Use **Quick API** for a temporary one-off request that does not need this structure.
+
+## Portable API workspace inside a project
+
+When **API testing** is launched from workspace Developer tools or the advanced explorer, DevDesk binds it to the project JSON rather than silently falling back to unrelated global API data.
+
+If a suitable API JSON does not exist and the project is writable, DevDesk creates `devdesk-api-workspace.json` automatically. The initial file contains a valid `devdesk_api_workspace` envelope, version `1`, and a stable workspace ID derived from the project identity.
+
+### What synchronizes to Git
+
+The project JSON can carry:
+
+- collections and recursive folders;
+- request definitions, documentation, assertions, and extraction rules;
+- non-secret environment and variable structure;
+- ordinary network/workspace configuration that is safe to share;
+- stable item IDs used to reopen the same API workspace after clone.
+
+DevDesk automatically writes structural changes back after a short debounce. Machine-local network configuration is reset to portable defaults in that artifact. DevDesk uses fingerprint-checked replacement, then reads the saved bytes again to establish the next baseline. A Git checkout, pull, merge, or editor change made after open causes a conflict message and no overwrite.
+
+### What stays local
+
+The portable write sanitizes the workspace every time. It sets personal favourite/archive/last-used state to neutral values and excludes secrets. Cookies, protected variables, credentials, OAuth tokens, request/response history, runner reports, proxy/TLS/Local Agent configuration, and execution trust remain device-local.
+
+When a portable workspace with the same stable ID is reopened on the same device, DevDesk merges the protected local secret overlay onto the new structure. Environments, requests, and other list items are matched by stable IDs; variables can be matched by key. Reordering in Git therefore cannot attach a secret to the wrong item. Removed items lose their obsolete overlay.
+
+### Clone workflow
+
+1. Commit `project.devdesk`, `devdesk-api-workspace.json`, and the intended project files.
+2. Clone the repository on another machine.
+3. Open `project.devdesk`.
+4. Open **Developer tools → API testing** in the workspace.
+5. The API structure opens without recreating the workspace.
+6. Enter machine/user secrets locally; they are never recovered from Git because they were never committed.
+
+Do not place live credentials into ordinary request bodies, examples, notes, or non-secret variables merely to bypass protected fields. Those ordinary values are part of the portable document.
 
 ## Interface tour
 

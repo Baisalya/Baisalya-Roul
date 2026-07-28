@@ -1,39 +1,42 @@
-# Analyze, convert, and migrate folders
+# Analyze, improve, and migrate project knowledge
 
-DevDesk can inspect an existing Markdown folder and prepare a proposed OKF v0.2 structure. The process should remain deterministic and reviewable.
+DevDesk can inspect an existing Markdown project without silently rewriting it.
 
-## Analyze an existing folder
+## Analyze first
 
-1. Register the folder as a Developer Workspace.
-2. Open **Structured Knowledge**.
-3. Select **Review fixes** or the folder-analysis action.
-4. Choose a project profile when offered.
-5. Review every proposed file operation.
-6. Apply only after paths, types, titles, and bodies are correct.
-7. Re-run validation.
+1. Open the workspace.
+2. Open **Developer tools → Structure and OKF**.
+3. Review required errors, warnings, advice, and extensions separately.
+4. Refresh the project if files changed externally.
 
-## What DevDesk can suggest
+## Choose how changes are handled
 
-- A title from frontmatter, first H1, or filename.
-- A concept type based on explicit rules or the selected profile.
-- A one-line description.
-- Tags based on existing metadata and selected deterministic rules.
-- Root `okf_version` declaration.
-- Directory indexes.
-- A newest-first log entry.
-- Compatible v0.1-to-v0.2 metadata migration.
+- **Safe automatic:** only deterministic reversible managed maintenance.
+- **Review changes:** prepare a durable plan for accept or reject.
+- **Manual:** start and confirm each generation action yourself.
 
-## What DevDesk must not invent
+A plan is tied to file fingerprints. If a file changes after planning, DevDesk stops rather than applying a stale replacement.
 
-- A source that does not exist.
-- A human verification event that did not happen.
-- A trusted status merely because a file parsed successfully.
-- A claim or relationship unsupported by the original content.
+## Safe improvements
 
-## v0.1 migration concepts
+DevDesk may deterministically prepare:
 
-A migration preview may normalize legacy fields into v0.2 families while preserving unknown keys and Markdown body text. Always keep a version-control commit or backup before bulk conversion.
+- managed directory indexes;
+- portable standard Markdown relationships selected by the user;
+- bounded starter documents when the target path is absent;
+- supported OKF v0.2 structure corrections.
 
-## Conflict protection
+It preserves unknown fields and prose. Producer metadata that cannot be moved safely stays for manual review.
 
-A prepared plan can become stale if files change. DevDesk compares current file identity/content with the plan and should refuse unsafe application rather than overwriting newer external changes.
+## Migration boundaries
+
+- Existing older wiki links can remain readable as a DevDesk extension.
+- New managed relationships use standard Markdown links.
+- Unknown future OKF versions are not rewritten.
+- Sources, verification, lifecycle, trust, and attestation are not invented.
+
+## Recovery
+
+A durable journal is written before project mutation. Partial failure rolls back only verified unchanged DevDesk writes. External edits stay untouched. A successful managed plan can remain undoable across restart.
+
+Keep the project under Git or another backup strategy before a large migration.

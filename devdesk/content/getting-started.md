@@ -1,64 +1,98 @@
 # Getting started with DevDesk
 
-DevDesk is a local developer workspace for Markdown knowledge, API testing, OpenAPI files, local Git inspection, and practical developer utilities. It is designed to keep ordinary files portable and understandable rather than locking your work into a proprietary cloud database.
+**One folder. Every view. Every tool. Still your files.**
 
-<div class="hero-inline"><img src="../assets/img/welcome.png" alt="DevDesk workspace illustration"><div><strong>Your first goal</strong><p>Open an existing project folder, connect a few Markdown notes, inspect the graph, and send one safe test API request.</p></div></div>
+DevDesk turns an ordinary folder into a useful workspace for plans, tasks, notes, research, files, relationships, APIs, and developer work. Start simple. Open advanced tools only when you need them.
 
-## First launch
+You do not need to learn Markdown, frontmatter, JSON, nodes, edges, manifests, Git, or OKF before starting.
 
-1. Read the privacy notice and acknowledge it.
-2. Complete or skip the onboarding tour.
-3. Open **Developer Workspaces**.
-4. Register a folder that contains Markdown documentation, or create a small practice folder using the commands below.
-5. Open the workspace and let DevDesk index headings, tags, properties, links, backlinks, issues, and graph relationships.
-6. Open **Structured Knowledge** only when you want to analyze or prepare an OKF-compatible bundle.
-7. Use the **Help** icon inside any tool to open the matching manual topic.
+<div class="hero-inline"><img src="../assets/img/welcome.png" alt="DevDesk workspace illustration"><div><strong>Your first goal</strong><p>Create or open one workspace, add one useful task or note, and choose the view that helps you act.</p></div></div>
 
-> [!NOTE] DevDesk does not upload a project folder to a DevDesk-operated server. Sending an API request, checking a link, fetching supported GitHub content, or opening an external page is still a network action.
+## Why people choose DevDesk
 
-## Create a safe practice folder
+- **Work your way:** List, Board, Calendar, Timeline, Outline, Files, and Relationships read the same source items.
+- **Keep ownership:** content stays as ordinary files in the folder you chose.
+- **Move without rebuilding:** copy or clone the folder and open `project.devdesk`.
+- **Grow without changing apps:** add Markdown, JSON, OpenAPI, saved API testing, OKF checks, Diff, and scoped Git when needed.
+- **Control automation:** choose Manual, Review changes, or bounded Safe automatic mode.
 
-### Windows PowerShell
+This combination is DevDesk's distinctive value. It is not a claim that every individual feature is unique.
 
-```powershell
-$root = "$HOME\Documents\DevDesk-Practice"
-New-Item -ItemType Directory -Force $root | Out-Null
-New-Item -ItemType Directory -Force "$root\architecture", "$root\api", "$root\runbooks" | Out-Null
-@"
-# DevDesk Practice Workspace
+## Choose what you want to do
 
-Start with [System Architecture](architecture/system-architecture.md).
-"@ | Set-Content -Encoding utf8 "$root\index.md"
-```
-
-### macOS or Linux terminal
-
-```bash
-root="$HOME/Documents/DevDesk-Practice"
-mkdir -p "$root"/{architecture,api,runbooks}
-cat > "$root/index.md" <<'EOF'
-# DevDesk Practice Workspace
-
-Start with [System Architecture](architecture/system-architecture.md).
-EOF
-```
-
-Then select the new folder in **Developer Workspaces**.
-
-## Choose the right tool
-
-| What you want to do | Start here |
+| Your goal | Start with |
 |---|---|
-| Work directly with a project folder | Developer Workspaces |
-| Edit one Markdown file | Markdown Editor |
-| Keep personal linked notes inside DevDesk | Markdown Vault |
-| Build a saved API collection | API Workspaces |
-| Send one quick request | Quick API |
-| Inspect an OpenAPI file | OpenAPI Studio |
-| Convert or inspect developer data | Explore all tools |
+| Plan your life or a small project | **New workspace > Personal plan** |
+| Manage study or assignments | **New workspace > Study** |
+| Track meetings, tasks, and decisions | **New workspace > Business project** |
+| Organise research or writing | **New workspace > Research / writing** |
+| Keep docs and tools with software | **New workspace > Software project** |
+| Use a folder you already have | **Open folder** |
+| Continue recent work | **Continue working** |
+
+## Your first five minutes
+
+1. On **Home**, select **New workspace**.
+2. Choose a profile and enter a name.
+3. Review the folders and starter files. DevDesk creates only what this preview shows.
+4. Choose a parent folder.
+5. Select **New > Task** or **New > Note**.
+6. Write normally, then try List, Board, Calendar, Timeline, Outline, or Relationships.
+
+Every view reads the same item. Moving a task on the Board does not create a second copy.
+
+## Four words used in the app
+
+- **Workspace:** the folder you chose.
+- **Item:** one task, note, goal, meeting, decision, or plan.
+- **View:** a different way to see the same items.
+- **Tool:** an optional focused feature such as API testing, JSON, OpenAPI, Diff, or Git.
+
+## Open an existing folder
+
+| Your situation | Choose |
+|---|---|
+| The setup should survive copy or Git clone | **Add project.devdesk and open** |
+| The folder must stay unchanged | **Open once without writing** |
+| The folder already has portable identity | Open its `project.devdesk` |
+
+DevDesk explains `project.devdesk` before creating it and never silently replaces an existing file. It contains portable identity and safe relative settings, not passwords, tokens, cookies, command trust, history, or personal layout.
+
+New workspace creation is exclusive. If it fails, DevDesk deletes the new transaction folder only when its marker, exact created paths, and recorded file fingerprints still match. Otherwise it leaves the folder for review.
+
+## Where your work goes
+
+Your content stays in the selected folder as ordinary files. You can open those files in another editor, protect them with your normal backup, and commit appropriate files to Git.
+
+DevDesk keeps device-only information, protected values, and rebuildable indexes outside portable project content. Removing a workspace from DevDesk removes its registration; it does not delete the folder.
+
+## Find your way around
+
+- **Overview, Inbox, Today, Tasks, and Notes** keep normal work first.
+- **Files** browses the real folder and nested subfolders.
+- **Views** contains reusable views and Relationships.
+- **Suggested changes** explains managed work.
+- **Developer tools** appears when the selected profile or file makes it useful.
+- **Help** opens short guidance and the complete manual.
+- **Settings** explains portability, automation, appearance, and local/private state.
+
+Use **Files > Open explorer** for advanced file and folder creation. Select a compatible file to see contextual tool suggestions.
+
+## What DevDesk can do automatically
+
+DevDesk can rebuild read-only headings, links, backlinks, relationships, search, and health information. For project writes, choose:
+
+- **Safe automatic:** only deterministic, bounded, recoverable managed maintenance.
+- **Review changes:** see and accept or reject a saved plan.
+- **Manual:** no project write without your action.
+
+Automatic mode does not invent sources, verification, trust, lifecycle decisions, or project facts.
 
 ## Platform behavior
 
-- **Android:** compact single-column layouts, sheets, touch-sized actions, and support for portrait, landscape, split-screen, and freeform windows.
-- **Windows:** persistent navigation and multi-panel workspaces when enough width is available. Resize the window to collapse optional panels.
-- **macOS:** the current published release is not offered for macOS. The website keeps a macOS download card visible as a transparent availability notice rather than presenting a false download.
+- **Android:** choose the folder that directly contains `project.devdesk`. Access uses the Android system document-tree permission.
+- **Windows:** selected local folders can use filtered file watching. Opening a valid `project.devdesk` can restore its workspace.
+- **Every size:** phone, tablet, split-screen, Android freeform, and resized or snapped Windows layouts keep primary actions reachable.
+- **macOS and iOS:** no public signed release is presented as available until one actually exists.
+
+> [!NOTE] DevDesk does not upload a project folder to a DevDesk-operated server. Sending an API request, checking a link, fetching supported online content, or opening an external page is still a network action.

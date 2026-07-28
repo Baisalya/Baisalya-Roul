@@ -1,7 +1,7 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Compare text/files and use guarded local Git actions on supported Windows workflows."><meta name="theme-color" content="#5b47e8"><title>Diff Workspace and local Git · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Compare content and keep trusted Git actions strictly inside the workspace boundary."><meta name="theme-color" content="#5b47e8"><title>Compare files and scoped Git · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
-  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Developer workspace</small></span></a>
+  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Your files. Your workspace.</small></span></a>
   <nav class="top-nav" aria-label="Primary navigation">
     <a class="" href="../index.html">Home</a>
     <a class="active" href="../manual/getting-started.html">Manual</a>
@@ -9,7 +9,7 @@
     <a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy</a>
   </nav>
   <div class="header-actions">
-    <button class="search-btn" type="button" data-search><span>Search manual</span> <kbd>/</kbd></button>
+    <button class="search-btn" type="button" data-search aria-label="Search manual"><span>Search manual</span> <kbd>/</kbd></button>
     <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
   </div>
 </header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
@@ -17,18 +17,18 @@
 <a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
 <a class="" href="../manual/interface-tour.html">Interface tour</a>
 <h2>Knowledge and Markdown</h2>
-<a class="" href="../manual/developer-workspaces.html">Developer Workspaces</a>
+<a class="" href="../manual/developer-workspaces.html">Folders, portability, and Git</a>
 <a class="" href="../manual/project-folder-structure.html">Create a project knowledge structure</a>
 <a class="" href="../manual/markdown-basics.html">Markdown basics</a>
 <a class="" href="../manual/frontmatter-properties.html">YAML frontmatter and properties</a>
 <a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
-<a class="" href="../manual/knowledge-workspace.html">Knowledge Workspace</a>
-<a class="" href="../manual/knowledge-graph.html">Knowledge Graph</a>
+<a class="" href="../manual/knowledge-workspace.html">Edit workspace Markdown</a>
+<a class="" href="../manual/knowledge-graph.html">Relationships and graph</a>
 <a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
 <a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
 <a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
-<h2>Structured Knowledge / OKF</h2>
-<a class="" href="../manual/structured-knowledge-okf.html">Structured Knowledge and OKF</a>
+<h2>Structure checks (OKF)</h2>
+<a class="" href="../manual/structured-knowledge-okf.html">Structure checks (OKF)</a>
 <a class="" href="../manual/okf-bundle-structure.html">OKF bundle structure</a>
 <a class="" href="../manual/okf-concepts-metadata.html">OKF concepts and metadata</a>
 <a class="" href="../manual/okf-conversion-migration.html">Analyze, convert, and migrate folders</a>
@@ -36,12 +36,12 @@
 <a class="" href="../manual/okf-attested-computation.html">Attested Computation</a>
 <h2>API and documentation</h2>
 <a class="" href="../manual/readme-generator.html">README Generator</a>
-<a class="" href="../manual/api-workspaces.html">API Workspaces</a>
+<a class="" href="../manual/api-workspaces.html">Saved API testing</a>
 <a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
 <a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
 <a class="" href="../manual/quick-api.html">Quick API</a>
 <a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
-<a class="" href="../manual/unified-search.html">Unified Search</a>
+<a class="" href="../manual/unified-search.html">Search this workspace</a>
 <h2>Developer utilities</h2>
 <a class="" href="../manual/json-tools.html">JSON Tools</a>
 <a class="" href="../manual/jwt-decoder.html">JWT Decoder</a>
@@ -50,7 +50,7 @@
 <a class="" href="../manual/url-tools.html">URL Encoder and Decoder</a>
 <a class="" href="../manual/timestamp.html">Timestamp Converter</a>
 <a class="" href="../manual/uuid.html">UUID Generator</a>
-<a class="active" href="../manual/diff-git.html" aria-current="page">Diff Workspace and local Git</a>
+<a class="active" href="../manual/diff-git.html" aria-current="page">Compare files and scoped Git</a>
 <a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
 <h2>Safety and reference</h2>
 <a class="" href="../manual/backup-restore.html">Backup and restore</a>
@@ -58,43 +58,56 @@
 <a class="" href="../manual/privacy-security.html">Privacy and security</a>
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
-<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="getting-started.html">Manual</a><span>/</span><span>Developer utilities</span></div><div class="doc-meta"><span class="doc-chip">Developer utilities</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="diff-workspace-and-local-git">Diff Workspace and local Git<a class="heading-anchor" href="#diff-workspace-and-local-git" aria-label="Link to Diff Workspace and local Git">#</a></h1>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="getting-started.html">Manual</a><span>/</span><span>Developer utilities</span></div><div class="doc-meta"><span class="doc-chip">Developer utilities</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div>
+<h1 id="compare-files-and-workspace-scoped-git">Compare files and workspace-scoped Git<a class="heading-anchor" href="#compare-files-and-workspace-scoped-git" aria-label="Link to Compare files and workspace-scoped Git">#</a></h1>
 <p>Diff Workspace compares text, files, folders, supported GitHub content, or a selected local Git repository.</p>
-<h2 id="text-and-file-comparison">Text and file comparison<a class="heading-anchor" href="#text-and-file-comparison" aria-label="Link to Text and file comparison">#</a></h2>
+<h2 id="compare-text-or-files">Compare text or files<a class="heading-anchor" href="#compare-text-or-files" aria-label="Link to Compare text or files">#</a></h2>
 <ol>
 <li>Choose the comparison mode.</li>
 <li>Enter or select both sides.</li>
 <li>Run the comparison.</li>
 <li>Review additions, deletions, and unchanged context.</li>
 </ol>
-<h2 id="local-git-on-windows">Local Git on Windows<a class="heading-anchor" href="#local-git-on-windows" aria-label="Link to Local Git on Windows">#</a></h2>
-<p>When supported, select a local repository to inspect status, remotes, commits, and diffs. Staging, unstaging, or guarded discard actions affect the selected repository.</p>
-<p>A guarded discard creates recovery information before replacing tracked changes.</p>
-<h2 id="github-comparison">GitHub comparison<a class="heading-anchor" href="#github-comparison" aria-label="Link to GitHub comparison">#</a></h2>
-<p>Supported GitHub actions fetch only the public URL or content you select. This is a user-initiated network action.</p>
-<h2 id="safety">Safety<a class="heading-anchor" href="#safety" aria-label="Link to Safety">#</a></h2>
-<ul>
-<li>Review the selected repository path.</li>
-<li>Do not discard changes you have not backed up.</li>
-<li>DevDesk does not perform background pull, fetch, or push.</li>
-<li>DevDesk does not manage Git credentials.</li>
-</ul>
-<h2 id="read-a-diff">Read a diff<a class="heading-anchor" href="#read-a-diff" aria-label="Link to Read a diff">#</a></h2>
-<pre><code class="language-diff">- old value
-+ new value
-  unchanged context
+<h2 id="git-status-from-a-workspace">Git status from a workspace<a class="heading-anchor" href="#git-status-from-a-workspace" aria-label="Link to Git status from a workspace">#</a></h2>
+<p>Eligible local Windows projects can open a focused Git status page:</p>
+<ol>
+<li>Open the workspace.</li>
+<li>Open <strong>Developer tools → Git status</strong>. The action appears after a Git
+repository is detected.</li>
+<li>Grant device-local execution trust after reviewing the displayed boundary.</li>
+<li>Refresh status.</li>
+<li>Stage or unstage a selected path explicitly.</li>
+</ol>
+<p>Opening <code>project.devdesk</code> never grants trust. Trust is private to the current device and can be revoked.</p>
+<h3 id="parent-repository-with-a-strict-workspace-scope">Parent repository with a strict workspace scope<a class="heading-anchor" href="#parent-repository-with-a-strict-workspace-scope" aria-label="Link to Parent repository with a strict workspace scope">#</a></h3>
+<p>When the user explicitly opens Git status, DevDesk resolves the real repository
+root with:</p>
+<pre><code class="language-text">git rev-parse --show-toplevel
 </code></pre>
-<h2 id="stage-and-unstage">Stage and unstage<a class="heading-anchor" href="#stage-and-unstage" aria-label="Link to Stage and unstage">#</a></h2>
+<p>The result may be the selected workspace or a parent folder. DevDesk separately
+records the folder containing <code>project.devdesk</code> and shows the repository-relative
+scope on the Git page. A nested <code>shopdesk/docs</code> workspace therefore uses only
+the <code>docs</code> pathspec even though Git belongs to <code>shopdesk</code>.</p>
+<p>After a normal clone, opening <code>docs/project.devdesk</code> restores the nested
+workspace identity. The manifest does not contain <code>.git</code> data, remotes,
+credentials, or trust.</p>
+<h2 id="safety-boundaries">Safety boundaries<a class="heading-anchor" href="#safety-boundaries" aria-label="Link to Safety boundaries">#</a></h2>
 <ul>
-<li><strong>Stage</strong> selects changes for the next commit.</li>
-<li><strong>Unstage</strong> removes them from the staged set without deleting the working change.</li>
-<li><strong>Guarded discard</strong> is destructive to the working change, so DevDesk creates recovery information first where implemented.</li>
+<li>Status and recent history include only the selected workspace pathspec.</li>
+<li>Displayed file paths are relative to the selected workspace.</li>
+<li>Diff, stage, unstage, and protected discard cannot escape that workspace.</li>
+<li>Unrelated parent-repository changes do not invalidate a scoped fingerprint.</li>
+<li>Absolute and cross-workspace paths are rejected.</li>
+<li>Stage and unstage require explicit actions.</li>
+<li>DevDesk does not automatically fetch, pull, push, commit, run hooks, or manage credentials.</li>
+<li>Use your normal Git client for remote operations.</li>
 </ul>
-<h2 id="no-automatic-network-git">No automatic network Git<a class="heading-anchor" href="#no-automatic-network-git" aria-label="Link to No automatic network Git">#</a></h2>
-<p>Local Git inspection does not imply background fetch, pull, push, or credential management. Review the selected repository and use your normal Git client for remote operations.</p>
-<div class="article-footer"><a class="pager" href="uuid.html"><small>Previous</small><strong>UUID Generator</strong></a><a class="pager" href="snippets-notes.html"><small>Next</small><strong>Snippets and Notes</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#text-and-file-comparison">Text and file comparison</a><a class="level-2" href="#local-git-on-windows">Local Git on Windows</a><a class="level-2" href="#github-comparison">GitHub comparison</a><a class="level-2" href="#safety">Safety</a><a class="level-2" href="#read-a-diff">Read a diff</a><a class="level-2" href="#stage-and-unstage">Stage and unstage</a><a class="level-2" href="#no-automatic-network-git">No automatic network Git</a></aside></div><footer class="site-footer"><div class="footer-inner">
-<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Local knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
-<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">API Workspaces</a></div>
+<h2 id="github-comparison">GitHub comparison<a class="heading-anchor" href="#github-comparison" aria-label="Link to GitHub comparison">#</a></h2>
+<p>Supported GitHub comparison fetches only the public URL or content you select. It is a user-initiated network action.</p>
+
+<div class="article-footer"><a class="pager" href="uuid.html"><small>Previous</small><strong>UUID Generator</strong></a><a class="pager" href="snippets-notes.html"><small>Next</small><strong>Snippets and Notes</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#compare-text-or-files">Compare text or files</a><a class="level-2" href="#git-status-from-a-workspace">Git status from a workspace</a><a class="level-3" href="#parent-repository-with-a-strict-workspace-scope">Parent repository with a strict workspace scope</a><a class="level-2" href="#safety-boundaries">Safety boundaries</a><a class="level-2" href="#github-comparison">GitHub comparison</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy policy</a></div>
 <div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
 </div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>

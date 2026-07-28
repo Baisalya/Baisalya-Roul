@@ -1,19 +1,23 @@
 # Privacy and security
 
-DevDesk is local-first, but some tools deliberately communicate with destinations you select.
+DevDesk is local-first, but some tools deliberately communicate with destinations you choose.
 
-## Local by default
+## Project data stays in your folder
 
-Documents, workspaces, histories, settings, indexes, and snippets are stored locally according to the feature and platform.
+Markdown, OpenAPI, JSON, and other project artifacts remain in the selected folder. DevDesk may keep device-local registry entries, caches, graph positions, drafts, recovery journals, automation history, recent state, permissions, and trust choices.
+
+`project.devdesk` is portable project configuration. It cannot carry secrets, credentials, absolute paths, commands, scripts, environment variables, execution trust, or personal UI state.
+
+Opening and indexing a project are data operations. They do not run commands, Git, scripts, terminals, AI tools, computations, attesters, or network requests.
 
 ## User-initiated network actions
 
 Network activity can occur when you:
 
-- Send an API request
-- Fetch supported public GitHub content
-- Validate a link
-- Open a store, support, privacy, portfolio, or other external page
+- send an API request;
+- fetch supported public GitHub content;
+- validate a link;
+- open a store, support, privacy, portfolio, or other external page.
 
 The destination can receive request content, your public IP address, and normal connection information.
 
@@ -21,31 +25,16 @@ The destination can receive request content, your public IP address, and normal 
 
 Android uses a Keystore-backed boundary and Windows uses DPAPI where supported. Protected secrets are excluded from supported portable backups and exports.
 
-## Files and clipboard
+## Files, clipboard, and exports
 
 DevDesk accesses files or folders after you choose them. Exported files and clipboard content are outside DevDesk's private storage boundary.
 
-## Reporting a problem
+Removing a workspace registration or clearing private app data does not delete external project folders.
 
-Use the public support repository only for non-sensitive reports. Use the private security-advisory channel or developer email for vulnerabilities and never post tokens, credentials, private bodies, or proprietary code publicly.
+## Execution trust
 
-## Before sending an API request
+Local Git or another bounded execution feature requires a separate device-local user decision. A project manifest cannot grant this trust, and opening a project never runs commands automatically.
 
-Review:
+## Report safely
 
-- Final URL and environment
-- Authorization and cookies
-- Query parameters
-- Body and attached files
-- Whether HTTPS is used
-- Whether the destination is trusted
-
-Redaction of stored/exported output does not remove credentials from a request you deliberately send.
-
-## Public support versus private security
-
-Use public Issues only for non-sensitive bug reports. Use the private security advisory or developer privacy email for vulnerabilities. Never post tokens, private request bodies, proprietary code, or personal data publicly.
-
-## Official policy
-
-The website links to the canonical hosted Privacy Policy. The policy—not a summary page—is the authoritative disclosure for the released build.
+Use public support only for non-sensitive reports. Use the private security advisory or developer email for vulnerabilities. Never post tokens, credentials, private request bodies, proprietary code, or personal data publicly.

@@ -1,105 +1,39 @@
 # Create a project knowledge structure
 
-A non-developer can create a useful structure with folders and plain text files. Start small; DevDesk can index additional files later.
+The easiest method is **Home → New workspace**. Choose a profile, review the
+exact starter files, and select a parent folder. DevDesk creates the workspace
+folder and `project.devdesk` safely. You can then add ordinary Markdown with
+DevDesk or any editor.
 
 ## Recommended starter structure
 
-
 ```text
-my-project-knowledge/
-├── index.md                     # Bundle entry point; may declare okf_version
-├── log.md                       # Optional update history, newest date first
+my-project/
+├── project.devdesk
+├── index.md
 ├── architecture/
-│   ├── index.md                 # Optional directory listing
-│   ├── system-overview.md       # One concept
-│   └── data-flow.md             # One concept
-├── api/
 │   ├── index.md
+│   └── system-overview.md
+├── api/
 │   └── customer-api.md
 ├── decisions/
 │   └── adr-001-local-storage.md
-├── runbooks/
-│   └── release-checklist.md
-└── references/                  # Optional mirrored source material or scripts
-    └── api-schema.md
+└── runbooks/
+    └── release-checklist.md
 ```
 
+The structure is optional. `project.devdesk` decides which project-relative roots DevDesk indexes and which paths it excludes.
 
-## Windows PowerShell command
-
-```powershell
-$root = "$HOME\Documents\MyProjectKnowledge"
-$folders = @(
-  $root,
-  "$root\architecture",
-  "$root\api",
-  "$root\decisions",
-  "$root\runbooks",
-  "$root\references"
-)
-$folders | ForEach-Object { New-Item -ItemType Directory -Force $_ | Out-Null }
-
-@"
----
-okf_version: "0.2"
----
-# My Project Knowledge
-
-## Start here
-
-- [System overview](architecture/system-overview.md)
-- [Customer API](api/customer-api.md)
-- [Release runbook](runbooks/release-checklist.md)
-"@ | Set-Content -Encoding utf8 "$root\index.md"
-
-@"
-# Directory Update Log
-
-## $(Get-Date -Format yyyy-MM-dd)
-- **Initialization**: Created the initial knowledge structure.
-"@ | Set-Content -Encoding utf8 "$root\log.md"
-```
-
-## macOS or Linux command
-
-```bash
-root="$HOME/Documents/MyProjectKnowledge"
-mkdir -p "$root"/{architecture,api,decisions,runbooks,references}
-cat > "$root/index.md" <<'EOF'
----
-okf_version: "0.2"
----
-# My Project Knowledge
-
-## Start here
-
-- [System overview](architecture/system-overview.md)
-- [Customer API](api/customer-api.md)
-- [Release runbook](runbooks/release-checklist.md)
-EOF
-
-cat > "$root/log.md" <<EOF
-# Directory Update Log
-
-## $(date +%F)
-- **Initialization**: Created the initial knowledge structure.
-EOF
-```
-
-## Create the first concept
+## Add a first document
 
 Save this as `architecture/system-overview.md`:
 
 ```markdown
 ---
 type: Architecture
-
 title: System overview
-
 description: A high-level map of the application and its major boundaries.
-
 tags: [architecture, overview]
-
 status: draft
 ---
 
@@ -119,4 +53,30 @@ See the [Customer API](../api/customer-api.md) and the
 [Release runbook](../runbooks/release-checklist.md).
 ```
 
-> [!TIP] Blank lines inside YAML are allowed by YAML, but compact frontmatter is easier to scan. DevDesk preserves unknown fields where possible.
+## Add a root index
+
+```markdown
+# Project Knowledge
+
+- [System overview](architecture/system-overview.md)
+- [Customer API](api/customer-api.md)
+- [Release runbook](runbooks/release-checklist.md)
+```
+
+If the project is an OKF v0.2 bundle, the root index may declare:
+
+```markdown
+---
+okf_version: "0.2"
+---
+```
+
+`project.devdesk` is DevDesk project configuration. It is not an OKF concept and does not replace `index.md`.
+
+## Keep the folder portable
+
+- Use project-relative paths.
+- Keep important knowledge in Markdown, not only in device-local state.
+- Keep secrets out of Markdown and `project.devdesk`.
+- Commit or back up the folder before large changes.
+- Prefer standard Markdown links when interoperability matters.

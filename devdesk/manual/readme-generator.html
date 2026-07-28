@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Build a clear project README with accurate install and usage instructions."><meta name="theme-color" content="#5b47e8"><title>README Generator · DevDesk Manual</title><link rel="icon" href="../assets/img/devdesk-logo.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
-  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Developer workspace</small></span></a>
+  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Your files. Your workspace.</small></span></a>
   <nav class="top-nav" aria-label="Primary navigation">
     <a class="" href="../index.html">Home</a>
     <a class="active" href="../manual/getting-started.html">Manual</a>
@@ -9,7 +9,7 @@
     <a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy</a>
   </nav>
   <div class="header-actions">
-    <button class="search-btn" type="button" data-search><span>Search manual</span> <kbd>/</kbd></button>
+    <button class="search-btn" type="button" data-search aria-label="Search manual"><span>Search manual</span> <kbd>/</kbd></button>
     <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
   </div>
 </header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
@@ -17,18 +17,18 @@
 <a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
 <a class="" href="../manual/interface-tour.html">Interface tour</a>
 <h2>Knowledge and Markdown</h2>
-<a class="" href="../manual/developer-workspaces.html">Developer Workspaces</a>
+<a class="" href="../manual/developer-workspaces.html">Folders, portability, and Git</a>
 <a class="" href="../manual/project-folder-structure.html">Create a project knowledge structure</a>
 <a class="" href="../manual/markdown-basics.html">Markdown basics</a>
 <a class="" href="../manual/frontmatter-properties.html">YAML frontmatter and properties</a>
 <a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
-<a class="" href="../manual/knowledge-workspace.html">Knowledge Workspace</a>
-<a class="" href="../manual/knowledge-graph.html">Knowledge Graph</a>
+<a class="" href="../manual/knowledge-workspace.html">Edit workspace Markdown</a>
+<a class="" href="../manual/knowledge-graph.html">Relationships and graph</a>
 <a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
 <a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
 <a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
-<h2>Structured Knowledge / OKF</h2>
-<a class="" href="../manual/structured-knowledge-okf.html">Structured Knowledge and OKF</a>
+<h2>Structure checks (OKF)</h2>
+<a class="" href="../manual/structured-knowledge-okf.html">Structure checks (OKF)</a>
 <a class="" href="../manual/okf-bundle-structure.html">OKF bundle structure</a>
 <a class="" href="../manual/okf-concepts-metadata.html">OKF concepts and metadata</a>
 <a class="" href="../manual/okf-conversion-migration.html">Analyze, convert, and migrate folders</a>
@@ -36,12 +36,12 @@
 <a class="" href="../manual/okf-attested-computation.html">Attested Computation</a>
 <h2>API and documentation</h2>
 <a class="active" href="../manual/readme-generator.html" aria-current="page">README Generator</a>
-<a class="" href="../manual/api-workspaces.html">API Workspaces</a>
+<a class="" href="../manual/api-workspaces.html">Saved API testing</a>
 <a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
 <a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
 <a class="" href="../manual/quick-api.html">Quick API</a>
 <a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
-<a class="" href="../manual/unified-search.html">Unified Search</a>
+<a class="" href="../manual/unified-search.html">Search this workspace</a>
 <h2>Developer utilities</h2>
 <a class="" href="../manual/json-tools.html">JSON Tools</a>
 <a class="" href="../manual/jwt-decoder.html">JWT Decoder</a>
@@ -50,7 +50,7 @@
 <a class="" href="../manual/url-tools.html">URL Encoder and Decoder</a>
 <a class="" href="../manual/timestamp.html">Timestamp Converter</a>
 <a class="" href="../manual/uuid.html">UUID Generator</a>
-<a class="" href="../manual/diff-git.html">Diff Workspace and local Git</a>
+<a class="" href="../manual/diff-git.html">Compare files and scoped Git</a>
 <a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
 <h2>Safety and reference</h2>
 <a class="" href="../manual/backup-restore.html">Backup and restore</a>
@@ -103,8 +103,8 @@ flutter test
 Do not copy secrets, local paths, test tokens, or ranking language into the generated README.
 </code></pre>
 <div class="article-footer"><a class="pager" href="okf-attested-computation.html"><small>Previous</small><strong>Attested Computation</strong></a><a class="pager" href="api-workspaces.html"><small>Next</small><strong>API Workspaces</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#workflow">Workflow</a><a class="level-2" href="#good-readme-practice">Good README practice</a><a class="level-2" href="#output">Output</a><a class="level-2" href="#suggested-section-order">Suggested section order</a><a class="level-2" href="#command-example">Command example</a></aside></div><footer class="site-footer"><div class="footer-inner">
-<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Local knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
-<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">API Workspaces</a></div>
+<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy policy</a></div>
 <div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
 </div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>

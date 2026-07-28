@@ -1,4 +1,4 @@
-const CACHE_NAME = 'devdesk-docs-v3-network-first-20260726';
+const CACHE_NAME = 'devdesk-docs-v6-purpose-and-usp-20260728';
 const ASSETS = [
   "./index.html",
   "./downloads.html",

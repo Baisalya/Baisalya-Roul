@@ -1,30 +1,358 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="DevDesk documentation and downloads for connected Markdown knowledge, OKF, APIs, OpenAPI, and developer utilities."><meta name="theme-color" content="#5b47e8"><title>DevDesk · Developer workspace and complete user manual</title><link rel="icon" href="assets/img/devdesk-logo.png"><link rel="manifest" href="site.webmanifest"><link rel="stylesheet" href="assets/css/styles.css"><script defer src="assets/js/site-config.js"></script><script defer src="assets/js/search-index.js"></script><script defer src="assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
-<header class="site-header">
-  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
-  <a class="brand" href="index.html"><img src="assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Developer workspace</small></span></a>
-  <nav class="top-nav" aria-label="Primary navigation">
-    <a class="active" href="index.html">Home</a>
-    <a class="" href="manual/getting-started.html">Manual</a>
-    <a class="" href="downloads.html">Downloads</a>
-      <a
-        href="https://baisalya.github.io/devdesk-support/"
-        target="_blank"
-        rel="noopener"
-      >Support</a>
-    <a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy</a>
-  </nav>
-  <div class="header-actions">
-    <button class="search-btn" type="button" data-search><span>Search manual</span> <kbd>/</kbd></button>
-    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>
+    try {
+      const theme = localStorage.getItem('devdesk-theme');
+      document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+    } catch (_) {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta
+    name="description"
+    content="DevDesk turns one ordinary folder into a portable workspace for plans, notes, connected knowledge, API testing, and scoped Git. No account or file lock-in."
+  >
+  <meta name="theme-color" content="#5b47e8">
+  <title>DevDesk - One folder. Every view. Every tool. Still your files.</title>
+  <link rel="icon" href="assets/img/devdesk-logo.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/site-config.js"></script>
+  <script defer src="assets/js/search-index.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open navigation">Menu</button>
+    <a class="brand" href="index.html">
+      <img src="assets/img/devdesk-logo.png" alt="">
+      <span>DevDesk<small>Your files. Your workspace.</small></span>
+    </a>
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a class="active" href="index.html" aria-current="page">Home</a>
+      <a href="#why">Why DevDesk</a>
+      <a href="manual/getting-started.html">Manual</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="https://baisalya.github.io/devdesk-support/" target="_blank" rel="noopener">Support</a>
+    </nav>
+    <div class="header-actions">
+      <button class="search-btn" type="button" data-search aria-label="Search manual"><span>Search manual</span> <kbd>/</kbd></button>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">Theme</button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero hero-product">
+      <div>
+        <span class="eyebrow">No account - no file lock-in - Android + Windows</span>
+        <h1>One folder. Every view. Every tool. Still your files.</h1>
+        <p>
+          Plan, write, connect ideas, test APIs, and inspect project Git in one
+          portable workspace. Start with a normal task or note. Add technical
+          tools only when your work needs them.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="manual/getting-started.html">Start in 5 minutes</a>
+          <a class="btn" href="downloads.html">Get DevDesk</a>
+        </div>
+        <ul class="trust-list" aria-label="DevDesk product principles">
+          <li>Ordinary readable files</li>
+          <li>Copy or Git-clone and continue</li>
+          <li>Manual, review-first, or safe automation</li>
+        </ul>
+      </div>
+      <div class="hero-art">
+        <img src="assets/img/welcome.png" alt="DevDesk workspace illustration with planning and project tools">
+        <div class="floating-badge">
+          Open <code>project.devdesk</code>. DevDesk recognises the folder and
+          rebuilds the local workspace.
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="section">
+      <div class="section-header">
+        <span class="eyebrow">Why DevDesk</span>
+        <h2>Your work should not be trapped inside the tool that helps you see it.</h2>
+        <p>
+          DevDesk keeps ordinary project files as the source of truth, then gives
+          them useful views, relationships, portability, and optional specialist
+          tools. The distinctive value is the complete combination, not a claim
+          that every individual feature is unique.
+        </p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <img class="illustration" src="assets/img/knowledge.png" alt="">
+          <h3>Work your way</h3>
+          <p>
+            See the same task, note, goal, meeting, or decision as a list, board,
+            calendar, timeline, outline, file, or relationship.
+          </p>
+        </article>
+        <article class="card">
+          <img class="illustration" src="assets/img/privacy.png" alt="">
+          <h3>Keep ownership</h3>
+          <p>
+            Your content stays in the folder you chose. Open it in another editor,
+            back it up normally, and share only the files you approve.
+          </p>
+        </article>
+        <article class="card">
+          <img class="illustration" src="assets/img/api.png" alt="">
+          <h3>Grow without moving</h3>
+          <p>
+            Add connected Markdown, JSON, OpenAPI, saved API testing, OKF checks,
+            Diff, and workspace-scoped Git when the project grows.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-tinted">
+      <div class="section-header">
+        <span class="eyebrow">Two simple paths</span>
+        <h2>Useful for everyday work. Serious enough for a real project.</h2>
+      </div>
+      <div class="audience-grid">
+        <article class="audience-card">
+          <span class="audience-label">For life, study, and work</span>
+          <h3>Begin with what you already understand.</h3>
+          <p>
+            Create tasks, notes, goals, assignments, meetings, decisions, sources,
+            outlines, and drafts. DevDesk handles Markdown structure and graph
+            connections for you.
+          </p>
+          <ul>
+            <li>Personal, Study, Business, and Research / writing starters</li>
+            <li>Today, Board, Calendar, Timeline, Outline, and Relationships</li>
+            <li>No frontmatter, JSON, node, edge, or OKF knowledge required</li>
+          </ul>
+          <a href="manual/getting-started.html">Choose an everyday recipe</a>
+        </article>
+        <article class="audience-card developer-card">
+          <span class="audience-label">For builders</span>
+          <h3>Keep docs and tools beside the work they describe.</h3>
+          <p>
+            A project can carry portable docs, safe settings, a sanitized API
+            workspace, OpenAPI, JSON, and knowledge links. Parent-repository Git
+            can be detected while DevDesk actions remain restricted to the
+            selected workspace.
+          </p>
+          <ul>
+            <li>Nested folders and exact selected-file tool context</li>
+            <li>Automatic portable API artifact without portable secrets</li>
+            <li>Clone, open <code>project.devdesk</code>, and continue</li>
+          </ul>
+          <a href="manual/developer-workspaces.html">See the portable project workflow</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="eyebrow">Portable by design</span>
+        <h2>Three steps from this device to the next.</h2>
+      </div>
+      <ol class="steps">
+        <li>
+          <span>1</span>
+          <div>
+            <h3>Choose or create a folder</h3>
+            <p>
+              Preview a new workspace, or open an existing folder without writes.
+              Add portable identity only when you choose it.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span>2</span>
+          <div>
+            <h3>Work with ordinary files</h3>
+            <p>
+              DevDesk derives views and relationships. Safe project writes stay
+              reviewable, bounded, and conflict-aware.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span>3</span>
+          <div>
+            <h3>Copy or clone and reopen</h3>
+            <p>
+              Open <code>project.devdesk</code>. Local registration and indexes
+              are rebuilt; protected values and trust stay device-local.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="eyebrow">One source, not duplicate systems</span>
+        <h2>A workspace that changes shape without changing ownership.</h2>
+      </div>
+      <div class="comparison-wrap">
+        <table class="comparison">
+          <thead>
+            <tr>
+              <th>What matters</th>
+              <th>Single-purpose project apps</th>
+              <th>DevDesk</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Source of truth</td>
+              <td>Often an app-specific workspace or one specialist format</td>
+              <td>Ordinary files in your selected folder</td>
+            </tr>
+            <tr>
+              <td>Ways to see work</td>
+              <td>Usually centred on one product category</td>
+              <td>Tasks, notes, files, timeline, outline, and relationships</td>
+            </tr>
+            <tr>
+              <td>Developer context</td>
+              <td>Often opened in separate tools and separate workspaces</td>
+              <td>API, OpenAPI, JSON, Diff, and scoped Git beside project docs</td>
+            </tr>
+            <tr>
+              <td>Move to another system</td>
+              <td>May require export, sync, or setup recreation</td>
+              <td>Copy or clone, then open <code>project.devdesk</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="comparison-note">
+        Different products solve different problems. This comparison describes
+        DevDesk's design goal, not every product in each category.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="eyebrow">Trust before automation</span>
+        <h2>Helpful does not mean hidden.</h2>
+        <p>
+          Read-only indexes can rebuild automatically. Project writes use Manual,
+          Review changes, or bounded Safe automatic mode. Secrets, cookies,
+          execution trust, recents, and personal layout do not belong in portable
+          project files.
+        </p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>No silent overwrite</h3>
+          <p>Existing paths and external file changes are preserved and reported.</p>
+        </article>
+        <article class="card">
+          <h3>No portable secrets by default</h3>
+          <p>Sanitized API structure can travel; protected values stay on the device.</p>
+        </article>
+        <article class="card">
+          <h3>No surprise Git scope</h3>
+          <p>When Git lives above the workspace, mutations remain limited to workspace paths.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="eyebrow">Complete, searchable manual</span>
+        <h2>Start with a goal. Learn technical detail only when it helps.</h2>
+      </div>
+      <div class="home-doc-grid">
+        <a class="home-doc-link" href="manual/getting-started.html">
+          <div><strong>Getting started</strong><span>A clear first five minutes for any user.</span></div>
+        </a>
+        <a class="home-doc-link" href="manual/interface-tour.html">
+          <div><strong>Home and navigation</strong><span>Know where to create, browse, search, and get help.</span></div>
+        </a>
+        <a class="home-doc-link" href="manual/developer-workspaces.html">
+          <div><strong>Folders, portability, and Git</strong><span>Understand copy, clone, nested folders, and strict Git scope.</span></div>
+        </a>
+        <a class="home-doc-link" href="manual/knowledge-graph.html">
+          <div><strong>Relationships and graph</strong><span>Use clean connections, filters, list fallback, link editing, and undo.</span></div>
+        </a>
+        <a class="home-doc-link" href="manual/api-workspaces.html">
+          <div><strong>Saved API testing</strong><span>Requests, environments, checks, runners, and protected values.</span></div>
+        </a>
+        <a class="home-doc-link" href="manual/structured-knowledge-okf.html">
+          <div><strong>Structure checks (OKF)</strong><span>Separate required rules from advice and optional improvements.</span></div>
+        </a>
+        <a class="home-doc-link" href="manual/diff-git.html">
+          <div><strong>Compare files and scoped Git</strong><span>Review content and make explicit bounded Git changes.</span></div>
+        </a>
+        <a class="home-doc-link" href="manual/troubleshooting.html">
+          <div><strong>Troubleshooting</strong><span>Recover from workspace, file, graph, API, Git, or layout problems.</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cta-panel">
+        <span class="eyebrow">Keep the folder. Gain the workspace.</span>
+        <h2>Start simple today. Your setup can grow with the project.</h2>
+        <p>
+          Android and Windows availability is shown transparently on the
+          downloads page. No unreleased platform is presented as available.
+        </p>
+        <div class="button-row">
+          <a class="btn primary" href="downloads.html">Choose a platform</a>
+          <a class="btn" href="manual/getting-started.html">Read the first-use guide</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <a class="brand" href="index.html">
+          <img src="assets/img/devdesk-logo.png" alt="">
+          <span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span>
+        </a>
+        <p style="color:var(--muted)">
+          One portable, local-first workspace built around ordinary user-owned files.
+        </p>
+      </div>
+      <div>
+        <h3>Start</h3>
+        <a href="manual/getting-started.html">Getting started</a>
+        <a href="manual/interface-tour.html">Interface tour</a>
+        <a href="downloads.html">Downloads</a>
+      </div>
+      <div>
+        <h3>Go deeper</h3>
+        <a href="manual/developer-workspaces.html">Portable projects</a>
+        <a href="manual/knowledge-graph.html">Relationships</a>
+        <a href="manual/api-workspaces.html">API testing</a>
+      </div>
+      <div>
+        <h3>Trust</h3>
+        <a href="manual/privacy-security.html">Privacy and security</a>
+        <a href="manual/troubleshooting.html">Troubleshooting</a>
+        <a href="https://baisalya.github.io/devdesk-support/" target="_blank" rel="noopener">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="search-overlay" data-search-overlay aria-hidden="true">
+    <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation">
+      <input type="search" data-search-input placeholder="Search tasks, folders, graph, APIs, Git..." autocomplete="off">
+      <div class="search-results" data-search-results>
+        <div class="empty-search">Start typing to search the complete manual.</div>
+      </div>
+    </div>
   </div>
-</header><main id="main-content"><section class="hero"><div><span class="eyebrow">Local knowledge · APIs · developer tools</span><h1>Build connected project knowledge without losing ordinary files.</h1><p>DevDesk brings Markdown workspaces, backlinks, graphs, Structured Knowledge/OKF, API testing, OpenAPI, local Git inspection, and focused utilities into one Android and Windows workspace.</p><div class="hero-actions"><a class="btn primary" href="manual/getting-started.html">Read the complete manual</a><a class="btn" href="downloads.html">Download DevDesk</a></div></div><div class="hero-art"><img src="assets/img/welcome.png" alt="Illustration of the DevDesk workspace"><div class="floating-badge">Turn an existing project folder into portable structured knowledge.</div></div></section>
-<section class="section"><div class="section-header"><span class="eyebrow">One workspace, three workflows</span><h2>Knowledge, APIs, and practical tools—organized around real work.</h2></div><div class="cards"><article class="card"><img class="illustration" src="assets/img/knowledge.png" alt="Connected knowledge illustration"><h3>Knowledge Workspace</h3><p>Register folders, edit Markdown, inspect properties and outlines, create links, view backlinks, and navigate local or workspace graphs.</p></article><article class="card"><img class="illustration" src="assets/img/api.png" alt="API request workspace illustration"><h3>API Studio</h3><p>Build exact saved requests, environments, OAuth, protected variables, imports, assertions, extraction, runners, bounded responses, and OpenAPI-generated collections.</p></article><article class="card"><img class="illustration" src="assets/img/manual.png" alt="Documentation and developer tools illustration"><h3>Developer Utilities</h3><p>Use JSON, JWT, Regex, Base64, URL, Timestamp, UUID, Diff, README, snippets, backup, search, and contextual manuals.</p></article></div></section>
-<section class="section"><div class="section-header"><span class="eyebrow">Structured Knowledge</span><h2>From Markdown files to a navigable, portable knowledge bundle.</h2><p>DevDesk keeps Markdown as the source of truth while helping you add metadata, indexes, links, trust signals, lifecycle information, and safe migration previews.</p></div><div class="cards"><article class="card"><img class="illustration" src="assets/img/structured-knowledge.png" alt="Structured Knowledge icon showing a document, connected concepts, and verification"><h3>Understandable structure</h3><p>Use plain folders, Markdown, YAML frontmatter, and standard links. No proprietary database is required.</p></article><article class="card"><h3>Manual and automatic workflows</h3><p>Create concepts yourself or let DevDesk analyze an existing folder and prepare deterministic changes for review before applying them.</p><p style="margin-top:16px"><a href="manual/structured-knowledge-okf.html">Read the OKF guide →</a></p></article><article class="card"><h3>Graph relationships</h3><p>Every saved relationship remains a Markdown link. Nodes and backlinks are derived from files rather than stored as hidden graph-only data.</p><p style="margin-top:16px"><a href="manual/links-backlinks-nodes.html">Learn links and nodes →</a></p></article></div></section>
-<section class="section"><div class="section-header"><span class="eyebrow">Downloads</span><h2>Clear platform availability.</h2><p>The website does not claim that a package exists until the developer publishes it.</p></div><div class="platform-grid"><article class="platform-card" data-download="android"><div class="platform-icon">A</div><span class="status" data-download-status></span><h3>Android</h3><p data-download-note></p><a class="btn primary" data-download-link target="_blank" rel="noopener"><span data-download-label></span></a></article><article class="platform-card" data-download="windows"><div class="platform-icon">W</div><span class="status" data-download-status></span><h3>Windows</h3><p data-download-note></p><a class="btn primary" data-download-link target="_blank" rel="noopener"><span data-download-label></span></a></article><article class="platform-card" data-download="macos"><div class="platform-icon">M</div><span class="status" data-download-status></span><h3>macOS</h3><p data-download-note></p><a class="btn" data-download-link><span data-download-label></span></a></article></div></section>
-<section class="section"><div class="section-header"><span class="eyebrow">Complete documentation</span><h2>Every important workflow, from the first folder to advanced OKF metadata.</h2></div><div class="home-doc-grid"><a class="home-doc-link" href="manual/getting-started.html"><div><strong>Getting started</strong><span>Install DevDesk, learn the interface, and complete your first useful workflow.</span></div></a><a class="home-doc-link" href="manual/links-backlinks-nodes.html"><div><strong>Links, backlinks, and nodes</strong><span>Connect files manually and understand how links become graph nodes and edges.</span></div></a><a class="home-doc-link" href="manual/knowledge-graph.html"><div><strong>Knowledge Graph</strong><span>Read, filter, zoom, fit, and troubleshoot local and workspace graphs.</span></div></a><a class="home-doc-link" href="manual/structured-knowledge-okf.html"><div><strong>Structured Knowledge and OKF</strong><span>Understand the benefit, terminology, and safe DevDesk workflow.</span></div></a><a class="home-doc-link" href="manual/api-workspaces.html"><div><strong>API Workspaces</strong><span>Create exact requests, imports, environments, protected secrets, assertions, extraction, runner reports, and network settings.</span></div></a><a class="home-doc-link" href="manual/openapi-studio.html"><div><strong>OpenAPI Studio</strong><span>Validate Swagger 2.0 or OpenAPI 3.0/3.1 JSON/YAML, inspect operations and schemas, and generate collections.</span></div></a><a class="home-doc-link" href="manual/json-tools.html"><div><strong>JSON Tools</strong><span>Validate, format, minify, and explore JSON safely.</span></div></a><a class="home-doc-link" href="manual/troubleshooting.html"><div><strong>Troubleshooting</strong><span>Resolve common folder, graph, API, file, layout, backup, and install problems.</span></div></a></div></section></main><footer class="site-footer"><div class="footer-inner">
-<div><a class="brand" href="index.html"><img src="assets/img/devdesk-logo.png" alt=""><span>DevDesk<small>Local knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
-<div><h3>Learn</h3><a href="manual/getting-started.html">Getting started</a><a href="manual/links-backlinks-nodes.html">Links and graph</a><a href="manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="manual/api-workspaces.html">API Workspaces</a></div>
-<div><h3>Product</h3><a href="downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener">Privacy policy</a></div>
-<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener">Official OKF v0.2 spec</a><a href="manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="manual/troubleshooting.html">Troubleshooting</a><a href="manual/faq.html">FAQ</a></div>
-</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div>    <div class="mobile-drawer-backdrop"></div>
-</body></html>
+  <div class="mobile-drawer-backdrop"></div>
+</body>
+</html>

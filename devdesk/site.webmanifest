@@ -1,6 +1,7 @@
 {
-  "name": "DevDesk Manual",
-  "short_name": "DevDesk Docs",
+  "name": "DevDesk Product and Manual",
+  "short_name": "DevDesk",
+  "description": "One portable folder for plans, knowledge, APIs, and developer tools.",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#090d16",
