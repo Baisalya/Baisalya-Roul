@@ -19,6 +19,10 @@ Network activity can occur when you:
 - validate a link;
 - open a store, support, privacy, portfolio, or other external page.
 
+The Windows download action opens the official Microsoft Store listing. The
+Android listing is currently a closed test and may require an approved tester
+account.
+
 The destination can receive request content, your public IP address, and normal connection information.
 
 ## Protected secrets

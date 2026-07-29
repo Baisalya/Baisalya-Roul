@@ -12,6 +12,15 @@ No. Personal, Study, Business, and Research / writing profiles hide developer co
 
 It is a portable UTF-8 JSON file that stores project identity and project-relative configuration. It is not project content, a secret store, or an executable workspace.
 
+## Can I open a project by clicking `project.devdesk`?
+
+Yes. The installed Windows setup/MSIX registers the file with the DevDesk icon,
+so double-clicking opens that project. On Android, tap it in a compatible Files
+provider, choose DevDesk, then approve the containing folder through Android's
+system folder picker. A portable Windows ZIP cannot install file associations;
+use **Open with** or install DevDesk. The same manifest stays portable because
+it stores project-relative settings rather than device-specific paths.
+
 ## Must every folder have a manifest?
 
 No. **Open once without writing** registers a folder only on the current device. Add a manifest when you want the identity and settings to travel with the folder.

@@ -31,6 +31,23 @@ Future<void> main() async {
         failures.add('${_relative(siteRoot, file)} has duplicate id "$id".');
       }
     }
+    for (final element in document.querySelectorAll('a[target="_blank"]')) {
+      final relation = (element.attributes['rel'] ?? '').split(RegExp(r'\s+'));
+      if (!relation.contains('noopener')) {
+        failures.add(
+          '${_relative(siteRoot, file)} has a new-tab link without noopener.',
+        );
+      }
+    }
+    for (final element in document.querySelectorAll('img')) {
+      final source = element.attributes['src'] ?? '';
+      if (source.contains('devdesk-logo-') &&
+          !element.attributes.containsKey('alt')) {
+        failures.add(
+          '${_relative(siteRoot, file)} has a DevDesk logo without alt text.',
+        );
+      }
+    }
   }
 
   for (final file in htmlFiles) {
@@ -53,8 +70,10 @@ Future<void> main() async {
       final targetDocument =
           documents[target.absolute.path.toLowerCase()] ??
           html_parser.parse(await target.readAsString(encoding: utf8));
-      if (targetDocument.getElementById(Uri.decodeComponent(uri.fragment)) ==
-          null) {
+      final expectedId = Uri.decodeComponent(uri.fragment);
+      if (!targetDocument
+          .querySelectorAll('[id]')
+          .any((element) => element.id == expectedId)) {
         failures.add(
           '${_relative(siteRoot, file)} references missing fragment '
           '${_relative(siteRoot, target)}#${uri.fragment}.',
@@ -76,6 +95,12 @@ Future<void> main() async {
     final entries =
         jsonDecode(searchSource.substring(searchStart, searchEnd + 1))
             as List<dynamic>;
+    if (entries.length != 42) {
+      failures.add(
+        'Expected 42 searchable manuals after adding the global manual; '
+        'found ${entries.length}.',
+      );
+    }
     final urls = <String>{};
     for (final raw in entries) {
       final entry = Map<String, dynamic>.from(raw as Map);
@@ -91,6 +116,57 @@ Future<void> main() async {
       }
     }
     stdout.writeln('Search entries: ${entries.length}');
+  }
+
+  const storeUrl =
+      'https://apps.microsoft.com/detail/'
+      '9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare';
+  final siteConfig = await File(
+    '${siteRoot.path}${Platform.pathSeparator}assets'
+    '${Platform.pathSeparator}js${Platform.pathSeparator}site-config.js',
+  ).readAsString(encoding: utf8);
+  if (!siteConfig.contains(storeUrl)) {
+    failures.add('site-config.js does not contain the official Store URL.');
+  }
+  if (!siteConfig.contains('Android closed testing')) {
+    failures.add('site-config.js does not explain Android closed testing.');
+  }
+
+  final userManual = File(
+    '${siteRoot.path}${Platform.pathSeparator}manual'
+    '${Platform.pathSeparator}user-manual.html',
+  );
+  if (!userManual.existsSync()) {
+    failures.add('manual/user-manual.html does not exist.');
+  } else {
+    final userManualDocument = html_parser.parse(
+      await userManual.readAsString(encoding: utf8),
+    );
+    for (final id in const <String>[
+      'welcome-to-devdesk',
+      'start-here-your-first-five-minutes',
+      'planning-your-work',
+      'markdown-for-complete-beginners',
+      'knowledge-graph',
+      'open-knowledge-format-okf',
+      'api-workspaces',
+      'openapi-studio',
+      'json-tools',
+      'git-tools',
+      'windows-guide',
+      'android-guide',
+      'privacy-and-security',
+      'troubleshooting',
+      'glossary',
+      'learn-more-and-references',
+      'complete-beginner-walkthrough-my-first-app-project',
+    ]) {
+      if (!userManualDocument
+          .querySelectorAll('[id]')
+          .any((element) => element.id == id)) {
+        failures.add('Global manual is missing section #$id.');
+      }
+    }
   }
 
   if (failures.isNotEmpty) {

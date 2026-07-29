@@ -179,13 +179,24 @@ Recovery information is recorded before a managed batch. Partial failures roll b
 
 ## Android access
 
-Select the folder that directly contains `project.devdesk`. Android grants a document-tree URI, not a normal filesystem path. DevDesk keeps that URI opaque and uses only capabilities supplied by the provider.
+Tap `project.devdesk` in a compatible Files provider and choose **Open DevDesk
+project**. Android then asks you to select the folder that directly contains
+the file. Android grants a document-tree URI, not a normal filesystem path.
+DevDesk keeps that URI opaque and uses only capabilities supplied by the
+provider.
 
 If permission is revoked, re-select the same folder instead of creating a duplicate workspace.
 
 ## Windows folders and Git
 
-Windows local folders can use filtered, debounced file watching. A valid manifest can cold-start DevDesk or activate its project in an already-running window.
+The installed Windows setup or MSIX gives `project.devdesk` the DevDesk icon.
+Double-clicking a valid manifest can cold-start DevDesk or activate its project
+in an already-running window. A portable ZIP cannot register file associations;
+use **Open with → DevDesk** or install the setup package. When DevDesk branding
+changes, an app update replaces the registered icon source, although Explorer
+can briefly retain an older icon in its cache.
+
+Windows local folders can also use filtered, debounced file watching.
 
 Git status requires a separate device-local execution-trust decision. DevDesk
 resolves `git rev-parse --show-toplevel`, then keeps the repository root and

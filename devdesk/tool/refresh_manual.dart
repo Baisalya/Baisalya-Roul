@@ -18,6 +18,12 @@ class _Page {
 
 const _pages = <_Page>[
   _Page(
+    slug: 'user-manual',
+    title: 'Complete user manual',
+    description:
+        'A beginner-first guide to workspaces, planning, Markdown, graph, OKF, APIs, JSON, Git, backup, privacy, and platform help.',
+  ),
+  _Page(
     slug: 'getting-started',
     title: 'Getting started',
     description:
@@ -28,6 +34,12 @@ const _pages = <_Page>[
     title: 'Interface tour',
     description:
         'Understand Home, unified workspace navigation, files, tools, and responsive layouts.',
+  ),
+  _Page(
+    slug: 'downloads-installation',
+    title: 'Downloads and installation',
+    description:
+        'Install or update DevDesk from Microsoft Store or join Android closed testing safely.',
   ),
   _Page(
     slug: 'developer-workspaces',
@@ -95,6 +107,18 @@ const _pages = <_Page>[
     description:
         'Quick answers about purpose, everyday use, folders, graphs, APIs, OKF, backups, and onboarding.',
   ),
+  _Page(
+    slug: 'settings-appearance',
+    title: 'Settings and appearance',
+    description:
+        'Adjust appearance, reopen onboarding and manuals, use Store access, and understand local reset.',
+  ),
+  _Page(
+    slug: 'privacy-security',
+    title: 'Privacy and security',
+    description:
+        'Understand local-first files, protected values, execution trust, and user-initiated network actions.',
+  ),
 ];
 
 final _htmlEscape = HtmlEscape(HtmlEscapeMode.element);
@@ -153,7 +177,17 @@ Future<void> _refreshPage(
   final source = await markdownFile.readAsString(encoding: utf8);
   final body = markdownToHtml(source, extensionSet: ExtensionSet.gitHubWeb);
   final rendered = _addHeadingAnchors(body);
+  if (!htmlFile.existsSync()) {
+    final template = File(
+      '${siteRoot.path}${separator}manual${separator}getting-started.html',
+    );
+    await htmlFile.writeAsString(
+      await template.readAsString(encoding: utf8),
+      encoding: utf8,
+    );
+  }
   var document = await htmlFile.readAsString(encoding: utf8);
+  document = _prepareManualTemplate(document, page.slug);
 
   final metaStart = document.indexOf('<div class="doc-meta">');
   final bodyStart = document.indexOf('</div>', metaStart) + '</div>'.length;
@@ -169,7 +203,7 @@ Future<void> _refreshPage(
   document = document.replaceRange(
     bodyStart,
     footerStart,
-    '\n${rendered.html}\n',
+    '\n${_secureExternalLinks(rendered.html)}\n',
   );
 
   final tocStart = document.indexOf('<aside class="toc"');
@@ -195,13 +229,67 @@ Future<void> _refreshPage(
   await htmlFile.writeAsString(document, encoding: utf8);
 
   final url = 'manual/${page.slug}.html';
-  final searchEntry = searchEntries.firstWhere(
-    (entry) => entry['url'] == url,
-    orElse: () => throw StateError('Search entry not found for $url'),
-  );
+  var searchEntry = <String, dynamic>{};
+  for (final entry in searchEntries) {
+    if (entry['url'] == url) {
+      searchEntry = entry;
+      break;
+    }
+  }
+  if (searchEntry.isEmpty) {
+    searchEntry = <String, dynamic>{'group': 'Start here', 'url': url};
+    searchEntries.insert(0, searchEntry);
+  }
   searchEntry['title'] = page.title;
   searchEntry['summary'] = page.description;
   searchEntry['text'] = _plainText(body);
+}
+
+String _prepareManualTemplate(String source, String slug) {
+  const startHeading = '<h2>Start here</h2>';
+  final userManualLink = slug == 'user-manual'
+      ? '<a class="active" href="../manual/user-manual.html" '
+            'aria-current="page">Complete user manual</a>'
+      : '<a class="" href="../manual/user-manual.html">'
+            'Complete user manual</a>';
+  if (!source.contains('>Complete user manual</a>')) {
+    source = source.replaceFirst(
+      startHeading,
+      '$startHeading\n$userManualLink',
+    );
+  }
+  if (slug == 'user-manual') {
+    source = source.replaceFirst(
+      '<a class="active" href="../manual/getting-started.html" '
+          'aria-current="page">Getting started</a>',
+      '<a class="" href="../manual/getting-started.html">Getting started</a>',
+    );
+    source = source.replaceFirst(
+      RegExp(r'<div class="article-footer">.*?</div></article>', dotAll: true),
+      '<div class="article-footer"><span></span>'
+      '<a class="pager" href="getting-started.html">'
+      '<small>Next</small><strong>Getting started</strong></a>'
+      '</div></article>',
+    );
+  }
+  return source
+      .replaceAll(
+        'href="../manual/getting-started.html">Manual</a>',
+        'href="../manual/user-manual.html">Manual</a>',
+      )
+      .replaceAll(
+        '<a href="getting-started.html">Manual</a>',
+        '<a href="user-manual.html">Manual</a>',
+      );
+}
+
+String _secureExternalLinks(String source) {
+  return source.replaceAllMapped(
+    RegExp(r'<a href="https?://[^"]+"'),
+    (match) =>
+        '${match.group(0)} target="_blank" '
+        'rel="noopener noreferrer"',
+  );
 }
 
 class _Heading {
@@ -293,6 +381,21 @@ Future<void> _refreshSharedBrand(Directory siteRoot) async {
   ];
   for (final file in files) {
     var source = await file.readAsString(encoding: utf8);
+    final isManualPage = file.parent.path.endsWith(
+      '${Platform.pathSeparator}manual',
+    );
+    final isUserManual = file.uri.pathSegments.last == 'user-manual.html';
+    if (isManualPage && !source.contains('>Complete user manual</a>')) {
+      final link = isUserManual
+          ? '<a class="active" href="../manual/user-manual.html" '
+                'aria-current="page">Complete user manual</a>'
+          : '<a class="" href="../manual/user-manual.html">'
+                'Complete user manual</a>';
+      source = source.replaceFirst(
+        '<h2>Start here</h2>',
+        '<h2>Start here</h2>\n$link',
+      );
+    }
     source = source
         .replaceAll(
           '<button class="search-btn" type="button" data-search>',
@@ -323,7 +426,36 @@ Future<void> _refreshSharedBrand(Directory siteRoot) async {
         .replaceAll(
           '>Diff Workspace and local Git</a>',
           '>Compare files and scoped Git</a>',
-        );
+        )
+        .replaceAll(
+          'href="../manual/getting-started.html">Manual</a>',
+          'href="../manual/user-manual.html">Manual</a>',
+        )
+        .replaceAll(
+          '<a href="getting-started.html">Manual</a>',
+          '<a href="user-manual.html">Manual</a>',
+        )
+        .replaceAll(
+          '<link rel="icon" href="../assets/img/devdesk-logo.png">',
+          '<link rel="icon" type="image/png" sizes="64x64" '
+              'href="../assets/img/devdesk-logo-64.png">',
+        )
+        .replaceAll(
+          '<link rel="icon" href="assets/img/devdesk-logo.png">',
+          '<link rel="icon" type="image/png" sizes="64x64" '
+              'href="assets/img/devdesk-logo-64.png">',
+        )
+        .replaceAll(
+          '<img src="../assets/img/devdesk-logo.png" alt="">',
+          '<img src="../assets/img/devdesk-logo-128.png" '
+              'alt="DevDesk application logo">',
+        )
+        .replaceAll(
+          '<img src="assets/img/devdesk-logo.png" alt="">',
+          '<img src="assets/img/devdesk-logo-128.png" '
+              'alt="DevDesk application logo">',
+        )
+        .replaceAll('rel="noopener"', 'rel="noopener noreferrer"');
     await file.writeAsString(source, encoding: utf8);
   }
 }

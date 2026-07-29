@@ -91,7 +91,8 @@ Automatic mode does not invent sources, verification, trust, lifecycle decisions
 ## Platform behavior
 
 - **Android:** choose the folder that directly contains `project.devdesk`. Access uses the Android system document-tree permission.
-- **Windows:** selected local folders can use filtered file watching. Opening a valid `project.devdesk` can restore its workspace.
+- **Windows:** the current public version is available on [Microsoft Store](https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare). Selected local folders can use filtered file watching. Opening a valid `project.devdesk` can restore its workspace.
+- **Android availability:** closed testing — contact the developer through the public support page to join.
 - **Every size:** phone, tablet, split-screen, Android freeform, and resized or snapped Windows layouts keep primary actions reachable.
 - **macOS and iOS:** no public signed release is presented as available until one actually exists.
 

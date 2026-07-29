@@ -1,0 +1,980 @@
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A beginner-first guide to workspaces, planning, Markdown, graph, OKF, APIs, JSON, Git, backup, privacy, and platform help."><meta name="theme-color" content="#5b47e8"><title>Complete user manual · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
+  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
+  <nav class="top-nav" aria-label="Primary navigation">
+    <a class="" href="../index.html">Home</a>
+    <a class="active" href="../manual/user-manual.html">Manual</a>
+    <a class="" href="../downloads.html">Downloads</a>
+      <a
+        href="https://baisalya.github.io/devdesk-support/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Support</a>
+    <a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
+  </nav>
+  <div class="header-actions">
+    <button class="search-btn" type="button" data-search aria-label="Search manual"><span>Search manual</span> <kbd>/</kbd></button>
+    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
+  </div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<a class="active" href="../manual/user-manual.html" aria-current="page">Complete user manual</a>
+<a class="" href="../manual/getting-started.html">Getting started</a>
+<a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
+<a class="" href="../manual/interface-tour.html">Interface tour</a>
+<h2>Knowledge and Markdown</h2>
+<a class="" href="../manual/developer-workspaces.html">Folders, portability, and Git</a>
+<a class="" href="../manual/project-folder-structure.html">Create a project knowledge structure</a>
+<a class="" href="../manual/markdown-basics.html">Markdown basics</a>
+<a class="" href="../manual/frontmatter-properties.html">YAML frontmatter and properties</a>
+<a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
+<a class="" href="../manual/knowledge-workspace.html">Edit workspace Markdown</a>
+<a class="" href="../manual/knowledge-graph.html">Relationships and graph</a>
+<a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
+<a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
+<a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
+<h2>Structure checks (OKF)</h2>
+<a class="" href="../manual/structured-knowledge-okf.html">Structure checks (OKF)</a>
+<a class="" href="../manual/okf-bundle-structure.html">OKF bundle structure</a>
+<a class="" href="../manual/okf-concepts-metadata.html">OKF concepts and metadata</a>
+<a class="" href="../manual/okf-conversion-migration.html">Analyze, convert, and migrate folders</a>
+<a class="" href="../manual/okf-trust-sources-lifecycle.html">Sources, trust, freshness, and lifecycle</a>
+<a class="" href="../manual/okf-attested-computation.html">Attested Computation</a>
+<h2>API and documentation</h2>
+<a class="" href="../manual/readme-generator.html">README Generator</a>
+<a class="" href="../manual/api-workspaces.html">Saved API testing</a>
+<a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
+<a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
+<a class="" href="../manual/quick-api.html">Quick API</a>
+<a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
+<a class="" href="../manual/unified-search.html">Search this workspace</a>
+<h2>Developer utilities</h2>
+<a class="" href="../manual/json-tools.html">JSON Tools</a>
+<a class="" href="../manual/jwt-decoder.html">JWT Decoder</a>
+<a class="" href="../manual/regex-tester.html">Regex Tester</a>
+<a class="" href="../manual/base64.html">Base64 Tool</a>
+<a class="" href="../manual/url-tools.html">URL Encoder and Decoder</a>
+<a class="" href="../manual/timestamp.html">Timestamp Converter</a>
+<a class="" href="../manual/uuid.html">UUID Generator</a>
+<a class="" href="../manual/diff-git.html">Compare files and scoped Git</a>
+<a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
+<h2>Safety and reference</h2>
+<a class="" href="../manual/backup-restore.html">Backup and restore</a>
+<a class="" href="../manual/settings-appearance.html">Settings and appearance</a>
+<a class="" href="../manual/privacy-security.html">Privacy and security</a>
+<a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
+<a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Start here</span></div><div class="doc-meta"><span class="doc-chip">Start here</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div>
+<h1 id="devdesk-complete-user-manual">DevDesk complete user manual<a class="heading-anchor" href="#devdesk-complete-user-manual" aria-label="Link to DevDesk complete user manual">#</a></h1>
+<p>This is the beginner-first guide to DevDesk on Windows and Android. Read only
+the section you need. Every major tool also has a shorter focused manual linked
+from this page.</p>
+<h2 id="welcome-to-devdesk">Welcome to DevDesk<a class="heading-anchor" href="#welcome-to-devdesk" aria-label="Link to Welcome to DevDesk">#</a></h2>
+<p>DevDesk turns a normal folder into a workspace for plans, tasks, notes,
+connected knowledge, project files, API testing, and developer tools.</p>
+<p>The main idea is simple:</p>
+<blockquote>
+<p>Your folder remains the source of truth. DevDesk gives the same files useful
+views and tools without locking them into a DevDesk cloud.</p>
+</blockquote>
+<p>DevDesk is useful for students, writers, project planners, researchers, and
+software developers. A beginner can start with tasks and notes. Technical tools
+stay optional.</p>
+<h3 id="local-first-and-user-owned-files">Local-first and user-owned files<a class="heading-anchor" href="#local-first-and-user-owned-files" aria-label="Link to Local-first and user-owned files">#</a></h3>
+<p><strong>Local-first</strong> means DevDesk works with data on your device before depending on
+an online service. Project Markdown, JSON, OpenAPI, and related files remain in
+the folder you choose.</p>
+<p>You can open supported files in another editor. You can copy the folder, put
+appropriate files in Git, or back it up with your normal backup tool.</p>
+<h3 id="what-devdesk-does-not-do">What DevDesk does not do<a class="heading-anchor" href="#what-devdesk-does-not-do" aria-label="Link to What DevDesk does not do">#</a></h3>
+<ul>
+<li>It does not upload your project folder to a DevDesk-operated cloud.</li>
+<li>It does not make every API request offline. Sending a request uses the network.</li>
+<li>It does not make a linked note true or verified.</li>
+<li>It does not run Git, scripts, or project commands merely because you opened a folder.</li>
+<li>It does not put protected secrets into portable project files by default.</li>
+<li>It does not replace a complete Git client. Verified Git actions are deliberately scoped.</li>
+</ul>
+<h2 id="start-here-your-first-five-minutes">Start Here: Your First Five Minutes<a class="heading-anchor" href="#start-here-your-first-five-minutes" aria-label="Link to Start Here: Your First Five Minutes">#</a></h2>
+<h3 id="create-a-workspace">Create a workspace<a class="heading-anchor" href="#create-a-workspace" aria-label="Link to Create a workspace">#</a></h3>
+<ol>
+<li>Open DevDesk.</li>
+<li>On <strong>Home</strong>, select <strong>New workspace</strong>.</li>
+<li>Choose a profile such as <strong>Personal plan</strong>, <strong>Study</strong>, <strong>Business project</strong>,
+<strong>Research / writing</strong>, <strong>Software project</strong>, or <strong>Blank</strong>.</li>
+<li>Enter a name such as <code>My First App Project</code>.</li>
+<li>Review the preview of folders and starter files.</li>
+<li>Choose the parent folder.</li>
+<li>Confirm creation.</li>
+</ol>
+<p><strong>What should appear:</strong> DevDesk opens the new workspace. The folder contains
+<code>project.devdesk</code> and only the starter files shown in the preview.</p>
+<p><strong>If it does not appear:</strong> Check that the parent folder is writable. Choose a
+name that does not already exist. DevDesk will not silently replace an existing
+folder or file.</p>
+<h3 id="create-the-first-note">Create the first note<a class="heading-anchor" href="#create-the-first-note" aria-label="Link to Create the first note">#</a></h3>
+<ol>
+<li>Select <strong>New</strong>.</li>
+<li>Select <strong>Note</strong>.</li>
+<li>Name it <code>Project overview</code>.</li>
+<li>Type one sentence describing the project.</li>
+<li>Save the note if the editor shows a <strong>Save</strong> action.</li>
+</ol>
+<p><strong>What should appear:</strong> The note is visible under <strong>Notes</strong> and <strong>Files</strong>.</p>
+<h3 id="create-the-first-task">Create the first task<a class="heading-anchor" href="#create-the-first-task" aria-label="Link to Create the first task">#</a></h3>
+<ol>
+<li>Select <strong>New</strong>.</li>
+<li>Select <strong>Task</strong>.</li>
+<li>Type <code>Plan the first screen</code>.</li>
+<li>Choose a status, priority, or deadline only if you need one.</li>
+<li>Save the task.</li>
+</ol>
+<p><strong>What should appear:</strong> The task appears in <strong>Tasks</strong> and in compatible List,
+Board, Calendar, or Timeline views.</p>
+<h3 id="find-the-files-and-reopen-the-workspace">Find the files and reopen the workspace<a class="heading-anchor" href="#find-the-files-and-reopen-the-workspace" aria-label="Link to Find the files and reopen the workspace">#</a></h3>
+<ol>
+<li>Open <strong>Files</strong>.</li>
+<li>Select <strong>Open explorer</strong> when you need the advanced project tree.</li>
+<li>Note the folder containing <code>project.devdesk</code>.</li>
+<li>Close DevDesk.</li>
+<li>Reopen DevDesk and use <strong>Continue working</strong>, or open <code>project.devdesk</code>.</li>
+</ol>
+<p>On Windows, an installed build can associate <code>project.devdesk</code> with DevDesk.
+On Android, select the folder that directly contains that file when the system
+folder picker asks.</p>
+<h2 id="choose-what-you-want-to-do">Choose What You Want to Do<a class="heading-anchor" href="#choose-what-you-want-to-do" aria-label="Link to Choose What You Want to Do">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>I want to…</th>
+<th>Start here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Plan a project</td>
+<td><strong>Tasks</strong>, then List or Board</td>
+</tr>
+<tr>
+<td>Write notes</td>
+<td><strong>Notes</strong>, then <a href="markdown-basics.html">Markdown basics</a></td>
+</tr>
+<tr>
+<td>Connect knowledge</td>
+<td>Add links, then open <strong>Relationships</strong></td>
+</tr>
+<tr>
+<td>Test an API</td>
+<td><a href="quick-api.html">Quick API</a> for one request or <a href="api-workspaces.html">Saved API testing</a> for saved work</td>
+</tr>
+<tr>
+<td>Inspect JSON</td>
+<td><a href="json-tools.html">JSON Tools</a></td>
+</tr>
+<tr>
+<td>Manage a developer project</td>
+<td><strong>New workspace &gt; Software project</strong></td>
+</tr>
+<tr>
+<td>Move to another computer</td>
+<td><a href="#moving-and-backing-up-a-workspace">Moving and Backing Up a Workspace</a></td>
+</tr>
+<tr>
+<td>Learn every control</td>
+<td><a href="interface-tour.html">Home, workspace, and navigation</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="understanding-a-devdesk-workspace">Understanding a DevDesk Workspace<a class="heading-anchor" href="#understanding-a-devdesk-workspace" aria-label="Link to Understanding a DevDesk Workspace">#</a></h2>
+<p>A <strong>workspace</strong> is the folder you selected. It can contain normal files and
+subfolders. DevDesk adds views, search, relationships, and optional tools around
+those files.</p>
+<h3 id="portable-and-device-local-information">Portable and device-local information<a class="heading-anchor" href="#portable-and-device-local-information" aria-label="Link to Portable and device-local information">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Information</th>
+<th>Portable?</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Markdown, JSON, OpenAPI, source files</td>
+<td>Yes</td>
+<td>Normal project-owned files</td>
+</tr>
+<tr>
+<td><code>project.devdesk</code></td>
+<td>Yes</td>
+<td>Stable identity and safe relative settings</td>
+</tr>
+<tr>
+<td>Sanitized <code>devdesk-api-workspace.json</code></td>
+<td>Yes</td>
+<td>API structure without protected secrets</td>
+</tr>
+<tr>
+<td>Graph positions and recent items</td>
+<td>No</td>
+<td>Personal device state</td>
+</tr>
+<tr>
+<td>Tokens, cookies, execution trust</td>
+<td>No</td>
+<td>Protected local state</td>
+</tr>
+</tbody>
+</table>
+<p><code>project.devdesk</code> does not contain absolute paths, passwords, commands, scripts,
+recent files, or personal layout.</p>
+<h3 id="safe-folder-locations">Safe folder locations<a class="heading-anchor" href="#safe-folder-locations" aria-label="Link to Safe folder locations">#</a></h3>
+<ul>
+<li>Choose a folder you can read and write.</li>
+<li>Keep a separate backup.</li>
+<li>Avoid placing the only copy on an unreliable removable drive.</li>
+<li>In a cloud-synced folder, let synchronization finish before editing the same
+file on another device.</li>
+<li>Keep secrets out of ordinary Markdown and JSON.</li>
+</ul>
+<h3 id="moving-or-renaming-a-folder">Moving or renaming a folder<a class="heading-anchor" href="#moving-or-renaming-a-folder" aria-label="Link to Moving or renaming a folder">#</a></h3>
+<p>Copy or move the complete folder, including <code>project.devdesk</code>. Open the manifest
+from the new location. Its stable project ID does not depend on the old absolute
+path.</p>
+<p>See <a href="developer-workspaces.html">Folders, portability, and scoped Git</a> for the
+full boundary and recovery rules.</p>
+<h2 id="planning-your-work">Planning Your Work<a class="heading-anchor" href="#planning-your-work" aria-label="Link to Planning Your Work">#</a></h2>
+<p>DevDesk can show the same underlying work in different views:</p>
+<ul>
+<li><strong>List:</strong> a straightforward ordered view.</li>
+<li><strong>Board:</strong> groups work by status.</li>
+<li><strong>Calendar:</strong> places items with dates on a calendar.</li>
+<li><strong>Timeline:</strong> shows work across time.</li>
+<li><strong>Outline:</strong> shows hierarchy and structure.</li>
+<li><strong>Relationships:</strong> shows links between items.</li>
+</ul>
+<p>A <strong>task</strong> is an action to complete. <strong>Status</strong> shows its current stage.
+<strong>Priority</strong> helps you decide what matters first. A <strong>deadline</strong> is the date by
+which work should be completed.</p>
+<h3 id="beginner-workflow">Beginner workflow<a class="heading-anchor" href="#beginner-workflow" aria-label="Link to Beginner workflow">#</a></h3>
+<ol>
+<li>Create tasks with short action names.</li>
+<li>Add a deadline only when it is real.</li>
+<li>Use List while learning.</li>
+<li>Open Board when status groups help.</li>
+<li>Open Calendar or Timeline when dates matter.</li>
+<li>Change an item in one view.</li>
+<li>Confirm the same change appears in the other views.</li>
+</ol>
+<p>The views should not create separate copies of the same task. If an item is
+missing from a date-based view, confirm that it has a valid date and that active
+filters are clear.</p>
+<h2 id="markdown-for-complete-beginners">Markdown for Complete Beginners<a class="heading-anchor" href="#markdown-for-complete-beginners" aria-label="Link to Markdown for Complete Beginners">#</a></h2>
+<p><strong>Markdown</strong> is plain text that uses small punctuation marks for formatting.
+DevDesk uses it because the file remains readable without DevDesk.</p>
+<h3 id="a-small-example">A small example<a class="heading-anchor" href="#a-small-example" aria-label="Link to A small example">#</a></h3>
+<p>Type:</p>
+<pre><code class="language-markdown"># My Project
+
+## Tasks
+
+- [ ] Plan the project
+- [ ] Build the first screen
+- [x] Create the workspace
+</code></pre>
+<p>DevDesk displays a large title, a smaller Tasks heading, two empty checkboxes,
+and one completed checkbox.</p>
+<h3 id="common-formatting">Common formatting<a class="heading-anchor" href="#common-formatting" aria-label="Link to Common formatting">#</a></h3>
+<pre><code class="language-markdown"># Page title
+## Section
+
+**Bold**
+*Italic*
+
+- Bulleted item
+1. Numbered item
+
+&gt; A quoted note
+
+[DevDesk website](../index.html)
+![Diagram description](images/diagram.png)
+
+`inline code`
+</code></pre>
+<p>A code block uses three backticks before and after the code:</p>
+<pre><code class="language-markdown">```json
+{
+  &quot;name&quot;: &quot;DevDesk&quot;
+}
+```
+</code></pre>
+<p>A table looks like this:</p>
+<pre><code class="language-markdown">| Task | Status |
+|---|---|
+| Plan screen | Ready |
+</code></pre>
+<h3 id="create-a-markdown-file">Create a Markdown file<a class="heading-anchor" href="#create-a-markdown-file" aria-label="Link to Create a Markdown file">#</a></h3>
+<ol>
+<li>Open <strong>Files</strong>.</li>
+<li>Select <strong>Open explorer</strong>.</li>
+<li>Open the destination folder.</li>
+<li>Select <strong>New file</strong>.</li>
+<li>Choose <strong>Markdown</strong>.</li>
+<li>Enter a safe file name.</li>
+<li>Write and save.</li>
+</ol>
+<p>DevDesk adds the extension when needed and refuses names that would escape the
+workspace or replace an existing path.</p>
+<p>For more examples, open <a href="markdown-basics.html">Markdown basics</a>.</p>
+<h2 id="connecting-notes">Connecting Notes<a class="heading-anchor" href="#connecting-notes" aria-label="Link to Connecting Notes">#</a></h2>
+<p>A <strong>link</strong> points from one note to another. A <strong>backlink</strong> is the automatic
+incoming view shown on the target note.</p>
+<p>Standard link:</p>
+<pre><code class="language-markdown">See the [API plan](api-plan.md).
+</code></pre>
+<p>Supported wiki-style link:</p>
+<pre><code class="language-markdown">See [[API plan]].
+</code></pre>
+<p>Standard Markdown links are the most portable form.</p>
+<h3 id="create-a-safe-connection">Create a safe connection<a class="heading-anchor" href="#create-a-safe-connection" aria-label="Link to Create a safe connection">#</a></h3>
+<ol>
+<li>Open the source note.</li>
+<li>Explain the relationship in a sentence.</li>
+<li>Insert a normal Markdown link.</li>
+<li>Save.</li>
+<li>Open the target note and inspect backlinks.</li>
+<li>Open <strong>Relationships</strong> to see the connection.</li>
+</ol>
+<h3 id="broken-links-and-renames">Broken links and renames<a class="heading-anchor" href="#broken-links-and-renames" aria-label="Link to Broken links and renames">#</a></h3>
+<p>A broken link points to a file that cannot be resolved. Check spelling,
+capitalization, spaces, and the relative path. When renaming a linked file,
+review incoming links and save every intended update.</p>
+<p>Graph link editing changes only the active source note's managed connection
+block. Manual prose and links outside the block remain untouched. See
+<a href="graph-connection-editing.html">Edit graph connections</a>.</p>
+<h2 id="properties-and-metadata">Properties and Metadata<a class="heading-anchor" href="#properties-and-metadata" aria-label="Link to Properties and Metadata">#</a></h2>
+<p><strong>Metadata</strong> is small descriptive information about an item, such as its status,
+date, tags, or priority. It helps DevDesk filter and organize work.</p>
+<p>Start with the visual <strong>Properties</strong> panel when available:</p>
+<ol>
+<li>Open a note or task.</li>
+<li>Open <strong>Properties</strong>.</li>
+<li>Add a tag such as <code>release</code>.</li>
+<li>Choose a status such as <code>draft</code>.</li>
+<li>Add a date or priority only when useful.</li>
+<li>Save.</li>
+</ol>
+<p>Advanced users may see the same information as YAML <strong>frontmatter</strong> at the top
+of a Markdown file:</p>
+<pre><code class="language-yaml">---
+tags: [release, windows]
+status: draft
+priority: high
+---
+</code></pre>
+<p>Frontmatter is a structured text block. It begins and ends with exactly three
+dashes. Use spaces, not tabs. See
+<a href="frontmatter-properties.html">YAML frontmatter and properties</a>.</p>
+<h2 id="knowledge-graph">Knowledge Graph<a class="heading-anchor" href="#knowledge-graph" aria-label="Link to Knowledge Graph">#</a></h2>
+<p>A <strong>node</strong> is a Markdown file shown in the graph. A <strong>connection</strong> is a saved
+link between files.</p>
+<p>The graph helps answer questions such as:</p>
+<ul>
+<li>Which notes explain this decision?</li>
+<li>What links to this API plan?</li>
+<li>Which notes are disconnected?</li>
+</ul>
+<h3 id="open-and-use-the-graph">Open and use the graph<a class="heading-anchor" href="#open-and-use-the-graph" aria-label="Link to Open and use the graph">#</a></h3>
+<ol>
+<li>Open a workspace and select a Markdown note.</li>
+<li>Open <strong>Views &gt; Relationships</strong>, or the focused graph from the Markdown tool.</li>
+<li>Choose <strong>Local</strong> for nearby notes or <strong>Workspace</strong> for a bounded project view.</li>
+<li>Pan by dragging the canvas.</li>
+<li>Zoom with <strong>+</strong>, <strong>-</strong>, touch, mouse, or trackpad.</li>
+<li>Select <strong>Fit view</strong> after changing the window or filters.</li>
+<li>Search or filter by title, path, type, or tag.</li>
+<li>Select a node to inspect or open its note.</li>
+</ol>
+<p>The graph reads saved Markdown links. It does not prove that a claim is correct.
+Node size does not mean truth or priority.</p>
+<h3 id="missing-or-disconnected-nodes">Missing or disconnected nodes<a class="heading-anchor" href="#missing-or-disconnected-nodes" aria-label="Link to Missing or disconnected nodes">#</a></h3>
+<ul>
+<li>Save the note.</li>
+<li>Clear filters.</li>
+<li>Turn on <strong>Orphans</strong>.</li>
+<li>Select <strong>Fit view</strong>.</li>
+<li>Check the file is inside configured knowledge roots.</li>
+<li>Fix unresolved or ambiguous links.</li>
+<li>Refresh the project index when watching is unavailable.</li>
+</ul>
+<p>See <a href="knowledge-graph.html">Relationships and graph</a>.</p>
+<h2 id="open-knowledge-format-okf">Open Knowledge Format (OKF)<a class="heading-anchor" href="#open-knowledge-format-okf" aria-label="Link to Open Knowledge Format (OKF)">#</a></h2>
+<p>OKF means <strong>Open Knowledge Format</strong> in DevDesk. The verified implementation
+checks supported OKF v0.2 Markdown bundle rules. It separates official required
+rules from DevDesk warnings, advice, and extensions.</p>
+<p>An OKF bundle is a folder of linked Markdown concepts. A concept is one file
+with a <code>type</code> in frontmatter and a normal Markdown body.</p>
+<p>Minimal concept:</p>
+<pre><code class="language-markdown">---
+type: Reference
+---
+# Release checklist
+
+Review tests before publishing.
+</code></pre>
+<h3 id="create-or-inspect-an-okf-workspace">Create or inspect an OKF workspace<a class="heading-anchor" href="#create-or-inspect-an-okf-workspace" aria-label="Link to Create or inspect an OKF workspace">#</a></h3>
+<ol>
+<li>Create or open a normal workspace.</li>
+<li>Place the intended Markdown under the configured knowledge roots.</li>
+<li>Open <strong>Developer tools &gt; Structure and OKF</strong>.</li>
+<li>Review the project summary.</li>
+<li>Fix <strong>Required</strong> findings first.</li>
+<li>Review warnings and optional advice separately.</li>
+<li>Choose <strong>Manual</strong>, <strong>Review changes</strong>, or bounded <strong>Safe automatic</strong> handling.</li>
+</ol>
+<h3 id="import-existing-markdown">Import existing Markdown<a class="heading-anchor" href="#import-existing-markdown" aria-label="Link to Import existing Markdown">#</a></h3>
+<p>Use <strong>Open folder</strong>. DevDesk analyzes first. It does not need to rewrite every
+file merely to inspect it. Existing wiki links can remain readable as an
+extension; new managed relationships use standard Markdown links.</p>
+<h3 id="common-mistakes">Common mistakes<a class="heading-anchor" href="#common-mistakes" aria-label="Link to Common mistakes">#</a></h3>
+<ul>
+<li>Missing or malformed frontmatter on a concept.</li>
+<li>An empty <code>type</code>.</li>
+<li>Treating optional advice as a conformance failure.</li>
+<li>Assuming a source or verification event can be invented automatically.</li>
+<li>Running large changes without Git or another backup.</li>
+</ul>
+<p>DevDesk never invents sources, human verification, lifecycle decisions,
+attestation results, or trust conclusions. See
+<a href="structured-knowledge-okf.html">Structure checks (OKF)</a> and
+<a href="okf-bundle-structure.html">OKF bundle structure</a>.</p>
+<h2 id="api-workspaces">API Workspaces<a class="heading-anchor" href="#api-workspaces" aria-label="Link to API Workspaces">#</a></h2>
+<p>An <strong>API</strong> is a defined way for software to communicate. A <strong>request</strong> is the
+message you send. A <strong>response</strong> is the message returned.</p>
+<p>Important words:</p>
+<ul>
+<li><strong>URL:</strong> the destination address.</li>
+<li><strong>Method:</strong> the intended action, such as GET or POST.</li>
+<li><strong>Header:</strong> extra request information.</li>
+<li><strong>Query parameter:</strong> a small value attached to the URL.</li>
+<li><strong>Body:</strong> the main data sent with some requests.</li>
+<li><strong>Status code:</strong> a number such as 200 or 404 describing the result.</li>
+</ul>
+<p>Use <strong>Quick API</strong> for one temporary request. Use <strong>API Workspaces</strong> for saved
+collections, environments, protected values, assertions, and repeatable runs.</p>
+<h3 id="safe-public-example">Safe public example<a class="heading-anchor" href="#safe-public-example" aria-label="Link to Safe public example">#</a></h3>
+<ol>
+<li>Open <strong>Quick API</strong> or create a saved request.</li>
+<li>Choose <strong>GET</strong>.</li>
+<li>Enter <code>https://jsonplaceholder.typicode.com/todos/1</code>.</li>
+<li>Do not add credentials.</li>
+<li>Select <strong>Send</strong>.</li>
+</ol>
+<p><strong>What should appear:</strong> A response status and a small JSON object.</p>
+<p><strong>If it fails:</strong> Check the URL, internet connection, VPN, proxy, TLS error, and
+whether the public service is available. A <code>200</code> status does not by itself prove
+that every returned value is correct.</p>
+<h3 id="environments-and-secrets">Environments and secrets<a class="heading-anchor" href="#environments-and-secrets" aria-label="Link to Environments and secrets">#</a></h3>
+<p>An <strong>environment</strong> stores target-specific values such as a development base URL.
+Use placeholders such as:</p>
+<pre><code class="language-text">{{baseUrl}}/customers/{{customerId}}
+</code></pre>
+<p>Mark tokens, passwords, cookies, and credentials as protected secrets. Never
+place real credentials in screenshots, examples, ordinary notes, Git, or public
+support reports.</p>
+<p>See <a href="api-workspaces.html">Saved API testing</a> and
+<a href="api-environments-secrets.html">API environments and protected secrets</a>.</p>
+<h2 id="openapi-studio">OpenAPI Studio<a class="heading-anchor" href="#openapi-studio" aria-label="Link to OpenAPI Studio">#</a></h2>
+<p><strong>OpenAPI</strong> is a standard description of an HTTP API. It lists endpoints,
+parameters, request bodies, responses, and schemas.</p>
+<ol>
+<li>Open <strong>OpenAPI Studio</strong>.</li>
+<li>Paste or open a supported Swagger 2.0, OpenAPI 3.0, or OpenAPI 3.1 JSON/YAML file.</li>
+<li>Select <strong>Validate and inspect</strong>.</li>
+<li>Review the title, version, endpoints, and schemas.</li>
+<li>Open validation messages and fix the source document.</li>
+<li>Choose <strong>Create collection</strong> only after review.</li>
+</ol>
+<p>A <strong>schema</strong> describes the expected structure of data. Validation checks the
+document structure; it does not contact the server or prove that the API is
+safe.</p>
+<p>Remote <code>$ref</code> files are not fetched automatically. Bundle required references
+locally. See <a href="openapi-studio.html">OpenAPI Studio</a>.</p>
+<h2 id="json-tools">JSON Tools<a class="heading-anchor" href="#json-tools" aria-label="Link to JSON Tools">#</a></h2>
+<p><strong>JSON</strong> is a text format for structured data. An <strong>object</strong> uses curly braces
+and contains key/value pairs. An <strong>array</strong> uses square brackets and contains an
+ordered list.</p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;DevDesk&quot;,
+  &quot;status&quot;: &quot;ready&quot;
+}
+</code></pre>
+<p>Here, <code>name</code> is a key and <code>DevDesk</code> is its value.</p>
+<h3 id="format-and-validate-json">Format and validate JSON<a class="heading-anchor" href="#format-and-validate-json" aria-label="Link to Format and validate JSON">#</a></h3>
+<ol>
+<li>Open <strong>JSON Tools</strong>.</li>
+<li>Paste or open the JSON.</li>
+<li>Select <strong>Format</strong>.</li>
+<li>Read any parsing error.</li>
+<li>Fix missing commas, quotes, or brackets.</li>
+<li>Copy or save only after reviewing sensitive data.</li>
+</ol>
+<p><strong>Minify</strong> removes unnecessary whitespace. It does not encrypt the data.
+See <a href="json-tools.html">JSON Tools</a>.</p>
+<h2 id="git-tools">Git Tools<a class="heading-anchor" href="#git-tools" aria-label="Link to Git Tools">#</a></h2>
+<p><strong>Git</strong> records versions of files in a <strong>repository</strong>. A <strong>change</strong> is a file
+difference. A <strong>commit</strong> is a named saved checkpoint. A <strong>branch</strong> is a line of
+work. A <strong>diff</strong> shows what changed.</p>
+<p>DevDesk deliberately restricts Git actions to the selected workspace, even when
+the real repository is a parent folder.</p>
+<h3 id="verified-devdesk-git-boundary">Verified DevDesk Git boundary<a class="heading-anchor" href="#verified-devdesk-git-boundary" aria-label="Link to Verified DevDesk Git boundary">#</a></h3>
+<ul>
+<li>Opening <code>project.devdesk</code> does not run Git or grant trust.</li>
+<li>Git status needs a separate device-local trust decision.</li>
+<li>Status, diff, stage, unstage, and protected discard stay inside the workspace.</li>
+<li>DevDesk does not automatically fetch, pull, push, commit, run hooks, or manage credentials.</li>
+</ul>
+<h3 id="beginner-workflow-2">Beginner workflow<a class="heading-anchor" href="#beginner-workflow-2" aria-label="Link to Beginner workflow">#</a></h3>
+<ol>
+<li>Back up important work.</li>
+<li>Open <strong>Developer tools &gt; Git status</strong> on an eligible local Windows project.</li>
+<li>Review the repository root and displayed workspace scope.</li>
+<li>Grant local execution trust only when both are correct.</li>
+<li>Refresh status.</li>
+<li>Review a diff.</li>
+<li>Stage only the intended workspace path.</li>
+<li>Create the commit with your normal Git client after one more review.</li>
+</ol>
+<p>Example in the workspace root:</p>
+<pre><code class="language-powershell">git status
+git diff --staged
+git commit -m &quot;Add first DevDesk project notes&quot;
+</code></pre>
+<p>If the wrong file is staged, unstage it before committing. If Git is unavailable,
+confirm it is installed, the folder is inside the intended repository, and the
+workspace is an eligible local Windows folder.</p>
+<p>See <a href="diff-git.html">Compare files and workspace-scoped Git</a>.</p>
+<h2 id="search-navigation-and-shortcuts">Search, Navigation, and Shortcuts<a class="heading-anchor" href="#search-navigation-and-shortcuts" aria-label="Link to Search, Navigation, and Shortcuts">#</a></h2>
+<ul>
+<li>Use Home search to find workspaces and tools.</li>
+<li>Use workspace Search for a quick filter.</li>
+<li>Use <strong>Developer tools &gt; Search workspace</strong> for full indexed search.</li>
+<li>Use <strong>Files &gt; Open explorer</strong> for nested folders and exact file selection.</li>
+<li>Press <code>/</code> on this website to search the manual.</li>
+<li>Use <code>Tab</code> and <code>Shift+Tab</code> to move focus.</li>
+<li>Use <code>Enter</code> or <code>Space</code> to activate focused buttons.</li>
+<li>Use <code>Esc</code> to close a focused panel where supported.</li>
+</ul>
+<p>Editor shortcuts such as <code>Ctrl+S</code> depend on the active tool. Tooltips are the
+authoritative local hint. See <a href="keyboard-shortcuts.html">Keyboard shortcuts</a>.</p>
+<h2 id="moving-and-backing-up-a-workspace">Moving and Backing Up a Workspace<a class="heading-anchor" href="#moving-and-backing-up-a-workspace" aria-label="Link to Moving and Backing Up a Workspace">#</a></h2>
+<h3 id="copy-to-another-computer">Copy to another computer<a class="heading-anchor" href="#copy-to-another-computer" aria-label="Link to Copy to another computer">#</a></h3>
+<ol>
+<li>Save all open files.</li>
+<li>Close editors that may still write to the folder.</li>
+<li>Copy the complete folder, including <code>project.devdesk</code>.</li>
+<li>Use an external drive, private cloud-synced folder, or ZIP.</li>
+<li>Wait for the copy to finish.</li>
+<li>Compare file counts or inspect important files.</li>
+<li>On the other computer, open <code>project.devdesk</code>.</li>
+<li>Re-enter protected secrets locally.</li>
+</ol>
+<h3 id="create-a-zip-backup">Create a ZIP backup<a class="heading-anchor" href="#create-a-zip-backup" aria-label="Link to Create a ZIP backup">#</a></h3>
+<ol>
+<li>Close DevDesk or finish saving.</li>
+<li>Create a ZIP of the complete workspace folder.</li>
+<li>Store it separately from the original.</li>
+<li>Open the ZIP and verify that <code>project.devdesk</code> and important files exist.</li>
+<li>Protect the ZIP if the project contains private data.</li>
+</ol>
+<p>DevDesk's Settings backup covers supported private application records. It does
+not automatically include external project folders or protected secrets.</p>
+<p>Avoid editing the same cloud-synced file on two devices at once. Resolve sync or
+Git conflicts before continuing. See <a href="backup-restore.html">Backup and restore</a>.</p>
+<h2 id="windows-guide">Windows Guide<a class="heading-anchor" href="#windows-guide" aria-label="Link to Windows Guide">#</a></h2>
+<h3 id="install">Install<a class="heading-anchor" href="#install" aria-label="Link to Install">#</a></h3>
+<ol>
+<li>Open the
+<a href="https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener noreferrer">official DevDesk Microsoft Store listing</a>.</li>
+<li>Confirm the product name and publisher shown by Microsoft Store.</li>
+<li>Select <strong>Get</strong> or <strong>Install</strong>.</li>
+<li>Start DevDesk from the Start menu.</li>
+</ol>
+<h3 id="update">Update<a class="heading-anchor" href="#update" aria-label="Link to Update">#</a></h3>
+<p>Microsoft Store can update apps automatically. To check manually, open
+Microsoft Store and use its update/library controls. See
+<a href="https://support.microsoft.com/en-us/accounts-billing/get-updates-for-apps-and-games-in-microsoft-store" target="_blank" rel="noopener noreferrer">Microsoft Support: Get updates for apps and games</a>.</p>
+<h3 id="files-windows-and-keyboard">Files, windows, and keyboard<a class="heading-anchor" href="#files-windows-and-keyboard" aria-label="Link to Files, windows, and keyboard">#</a></h3>
+<ul>
+<li>Double-clicking <code>project.devdesk</code> works when the installed package registered
+the file association.</li>
+<li>A portable ZIP build cannot install that association.</li>
+<li>Resize or snap the window; optional side panels should collapse as space narrows.</li>
+<li>Use keyboard focus and shortcuts shown in tooltips.</li>
+</ul>
+<h3 id="uninstall-and-data-preservation">Uninstall and data preservation<a class="heading-anchor" href="#uninstall-and-data-preservation" aria-label="Link to Uninstall and data preservation">#</a></h3>
+<p>Back up DevDesk-private records and external workspace folders before
+uninstalling. Removing the app is not a substitute for deleting or preserving
+user-owned project folders. Verify your files independently.</p>
+<h2 id="android-guide">Android Guide<a class="heading-anchor" href="#android-guide" aria-label="Link to Android Guide">#</a></h2>
+<p>Android is currently in closed testing.</p>
+<ol>
+<li>Open the DevDesk support page.</li>
+<li>Contact the developer to request testing access.</li>
+<li>Use the Google account approved for the closed test.</li>
+<li>Install the Play-delivered build.</li>
+</ol>
+<p>Do not post tester email addresses or credentials publicly.</p>
+<h3 id="folder-access">Folder access<a class="heading-anchor" href="#folder-access" aria-label="Link to Folder access">#</a></h3>
+<p>Android uses the system Storage Access Framework. When opening
+<code>project.devdesk</code>, choose the folder that directly contains it and approve the
+folder permission. If access is revoked, select the same folder again instead
+of creating a duplicate workspace.</p>
+<h3 id="phone-tablet-and-resizable-layouts">Phone, tablet, and resizable layouts<a class="heading-anchor" href="#phone-tablet-and-resizable-layouts" aria-label="Link to Phone, tablet, and resizable layouts">#</a></h3>
+<ul>
+<li>Phone portrait uses compact navigation and stacked content.</li>
+<li>Tablet or landscape can show more panels.</li>
+<li>Split-screen and freeform windows may collapse optional navigation.</li>
+<li>When the keyboard opens, scroll the focused field into view.</li>
+<li>At large text sizes, close optional panels and use a wider window when possible.</li>
+</ul>
+<p>For transfer, export or copy the complete workspace through a provider that can
+preserve all files. Verify the destination before deleting the source.</p>
+<h2 id="privacy-and-security">Privacy and Security<a class="heading-anchor" href="#privacy-and-security" aria-label="Link to Privacy and Security">#</a></h2>
+<h3 id="what-stays-local">What stays local<a class="heading-anchor" href="#what-stays-local" aria-label="Link to What stays local">#</a></h3>
+<p>Project files remain in the selected folder. DevDesk can also keep device-local
+registry records, indexes, graph positions, drafts, recovery journals, recent
+state, permissions, and trust choices.</p>
+<h3 id="what-may-leave-the-device">What may leave the device<a class="heading-anchor" href="#what-may-leave-the-device" aria-label="Link to What may leave the device">#</a></h3>
+<p>Only based on verified documented actions:</p>
+<ul>
+<li>API content goes to the destination you choose when you select <strong>Send</strong>.</li>
+<li>Supported GitHub comparison fetches the public URL/content you select.</li>
+<li>Link checks and external Store, support, privacy, or reference pages use the network.</li>
+</ul>
+<p>The destination can receive normal connection information such as your public IP
+address.</p>
+<h3 id="credentials-and-boundaries">Credentials and boundaries<a class="heading-anchor" href="#credentials-and-boundaries" aria-label="Link to Credentials and boundaries">#</a></h3>
+<ul>
+<li>Android uses a Keystore-backed local boundary where supported.</li>
+<li>Windows uses DPAPI for the current Windows user where supported.</li>
+<li>Protected values are excluded from supported portable exports and backups.</li>
+<li>Clipboard and exported files leave DevDesk's private storage boundary.</li>
+<li>A project manifest cannot grant command execution trust.</li>
+</ul>
+<p>No analytics or tracking behavior is documented as part of the reviewed DevDesk
+product. See <a href="privacy-security.html">Privacy and security</a> for the detailed
+boundary.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="heading-anchor" href="#troubleshooting" aria-label="Link to Troubleshooting">#</a></h2>
+<h3 id="workspace-does-not-open">Workspace does not open<a class="heading-anchor" href="#workspace-does-not-open" aria-label="Link to Workspace does not open">#</a></h3>
+<p>Confirm the folder and <code>project.devdesk</code> exist. On Android, reselect the folder
+containing the manifest. On Windows, check permissions, removable-drive
+availability, and security software. DevDesk does not overwrite corrupt or
+future-version manifests automatically.</p>
+<h3 id="file-cannot-be-saved">File cannot be saved<a class="heading-anchor" href="#file-cannot-be-saved" aria-label="Link to File cannot be saved">#</a></h3>
+<p>Check write permission, invalid names, and whether another program changed the
+file. Choose a new name if the destination already exists. Preserve external
+edits and reopen before retrying.</p>
+<h3 id="link-does-not-work">Link does not work<a class="heading-anchor" href="#link-does-not-work" aria-label="Link to Link does not work">#</a></h3>
+<p>Check the relative path, extension, capitalization, spaces, and whether the
+target is inside the workspace.</p>
+<h3 id="graph-node-is-missing">Graph node is missing<a class="heading-anchor" href="#graph-node-is-missing" aria-label="Link to Graph node is missing">#</a></h3>
+<p>Save the note, clear filters, enable Orphans, select <strong>Fit view</strong>, and refresh
+the project index.</p>
+<h3 id="api-request-fails">API request fails<a class="heading-anchor" href="#api-request-fails" aria-label="Link to API request fails">#</a></h3>
+<p>Check the final URL, method, network, environment, authentication, cookies,
+timeout, proxy, TLS, and server response.</p>
+<h3 id="json-is-invalid">JSON is invalid<a class="heading-anchor" href="#json-is-invalid" aria-label="Link to JSON is invalid">#</a></h3>
+<p>Look for a missing comma, unquoted key, unmatched bracket, invalid escape, or
+trailing text.</p>
+<h3 id="git-action-is-unavailable">Git action is unavailable<a class="heading-anchor" href="#git-action-is-unavailable" aria-label="Link to Git action is unavailable">#</a></h3>
+<p>Use an eligible local Windows project, confirm Git is installed, review the
+workspace scope, and grant device-local trust only for the intended boundary.</p>
+<h3 id="external-link-does-not-open">External link does not open<a class="heading-anchor" href="#external-link-does-not-open" aria-label="Link to External link does not open">#</a></h3>
+<p>Check the default browser, internet connection, parental/enterprise policy, and
+popup protection. Copy the visible URL only when you trust the destination.</p>
+<h3 id="android-permission-problem">Android permission problem<a class="heading-anchor" href="#android-permission-problem" aria-label="Link to Android permission problem">#</a></h3>
+<p>Open the system folder picker again and select the folder that directly contains
+<code>project.devdesk</code>.</p>
+<h3 id="windows-store-update-problem">Windows Store update problem<a class="heading-anchor" href="#windows-store-update-problem" aria-label="Link to Windows Store update problem">#</a></h3>
+<p>Open Microsoft Store, sign in if required, check Library/updates, restart the
+Store, and use Microsoft's Store troubleshooting guidance.</p>
+<h3 id="layout-or-text-is-too-large">Layout or text is too large<a class="heading-anchor" href="#layout-or-text-is-too-large" aria-label="Link to Layout or text is too large">#</a></h3>
+<p>Resize the window, close optional panels, use compact navigation, and scroll code
+examples horizontally. Keep the operating-system text size you need; do not
+reduce accessibility settings merely to reveal a broken layout.</p>
+<p>Open <a href="troubleshooting.html">Troubleshooting</a> for more detailed recovery steps.</p>
+<h2 id="glossary">Glossary<a class="heading-anchor" href="#glossary" aria-label="Link to Glossary">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Simple meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API</td>
+<td>A defined way for software to communicate</td>
+</tr>
+<tr>
+<td>Backlink</td>
+<td>An incoming reference from another note</td>
+</tr>
+<tr>
+<td>Branch</td>
+<td>A Git line of work</td>
+</tr>
+<tr>
+<td>Commit</td>
+<td>A named Git checkpoint</td>
+</tr>
+<tr>
+<td>Frontmatter</td>
+<td>YAML metadata at the top of a Markdown file</td>
+</tr>
+<tr>
+<td>Git</td>
+<td>A system that records file versions</td>
+</tr>
+<tr>
+<td>JSON</td>
+<td>A text format for structured data</td>
+</tr>
+<tr>
+<td>Knowledge graph</td>
+<td>A view of notes and their saved links</td>
+</tr>
+<tr>
+<td>Local-first</td>
+<td>Device and user-owned files are primary</td>
+</tr>
+<tr>
+<td>Markdown</td>
+<td>Plain text with lightweight formatting marks</td>
+</tr>
+<tr>
+<td>Metadata</td>
+<td>Descriptive fields such as tags, status, or date</td>
+</tr>
+<tr>
+<td>Node</td>
+<td>A note shown in the graph</td>
+</tr>
+<tr>
+<td>OKF</td>
+<td>Open Knowledge Format</td>
+</tr>
+<tr>
+<td>OpenAPI</td>
+<td>A standard description of an HTTP API</td>
+</tr>
+<tr>
+<td>Repository</td>
+<td>A folder whose history is managed by Git</td>
+</tr>
+<tr>
+<td>Schema</td>
+<td>Rules describing data structure</td>
+</tr>
+<tr>
+<td>Workspace</td>
+<td>The folder opened and managed in context</td>
+</tr>
+</tbody>
+</table>
+<h2 id="frequently-asked-questions">Frequently Asked Questions<a class="heading-anchor" href="#frequently-asked-questions" aria-label="Link to Frequently Asked Questions">#</a></h2>
+<h3 id="is-devdesk-only-for-developers">Is DevDesk only for developers?<a class="heading-anchor" href="#is-devdesk-only-for-developers" aria-label="Link to Is DevDesk only for developers?">#</a></h3>
+<p>No. Personal, Study, Business, and Research / writing profiles keep normal work
+first. Developer tools stay optional.</p>
+<h3 id="does-devdesk-upload-my-folder">Does DevDesk upload my folder?<a class="heading-anchor" href="#does-devdesk-upload-my-folder" aria-label="Link to Does DevDesk upload my folder?">#</a></h3>
+<p>No DevDesk-operated project upload or cloud sync is documented. Deliberate API
+requests and external links still use the network.</p>
+<h3 id="can-another-editor-read-my-notes">Can another editor read my notes?<a class="heading-anchor" href="#can-another-editor-read-my-notes" aria-label="Link to Can another editor read my notes?">#</a></h3>
+<p>Yes. DevDesk uses ordinary Markdown and other normal project files.</p>
+<h3 id="does-removing-a-workspace-delete-its-folder">Does removing a workspace delete its folder?<a class="heading-anchor" href="#does-removing-a-workspace-delete-its-folder" aria-label="Link to Does removing a workspace delete its folder?">#</a></h3>
+<p>No. It removes the private registration. Always verify the exact confirmation
+before any destructive operation.</p>
+<h3 id="are-backups-encrypted">Are backups encrypted?<a class="heading-anchor" href="#are-backups-encrypted" aria-label="Link to Are backups encrypted?">#</a></h3>
+<p>Treat exported backup JSON and workspace ZIPs as sensitive. Protected secrets
+are excluded from supported backups, but ordinary confidential content can
+remain.</p>
+<h3 id="can-devdesk-create-git-commits">Can DevDesk create Git commits?<a class="heading-anchor" href="#can-devdesk-create-git-commits" aria-label="Link to Can DevDesk create Git commits?">#</a></h3>
+<p>The verified DevDesk Git UI provides bounded status, diff, stage, unstage, and
+protected discard actions. Use your normal Git client for commit, fetch, pull,
+push, remotes, and credentials.</p>
+<p>See the complete <a href="faq.html">Frequently asked questions</a>.</p>
+<h2 id="learn-more-and-references">Learn More and References<a class="heading-anchor" href="#learn-more-and-references" aria-label="Link to Learn More and References">#</a></h2>
+<p>DevDesk's manual is sufficient for normal use. These optional official sources
+go deeper:</p>
+<ul>
+<li><a href="https://spec.commonmark.org/current/" target="_blank" rel="noopener noreferrer">CommonMark specification</a> — Markdown syntax.</li>
+<li><a href="https://www.rfc-editor.org/info/rfc8259" target="_blank" rel="noopener noreferrer">RFC 8259</a> — JSON standard.</li>
+<li><a href="https://www.rfc-editor.org/info/rfc9110" target="_blank" rel="noopener noreferrer">RFC 9110</a> — HTTP semantics.</li>
+<li><a href="https://spec.openapis.org/oas/latest.html" target="_blank" rel="noopener noreferrer">OpenAPI Specification</a> — API description standard.</li>
+<li><a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer">Git documentation</a> — official Git reference.</li>
+<li><a href="https://support.microsoft.com/en-us/accounts-billing/get-updates-for-apps-and-games-in-microsoft-store" target="_blank" rel="noopener noreferrer">Microsoft Store app updates</a> — Windows update help.</li>
+<li><a href="https://developer.android.com/guide/topics/providers/document-provider" target="_blank" rel="noopener noreferrer">Android Storage Access Framework</a> — Android file and folder access.</li>
+<li><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener noreferrer">OKF v0.2 specification</a> — the external OKF contract checked by DevDesk.</li>
+</ul>
+<p>The first seven links describe general standards or platform behavior. The
+DevDesk manuals describe how this application uses those concepts.</p>
+<h2 id="contact-support-downloads-and-microsoft-store">Contact, Support, Downloads, and Microsoft Store<a class="heading-anchor" href="#contact-support-downloads-and-microsoft-store" aria-label="Link to Contact, Support, Downloads, and Microsoft Store">#</a></h2>
+<ul>
+<li><a href="../downloads.html">Download DevDesk</a></li>
+<li><a href="https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener noreferrer">Get DevDesk for Windows on Microsoft Store</a></li>
+<li><a href="https://baisalya.github.io/devdesk-support/" target="_blank" rel="noopener noreferrer">DevDesk support</a></li>
+<li><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></li>
+<li>Android closed testing — contact the developer through the support page to join.</li>
+</ul>
+<p>Never include tokens, passwords, private project files, or personal API data in
+a public support report.</p>
+<h2 id="complete-beginner-walkthrough-my-first-app-project">Complete Beginner Walkthrough: My First App Project<a class="heading-anchor" href="#complete-beginner-walkthrough-my-first-app-project" aria-label="Link to Complete Beginner Walkthrough: My First App Project">#</a></h2>
+<p>This tutorial combines planning, notes, links, properties, graph, API, JSON,
+Git, and backup without using real credentials.</p>
+<h3 id="1-create-the-workspace">1. Create the workspace<a class="heading-anchor" href="#1-create-the-workspace" aria-label="Link to 1. Create the workspace">#</a></h3>
+<ol>
+<li>On <strong>Home</strong>, select <strong>New workspace</strong>.</li>
+<li>Choose <strong>Software project</strong>.</li>
+<li>Name it <code>My First App Project</code>.</li>
+<li>Review the exact preview.</li>
+<li>Choose a parent folder and create it.</li>
+</ol>
+<p><strong>Expected:</strong> The workspace opens and contains <code>project.devdesk</code>.</p>
+<p><strong>If missing:</strong> Check folder permission and whether a folder with that name
+already exists.</p>
+<h3 id="2-create-the-project-overview">2. Create the project overview<a class="heading-anchor" href="#2-create-the-project-overview" aria-label="Link to 2. Create the project overview">#</a></h3>
+<ol>
+<li>Select <strong>New &gt; Note</strong>.</li>
+<li>Name it <code>Project overview</code>.</li>
+<li>Type:</li>
+</ol>
+<pre><code class="language-markdown"># My First App Project
+
+This app helps me learn DevDesk.
+
+## Goal
+
+Create one small screen and document the work.
+</code></pre>
+<ol start="4">
+<li>Save.</li>
+</ol>
+<p><strong>Expected:</strong> The note appears under Notes and Files.</p>
+<p><strong>If missing:</strong> Clear search and check the workspace root in Files.</p>
+<h3 id="3-create-a-task-list">3. Create a task list<a class="heading-anchor" href="#3-create-a-task-list" aria-label="Link to 3. Create a task list">#</a></h3>
+<ol>
+<li>Create another note named <code>Tasks</code>.</li>
+<li>Type:</li>
+</ol>
+<pre><code class="language-markdown"># Tasks
+
+- [ ] Plan the screen
+- [ ] Build the screen
+- [ ] Test the screen
+- [ ] Back up the workspace
+</code></pre>
+<ol start="3">
+<li>Save.</li>
+</ol>
+<p><strong>Expected:</strong> Four unchecked tasks appear in the rendered view.</p>
+<p><strong>If not:</strong> Confirm each line starts with <code>- [ ]</code>.</p>
+<h3 id="4-create-and-link-two-notes">4. Create and link two notes<a class="heading-anchor" href="#4-create-and-link-two-notes" aria-label="Link to 4. Create and link two notes">#</a></h3>
+<ol>
+<li>Create <code>Design.md</code> with a <code># Design</code> heading.</li>
+<li>Create <code>Testing.md</code> with a <code># Testing</code> heading.</li>
+<li>In <code>Project overview</code>, add:</li>
+</ol>
+<pre><code class="language-markdown">Read the [design plan](Design.md) and [testing plan](Testing.md).
+</code></pre>
+<ol start="4">
+<li>Save all three notes.</li>
+</ol>
+<p><strong>Expected:</strong> The links open the target notes and backlinks appear.</p>
+<p><strong>If not:</strong> Check the file names and relative paths.</p>
+<h3 id="5-add-tags-or-properties">5. Add tags or properties<a class="heading-anchor" href="#5-add-tags-or-properties" aria-label="Link to 5. Add tags or properties">#</a></h3>
+<ol>
+<li>Open <code>Design.md</code>.</li>
+<li>Open <strong>Properties</strong> when available.</li>
+<li>Add tags <code>design</code> and <code>beginner</code>.</li>
+<li>Set status to <code>draft</code>.</li>
+<li>Save.</li>
+</ol>
+<p>Advanced text equivalent:</p>
+<pre><code class="language-yaml">---
+tags: [design, beginner]
+status: draft
+---
+</code></pre>
+<p><strong>Expected:</strong> Properties or metadata show the saved values.</p>
+<p><strong>If not:</strong> Ensure frontmatter is the first block and uses spaces.</p>
+<h3 id="6-open-the-knowledge-graph">6. Open the knowledge graph<a class="heading-anchor" href="#6-open-the-knowledge-graph" aria-label="Link to 6. Open the knowledge graph">#</a></h3>
+<ol>
+<li>Open <code>Project overview</code>.</li>
+<li>Open <strong>Views &gt; Relationships</strong> or the focused graph.</li>
+<li>Select <strong>Local</strong>.</li>
+<li>Select <strong>Fit view</strong>.</li>
+</ol>
+<p><strong>Expected:</strong> Project overview connects to Design and Testing.</p>
+<p><strong>If not:</strong> Save the files, clear filters, and refresh the project index.</p>
+<h3 id="7-create-a-simple-api-request">7. Create a simple API request<a class="heading-anchor" href="#7-create-a-simple-api-request" aria-label="Link to 7. Create a simple API request">#</a></h3>
+<ol>
+<li>Open <strong>Quick API</strong>.</li>
+<li>Choose <strong>GET</strong>.</li>
+<li>Enter <code>https://jsonplaceholder.typicode.com/todos/1</code>.</li>
+<li>Select <strong>Send</strong>.</li>
+</ol>
+<p><strong>Expected:</strong> A success status and a small response.</p>
+<p><strong>If not:</strong> Check network access and the final URL. Do not add credentials.</p>
+<h3 id="8-inspect-the-json-response">8. Inspect the JSON response<a class="heading-anchor" href="#8-inspect-the-json-response" aria-label="Link to 8. Inspect the JSON response">#</a></h3>
+<ol>
+<li>Copy the safe response body.</li>
+<li>Open <strong>JSON Tools</strong>.</li>
+<li>Paste the response.</li>
+<li>Select <strong>Format</strong>.</li>
+<li>Expand the tree when available.</li>
+</ol>
+<p><strong>Expected:</strong> Keys and values are indented and readable.</p>
+<p><strong>If not:</strong> Return to the Raw response and confirm you copied JSON rather than
+an HTML error page.</p>
+<h3 id="9-create-a-safe-git-checkpoint-when-git-is-available">9. Create a safe Git checkpoint when Git is available<a class="heading-anchor" href="#9-create-a-safe-git-checkpoint-when-git-is-available" aria-label="Link to 9. Create a safe Git checkpoint when Git is available">#</a></h3>
+<ol>
+<li>Open <strong>Developer tools &gt; Git status</strong>.</li>
+<li>Confirm the repository and workspace boundaries.</li>
+<li>Review each diff.</li>
+<li>Stage only the tutorial files.</li>
+<li>Use your normal Git client to commit:</li>
+</ol>
+<pre><code class="language-powershell">git diff --staged
+git commit -m &quot;Add My First App Project tutorial files&quot;
+</code></pre>
+<p><strong>Expected:</strong> Git records one commit containing only reviewed files.</p>
+<p><strong>If unavailable:</strong> Install Git or skip this optional step. Do not broaden trust
+or move files merely to make the button appear.</p>
+<h3 id="10-back-up-the-workspace">10. Back up the workspace<a class="heading-anchor" href="#10-back-up-the-workspace" aria-label="Link to 10. Back up the workspace">#</a></h3>
+<ol>
+<li>Save everything.</li>
+<li>Close active editors.</li>
+<li>Create a ZIP of the complete <code>My First App Project</code> folder.</li>
+<li>Open the ZIP and verify <code>project.devdesk</code>, <code>Project overview.md</code>, <code>Tasks.md</code>,
+<code>Design.md</code>, and <code>Testing.md</code>.</li>
+</ol>
+<p><strong>Expected:</strong> The backup contains all tutorial files.</p>
+<p><strong>If not:</strong> Recreate the ZIP from the workspace folder, not from one selected file.</p>
+<h3 id="11-reopen-and-verify">11. Reopen and verify<a class="heading-anchor" href="#11-reopen-and-verify" aria-label="Link to 11. Reopen and verify">#</a></h3>
+<ol>
+<li>Close DevDesk.</li>
+<li>Reopen <code>project.devdesk</code> or select <strong>Continue working</strong>.</li>
+<li>Open Project overview.</li>
+<li>Open the graph.</li>
+<li>Confirm the tasks, links, properties, and files are present.</li>
+</ol>
+<p>Protected API secrets would need to be entered again on a different device.
+This tutorial deliberately used none.</p>
+
+<div class="article-footer"><span></span><a class="pager" href="getting-started.html"><small>Next</small><strong>Getting started</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#welcome-to-devdesk">Welcome to DevDesk</a><a class="level-3" href="#local-first-and-user-owned-files">Local-first and user-owned files</a><a class="level-3" href="#what-devdesk-does-not-do">What DevDesk does not do</a><a class="level-2" href="#start-here-your-first-five-minutes">Start Here: Your First Five Minutes</a><a class="level-3" href="#create-a-workspace">Create a workspace</a><a class="level-3" href="#create-the-first-note">Create the first note</a><a class="level-3" href="#create-the-first-task">Create the first task</a><a class="level-3" href="#find-the-files-and-reopen-the-workspace">Find the files and reopen the workspace</a><a class="level-2" href="#choose-what-you-want-to-do">Choose What You Want to Do</a><a class="level-2" href="#understanding-a-devdesk-workspace">Understanding a DevDesk Workspace</a><a class="level-3" href="#portable-and-device-local-information">Portable and device-local information</a><a class="level-3" href="#safe-folder-locations">Safe folder locations</a><a class="level-3" href="#moving-or-renaming-a-folder">Moving or renaming a folder</a><a class="level-2" href="#planning-your-work">Planning Your Work</a><a class="level-3" href="#beginner-workflow">Beginner workflow</a><a class="level-2" href="#markdown-for-complete-beginners">Markdown for Complete Beginners</a><a class="level-3" href="#a-small-example">A small example</a><a class="level-3" href="#common-formatting">Common formatting</a><a class="level-3" href="#create-a-markdown-file">Create a Markdown file</a><a class="level-2" href="#connecting-notes">Connecting Notes</a><a class="level-3" href="#create-a-safe-connection">Create a safe connection</a><a class="level-3" href="#broken-links-and-renames">Broken links and renames</a><a class="level-2" href="#properties-and-metadata">Properties and Metadata</a><a class="level-2" href="#knowledge-graph">Relationships and graph</a><a class="level-3" href="#open-and-use-the-graph">Open and use the graph</a><a class="level-3" href="#missing-or-disconnected-nodes">Missing or disconnected nodes</a><a class="level-2" href="#open-knowledge-format-okf">Open Knowledge Format (OKF)</a><a class="level-3" href="#create-or-inspect-an-okf-workspace">Create or inspect an OKF workspace</a><a class="level-3" href="#import-existing-markdown">Import existing Markdown</a><a class="level-3" href="#common-mistakes">Common mistakes</a><a class="level-2" href="#api-workspaces">Saved API testing</a><a class="level-3" href="#safe-public-example">Safe public example</a><a class="level-3" href="#environments-and-secrets">Environments and secrets</a><a class="level-2" href="#openapi-studio">OpenAPI Studio</a><a class="level-2" href="#json-tools">JSON Tools</a><a class="level-3" href="#format-and-validate-json">Format and validate JSON</a><a class="level-2" href="#git-tools">Git Tools</a><a class="level-3" href="#verified-devdesk-git-boundary">Verified DevDesk Git boundary</a><a class="level-3" href="#beginner-workflow-2">Beginner workflow</a><a class="level-2" href="#search-navigation-and-shortcuts">Search, Navigation, and Shortcuts</a><a class="level-2" href="#moving-and-backing-up-a-workspace">Moving and Backing Up a Workspace</a><a class="level-3" href="#copy-to-another-computer">Copy to another computer</a><a class="level-3" href="#create-a-zip-backup">Create a ZIP backup</a><a class="level-2" href="#windows-guide">Windows Guide</a><a class="level-3" href="#install">Install</a><a class="level-3" href="#update">Update</a><a class="level-3" href="#files-windows-and-keyboard">Files, windows, and keyboard</a><a class="level-3" href="#uninstall-and-data-preservation">Uninstall and data preservation</a><a class="level-2" href="#android-guide">Android Guide</a><a class="level-3" href="#folder-access">Folder access</a><a class="level-3" href="#phone-tablet-and-resizable-layouts">Phone, tablet, and resizable layouts</a><a class="level-2" href="#privacy-and-security">Privacy and Security</a><a class="level-3" href="#what-stays-local">What stays local</a><a class="level-3" href="#what-may-leave-the-device">What may leave the device</a><a class="level-3" href="#credentials-and-boundaries">Credentials and boundaries</a><a class="level-2" href="#troubleshooting">Troubleshooting</a><a class="level-3" href="#workspace-does-not-open">Workspace does not open</a><a class="level-3" href="#file-cannot-be-saved">File cannot be saved</a><a class="level-3" href="#link-does-not-work">Link does not work</a><a class="level-3" href="#graph-node-is-missing">Graph node is missing</a><a class="level-3" href="#api-request-fails">API request fails</a><a class="level-3" href="#json-is-invalid">JSON is invalid</a><a class="level-3" href="#git-action-is-unavailable">Git action is unavailable</a><a class="level-3" href="#external-link-does-not-open">External link does not open</a><a class="level-3" href="#android-permission-problem">Android permission problem</a><a class="level-3" href="#windows-store-update-problem">Windows Store update problem</a><a class="level-3" href="#layout-or-text-is-too-large">Layout or text is too large</a><a class="level-2" href="#glossary">Glossary</a><a class="level-2" href="#frequently-asked-questions">Frequently Asked Questions</a><a class="level-3" href="#is-devdesk-only-for-developers">Is DevDesk only for developers?</a><a class="level-3" href="#does-devdesk-upload-my-folder">Does DevDesk upload my folder?</a><a class="level-3" href="#can-another-editor-read-my-notes">Can another editor read my notes?</a><a class="level-3" href="#does-removing-a-workspace-delete-its-folder">Does removing a workspace delete its folder?</a><a class="level-3" href="#are-backups-encrypted">Are backups encrypted?</a><a class="level-3" href="#can-devdesk-create-git-commits">Can DevDesk create Git commits?</a><a class="level-2" href="#learn-more-and-references">Learn More and References</a><a class="level-2" href="#contact-support-downloads-and-microsoft-store">Contact, Support, Downloads, and Microsoft Store</a><a class="level-2" href="#complete-beginner-walkthrough-my-first-app-project">Complete Beginner Walkthrough: My First App Project</a><a class="level-3" href="#1-create-the-workspace">1. Create the workspace</a><a class="level-3" href="#2-create-the-project-overview">2. Create the project overview</a><a class="level-3" href="#3-create-a-task-list">3. Create a task list</a><a class="level-3" href="#4-create-and-link-two-notes">4. Create and link two notes</a><a class="level-3" href="#5-add-tags-or-properties">5. Add tags or properties</a><a class="level-3" href="#6-open-the-knowledge-graph">6. Open the knowledge graph</a><a class="level-3" href="#7-create-a-simple-api-request">7. Create a simple API request</a><a class="level-3" href="#8-inspect-the-json-response">8. Inspect the JSON response</a><a class="level-3" href="#9-create-a-safe-git-checkpoint-when-git-is-available">9. Create a safe Git checkpoint when Git is available</a><a class="level-3" href="#10-back-up-the-workspace">10. Back up the workspace</a><a class="level-3" href="#11-reopen-and-verify">11. Reopen and verify</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener noreferrer">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>
