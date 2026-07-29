@@ -510,6 +510,9 @@ function exitDebugMode() {
     document.body.style.animation = '';
 }
 
+window.restartGame = restartGame;
+window.exitDebugMode = exitDebugMode;
+
 // Initialize Easter Egg Manager
 document.addEventListener('DOMContentLoaded', () => {
     window.easterEggManager = new EasterEggManager();

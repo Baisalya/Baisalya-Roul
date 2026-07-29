@@ -1504,6 +1504,7 @@ p {
 
 .project-links {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--spacing-md);
 }
 
@@ -1526,6 +1527,34 @@ p {
     background: var(--primary-color);
     color: white;
     transform: translateY(-2px);
+}
+
+.project-link--store {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.project-link--store:hover {
+    background: var(--primary-dark);
+}
+
+.project-platform-note {
+    margin: var(--spacing-lg) 0 0;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border-light);
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    line-height: 1.65;
+}
+
+.project-platform-note strong {
+    color: var(--text-primary);
+}
+
+.project-platform-note a {
+    color: var(--primary-color);
+    font-weight: 700;
 }
 
 /* Education Section */
@@ -2144,6 +2173,11 @@ p {
     outline-offset: 2px;
 }
 
+.project-platform-note a:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
     html {
@@ -2201,10 +2235,12 @@ p {
     border: 0;
 }
 .project-logo {
-    width: 140px;
+    width: min(160px, 52%);
     height: auto;
+    aspect-ratio: 1;
     object-fit: contain;
     z-index: 2;
+    border-radius: 22%;
 
     transition: 
         transform var(--duration-normal) var(--ease-out-cubic),
