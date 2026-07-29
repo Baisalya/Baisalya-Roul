@@ -231,7 +231,7 @@ dependencies, credentials, and the `.git` directory are excluded.
 - `portfolio-complete-source.zip`: complete tracked repository source.
 - `portfolio-changed-files.zip`: 11 changed portfolio entries.
 - `devdesk-static-site-complete.zip`: complete tracked DevDesk static site.
-- `devdesk-static-site-changed-files.zip`: 88 changed DevDesk site entries.
+- `devdesk-static-site-changed-files.zip`: 94 changed DevDesk site entries.
 - `portfolio-production-dist.zip`: deployable Vite production output.
 
 Every ZIP was reopened with .NET `System.IO.Compression.ZipFile`, its entries
