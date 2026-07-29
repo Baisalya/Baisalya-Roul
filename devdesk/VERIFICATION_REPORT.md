@@ -222,3 +222,21 @@ window behavior were also not automatable in the available desktop browser.
 The manual was verified at narrow viewports and uses wrapping, scrollable code
 blocks/tables, responsive drawers, and scalable units, but those two physical
 environment checks remain release-time manual gates.
+
+## ZIP package verification
+
+The final source state was packaged with Git archive so ignored build caches,
+dependencies, credentials, and the `.git` directory are excluded.
+
+- `portfolio-complete-source.zip`: complete tracked repository source.
+- `portfolio-changed-files.zip`: 11 changed portfolio entries.
+- `devdesk-static-site-complete.zip`: complete tracked DevDesk static site.
+- `devdesk-static-site-changed-files.zip`: 88 changed DevDesk site entries.
+- `portfolio-production-dist.zip`: deployable Vite production output.
+
+Every ZIP was reopened with .NET `System.IO.Compression.ZipFile`, its entries
+were enumerated successfully, and a SHA-256 checksum was generated. The final
+values are stored beside the archives in `deliverables/SHA256SUMS.txt`.
+
+No ZIP is labelled as the complete Flutter application. The application source
+needed to produce that archive is outside the requested repository.
