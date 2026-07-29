@@ -2,6 +2,12 @@
 
 Settings controls themes, density, backup, privacy links, support, manuals, onboarding, and local data reset.
 
+## AI agent connection
+
+Select **DevDesk Agent Connector** to connect an MCP-compatible Windows client such as Codex or Gemini CLI. The connector is stopped by default. Markdown text and review proposals have separate permissions.
+
+Read [AI Agent Connector](agent-connector.html) before the first connection.
+
 ## Appearance
 
 Choose system, light, or dark brightness; an available palette; standard or high contrast; and comfortable or compact density.

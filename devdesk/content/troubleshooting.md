@@ -79,6 +79,19 @@ If a file-specific page cannot use the selection, choose **Choose a project file
 
 Resize the Android freeform or Windows window, close optional panels, or keep advanced controls collapsed. DevDesk supports responsive layouts rather than requiring one fixed orientation.
 
+## AI Agent Connector does not connect
+
+- The current connector is available on Windows.
+- Keep DevDesk open and confirm it shows **Running**.
+- Copy the current Codex or Gemini CLI configuration again.
+- Restart or refresh MCP servers in the AI client.
+- Another program may already use local port `45873`.
+- If you rotated the access key, remove the old URL.
+
+If a tool says no workspace is selected, open a workspace and repeat the request. If document reading or proposals are refused, enable only the required permission.
+
+If approval fails, keep the newer Markdown file and ask the agent to read it again.
+
 ## Data reset or recovery
 
 Export a Settings backup before a major change. Clear All Data removes DevDesk-private records but does not delete external project folders.

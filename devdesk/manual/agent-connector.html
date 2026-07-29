@@ -1,0 +1,268 @@
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Connect Codex, Gemini CLI, or another MCP client to selected DevDesk workspace context with explicit permissions and review-only changes."><meta name="theme-color" content="#5b47e8"><title>AI Agent Connector · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
+  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
+  <nav class="top-nav" aria-label="Primary navigation">
+    <a class="" href="../index.html">Home</a>
+    <a class="active" href="../manual/user-manual.html">Manual</a>
+    <a class="" href="../downloads.html">Downloads</a>
+      <a
+        href="https://baisalya.github.io/devdesk-support/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Support</a>
+    <a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
+  </nav>
+  <div class="header-actions">
+    <button class="search-btn" type="button" data-search aria-label="Search manual"><span>Search manual</span> <kbd>/</kbd></button>
+    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
+  </div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<a class="" href="../manual/user-manual.html">Complete user manual</a>
+<a class="" href="../manual/getting-started.html">Getting started</a>
+<a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
+<a class="" href="../manual/interface-tour.html">Interface tour</a>
+<h2>Knowledge and Markdown</h2>
+<a class="" href="../manual/developer-workspaces.html">Folders, portability, and Git</a>
+<a class="" href="../manual/project-folder-structure.html">Create a project knowledge structure</a>
+<a class="" href="../manual/markdown-basics.html">Markdown basics</a>
+<a class="" href="../manual/frontmatter-properties.html">YAML frontmatter and properties</a>
+<a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
+<a class="" href="../manual/knowledge-workspace.html">Edit workspace Markdown</a>
+<a class="" href="../manual/knowledge-graph.html">Relationships and graph</a>
+<a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
+<a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
+<a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
+<h2>Structure checks (OKF)</h2>
+<a class="" href="../manual/structured-knowledge-okf.html">Structure checks (OKF)</a>
+<a class="" href="../manual/okf-bundle-structure.html">OKF bundle structure</a>
+<a class="" href="../manual/okf-concepts-metadata.html">OKF concepts and metadata</a>
+<a class="" href="../manual/okf-conversion-migration.html">Analyze, convert, and migrate folders</a>
+<a class="" href="../manual/okf-trust-sources-lifecycle.html">Sources, trust, freshness, and lifecycle</a>
+<a class="" href="../manual/okf-attested-computation.html">Attested Computation</a>
+<h2>API and documentation</h2>
+<a class="" href="../manual/readme-generator.html">README Generator</a>
+<a class="" href="../manual/api-workspaces.html">Saved API testing</a>
+<a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
+<a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
+<a class="" href="../manual/quick-api.html">Quick API</a>
+<a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
+<a class="" href="../manual/unified-search.html">Search this workspace</a>
+<h2>Developer utilities</h2>
+<a class="" href="../manual/json-tools.html">JSON Tools</a>
+<a class="" href="../manual/jwt-decoder.html">JWT Decoder</a>
+<a class="" href="../manual/regex-tester.html">Regex Tester</a>
+<a class="" href="../manual/base64.html">Base64 Tool</a>
+<a class="" href="../manual/url-tools.html">URL Encoder and Decoder</a>
+<a class="" href="../manual/timestamp.html">Timestamp Converter</a>
+<a class="" href="../manual/uuid.html">UUID Generator</a>
+<a class="" href="../manual/diff-git.html">Compare files and scoped Git</a>
+<a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
+<h2>Safety and reference</h2>
+<a class="active" href="../manual/agent-connector.html" aria-current="page">AI Agent Connector</a>
+<a class="" href="../manual/backup-restore.html">Backup and restore</a>
+<a class="" href="../manual/settings-appearance.html">Settings and appearance</a>
+<a class="" href="../manual/privacy-security.html">Privacy and security</a>
+<a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
+<a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>AI Agent Connector</span></div><div class="doc-meta"><span class="doc-chip">Safety and reference</span><span class="doc-chip">Local MCP</span><span class="doc-chip">Windows</span></div>
+<h1 id="ai-agent-connector">AI Agent Connector<a class="heading-anchor" href="#ai-agent-connector" aria-label="Link to AI Agent Connector">#</a></h1>
+<p>The AI Agent Connector lets an MCP-compatible AI client ask DevDesk about the workspace you selected.</p>
+<p>Examples include Codex and Gemini CLI. DevDesk does not provide or pay for the AI. You use your own client and its account, subscription, API plan, or local model.</p>
+<p>The current connector is available on Windows. It works only while DevDesk is open and you have started it.</p>
+<h2 id="what-the-connector-adds">What the connector adds<a class="heading-anchor" href="#what-the-connector-adds" aria-label="Link to What the connector adds">#</a></h2>
+<p>Without the connector, an AI reads Markdown only when you give it files or folder access through that AI client.</p>
+<p>With the connector, the AI can ask DevDesk for:</p>
+<ul>
+<li>the active workspace and safe counts;</li>
+<li>matching documents;</li>
+<li>one redacted Markdown document, when you allow document text;</li>
+<li>connected graph nodes and links;</li>
+<li>broken links and other workspace issues;</li>
+<li>the current OKF structure report;</li>
+<li>change proposals waiting for your review.</li>
+</ul>
+<p>This gives the AI the same indexed structure that DevDesk displays. It does not guarantee that every AI answer is correct.</p>
+<h2 id="how-graph-nodes-help-an-ai">How graph nodes help an AI<a class="heading-anchor" href="#how-graph-nodes-help-an-ai" aria-label="Link to How graph nodes help an AI">#</a></h2>
+<p>A <strong>node</strong> is an indexed Markdown document.</p>
+<p>A <strong>connection</strong> is a resolved written relationship, such as a wiki link or Markdown link from one document to another.</p>
+<p>Example:</p>
+<pre><code class="language-markdown"># Release plan
+
+See [[Testing checklist]] before release.
+</code></pre>
+<p>DevDesk can connect <code>Release plan.md</code> to <code>Testing checklist.md</code>. An AI can request the nearby graph neighborhood instead of searching every unrelated file.</p>
+<p>The graph helps an AI:</p>
+<ol>
+<li>Find relevant notes.</li>
+<li>Follow written relationships.</li>
+<li>See backlinks and broken links.</li>
+<li>Keep requests inside the selected workspace.</li>
+</ol>
+<p>A graph line does not prove meaning, truth, trust, or importance. It means DevDesk resolved a saved link. The AI still needs document text, reliable sources, and your instructions to understand the task.</p>
+<h2 id="start-the-connector">Start the connector<a class="heading-anchor" href="#start-the-connector" aria-label="Link to Start the connector">#</a></h2>
+<ol>
+<li>Open DevDesk on Windows.</li>
+<li>Open or select the workspace you want the AI to use.</li>
+<li>Open <strong>Settings</strong>.</li>
+<li>Select <strong>DevDesk Agent Connector</strong>.</li>
+<li>Review <strong>Agent permissions</strong>.</li>
+<li>Select <strong>Start connector</strong>.</li>
+</ol>
+<p>Expected result: the page shows <strong>Running</strong> and displays configurations for Codex and Gemini CLI.</p>
+<p>If no workspace is selected, the connector can run, but workspace tools return a message asking you to select one.</p>
+<h2 id="choose-permissions">Choose permissions<a class="heading-anchor" href="#choose-permissions" aria-label="Link to Choose permissions">#</a></h2>
+<p>Both optional permissions are off by default.</p>
+<h3 id="share-redacted-markdown-text">Share redacted Markdown text<a class="heading-anchor" href="#share-redacted-markdown-text" aria-label="Link to Share redacted Markdown text">#</a></h3>
+<p>Turn this on when the AI needs document bodies.</p>
+<p>DevDesk removes common secret-like values before returning text. Redaction is conservative, but no automatic filter recognizes every possible secret. Review private files before sharing them with any AI.</p>
+<p>Keep it off when the AI only needs paths, titles, graph connections, diagnostics, or OKF status.</p>
+<h3 id="allow-review-proposals">Allow review proposals<a class="heading-anchor" href="#allow-review-proposals" aria-label="Link to Allow review proposals">#</a></h3>
+<p>Turn this on when the AI should suggest an edit to an existing Markdown file.</p>
+<p>The AI sends a complete proposed replacement and the fingerprint of the version it read. DevDesk stores a pending review. It does not change the file.</p>
+<p>If the file changes before approval, DevDesk refuses the stale proposal.</p>
+<h2 id="connect-codex">Connect Codex<a class="heading-anchor" href="#connect-codex" aria-label="Link to Connect Codex">#</a></h2>
+<ol>
+<li>Start the connector.</li>
+<li>Select <strong>Copy Codex config.toml</strong>.</li>
+<li>Open Codex <strong>Settings &gt; MCP servers</strong>, or edit Codex <code>config.toml</code>.</li>
+<li>Add the copied <code>devdesk</code> server block.</li>
+<li>Restart or refresh MCP servers when Codex asks.</li>
+<li>Ask Codex to list its DevDesk tools.</li>
+</ol>
+<p>Expected result: Codex lists tools such as <code>get_active_workspace</code>, <code>search_documents</code>, and <code>get_graph_neighbors</code>.</p>
+<p>For current client controls, see the official <a href="https://learn.chatgpt.com/docs/extend/mcp.md" target="_blank" rel="noopener noreferrer">Codex MCP guide</a>.</p>
+<h2 id="connect-gemini-cli">Connect Gemini CLI<a class="heading-anchor" href="#connect-gemini-cli" aria-label="Link to Connect Gemini CLI">#</a></h2>
+<ol>
+<li>Start the connector.</li>
+<li>Select <strong>Copy Gemini CLI settings.json</strong>.</li>
+<li>Merge the copied <code>devdesk</code> entry into the <code>mcpServers</code> object in Gemini CLI settings.</li>
+<li>Start or restart Gemini CLI.</li>
+<li>Run <code>/mcp</code>.</li>
+</ol>
+<p>Expected result: Gemini CLI shows <code>devdesk</code> as a connected MCP server.</p>
+<p>Do not replace existing <code>mcpServers</code> entries when merging the DevDesk entry. See the official <a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md" target="_blank" rel="noopener noreferrer">Gemini CLI MCP server guide</a>.</p>
+<h2 id="useful-first-requests">Useful first requests<a class="heading-anchor" href="#useful-first-requests" aria-label="Link to Useful first requests">#</a></h2>
+<p>Start with a read-only question:</p>
+<blockquote>
+<p>Use DevDesk to tell me which workspace is active. Do not read document text.</p>
+</blockquote>
+<p>Then try:</p>
+<blockquote>
+<p>Search DevDesk for release notes and show the connected graph neighborhood.</p>
+</blockquote>
+<p>When document sharing is on:</p>
+<blockquote>
+<p>Read <code>Release plan.md</code>, explain the task in simple steps, and cite the workspace-relative files you used.</p>
+</blockquote>
+<p>When proposals are on:</p>
+<blockquote>
+<p>Propose an improvement to <code>Release plan.md</code>. Do not claim the file changed. I will review it in DevDesk.</p>
+</blockquote>
+<h2 id="tools-exposed-by-devdesk">Tools exposed by DevDesk<a class="heading-anchor" href="#tools-exposed-by-devdesk" aria-label="Link to Tools exposed by DevDesk">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+<th align="right">Writes a file?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>get_active_workspace</code></td>
+<td>Safe workspace metadata and counts</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td><code>search_documents</code></td>
+<td>Find indexed documents</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td><code>read_document</code></td>
+<td>Read redacted Markdown when allowed</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td><code>get_graph_neighbors</code></td>
+<td>Follow resolved connections</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td><code>get_workspace_issues</code></td>
+<td>Read bounded workspace diagnostics</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td><code>get_okf_status</code></td>
+<td>Run the same read-only OKF validation</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td><code>list_change_proposals</code></td>
+<td>Show proposal status</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td><code>propose_document_change</code></td>
+<td>Queue a complete replacement for review</td>
+<td align="right">No</td>
+</tr>
+</tbody>
+</table>
+<p>DevDesk does not expose an MCP tool that approves, rejects, deletes, runs a terminal, or pushes Git changes.</p>
+<h2 id="review-a-proposed-change">Review a proposed change<a class="heading-anchor" href="#review-a-proposed-change" aria-label="Link to Review a proposed change">#</a></h2>
+<ol>
+<li>Return to <strong>DevDesk Agent Connector</strong>.</li>
+<li>Find <strong>Review agent proposals</strong>.</li>
+<li>Select <strong>Review</strong>.</li>
+<li>Read the summary.</li>
+<li>Compare <strong>Current file</strong> and <strong>Proposed file</strong>.</li>
+<li>Select one action:
+<ul>
+<li><strong>Cancel</strong> keeps it pending.</li>
+<li><strong>Reject</strong> closes it without changing the file.</li>
+<li><strong>Approve and apply</strong> saves it only if the original file is unchanged.</li>
+</ul>
+</li>
+</ol>
+<h2 id="stop-or-remove-access">Stop or remove access<a class="heading-anchor" href="#stop-or-remove-access" aria-label="Link to Stop or remove access">#</a></h2>
+<p>Select <strong>Stop connector</strong> when the AI no longer needs access.</p>
+<p>Select <strong>Rotate access key</strong> if you copied the configuration to the wrong place or no longer trust an old configuration. Replace the URL in every connected client.</p>
+<p>The server listens only on the Windows loopback address. Other devices on the network cannot use it directly.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="heading-anchor" href="#troubleshooting" aria-label="Link to Troubleshooting">#</a></h2>
+<h3 id="the-ai-cannot-connect">The AI cannot connect<a class="heading-anchor" href="#the-ai-cannot-connect" aria-label="Link to The AI cannot connect">#</a></h3>
+<ol>
+<li>Keep DevDesk open.</li>
+<li>Confirm the connector says <strong>Running</strong>.</li>
+<li>Copy the current configuration again.</li>
+<li>Confirm another program is not using port <code>45873</code>.</li>
+<li>Restart or refresh the AI client's MCP servers.</li>
+</ol>
+<h3 id="the-ai-says-no-workspace-is-selected">The AI says no workspace is selected<a class="heading-anchor" href="#the-ai-says-no-workspace-is-selected" aria-label="Link to The AI says no workspace is selected">#</a></h3>
+<p>Open a workspace in DevDesk and repeat the request. Only the active workspace is exposed.</p>
+<h3 id="the-ai-cannot-read-a-document">The AI cannot read a document<a class="heading-anchor" href="#the-ai-cannot-read-a-document" aria-label="Link to The AI cannot read a document">#</a></h3>
+<p>Turn on <strong>Share redacted Markdown text</strong>. Use the exact workspace-relative path returned by <code>search_documents</code>.</p>
+<h3 id="a-proposal-was-refused">A proposal was refused<a class="heading-anchor" href="#a-proposal-was-refused" aria-label="Link to A proposal was refused">#</a></h3>
+<p>Turn on <strong>Allow review proposals</strong>. If the file changed, ask the AI to read it again and create a fresh proposal.</p>
+<h2 id="privacy-and-cost">Privacy and cost<a class="heading-anchor" href="#privacy-and-cost" aria-label="Link to Privacy and cost">#</a></h2>
+<p>DevDesk does not add analytics, an AI subscription, an API key, or a hosted AI backend.</p>
+<p>Your AI client decides where its prompts and tool results are processed. A cloud AI may send requested workspace context to its provider. A local model may keep processing on your device. Check the client's privacy and pricing before connecting it.</p>
+<p>The connector access key is protected for the Windows user when platform protection is available. Otherwise DevDesk uses a session-only key.</p>
+<p>For the protocol model and security guidance, see the official <a href="https://modelcontextprotocol.io/docs/getting-started/intro" target="_blank" rel="noopener noreferrer">Model Context Protocol documentation</a> and <a href="https://modelcontextprotocol.io/specification/2025-06-18/basic/transports" target="_blank" rel="noopener noreferrer">Streamable HTTP transport specification</a>.</p>
+<h2 id="terms">Terms<a class="heading-anchor" href="#terms" aria-label="Link to Terms">#</a></h2>
+<ul>
+<li><strong>AI agent:</strong> an AI client that can choose and call tools while completing a task.</li>
+<li><strong>MCP:</strong> Model Context Protocol, a standard way for a client to discover and call tools.</li>
+<li><strong>Loopback:</strong> a local-only network address that points back to the same computer.</li>
+<li><strong>Fingerprint:</strong> a value used to detect whether a file changed after it was read.</li>
+<li><strong>Proposal:</strong> a suggested replacement waiting for your explicit review.</li>
+</ul>
+
+<div class="article-footer"><a class="pager" href="settings-appearance.html"><small>Previous</small><strong>Settings and appearance</strong></a><a class="pager" href="privacy-security.html"><small>Next</small><strong>Privacy and security</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#what-the-connector-adds">What the connector adds</a><a class="level-2" href="#how-graph-nodes-help-an-ai">How graph nodes help an AI</a><a class="level-2" href="#start-the-connector">Start the connector</a><a class="level-2" href="#choose-permissions">Choose permissions</a><a class="level-3" href="#share-redacted-markdown-text">Share redacted Markdown text</a><a class="level-3" href="#allow-review-proposals">Allow review proposals</a><a class="level-2" href="#connect-codex">Connect Codex</a><a class="level-2" href="#connect-gemini-cli">Connect Gemini CLI</a><a class="level-2" href="#useful-first-requests">Useful first requests</a><a class="level-2" href="#tools-exposed-by-devdesk">Tools exposed by DevDesk</a><a class="level-2" href="#review-a-proposed-change">Review a proposed change</a><a class="level-2" href="#stop-or-remove-access">Stop or remove access</a><a class="level-2" href="#troubleshooting">Troubleshooting</a><a class="level-3" href="#the-ai-cannot-connect">The AI cannot connect</a><a class="level-3" href="#the-ai-says-no-workspace-is-selected">The AI says no workspace is selected</a><a class="level-3" href="#the-ai-cannot-read-a-document">The AI cannot read a document</a><a class="level-3" href="#a-proposal-was-refused">A proposal was refused</a><a class="level-2" href="#privacy-and-cost">Privacy and cost</a><a class="level-2" href="#terms">Terms</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener noreferrer">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>

@@ -57,6 +57,18 @@ The graph collapses distant labels into compact type-colored markers to reduce c
 
 No online AI provider is required. Current validation and managed maintenance use deterministic local rules and do not invent semantic facts.
 
+## Can I connect Codex or Gemini CLI?
+
+Yes, on Windows. Open **Settings > DevDesk Agent Connector**, select a workspace, start the connector, and copy the matching MCP configuration. You provide the AI client and its account or local model.
+
+## Does the graph make an AI understand my project?
+
+It gives the AI useful structure: document nodes, written links, backlinks, issues, and OKF status. A graph line is not proof that an AI answer is true; document content, source quality, and your instructions still matter.
+
+## Can an AI agent change my files automatically?
+
+No. The connector can queue a Markdown replacement only when review proposals are enabled. You compare both versions. Only **Approve and apply** performs a conflict-checked save.
+
 ## Is every OKF warning a failure?
 
 No. Required errors, warnings, DevDesk advice, and extensions are separate. Optional metadata and unknown producer fields are not false conformance errors.

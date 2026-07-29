@@ -47,6 +47,7 @@ await validateLocalReferences('index.html');
 await validateLocalReferences('devdesk/index.html');
 await validateLocalReferences('devdesk/downloads.html');
 await validateLocalReferences('devdesk/manual/user-manual.html');
+await validateLocalReferences('devdesk/manual/agent-connector.html');
 
 for (const required of [
   'devdesk/assets/js/site-config.js',
@@ -59,6 +60,7 @@ for (const required of [
   'devdesk/assets/img/devdesk-logo-512.png',
   'devdesk/site.webmanifest',
   'devdesk/sw.js',
+  'devdesk/manual/agent-connector.html',
 ]) {
   await exists(required);
 }

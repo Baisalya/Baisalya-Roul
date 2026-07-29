@@ -2,10 +2,11 @@
 
 ## Evidence status
 
-The static site and its documentation sources are present and directly
-verifiable. The Flutter application source is absent from the requested tree.
-Rows below use the existing reviewed manuals as product-behavior evidence and
-name this limitation rather than inventing application source paths.
+The static site and its documentation sources are directly verifiable. The
+Flutter application lives in the separate reviewed DevDesk repository at
+`C:\Users\baish\StudioProjects\devdesk`. Rows with application source paths were
+checked against that code; older feature rows retain their original evidence
+limits instead of inventing verification.
 
 | Actual or published feature | Source/evidence files | Entry point | User purpose | Manual section | Existing tests | Missing documentation or source | Safety warning required |
 |---|---|---|---|---|---|---|---|
@@ -18,6 +19,7 @@ name this limitation rather than inventing application source paths.
 | Links and backlinks | `content/links-backlinks-nodes.md` | Markdown editor / inspector | Connect notes | Connecting Notes | Static validation | Parser/navigation tests unavailable | Review broken/ambiguous links |
 | Properties/frontmatter | `content/frontmatter-properties.md` | Properties | Organize by metadata | Properties and Metadata | Static validation | Properties UI tests unavailable | Malformed YAML blocks save/analysis |
 | Knowledge graph | `content/knowledge-graph.md` | Views > Relationships | Explore connections | Knowledge Graph | Static validation | Canvas/responsive tests unavailable | Graph does not prove truth |
+| AI Agent Connector | `C:\Users\baish\StudioProjects\devdesk\lib\features\agent_connector\`; `content/agent-connector.md` | Settings > DevDesk Agent Connector | Let an MCP-compatible client use selected workspace structure | Connect an AI Agent; AI Agent Connector | Protocol, loopback transport, permissions, proposal, approval, and 360/1400 px widget tests; full 607-test app suite; static production validation | Physical third-party Codex/Gemini end-to-end connection remains a release smoke check | Windows loopback only; optional text/proposals off by default; no direct writes; review AI-provider privacy |
 | Graph connection editing | `content/graph-connection-editing.md` | Graph > Edit links | Add/remove portable links | Connecting Notes | Static validation | Conflict/undo tests unavailable | Only managed block can be removed |
 | Workspace search | `content/unified-search.md` | Search workspace | Find project content | Search and Navigation | Static validation | Indexer tests unavailable | Keep results workspace-scoped |
 | OKF validation and concept creation | `C:\Users\baish\StudioProjects\devdesk\lib\features\okf\presentation\okf_dashboard_page.dart`; `domain/okf_validator.dart`; `domain/okf_template_service.dart` | Developer tools > Structure and OKF | Analyze portable structure and create a concept | Open Knowledge Format; Structure checks; Concepts and metadata | 27 targeted OKF service/widget tests passed; static website validation | Full application source remains external to this website repository | Required vs optional findings; creating a concept writes a new file and never replaces an existing path |
@@ -43,6 +45,8 @@ name this limitation rather than inventing application source paths.
 - Kept all 41 focused tool manuals.
 - Added global-manual navigation and official deeper-learning links.
 - Added explicit Store/closed-test/install/update guidance.
+- Added the Windows AI Agent Connector guide, global-manual section, search
+  entry, safety guidance, and verified code/test evidence.
 
 ## Coverage action blocked by missing source
 

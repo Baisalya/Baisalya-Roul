@@ -54,6 +54,7 @@
 <a class="" href="../manual/diff-git.html">Compare files and scoped Git</a>
 <a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
 <h2>Safety and reference</h2>
+<a class="" href="../manual/agent-connector.html">AI Agent Connector</a>
 <a class="" href="../manual/backup-restore.html">Backup and restore</a>
 <a class="" href="../manual/settings-appearance.html">Settings and appearance</a>
 <a class="" href="../manual/privacy-security.html">Privacy and security</a>
@@ -137,6 +138,17 @@ JSON.</li>
 </ul>
 <h2 id="ui-looks-cramped">UI looks cramped<a class="heading-anchor" href="#ui-looks-cramped" aria-label="Link to UI looks cramped">#</a></h2>
 <p>Resize the Android freeform or Windows window, close optional panels, or keep advanced controls collapsed. DevDesk supports responsive layouts rather than requiring one fixed orientation.</p>
+<h2 id="ai-agent-connector-does-not-connect">AI Agent Connector does not connect<a class="heading-anchor" href="#ai-agent-connector-does-not-connect" aria-label="Link to AI Agent Connector does not connect">#</a></h2>
+<ul>
+<li>The current connector is available on Windows.</li>
+<li>Keep DevDesk open and confirm it shows <strong>Running</strong>.</li>
+<li>Copy the current Codex or Gemini CLI configuration again.</li>
+<li>Restart or refresh MCP servers in the AI client.</li>
+<li>Another program may already use local port <code>45873</code>.</li>
+<li>If you rotated the access key, remove the old URL.</li>
+</ul>
+<p>If a tool says no workspace is selected, open a workspace and repeat the request. If document reading or proposals are refused, enable only the required permission.</p>
+<p>If approval fails, keep the newer Markdown file and ask the agent to read it again.</p>
 <h2 id="data-reset-or-recovery">Data reset or recovery<a class="heading-anchor" href="#data-reset-or-recovery" aria-label="Link to Data reset or recovery">#</a></h2>
 <p>Export a Settings backup before a major change. Clear All Data removes DevDesk-private records but does not delete external project folders.</p>
 <h2 id="windows-manifest-launch-opens-the-wrong-state">Windows manifest launch opens the wrong state<a class="heading-anchor" href="#windows-manifest-launch-opens-the-wrong-state" aria-label="Link to Windows manifest launch opens the wrong state">#</a></h2>
@@ -146,7 +158,7 @@ JSON.</li>
 <li>Open the manifest again; a running supported build forwards it to the existing main window.</li>
 </ul>
 
-<div class="article-footer"><a class="pager" href="keyboard-shortcuts.html"><small>Previous</small><strong>Keyboard shortcuts and accessibility</strong></a><a class="pager" href="faq.html"><small>Next</small><strong>Frequently asked questions</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#a-project-does-not-open">A project does not open</a><a class="level-2" href="#workspace-shows-no-files-or-tools">Workspace shows no files or tools</a><a class="level-2" href="#graph-is-empty-cluttered-or-outdated">Graph is empty, cluttered, or outdated</a><a class="level-2" href="#a-managed-plan-cannot-apply">A managed plan cannot apply</a><a class="level-2" href="#git-status-is-unavailable">Git status is unavailable</a><a class="level-2" href="#api-request-fails">API request fails</a><a class="level-2" href="#portable-api-workspace-does-not-update">Portable API workspace does not update</a><a class="level-2" href="#a-file-cannot-be-saved">A file cannot be saved</a><a class="level-2" href="#ui-looks-cramped">UI looks cramped</a><a class="level-2" href="#data-reset-or-recovery">Data reset or recovery</a><a class="level-2" href="#windows-manifest-launch-opens-the-wrong-state">Windows manifest launch opens the wrong state</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div class="article-footer"><a class="pager" href="keyboard-shortcuts.html"><small>Previous</small><strong>Keyboard shortcuts and accessibility</strong></a><a class="pager" href="faq.html"><small>Next</small><strong>Frequently asked questions</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#a-project-does-not-open">A project does not open</a><a class="level-2" href="#workspace-shows-no-files-or-tools">Workspace shows no files or tools</a><a class="level-2" href="#graph-is-empty-cluttered-or-outdated">Graph is empty, cluttered, or outdated</a><a class="level-2" href="#a-managed-plan-cannot-apply">A managed plan cannot apply</a><a class="level-2" href="#git-status-is-unavailable">Git status is unavailable</a><a class="level-2" href="#api-request-fails">API request fails</a><a class="level-2" href="#portable-api-workspace-does-not-update">Portable API workspace does not update</a><a class="level-2" href="#a-file-cannot-be-saved">A file cannot be saved</a><a class="level-2" href="#ui-looks-cramped">UI looks cramped</a><a class="level-2" href="#ai-agent-connector-does-not-connect">AI Agent Connector does not connect</a><a class="level-2" href="#data-reset-or-recovery">Data reset or recovery</a><a class="level-2" href="#windows-manifest-launch-opens-the-wrong-state">Windows manifest launch opens the wrong state</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>
