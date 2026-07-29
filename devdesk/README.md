@@ -29,8 +29,8 @@ See `PRODUCT_POSITIONING.md` for the message hierarchy and
 
 - benefit-led landing page for everyday users and developers;
 - transparent platform downloads page;
-- 41 detailed manual topics plus the manual index, including a five-page API
-  Studio section;
+- a complete beginner-first global manual plus 41 focused tool topics,
+  including a five-page API Studio section;
 - responsive sidebar and table of contents;
 - offline search index;
 - dark and light themes;
@@ -44,8 +44,9 @@ See `PRODUCT_POSITIONING.md` for the message hierarchy and
 Edit `assets/js/site-config.js`.
 
 - Android currently points to the Google Play package ID and is labelled
-  testing.
-- Windows points to the latest developer-controlled GitHub release page.
+  closed testing. The public text asks users to contact the developer to join.
+- Windows points to the official Microsoft Store listing:
+  `https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare`.
 - macOS and iOS remain disabled until real signed public releases exist.
 
 ## Refresh generated manual pages

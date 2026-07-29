@@ -15,9 +15,19 @@
     name="description"
     content="DevDesk turns one ordinary folder into a portable workspace for plans, notes, connected knowledge, API testing, and scoped Git. No account or file lock-in."
   >
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DevDesk - Your files. Your workspace.">
+  <meta
+    property="og:description"
+    content="A local-first workspace for plans, Markdown knowledge, API testing, JSON tools, and scoped Git."
+  >
+  <meta property="og:image" content="assets/img/devdesk-logo-512.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="assets/img/devdesk-logo-512.png">
   <meta name="theme-color" content="#5b47e8">
   <title>DevDesk - One folder. Every view. Every tool. Still your files.</title>
-  <link rel="icon" href="assets/img/devdesk-logo.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/img/devdesk-logo-64.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="assets/img/devdesk-logo-192.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script defer src="assets/js/site-config.js"></script>
@@ -30,13 +40,13 @@
   <header class="site-header">
     <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open navigation">Menu</button>
     <a class="brand" href="index.html">
-      <img src="assets/img/devdesk-logo.png" alt="">
+      <img src="assets/img/devdesk-logo-128.png" alt="DevDesk application logo">
       <span>DevDesk<small>Your files. Your workspace.</small></span>
     </a>
     <nav class="top-nav" aria-label="Primary navigation">
       <a class="active" href="index.html" aria-current="page">Home</a>
       <a href="#why">Why DevDesk</a>
-      <a href="manual/getting-started.html">Manual</a>
+      <a href="manual/user-manual.html">Manual</a>
       <a href="downloads.html">Downloads</a>
       <a href="https://baisalya.github.io/devdesk-support/" target="_blank" rel="noopener">Support</a>
     </nav>
@@ -57,9 +67,25 @@
           tools only when your work needs them.
         </p>
         <div class="hero-actions">
-          <a class="btn primary" href="manual/getting-started.html">Start in 5 minutes</a>
+          <a
+            class="btn primary"
+            href="https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&amp;gl=IN&amp;ocid=pdpshare"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Get DevDesk for Windows on Microsoft Store (opens in a new tab)"
+          >Get DevDesk on Microsoft Store</a>
+          <a class="btn" href="manual/getting-started.html">Start in 5 minutes</a>
           <a class="btn" href="downloads.html">Get DevDesk</a>
         </div>
+        <p class="availability-note">
+          <strong>Windows:</strong> available on Microsoft Store.
+          <strong>Android:</strong> closed testing —
+          <a
+            href="https://baisalya.github.io/devdesk-support/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >contact the developer to join</a>.
+        </p>
         <ul class="trust-list" aria-label="DevDesk product principles">
           <li>Ordinary readable files</li>
           <li>Copy or Git-clone and continue</li>
@@ -270,6 +296,9 @@
         <h2>Start with a goal. Learn technical detail only when it helps.</h2>
       </div>
       <div class="home-doc-grid">
+        <a class="home-doc-link" href="manual/user-manual.html">
+          <div><strong>Complete user manual</strong><span>Beginner-first guide, walkthrough, glossary, troubleshooting, and references.</span></div>
+        </a>
         <a class="home-doc-link" href="manual/getting-started.html">
           <div><strong>Getting started</strong><span>A clear first five minutes for any user.</span></div>
         </a>
@@ -306,7 +335,14 @@
           downloads page. No unreleased platform is presented as available.
         </p>
         <div class="button-row">
-          <a class="btn primary" href="downloads.html">Choose a platform</a>
+          <a
+            class="btn primary"
+            href="https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&amp;gl=IN&amp;ocid=pdpshare"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View DevDesk on Microsoft Store (opens in a new tab)"
+          >View DevDesk on Microsoft Store</a>
+          <a class="btn" href="downloads.html">Choose a platform</a>
           <a class="btn" href="manual/getting-started.html">Read the first-use guide</a>
         </div>
       </div>
@@ -317,7 +353,7 @@
     <div class="footer-inner">
       <div>
         <a class="brand" href="index.html">
-          <img src="assets/img/devdesk-logo.png" alt="">
+          <img src="assets/img/devdesk-logo-128.png" alt="DevDesk application logo">
           <span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span>
         </a>
         <p style="color:var(--muted)">
@@ -326,6 +362,7 @@
       </div>
       <div>
         <h3>Start</h3>
+        <a href="manual/user-manual.html">Complete user manual</a>
         <a href="manual/getting-started.html">Getting started</a>
         <a href="manual/interface-tour.html">Interface tour</a>
         <a href="downloads.html">Downloads</a>
@@ -338,6 +375,11 @@
       </div>
       <div>
         <h3>Trust</h3>
+        <a
+          href="https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&amp;gl=IN&amp;ocid=pdpshare"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Microsoft Store</a>
         <a href="manual/privacy-security.html">Privacy and security</a>
         <a href="manual/troubleshooting.html">Troubleshooting</a>
         <a href="https://baisalya.github.io/devdesk-support/" target="_blank" rel="noopener">Support</a>

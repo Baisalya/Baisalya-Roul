@@ -2,15 +2,17 @@ window.DEVDESK_SITE_CONFIG = {
   version: "1.0.0",
   android: {
     status: "testing",
-    label: "Open Google Play",
+    label: "Open Android closed test",
     url: "https://play.google.com/store/apps/details?id=com.baishalya.devdesk",
-    note: "Availability may be limited while closed testing is active."
+    note: "Android closed testing — contact the developer to join.",
+    accessibleLabel: "Open the DevDesk Android closed-testing page on Google Play"
   },
   windows: {
     status: "available",
-    label: "View Windows releases",
-    url: "https://github.com/Baisalya/devdesk-support/releases/latest",
-    note: "Use only packages published by the developer."
+    label: "Get DevDesk on Microsoft Store",
+    url: "https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare",
+    note: "Windows version — available on Microsoft Store.",
+    accessibleLabel: "Get the Windows version of DevDesk on Microsoft Store"
   },
   macos: {
     status: "soon",

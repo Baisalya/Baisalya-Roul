@@ -1,4 +1,4 @@
-const CACHE_NAME = 'devdesk-docs-v6-purpose-and-usp-20260728';
+const CACHE_NAME = 'devdesk-docs-v7-store-manual-brand-20260729';
 const ASSETS = [
   "./index.html",
   "./downloads.html",
@@ -6,6 +6,11 @@ const ASSETS = [
   "./assets/js/app.js",
   "./assets/js/site-config.js",
   "./assets/js/search-index.js",
+  "./assets/img/devdesk-logo-64.png",
+  "./assets/img/devdesk-logo-128.png",
+  "./assets/img/devdesk-logo-192.png",
+  "./assets/img/devdesk-logo-512.png",
+  "./manual/user-manual.html",
   "./manual/getting-started.html",
   "./manual/downloads-installation.html",
   "./manual/interface-tour.html",

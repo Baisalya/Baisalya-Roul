@@ -179,8 +179,15 @@
       if (config.url) {
         link.href = config.url;
         link.removeAttribute('aria-disabled');
+        link.setAttribute('aria-label', config.accessibleLabel || config.label);
+        if (/^https?:\/\//.test(config.url)) {
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+        }
       } else {
         link.removeAttribute('href');
+        link.removeAttribute('target');
+        link.removeAttribute('rel');
         link.setAttribute('aria-disabled', 'true');
         link.classList.add('disabled');
       }

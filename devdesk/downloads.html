@@ -7,8 +7,15 @@
     name="description"
     content="Get DevDesk for Android or Windows: one portable workspace for plans, knowledge, APIs, and developer tools, built around ordinary files."
   >
-  <title>Downloads · DevDesk</title>
-  <link rel="icon" href="assets/img/devdesk-logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Download DevDesk">
+  <meta
+    property="og:description"
+    content="Get the Windows version on Microsoft Store or contact the developer to join Android closed testing."
+  >
+  <meta property="og:image" content="assets/img/devdesk-logo-512.png">
+  <title>Downloads - DevDesk</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/img/devdesk-logo-64.png">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script defer src="assets/js/site-config.js"></script>
   <script defer src="assets/js/search-index.js"></script>
@@ -26,23 +33,23 @@
     >☰</button>
 
     <a class="brand" href="index.html">
-      <img src="assets/img/devdesk-logo.png" alt="">
+      <img src="assets/img/devdesk-logo-128.png" alt="DevDesk application logo">
       <span>DevDesk<small>Your files. Your workspace.</small></span>
     </a>
 
     <nav class="top-nav" aria-label="Primary navigation">
       <a href="index.html">Home</a>
-      <a href="manual/getting-started.html">Manual</a>
+      <a href="manual/user-manual.html">Manual</a>
       <a class="active" href="downloads.html" aria-current="page">Downloads</a>
       <a
         href="https://baisalya.github.io/devdesk-support/"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
       >Support</a>
       <a
         href="https://baisalya.github.io/devdesk-support/privacy-policy.html"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
       >Privacy</a>
     </nav>
 
@@ -66,8 +73,9 @@
         <h1>Keep the folder. Gain the workspace.</h1>
         <p>
           Use DevDesk for everyday plans or a real software project without
-          moving your content into a DevDesk cloud. Android access may remain
-          limited during testing. Windows packages are published separately.
+          moving your content into a DevDesk cloud. Android access is currently
+          limited to closed testing. The Windows version is available on
+          Microsoft Store.
           macOS and iOS remain clearly marked upcoming until signed public
           releases actually exist.
         </p>
@@ -83,10 +91,18 @@
             class="btn primary"
             data-download-link
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             <span data-download-label></span>
           </a>
+          <p class="download-contact">
+            Need access?
+            <a
+              href="https://baisalya.github.io/devdesk-support/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Contact the developer to join</a>.
+          </p>
         </article>
 
         <article class="platform-card" data-download="windows">
@@ -98,7 +114,7 @@
             class="btn primary"
             data-download-link
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             <span data-download-label></span>
           </a>
@@ -152,8 +168,9 @@
         <article class="card">
           <h2>Before installation</h2>
           <p>
-            Use only the Google Play listing or GitHub release destination
-            controlled by the developer. Avoid modified third-party packages.
+            Use only the developer's Google Play closed-test page or the
+            official Microsoft Store listing. Avoid modified third-party
+            packages.
           </p>
         </article>
 
@@ -182,7 +199,7 @@
     <div class="footer-inner">
       <div>
         <a class="brand" href="index.html">
-          <img src="assets/img/devdesk-logo.png" alt="">
+          <img src="assets/img/devdesk-logo-128.png" alt="DevDesk application logo">
           <span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span>
         </a>
         <p style="color:var(--muted)">
@@ -193,6 +210,7 @@
 
       <div>
         <h3>Learn</h3>
+        <a href="manual/user-manual.html">Complete user manual</a>
         <a href="manual/getting-started.html">Getting started</a>
         <a href="manual/links-backlinks-nodes.html">Links and graph</a>
         <a href="manual/structured-knowledge-okf.html">Structured Knowledge</a>
@@ -203,19 +221,24 @@
         <h3>Product</h3>
         <a href="downloads.html">Downloads</a>
         <a
+          href="https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&amp;gl=IN&amp;ocid=pdpshare"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Microsoft Store</a>
+        <a
           href="https://github.com/Baisalya/devdesk"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >Source repository</a>
         <a
           href="https://github.com/Baisalya/devdesk-support/issues/new/choose"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >Support</a>
         <a
           href="https://baisalya.github.io/devdesk-support/privacy-policy.html"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >Privacy policy</a>
       </div>
 
@@ -224,7 +247,7 @@
         <a
           href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >Official OKF v0.2 spec</a>
         <a href="manual/keyboard-shortcuts.html">Keyboard shortcuts</a>
         <a href="manual/troubleshooting.html">Troubleshooting</a>
