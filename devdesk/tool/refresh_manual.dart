@@ -66,6 +66,12 @@ const _pages = <_Page>[
         'Explore clean local and workspace relationships, filters, accessible lists, link editing, and undo.',
   ),
   _Page(
+    slug: 'agent-connector',
+    title: 'AI Agent Connector',
+    description:
+        'Connect Codex, Gemini CLI, or another MCP client to selected DevDesk workspace context with explicit permissions and review-only changes.',
+  ),
+  _Page(
     slug: 'structured-knowledge-okf',
     title: 'Structure checks (OKF)',
     description:
@@ -267,10 +273,14 @@ Future<void> _refreshPage(
   searchEntry['title'] = page.title;
   searchEntry['summary'] = page.description;
   searchEntry['text'] = _plainText(body);
+  if (page.slug == 'agent-connector') {
+    searchEntry['group'] = 'Safety and reference';
+  }
 }
 
 String _prepareManualTemplate(String source, String slug) {
   const startHeading = '<h2>Start here</h2>';
+  const safetyHeading = '<h2>Safety and reference</h2>';
   final userManualLink = slug == 'user-manual'
       ? '<a class="active" href="../manual/user-manual.html" '
             'aria-current="page">Complete user manual</a>'
@@ -280,6 +290,32 @@ String _prepareManualTemplate(String source, String slug) {
     source = source.replaceFirst(
       startHeading,
       '$startHeading\n$userManualLink',
+    );
+  }
+  if (!source.contains('>AI Agent Connector</a>')) {
+    final link = slug == 'agent-connector'
+        ? '<a class="active" href="../manual/agent-connector.html" '
+              'aria-current="page">AI Agent Connector</a>'
+        : '<a class="" href="../manual/agent-connector.html">'
+              'AI Agent Connector</a>';
+    source = source.replaceFirst(
+      safetyHeading,
+      '$safetyHeading\n$link',
+    );
+  }
+  if (slug == 'agent-connector') {
+    source = source.replaceFirst(
+      '<a class="" href="../manual/agent-connector.html">'
+          'AI Agent Connector</a>',
+      '<a class="active" href="../manual/agent-connector.html" '
+          'aria-current="page">AI Agent Connector</a>',
+    );
+  } else {
+    source = source.replaceFirst(
+      '<a class="active" href="../manual/agent-connector.html" '
+          'aria-current="page">AI Agent Connector</a>',
+      '<a class="" href="../manual/agent-connector.html">'
+          'AI Agent Connector</a>',
     );
   }
   if (slug == 'user-manual') {
@@ -293,6 +329,32 @@ String _prepareManualTemplate(String source, String slug) {
       '<div class="article-footer"><span></span>'
       '<a class="pager" href="getting-started.html">'
       '<small>Next</small><strong>Getting started</strong></a>'
+      '</div></article>',
+    );
+  }
+  if (slug == 'agent-connector') {
+    source = source.replaceFirst(
+      '<a class="active" href="../manual/getting-started.html" '
+          'aria-current="page">Getting started</a>',
+      '<a class="" href="../manual/getting-started.html">Getting started</a>',
+    );
+    source = source.replaceFirst(
+      '<span>Start here</span></div><div class="doc-meta">'
+          '<span class="doc-chip">Start here</span>'
+          '<span class="doc-chip">Offline documentation</span>'
+          '<span class="doc-chip">Android + Windows</span>',
+      '<span>AI Agent Connector</span></div><div class="doc-meta">'
+          '<span class="doc-chip">Safety and reference</span>'
+          '<span class="doc-chip">Local MCP</span>'
+          '<span class="doc-chip">Windows</span>',
+    );
+    source = source.replaceFirst(
+      RegExp(r'<div class="article-footer">.*?</div></article>', dotAll: true),
+      '<div class="article-footer">'
+      '<a class="pager" href="settings-appearance.html">'
+      '<small>Previous</small><strong>Settings and appearance</strong></a>'
+      '<a class="pager" href="privacy-security.html">'
+      '<small>Next</small><strong>Privacy and security</strong></a>'
       '</div></article>',
     );
   }
@@ -418,6 +480,19 @@ Future<void> _refreshSharedBrand(Directory siteRoot) async {
       source = source.replaceFirst(
         '<h2>Start here</h2>',
         '<h2>Start here</h2>\n$link',
+      );
+    }
+    if (isManualPage && !source.contains('>AI Agent Connector</a>')) {
+      final isAgentConnector =
+          file.uri.pathSegments.last == 'agent-connector.html';
+      final link = isAgentConnector
+          ? '<a class="active" href="../manual/agent-connector.html" '
+                'aria-current="page">AI Agent Connector</a>'
+          : '<a class="" href="../manual/agent-connector.html">'
+                'AI Agent Connector</a>';
+      source = source.replaceFirst(
+        '<h2>Safety and reference</h2>',
+        '<h2>Safety and reference</h2>\n$link',
       );
     }
     source = source

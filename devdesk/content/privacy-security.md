@@ -10,6 +10,16 @@ Markdown, OpenAPI, JSON, and other project artifacts remain in the selected fold
 
 Opening and indexing a project are data operations. They do not run commands, Git, scripts, terminals, AI tools, computations, attesters, or network requests.
 
+## AI Agent Connector
+
+The Windows connector is off until you start it. It binds only to the local loopback address and requires a random access URL.
+
+Safe metadata, graph links, issues, and OKF status are read-only. Markdown text sharing and change proposals are separate permissions that are off by default.
+
+A proposal does not write a file. Only **Approve and apply** inside DevDesk can save it, and the save fails when the original file changed.
+
+DevDesk does not include an AI provider, AI account, analytics, terminal tool, delete tool, or Git push tool. Your AI client decides where requested context is processed.
+
 ## User-initiated network actions
 
 Network activity can occur when you:

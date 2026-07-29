@@ -601,6 +601,52 @@ See [Compare files and workspace-scoped Git](diff-git.html).
 Editor shortcuts such as `Ctrl+S` depend on the active tool. Tooltips are the
 authoritative local hint. See [Keyboard shortcuts](keyboard-shortcuts.html).
 
+## Connect an AI Agent
+
+The Windows **DevDesk Agent Connector** lets an MCP-compatible client such as
+Codex or Gemini CLI request selected-workspace context.
+
+DevDesk does not include an AI provider or AI subscription. You bring your own
+client, account, API plan, or local model.
+
+### What the AI can learn
+
+- safe active-workspace metadata;
+- indexed document paths, titles, tags, and fingerprints;
+- graph nodes, resolved written links, and backlinks;
+- workspace issues and OKF status;
+- redacted Markdown text only when you enable it.
+
+Nodes and links help an AI follow relevant written relationships. They do not
+prove that an answer is true or that two documents have an unstated semantic
+relationship.
+
+### Start and connect
+
+1. Open a Windows workspace.
+2. Open **Settings > DevDesk Agent Connector**.
+3. Review the two optional permissions.
+4. Select **Start connector**.
+5. Copy the Codex or Gemini CLI configuration.
+6. Add it to the AI client's MCP settings.
+7. Ask the client to list DevDesk tools.
+
+### Review-only changes
+
+When **Allow review proposals** is on, an agent may queue a complete Markdown
+replacement. It cannot apply the replacement.
+
+Open **Review agent proposals**, compare the current and proposed file, then
+choose **Cancel**, **Reject**, or **Approve and apply**. Approval uses a
+fingerprint and stops if the file changed after the agent read it.
+
+The connector has no terminal, delete, approval, or Git-push tool. Stop it when
+you finish, and rotate its access key if an old configuration is no longer
+trusted.
+
+See [AI Agent Connector](agent-connector.html) for exact Codex and Gemini CLI
+steps, tool names, troubleshooting, privacy, and official MCP references.
+
 ## Moving and Backing Up a Workspace
 
 ### Copy to another computer
@@ -702,6 +748,8 @@ Only based on verified documented actions:
 - API content goes to the destination you choose when you select **Send**.
 - Supported GitHub comparison fetches the public URL/content you select.
 - Link checks and external Store, support, privacy, or reference pages use the network.
+- A connected AI client can receive the DevDesk tool results it requests. The
+  client decides whether those results stay local or go to an AI provider.
 
 The destination can receive normal connection information such as your public IP
 address.
@@ -772,6 +820,12 @@ Open the system folder picker again and select the folder that directly contains
 
 Open Microsoft Store, sign in if required, check Library/updates, restart the
 Store, and use Microsoft's Store troubleshooting guidance.
+
+### AI Agent Connector does not connect
+
+Keep DevDesk open, confirm the connector says **Running**, copy the current
+configuration, and refresh MCP servers in the AI client. Another program may be
+using port `45873`. If the access key was rotated, remove the old URL.
 
 ### Layout or text is too large
 

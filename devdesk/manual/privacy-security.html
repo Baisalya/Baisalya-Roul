@@ -54,6 +54,7 @@
 <a class="" href="../manual/diff-git.html">Compare files and scoped Git</a>
 <a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
 <h2>Safety and reference</h2>
+<a class="" href="../manual/agent-connector.html">AI Agent Connector</a>
 <a class="" href="../manual/backup-restore.html">Backup and restore</a>
 <a class="" href="../manual/settings-appearance.html">Settings and appearance</a>
 <a class="active" href="../manual/privacy-security.html" aria-current="page">Privacy and security</a>
@@ -66,6 +67,11 @@
 <p>Markdown, OpenAPI, JSON, and other project artifacts remain in the selected folder. DevDesk may keep device-local registry entries, caches, graph positions, drafts, recovery journals, automation history, recent state, permissions, and trust choices.</p>
 <p><code>project.devdesk</code> is portable project configuration. It cannot carry secrets, credentials, absolute paths, commands, scripts, environment variables, execution trust, or personal UI state.</p>
 <p>Opening and indexing a project are data operations. They do not run commands, Git, scripts, terminals, AI tools, computations, attesters, or network requests.</p>
+<h2 id="ai-agent-connector">AI Agent Connector<a class="heading-anchor" href="#ai-agent-connector" aria-label="Link to AI Agent Connector">#</a></h2>
+<p>The Windows connector is off until you start it. It binds only to the local loopback address and requires a random access URL.</p>
+<p>Safe metadata, graph links, issues, and OKF status are read-only. Markdown text sharing and change proposals are separate permissions that are off by default.</p>
+<p>A proposal does not write a file. Only <strong>Approve and apply</strong> inside DevDesk can save it, and the save fails when the original file changed.</p>
+<p>DevDesk does not include an AI provider, AI account, analytics, terminal tool, delete tool, or Git push tool. Your AI client decides where requested context is processed.</p>
 <h2 id="user-initiated-network-actions">User-initiated network actions<a class="heading-anchor" href="#user-initiated-network-actions" aria-label="Link to User-initiated network actions">#</a></h2>
 <p>Network activity can occur when you:</p>
 <ul>
@@ -88,7 +94,7 @@ account.</p>
 <h2 id="report-safely">Report safely<a class="heading-anchor" href="#report-safely" aria-label="Link to Report safely">#</a></h2>
 <p>Use public support only for non-sensitive reports. Use the private security advisory or developer email for vulnerabilities. Never post tokens, credentials, private request bodies, proprietary code, or personal data publicly.</p>
 
-<div class="article-footer"><a class="pager" href="settings-appearance.html"><small>Previous</small><strong>Settings and appearance</strong></a><a class="pager" href="keyboard-shortcuts.html"><small>Next</small><strong>Keyboard shortcuts and accessibility</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#project-data-stays-in-your-folder">Project data stays in your folder</a><a class="level-2" href="#user-initiated-network-actions">User-initiated network actions</a><a class="level-2" href="#protected-secrets">Protected secrets</a><a class="level-2" href="#files-clipboard-and-exports">Files, clipboard, and exports</a><a class="level-2" href="#execution-trust">Execution trust</a><a class="level-2" href="#report-safely">Report safely</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div class="article-footer"><a class="pager" href="settings-appearance.html"><small>Previous</small><strong>Settings and appearance</strong></a><a class="pager" href="keyboard-shortcuts.html"><small>Next</small><strong>Keyboard shortcuts and accessibility</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#project-data-stays-in-your-folder">Project data stays in your folder</a><a class="level-2" href="#ai-agent-connector">AI Agent Connector</a><a class="level-2" href="#user-initiated-network-actions">User-initiated network actions</a><a class="level-2" href="#protected-secrets">Protected secrets</a><a class="level-2" href="#files-clipboard-and-exports">Files, clipboard, and exports</a><a class="level-2" href="#execution-trust">Execution trust</a><a class="level-2" href="#report-safely">Report safely</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>

@@ -32,6 +32,8 @@ const portfolio = await text('index.html');
 const siteConfig = await text('devdesk/assets/js/site-config.js');
 const downloads = await text('devdesk/downloads.html');
 const manual = await text('devdesk/content/user-manual.md');
+const agentGuide = await text('devdesk/content/agent-connector.md');
+const devdeskHome = await text('devdesk/index.html');
 const manifest = JSON.parse(await text('devdesk/site.webmanifest'));
 
 requireText(portfolio, storeUrl, 'Portfolio Microsoft Store action');
@@ -56,6 +58,21 @@ requireText(
   'contact the developer to join',
   'Downloads closed-testing guidance',
 );
+requireText(
+  devdeskHome,
+  'manual/agent-connector.html',
+  'DevDesk Agent Connector guide link',
+);
+for (const expected of [
+  'get_active_workspace',
+  'get_graph_neighbors',
+  'propose_document_change',
+  'Approve and apply',
+  'Codex MCP guide',
+  'Gemini CLI MCP server guide',
+]) {
+  requireText(agentGuide, expected, 'DevDesk Agent Connector guide');
+}
 
 for (const heading of [
   'Welcome to DevDesk',
@@ -73,6 +90,7 @@ for (const heading of [
   'JSON Tools',
   'Git Tools',
   'Search, Navigation, and Shortcuts',
+  'Connect an AI Agent',
   'Moving and Backing Up a Workspace',
   'Windows Guide',
   'Android Guide',
@@ -103,6 +121,7 @@ for (const relativePath of [
   'devdesk/assets/img/devdesk-logo-24.png',
   'devdesk/assets/img/devdesk-logo-16.png',
   'devdesk/manual/user-manual.html',
+  'devdesk/manual/agent-connector.html',
   'devdesk/DOCUMENTATION_COVERAGE_MATRIX.md',
 ]) {
   await requireFile(relativePath, 100);
