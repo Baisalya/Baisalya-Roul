@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Analyze existing Markdown first, then use bounded reviewable improvements."><meta name="theme-color" content="#5b47e8"><title>Analyze, improve, and migrate project knowledge · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Convert existing Markdown through an exact previewed, conflict-safe, recoverable workflow."><meta name="theme-color" content="#5b47e8"><title>Analyze, improve, and migrate project knowledge · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
   <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
@@ -61,42 +61,133 @@
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
 <a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Structured Knowledge / OKF</span></div><div class="doc-meta"><span class="doc-chip">Structured Knowledge / OKF</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div>
 <h1 id="analyze-improve-and-migrate-project-knowledge">Analyze, improve, and migrate project knowledge<a class="heading-anchor" href="#analyze-improve-and-migrate-project-knowledge" aria-label="Link to Analyze, improve, and migrate project knowledge">#</a></h1>
-<p>DevDesk can inspect an existing Markdown project without silently rewriting it.</p>
-<h2 id="analyze-first">Analyze first<a class="heading-anchor" href="#analyze-first" aria-label="Link to Analyze first">#</a></h2>
+<p>Use this workflow when the folder already contains Markdown files.</p>
+<p>DevDesk analyzes first and writes only after you review a file-by-file plan.
+The normal Markdown body and unknown metadata are preserved.</p>
+<h2 id="before-starting">Before starting<a class="heading-anchor" href="#before-starting" aria-label="Link to Before starting">#</a></h2>
 <ol>
-<li>Open the workspace.</li>
-<li>Open <strong>Developer tools → Structure and OKF</strong>.</li>
-<li>Review required errors, warnings, advice, and extensions separately.</li>
-<li>Refresh the project if files changed externally.</li>
+<li>Save all open files.</li>
+<li>Make a ZIP backup or Git checkpoint.</li>
+<li>Close another editor if it may keep writing to the same files.</li>
+<li>Open the intended DevDesk workspace.</li>
 </ol>
-<h2 id="choose-how-changes-are-handled">Choose how changes are handled<a class="heading-anchor" href="#choose-how-changes-are-handled" aria-label="Link to Choose how changes are handled">#</a></h2>
+<p>Opening Structure and OKF does not modify the project.</p>
+<h2 id="analyze-the-folder">Analyze the folder<a class="heading-anchor" href="#analyze-the-folder" aria-label="Link to Analyze the folder">#</a></h2>
+<ol>
+<li>Open <strong>Developer tools &gt; Structure and OKF</strong>.</li>
+<li>Wait for <strong>Analyzing portable structured knowledge...</strong>.</li>
+<li>Read <strong>Required fixes</strong> first.</li>
+<li>Read <strong>Spec warnings</strong>.</li>
+<li>Treat <strong>DevDesk recommendations</strong> as optional.</li>
+<li>Use the finding filters when the list is long.</li>
+</ol>
+<p>Select <strong>Refresh analysis</strong> after files change outside DevDesk.</p>
+<h2 id="prepare-the-conversion-plan">Prepare the conversion plan<a class="heading-anchor" href="#prepare-the-conversion-plan" aria-label="Link to Prepare the conversion plan">#</a></h2>
+<ol>
+<li>Select <strong>Review safe fixes</strong>.</li>
+<li>Read <strong>Turn this folder into structured knowledge</strong>.</li>
+<li>Choose a <strong>Project profile</strong>.</li>
+<li>Review every switch.</li>
+<li>Select <strong>Analyze and preview</strong>.</li>
+</ol>
+<p>Default options in the current app:</p>
 <ul>
-<li><strong>Safe automatic:</strong> only deterministic reversible managed maintenance.</li>
-<li><strong>Review changes:</strong> prepare a durable plan for accept or reject.</li>
-<li><strong>Manual:</strong> start and confirm each generation action yourself.</li>
+<li>Project profile: <strong>Software project</strong></li>
+<li><strong>Suggest missing descriptions:</strong> on</li>
+<li><strong>Mark newly structured documents as draft:</strong> on</li>
+<li><strong>Migrate compatible v0.1 metadata:</strong> on</li>
+<li><strong>Create or update indexes:</strong> on</li>
+<li><strong>Record the reviewed migration in log.md:</strong> on</li>
+<li>Migration actor: <code>devdesk-migration/1.0</code></li>
+<li>Legacy verification actor: empty</li>
 </ul>
-<p>A plan is tied to file fingerprints. If a file changes after planning, DevDesk stops rather than applying a stale replacement.</p>
-<h2 id="safe-improvements">Safe improvements<a class="heading-anchor" href="#safe-improvements" aria-label="Link to Safe improvements">#</a></h2>
-<p>DevDesk may deterministically prepare:</p>
+<p>Leave <strong>Legacy verification actor</strong> empty unless you know who or what actually
+performed the old verification. DevDesk does not invent that event.</p>
+<h2 id="what-each-option-does">What each option does<a class="heading-anchor" href="#what-each-option-does" aria-label="Link to What each option does">#</a></h2>
+<h3 id="suggest-missing-descriptions">Suggest missing descriptions<a class="heading-anchor" href="#suggest-missing-descriptions" aria-label="Link to Suggest missing descriptions">#</a></h3>
+<p>Uses the first readable paragraph as a deterministic suggestion. It skips
+headings, lists, tables, comments, and code fences.</p>
+<h3 id="mark-newly-structured-documents-as-draft">Mark newly structured documents as draft<a class="heading-anchor" href="#mark-newly-structured-documents-as-draft" aria-label="Link to Mark newly structured documents as draft">#</a></h3>
+<p>Avoids presenting inferred metadata as already stable.</p>
+<h3 id="migrate-compatible-v0-1-metadata">Migrate compatible v0.1 metadata<a class="heading-anchor" href="#migrate-compatible-v0-1-metadata" aria-label="Link to Migrate compatible v0.1 metadata">#</a></h3>
+<p>Can map supported older fields:</p>
 <ul>
-<li>managed directory indexes;</li>
-<li>portable standard Markdown relationships selected by the user;</li>
-<li>bounded starter documents when the target path is absent;</li>
-<li>supported OKF v0.2 structure corrections.</li>
+<li><code>timestamp</code> to <code>generated</code>;</li>
+<li><code>verified_at</code> to <code>verified</code> only when a real reviewer actor is supplied;</li>
+<li><code>review_after</code> to <code>stale_after</code>;</li>
+<li><code>active</code> to <code>stable</code>;</li>
+<li><code>deprecated: true</code> to <code>status: deprecated</code>;</li>
+<li>compatible citation footnotes to source entries.</li>
 </ul>
-<p>It preserves unknown fields and prose. Producer metadata that cannot be moved safely stays for manual review.</p>
-<h2 id="migration-boundaries">Migration boundaries<a class="heading-anchor" href="#migration-boundaries" aria-label="Link to Migration boundaries">#</a></h2>
+<p>The old field is removed only when its supported replacement exists.</p>
+<h3 id="create-or-update-indexes">Create or update indexes<a class="heading-anchor" href="#create-or-update-indexes" aria-label="Link to Create or update indexes">#</a></h3>
+<p>Creates a root <code>index.md</code> and useful folder indexes. DevDesk-managed sections
+are updated without replacing custom prose.</p>
+<h3 id="record-the-reviewed-migration-in-log-md">Record the reviewed migration in log.md<a class="heading-anchor" href="#record-the-reviewed-migration-in-log-md" aria-label="Link to Record the reviewed migration in log.md">#</a></h3>
+<p>Adds an optional newest-first migration entry after you approve the plan.</p>
+<h2 id="review-the-preview">Review the preview<a class="heading-anchor" href="#review-the-preview" aria-label="Link to Review the preview">#</a></h2>
+<p>The preview displays:</p>
 <ul>
-<li>Existing older wiki links can remain readable as a DevDesk extension.</li>
-<li>New managed relationships use standard Markdown links.</li>
-<li>Unknown future OKF versions are not rewritten.</li>
-<li>Sources, verification, lifecycle, trust, and attestation are not invented.</li>
+<li>number of files created;</li>
+<li>number of files updated;</li>
+<li>relative path of every affected file;</li>
+<li>why the change is proposed;</li>
+<li>proposed content;</li>
+<li>unchanged or skipped files.</li>
 </ul>
-<h2 id="recovery">Recovery<a class="heading-anchor" href="#recovery" aria-label="Link to Recovery">#</a></h2>
-<p>A durable journal is written before project mutation. Partial failure rolls back only verified unchanged DevDesk writes. External edits stay untouched. A successful managed plan can remain undoable across restart.</p>
-<p>Keep the project under Git or another backup strategy before a large migration.</p>
+<p>Check:</p>
+<ol>
+<li>The selected workspace is correct.</li>
+<li>Suggested types fit the file.</li>
+<li>Suggested descriptions are factual.</li>
+<li>Draft status is appropriate.</li>
+<li>No real source or verification was invented.</li>
+<li>Index links point to the correct relative paths.</li>
+</ol>
+<p>Select <strong>Cancel</strong> when anything is unclear. No project file is changed.</p>
+<p>Select <strong>Apply reviewed plan</strong> only after completing the review.</p>
+<h2 id="what-devdesk-preserves">What DevDesk preserves<a class="heading-anchor" href="#what-devdesk-preserves" aria-label="Link to What DevDesk preserves">#</a></h2>
+<p>The current implementation preserves:</p>
+<ul>
+<li>Markdown body text;</li>
+<li>unknown frontmatter fields;</li>
+<li>existing wiki links;</li>
+<li>custom index prose outside DevDesk markers;</li>
+<li>reserved files containing producer metadata that cannot be moved safely;</li>
+<li>external edits made after planning.</li>
+</ul>
+<p>New managed relationships use standard Markdown links for portability.</p>
+<h2 id="conflict-rollback-and-undo">Conflict, rollback, and undo<a class="heading-anchor" href="#conflict-rollback-and-undo" aria-label="Link to Conflict, rollback, and undo">#</a></h2>
+<p>The plan stores the expected fingerprint of each existing file.</p>
+<ul>
+<li>If a file changed after planning, DevDesk stops.</li>
+<li>A durable recovery journal is stored before the first project write.</li>
+<li>On a partial failure, unchanged DevDesk writes are rolled back in reverse.</li>
+<li>External changes are never silently replaced.</li>
+<li>A successful managed plan can remain undoable after restart.</li>
+</ul>
+<p>After a conflict, keep the external edit, refresh analysis, and create a new
+plan.</p>
+<h2 id="version-behavior">Version behavior<a class="heading-anchor" href="#version-behavior" aria-label="Link to Version behavior">#</a></h2>
+<ul>
+<li>No declared version: DevDesk performs best-effort v0.2 analysis.</li>
+<li>Declared v0.1: compatible migration can be previewed.</li>
+<li>Declared v0.2: normal supported analysis and reviewed changes.</li>
+<li>Unknown future version: diagnostic read-only analysis; generation is
+disabled.</li>
+</ul>
+<h2 id="if-the-result-is-not-what-you-expected">If the result is not what you expected<a class="heading-anchor" href="#if-the-result-is-not-what-you-expected" aria-label="Link to If the result is not what you expected">#</a></h2>
+<ul>
+<li><strong>No changes are needed:</strong> the deterministic metadata is already current.</li>
+<li><strong>Some files are skipped:</strong> open the skipped reason; DevDesk may be preserving
+producer metadata.</li>
+<li><strong>Apply stopped:</strong> refresh because an external file changed.</li>
+<li><strong>Indexes still missing:</strong> select <strong>Preview indexes</strong> separately.</li>
+<li><strong>Required fix remains:</strong> manually repair malformed YAML or a reserved-file
+structure that cannot be changed safely.</li>
+</ul>
 
-<div class="article-footer"><a class="pager" href="okf-concepts-metadata.html"><small>Previous</small><strong>OKF concepts and metadata</strong></a><a class="pager" href="okf-trust-sources-lifecycle.html"><small>Next</small><strong>Sources, trust, freshness, and lifecycle</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#analyze-first">Analyze first</a><a class="level-2" href="#choose-how-changes-are-handled">Choose how changes are handled</a><a class="level-2" href="#safe-improvements">Safe improvements</a><a class="level-2" href="#migration-boundaries">Migration boundaries</a><a class="level-2" href="#recovery">Recovery</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div class="article-footer"><a class="pager" href="okf-concepts-metadata.html"><small>Previous</small><strong>OKF concepts and metadata</strong></a><a class="pager" href="okf-trust-sources-lifecycle.html"><small>Next</small><strong>Sources, trust, freshness, and lifecycle</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#before-starting">Before starting</a><a class="level-2" href="#analyze-the-folder">Analyze the folder</a><a class="level-2" href="#prepare-the-conversion-plan">Prepare the conversion plan</a><a class="level-2" href="#what-each-option-does">What each option does</a><a class="level-3" href="#suggest-missing-descriptions">Suggest missing descriptions</a><a class="level-3" href="#mark-newly-structured-documents-as-draft">Mark newly structured documents as draft</a><a class="level-3" href="#migrate-compatible-v0-1-metadata">Migrate compatible v0.1 metadata</a><a class="level-3" href="#create-or-update-indexes">Create or update indexes</a><a class="level-3" href="#record-the-reviewed-migration-in-log-md">Record the reviewed migration in log.md</a><a class="level-2" href="#review-the-preview">Review the preview</a><a class="level-2" href="#what-devdesk-preserves">What DevDesk preserves</a><a class="level-2" href="#conflict-rollback-and-undo">Conflict, rollback, and undo</a><a class="level-2" href="#version-behavior">Version behavior</a><a class="level-2" href="#if-the-result-is-not-what-you-expected">If the result is not what you expected</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>

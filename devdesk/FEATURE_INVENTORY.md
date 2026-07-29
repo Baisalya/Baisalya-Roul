@@ -42,7 +42,7 @@ No unavailable application behavior is reported as newly implemented.
 | Markdown | Standalone, vault, and project-aware editing paths |
 | Knowledge | Links, backlinks, properties, search, issues, local/workspace graph |
 | Graph writes | Standard Markdown managed block, one source note, conflict-safe undo |
-| OKF | Open Knowledge Format v0.2 checks with required/warning/advice/extension separation |
+| OKF | Code-verified Open Knowledge Format v0.2 analysis, concept templates, safe-fix preview, reviewed conversion, managed indexes/log, provenance, verification, lifecycle, recovery journal, rollback, and undo |
 | API | Quick API and saved API workspaces with collections, environments, assertions, extraction, runner, imports/exports |
 | OpenAPI | Swagger 2.0/OpenAPI 3.0/3.1 local inspection and collection generation |
 | JSON/utilities | JSON, JWT decode, Regex, Base64, URL, Timestamp, UUID, snippets, README |

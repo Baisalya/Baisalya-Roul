@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Build indexes, logs, directories, concepts, and portable links."><meta name="theme-color" content="#5b47e8"><title>OKF bundle structure · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Understand concepts, indexes, logs, and the smallest useful portable folder layout."><meta name="theme-color" content="#5b47e8"><title>OKF bundle structure · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
   <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
@@ -59,66 +59,120 @@
 <a class="" href="../manual/privacy-security.html">Privacy and security</a>
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
-<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Structured Knowledge / OKF</span></div><div class="doc-meta"><span class="doc-chip">Structured Knowledge / OKF</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="okf-bundle-structure">OKF bundle structure<a class="heading-anchor" href="#okf-bundle-structure" aria-label="Link to OKF bundle structure">#</a></h1>
-<pre><code class="language-text">my-project-knowledge/
-├── index.md                     # Bundle entry point; may declare okf_version
-├── log.md                       # Optional update history, newest date first
-├── architecture/
-│   ├── index.md                 # Optional directory listing
-│   ├── system-overview.md       # One concept
-│   └── data-flow.md             # One concept
-├── api/
-│   ├── index.md
-│   └── customer-api.md
-├── decisions/
-│   └── adr-001-local-storage.md
-├── runbooks/
-│   └── release-checklist.md
-└── references/                  # Optional mirrored source material or scripts
-    └── api-schema.md
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Structured Knowledge / OKF</span></div><div class="doc-meta"><span class="doc-chip">Structured Knowledge / OKF</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div>
+<h1 id="okf-bundle-structure">OKF bundle structure<a class="heading-anchor" href="#okf-bundle-structure" aria-label="Link to OKF bundle structure">#</a></h1>
+<p>An OKF bundle is simply the workspace folder that contains your structured
+Markdown files.</p>
+<p>You do not have to create every folder shown below. Start with one concept and
+let <strong>Preview indexes</strong> suggest indexes when the folder grows.</p>
+<h2 id="small-beginner-example">Small beginner example<a class="heading-anchor" href="#small-beginner-example" aria-label="Link to Small beginner example">#</a></h2>
+<pre><code class="language-text">my-project/
+|-- index.md
+|-- concepts/
+|   |-- release-checklist.md
+|   `-- project-overview.md
+|-- decisions/
+|   `-- local-storage.md
+`-- log.md
 </code></pre>
-<h2 id="concept-id">Concept ID<a class="heading-anchor" href="#concept-id" aria-label="Link to Concept ID">#</a></h2>
-<p>The concept ID is its path from the bundle root without <code>.md</code>.</p>
-<pre><code class="language-text">api/customer-api.md  →  api/customer-api
-</code></pre>
-<h2 id="reserved-filenames">Reserved filenames<a class="heading-anchor" href="#reserved-filenames" aria-label="Link to Reserved filenames">#</a></h2>
 <ul>
-<li><code>index.md</code> is a directory listing for progressive disclosure.</li>
-<li><code>log.md</code> is an optional update history, newest date first.</li>
-<li>Do not use those names for normal concept documents.</li>
+<li><code>release-checklist.md</code>, <code>project-overview.md</code>, and <code>local-storage.md</code> are
+concepts.</li>
+<li><code>index.md</code> is a readable directory entry point.</li>
+<li><code>log.md</code> is an optional dated update history.</li>
 </ul>
-<h2 id="root-index-and-version">Root index and version<a class="heading-anchor" href="#root-index-and-version" aria-label="Link to Root index and version">#</a></h2>
-<p>A root <code>index.md</code> may declare the version:</p>
+<p>All files are normal Markdown.</p>
+<h2 id="create-the-structure-from-the-app">Create the structure from the app<a class="heading-anchor" href="#create-the-structure-from-the-app" aria-label="Link to Create the structure from the app">#</a></h2>
+<ol>
+<li>Open the workspace.</li>
+<li>Open <strong>Developer tools &gt; Structure and OKF</strong>.</li>
+<li>Select <strong>Create concept</strong>.</li>
+<li>Enter a title.</li>
+<li>Review the suggested relative path.</li>
+<li>Select <strong>Create</strong>.</li>
+<li>Return to Structure and OKF.</li>
+<li>Under <strong>Manual knowledge maintenance</strong>, select <strong>Preview indexes</strong>.</li>
+<li>Review the proposed <code>index.md</code> files.</li>
+<li>Select <strong>Apply reviewed plan</strong> when the preview is correct.</li>
+</ol>
+<p><strong>Expected result:</strong> DevDesk creates only the concept and reviewed indexes.
+Existing custom prose is preserved.</p>
+<h2 id="concept-identity">Concept identity<a class="heading-anchor" href="#concept-identity" aria-label="Link to Concept identity">#</a></h2>
+<p>The portable concept identity is its path from the bundle root without <code>.md</code>.</p>
+<pre><code class="language-text">concepts/release-checklist.md
+</code></pre>
+<p>becomes:</p>
+<pre><code class="language-text">concepts/release-checklist
+</code></pre>
+<p>Moving or renaming the file changes this path-based identity. The optional
+<code>stable_id</code> field is a DevDesk extension and is not required for OKF
+conformance.</p>
+<h2 id="reserved-filenames">Reserved filenames<a class="heading-anchor" href="#reserved-filenames" aria-label="Link to Reserved filenames">#</a></h2>
+<h3 id="index-md">index.md<a class="heading-anchor" href="#index-md" aria-label="Link to index.md">#</a></h3>
+<p><code>index.md</code> lists concepts and child folders under Markdown headings.</p>
+<ul>
+<li>The root <code>index.md</code> may declare <code>okf_version</code>.</li>
+<li>A subfolder <code>index.md</code> must not contain concept frontmatter.</li>
+<li>Missing indexes are a recommendation, not a conformance failure.</li>
+</ul>
+<h3 id="log-md">log.md<a class="heading-anchor" href="#log-md" aria-label="Link to log.md">#</a></h3>
+<p><code>log.md</code> is an optional update history.</p>
+<ul>
+<li>It uses <code>## YYYY-MM-DD</code> headings.</li>
+<li>Newest date sections come first.</li>
+<li>It does not use frontmatter.</li>
+</ul>
+<p>Do not use <code>index.md</code> or <code>log.md</code> as the filename of a normal concept.</p>
+<h2 id="root-index">Root index<a class="heading-anchor" href="#root-index" aria-label="Link to Root index">#</a></h2>
+<p>A generated root index can look like this:</p>
 <pre><code class="language-markdown">---
 okf_version: &quot;0.2&quot;
 ---
-# Project Knowledge
+# Knowledge Bundle
 
-## Architecture
+&lt;!-- devdesk:okf-index:start --&gt;
+## Concepts
 
-- [System overview](architecture/system-overview.md) - High-level boundaries.
+- [Project overview](concepts/project-overview.md) - Explains the project.
+- [Release checklist](concepts/release-checklist.md) - Lists release checks.
+&lt;!-- devdesk:okf-index:end --&gt;
 </code></pre>
-<p>Subdirectory <code>index.md</code> files should not carry arbitrary concept frontmatter.</p>
-<h2 id="directory-index-example">Directory index example<a class="heading-anchor" href="#directory-index-example" aria-label="Link to Directory index example">#</a></h2>
-<pre><code class="language-markdown"># API concepts
+<p>The root frontmatter may contain only <code>okf_version</code>. Put normal concept metadata
+in a normal concept file.</p>
+<p>DevDesk updates only its managed index section. Custom text outside the managed
+markers stays in place.</p>
+<h2 id="folder-index">Folder index<a class="heading-anchor" href="#folder-index" aria-label="Link to Folder index">#</a></h2>
+<pre><code class="language-markdown"># Concepts
 
-- [Customer API](customer-api.md) - Creates and reads customer records.
-- [Authentication](authentication.md) - Token and permission requirements.
-
-# Related groups
-
-- [Runbooks](../runbooks/) - Operational procedures.
+&lt;!-- devdesk:okf-index:start --&gt;
+- [Project overview](project-overview.md) - Explains the project.
+- [Release checklist](release-checklist.md) - Lists release checks.
+&lt;!-- devdesk:okf-index:end --&gt;
 </code></pre>
-<h2 id="log-example">Log example<a class="heading-anchor" href="#log-example" aria-label="Link to Log example">#</a></h2>
+<p>The current app creates folder indexes only for folders containing concepts or
+child concept folders.</p>
+<h2 id="update-log">Update log<a class="heading-anchor" href="#update-log" aria-label="Link to Update log">#</a></h2>
 <pre><code class="language-markdown"># Directory Update Log
 
-## 2026-07-25
-- **Update**: Added [Customer API](api/customer-api.md).
+## 2026-07-29
+* **Update**: Added the release checklist.
 
-## 2026-07-20
-- **Initialization**: Created the initial bundle structure.
+## 2026-07-25
+* **Migration**: Reviewed the folder structure.
 </code></pre>
-<div class="article-footer"><a class="pager" href="structured-knowledge-okf.html"><small>Previous</small><strong>Structured Knowledge and OKF</strong></a><a class="pager" href="okf-concepts-metadata.html"><small>Next</small><strong>OKF concepts and metadata</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#concept-id">Concept ID</a><a class="level-2" href="#reserved-filenames">Reserved filenames</a><a class="level-2" href="#root-index-and-version">Root index and version</a><a class="level-2" href="#directory-index-example">Directory index example</a><a class="level-2" href="#log-example">Log example</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<p>To add an entry:</p>
+<ol>
+<li>Select <strong>Add log entry</strong>.</li>
+<li>Enter an <strong>Update summary</strong>.</li>
+<li>Select <strong>Preview</strong>.</li>
+<li>Review the proposed <code>log.md</code>.</li>
+<li>Select <strong>Apply reviewed plan</strong>.</li>
+</ol>
+<p>DevDesk inserts the entry in newest-first order. If an existing reserved file
+contains producer metadata that cannot be relocated safely, DevDesk leaves it
+unchanged and asks for manual review.</p>
+
+<div class="article-footer"><a class="pager" href="structured-knowledge-okf.html"><small>Previous</small><strong>Structured Knowledge and OKF</strong></a><a class="pager" href="okf-concepts-metadata.html"><small>Next</small><strong>OKF concepts and metadata</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#small-beginner-example">Small beginner example</a><a class="level-2" href="#create-the-structure-from-the-app">Create the structure from the app</a><a class="level-2" href="#concept-identity">Concept identity</a><a class="level-2" href="#reserved-filenames">Reserved filenames</a><a class="level-3" href="#index-md">index.md</a><a class="level-3" href="#log-md">log.md</a><a class="level-2" href="#root-index">Root index</a><a class="level-2" href="#folder-index">Folder index</a><a class="level-2" href="#update-log">Update log</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>

@@ -35,6 +35,8 @@ uses preserve the supplied URL and open it with safe external-link attributes.
 - Workspace creation, portability, moving, backup, restore, and local storage.
 - Planning, tasks, Markdown, metadata, links, backlinks, and knowledge graph.
 - Open Knowledge Format (OKF) v0.2 concepts and DevDesk-specific workflows.
+- Beginner-first OKF pages verified against the Flutter dashboard, validator,
+  templates, managed-write service, and 27 passing targeted OKF tests.
 - API Workspaces, OpenAPI Studio, JSON tools, utilities, and scoped Git.
 - Windows, Android, privacy, security, troubleshooting, FAQ, glossary, and
   official learning references.

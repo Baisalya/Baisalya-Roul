@@ -240,3 +240,52 @@ values are stored beside the archives in `deliverables/SHA256SUMS.txt`.
 
 No ZIP is labelled as the complete Flutter application. The application source
 needed to produce that archive is outside the requested repository.
+
+## Code-verified OKF documentation update
+
+The later OKF documentation pass was verified read-only against the separate
+Flutter source at `C:\Users\baish\StudioProjects\devdesk`.
+
+Inspected implementation:
+
+- `lib/features/okf/presentation/okf_dashboard_page.dart`
+- `lib/features/okf/data/okf_workspace_service.dart`
+- `lib/features/okf/domain/okf_validator.dart`
+- `lib/features/okf/domain/okf_template_service.dart`
+- `lib/features/okf/domain/okf_models.dart`
+- `lib/features/okf/domain/okf_metadata.dart`
+- `lib/app/router.dart`
+- `lib/features/workspace_shell/domain/open_with_resolver.dart`
+- OKF service and responsive widget tests
+
+Command:
+
+```powershell
+flutter test `
+  test\features\okf\okf_service_test.dart `
+  test\features\okf\okf_dashboard_test.dart
+```
+
+Result:
+
+- Passed.
+- 27 OKF service and widget tests passed.
+- Covered v0.2 validation, required versus optional findings, indexes, reserved
+  files, reviewed conversion, legacy migration, sources, lifecycle, Attested
+  Computation templates, 320-pixel Android width, wide Windows layout, and
+  200% text scaling in a constrained window.
+
+The Flutter repository already contained unrelated uncommitted branding and
+platform changes. They were preserved; no Flutter source or app manual file was
+modified during this website-only documentation update.
+
+Website checks after rewriting all focused OKF pages:
+
+- Six OKF HTML pages regenerated from Markdown.
+- All six passed at 390 × 844 without horizontal overflow.
+- Desktop Structure checks page passed at 1440 × 900.
+- Search for `Create concept` returned the relevant OKF concept, structure,
+  conversion, source, and global-manual results.
+- No browser console warnings or errors.
+- Full 46-page site validator and 42-entry search-index validator passed.
+- Vite production build and production-output tests passed.

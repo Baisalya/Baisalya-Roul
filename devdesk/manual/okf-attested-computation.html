@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Understand the advanced contract for sanctioned calculations without assuming DevDesk executes them."><meta name="theme-color" content="#5b47e8"><title>Attested Computation · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Document an advanced computation contract without executing code or inventing attestation results."><meta name="theme-color" content="#5b47e8"><title>Attested Computation · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
   <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
@@ -59,38 +59,132 @@
 <a class="" href="../manual/privacy-security.html">Privacy and security</a>
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
-<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Structured Knowledge / OKF</span></div><div class="doc-meta"><span class="doc-chip">Structured Knowledge / OKF</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="attested-computation">Attested Computation<a class="heading-anchor" href="#attested-computation" aria-label="Link to Attested Computation">#</a></h1>
-<p>An <code>Attested Computation</code> concept describes a sanctioned method for computing a value and how a runtime receipt can be checked. OKF records the contract; it does not require the Markdown consumer itself to execute arbitrary code.</p>
-<h2 id="when-to-use">When to use<a class="heading-anchor" href="#when-to-use" aria-label="Link to When to use">#</a></h2>
-<p>Use it only when a value must be reproducible through an approved computation—for example a business metric or deterministic transformation.</p>
-<h2 id="concept-outline">Concept outline<a class="heading-anchor" href="#concept-outline" aria-label="Link to Concept outline">#</a></h2>
-<pre><code class="language-markdown">---
-type: Attested Computation
-title: Monthly active customers
-status: stable
----
-# Computation
-
-```sql
-SELECT COUNT(DISTINCT customer_id)
-FROM analytics.events
-WHERE event_date BETWEEN :start_date AND :end_date
-</code></pre>
-<h1 id="parameters">Parameters<a class="heading-anchor" href="#parameters" aria-label="Link to Parameters">#</a></h1>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Structured Knowledge / OKF</span></div><div class="doc-meta"><span class="doc-chip">Structured Knowledge / OKF</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div>
+<h1 id="attested-computation">Attested Computation<a class="heading-anchor" href="#attested-computation" aria-label="Link to Attested Computation">#</a></h1>
+<p>Attested Computation is an advanced concept template. Most users do not need
+it.</p>
+<p>Use it only when you must document:</p>
+<ol>
+<li>a repeatable calculation;</li>
+<li>the runtime that performs it;</li>
+<li>its input parameters;</li>
+<li>the evidence a run should return;</li>
+<li>an optional checker or attester.</li>
+</ol>
+<p>Creating or opening this concept does not run the calculation.</p>
+<h2 id="simple-meaning">Simple meaning<a class="heading-anchor" href="#simple-meaning" aria-label="Link to Simple meaning">#</a></h2>
+<p>An Attested Computation file is a contract written in Markdown.</p>
+<p>It can say:</p>
 <ul>
-<li><code>start_date</code>: inclusive start</li>
-<li><code>end_date</code>: inclusive end</li>
+<li>“Run this approved calculation.”</li>
+<li>“Use these inputs.”</li>
+<li>“Return these receipt fields.”</li>
+<li>“This separate resource may check the receipt.”</li>
 </ul>
-<h1 id="verification">Verification<a class="heading-anchor" href="#verification" aria-label="Link to Verification">#</a></h1>
-<p>The approved attester checks the executor receipt and parameter range.</p>
-<pre><code>
-## Safety
-
-- A computation block is documentation, not permission to execute untrusted code.
-- DevDesk validation can inspect required contract structure but must not claim the calculation was run.
-- A verification event should be recorded only after the appropriate person or process actually checked the output.
+<p>DevDesk validates the written structure. It does not claim that the computation
+ran or passed.</p>
+<h2 id="create-one-from-the-app">Create one from the app<a class="heading-anchor" href="#create-one-from-the-app" aria-label="Link to Create one from the app">#</a></h2>
+<ol>
+<li>Open <strong>Developer tools &gt; Structure and OKF</strong>.</li>
+<li>Select <strong>Create concept</strong>.</li>
+<li>Set <strong>Template</strong> to <strong>Attested computation</strong>.</li>
+<li>Enter a <strong>Title</strong>.</li>
+<li>Review the suggested path under <code>computations/</code>.</li>
+<li>Add a one-line description.</li>
+<li>Keep <strong>Status</strong> as <code>draft</code>.</li>
+<li>Enter a valid <strong>Generated by</strong> actor.</li>
+<li>Enter <strong>Runtime</strong>, for example <code>python</code>, <code>postgres</code>, or <code>bigquery</code>.</li>
+<li>Add parameters when needed.</li>
+<li>Choose either an external computation file or the generated inline fenced
+block.</li>
+<li>Add executor, receipt, and attester resources only when they really exist.</li>
+<li>Select <strong>Create</strong>.</li>
+</ol>
+<p>The <strong>Runtime</strong> must not be empty. Each parameter line uses:</p>
+<pre><code class="language-text">name:type:required
 </code></pre>
-<div class="article-footer"><a class="pager" href="okf-trust-sources-lifecycle.html"><small>Previous</small><strong>Sources, trust, freshness, and lifecycle</strong></a><a class="pager" href="readme-generator.html"><small>Next</small><strong>README Generator</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#when-to-use">When to use</a><a class="level-2" href="#concept-outline">Concept outline</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<p>or:</p>
+<pre><code class="language-text">name:type:optional
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-text">year:integer:required
+segment:string:optional
+</code></pre>
+<h2 id="inline-computation">Inline computation<a class="heading-anchor" href="#inline-computation" aria-label="Link to Inline computation">#</a></h2>
+<p>Leave <strong>Computation file</strong> empty to create one inline fenced computation block:</p>
+<pre><code class="language-markdown"># Computation
+
+```python
+# Add the sanctioned computation here.
+```
+</code></pre>
+<p>Replace the placeholder only with reviewed project content.</p>
+<h2 id="external-computation">External computation<a class="heading-anchor" href="#external-computation" aria-label="Link to External computation">#</a></h2>
+<p>Enter a relative <strong>Computation file</strong> when the calculation already exists:</p>
+<pre><code class="language-text">computations/monthly-active-customers.sql
+</code></pre>
+<p>When an external path is used, the template does not also create an inline
+computation block. Use one method, not both.</p>
+<h2 id="executor-receipt-and-attester">Executor, receipt, and attester<a class="heading-anchor" href="#executor-receipt-and-attester" aria-label="Link to Executor, receipt, and attester">#</a></h2>
+<ul>
+<li><strong>Executor resource:</strong> documentation for the approved execution process.</li>
+<li><strong>Receipt fields:</strong> evidence expected from a run, such as <code>job_id</code>,
+<code>executed_sql</code>, or <code>result</code>.</li>
+<li><strong>Attester resource:</strong> documentation or code location for a separate checker.</li>
+</ul>
+<p>These fields describe resources. DevDesk does not call them.</p>
+<p>Example metadata:</p>
+<pre><code class="language-yaml">type: &quot;Attested Computation&quot;
+title: &quot;Monthly active customers&quot;
+runtime: &quot;postgres&quot;
+parameters:
+  - {name: &quot;start_date&quot;, type: &quot;date&quot;, required: true}
+  - {name: &quot;end_date&quot;, type: &quot;date&quot;, required: true}
+computation: &quot;computations/monthly-active-customers.sql&quot;
+executor:
+  resource: &quot;references/run-monthly-metric.md&quot;
+  receipt:
+    - &quot;job_id&quot;
+    - &quot;executed_sql&quot;
+    - &quot;result&quot;
+attester:
+  resource: &quot;references/check-monthly-metric.md&quot;
+</code></pre>
+<h2 id="findings-you-may-see">Findings you may see<a class="heading-anchor" href="#findings-you-may-see" aria-label="Link to Findings you may see">#</a></h2>
+<p>Structure checks can warn when:</p>
+<ul>
+<li>runtime is empty;</li>
+<li>parameters are not valid mappings;</li>
+<li>a parameter lacks name, type, or required status;</li>
+<li>neither an external computation nor one inline fenced block exists;</li>
+<li>both external and inline computations are supplied;</li>
+<li>executor or attester does not contain a resource;</li>
+<li>executor receipt fields are missing.</li>
+</ul>
+<p>These are structure checks. They are not evidence that the calculation is
+correct.</p>
+<h2 id="record-a-real-verification">Record a real verification<a class="heading-anchor" href="#record-a-real-verification" aria-label="Link to Record a real verification">#</a></h2>
+<p>Only after the appropriate person or process checks the actual result:</p>
+<ol>
+<li>Return to Structure and OKF.</li>
+<li>Select <strong>Record verification</strong>.</li>
+<li>Select the computation concept.</li>
+<li>Enter the real actor.</li>
+<li>Review the plan.</li>
+<li>Apply it.</li>
+</ol>
+<p>The verification event records the stated review. DevDesk still does not run
+the computation or attester.</p>
+<h2 id="safety-rules">Safety rules<a class="heading-anchor" href="#safety-rules" aria-label="Link to Safety rules">#</a></h2>
+<ul>
+<li>Never paste credentials into the Markdown contract.</li>
+<li>Never treat a code block as permission to execute code.</li>
+<li>Review computation paths before sharing the workspace.</li>
+<li>Keep receipts and sensitive result data in an appropriate protected system.</li>
+<li>Do not mark a concept stable or verified merely to clear a dashboard count.</li>
+</ul>
+
+<div class="article-footer"><a class="pager" href="okf-trust-sources-lifecycle.html"><small>Previous</small><strong>Sources, trust, freshness, and lifecycle</strong></a><a class="pager" href="readme-generator.html"><small>Next</small><strong>README Generator</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#simple-meaning">Simple meaning</a><a class="level-2" href="#create-one-from-the-app">Create one from the app</a><a class="level-2" href="#inline-computation">Inline computation</a><a class="level-2" href="#external-computation">External computation</a><a class="level-2" href="#executor-receipt-and-attester">Executor, receipt, and attester</a><a class="level-2" href="#findings-you-may-see">Findings you may see</a><a class="level-2" href="#record-a-real-verification">Record a real verification</a><a class="level-2" href="#safety-rules">Safety rules</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>

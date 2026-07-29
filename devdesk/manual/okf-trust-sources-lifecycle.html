@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Record provenance and review state without pretending that metadata proves truth."><meta name="theme-color" content="#5b47e8"><title>Sources, trust, freshness, and lifecycle · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Add real sources, record actual verification, and manage draft, stable, stale, or deprecated content."><meta name="theme-color" content="#5b47e8"><title>Sources, trust, freshness, and lifecycle · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
   <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
@@ -59,54 +59,163 @@
 <a class="" href="../manual/privacy-security.html">Privacy and security</a>
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
-<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Structured Knowledge / OKF</span></div><div class="doc-meta"><span class="doc-chip">Structured Knowledge / OKF</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="sources-trust-freshness-and-lifecycle">Sources, trust, freshness, and lifecycle<a class="heading-anchor" href="#sources-trust-freshness-and-lifecycle" aria-label="Link to Sources, trust, freshness, and lifecycle">#</a></h1>
-<p>OKF v0.2 makes provenance and review signals explicit while keeping them optional.</p>
-<h2 id="sources">Sources<a class="heading-anchor" href="#sources" aria-label="Link to Sources">#</a></h2>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Structured Knowledge / OKF</span></div><div class="doc-meta"><span class="doc-chip">Structured Knowledge / OKF</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div>
+<h1 id="sources-trust-freshness-and-lifecycle">Sources, trust, freshness, and lifecycle<a class="heading-anchor" href="#sources-trust-freshness-and-lifecycle" aria-label="Link to Sources, trust, freshness, and lifecycle">#</a></h1>
+<p>These are optional advanced signals. A beginner can create and use OKF concepts
+without them.</p>
+<p>Add them only when the information is real. DevDesk never invents a source,
+verification, or lifecycle decision.</p>
+<h2 id="add-a-real-source">Add a real source<a class="heading-anchor" href="#add-a-real-source" aria-label="Link to Add a real source">#</a></h2>
+<p>A source says where supporting information came from.</p>
+<ol>
+<li>Open <strong>Developer tools &gt; Structure and OKF</strong>.</li>
+<li>Under <strong>Manual knowledge maintenance</strong>, select <strong>Add source</strong>.</li>
+<li>Select the <strong>Concept</strong>.</li>
+<li>Enter <strong>Resource</strong>.</li>
+<li>Add <strong>Source ID</strong>, title, or author only when known.</li>
+<li>Leave usage fields empty unless you have measured usage data.</li>
+<li>Select <strong>Preview</strong>.</li>
+<li>Review the proposed frontmatter.</li>
+<li>Select <strong>Apply reviewed plan</strong>.</li>
+</ol>
+<p>The <strong>Resource</strong> field is required. It can be a URL or a relative workspace
+path, for example:</p>
+<pre><code class="language-text">references/privacy-policy.md
+</code></pre>
+<p>or:</p>
+<pre><code class="language-text">https://example.com/official-api-documentation
+</code></pre>
+<p>Do not enter a guessed or unrelated source.</p>
+<h2 id="source-field-meanings">Source field meanings<a class="heading-anchor" href="#source-field-meanings" aria-label="Link to Source field meanings">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Resource</td>
+<td>Where the supporting information can be found</td>
+</tr>
+<tr>
+<td>Source ID</td>
+<td>Short identifier for footnote attribution</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Human-readable source name</td>
+</tr>
+<tr>
+<td>Author actor</td>
+<td>Person, team, process, or producer responsible</td>
+</tr>
+<tr>
+<td>Usage count</td>
+<td>Measured number of uses</td>
+</tr>
+<tr>
+<td>Usage window from/to</td>
+<td>Dates represented by the usage count</td>
+</tr>
+<tr>
+<td>Source last modified</td>
+<td>Known source modification date</td>
+</tr>
+</tbody>
+</table>
+<p>If <strong>Usage count</strong> is supplied, both usage-window dates must also be supplied.</p>
+<p>The saved form can look like:</p>
 <pre><code class="language-yaml">sources:
   - id: api-spec
-    resource: ../references/customer-openapi.yaml
+    resource: references/customer-openapi.yaml
     title: Customer API OpenAPI document
     author: team:api-platform
     last_modified: 2026-07-20
 </code></pre>
-<p>Within each source entry, <code>resource</code> is required. <code>id</code> is useful when the body attributes a claim with a matching footnote.</p>
-<pre><code class="language-markdown">The endpoint returns HTTP 201 after creation.[^api-spec]
-
-[^api-spec]: Customer API OpenAPI document
-</code></pre>
-<h2 id="generated">Generated<a class="heading-anchor" href="#generated" aria-label="Link to Generated">#</a></h2>
-<pre><code class="language-yaml">generated: { by: human:baishalya, at: 2026-07-25T10:00:00Z }
-</code></pre>
-<p>Actor convention:</p>
+<h2 id="record-verification">Record verification<a class="heading-anchor" href="#record-verification" aria-label="Link to Record verification">#</a></h2>
+<p>Verification means a person or known process actually checked the concept.</p>
+<ol>
+<li>Select <strong>Record verification</strong>.</li>
+<li>Select the <strong>Concept</strong>.</li>
+<li>Enter <strong>Verification actor</strong>.</li>
+<li>Select <strong>Preview</strong>.</li>
+<li>Confirm that the check really happened.</li>
+<li>Select <strong>Apply reviewed plan</strong>.</li>
+</ol>
+<p>Valid action actors include:</p>
 <ul>
-<li><code>human:&lt;id&gt;</code> for a person</li>
-<li><code>process:&lt;id&gt;</code> for deterministic automation</li>
-<li><code>&lt;producer&gt;/&lt;version&gt;</code> for an agent or producer tool</li>
+<li><code>human:baishalya</code></li>
+<li><code>process:nightly-api-check</code></li>
+<li><code>devdesk-review/1.0</code></li>
 </ul>
-<h2 id="verified">Verified<a class="heading-anchor" href="#verified" aria-label="Link to Verified">#</a></h2>
+<p>Do not select this action just to remove an “Unverified” count.</p>
+<p>DevDesk records the current time with the actor:</p>
 <pre><code class="language-yaml">verified:
-  - { by: human:baishalya, at: 2026-07-25T11:00:00Z }
-  - { by: process:nightly-api-check, at: 2026-07-26T02:00:00Z }
+  - by: human:baishalya
+    at: 2026-07-29T11:00:00Z
 </code></pre>
-<p>Derived trust tier:</p>
+<h2 id="understand-trust-labels">Understand trust labels<a class="heading-anchor" href="#understand-trust-labels" aria-label="Link to Understand trust labels">#</a></h2>
+<p>The app derives these display labels:</p>
 <ul>
-<li>No <code>verified</code>: unverified</li>
-<li>Only non-human verifiers: machine-confirmed</li>
-<li>At least one <code>human:</code> verifier: human-reviewed</li>
+<li><strong>Unverified:</strong> no verification events.</li>
+<li><strong>Machine confirmed:</strong> at least one verification exists, but none use a
+<code>human:</code> actor.</li>
+<li><strong>Human reviewed:</strong> at least one event uses a <code>human:</code> actor.</li>
 </ul>
-<p>Trust tier is advisory, not access control.</p>
-<h2 id="lifecycle">Lifecycle<a class="heading-anchor" href="#lifecycle" aria-label="Link to Lifecycle">#</a></h2>
-<pre><code class="language-yaml">status: draft        # draft | stable | deprecated
+<p>These labels are advisory. They are not login permissions, access control,
+cryptographic proof, or a guarantee that the content is true.</p>
+<h2 id="update-lifecycle">Update lifecycle<a class="heading-anchor" href="#update-lifecycle" aria-label="Link to Update lifecycle">#</a></h2>
+<ol>
+<li>Select <strong>Update lifecycle</strong>.</li>
+<li>Select the <strong>Concept</strong>.</li>
+<li>Choose <strong>Status</strong>.</li>
+<li>Add <strong>Stale after</strong> only when a real review date is useful.</li>
+<li>Select <strong>Preview</strong>.</li>
+<li>Select <strong>Apply reviewed plan</strong> after review.</li>
+</ol>
+<p>Statuses:</p>
+<ul>
+<li><code>draft</code>: unfinished or awaiting review.</li>
+<li><code>stable</code>: currently accepted for normal use.</li>
+<li><code>deprecated</code>: old content kept for history.</li>
+</ul>
+<p>An absent status is interpreted as stable by the current app. New concepts
+created by the form default to draft.</p>
+<h2 id="freshness">Freshness<a class="heading-anchor" href="#freshness" aria-label="Link to Freshness">#</a></h2>
+<p><code>stale_after</code> uses <code>YYYY-MM-DD</code>:</p>
+<pre><code class="language-yaml">status: stable
 stale_after: 2026-12-31
 </code></pre>
-<p>Absent <code>status</code> means stable. Content becomes stale on or after <code>stale_after</code>; stale does not automatically mean false.</p>
+<p>The concept is shown as stale on or after that date. Stale means “review this
+again.” It does not automatically mean false.</p>
 <h2 id="deprecation">Deprecation<a class="heading-anchor" href="#deprecation" aria-label="Link to Deprecation">#</a></h2>
-<p>Explain the replacement in the body with a normal link:</p>
+<p>When deprecating a concept, explain its replacement in the Markdown body:</p>
 <pre><code class="language-markdown"># Deprecated
 
-Use the [Customer API v2](customer-api-v2.md) instead.
+Use [Customer API v2](customer-api-v2.md) instead.
 </code></pre>
-<div class="article-footer"><a class="pager" href="okf-conversion-migration.html"><small>Previous</small><strong>Analyze, convert, and migrate folders</strong></a><a class="pager" href="okf-attested-computation.html"><small>Next</small><strong>Attested Computation</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#sources">Sources</a><a class="level-2" href="#generated">Generated</a><a class="level-2" href="#verified">Verified</a><a class="level-2" href="#lifecycle">Lifecycle</a><a class="level-2" href="#deprecation">Deprecation</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<p>DevDesk can recommend a replacement link, but it does not choose the replacement
+for you.</p>
+<h2 id="generated-is-not-verified">Generated is not verified<a class="heading-anchor" href="#generated-is-not-verified" aria-label="Link to Generated is not verified">#</a></h2>
+<p><code>generated</code> records who or what created a version:</p>
+<pre><code class="language-yaml">generated:
+  by: devdesk/1.0
+  at: 2026-07-29T10:00:00Z
+</code></pre>
+<p>It does not mean the concept was checked. Use <strong>Record verification</strong> only after
+a real review.</p>
+<h2 id="safety">Safety<a class="heading-anchor" href="#safety" aria-label="Link to Safety">#</a></h2>
+<ul>
+<li>Opening the page does not fetch source URLs.</li>
+<li>Adding a source does not prove the source is trustworthy.</li>
+<li>Recording a process actor does not run that process.</li>
+<li>A stale date does not delete or change content.</li>
+<li>Lifecycle and trust actions always use a previewed managed plan.</li>
+</ul>
+
+<div class="article-footer"><a class="pager" href="okf-conversion-migration.html"><small>Previous</small><strong>Analyze, convert, and migrate folders</strong></a><a class="pager" href="okf-attested-computation.html"><small>Next</small><strong>Attested Computation</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#add-a-real-source">Add a real source</a><a class="level-2" href="#source-field-meanings">Source field meanings</a><a class="level-2" href="#record-verification">Record verification</a><a class="level-2" href="#understand-trust-labels">Understand trust labels</a><a class="level-2" href="#update-lifecycle">Update lifecycle</a><a class="level-2" href="#freshness">Freshness</a><a class="level-2" href="#deprecation">Deprecation</a><a class="level-2" href="#generated-is-not-verified">Generated is not verified</a><a class="level-2" href="#safety">Safety</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>

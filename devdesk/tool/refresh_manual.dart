@@ -69,13 +69,37 @@ const _pages = <_Page>[
     slug: 'structured-knowledge-okf',
     title: 'Structure checks (OKF)',
     description:
-        'Check official OKF v0.2 requirements separately from warnings, advice, and extensions.',
+        'Follow the real app buttons to analyze Markdown, preview safe fixes, create a concept, and understand every finding.',
+  ),
+  _Page(
+    slug: 'okf-bundle-structure',
+    title: 'OKF bundle structure',
+    description:
+        'Understand concepts, indexes, logs, and the smallest useful portable folder layout.',
+  ),
+  _Page(
+    slug: 'okf-concepts-metadata',
+    title: 'OKF concepts and metadata',
+    description:
+        'Create a first structured concept with the app form and understand each field.',
   ),
   _Page(
     slug: 'okf-conversion-migration',
     title: 'Analyze, improve, and migrate project knowledge',
     description:
-        'Analyze existing Markdown first, then use bounded reviewable improvements.',
+        'Convert existing Markdown through an exact previewed, conflict-safe, recoverable workflow.',
+  ),
+  _Page(
+    slug: 'okf-trust-sources-lifecycle',
+    title: 'Sources, trust, freshness, and lifecycle',
+    description:
+        'Add real sources, record actual verification, and manage draft, stable, stale, or deprecated content.',
+  ),
+  _Page(
+    slug: 'okf-attested-computation',
+    title: 'Attested Computation',
+    description:
+        'Document an advanced computation contract without executing code or inventing attestation results.',
   ),
   _Page(
     slug: 'unified-search',

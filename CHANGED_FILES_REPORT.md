@@ -143,3 +143,21 @@ following areas were preserved and incorporated rather than reset:
   project structure, troubleshooting, and unified search.
 
 No force checkout, reset, or unrelated deletion was used.
+
+## Later code-verified OKF documentation update
+
+The following website sources were rewritten again after read-only inspection of
+the external Flutter OKF implementation:
+
+- `devdesk/content/user-manual.md`
+- `devdesk/content/structured-knowledge-okf.md`
+- `devdesk/content/okf-bundle-structure.md`
+- `devdesk/content/okf-concepts-metadata.md`
+- `devdesk/content/okf-conversion-migration.md`
+- `devdesk/content/okf-trust-sources-lifecycle.md`
+- `devdesk/content/okf-attested-computation.md`
+
+Matching HTML pages and the search index were regenerated. The manual generator
+now explicitly regenerates all six focused OKF pages. Feature inventory,
+coverage matrix, build report, and verification report were updated with the
+code and test evidence.
