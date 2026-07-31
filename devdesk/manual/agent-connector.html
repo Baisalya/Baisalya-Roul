@@ -111,6 +111,18 @@ See [[Testing checklist]] before release.
 </ol>
 <p>Expected result: the page shows <strong>Running</strong> and displays configurations for Codex and Gemini CLI.</p>
 <p>If no workspace is selected, the connector can run, but workspace tools return a message asking you to select one.</p>
+<h2 id="try-the-agent-ready-demo">Try the Agent-ready demo<a class="heading-anchor" href="#try-the-agent-ready-demo" aria-label="Link to Try the Agent-ready demo">#</a></h2>
+<p>The <a href="../downloads.html#agent-demo">Agent-ready workspace demo</a> is a small downloadable project for trying the complete flow before you connect an AI client to your own work.</p>
+<ol>
+<li>Download and extract the demo ZIP from the Downloads page.</li>
+<li>Open its <code>project.devdesk</code> file in DevDesk.</li>
+<li>Open <strong>Knowledge graph</strong> to see the linked brief, architecture, tasks, and review checklist.</li>
+<li>Start the connector and turn on <strong>Share redacted Markdown text</strong> for the reading demo.</li>
+<li>Copy the configuration for Codex or Gemini CLI.</li>
+<li>Run the read-only prompt in the demo's <code>docs/DEMO-SCRIPT.md</code> file.</li>
+</ol>
+<p>The download includes <code>AGENTS.md</code> for Codex, <code>GEMINI.md</code> for Gemini CLI, clear prompts, a small Python module, and standard-library tests. It contains no connector URL, API key, AI account, or cloud copy of your project.</p>
+<p>Start with the read-only task. Only then run the small coding task, and ask for a Markdown proposal rather than an automatic Markdown edit.</p>
 <h2 id="choose-permissions">Choose permissions<a class="heading-anchor" href="#choose-permissions" aria-label="Link to Choose permissions">#</a></h2>
 <p>Both optional permissions are off by default.</p>
 <h3 id="share-redacted-markdown-text">Share redacted Markdown text<a class="heading-anchor" href="#share-redacted-markdown-text" aria-label="Link to Share redacted Markdown text">#</a></h3>
@@ -132,6 +144,7 @@ See [[Testing checklist]] before release.
 </ol>
 <p>Expected result: Codex lists tools such as <code>get_active_workspace</code>, <code>search_documents</code>, and <code>get_graph_neighbors</code>.</p>
 <p>For current client controls, see the official <a href="https://learn.chatgpt.com/docs/extend/mcp.md" target="_blank" rel="noopener noreferrer">Codex MCP guide</a>.</p>
+<p>Codex automatically uses an <code>AGENTS.md</code> file in the project as durable project guidance. The demo's instructions ask it to read the task context first, keep changes small, run tests, and never expose a private connector URL.</p>
 <h2 id="connect-gemini-cli">Connect Gemini CLI<a class="heading-anchor" href="#connect-gemini-cli" aria-label="Link to Connect Gemini CLI">#</a></h2>
 <ol>
 <li>Start the connector.</li>
@@ -142,6 +155,7 @@ See [[Testing checklist]] before release.
 </ol>
 <p>Expected result: Gemini CLI shows <code>devdesk</code> as a connected MCP server.</p>
 <p>Do not replace existing <code>mcpServers</code> entries when merging the DevDesk entry. See the official <a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md" target="_blank" rel="noopener noreferrer">Gemini CLI MCP server guide</a>.</p>
+<p>Gemini CLI reads the demo's <code>GEMINI.md</code> project instructions. Use <code>/memory show</code> to inspect the loaded instructions if needed.</p>
 <h2 id="useful-first-requests">Useful first requests<a class="heading-anchor" href="#useful-first-requests" aria-label="Link to Useful first requests">#</a></h2>
 <p>Start with a read-only question:</p>
 <blockquote>
@@ -260,7 +274,7 @@ See [[Testing checklist]] before release.
 <li><strong>Proposal:</strong> a suggested replacement waiting for your explicit review.</li>
 </ul>
 
-<div class="article-footer"><a class="pager" href="settings-appearance.html"><small>Previous</small><strong>Settings and appearance</strong></a><a class="pager" href="privacy-security.html"><small>Next</small><strong>Privacy and security</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#what-the-connector-adds">What the connector adds</a><a class="level-2" href="#how-graph-nodes-help-an-ai">How graph nodes help an AI</a><a class="level-2" href="#start-the-connector">Start the connector</a><a class="level-2" href="#choose-permissions">Choose permissions</a><a class="level-3" href="#share-redacted-markdown-text">Share redacted Markdown text</a><a class="level-3" href="#allow-review-proposals">Allow review proposals</a><a class="level-2" href="#connect-codex">Connect Codex</a><a class="level-2" href="#connect-gemini-cli">Connect Gemini CLI</a><a class="level-2" href="#useful-first-requests">Useful first requests</a><a class="level-2" href="#tools-exposed-by-devdesk">Tools exposed by DevDesk</a><a class="level-2" href="#review-a-proposed-change">Review a proposed change</a><a class="level-2" href="#stop-or-remove-access">Stop or remove access</a><a class="level-2" href="#troubleshooting">Troubleshooting</a><a class="level-3" href="#the-ai-cannot-connect">The AI cannot connect</a><a class="level-3" href="#the-ai-says-no-workspace-is-selected">The AI says no workspace is selected</a><a class="level-3" href="#the-ai-cannot-read-a-document">The AI cannot read a document</a><a class="level-3" href="#a-proposal-was-refused">A proposal was refused</a><a class="level-2" href="#privacy-and-cost">Privacy and cost</a><a class="level-2" href="#terms">Terms</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div class="article-footer"><a class="pager" href="settings-appearance.html"><small>Previous</small><strong>Settings and appearance</strong></a><a class="pager" href="privacy-security.html"><small>Next</small><strong>Privacy and security</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#what-the-connector-adds">What the connector adds</a><a class="level-2" href="#how-graph-nodes-help-an-ai">How graph nodes help an AI</a><a class="level-2" href="#start-the-connector">Start the connector</a><a class="level-2" href="#try-the-agent-ready-demo">Try the Agent-ready demo</a><a class="level-2" href="#choose-permissions">Choose permissions</a><a class="level-3" href="#share-redacted-markdown-text">Share redacted Markdown text</a><a class="level-3" href="#allow-review-proposals">Allow review proposals</a><a class="level-2" href="#connect-codex">Connect Codex</a><a class="level-2" href="#connect-gemini-cli">Connect Gemini CLI</a><a class="level-2" href="#useful-first-requests">Useful first requests</a><a class="level-2" href="#tools-exposed-by-devdesk">Tools exposed by DevDesk</a><a class="level-2" href="#review-a-proposed-change">Review a proposed change</a><a class="level-2" href="#stop-or-remove-access">Stop or remove access</a><a class="level-2" href="#troubleshooting">Troubleshooting</a><a class="level-3" href="#the-ai-cannot-connect">The AI cannot connect</a><a class="level-3" href="#the-ai-says-no-workspace-is-selected">The AI says no workspace is selected</a><a class="level-3" href="#the-ai-cannot-read-a-document">The AI cannot read a document</a><a class="level-3" href="#a-proposal-was-refused">A proposal was refused</a><a class="level-2" href="#privacy-and-cost">Privacy and cost</a><a class="level-2" href="#terms">Terms</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>

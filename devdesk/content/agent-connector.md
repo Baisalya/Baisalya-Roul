@@ -60,6 +60,21 @@ Expected result: the page shows **Running** and displays configurations for Code
 
 If no workspace is selected, the connector can run, but workspace tools return a message asking you to select one.
 
+## Try the Agent-ready demo
+
+The [Agent-ready workspace demo](../downloads.html#agent-demo) is a small downloadable project for trying the complete flow before you connect an AI client to your own work.
+
+1. Download and extract the demo ZIP from the Downloads page.
+2. Open its `project.devdesk` file in DevDesk.
+3. Open **Knowledge graph** to see the linked brief, architecture, tasks, and review checklist.
+4. Start the connector and turn on **Share redacted Markdown text** for the reading demo.
+5. Copy the configuration for Codex or Gemini CLI.
+6. Run the read-only prompt in the demo's `docs/DEMO-SCRIPT.md` file.
+
+The download includes `AGENTS.md` for Codex, `GEMINI.md` for Gemini CLI, clear prompts, a small Python module, and standard-library tests. It contains no connector URL, API key, AI account, or cloud copy of your project.
+
+Start with the read-only task. Only then run the small coding task, and ask for a Markdown proposal rather than an automatic Markdown edit.
+
 ## Choose permissions
 
 Both optional permissions are off by default.
@@ -93,6 +108,8 @@ Expected result: Codex lists tools such as `get_active_workspace`, `search_docum
 
 For current client controls, see the official [Codex MCP guide](https://learn.chatgpt.com/docs/extend/mcp.md).
 
+Codex automatically uses an `AGENTS.md` file in the project as durable project guidance. The demo's instructions ask it to read the task context first, keep changes small, run tests, and never expose a private connector URL.
+
 ## Connect Gemini CLI
 
 1. Start the connector.
@@ -104,6 +121,8 @@ For current client controls, see the official [Codex MCP guide](https://learn.ch
 Expected result: Gemini CLI shows `devdesk` as a connected MCP server.
 
 Do not replace existing `mcpServers` entries when merging the DevDesk entry. See the official [Gemini CLI MCP server guide](https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md).
+
+Gemini CLI reads the demo's `GEMINI.md` project instructions. Use `/memory show` to inspect the loaded instructions if needed.
 
 ## Useful first requests
 

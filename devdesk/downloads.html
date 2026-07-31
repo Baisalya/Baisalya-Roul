@@ -142,6 +142,126 @@
       </div>
     </section>
 
+    <section id="agent-demo" class="section agent-demo-section" aria-labelledby="agent-demo-heading">
+      <div class="demo-spotlight">
+        <div class="demo-preview">
+          <img
+            src="assets/img/agent-demo-graph.jpg"
+            alt="DevDesk Knowledge graph showing linked planning notes, tasks, and code context"
+          >
+          <div class="demo-preview-caption">
+            <span class="status available">Included demo</span>
+            <strong>Linked Markdown becomes usable project context.</strong>
+          </div>
+        </div>
+        <div class="demo-copy">
+          <span class="eyebrow">Agent-ready workspace demo</span>
+          <h2 id="agent-demo-heading">See an agent understand the plan before it changes code.</h2>
+          <p>
+            Download a small, local-first workspace with linked Markdown, a
+            tested Python task, and clear instructions for Codex and Gemini
+            CLI. It is designed to show the full workflow in about ten minutes.
+          </p>
+          <ul class="demo-benefits">
+            <li>Open <code>project.devdesk</code> and inspect a real knowledge graph.</li>
+            <li>Copy your own local MCP configuration from DevDesk.</li>
+            <li>Run a read-only prompt, a small coding task, and a review-first Markdown proposal.</li>
+          </ul>
+          <div class="button-row">
+            <a class="btn primary" href="assets/downloads/devdesk-agent-ready-workspace-demo.zip" download>Download the free demo ZIP</a>
+            <a class="btn" href="manual/agent-connector.html#try-the-agent-ready-demo">Read the setup guide</a>
+          </div>
+          <p class="demo-note">No access key, AI account, or cloud copy of your project is included in the download.</p>
+        </div>
+      </div>
+
+      <ol class="demo-steps" aria-label="Agent-ready demo steps">
+        <li>
+          <span>1</span>
+          <div><h3>Open the workspace</h3><p>Extract the ZIP and open <code>project.devdesk</code> in DevDesk.</p></div>
+        </li>
+        <li>
+          <span>2</span>
+          <div><h3>Connect your own agent</h3><p>Start the local connector and copy the Codex or Gemini CLI configuration.</p></div>
+        </li>
+        <li>
+          <span>3</span>
+          <div><h3>Prove each safeguard</h3><p>Read the plan, run tests, then review a Markdown proposal before applying it.</p></div>
+        </li>
+      </ol>
+
+      <div class="client-connect-grid">
+        <article class="client-connect-card">
+          <span class="client-badge">Codex</span>
+          <h3>Connect Codex</h3>
+          <ol>
+            <li>In DevDesk, start the connector and select <strong>Copy Codex config.toml</strong>.</li>
+            <li>Add the copied block in Codex MCP settings or your personal <code>config.toml</code>.</li>
+            <li>Restart Codex, then run the first read-only demo prompt.</li>
+          </ol>
+          <a href="manual/agent-connector.html#connect-codex">Codex setup details <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="client-connect-card">
+          <span class="client-badge">Gemini CLI</span>
+          <h3>Connect Gemini CLI</h3>
+          <ol>
+            <li>In DevDesk, select <strong>Copy Gemini CLI settings.json</strong>.</li>
+            <li>Merge the copied <code>devdesk</code> entry into your <code>mcpServers</code> settings.</li>
+            <li>Restart Gemini CLI and run <code>/mcp</code> to confirm it is connected.</li>
+          </ol>
+          <a href="manual/agent-connector.html#connect-gemini-cli">Gemini setup details <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+
+      <div class="demo-gallery-intro">
+        <span class="eyebrow">Four-screen walkthrough</span>
+        <h3>From connected Markdown to a verified result.</h3>
+        <p>These are the exact stages a first-time demo user can follow after downloading the workspace.</p>
+      </div>
+      <div class="demo-gallery" aria-label="DevDesk agent-ready workflow screenshots">
+        <figure class="demo-gallery-card">
+          <img
+            src="assets/img/agent-demo-graph.jpg"
+            alt="DevDesk Knowledge graph with the Markdown Coding Practice workspace and linked notes"
+          >
+          <figcaption>
+            <strong>1. Explore the workspace</strong>
+            <span>See plans, tasks, and program notes as a connected knowledge graph.</span>
+          </figcaption>
+        </figure>
+        <figure class="demo-gallery-card">
+          <img
+            src="assets/img/agent-demo-connector-redacted.png"
+            alt="DevDesk AI Agent Connector page showing Codex and Gemini CLI configuration options with private addresses redacted"
+          >
+          <figcaption>
+            <strong>2. Connect your own agent</strong>
+            <span>Choose the safe permissions and copy a private local configuration for Codex or Gemini CLI.</span>
+          </figcaption>
+        </figure>
+        <figure class="demo-gallery-card">
+          <img
+            src="assets/img/agent-demo-automation.jpg"
+            alt="DevDesk Agent automation page showing a successful scheduled graph health check"
+          >
+          <figcaption>
+            <strong>3. Run a safe scheduled check</strong>
+            <span>Keep a local log of graph health checks, retries, and results without autonomous file edits.</span>
+          </figcaption>
+        </figure>
+        <figure class="demo-gallery-card">
+          <img
+            src="assets/img/agent-demo-codex-result-redacted.png"
+            alt="Codex result showing a small Python feature added and all tests passing for a DevDesk workspace"
+          >
+          <figcaption>
+            <strong>4. Verify a focused coding task</strong>
+            <span>Let the agent read the linked plan, make a small change, and report the passing tests.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section class="section">
       <div class="section-header">
         <span class="eyebrow">Why install DevDesk</span>

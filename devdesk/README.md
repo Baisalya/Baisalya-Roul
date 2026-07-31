@@ -29,6 +29,7 @@ See `PRODUCT_POSITIONING.md` for the message hierarchy and
 
 - benefit-led landing page for everyday users and developers;
 - transparent platform downloads page;
+- an agent-ready workspace demo ZIP with Codex and Gemini CLI instructions;
 - a complete beginner-first global manual plus 41 focused tool topics,
   including a five-page API Studio section;
 - responsive sidebar and table of contents;
@@ -48,6 +49,15 @@ Edit `assets/js/site-config.js`.
 - Windows points to the official Microsoft Store listing:
   `https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare`.
 - macOS and iOS remain disabled until real signed public releases exist.
+
+## Agent-ready demo download
+
+`assets/downloads/devdesk-agent-ready-workspace-demo.zip` is a self-contained
+practice workspace linked from `downloads.html#agent-demo`. Its editable source
+lives in `assets/downloads/devdesk-agent-ready-demo/`. Keep the ZIP free of
+connector URLs, account details, and user-specific content. After changing the
+demo source, run its standard-library tests, rebuild the ZIP, and check the
+download link on the site.
 
 ## Refresh generated manual pages
 

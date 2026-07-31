@@ -1,0 +1,16 @@
+{
+  "format": "devdesk.workspace",
+  "schemaVersion": 1,
+  "projectId": "e6b56d96-2036-4d1e-a6f0-0fe935b8a963",
+  "name": "DevDesk Agent-ready Workspace Demo",
+  "root": ".",
+  "knowledge": {
+    "roots": ["."],
+    "okf": "detect"
+  },
+  "tools": {
+    "markdown": {
+      "enabled": true
+    }
+  }
+}
