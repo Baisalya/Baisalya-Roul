@@ -61,44 +61,69 @@
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
 <a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Start here</span></div><div class="doc-meta"><span class="doc-chip">Start here</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div>
-<h1 id="downloads-and-installation">Downloads and installation<a class="heading-anchor" href="#downloads-and-installation" aria-label="Link to Downloads and installation">#</a></h1>
-<p>Use the website <strong>Downloads</strong> page for the current platform status. The buttons are configured in <code>assets/js/site-config.js</code>, so the site owner can change destinations without rewriting every page.</p>
-<h2 id="android">Android<a class="heading-anchor" href="#android" aria-label="Link to Android">#</a></h2>
-<ol>
-<li>Open the Google Play link from an Android device.</li>
-<li>During closed testing, sign in with an account that the developer added as a tester.</li>
-<li>Install the Play-delivered build.</li>
-<li>Open DevDesk and complete privacy acknowledgement and onboarding.</li>
-</ol>
-<p>Android closed testing — use the public support page to contact the developer
-and request access. Do not post a tester email address publicly.</p>
-<blockquote>
-<p>[!WARNING] Do not install APKs offered by unrelated third-party download sites. They may be outdated or modified.</p>
-</blockquote>
-<h2 id="windows">Windows<a class="heading-anchor" href="#windows" aria-label="Link to Windows">#</a></h2>
+<h1 id="downloads-installation-and-updates">Downloads, installation, and updates<a class="heading-anchor" href="#downloads-installation-and-updates" aria-label="Link to Downloads, installation, and updates">#</a></h1>
+<p>Use the official <a href="../downloads.html">DevDesk Downloads page</a> for every
+platform. It is the single source for current download status, release notes,
+and the public update record.</p>
+<h2 id="windows-available-now">Windows — available now<a class="heading-anchor" href="#windows-available-now" aria-label="Link to Windows — available now">#</a></h2>
 <ol>
 <li>Open the <a href="https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener noreferrer">official DevDesk Microsoft Store listing</a>.</li>
-<li>Confirm the DevDesk product name and publisher shown by Microsoft Store.</li>
+<li>Confirm the product is <strong>DevDesk</strong> and the publisher is expected.</li>
 <li>Select <strong>Get</strong> or <strong>Install</strong>.</li>
 <li>Start DevDesk from the Start menu.</li>
-<li>Allow Windows security prompts only when the publisher and Store source are expected.</li>
+<li>Open <strong>Settings → About → Check for Updates</strong> whenever you want DevDesk to
+compare the installed Windows build with the official release record.</li>
 </ol>
-<h2 id="macos">macOS<a class="heading-anchor" href="#macos" aria-label="Link to macOS">#</a></h2>
-<p>A macOS download is currently marked <strong>Not released</strong>. The repository can contain a Flutter macOS scaffold without implying that a signed, notarized, tested public package exists.</p>
-<h2 id="updating">Updating<a class="heading-anchor" href="#updating" aria-label="Link to Updating">#</a></h2>
+<p>When a newer Windows build is available, DevDesk opens Microsoft Store. The
+Store can update apps automatically; its <strong>Library</strong> also lets you search for
+updates manually.</p>
+<h2 id="android-closed-testing">Android — closed testing<a class="heading-anchor" href="#android-closed-testing" aria-label="Link to Android — closed testing">#</a></h2>
+<ol>
+<li>Open the Google Play link from an Android device.</li>
+<li>Sign in with the Google account the developer added to the closed test.</li>
+<li>Install the Play-delivered build.</li>
+<li>Open DevDesk and complete the privacy acknowledgement and onboarding.</li>
+<li>Use <strong>Settings → About → Check for Updates</strong> to compare the installed
+Android build with the official Android release record.</li>
+</ol>
+<p>If you need test access, contact the developer through the public support page.
+Do not post a tester email address, password, or access token publicly.</p>
+<h2 id="what-devdesk-checks">What DevDesk checks<a class="heading-anchor" href="#what-devdesk-checks" aria-label="Link to What DevDesk checks">#</a></h2>
+<p>DevDesk downloads only the small public
+<a href="../releases.json"><code>releases.json</code></a> record from this website. It compares the
+installed version and build number on your device with the record for the
+current platform. Your files, notes, workspace data, API requests, and
+credentials are not sent with that check.</p>
+<p>The result can be:</p>
 <ul>
-<li>Google Play normally updates Android builds through the store.</li>
-<li>Microsoft Store normally updates the Windows build automatically. You can
-also check Library/updates manually.</li>
-<li>Back up DevDesk-private data before a major update or migration.</li>
-<li>External project folders remain separate from DevDesk's private backup.</li>
+<li><strong>Up to date</strong> — the installed build is current or newer.</li>
+<li><strong>Update available</strong> — you can choose <strong>Later</strong> and keep working.</li>
+<li><strong>Update required</strong> — the installed build is below the supported-version
+floor. DevDesk opens the trusted store page; it never installs an update by
+itself.</li>
 </ul>
-<p>For current Store controls, see
-<a href="https://support.microsoft.com/en-us/accounts-billing/get-updates-for-apps-and-games-in-microsoft-store" target="_blank" rel="noopener noreferrer">Microsoft Support: Get updates for apps and games</a>.</p>
-<h2 id="verify-the-version">Verify the version<a class="heading-anchor" href="#verify-the-version" aria-label="Link to Verify the version">#</a></h2>
-<p>Open <strong>Developer &amp; support</strong> or the app information area to view the installed version and build number. This website documents DevDesk 1.0-era workflows; individual labels may change slightly in later releases.</p>
+<p>A connection error on the first check does not lock the app. Try again later
+from Settings or confirm that the Downloads page opens in your browser.</p>
+<h2 id="download-safety">Download safety<a class="heading-anchor" href="#download-safety" aria-label="Link to Download safety">#</a></h2>
+<p>Use only the Microsoft Store, Google Play, or a package explicitly linked by
+the official Downloads page. Avoid unrelated third-party download sites.</p>
+<p>If a future Windows installer, portable ZIP, or Android APK is offered, the
+page will state whether it is available and can publish a SHA-256 checksum.
+For a portable Windows build, keep <code>devdesk.exe</code>, its DLL files, and the
+<code>data</code> directory together.</p>
+<h2 id="before-a-major-update">Before a major update<a class="heading-anchor" href="#before-a-major-update" aria-label="Link to Before a major update">#</a></h2>
+<ul>
+<li>Export a DevDesk backup if you want a copy of app-private records.</li>
+<li>Back up external project folders separately; they are not part of the
+app-private backup.</li>
+<li>Finish or resolve cloud-sync and Git conflicts before opening the same folder
+on another device.</li>
+</ul>
+<h2 id="macos-and-ios">macOS and iOS<a class="heading-anchor" href="#macos-and-ios" aria-label="Link to macOS and iOS">#</a></h2>
+<p>macOS and iOS remain <strong>Not released</strong> until signed, tested public packages are
+available. A Flutter project scaffold is not a public release.</p>
 
-<div class="article-footer"><a class="pager" href="getting-started.html"><small>Previous</small><strong>Getting started</strong></a><a class="pager" href="interface-tour.html"><small>Next</small><strong>Interface tour</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#android">Android</a><a class="level-2" href="#windows">Windows</a><a class="level-2" href="#macos">macOS</a><a class="level-2" href="#updating">Updating</a><a class="level-2" href="#verify-the-version">Verify the version</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div class="article-footer"><a class="pager" href="getting-started.html"><small>Previous</small><strong>Getting started</strong></a><a class="pager" href="interface-tour.html"><small>Next</small><strong>Interface tour</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#windows-available-now">Windows — available now</a><a class="level-2" href="#android-closed-testing">Android — closed testing</a><a class="level-2" href="#what-devdesk-checks">What DevDesk checks</a><a class="level-2" href="#download-safety">Download safety</a><a class="level-2" href="#before-a-major-update">Before a major update</a><a class="level-2" href="#macos-and-ios">macOS and iOS</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>

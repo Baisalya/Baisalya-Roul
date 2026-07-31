@@ -27,11 +27,17 @@ Network activity can occur when you:
 - send an API request;
 - fetch supported public GitHub content;
 - validate a link;
+- check the public release record for the current Android or Windows build;
 - open a store, support, privacy, portfolio, or other external page.
 
 The Windows download action opens the official Microsoft Store listing. The
 Android listing is currently a closed test and may require an approved tester
 account.
+
+The update check downloads only a small public JSON record from the official
+DevDesk website. The installed version comparison happens on your device;
+DevDesk does not send workspace content, API data, credentials, or the result
+of that comparison to the website.
 
 The destination can receive request content, your public IP address, and normal connection information.
 

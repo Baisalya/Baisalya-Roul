@@ -139,6 +139,44 @@ path.
 See [Folders, portability, and scoped Git](developer-workspaces.html) for the
 full boundary and recovery rules.
 
+## Choose the right workspace style
+
+You do not need to use every DevDesk feature. Start with the smallest workspace
+that helps you today, then add tools when the work becomes more technical.
+
+### Everyday planning, writing, or study
+
+Choose a profile such as **Personal plan**, **Study**, **Business project**, or
+**Research / writing**. Create tasks and ordinary Markdown notes first. Use
+List, Board, Calendar, Timeline, links, and graph views only when they make the
+same files easier to understand.
+
+### Software or developer work
+
+Choose **Software project** or open an existing folder. DevDesk can create or
+open a portable `project.devdesk` file at the project root. That small JSON
+file identifies the project and stores safe, relative settings. It does not
+store absolute paths, credentials, shell commands, execution trust, or personal
+screen layout.
+
+From a project workspace, **Developer tools** can open the Markdown editor,
+saved API testing, OpenAPI Studio, JSON tools, comparisons, scoped Git, and
+other tools with the current project already selected. If a tool needs a file,
+choose a compatible project file rather than copying it into a separate global
+workspace.
+
+### Share or move a project safely
+
+1. Save the project files you want to keep.
+2. Include `project.devdesk` when copying or committing the project.
+3. Include `devdesk-api-workspace.json` only when you want to share API
+   structure; it deliberately excludes secrets and history.
+4. On the next device, open `project.devdesk` and then enter secrets locally.
+5. Re-check folder permissions and any separate Git execution-trust prompt.
+
+Opening a manifest is data-only. It does not run Git, project commands, hooks,
+API requests, AI tools, or a build.
+
 ## Planning Your Work
 
 DevDesk can show the same underlying work in different views:
@@ -500,6 +538,23 @@ support reports.
 See [Saved API testing](api-workspaces.html) and
 [API environments and protected secrets](api-environments-secrets.html).
 
+### Keep a saved API workspace with a project
+
+When you open **Developer tools → API testing** from a writable project,
+DevDesk uses that project instead of silently mixing it with unrelated API
+work. If needed, it creates `devdesk-api-workspace.json` beside
+`project.devdesk`.
+
+The project JSON can safely carry collections, request definitions,
+non-secret variables, environments, examples, assertions, extraction rules,
+and documentation. Protected values remain on the current device: tokens,
+passwords, cookies, OAuth credentials, request/response history, reports,
+proxy/TLS settings, and execution trust are not written into the portable file.
+
+If Git, another editor, or another DevDesk window changes that JSON after you
+opened it, DevDesk stops the save rather than overwriting the external change.
+Reopen the project API file, review the current content, and then continue.
+
 ## OpenAPI Studio
 
 **OpenAPI** is a standard description of an HTTP API. It lists endpoints,
@@ -584,6 +639,18 @@ git commit -m "Add first DevDesk project notes"
 If the wrong file is staged, unstage it before committing. If Git is unavailable,
 confirm it is installed, the folder is inside the intended repository, and the
 workspace is an eligible local Windows folder.
+
+### What the scoped Git page can do
+
+The Windows Git page shows the real repository root separately from the
+DevDesk workspace scope. Use it to refresh status, inspect recent scoped
+history, open a diff, and explicitly stage, unstage, or safely discard a file
+inside the workspace boundary.
+
+DevDesk does not fetch, pull, push, create commits, run hooks, or manage Git
+credentials. Use your normal Git client for those operations. This separation
+is intentional: the page helps you review the selected workspace without
+granting broad access to unrelated files in a parent repository.
 
 See [Compare files and workspace-scoped Git](diff-git.html).
 
@@ -686,9 +753,20 @@ Git conflicts before continuing. See [Backup and restore](backup-restore.html).
 
 ### Update
 
-Microsoft Store can update apps automatically. To check manually, open
-Microsoft Store and use its update/library controls. See
-[Microsoft Support: Get updates for apps and games](https://support.microsoft.com/en-us/accounts-billing/get-updates-for-apps-and-games-in-microsoft-store).
+Microsoft Store can update apps automatically. You can also check from inside
+DevDesk:
+
+1. Open **Settings**.
+2. Scroll to **About**.
+3. Select **Check for Updates**.
+4. DevDesk compares the installed Windows build with the official Windows
+   release record.
+5. When a newer build is available, select **Update** to open Microsoft Store.
+
+The check reads only the small public release record. It does not upload your
+files, notes, credentials, or API requests, and DevDesk does not install an
+update automatically. If the check cannot connect, keep working and try again
+later. Microsoft Store **Library** is also available for manual update checks.
 
 ### Files, windows, and keyboard
 
@@ -714,6 +792,13 @@ Android is currently in closed testing.
 4. Install the Play-delivered build.
 
 Do not post tester email addresses or credentials publicly.
+
+### Update Android
+
+Open **Settings → About → Check for Updates**. DevDesk compares the installed
+Android build with the official Android release record and opens Google Play
+when a newer build is available. An initial connection failure does not lock
+DevDesk; reconnect and try again later.
 
 ### Folder access
 
@@ -748,6 +833,8 @@ Only based on verified documented actions:
 - API content goes to the destination you choose when you select **Send**.
 - Supported GitHub comparison fetches the public URL/content you select.
 - Link checks and external Store, support, privacy, or reference pages use the network.
+- Android and Windows update checks read the public release record from the
+  official DevDesk website. The installed comparison stays on your device.
 - A connected AI client can receive the DevDesk tool results it requests. The
   client decides whether those results stay local or go to an AI provider.
 

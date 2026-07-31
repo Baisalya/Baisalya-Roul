@@ -62,42 +62,63 @@
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
 <a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Safety and reference</span></div><div class="doc-meta"><span class="doc-chip">Safety and reference</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div>
 <h1 id="settings-and-appearance">Settings and appearance<a class="heading-anchor" href="#settings-and-appearance" aria-label="Link to Settings and appearance">#</a></h1>
-<p>Settings controls themes, density, backup, privacy links, support, manuals, onboarding, and local data reset.</p>
-<h2 id="ai-agent-connection">AI agent connection<a class="heading-anchor" href="#ai-agent-connection" aria-label="Link to AI agent connection">#</a></h2>
-<p>Select <strong>DevDesk Agent Connector</strong> to connect an MCP-compatible Windows client such as Codex or Gemini CLI. The connector is stopped by default. Markdown text and review proposals have separate permissions.</p>
-<p>Read <a href="agent-connector.html">AI Agent Connector</a> before the first connection.</p>
+<p>Settings controls how DevDesk looks, where you find help, backups, privacy,
+updates, and the local-data reset. Changing a setting does not upload your
+workspace.</p>
 <h2 id="appearance">Appearance<a class="heading-anchor" href="#appearance" aria-label="Link to Appearance">#</a></h2>
-<p>Choose system, light, or dark brightness; an available palette; standard or high contrast; and comfortable or compact density.</p>
+<p>Choose the options that are easiest to read:</p>
+<ul>
+<li><strong>Brightness:</strong> system, light, or dark.</li>
+<li><strong>Palette:</strong> an available color theme.</li>
+<li><strong>Contrast:</strong> standard or high contrast.</li>
+<li><strong>Density:</strong> comfortable for touch or compact for more information.</li>
+</ul>
+<p>Use system brightness if your device often changes environments. Try high
+contrast or a wider window when text is hard to read.</p>
 <h2 id="learning-and-documentation">Learning and documentation<a class="heading-anchor" href="#learning-and-documentation" aria-label="Link to Learning and documentation">#</a></h2>
 <ul>
-<li><strong>User manual:</strong> opens the complete offline guide. The website version is
-available at <a href="user-manual.html">Complete user manual</a>.</li>
-<li><strong>View onboarding again:</strong> replays the introduction without deleting local data.</li>
+<li><strong>DevDesk User Manual</strong> opens the complete offline guide.</li>
+<li><strong>View Onboarding Again</strong> replays the introduction without deleting data.</li>
+<li><strong>DevDesk Agent Connector</strong> opens the Windows-only connector controls for an
+MCP-compatible client such as Codex or Gemini CLI.</li>
 </ul>
+<p>The agent connector is stopped by default. Read
+<a href="agent-connector.html">AI Agent Connector</a> before enabling either Markdown
+sharing or review proposals.</p>
+<h2 id="backups-and-privacy">Backups and privacy<a class="heading-anchor" href="#backups-and-privacy" aria-label="Link to Backups and privacy">#</a></h2>
+<p>Settings can export a backup file or a redacted backup copy, and it previews an
+import before applying it. Protected secrets are not included in portable
+backups. External project folders are separate from the Settings backup and
+need their own copy, sync, or Git workflow.</p>
+<p>Use the <strong>Privacy Policy</strong>, <strong>Privacy Question</strong>, and <strong>Security Report</strong> items
+to understand data handling or contact the developer. Do not include tokens,
+passwords, private source code, or sensitive request bodies in a public report.</p>
+<h2 id="updates-and-downloads">Updates and downloads<a class="heading-anchor" href="#updates-and-downloads" aria-label="Link to Updates and downloads">#</a></h2>
+<p>The <strong>About</strong> section opens the DevDesk website, Downloads page, support, and
+Microsoft Store listing.</p>
+<p>On Android and Windows, select <strong>Check for Updates</strong> to compare the installed
+build with the public release record hosted on the official DevDesk website.
+The check is platform-specific:</p>
+<ul>
+<li>Android opens Google Play when an update is available.</li>
+<li>Windows opens Microsoft Store when an update is available.</li>
+</ul>
+<p>DevDesk does not download or install updates itself. A connection failure on
+the first check leaves the app available; reconnect and try again later.</p>
 <h2 id="clear-all-data">Clear All Data<a class="heading-anchor" href="#clear-all-data" aria-label="Link to Clear All Data">#</a></h2>
-<p>Clear All Data removes known DevDesk-private local records, settings, policy acknowledgement, onboarding completion, and protected secret records. It does not delete external project folders, exported files, or information already sent to another service.</p>
+<p><strong>Clear All Data</strong> removes known DevDesk-private records, settings, privacy
+acknowledgement, onboarding completion, update reminder data, and protected
+secret records. It does not delete external project folders, exported files, or
+information you already sent to another service.</p>
+<p>Export a backup first if you need the private records. Separately verify any
+external workspace folder you want to keep.</p>
 <h2 id="responsive-behavior">Responsive behavior<a class="heading-anchor" href="#responsive-behavior" aria-label="Link to Responsive behavior">#</a></h2>
-<p>Settings remains a single readable column on Android and a constrained content column on wide Windows screens.</p>
-<h2 id="choose-a-readable-configuration">Choose a readable configuration<a class="heading-anchor" href="#choose-a-readable-configuration" aria-label="Link to Choose a readable configuration">#</a></h2>
-<ul>
-<li>Follow system brightness when you frequently switch environments.</li>
-<li>Use high contrast when normal palette boundaries are difficult to distinguish.</li>
-<li>Use comfortable density for touch and compact density only when controls remain accessible.</li>
-<li>Test the largest text size you expect to use.</li>
-</ul>
-<h2 id="reopen-learning-material">Reopen learning material<a class="heading-anchor" href="#reopen-learning-material" aria-label="Link to Reopen learning material">#</a></h2>
-<ul>
-<li><strong>User manual</strong> opens the complete local guide.</li>
-<li><strong>View onboarding again</strong> replays the introduction without clearing data.</li>
-<li>The website manual provides longer copyable examples and platform install links.</li>
-</ul>
-<h2 id="downloads-and-store-access">Downloads and Store access<a class="heading-anchor" href="#downloads-and-store-access" aria-label="Link to Downloads and Store access">#</a></h2>
-<ul>
-<li>Windows: <a href="https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener noreferrer">View DevDesk on Microsoft Store</a>.</li>
-<li>Android: closed testing — contact the developer through the public support page to join.</li>
-</ul>
+<p>Settings stays in one readable column on Android and uses a constrained content
+column on wide Windows screens. On a small display, scroll the focused setting,
+close optional panels, or use a wider window rather than reducing text until it
+is difficult to read.</p>
 
-<div class="article-footer"><a class="pager" href="backup-restore.html"><small>Previous</small><strong>Backup and restore</strong></a><a class="pager" href="privacy-security.html"><small>Next</small><strong>Privacy and security</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#ai-agent-connection">AI agent connection</a><a class="level-2" href="#appearance">Appearance</a><a class="level-2" href="#learning-and-documentation">Learning and documentation</a><a class="level-2" href="#clear-all-data">Clear All Data</a><a class="level-2" href="#responsive-behavior">Responsive behavior</a><a class="level-2" href="#choose-a-readable-configuration">Choose a readable configuration</a><a class="level-2" href="#reopen-learning-material">Reopen learning material</a><a class="level-2" href="#downloads-and-store-access">Downloads and Store access</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div class="article-footer"><a class="pager" href="backup-restore.html"><small>Previous</small><strong>Backup and restore</strong></a><a class="pager" href="privacy-security.html"><small>Next</small><strong>Privacy and security</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#appearance">Appearance</a><a class="level-2" href="#learning-and-documentation">Learning and documentation</a><a class="level-2" href="#backups-and-privacy">Backups and privacy</a><a class="level-2" href="#updates-and-downloads">Updates and downloads</a><a class="level-2" href="#clear-all-data">Clear All Data</a><a class="level-2" href="#responsive-behavior">Responsive behavior</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>
