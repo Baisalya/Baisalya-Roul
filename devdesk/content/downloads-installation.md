@@ -1,42 +1,72 @@
-# Downloads and installation
+# Downloads, installation, and updates
 
-Use the website **Downloads** page for the current platform status. The buttons are configured in `assets/js/site-config.js`, so the site owner can change destinations without rewriting every page.
+Use the official [DevDesk Downloads page](../downloads.html) for every
+platform. It is the single source for current download status, release notes,
+and the public update record.
 
-## Android
-
-1. Open the Google Play link from an Android device.
-2. During closed testing, sign in with an account that the developer added as a tester.
-3. Install the Play-delivered build.
-4. Open DevDesk and complete privacy acknowledgement and onboarding.
-
-Android closed testing — use the public support page to contact the developer
-and request access. Do not post a tester email address publicly.
-
-> [!WARNING] Do not install APKs offered by unrelated third-party download sites. They may be outdated or modified.
-
-## Windows
+## Windows — available now
 
 1. Open the [official DevDesk Microsoft Store listing](https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare).
-2. Confirm the DevDesk product name and publisher shown by Microsoft Store.
+2. Confirm the product is **DevDesk** and the publisher is expected.
 3. Select **Get** or **Install**.
 4. Start DevDesk from the Start menu.
-5. Allow Windows security prompts only when the publisher and Store source are expected.
+5. Open **Settings → About → Check for Updates** whenever you want DevDesk to
+   compare the installed Windows build with the official release record.
 
-## macOS
+When a newer Windows build is available, DevDesk opens Microsoft Store. The
+Store can update apps automatically; its **Library** also lets you search for
+updates manually.
 
-A macOS download is currently marked **Not released**. The repository can contain a Flutter macOS scaffold without implying that a signed, notarized, tested public package exists.
+## Android — closed testing
 
-## Updating
+1. Open the Google Play link from an Android device.
+2. Sign in with the Google account the developer added to the closed test.
+3. Install the Play-delivered build.
+4. Open DevDesk and complete the privacy acknowledgement and onboarding.
+5. Use **Settings → About → Check for Updates** to compare the installed
+   Android build with the official Android release record.
 
-- Google Play normally updates Android builds through the store.
-- Microsoft Store normally updates the Windows build automatically. You can
-  also check Library/updates manually.
-- Back up DevDesk-private data before a major update or migration.
-- External project folders remain separate from DevDesk's private backup.
+If you need test access, contact the developer through the public support page.
+Do not post a tester email address, password, or access token publicly.
 
-For current Store controls, see
-[Microsoft Support: Get updates for apps and games](https://support.microsoft.com/en-us/accounts-billing/get-updates-for-apps-and-games-in-microsoft-store).
+## What DevDesk checks
 
-## Verify the version
+DevDesk downloads only the small public
+[`releases.json`](../releases.json) record from this website. It compares the
+installed version and build number on your device with the record for the
+current platform. Your files, notes, workspace data, API requests, and
+credentials are not sent with that check.
 
-Open **Developer & support** or the app information area to view the installed version and build number. This website documents DevDesk 1.0-era workflows; individual labels may change slightly in later releases.
+The result can be:
+
+- **Up to date** — the installed build is current or newer.
+- **Update available** — you can choose **Later** and keep working.
+- **Update required** — the installed build is below the supported-version
+  floor. DevDesk opens the trusted store page; it never installs an update by
+  itself.
+
+A connection error on the first check does not lock the app. Try again later
+from Settings or confirm that the Downloads page opens in your browser.
+
+## Download safety
+
+Use only the Microsoft Store, Google Play, or a package explicitly linked by
+the official Downloads page. Avoid unrelated third-party download sites.
+
+If a future Windows installer, portable ZIP, or Android APK is offered, the
+page will state whether it is available and can publish a SHA-256 checksum.
+For a portable Windows build, keep `devdesk.exe`, its DLL files, and the
+`data` directory together.
+
+## Before a major update
+
+- Export a DevDesk backup if you want a copy of app-private records.
+- Back up external project folders separately; they are not part of the
+  app-private backup.
+- Finish or resolve cloud-sync and Git conflicts before opening the same folder
+  on another device.
+
+## macOS and iOS
+
+macOS and iOS remain **Not released** until signed, tested public packages are
+available. A Flutter project scaffold is not a public release.

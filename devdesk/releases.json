@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "publishedAt": "2026-07-31T15:53:00Z",
+  "releaseStatus": "available",
+  "releasePage": "https://baisalya.github.io/Baisalya-Roul/devdesk/downloads.html",
+  "android": {
+    "enabled": true,
+    "packageName": "com.baishalya.devdesk",
+    "latestVersion": "1.0.4",
+    "latestBuild": 5,
+    "minimumSupportedBuild": 1,
+    "mandatoryUpdateGap": 2,
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.baishalya.devdesk",
+    "apkUrl": "",
+    "releaseNotesUrl": "https://baisalya.github.io/Baisalya-Roul/devdesk/downloads.html",
+    "summary": "Windows availability, reliable update checks, and workspace improvements.",
+    "publishedAt": "2026-07-31T15:53:00Z"
+  },
+  "windows": {
+    "enabled": true,
+    "packageName": "DevDesk",
+    "latestVersion": "1.0.4",
+    "latestBuild": 5,
+    "minimumSupportedBuild": 1,
+    "mandatoryUpdateGap": 2,
+    "storeUrl": "https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare",
+    "installerUrl": "",
+    "releaseNotesUrl": "https://baisalya.github.io/Baisalya-Roul/devdesk/downloads.html",
+    "summary": "Windows availability, reliable update checks, and workspace improvements.",
+    "publishedAt": "2026-07-31T15:53:00Z"
+  },
+  "platforms": {
+    "android": {
+      "status": "testing",
+      "version": "1.0.4",
+      "build": 5,
+      "primaryUrl": "https://play.google.com/store/apps/details?id=com.baishalya.devdesk",
+      "artifacts": [
+        {
+          "name": "DevDesk-android.apk",
+          "label": "Android APK",
+          "kind": "apk",
+          "available": false,
+          "url": "https://github.com/Baisalya/devdesk/releases/download/v1.0.4-build5/DevDesk-android.apk",
+          "sha256": "",
+          "sizeBytes": 0
+        }
+      ]
+    },
+    "windows": {
+      "status": "available",
+      "version": "1.0.4",
+      "build": 5,
+      "primaryUrl": "https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare",
+      "artifacts": [
+        {
+          "name": "DevDesk-windows-x64-setup.exe",
+          "label": "Windows setup EXE",
+          "kind": "installer",
+          "available": false,
+          "url": "https://github.com/Baisalya/devdesk/releases/download/v1.0.4-build5/DevDesk-windows-x64-setup.exe",
+          "sha256": "",
+          "sizeBytes": 0
+        },
+        {
+          "name": "DevDesk-windows-x64-portable.zip",
+          "label": "Windows portable ZIP",
+          "kind": "portable",
+          "available": false,
+          "url": "https://github.com/Baisalya/devdesk/releases/download/v1.0.4-build5/DevDesk-windows-x64-portable.zip",
+          "sha256": "",
+          "sizeBytes": 0
+        }
+      ]
+    },
+    "macos": {
+      "status": "coming-soon",
+      "version": "",
+      "build": 0,
+      "primaryUrl": "https://baisalya.github.io/Baisalya-Roul/devdesk/downloads.html",
+      "artifacts": []
+    },
+    "ios": {
+      "status": "coming-soon",
+      "version": "",
+      "build": 0,
+      "primaryUrl": "https://baisalya.github.io/Baisalya-Roul/devdesk/downloads.html",
+      "artifacts": []
+    }
+  }
+}

@@ -78,11 +78,16 @@
 <li>send an API request;</li>
 <li>fetch supported public GitHub content;</li>
 <li>validate a link;</li>
+<li>check the public release record for the current Android or Windows build;</li>
 <li>open a store, support, privacy, portfolio, or other external page.</li>
 </ul>
 <p>The Windows download action opens the official Microsoft Store listing. The
 Android listing is currently a closed test and may require an approved tester
 account.</p>
+<p>The update check downloads only a small public JSON record from the official
+DevDesk website. The installed version comparison happens on your device;
+DevDesk does not send workspace content, API data, credentials, or the result
+of that comparison to the website.</p>
 <p>The destination can receive request content, your public IP address, and normal connection information.</p>
 <h2 id="protected-secrets">Protected secrets<a class="heading-anchor" href="#protected-secrets" aria-label="Link to Protected secrets">#</a></h2>
 <p>Android uses a Keystore-backed boundary and Windows uses DPAPI where supported. Protected secrets are excluded from supported portable backups and exports.</p>

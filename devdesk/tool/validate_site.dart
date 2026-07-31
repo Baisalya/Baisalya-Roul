@@ -95,9 +95,9 @@ Future<void> main() async {
     final entries =
         jsonDecode(searchSource.substring(searchStart, searchEnd + 1))
             as List<dynamic>;
-    if (entries.length != 42) {
+    if (entries.length != 43) {
       failures.add(
-        'Expected 42 searchable manuals after adding the global manual; '
+        'Expected 43 searchable manuals after adding the global manual; '
         'found ${entries.length}.',
       );
     }

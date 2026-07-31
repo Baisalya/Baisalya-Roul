@@ -59,6 +59,17 @@ If a file-specific page cannot use the selection, choose **Choose a project file
 - Check timeout, certificate, proxy, and network errors.
 - Confirm the endpoint accepts the selected body type.
 
+## Check for Updates cannot finish
+
+- Confirm that the official [Downloads page](../downloads.html) opens in your
+  browser.
+- Check your internet connection, proxy, VPN, firewall, and device date/time.
+- Open **Settings → About → Check for Updates** again after reconnecting.
+- Android should use Google Play; Windows should use Microsoft Store.
+
+DevDesk remains usable when an initial update check cannot reach the release
+record. It never downloads or installs an update silently.
+
 ## Portable API workspace does not update
 
 - Confirm **Developer tools → API testing** opened the intended project API
