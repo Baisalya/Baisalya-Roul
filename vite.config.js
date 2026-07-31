@@ -6,6 +6,7 @@ const devDeskRuntimeFiles = [
   '404.html',
   'downloads.html',
   'index.html',
+  'releases.json',
   'robots.txt',
   'site.webmanifest',
   'sitemap.xml',
