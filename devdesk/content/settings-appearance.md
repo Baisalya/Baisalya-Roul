@@ -20,8 +20,9 @@ contrast or a wider window when text is hard to read.
 
 - **DevDesk User Manual** opens the complete offline guide.
 - **View Onboarding Again** replays the introduction without deleting data.
-- **DevDesk Agent Connector** opens the Windows-only connector controls for an
-  MCP-compatible client such as Codex or Gemini CLI.
+- **DevDesk Agent Connector** opens the Windows and Android connector controls
+  for an MCP-compatible client such as Codex or Gemini CLI. On Android, the
+  compatible client must run on the same device and DevDesk must remain open.
 
 The agent connector is stopped by default. Read
 [AI Agent Connector](agent-connector.html) before enabling either Markdown

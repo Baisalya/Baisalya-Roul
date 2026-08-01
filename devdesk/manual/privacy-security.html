@@ -6,6 +6,7 @@
     <a class="" href="../index.html">Home</a>
     <a class="active" href="../manual/user-manual.html">Manual</a>
     <a class="" href="../downloads.html">Downloads</a>
+    <a class="nav-demo" href="../downloads.html#agent-demo">Demo project</a>
     <a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
   </nav>
   <div class="header-actions">
@@ -68,7 +69,10 @@
 <p><code>project.devdesk</code> is portable project configuration. It cannot carry secrets, credentials, absolute paths, commands, scripts, environment variables, execution trust, or personal UI state.</p>
 <p>Opening and indexing a project are data operations. They do not run commands, Git, scripts, terminals, AI tools, computations, attesters, or network requests.</p>
 <h2 id="ai-agent-connector">AI Agent Connector<a class="heading-anchor" href="#ai-agent-connector" aria-label="Link to AI Agent Connector">#</a></h2>
-<p>The Windows connector is off until you start it. It binds only to the local loopback address and requires a random access URL.</p>
+<p>The Windows and Android connector is off until you start it. It binds only to
+the local device loopback address and requires a random access URL. On Android,
+the compatible MCP client must run on the same device and DevDesk must remain
+open.</p>
 <p>Safe metadata, graph links, issues, and OKF status are read-only. Markdown text sharing and change proposals are separate permissions that are off by default.</p>
 <p>A proposal does not write a file. Only <strong>Approve and apply</strong> inside DevDesk can save it, and the save fails when the original file changed.</p>
 <p>DevDesk does not include an AI provider, AI account, analytics, terminal tool, delete tool, or Git push tool. Your AI client decides where requested context is processed.</p>

@@ -4,7 +4,9 @@ The AI Agent Connector lets an MCP-compatible AI client ask DevDesk about the wo
 
 Examples include Codex and Gemini CLI. DevDesk does not provide or pay for the AI. You use your own client and its account, subscription, API plan, or local model.
 
-The current connector is available on Windows. It works only while DevDesk is open and you have started it.
+The connector is available on Windows and Android. It works only while DevDesk
+is open and you have started it. On Android, the compatible MCP client must run
+on the same device; keep DevDesk open because Android can stop background apps.
 
 ## What the connector adds
 
@@ -49,14 +51,15 @@ A graph line does not prove meaning, truth, trust, or importance. It means DevDe
 
 ## Start the connector
 
-1. Open DevDesk on Windows.
+1. Open DevDesk on Windows or Android.
 2. Open or select the workspace you want the AI to use.
 3. Open **Settings**.
 4. Select **DevDesk Agent Connector**.
 5. Review **Agent permissions**.
 6. Select **Start connector**.
 
-Expected result: the page shows **Running** and displays configurations for Codex and Gemini CLI.
+Expected result: the page shows **Running** and displays configurations for
+Codex, Gemini CLI, and another compatible MCP client.
 
 If no workspace is selected, the connector can run, but workspace tools return a message asking you to select one.
 
@@ -68,7 +71,7 @@ The [Agent-ready workspace demo](../downloads.html#agent-demo) is a small downlo
 2. Open its `project.devdesk` file in DevDesk.
 3. Open **Knowledge graph** to see the linked brief, architecture, tasks, and review checklist.
 4. Start the connector and turn on **Share redacted Markdown text** for the reading demo.
-5. Copy the configuration for Codex or Gemini CLI.
+5. Copy the configuration for Codex, Gemini CLI, or another compatible MCP client.
 6. Run the read-only prompt in the demo's `docs/DEMO-SCRIPT.md` file.
 
 The download includes `AGENTS.md` for Codex, `GEMINI.md` for Gemini CLI, clear prompts, a small Python module, and standard-library tests. It contains no connector URL, API key, AI account, or cloud copy of your project.
@@ -97,6 +100,10 @@ If the file changes before approval, DevDesk refuses the stale proposal.
 
 ## Connect Codex
 
+Use this configuration only in a Codex client running on the same device as
+DevDesk. For Android, use the generic MCP endpoint with a compatible local
+client that supports HTTP MCP servers.
+
 1. Start the connector.
 2. Select **Copy Codex config.toml**.
 3. Open Codex **Settings > MCP servers**, or edit Codex `config.toml`.
@@ -112,6 +119,10 @@ Codex automatically uses an `AGENTS.md` file in the project as durable project g
 
 ## Connect Gemini CLI
 
+Use this configuration only in a Gemini CLI client running on the same device
+as DevDesk. For Android, use the generic MCP endpoint with a compatible local
+client that supports HTTP MCP servers.
+
 1. Start the connector.
 2. Select **Copy Gemini CLI settings.json**.
 3. Merge the copied `devdesk` entry into the `mcpServers` object in Gemini CLI settings.
@@ -123,6 +134,26 @@ Expected result: Gemini CLI shows `devdesk` as a connected MCP server.
 Do not replace existing `mcpServers` entries when merging the DevDesk entry. See the official [Gemini CLI MCP server guide](https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md).
 
 Gemini CLI reads the demo's `GEMINI.md` project instructions. Use `/memory show` to inspect the loaded instructions if needed.
+
+## Connect another MCP-compatible agent
+
+1. Start the connector in DevDesk.
+2. Select **Copy** beside **Compatible MCP endpoint URL**.
+3. In your agent's MCP settings, add that value as a local HTTP MCP server.
+4. Keep DevDesk open, then restart or refresh the agent's MCP servers.
+
+The exact settings format differs by client. DevDesk uses JSON-RPC over local
+HTTP POST, so the client must support HTTP MCP servers. Never share the copied
+URL: it contains the local access key for the current connector session.
+
+### Android checklist
+
+1. Start DevDesk and the compatible MCP client on the same Android device.
+2. Keep DevDesk open while the client uses the connector.
+3. Use the copied `127.0.0.1` endpoint exactly as shown; do not replace it
+   with a network IP address.
+4. If Android pauses DevDesk and the connection drops, reopen DevDesk and
+   restart or refresh the MCP client.
 
 ## Useful first requests
 
@@ -175,7 +206,9 @@ Select **Stop connector** when the AI no longer needs access.
 
 Select **Rotate access key** if you copied the configuration to the wrong place or no longer trust an old configuration. Replace the URL in every connected client.
 
-The server listens only on the Windows loopback address. Other devices on the network cannot use it directly.
+The server listens only on the device loopback address. Other devices on the
+network cannot use it directly. On Android, this also means the MCP client must
+run on the same Android device.
 
 ## Troubleshooting
 
@@ -185,7 +218,8 @@ The server listens only on the Windows loopback address. Other devices on the ne
 2. Confirm the connector says **Running**.
 3. Copy the current configuration again.
 4. Confirm another program is not using port `45873`.
-5. Restart or refresh the AI client's MCP servers.
+5. Restart or refresh the AI client's MCP servers. On Android, confirm the
+   client is on the same device and that DevDesk remains open.
 
 ### The AI says no workspace is selected
 
@@ -205,7 +239,8 @@ DevDesk does not add analytics, an AI subscription, an API key, or a hosted AI b
 
 Your AI client decides where its prompts and tool results are processed. A cloud AI may send requested workspace context to its provider. A local model may keep processing on your device. Check the client's privacy and pricing before connecting it.
 
-The connector access key is protected for the Windows user when platform protection is available. Otherwise DevDesk uses a session-only key.
+The connector access key is protected by the device security boundary when
+platform protection is available. Otherwise DevDesk uses a session-only key.
 
 For the protocol model and security guidance, see the official [Model Context Protocol documentation](https://modelcontextprotocol.io/docs/getting-started/intro) and [Streamable HTTP transport specification](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports).
 
@@ -213,6 +248,6 @@ For the protocol model and security guidance, see the official [Model Context Pr
 
 - **AI agent:** an AI client that can choose and call tools while completing a task.
 - **MCP:** Model Context Protocol, a standard way for a client to discover and call tools.
-- **Loopback:** a local-only network address that points back to the same computer.
+- **Loopback:** a local-only network address that points back to the same device.
 - **Fingerprint:** a value used to detect whether a file changed after it was read.
 - **Proposal:** a suggested replacement waiting for your explicit review.

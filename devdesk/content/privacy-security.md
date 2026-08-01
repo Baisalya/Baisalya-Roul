@@ -12,7 +12,10 @@ Opening and indexing a project are data operations. They do not run commands, Gi
 
 ## AI Agent Connector
 
-The Windows connector is off until you start it. It binds only to the local loopback address and requires a random access URL.
+The Windows and Android connector is off until you start it. It binds only to
+the local device loopback address and requires a random access URL. On Android,
+the compatible MCP client must run on the same device and DevDesk must remain
+open.
 
 Safe metadata, graph links, issues, and OKF status are read-only. Markdown text sharing and change proposals are separate permissions that are off by default.
 

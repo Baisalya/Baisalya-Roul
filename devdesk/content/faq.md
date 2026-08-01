@@ -59,7 +59,11 @@ No online AI provider is required. Current validation and managed maintenance us
 
 ## Can I connect Codex or Gemini CLI?
 
-Yes, on Windows. Open **Settings > DevDesk Agent Connector**, select a workspace, start the connector, and copy the matching MCP configuration. You provide the AI client and its account or local model.
+Yes, on Windows and Android. Open **Settings > DevDesk Agent Connector**,
+select a workspace, start the connector, and copy the matching MCP
+configuration. On Android, the compatible MCP client must run on the same
+device and DevDesk must remain open. You provide the AI client and its account
+or local model.
 
 ## Does the graph make an AI understand my project?
 

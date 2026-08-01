@@ -92,9 +92,11 @@ Resize the Android freeform or Windows window, close optional panels, or keep ad
 
 ## AI Agent Connector does not connect
 
-- The current connector is available on Windows.
+- The connector is available on Windows and Android. On Android, use an MCP
+  client on the same device and keep DevDesk open.
 - Keep DevDesk open and confirm it shows **Running**.
-- Copy the current Codex or Gemini CLI configuration again.
+- Copy the current Codex, Gemini CLI, or compatible MCP endpoint configuration
+  again.
 - Restart or refresh MCP servers in the AI client.
 - Another program may already use local port `45873`.
 - If you rotated the access key, remove the old URL.

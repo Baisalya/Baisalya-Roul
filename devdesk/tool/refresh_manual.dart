@@ -344,9 +344,9 @@ String _prepareManualTemplate(String source, String slug) {
           '<span class="doc-chip">Offline documentation</span>'
           '<span class="doc-chip">Android + Windows</span>',
       '<span>AI Agent Connector</span></div><div class="doc-meta">'
-          '<span class="doc-chip">Safety and reference</span>'
-          '<span class="doc-chip">Local MCP</span>'
-          '<span class="doc-chip">Windows</span>',
+      '<span class="doc-chip">Safety and reference</span>'
+      '<span class="doc-chip">Local MCP</span>'
+      '<span class="doc-chip">Windows + Android</span>',
     );
     source = source.replaceFirst(
       RegExp(r'<div class="article-footer">.*?</div></article>', dotAll: true),
@@ -356,6 +356,14 @@ String _prepareManualTemplate(String source, String slug) {
       '<a class="pager" href="privacy-security.html">'
       '<small>Next</small><strong>Privacy and security</strong></a>'
       '</div></article>',
+    );
+  }
+  if (!source.contains('>Demo project</a>')) {
+    source = source.replaceFirst(
+      'href="../downloads.html">Downloads</a>',
+      'href="../downloads.html">Downloads</a>\n'
+      '    <a class="nav-demo" href="../downloads.html#agent-demo">'
+      'Demo project</a>',
     );
   }
   return source
