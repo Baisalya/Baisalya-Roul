@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Compare content and use explicit trusted local Git status actions on Windows."><meta name="theme-color" content="#5b47e8"><title>Compare files and scoped Git · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Compare content and keep trusted Git actions strictly inside the workspace boundary."><meta name="theme-color" content="#5b47e8"><title>Compare files and scoped Git · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
   <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
@@ -26,6 +26,8 @@
 <a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
 <a class="" href="../manual/knowledge-workspace.html">Edit workspace Markdown</a>
 <a class="" href="../manual/knowledge-graph.html">Relationships and graph</a>
+<a class="" href="../manual/visual-canvas.html">Visual Canvas</a>
+<a class="" href="../manual/structured-views.html">Structured workspace views</a>
 <a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
 <a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
 <a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
@@ -125,6 +127,27 @@ files.</li>
 not change or stage existing files, create a commit or remote, connect an
 account, or use the network. DevDesk refuses to create a nested repository
 when the workspace is already inside a parent repository.</p>
+<h3 id="use-the-source-control-workbench">Use the Source Control workbench<a class="heading-anchor" href="#use-the-source-control-workbench" aria-label="Link to Use the Source Control workbench">#</a></h3>
+<p>When the repository is ready, the Windows page separates three views:</p>
+<ul>
+<li><strong>Changes:</strong> review staged and working files, open a bounded text difference,
+switch between inline and side-by-side layout when the window is wide enough,
+and explicitly stage or unstage one path. A new untracked text file can be
+previewed and staged, but DevDesk never deletes an untracked file.</li>
+<li><strong>History:</strong> filter workspace-scoped commits by message, author, or hash.
+Select a commit to inspect its changed files and workspace-scoped patch.</li>
+<li><strong>Branches:</strong> inspect the current branch, upstream, ahead/behind counts, and
+configured remotes. This is local status display; opening the view does not
+fetch from a remote.</li>
+</ul>
+<p><strong>Restore working file safely</strong> is available only for a tracked, unstaged
+working-tree change. DevDesk writes a binary-capable recovery patch to a
+temporary recovery folder first, then restores the selected file to its staged
+version. Copy the displayed recovery-patch path somewhere durable if you may
+need it later.</p>
+<p>Repository mutations require the fingerprint from the displayed snapshot. If
+another Git client, editor, or DevDesk window changes repository state, DevDesk
+stops the action and asks you to refresh.</p>
 <h3 id="parent-repository-with-a-strict-workspace-scope">Parent repository with a strict workspace scope<a class="heading-anchor" href="#parent-repository-with-a-strict-workspace-scope" aria-label="Link to Parent repository with a strict workspace scope">#</a></h3>
 <p>When the user explicitly opens Git status, DevDesk resolves the real repository
 root with:</p>
@@ -156,10 +179,15 @@ staged. Use the normal Git client instead whenever the staged boundary is
 uncertain.</li>
 <li>Use your normal Git client for remote operations and conflict resolution.</li>
 </ul>
+<h2 id="android-boundary">Android boundary<a class="heading-anchor" href="#android-boundary" aria-label="Link to Android boundary">#</a></h2>
+<p>Android workspaces are provider-backed document trees, so the Source Control
+page does not start a Git engine on the phone. It offers a Windows handoff for
+status, changes, history, branches, and local commits. Android can still edit
+workspace files safely and use the general Compare &amp; Diff tool.</p>
 <h2 id="github-comparison">GitHub comparison<a class="heading-anchor" href="#github-comparison" aria-label="Link to GitHub comparison">#</a></h2>
 <p>Supported GitHub comparison fetches only the public URL or content you select. It is a user-initiated network action.</p>
 
-<div class="article-footer"><a class="pager" href="uuid.html"><small>Previous</small><strong>UUID Generator</strong></a><a class="pager" href="snippets-notes.html"><small>Next</small><strong>Snippets and Notes</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#compare-text-or-files">Compare text or files</a><a class="level-2" href="#source-control-from-a-workspace">Source control from a workspace</a><a class="level-3" href="#professional-setup-states">Professional setup states</a><a class="level-3" href="#parent-repository-with-a-strict-workspace-scope">Parent repository with a strict workspace scope</a><a class="level-2" href="#safety-boundaries">Safety boundaries</a><a class="level-2" href="#github-comparison">GitHub comparison</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div class="article-footer"><a class="pager" href="uuid.html"><small>Previous</small><strong>UUID Generator</strong></a><a class="pager" href="snippets-notes.html"><small>Next</small><strong>Snippets and Notes</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#compare-text-or-files">Compare text or files</a><a class="level-2" href="#source-control-from-a-workspace">Source control from a workspace</a><a class="level-3" href="#professional-setup-states">Professional setup states</a><a class="level-3" href="#use-the-source-control-workbench">Use the Source Control workbench</a><a class="level-3" href="#parent-repository-with-a-strict-workspace-scope">Parent repository with a strict workspace scope</a><a class="level-2" href="#safety-boundaries">Safety boundaries</a><a class="level-2" href="#android-boundary">Android boundary</a><a class="level-2" href="#github-comparison">GitHub comparison</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>

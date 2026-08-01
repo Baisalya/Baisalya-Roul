@@ -86,7 +86,7 @@ for (const [source, label] of [
   [serviceWorker, 'DevDesk service worker'],
   [viteConfig, 'DevDesk production build'],
 ]) {
-  requireText(source, '20260801.2', label);
+  requireText(source, '20260801.5', label);
 }
 for (const expected of [
   'controllerchange',

@@ -1,5 +1,5 @@
 (() => {
-  const BUILD_ID = '20260801.2';
+  const BUILD_ID = '20260801.5';
   const root = document.documentElement;
   let storedTheme = null;
   try {
@@ -217,6 +217,157 @@
       }
     }
   });
+
+  const demoVideo = document.querySelector('[data-demo-video]');
+  const demoLanguagePanel = document.querySelector('[data-demo-language-panel]');
+  if (demoVideo && demoLanguagePanel) {
+    const trackButtons = [...demoLanguagePanel.querySelectorAll('[data-demo-track]')];
+    const trackLabel = demoLanguagePanel.querySelector('[data-demo-track-label]');
+    const trackStatus = demoLanguagePanel.querySelector('[data-demo-track-status]');
+    const audioStatus = demoLanguagePanel.querySelector('[data-demo-audio-status]');
+    const volumeControl = demoLanguagePanel.querySelector('[data-demo-volume]');
+    const narration = new Audio();
+    narration.preload = 'metadata';
+    let selectedButton = trackButtons.find((button) => !button.dataset.demoTrack) || trackButtons[0];
+    let availableNarrations = 0;
+
+    const setTrackStatus = (message) => {
+      if (trackStatus) trackStatus.textContent = message;
+    };
+
+    const updateTrackButtons = () => {
+      trackButtons.forEach((button) => {
+        const selected = button === selectedButton;
+        button.setAttribute('aria-pressed', String(selected));
+      });
+      if (trackLabel) trackLabel.textContent = selectedButton?.dataset.trackName || 'Silent demo';
+    };
+
+    const syncNarrationTime = (force = false) => {
+      if (!narration.src || !Number.isFinite(demoVideo.currentTime)) return;
+      if (force || Math.abs(narration.currentTime - demoVideo.currentTime) > 0.28) {
+        try {
+          narration.currentTime = demoVideo.currentTime;
+        } catch (_) {
+          // Metadata may still be loading; the next media event retries the sync.
+        }
+      }
+    };
+
+    const playNarration = async () => {
+      if (!narration.src || demoVideo.paused || demoVideo.ended) return;
+      syncNarrationTime();
+      try {
+        await narration.play();
+      } catch (_) {
+        setTrackStatus('Select the narration language again to allow audio playback on this device.');
+      }
+    };
+
+    const selectTrack = async (button, remember = true) => {
+      if (!button || button.disabled) return;
+      selectedButton = button;
+      updateTrackButtons();
+      narration.pause();
+      narration.removeAttribute('src');
+      narration.load();
+
+      const source = button.dataset.demoTrack;
+      if (!source) {
+        if (volumeControl) volumeControl.disabled = true;
+        setTrackStatus('Silent playback selected. Choose a narration language whenever a voice-over is available.');
+      } else {
+        narration.src = source;
+        narration.volume = Number(volumeControl?.value ?? 1);
+        narration.playbackRate = demoVideo.playbackRate;
+        narration.load();
+        if (volumeControl) volumeControl.disabled = false;
+        syncNarrationTime(true);
+        setTrackStatus(`${button.dataset.trackName} narration selected. Playback stays synchronized with the video.`);
+        await playNarration();
+      }
+
+      if (remember) {
+        try {
+          localStorage.setItem('devdesk-demo-narration', source || 'silent');
+        } catch (_) {
+          // The selected track still works for this visit when storage is unavailable.
+        }
+      }
+    };
+
+    trackButtons.forEach((button) => button.addEventListener('click', () => selectTrack(button)));
+    volumeControl?.addEventListener('input', () => {
+      narration.volume = Number(volumeControl.value);
+    });
+
+    demoVideo.addEventListener('play', playNarration);
+    demoVideo.addEventListener('playing', playNarration);
+    demoVideo.addEventListener('pause', () => narration.pause());
+    demoVideo.addEventListener('waiting', () => narration.pause());
+    demoVideo.addEventListener('seeking', () => syncNarrationTime(true));
+    demoVideo.addEventListener('seeked', () => {
+      syncNarrationTime(true);
+      playNarration();
+    });
+    demoVideo.addEventListener('timeupdate', () => syncNarrationTime());
+    demoVideo.addEventListener('ratechange', () => {
+      narration.playbackRate = demoVideo.playbackRate;
+      syncNarrationTime(true);
+    });
+    demoVideo.addEventListener('ended', () => {
+      narration.pause();
+      narration.currentTime = 0;
+    });
+    window.addEventListener('pagehide', () => narration.pause());
+
+    narration.addEventListener('error', () => {
+      if (selectedButton?.dataset.demoTrack) {
+        selectedButton.disabled = true;
+        selectTrack(trackButtons.find((button) => !button.dataset.demoTrack), false);
+        setTrackStatus('That narration file is unavailable. Silent playback has been restored.');
+      }
+    });
+
+    const probeNarration = async (button) => {
+      const source = button.dataset.demoTrack;
+      if (!source || location.protocol === 'file:') return false;
+      try {
+        const response = await fetch(new URL(source, location.href), {
+          method: 'HEAD',
+          cache: 'no-store',
+        });
+        if (!response.ok) return false;
+        button.disabled = false;
+        button.querySelector('small')?.remove();
+        availableNarrations += 1;
+        return true;
+      } catch (_) {
+        return false;
+      }
+    };
+
+    Promise.all(trackButtons.map(probeNarration)).then(() => {
+      if (audioStatus) {
+        audioStatus.textContent = availableNarrations
+          ? `${availableNarrations} voice-over${availableNarrations === 1 ? '' : 's'} ready`
+          : 'Voice-overs coming soon';
+        audioStatus.classList.toggle('available', availableNarrations > 0);
+      }
+
+      let storedTrack = null;
+      try {
+        storedTrack = localStorage.getItem('devdesk-demo-narration');
+      } catch (_) {
+        // Silent remains the default when storage is unavailable.
+      }
+      const storedButton = storedTrack && storedTrack !== 'silent'
+        ? trackButtons.find((button) => button.dataset.demoTrack === storedTrack && !button.disabled)
+        : null;
+      if (storedButton) selectTrack(storedButton, false);
+      else updateTrackButtons();
+    });
+  }
 
   const supportAssistantScript = document.createElement('script');
   supportAssistantScript.src = `${base}assets/js/support-assistant.js?v=${BUILD_ID}`;

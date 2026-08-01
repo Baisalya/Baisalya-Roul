@@ -49,16 +49,27 @@ with** for deliberate comparison.
 - Open **Review changes** for a queued plan.
 - Use **Undo** only while affected files still match the applied result.
 
-## Git status is unavailable
+## Source control is unavailable
 
 - Use an eligible local Windows project.
-- Confirm the selected workspace is inside the intended Git repository.
+- Open **Developer tools → Source control** and approve device-local execution
+  trust only after checking the displayed folder. DevDesk runs no Git command
+  before this approval.
+- If **Git is not installed** appears, use the official Git for Windows action,
+  install it, then select **Check again**.
+- If **Source control is not set up** appears, initialize only when the exact
+  displayed workspace should receive its own `.git` metadata. No file is staged
+  or committed by initialization.
+- Confirm the selected workspace is inside the intended Git repository after
+  setup.
 - If Git belongs to a parent folder, confirm the Git page shows the expected repository-relative workspace scope.
 - Files outside that scope are intentionally absent and cannot be staged or unstaged from the workspace.
-- Open **Developer tools → Git status** and grant device-local execution trust
-  only after reviewing the displayed workspace boundary.
-- Confirm `git` is installed.
-- Refresh before stage or unstage.
+- Refresh before stage, unstage, restore, or commit when another Git client has
+  changed repository state.
+- Before a DevDesk commit inside a parent repository, confirm in your normal Git
+  client that unrelated parent files are not already staged.
+- On Android, use safe file editing or Compare & Diff, then open the same folder
+  in Windows DevDesk for the Git workbench.
 
 ## API request fails
 
@@ -93,6 +104,9 @@ record. It never downloads or installs an update silently.
 - Avoid invalid names and paths.
 - New-file and new-folder creation never replaces an existing path; choose another name.
 - Keep Android document-tree access active.
+- For a workspace text file, reopen it when the conflict-protection fingerprint
+  is stale. Use **Save As** when the workspace is read-only or you need an
+  independent copy.
 
 ## UI looks cramped
 
@@ -115,7 +129,15 @@ If approval fails, keep the newer Markdown file and ask the agent to read it aga
 
 ## Data reset or recovery
 
-Export a Settings backup before a major change. Clear All Data removes DevDesk-private records but does not delete external project folders.
+Export **Settings → Data backup → Export Reinstall Recovery Kit** before a
+major change or uninstall, and separately back up the external workspace
+folders. After import, open **Reconnect Recorded Workspaces**, review the
+location hints, and select **Reconnect a workspace**. Repeat for each folder.
+Older backups may not contain a reconnection catalog.
+
+Clear All Data removes DevDesk-private records but does not delete external
+project folders. Protected secrets, permission URIs, execution trust, and Agent
+Connector access keys are not restored by a recovery kit.
 
 ## Windows manifest launch opens the wrong state
 

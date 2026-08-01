@@ -31,6 +31,8 @@
 <a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
 <a class="" href="../manual/knowledge-workspace.html">Edit workspace Markdown</a>
 <a class="" href="../manual/knowledge-graph.html">Relationships and graph</a>
+<a class="" href="../manual/visual-canvas.html">Visual Canvas</a>
+<a class="" href="../manual/structured-views.html">Structured workspace views</a>
 <a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
 <a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
 <a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
@@ -68,25 +70,50 @@
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
 <a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>AI Agent Connector</span></div><div class="doc-meta"><span class="doc-chip">Safety and reference</span><span class="doc-chip">Local MCP</span><span class="doc-chip">Windows</span></div>
 <h1 id="ai-agent-connector">AI Agent Connector<a class="heading-anchor" href="#ai-agent-connector" aria-label="Link to AI Agent Connector">#</a></h1>
-<p>The AI Agent Connector lets an MCP-compatible AI client ask DevDesk about the workspace you selected.</p>
+<p>The AI Agent Connector gives each MCP-compatible AI client an isolated session
+that can ask DevDesk about one explicitly assigned workspace.</p>
 <p>Examples include Codex and Gemini CLI. DevDesk does not provide or pay for the AI. You use your own client and its account, subscription, API plan, or local model.</p>
 <p>The connector is available on Windows and Android. It works only while DevDesk
 is open and you have started it. On Android, the compatible MCP client must run
 on the same device; keep DevDesk open because Android can stop background apps.</p>
 <h2 id="what-the-connector-adds">What the connector adds<a class="heading-anchor" href="#what-the-connector-adds" aria-label="Link to What the connector adds">#</a></h2>
-<p>Without the connector, an AI reads Markdown only when you give it files or folder access through that AI client.</p>
+<p>Without the connector, an AI reads project files only when you give it files or
+folder access through that AI client.</p>
 <p>With the connector, the AI can ask DevDesk for:</p>
 <ul>
 <li>the active workspace and safe counts;</li>
+<li>a bounded metadata-only project map with detected stacks, languages, file
+roles, sizes, and workspace-relative paths;</li>
+<li>project-file search by path, language, and role;</li>
+<li>redacted source, configuration, test, and Markdown text only when you allow
+workspace text sharing;</li>
+<li>a token-budgeted context pack that combines relevant project snippets,
+detected stacks, and connected Markdown knowledge;</li>
+<li>a bounded cross-language symbol and dependency map without running project
+code;</li>
 <li>matching documents;</li>
-<li>one redacted Markdown document, when you allow document text;</li>
 <li>connected graph nodes and links;</li>
 <li>broken links and other workspace issues;</li>
 <li>the current OKF structure report;</li>
-<li>change proposals waiting for your review;</li>
+<li>workspace-scoped multi-file project proposals waiting for review;</li>
+<li>detected analyzer/test/validation plans and completed check results;</li>
 <li>local read-only automation plans, results, and retry state.</li>
 </ul>
 <p>This gives the AI the same indexed structure that DevDesk displays. It does not guarantee that every AI answer is correct.</p>
+<h2 id="universal-project-intelligence-and-lower-token-use">Universal project intelligence and lower token use<a class="heading-anchor" href="#universal-project-intelligence-and-lower-token-use" aria-label="Link to Universal project intelligence and lower token use">#</a></h2>
+<p>DevDesk detects common Flutter/Dart, JavaScript/TypeScript, Rust, Go, Python,
+JVM, PHP, Ruby, Swift, C/C++, .NET, container, Terraform, and OKF evidence.
+<code>get_code_structure</code> adds a bounded language-neutral map of common classes,
+interfaces, functions, imports, includes, and package uses. It never starts a
+language server or executes project code, so it also works for Android
+document-tree workspaces.</p>
+<p>For a focused coding task, the agent should build a small context pack, follow
+the code structure and connected OKF/Markdown, then read only the exact current
+files it plans to change. This reduces repeated whole-project context, but the
+map is not a compiler-grade semantic model and does not prove code correctness.
+Context packs also include bounded <code>codeKnowledgeLinks</code> when source
+paths/snippets and knowledge documents share useful terms. They are labeled as
+lexical navigation suggestions, not saved graph relationships or proof.</p>
 <h2 id="how-graph-nodes-help-an-ai">How graph nodes help an AI<a class="heading-anchor" href="#how-graph-nodes-help-an-ai" aria-label="Link to How graph nodes help an AI">#</a></h2>
 <p>A <strong>node</strong> is an indexed Markdown document.</p>
 <p>A <strong>connection</strong> is a resolved written relationship, such as a wiki link or Markdown link from one document to another.</p>
@@ -115,29 +142,79 @@ See [[Testing checklist]] before release.
 </ol>
 <p>Expected result: the page shows <strong>Running</strong> and displays configurations for
 Codex, Gemini CLI, and another compatible MCP client.</p>
-<p>If no workspace is selected, the connector can run, but workspace tools return a message asking you to select one.</p>
-<h2 id="try-the-agent-ready-demo">Try the Agent-ready demo<a class="heading-anchor" href="#try-the-agent-ready-demo" aria-label="Link to Try the Agent-ready demo">#</a></h2>
-<p>The <a href="../downloads.html#agent-demo">Agent-ready workspace demo</a> is a small downloadable project for trying the complete flow before you connect an AI client to your own work.</p>
+<p>When a workspace is selected, a newly initialized agent session is assigned to
+that workspace. With no selection it stays <strong>Independent / unassigned</strong> until
+you assign it from <strong>Connected agents</strong>. Opening another workspace in DevDesk
+never silently redirects an existing agent.</p>
+<h2 id="agent-operations-and-multiple-workspaces">Agent operations and multiple workspaces<a class="heading-anchor" href="#agent-operations-and-multiple-workspaces" aria-label="Link to Agent operations and multiple workspaces">#</a></h2>
+<p>The connector page is a local operations center:</p>
+<ul>
+<li><strong>Agent operations</strong> summarizes connector, connected, working, and review
+counts.</li>
+<li><strong>Connected agents</strong> shows client name/version, fixed workspace, presence,
+request count, current observable tool, and effective permissions.</li>
+<li><strong>Live activity and audit</strong> shows redacted tool events, duration, status, and
+safe error codes without storing prompts, file contents, access keys, or
+private model reasoning.</li>
+<li><strong>Review agent proposals</strong> keeps every write behind human approval.</li>
+</ul>
+<p>An idle session can be explicitly assigned, left independent, paused, resumed,
+or revoked. Multiple agents may read concurrently. Approved writes are
+serialized per workspace and rechecked with fingerprints. Overlapping pending
+proposals are warned and a stale proposal fails instead of overwriting a newer
+change. Agents assigned to different workspaces remain independent.</p>
+<p>DevDesk issues an opaque MCP session ID and uses recent requests to report
+<strong>Online</strong>, <strong>Working</strong>, <strong>Waiting for review</strong>, <strong>Idle</strong>, or <strong>Disconnected</strong>.
+A compatible HTTP client returns the <code>Mcp-Session-Id</code> header. A client shown as
+<strong>Legacy session</strong> omitted that header and should be updated before parallel
+multi-agent use.</p>
+<p>The audit can be filtered, copied as privacy-safe JSON, cleared, and retained
+for 1, 7, 30, or 90 days.</p>
+<h2 id="try-the-featured-graph-to-code-demo">Try the featured graph-to-code demo<a class="heading-anchor" href="#try-the-featured-graph-to-code-demo" aria-label="Link to Try the featured graph-to-code demo">#</a></h2>
+<p>The <a href="../downloads.html#agent-demo">Tiny Multi-Agent Graph Demo</a> is the fastest way to see the complete DevDesk workflow. The page includes a silent screen recording, a downloadable workspace ZIP, and the exact one-prompt task used in the recording.</p>
 <ol>
-<li>Download and extract the demo ZIP from the Downloads page.</li>
-<li>Open its <code>project.devdesk</code> file in DevDesk.</li>
-<li>Open <strong>Knowledge graph</strong> to see the linked brief, architecture, tasks, and review checklist.</li>
-<li>Start the connector and turn on <strong>Share redacted Markdown text</strong> for the reading demo.</li>
-<li>Copy the configuration for Codex, Gemini CLI, or another compatible MCP client.</li>
-<li>Run the read-only prompt in the demo's <code>docs/DEMO-SCRIPT.md</code> file.</li>
+<li>Download and extract <strong>Demo 1</strong> from the Downloads page.</li>
+<li>Open <code>project.devdesk</code> in DevDesk.</li>
+<li>Open <strong>Knowledge graph</strong> and confirm that the task links to the project brief, architecture note, workflow, source, tests, and review checklist.</li>
+<li>Open <strong>AI Agent</strong>, start the connector, choose this workspace, and enable only the permissions needed for the demo.</li>
+<li>Connect Codex or another compatible MCP client.</li>
+<li>Send the prompt from <code>START-HERE.md</code>: “Read the ready task and its linked project context. Implement it, add focused tests, and queue one reviewed DevDesk proposal. Do not apply files or run commands.”</li>
+<li>In DevDesk, open <strong>Review agent proposals</strong>, inspect both proposed files, and approve only if the change matches the task.</li>
+<li>If you trust the local workspace, run the suggested standard-library test command from the review screen.</li>
 </ol>
-<p>The download includes <code>AGENTS.md</code> for Codex, <code>GEMINI.md</code> for Gemini CLI, clear prompts, a small Python module, and standard-library tests. It contains no connector URL, API key, AI account, or cloud copy of your project.</p>
-<p>Start with the read-only task. Only then run the small coding task, and ask for a Markdown proposal rather than an automatic Markdown edit.</p>
+<p>Demo 1 intentionally begins with a small incomplete Python project. Its linked Markdown graph gives the agent bounded architecture and acceptance criteria without requiring one giant prompt. The ZIP contains no connector URL, access key, AI account, or cloud copy of your files.</p>
+<p>The recording is currently silent. Future narration files named <code>devdesk-demo-en.mp3</code>, <code>devdesk-demo-hi-en.mp3</code>, and <code>devdesk-demo-or-en.mp3</code> will automatically appear as English, Hinglish, and Odia + English choices when they are uploaded beside the website audio README. Until then, choose <strong>Silent</strong> and use the on-page steps.</p>
+<p>The <a href="../downloads.html#agent-ready-demo">original agent-ready workspace</a> remains available as <strong>Demo 2</strong>. Use it for a slower read-only walkthrough with Codex and Gemini CLI instructions before trying reviewed code changes.</p>
 <h2 id="choose-permissions">Choose permissions<a class="heading-anchor" href="#choose-permissions" aria-label="Link to Choose permissions">#</a></h2>
-<p>All three optional permissions are off by default.</p>
-<h3 id="share-redacted-markdown-text">Share redacted Markdown text<a class="heading-anchor" href="#share-redacted-markdown-text" aria-label="Link to Share redacted Markdown text">#</a></h3>
-<p>Turn this on when the AI needs document bodies.</p>
-<p>DevDesk removes common secret-like values before returning text. Redaction is conservative, but no automatic filter recognizes every possible secret. Review private files before sharing them with any AI.</p>
+<p>All optional permissions are off by default. Page-level switches update the
+default. Use <strong>Permissions</strong> on one agent to narrow that session independently.</p>
+<h3 id="share-redacted-workspace-text">Share redacted workspace text<a class="heading-anchor" href="#share-redacted-workspace-text" aria-label="Link to Share redacted workspace text">#</a></h3>
+<p>Turn this on when the AI needs bounded source, configuration, test, or Markdown
+content. It controls content search, exact project-file reads, context packs,
+and Markdown document bodies. The project map remains metadata-only, and
+project search can still match paths, languages, and roles while this permission
+is off.</p>
+<p>DevDesk skips generated folders, symbolic links, and paths that commonly contain
+credentials. Returned UTF-8 text is size-limited and common secret-like values
+are redacted. Redaction is conservative, but no automatic filter recognizes
+every possible secret. Review private files before sharing them with any AI.</p>
 <p>Keep it off when the AI only needs paths, titles, graph connections, diagnostics, or OKF status.</p>
-<h3 id="allow-review-proposals">Allow review proposals<a class="heading-anchor" href="#allow-review-proposals" aria-label="Link to Allow review proposals">#</a></h3>
-<p>Turn this on when the AI should suggest an edit to an existing Markdown file.</p>
-<p>The AI sends a complete proposed replacement and the fingerprint of the version it read. DevDesk stores a pending review. It does not change the file.</p>
-<p>If the file changes before approval, DevDesk refuses the stale proposal.</p>
+<h3 id="allow-project-change-reviews">Allow project change reviews<a class="heading-anchor" href="#allow-project-change-reviews" aria-label="Link to Allow project change reviews">#</a></h3>
+<p>Turn this on when the AI should queue reviewed source, test, configuration, or
+knowledge changes.</p>
+<p>An agent may queue up to 25 complete UTF-8 replacements or exclusive new-file
+creates with exact current fingerprints. DevDesk stores the before/after
+snapshots and optional verification suggestions locally. Queueing changes no
+file and runs no command.</p>
+<p>DevDesk checks the complete set before the first write, creates a private
+recovery journal, rolls back a partial apply in reverse order, and offers
+verified undo after success. Any stale target refuses the complete set.</p>
+<p>Detected verification adapters cover Flutter/Dart, Node, Rust, Go, Python,
+Maven/Java, Gradle/JVM, PHP, Ruby, Swift, CMake/C/C++, .NET, and Terraform.
+On Windows they require local workspace execution trust and explicit selection
+inside the review. DevDesk starts fixed adapter executables/arguments, not an
+agent-supplied shell string. Package tests can still execute project-controlled
+scripts, so trust only projects you know.</p>
 <h3 id="allow-scheduled-read-only-checks">Allow scheduled read-only checks<a class="heading-anchor" href="#allow-scheduled-read-only-checks" aria-label="Link to Allow scheduled read-only checks">#</a></h3>
 <p>Turn this on only when the agent should schedule recurring graph-health checks.</p>
 <p>These tasks keep a local plan, step log, result, retry count, and next-run time.
@@ -159,7 +236,10 @@ client that supports HTTP MCP servers.</p>
 <li>Restart or refresh MCP servers when Codex asks.</li>
 <li>Ask Codex to list its DevDesk tools.</li>
 </ol>
-<p>Expected result: Codex lists tools such as <code>get_active_workspace</code>, <code>search_documents</code>, and <code>get_graph_neighbors</code>.</p>
+<p>Expected result: Codex lists tools such as <code>get_active_workspace</code>,
+<code>get_project_map</code>, <code>search_project_files</code>, <code>build_context_pack</code>,
+<code>get_code_structure</code>, <code>get_verification_plan</code>, <code>propose_project_change</code>, and
+<code>get_change_proposal</code>.</p>
 <p>For current client controls, see the official <a href="https://learn.chatgpt.com/docs/extend/mcp.md" target="_blank" rel="noopener noreferrer">Codex MCP guide</a>.</p>
 <p>Codex automatically uses an <code>AGENTS.md</code> file in the project as durable project guidance. The demo's instructions ask it to read the task context first, keep changes small, run tests, and never expose a private connector URL.</p>
 <h2 id="connect-gemini-cli">Connect Gemini CLI<a class="heading-anchor" href="#connect-gemini-cli" aria-label="Link to Connect Gemini CLI">#</a></h2>
@@ -186,6 +266,9 @@ client that supports HTTP MCP servers.</p>
 <p>The exact settings format differs by client. DevDesk uses JSON-RPC over local
 HTTP POST, so the client must support HTTP MCP servers. Never share the copied
 URL: it contains the local access key for the current connector session.</p>
+<p>After initialization, the client should return DevDesk's <code>Mcp-Session-Id</code> on
+later requests. Rotating the connector access key disconnects all sessions;
+revoking one Connected agent affects only that session.</p>
 <h3 id="android-checklist">Android checklist<a class="heading-anchor" href="#android-checklist" aria-label="Link to Android checklist">#</a></h3>
 <ol>
 <li>Start DevDesk and the compatible MCP client on the same Android device.</li>
@@ -208,9 +291,18 @@ restart or refresh the MCP client.</li>
 <blockquote>
 <p>Read <code>Release plan.md</code>, explain the task in simple steps, and cite the workspace-relative files you used.</p>
 </blockquote>
+<p>For a software project when workspace text sharing is on:</p>
+<blockquote>
+<p>Build a 4,000-token context pack for the login failure. Summarize the detected
+stack and cite the project-relative source, configuration, test, and knowledge
+files used. Do not edit anything.</p>
+</blockquote>
 <p>When proposals are on:</p>
 <blockquote>
-<p>Propose an improvement to <code>Release plan.md</code>. Do not claim the file changed. I will review it in DevDesk.</p>
+<p>Build a focused context pack for the login issue, inspect code structure and
+connected knowledge, read every target again, then queue one multi-file
+project proposal with exact fingerprints and relevant verification IDs. Do
+not claim files changed or checks ran. I will review both in DevDesk.</p>
 </blockquote>
 <p>When scheduled read-only checks are on:</p>
 <blockquote>
@@ -229,6 +321,36 @@ restart or refresh the MCP client.</li>
 <tr>
 <td><code>get_active_workspace</code></td>
 <td>Safe workspace metadata and counts</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td><code>get_project_map</code></td>
+<td>Bounded stacks, languages, roles, and file metadata without content</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td><code>search_project_files</code></td>
+<td>Search project metadata and, when allowed, redacted text</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td><code>read_project_file</code></td>
+<td>Read one bounded redacted UTF-8 project file when allowed</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td><code>build_context_pack</code></td>
+<td>Assemble relevant redacted project snippets and connected knowledge within a requested approximate token budget</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td><code>get_code_structure</code></td>
+<td>Build bounded cross-language symbols and dependencies</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td><code>get_verification_plan</code></td>
+<td>List detected allowlisted checks and execution availability</td>
 <td align="right">No</td>
 </tr>
 <tr>
@@ -262,6 +384,11 @@ restart or refresh the MCP client.</li>
 <td align="right">No</td>
 </tr>
 <tr>
+<td><code>get_change_proposal</code></td>
+<td>Show one proposal and redacted verification results</td>
+<td align="right">No</td>
+</tr>
+<tr>
 <td><code>list_automation_tasks</code></td>
 <td>Show local task plans, logs, results, and retries</td>
 <td align="right">No</td>
@@ -281,26 +408,50 @@ restart or refresh the MCP client.</li>
 <td>Queue a complete replacement for review</td>
 <td align="right">No</td>
 </tr>
+<tr>
+<td><code>propose_project_change</code></td>
+<td>Queue a fingerprinted multi-file change set for review</td>
+<td align="right">No</td>
+</tr>
 </tbody>
 </table>
-<p>DevDesk does not expose an MCP tool that approves, rejects, deletes, runs a terminal, or pushes Git changes.</p>
+<p>DevDesk does not expose an MCP tool that approves, rejects, undoes, deletes,
+runs an arbitrary terminal command, or pushes Git changes.</p>
+<h2 id="professional-coding-and-repair-loop">Professional coding and repair loop<a class="heading-anchor" href="#professional-coding-and-repair-loop" aria-label="Link to Professional coding and repair loop">#</a></h2>
+<ol>
+<li>The agent builds a bounded project map and context pack.</li>
+<li>It follows code symbols/dependencies and connected OKF/Markdown.</li>
+<li>It reads every exact target file and current fingerprint.</li>
+<li>It gets the verification plan and queues one multi-file proposal.</li>
+<li>You expand and compare every before/after file and select checks.</li>
+<li>DevDesk preflights, journals, applies, and verifies or rolls back.</li>
+<li>The agent polls <code>get_change_proposal</code> and may queue a new reviewed repair.</li>
+</ol>
+<p>The agent cannot approve its own work. This workflow reduces unnecessary
+context and supports many project types, but no professional tool can promise
+that every AI will finish every project correctly.</p>
 <h2 id="review-a-proposed-change">Review a proposed change<a class="heading-anchor" href="#review-a-proposed-change" aria-label="Link to Review a proposed change">#</a></h2>
 <ol>
-<li>Return to <strong>DevDesk Agent Connector</strong>.</li>
-<li>Find <strong>Review agent proposals</strong>.</li>
-<li>Select <strong>Review</strong>.</li>
-<li>Read the summary.</li>
-<li>Compare <strong>Current file</strong> and <strong>Proposed file</strong>.</li>
-<li>Select one action:
-<ul>
-<li><strong>Cancel</strong> keeps it pending.</li>
-<li><strong>Reject</strong> closes it without changing the file.</li>
-<li><strong>Approve and apply</strong> saves it only if the original file is unchanged.</li>
-</ul>
-</li>
+<li>Return to <strong>DevDesk Agent Connector</strong> and select <strong>Review</strong>.</li>
+<li>Expand every affected file and compare current/proposed content.</li>
+<li>If a conflict appears, ask the agent to reread all targets.</li>
+<li>Optionally select detected verification checks; suggestions are not
+pre-approved.</li>
+<li>Cancel, reject, or select <strong>Approve and apply</strong> for the complete set.</li>
 </ol>
+<p>Recent decisions show status and verification. Verified <strong>Undo</strong> is available
+only while every affected file still matches the approved result.</p>
+<h2 id="android-behavior">Android behavior<a class="heading-anchor" href="#android-behavior" aria-label="Link to Android behavior">#</a></h2>
+<p>Android supports project mapping, redacted reads, context packs, code
+structure, multi-file review, recoverable apply, rollback, and undo when the
+document provider grants the required capabilities. DevDesk does not bundle
+desktop compiler/test toolchains into Android, so verification commands are
+disabled there and must run on a trusted Windows development workspace or
+external worker.</p>
 <h2 id="stop-or-remove-access">Stop or remove access<a class="heading-anchor" href="#stop-or-remove-access" aria-label="Link to Stop or remove access">#</a></h2>
 <p>Select <strong>Stop connector</strong> when the AI no longer needs access.</p>
+<p>Use <strong>Pause</strong> or <strong>Revoke</strong> to stop only one Connected agent. Stopping the
+connector marks all current sessions disconnected.</p>
 <p>Select <strong>Rotate access key</strong> if you copied the configuration to the wrong place or no longer trust an old configuration. Replace the URL in every connected client.</p>
 <p>The server listens only on the device loopback address. Other devices on the
 network cannot use it directly. On Android, this also means the MCP client must
@@ -316,18 +467,44 @@ run on the same Android device.</p>
 client is on the same device and that DevDesk remains open.</li>
 </ol>
 <h3 id="the-ai-says-no-workspace-is-selected">The AI says no workspace is selected<a class="heading-anchor" href="#the-ai-says-no-workspace-is-selected" aria-label="Link to The AI says no workspace is selected">#</a></h3>
-<p>Open a workspace in DevDesk and repeat the request. Only the active workspace is exposed.</p>
-<h3 id="the-ai-cannot-read-a-document">The AI cannot read a document<a class="heading-anchor" href="#the-ai-cannot-read-a-document" aria-label="Link to The AI cannot read a document">#</a></h3>
-<p>Turn on <strong>Share redacted Markdown text</strong>. Use the exact workspace-relative path returned by <code>search_documents</code>.</p>
+<p>Open <strong>Connected agents</strong>, select <strong>Assign workspace</strong>, and choose the intended
+workspace. Opening another workspace does not redirect an existing session.</p>
+<h3 id="two-agents-appear-to-share-a-legacy-session">Two agents appear to share a legacy session<a class="heading-anchor" href="#two-agents-appear-to-share-a-legacy-session" aria-label="Link to Two agents appear to share a legacy session">#</a></h3>
+<p>Update clients shown as <strong>Legacy session</strong> so they return the supplied
+<code>Mcp-Session-Id</code>, reconnect them, and revoke the old legacy session.</p>
+<h3 id="the-ai-cannot-read-a-project-file-or-document">The AI cannot read a project file or document<a class="heading-anchor" href="#the-ai-cannot-read-a-project-file-or-document" aria-label="Link to The AI cannot read a project file or document">#</a></h3>
+<p>Turn on <strong>Share redacted workspace text</strong>. Use the exact workspace-relative path
+returned by <code>search_project_files</code> or <code>search_documents</code>. Credential-like paths,
+generated folders, binary or non-UTF-8 files, files outside the active project
+scope, and reads beyond the enforced limits remain unavailable.</p>
 <h3 id="a-proposal-was-refused">A proposal was refused<a class="heading-anchor" href="#a-proposal-was-refused" aria-label="Link to A proposal was refused">#</a></h3>
-<p>Turn on <strong>Allow review proposals</strong>. If the file changed, ask the AI to read it again and create a fresh proposal.</p>
+<p>Turn on <strong>Allow project change reviews</strong>. If any target changed, ask the AI to
+read every file again and queue a fresh complete proposal. Credential-like,
+generated, dependency-owned, linked, oversized, absolute, and traversal paths
+remain blocked.</p>
+<h3 id="verification-is-disabled">Verification is disabled<a class="heading-anchor" href="#verification-is-disabled" aria-label="Link to Verification is disabled">#</a></h3>
+<p>On Windows, approve execution trust only if you trust the project and install
+its toolchain. On Android, review/apply remains available but compiler and test
+commands must run on a trusted development machine or worker.</p>
 <h3 id="a-scheduled-check-does-not-run">A scheduled check does not run<a class="heading-anchor" href="#a-scheduled-check-does-not-run" aria-label="Link to A scheduled check does not run">#</a></h3>
 <p>Turn on <strong>Allow scheduled read-only checks</strong>, keep the task enabled, and keep
 DevDesk open. Confirm the workspace automation policy still allows read-only
 refresh. Overdue tasks resume when DevDesk reopens.</p>
 <h2 id="privacy-and-cost">Privacy and cost<a class="heading-anchor" href="#privacy-and-cost" aria-label="Link to Privacy and cost">#</a></h2>
 <p>DevDesk does not add analytics, an AI subscription, an API key, or a hosted AI backend.</p>
-<p>Your AI client decides where its prompts and tool results are processed. A cloud AI may send requested workspace context to its provider. A local model may keep processing on your device. Check the client's privacy and pricing before connecting it.</p>
+<p>Exact proposal snapshots and recovery journals stay in private device storage
+and are excluded from portable DevDesk backups. Back up workspace folders
+separately. After reinstall, restore the DevDesk recovery kit, grant folder
+access again, and have the agent reread current files rather than relying on an
+old pending proposal.</p>
+<p>Privacy-safe activity events are recoverable DevDesk data and follow the chosen
+retention. Live credentials and connected state do not return after uninstall
+or app-data removal: agents reconnect, and Android folder grants may need to be
+approved again. Independent data stays independent until imported or assigned.</p>
+<p>Your AI client decides where its prompts and tool results are processed. A cloud
+AI may send requested project maps, redacted source/configuration snippets,
+Markdown, and graph context to its provider. A local model may keep processing
+on your device. Check the client's privacy and pricing before connecting it.</p>
 <p>The connector access key is protected by the device security boundary when
 platform protection is available. Otherwise DevDesk uses a session-only key.</p>
 <p>For the protocol model and security guidance, see the official <a href="https://modelcontextprotocol.io/docs/getting-started/intro" target="_blank" rel="noopener noreferrer">Model Context Protocol documentation</a> and <a href="https://modelcontextprotocol.io/specification/2025-06-18/basic/transports" target="_blank" rel="noopener noreferrer">Streamable HTTP transport specification</a>.</p>
@@ -335,12 +512,14 @@ platform protection is available. Otherwise DevDesk uses a session-only key.</p>
 <ul>
 <li><strong>AI agent:</strong> an AI client that can choose and call tools while completing a task.</li>
 <li><strong>MCP:</strong> Model Context Protocol, a standard way for a client to discover and call tools.</li>
+<li><strong>Agent session:</strong> one revocable client identity pinned to one workspace or
+deliberately left independent.</li>
 <li><strong>Loopback:</strong> a local-only network address that points back to the same device.</li>
 <li><strong>Fingerprint:</strong> a value used to detect whether a file changed after it was read.</li>
 <li><strong>Proposal:</strong> a suggested replacement waiting for your explicit review.</li>
 </ul>
 
-<div class="article-footer"><a class="pager" href="settings-appearance.html"><small>Previous</small><strong>Settings and appearance</strong></a><a class="pager" href="privacy-security.html"><small>Next</small><strong>Privacy and security</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#what-the-connector-adds">What the connector adds</a><a class="level-2" href="#how-graph-nodes-help-an-ai">How graph nodes help an AI</a><a class="level-2" href="#start-the-connector">Start the connector</a><a class="level-2" href="#try-the-agent-ready-demo">Try the Agent-ready demo</a><a class="level-2" href="#choose-permissions">Choose permissions</a><a class="level-3" href="#share-redacted-markdown-text">Share redacted Markdown text</a><a class="level-3" href="#allow-review-proposals">Allow review proposals</a><a class="level-3" href="#allow-scheduled-read-only-checks">Allow scheduled read-only checks</a><a class="level-2" href="#connect-codex">Connect Codex</a><a class="level-2" href="#connect-gemini-cli">Connect Gemini CLI</a><a class="level-2" href="#connect-another-mcp-compatible-agent">Connect another MCP-compatible agent</a><a class="level-3" href="#android-checklist">Android checklist</a><a class="level-2" href="#useful-first-requests">Useful first requests</a><a class="level-2" href="#tools-exposed-by-devdesk">Tools exposed by DevDesk</a><a class="level-2" href="#review-a-proposed-change">Review a proposed change</a><a class="level-2" href="#stop-or-remove-access">Stop or remove access</a><a class="level-2" href="#troubleshooting">Troubleshooting</a><a class="level-3" href="#the-ai-cannot-connect">The AI cannot connect</a><a class="level-3" href="#the-ai-says-no-workspace-is-selected">The AI says no workspace is selected</a><a class="level-3" href="#the-ai-cannot-read-a-document">The AI cannot read a document</a><a class="level-3" href="#a-proposal-was-refused">A proposal was refused</a><a class="level-3" href="#a-scheduled-check-does-not-run">A scheduled check does not run</a><a class="level-2" href="#privacy-and-cost">Privacy and cost</a><a class="level-2" href="#terms">Terms</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div class="article-footer"><a class="pager" href="settings-appearance.html"><small>Previous</small><strong>Settings and appearance</strong></a><a class="pager" href="privacy-security.html"><small>Next</small><strong>Privacy and security</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#what-the-connector-adds">What the connector adds</a><a class="level-2" href="#universal-project-intelligence-and-lower-token-use">Universal project intelligence and lower token use</a><a class="level-2" href="#how-graph-nodes-help-an-ai">How graph nodes help an AI</a><a class="level-2" href="#start-the-connector">Start the connector</a><a class="level-2" href="#agent-operations-and-multiple-workspaces">Agent operations and multiple workspaces</a><a class="level-2" href="#try-the-featured-graph-to-code-demo">Try the featured graph-to-code demo</a><a class="level-2" href="#choose-permissions">Choose permissions</a><a class="level-3" href="#share-redacted-workspace-text">Share redacted workspace text</a><a class="level-3" href="#allow-project-change-reviews">Allow project change reviews</a><a class="level-3" href="#allow-scheduled-read-only-checks">Allow scheduled read-only checks</a><a class="level-2" href="#connect-codex">Connect Codex</a><a class="level-2" href="#connect-gemini-cli">Connect Gemini CLI</a><a class="level-2" href="#connect-another-mcp-compatible-agent">Connect another MCP-compatible agent</a><a class="level-3" href="#android-checklist">Android checklist</a><a class="level-2" href="#useful-first-requests">Useful first requests</a><a class="level-2" href="#tools-exposed-by-devdesk">Tools exposed by DevDesk</a><a class="level-2" href="#professional-coding-and-repair-loop">Professional coding and repair loop</a><a class="level-2" href="#review-a-proposed-change">Review a proposed change</a><a class="level-2" href="#android-behavior">Android behavior</a><a class="level-2" href="#stop-or-remove-access">Stop or remove access</a><a class="level-2" href="#troubleshooting">Troubleshooting</a><a class="level-3" href="#the-ai-cannot-connect">The AI cannot connect</a><a class="level-3" href="#the-ai-says-no-workspace-is-selected">The AI says no workspace is selected</a><a class="level-3" href="#two-agents-appear-to-share-a-legacy-session">Two agents appear to share a legacy session</a><a class="level-3" href="#the-ai-cannot-read-a-project-file-or-document">The AI cannot read a project file or document</a><a class="level-3" href="#a-proposal-was-refused">A proposal was refused</a><a class="level-3" href="#verification-is-disabled">Verification is disabled</a><a class="level-3" href="#a-scheduled-check-does-not-run">A scheduled check does not run</a><a class="level-2" href="#privacy-and-cost">Privacy and cost</a><a class="level-2" href="#terms">Terms</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>

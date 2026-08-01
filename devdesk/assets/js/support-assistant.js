@@ -27,7 +27,7 @@
     ['json', 'format', 'validate', 'minify'],
     ['openapi', 'swagger', 'schema', 'contract'],
     ['remove', 'delete', 'discard'],
-    ['backup', 'restore', 'export', 'copy'],
+    ['backup', 'restore', 'export', 'copy', 'recovery', 'reinstall', 'reconnect'],
   ];
   const synonymMap = new Map();
   const genericActionTerms = new Set([
@@ -36,6 +36,21 @@
   ]);
   const topicRoutes = [
     {
+      terms: ['recovery', 'kit'],
+      url: 'manual/backup-restore.html',
+      answer: 'A Reinstall Recovery Kit restores supported DevDesk-managed data and a sanitized workspace reconnection catalog. It does not contain workspace folders, protected secrets, trust, Android folder permission, or Agent Connector access keys.',
+    },
+    {
+      terms: ['reinstall'],
+      url: 'manual/backup-restore.html',
+      answer: 'Before reinstalling, export a Reinstall Recovery Kit and back up every external workspace folder separately. Import the kit afterward, then reconnect each recorded folder.',
+    },
+    {
+      terms: ['text', 'editor'],
+      url: 'manual/developer-workspaces.html',
+      answer: 'Open a supported project text file from Files. Save updates only the active file with conflict protection; Save As exports an independent copy.',
+    },
+    {
       terms: ['git', 'commit'],
       url: 'manual/diff-git.html',
       answer: 'Yes. DevDesk can create an explicit local commit after you review the staged files. It does not fetch, pull, push, change remotes, run hooks, or manage credentials.',
@@ -43,7 +58,7 @@
     {
       terms: ['agent', 'connector'],
       url: 'manual/agent-connector.html',
-      answer: 'The Agent Connector works only while DevDesk is open, stays on the device loopback address, and keeps its three optional permissions off by default.',
+      answer: 'The Agent Connector works only while DevDesk is open, stays on the device loopback address, and keeps its three optional permissions off by default. Its project map is metadata-only; source, configuration, test, and Markdown content require Share redacted workspace text.',
     },
     {
       terms: ['schedule', 'graph'],
@@ -340,6 +355,7 @@
     const quick = element('div', 'support-quick-questions');
     [
       'How do I create a workspace?',
+      'How do I recover after reinstalling?',
       'Can DevDesk create a Git commit?',
       'How does Android folder access work?',
       'How does the Agent Connector protect files?',

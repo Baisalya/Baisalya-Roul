@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Open, create, preview, and safely save one Markdown file."><meta name="theme-color" content="#5b47e8"><title>Markdown Editor · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Write one portable Markdown file with syntax highlighting, outline, focus, find, preview, and conflict-safe saves."><meta name="theme-color" content="#5b47e8"><title>Markdown Editor · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
   <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
@@ -26,6 +26,8 @@
 <a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
 <a class="" href="../manual/knowledge-workspace.html">Edit workspace Markdown</a>
 <a class="" href="../manual/knowledge-graph.html">Relationships and graph</a>
+<a class="" href="../manual/visual-canvas.html">Visual Canvas</a>
+<a class="" href="../manual/structured-views.html">Structured workspace views</a>
 <a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
 <a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
 <a class="active" href="../manual/markdown-editor.html" aria-current="page">Markdown Editor</a>
@@ -61,7 +63,8 @@
 <a class="" href="../manual/privacy-security.html">Privacy and security</a>
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
-<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Knowledge and Markdown</span></div><div class="doc-meta"><span class="doc-chip">Knowledge and Markdown</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="markdown-editor">Markdown Editor<a class="heading-anchor" href="#markdown-editor" aria-label="Link to Markdown Editor">#</a></h1>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Knowledge and Markdown</span></div><div class="doc-meta"><span class="doc-chip">Knowledge and Markdown</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div>
+<h1 id="markdown-editor">Markdown Editor<a class="heading-anchor" href="#markdown-editor" aria-label="Link to Markdown Editor">#</a></h1>
 <p>Markdown Editor is a focused editor for one Markdown file at a time.</p>
 <h2 id="open-a-file">Open a file<a class="heading-anchor" href="#open-a-file" aria-label="Link to Open a file">#</a></h2>
 <p>Use <strong>Open file</strong> and select a supported Markdown document. DevDesk reads the selected file locally.</p>
@@ -73,7 +76,9 @@
 <li>Confirm replacement if an existing file would be overwritten.</li>
 </ol>
 <h2 id="editor-and-preview">Editor and preview<a class="heading-anchor" href="#editor-and-preview" aria-label="Link to Editor and preview">#</a></h2>
-<p>Wide windows show editor and rendered preview side by side. Narrow Android and freeform layouts stack or simplify the view so text remains readable.</p>
+<p>Choose <strong>Edit</strong>, <strong>Preview</strong>, or <strong>Split</strong>. Wide windows can show source and
+rendered output together. Narrow Android and freeform layouts move secondary
+actions into compact menus so the text remains readable.</p>
 <h2 id="useful-actions">Useful actions<a class="heading-anchor" href="#useful-actions" aria-label="Link to Useful actions">#</a></h2>
 <ul>
 <li>New file</li>
@@ -83,7 +88,13 @@
 <li>Rename internal file</li>
 <li>Delete internal file</li>
 <li>Copy Markdown</li>
+<li>Find and replace</li>
+<li>Outline navigation</li>
+<li>Focus mode</li>
 </ul>
+<p>Markdown syntax is highlighted without changing the plain-text file. The footer
+reports words, characters, cursor position, and save state. Formatting actions
+insert portable Markdown rather than a hidden editor format.</p>
 <h2 id="safety">Safety<a class="heading-anchor" href="#safety" aria-label="Link to Safety">#</a></h2>
 <p>External edits are not silently overwritten. DevDesk tracks unsaved state and uses explicit save flows.</p>
 <h2 id="save-choices">Save choices<a class="heading-anchor" href="#save-choices" aria-label="Link to Save choices">#</a></h2>
@@ -96,6 +107,7 @@
 <p>Use the system picker, edit, then choose a destination when the platform provides read-copy access rather than direct overwrite.</p>
 <h2 id="recommended-workflow-on-windows">Recommended workflow on Windows<a class="heading-anchor" href="#recommended-workflow-on-windows" aria-label="Link to Recommended workflow on Windows">#</a></h2>
 <p>When a selected local file can be safely replaced, DevDesk uses guarded replacement. Network paths, symbolic/reparse paths, permission failures, and external identity changes can block overwrite.</p>
+
 <div class="article-footer"><a class="pager" href="markdown-vault.html"><small>Previous</small><strong>Markdown Vault</strong></a><a class="pager" href="structured-knowledge-okf.html"><small>Next</small><strong>Structured Knowledge and OKF</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#open-a-file">Open a file</a><a class="level-2" href="#create-and-save">Create and save</a><a class="level-2" href="#editor-and-preview">Editor and preview</a><a class="level-2" href="#useful-actions">Useful actions</a><a class="level-2" href="#safety">Safety</a><a class="level-2" href="#save-choices">Save choices</a><a class="level-2" href="#recommended-workflow-on-android">Recommended workflow on Android</a><a class="level-2" href="#recommended-workflow-on-windows">Recommended workflow on Windows</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>

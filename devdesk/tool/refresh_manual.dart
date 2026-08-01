@@ -21,7 +21,7 @@ const _pages = <_Page>[
     slug: 'user-manual',
     title: 'Complete user manual',
     description:
-        'A beginner-first guide to workspaces, planning, Markdown, graph, OKF, APIs, JSON, Git, backup, privacy, and platform help.',
+        'A beginner-first guide to local-first workspaces, focused AI project context, reviewed changes, knowledge, APIs, Git, backup, and platform help.',
   ),
   _Page(
     slug: 'getting-started',
@@ -78,10 +78,28 @@ const _pages = <_Page>[
         'Edit project Markdown with bounded files, conflict checks, context, and derived knowledge.',
   ),
   _Page(
+    slug: 'markdown-editor',
+    title: 'Markdown Editor',
+    description:
+        'Write one portable Markdown file with syntax highlighting, outline, focus, find, preview, and conflict-safe saves.',
+  ),
+  _Page(
     slug: 'knowledge-graph',
     title: 'Relationships and graph',
     description:
         'Explore clean local and workspace relationships, filters, accessible lists, link editing, and undo.',
+  ),
+  _Page(
+    slug: 'structured-views',
+    title: 'Structured workspace views',
+    description:
+        'Compare Markdown-backed work in safe tables, cards, maps, and portable saved views.',
+  ),
+  _Page(
+    slug: 'visual-canvas',
+    title: 'Visual Canvas',
+    description:
+        'Brainstorm with portable JSON Canvas nodes, groups, links, and connections.',
   ),
   _Page(
     slug: 'agent-connector',
@@ -304,6 +322,9 @@ Future<void> _refreshPage(
 
 String _prepareManualTemplate(String source, String slug) {
   const startHeading = '<h2>Start here</h2>';
+  const knowledgeGraphLink =
+      '<a class="" href="../manual/knowledge-graph.html">'
+      'Relationships and graph</a>';
   const safetyHeading = '<h2>Safety and reference</h2>';
   final userManualLink = slug == 'user-manual'
       ? '<a class="active" href="../manual/user-manual.html" '
@@ -322,10 +343,7 @@ String _prepareManualTemplate(String source, String slug) {
               'aria-current="page">AI Agent Connector</a>'
         : '<a class="" href="../manual/agent-connector.html">'
               'AI Agent Connector</a>';
-    source = source.replaceFirst(
-      safetyHeading,
-      '$safetyHeading\n$link',
-    );
+    source = source.replaceFirst(safetyHeading, '$safetyHeading\n$link');
   }
   if (slug == 'agent-connector') {
     source = source.replaceFirst(
@@ -368,9 +386,9 @@ String _prepareManualTemplate(String source, String slug) {
           '<span class="doc-chip">Offline documentation</span>'
           '<span class="doc-chip">Android + Windows</span>',
       '<span>AI Agent Connector</span></div><div class="doc-meta">'
-      '<span class="doc-chip">Safety and reference</span>'
-      '<span class="doc-chip">Local MCP</span>'
-      '<span class="doc-chip">Windows + Android</span>',
+          '<span class="doc-chip">Safety and reference</span>'
+          '<span class="doc-chip">Local MCP</span>'
+          '<span class="doc-chip">Windows + Android</span>',
     );
     source = source.replaceFirst(
       RegExp(r'<div class="article-footer">.*?</div></article>', dotAll: true),
@@ -382,12 +400,44 @@ String _prepareManualTemplate(String source, String slug) {
       '</div></article>',
     );
   }
+  for (final page in const <(String, String)>[
+    ('structured-views', 'Structured workspace views'),
+    ('visual-canvas', 'Visual Canvas'),
+  ]) {
+    final link = slug == page.$1
+        ? '<a class="active" href="../manual/${page.$1}.html" '
+              'aria-current="page">${page.$2}</a>'
+        : '<a class="" href="../manual/${page.$1}.html">${page.$2}</a>';
+    if (!source.contains('>${page.$2}</a>')) {
+      source = source.replaceFirst(
+        knowledgeGraphLink,
+        '$knowledgeGraphLink\n$link',
+      );
+    }
+    if (slug == page.$1) {
+      source = source.replaceFirst(
+        '<a class="" href="../manual/${page.$1}.html">${page.$2}</a>',
+        link,
+      );
+      source = source.replaceFirst(
+        '<a class="active" href="../manual/getting-started.html" '
+            'aria-current="page">Getting started</a>',
+        '<a class="" href="../manual/getting-started.html">Getting started</a>',
+      );
+    } else {
+      source = source.replaceFirst(
+        '<a class="active" href="../manual/${page.$1}.html" '
+            'aria-current="page">${page.$2}</a>',
+        '<a class="" href="../manual/${page.$1}.html">${page.$2}</a>',
+      );
+    }
+  }
   if (!source.contains('>Demo project</a>')) {
     source = source.replaceFirst(
       'href="../downloads.html">Downloads</a>',
       'href="../downloads.html">Downloads</a>\n'
-      '    <a class="nav-demo" href="../downloads.html#agent-demo">'
-      'Demo project</a>',
+          '    <a class="nav-demo" href="../downloads.html#agent-demo">'
+          'Demo project</a>',
     );
   }
   return source

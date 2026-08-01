@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Create, open, validate, and safely manage portable DevDesk projects."><meta name="theme-color" content="#5b47e8"><title>Folders, portability, and scoped Git · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Create, clone, and reopen portable workspaces with bounded files, APIs, and Git."><meta name="theme-color" content="#5b47e8"><title>Folders, portability, and scoped Git · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
   <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
@@ -26,6 +26,8 @@
 <a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
 <a class="" href="../manual/knowledge-workspace.html">Edit workspace Markdown</a>
 <a class="" href="../manual/knowledge-graph.html">Relationships and graph</a>
+<a class="" href="../manual/visual-canvas.html">Visual Canvas</a>
+<a class="" href="../manual/structured-views.html">Structured workspace views</a>
 <a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
 <a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
 <a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
@@ -174,6 +176,27 @@ file or falling back to unrelated global data.</p>
 creation, so an existing file is never replaced. A nested parent folder must
 already exist. Explicitly copy, import, or assign an outside file before using
 it as content in a particular workspace.</p>
+<h3 id="edit-a-project-text-file">Edit a project text file<a class="heading-anchor" href="#edit-a-project-text-file" aria-label="Link to Edit a project text file">#</a></h3>
+<p>The general workspace text editor handles <code>.txt</code>, <code>.log</code>, <code>.xml</code>, <code>.html</code>,
+<code>.css</code>, <code>.js</code>, <code>.ts</code>, <code>.dart</code>, <code>.py</code>, <code>.java</code>, <code>.kt</code>, <code>.swift</code>, <code>.sh</code>, <code>.bat</code>,
+<code>.env</code>, <code>.har</code>, <code>.bru</code>, and <code>.http</code>. Markdown, JSON, YAML, and OpenAPI documents
+continue to use their purpose-built tools by default.</p>
+<ol>
+<li>Open a supported file from <strong>Files</strong>, or choose <strong>Open with â†’ Edit text</strong>.</li>
+<li>Edit or search its decoded text.</li>
+<li>Use <code>Ctrl+S</code> or <strong>Save workspace file</strong> to write only that
+workspace-relative path.</li>
+<li>Use <code>Ctrl+Shift+S</code> or <strong>Save As</strong> to export an independent copy instead.</li>
+</ol>
+<p>Workspace save uses the fingerprint captured when the file was opened and an
+atomic workspace write. If another program changed the file, the stale save is
+refused. DevDesk also warns before leaving with unsaved changes. A read-only
+workspace can export a copy but cannot overwrite the project file.</p>
+<p>Copying the complete text uses likely-secret detection and conservative
+redaction. This is especially important for <code>.env</code>, HTTP, HAR, and source files,
+but automatic redaction cannot recognize every confidential value. <strong>Save as
+Snippet</strong> creates app-managed snippet data rather than replacing the project
+file.</p>
 <p>The earlier <strong>Workspace Hub</strong> remains under <strong>Files → Open explorer</strong>. It provides the bounded project tree, breadcrumb navigation, nested-folder browsing, safe <strong>New file</strong>/<strong>New folder</strong> actions, detailed project capabilities, and exact project-file selection.</p>
 <h3 id="browse-a-real-project-not-a-copied-vault">Browse a real project, not a copied vault<a class="heading-anchor" href="#browse-a-real-project-not-a-copied-vault" aria-label="Link to Browse a real project, not a copied vault">#</a></h3>
 <p>The explorer enumerates metadata inside the selected root and applies the same hidden/generated/excluded-path policy as other project discovery. It does not load every file into memory. Directories appear before files. Search can find a nested path; selecting a folder opens it, while selecting a file makes that project-relative path available to compatible tools.</p>
@@ -321,10 +344,16 @@ unsupported platform, repository ready, and unexpected failure. A normal new
 workspace therefore receives guided setup rather than a generic red error. If
 a parent repository is detected, DevDesk uses it and refuses to create a nested
 repository. Trust remains independent for every workspace.</p>
+<p>The ready workbench separates <strong>Changes</strong>, <strong>History</strong>, and <strong>Branches</strong>.
+Changes provides scoped previews, inline or wide side-by-side differences,
+stage/unstage, recovery-patch-backed restore, and explicit local commit.
+History filters by message, author, or hash and shows each selected commit's
+scoped files and patch. Branches displays local branch, upstream,
+ahead/behind, and remote information without fetching or changing it.</p>
 <p>Opening the manifest never grants trust or runs Git.</p>
 <p>Removing a workspace registration never deletes its project folder.</p>
 
-<div class="article-footer"><a class="pager" href="interface-tour.html"><small>Previous</small><strong>Interface tour</strong></a><a class="pager" href="project-folder-structure.html"><small>Next</small><strong>Create a project knowledge structure</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#create-a-new-project">Create a new project</a><a class="level-2" href="#open-an-existing-folder">Open an existing folder</a><a class="level-3" href="#add-project-devdesk-and-open">Add project.devdesk and open</a><a class="level-3" href="#open-once-without-writing">Open once without writing</a><a class="level-3" href="#open-an-existing-manifest">Open an existing manifest</a><a class="level-2" href="#what-project-devdesk-contains">What project.devdesk contains</a><a class="level-2" href="#canonical-example">Canonical example</a><a class="level-2" href="#unified-workspace-and-advanced-explorer">Unified workspace and advanced explorer</a><a class="level-3" href="#browse-a-real-project-not-a-copied-vault">Browse a real project, not a copied vault</a><a class="level-3" href="#create-a-file-or-folder">Create a file or folder</a><a class="level-3" href="#recover-from-an-incompatible-tool-selection">Recover from an incompatible tool selection</a><a class="level-2" href="#git-clone-and-portable-reopen">Git clone and portable reopen</a><a class="level-2" href="#project-api-artifact">Project API artifact</a><a class="level-2" href="#automation-modes-and-recovery">Automation modes and recovery</a><a class="level-2" href="#android-access">Android access</a><a class="level-2" href="#windows-folders-and-git">Windows folders and Git</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div class="article-footer"><a class="pager" href="interface-tour.html"><small>Previous</small><strong>Interface tour</strong></a><a class="pager" href="project-folder-structure.html"><small>Next</small><strong>Create a project knowledge structure</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#create-a-new-project">Create a new project</a><a class="level-2" href="#open-an-existing-folder">Open an existing folder</a><a class="level-3" href="#add-project-devdesk-and-open">Add project.devdesk and open</a><a class="level-3" href="#open-once-without-writing">Open once without writing</a><a class="level-3" href="#open-an-existing-manifest">Open an existing manifest</a><a class="level-2" href="#what-project-devdesk-contains">What project.devdesk contains</a><a class="level-2" href="#canonical-example">Canonical example</a><a class="level-2" href="#unified-workspace-and-advanced-explorer">Unified workspace and advanced explorer</a><a class="level-3" href="#edit-a-project-text-file">Edit a project text file</a><a class="level-3" href="#browse-a-real-project-not-a-copied-vault">Browse a real project, not a copied vault</a><a class="level-3" href="#create-a-file-or-folder">Create a file or folder</a><a class="level-3" href="#recover-from-an-incompatible-tool-selection">Recover from an incompatible tool selection</a><a class="level-2" href="#git-clone-and-portable-reopen">Git clone and portable reopen</a><a class="level-2" href="#project-api-artifact">Project API artifact</a><a class="level-2" href="#automation-modes-and-recovery">Automation modes and recovery</a><a class="level-2" href="#android-access">Android access</a><a class="level-2" href="#windows-folders-and-git">Windows folders and Git</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>

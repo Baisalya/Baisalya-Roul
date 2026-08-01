@@ -28,11 +28,11 @@
   <title>DevDesk - One folder. Every view. Every tool. Still your files.</title>
   <link rel="icon" type="image/png" sizes="64x64" href="assets/img/devdesk-logo-64.png">
   <link rel="apple-touch-icon" sizes="192x192" href="assets/img/devdesk-logo-192.png">
-  <link rel="manifest" href="site.webmanifest?v=20260801.2">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260801.2">
-  <script defer src="assets/js/site-config.js?v=20260801.2"></script>
-  <script defer src="assets/js/search-index.js?v=20260801.2"></script>
-  <script defer src="assets/js/app.js?v=20260801.2"></script>
+  <link rel="manifest" href="site.webmanifest?v=20260801.5">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260801.5">
+  <script defer src="assets/js/site-config.js?v=20260801.5"></script>
+  <script defer src="assets/js/search-index.js?v=20260801.5"></script>
+  <script defer src="assets/js/app.js?v=20260801.5"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -48,7 +48,7 @@
       <a href="#why">Why DevDesk</a>
       <a href="manual/user-manual.html">Manual</a>
       <a href="downloads.html">Downloads</a>
-      <a class="nav-demo" href="downloads.html#agent-demo">Demo project</a>
+      <a class="nav-demo" href="downloads.html#agent-demo">Demos</a>
       <a href="https://baisalya.github.io/devdesk-support/" target="_blank" rel="noopener">Support</a>
     </nav>
     <div class="header-actions">
@@ -114,6 +114,66 @@
       </div>
     </section>
 
+    <section id="ai-ready" class="section home-usp-section" aria-labelledby="home-usp-heading">
+      <div class="home-usp-shell">
+        <div class="home-usp-copy">
+          <span class="home-usp-kicker">AI-ready local projects</span>
+          <h2 id="home-usp-heading">Better project context for your AI. Final control for you.</h2>
+          <p>
+            Connect one or more MCP-compatible agents. Every session stays
+            pinned to its assigned workspace while DevDesk shows who is
+            connected, what observable tool is running, and which proposal
+            needs your review.
+          </p>
+          <div class="home-usp-actions">
+            <a class="btn primary" href="manual/agent-connector.html">Explore the AI Agent Connector</a>
+            <a class="btn" href="downloads.html#agent-demo">Watch the featured demo</a>
+          </div>
+          <ul class="home-usp-proof" aria-label="AI Agent Connector safeguards">
+            <li>Isolated workspace sessions</li>
+            <li>Live privacy-safe activity</li>
+            <li>Token-budgeted context</li>
+            <li>No direct project writes</li>
+            <li>Conflict checks and undo</li>
+          </ul>
+        </div>
+
+        <div class="home-usp-workflow" aria-label="DevDesk AI-assisted project workflow">
+          <div class="home-usp-workflow-bar">
+            <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+            <strong>Focused project workflow</strong>
+          </div>
+          <ol>
+            <li>
+              <span aria-hidden="true">01</span>
+              <div>
+                <strong>Understand the project</strong>
+                <small>Relevant source, code structure, tests, Markdown, and graph context.</small>
+              </div>
+              <em>Read only</em>
+            </li>
+            <li>
+              <span aria-hidden="true">02</span>
+              <div>
+                <strong>Prepare the complete change</strong>
+                <small>A fingerprinted multi-file proposal with optional verification choices.</small>
+              </div>
+              <em>Review</em>
+            </li>
+            <li class="home-usp-decision">
+              <span aria-hidden="true">03</span>
+              <div>
+                <strong>You decide what happens</strong>
+                <small>Compare every file, approve selected checks, apply safely, or undo.</small>
+              </div>
+              <em>Your control</em>
+            </li>
+          </ol>
+          <p><span aria-hidden="true">●</span> Your files remain in the workspace you own.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="why" class="section">
       <div class="section-header">
         <span class="eyebrow">Why DevDesk</span>
@@ -130,8 +190,8 @@
           <img class="illustration" src="assets/img/knowledge.png" alt="">
           <h3>Work your way</h3>
           <p>
-            See the same task, note, goal, meeting, or decision as a list, board,
-            calendar, timeline, outline, file, or relationship.
+            See the same task, note, goal, meeting, or decision as a list, table,
+            cards, board, calendar, timeline, outline, map, or relationship.
           </p>
         </article>
         <article class="card">
@@ -146,8 +206,8 @@
           <img class="illustration" src="assets/img/api.png" alt="">
           <h3>Grow without moving</h3>
           <p>
-            Add connected Markdown, JSON, OpenAPI, saved API testing, OKF checks,
-            Diff, and workspace-scoped Git when the project grows.
+            Add connected Markdown, portable Visual Canvas, JSON, OpenAPI, saved
+            API testing, OKF checks, Diff, and workspace-scoped Git as needed.
           </p>
         </article>
       </div>
@@ -255,7 +315,7 @@
             <tr>
               <td>Ways to see work</td>
               <td>Usually centred on one product category</td>
-              <td>Tasks, notes, files, timeline, outline, and relationships</td>
+              <td>Table, cards, planning views, map, graph, and Visual Canvas</td>
             </tr>
             <tr>
               <td>Developer context</td>
@@ -324,6 +384,12 @@
         <a class="home-doc-link" href="manual/knowledge-graph.html">
           <div><strong>Relationships and graph</strong><span>Use clean connections, filters, list fallback, link editing, and undo.</span></div>
         </a>
+        <a class="home-doc-link" href="manual/structured-views.html">
+          <div><strong>Structured workspace views</strong><span>Compare the same Markdown-backed work in tables, cards, maps, and portable saved views.</span></div>
+        </a>
+        <a class="home-doc-link" href="manual/visual-canvas.html">
+          <div><strong>Visual Canvas</strong><span>Brainstorm in the portable JSON Canvas format on Windows or Android.</span></div>
+        </a>
         <a class="home-doc-link" href="manual/agent-connector.html">
           <div><strong>AI Agent Connector</strong><span>Connect Codex or Gemini CLI to selected workspace context with review-only changes.</span></div>
         </a>
@@ -369,22 +435,23 @@
     <section class="section agent-promo-section">
       <div class="agent-promo">
         <div>
-          <span class="eyebrow">See it in action</span>
-          <h2>One polished demo. Your preferred AI client.</h2>
+          <span class="eyebrow">Featured graph-to-code demo</span>
+          <h2>One Markdown task. One prompt. Reviewed code.</h2>
           <p>
-            Explore a ready-made DevDesk workspace where linked Markdown tells
-            Codex or Gemini CLI what matters, code changes stay small and tested,
-            and Markdown changes wait for your review.
+            Watch Codex follow a DevDesk knowledge graph from one task to the
+            relevant brief, architecture, source, and tests. Then download the
+            exact starter workspace and reproduce the review-before-write flow
+            on your own device.
           </p>
           <div class="button-row">
-            <a class="btn primary" href="downloads.html#agent-demo">Download the agent-ready demo</a>
-            <a class="btn" href="manual/agent-connector.html#try-the-agent-ready-demo">How it works</a>
+            <a class="btn primary" href="downloads.html#agent-demo">Watch Demo 1</a>
+            <a class="btn" href="downloads.html#agent-ready-demo">Explore Demo 2</a>
           </div>
         </div>
         <ul class="agent-promo-list">
-          <li><strong>Linked brief</strong><span>Goals, architecture, tasks, and release review in one graph.</span></li>
-          <li><strong>Clear instructions</strong><span>Included <code>AGENTS.md</code> and <code>GEMINI.md</code> files guide each client.</span></li>
-          <li><strong>Checkable result</strong><span>Read-only context first, standard-library tests next, explicit Markdown review last.</span></li>
+          <li><strong>Task-linked graph</strong><span>One Markdown entry point leads to the exact planning and architecture context.</span></li>
+          <li><strong>Bounded code understanding</strong><span>The agent inspects the relevant source and tests without an uncontrolled repository dump.</span></li>
+          <li><strong>Approval before write</strong><span>Review the complete two-file proposal, apply it recoverably, or reject it.</span></li>
         </ul>
       </div>
     </section>

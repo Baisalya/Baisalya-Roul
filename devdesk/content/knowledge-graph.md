@@ -28,10 +28,16 @@ The graph keeps dense projects readable:
 - Use **+** and **-** or a canvas gesture to zoom.
 - Use **Fit view** after changing filters, depth, or window size.
 - Drag a node to save a preferred device-local position.
+- With the graph focused, use arrow keys to select a nearby node, Enter to open
+  it, and Escape to clear selection.
 
 When zoomed far out, non-selected labels collapse into compact type-colored nodes. The selected note remains labeled. Hover a compact node to see its title, path, and connection count.
 
 ## Display controls
+
+The header reports visible notes, links, and orphans. **Options** always includes
+a legend, so node meaning is not communicated by color alone. Active filters
+remain visible with a **Clear filters** action, including in an empty result.
 
 | Control | Effect |
 |---|---|

@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Resolve project, manifest, graph, automation, Git, file, API, and layout problems."><meta name="theme-color" content="#5b47e8"><title>Troubleshooting · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Resolve workspace, manifest, graph, automation, Git, file, API, and layout problems."><meta name="theme-color" content="#5b47e8"><title>Troubleshooting · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
   <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
@@ -26,6 +26,8 @@
 <a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
 <a class="" href="../manual/knowledge-workspace.html">Edit workspace Markdown</a>
 <a class="" href="../manual/knowledge-graph.html">Relationships and graph</a>
+<a class="" href="../manual/visual-canvas.html">Visual Canvas</a>
+<a class="" href="../manual/structured-views.html">Structured workspace views</a>
 <a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
 <a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
 <a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
@@ -110,16 +112,27 @@ with</strong> for deliberate comparison.</p>
 <li>Open <strong>Review changes</strong> for a queued plan.</li>
 <li>Use <strong>Undo</strong> only while affected files still match the applied result.</li>
 </ul>
-<h2 id="git-status-is-unavailable">Git status is unavailable<a class="heading-anchor" href="#git-status-is-unavailable" aria-label="Link to Git status is unavailable">#</a></h2>
+<h2 id="source-control-is-unavailable">Source control is unavailable<a class="heading-anchor" href="#source-control-is-unavailable" aria-label="Link to Source control is unavailable">#</a></h2>
 <ul>
 <li>Use an eligible local Windows project.</li>
-<li>Confirm the selected workspace is inside the intended Git repository.</li>
+<li>Open <strong>Developer tools → Source control</strong> and approve device-local execution
+trust only after checking the displayed folder. DevDesk runs no Git command
+before this approval.</li>
+<li>If <strong>Git is not installed</strong> appears, use the official Git for Windows action,
+install it, then select <strong>Check again</strong>.</li>
+<li>If <strong>Source control is not set up</strong> appears, initialize only when the exact
+displayed workspace should receive its own <code>.git</code> metadata. No file is staged
+or committed by initialization.</li>
+<li>Confirm the selected workspace is inside the intended Git repository after
+setup.</li>
 <li>If Git belongs to a parent folder, confirm the Git page shows the expected repository-relative workspace scope.</li>
 <li>Files outside that scope are intentionally absent and cannot be staged or unstaged from the workspace.</li>
-<li>Open <strong>Developer tools → Git status</strong> and grant device-local execution trust
-only after reviewing the displayed workspace boundary.</li>
-<li>Confirm <code>git</code> is installed.</li>
-<li>Refresh before stage or unstage.</li>
+<li>Refresh before stage, unstage, restore, or commit when another Git client has
+changed repository state.</li>
+<li>Before a DevDesk commit inside a parent repository, confirm in your normal Git
+client that unrelated parent files are not already staged.</li>
+<li>On Android, use safe file editing or Compare &amp; Diff, then open the same folder
+in Windows DevDesk for the Git workbench.</li>
 </ul>
 <h2 id="api-request-fails">API request fails<a class="heading-anchor" href="#api-request-fails" aria-label="Link to API request fails">#</a></h2>
 <ul>
@@ -153,6 +166,9 @@ JSON.</li>
 <li>Avoid invalid names and paths.</li>
 <li>New-file and new-folder creation never replaces an existing path; choose another name.</li>
 <li>Keep Android document-tree access active.</li>
+<li>For a workspace text file, reopen it when the conflict-protection fingerprint
+is stale. Use <strong>Save As</strong> when the workspace is read-only or you need an
+independent copy.</li>
 </ul>
 <h2 id="ui-looks-cramped">UI looks cramped<a class="heading-anchor" href="#ui-looks-cramped" aria-label="Link to UI looks cramped">#</a></h2>
 <p>Resize the Android freeform or Windows window, close optional panels, or keep advanced controls collapsed. DevDesk supports responsive layouts rather than requiring one fixed orientation.</p>
@@ -170,7 +186,14 @@ again.</li>
 <p>If a tool says no workspace is selected, open a workspace and repeat the request. If document reading or proposals are refused, enable only the required permission.</p>
 <p>If approval fails, keep the newer Markdown file and ask the agent to read it again.</p>
 <h2 id="data-reset-or-recovery">Data reset or recovery<a class="heading-anchor" href="#data-reset-or-recovery" aria-label="Link to Data reset or recovery">#</a></h2>
-<p>Export a Settings backup before a major change. Clear All Data removes DevDesk-private records but does not delete external project folders.</p>
+<p>Export <strong>Settings → Data backup → Export Reinstall Recovery Kit</strong> before a
+major change or uninstall, and separately back up the external workspace
+folders. After import, open <strong>Reconnect Recorded Workspaces</strong>, review the
+location hints, and select <strong>Reconnect a workspace</strong>. Repeat for each folder.
+Older backups may not contain a reconnection catalog.</p>
+<p>Clear All Data removes DevDesk-private records but does not delete external
+project folders. Protected secrets, permission URIs, execution trust, and Agent
+Connector access keys are not restored by a recovery kit.</p>
 <h2 id="windows-manifest-launch-opens-the-wrong-state">Windows manifest launch opens the wrong state<a class="heading-anchor" href="#windows-manifest-launch-opens-the-wrong-state" aria-label="Link to Windows manifest launch opens the wrong state">#</a></h2>
 <ul>
 <li>Confirm the selected filename is exactly <code>project.devdesk</code>.</li>
@@ -178,7 +201,7 @@ again.</li>
 <li>Open the manifest again; a running supported build forwards it to the existing main window.</li>
 </ul>
 
-<div class="article-footer"><a class="pager" href="keyboard-shortcuts.html"><small>Previous</small><strong>Keyboard shortcuts and accessibility</strong></a><a class="pager" href="faq.html"><small>Next</small><strong>Frequently asked questions</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#a-project-does-not-open">A project does not open</a><a class="level-2" href="#workspace-shows-no-files-or-tools">Workspace shows no files or tools</a><a class="level-2" href="#graph-is-empty-cluttered-or-outdated">Graph is empty, cluttered, or outdated</a><a class="level-2" href="#a-managed-plan-cannot-apply">A managed plan cannot apply</a><a class="level-2" href="#git-status-is-unavailable">Git status is unavailable</a><a class="level-2" href="#api-request-fails">API request fails</a><a class="level-2" href="#check-for-updates-cannot-finish">Check for Updates cannot finish</a><a class="level-2" href="#portable-api-workspace-does-not-update">Portable API workspace does not update</a><a class="level-2" href="#a-file-cannot-be-saved">A file cannot be saved</a><a class="level-2" href="#ui-looks-cramped">UI looks cramped</a><a class="level-2" href="#ai-agent-connector-does-not-connect">AI Agent Connector does not connect</a><a class="level-2" href="#data-reset-or-recovery">Data reset or recovery</a><a class="level-2" href="#windows-manifest-launch-opens-the-wrong-state">Windows manifest launch opens the wrong state</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div class="article-footer"><a class="pager" href="keyboard-shortcuts.html"><small>Previous</small><strong>Keyboard shortcuts and accessibility</strong></a><a class="pager" href="faq.html"><small>Next</small><strong>Frequently asked questions</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#a-project-does-not-open">A project does not open</a><a class="level-2" href="#workspace-shows-no-files-or-tools">Workspace shows no files or tools</a><a class="level-2" href="#graph-is-empty-cluttered-or-outdated">Graph is empty, cluttered, or outdated</a><a class="level-2" href="#a-managed-plan-cannot-apply">A managed plan cannot apply</a><a class="level-2" href="#source-control-is-unavailable">Source control is unavailable</a><a class="level-2" href="#api-request-fails">API request fails</a><a class="level-2" href="#check-for-updates-cannot-finish">Check for Updates cannot finish</a><a class="level-2" href="#portable-api-workspace-does-not-update">Portable API workspace does not update</a><a class="level-2" href="#a-file-cannot-be-saved">A file cannot be saved</a><a class="level-2" href="#ui-looks-cramped">UI looks cramped</a><a class="level-2" href="#ai-agent-connector-does-not-connect">AI Agent Connector does not connect</a><a class="level-2" href="#data-reset-or-recovery">Data reset or recovery</a><a class="level-2" href="#windows-manifest-launch-opens-the-wrong-state">Windows manifest launch opens the wrong state</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>

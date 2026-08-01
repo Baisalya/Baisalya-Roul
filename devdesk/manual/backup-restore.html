@@ -26,6 +26,8 @@
 <a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
 <a class="" href="../manual/knowledge-workspace.html">Edit workspace Markdown</a>
 <a class="" href="../manual/knowledge-graph.html">Relationships and graph</a>
+<a class="" href="../manual/visual-canvas.html">Visual Canvas</a>
+<a class="" href="../manual/structured-views.html">Structured workspace views</a>
 <a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
 <a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
 <a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
@@ -80,7 +82,10 @@ connector access keys are excluded.</p>
 <li>Choose <strong>Replace</strong> or <strong>Merge</strong>.</li>
 <li>Confirm the operation.</li>
 <li>Reopen important tools and verify their state.</li>
-<li>Review <strong>Reconnect external workspaces</strong> and select each original folder.</li>
+<li>Open <strong>Reconnect Recorded Workspaces</strong>.</li>
+<li>Review the workspace names and location hints, then select <strong>Reconnect a
+workspace</strong>.</li>
+<li>Select the original folder. Repeat for any other recorded workspace.</li>
 <li>Re-enter protected secrets and re-approve trust only when needed.</li>
 </ol>
 <p>Imports are staged and use rollback protection if mutation fails.</p>
@@ -89,17 +94,34 @@ connector access keys are excluded.</p>
 secrets remain separate. The recovery kit records a workspace ID, name,
 portable status, platform, and human-readable location hint; it does not copy
 the folder or restore operating-system permission grants.</p>
+<p>The current version-3 recovery format includes the reconnection catalog. Older
+supported backups can still import their independent records, but they may not
+contain a workspace list; reconnect those folders manually. The stored
+reconnection list is replaced by the catalog from the most recently imported
+kit, even when the independent records are merged.</p>
 <h2 id="before-uninstalling-on-android-or-windows">Before uninstalling on Android or Windows<a class="heading-anchor" href="#before-uninstalling-on-android-or-windows" aria-label="Link to Before uninstalling on Android or Windows">#</a></h2>
+<p>Settings shows a <strong>Recovery readiness</strong> card with the date of the last completed
+file export and the number of registered external workspaces. Open its
+<strong>Pre-uninstall checklist</strong> before removing the app.</p>
 <ol>
-<li>Open <strong>Settings → Data backup → Export Reinstall Recovery Kit</strong>.</li>
+<li>Open <strong>Settings &gt; Data backup &gt; Export Reinstall Recovery Kit</strong>.</li>
 <li>Save the kit outside DevDesk and verify that the file exists.</li>
 <li>Back up workspace folders independently using a normal file copy or Git.</li>
 <li>After reinstall, import the kit.</li>
-<li>Select <strong>Reconnect a workspace</strong> for every recorded folder. Android always
-requires the folder permission again.</li>
+<li>Open <strong>Reconnect Recorded Workspaces</strong>, then select <strong>Reconnect a
+workspace</strong> for every recorded folder. Windows requires you to select the
+folder again; Android also requires the system folder permission again.</li>
 </ol>
 <p>An app cannot safely create a last-minute backup after the operating system has
 already started uninstalling it. Export first.</p>
+<h2 id="windows-and-android-handoff">Windows and Android handoff<a class="heading-anchor" href="#windows-and-android-handoff" aria-label="Link to Windows and Android handoff">#</a></h2>
+<p>The recovery kit restores supported independent DevDesk data and a reconnection
+catalog; it does not move external project folders. Copy or sync those folders
+separately, reopen <code>project.devdesk</code>, and grant permission again.</p>
+<p>Android supports editing, graph, Canvas, agent context, and reviewed proposals.
+Windows provides local Git CLI actions and allowlisted verification adapters
+after explicit workspace execution trust. Continue verification on Windows when
+a mobile change requires project commands.</p>
 <h2 id="safety">Safety<a class="heading-anchor" href="#safety" aria-label="Link to Safety">#</a></h2>
 <p>Keep backups private. Redaction cannot guarantee that every confidential value is recognized.</p>
 <h2 id="before-a-major-operation">Before a major operation<a class="heading-anchor" href="#before-a-major-operation" aria-label="Link to Before a major operation">#</a></h2>
@@ -117,7 +139,7 @@ already started uninstalling it. Export first.</p>
 </ul>
 <p>Always read the preview because conflicts and duplicate identifiers can produce different outcomes.</p>
 
-<div class="article-footer"><a class="pager" href="snippets-notes.html"><small>Previous</small><strong>Snippets and Notes</strong></a><a class="pager" href="settings-appearance.html"><small>Next</small><strong>Settings and appearance</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#export">Export</a><a class="level-2" href="#import">Import</a><a class="level-2" href="#what-a-backup-does-not-include">What a backup does not include</a><a class="level-2" href="#before-uninstalling-on-android-or-windows">Before uninstalling on Android or Windows</a><a class="level-2" href="#safety">Safety</a><a class="level-2" href="#before-a-major-operation">Before a major operation</a><a class="level-2" href="#replace-versus-merge">Replace versus merge</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div class="article-footer"><a class="pager" href="snippets-notes.html"><small>Previous</small><strong>Snippets and Notes</strong></a><a class="pager" href="settings-appearance.html"><small>Next</small><strong>Settings and appearance</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#export">Export</a><a class="level-2" href="#import">Import</a><a class="level-2" href="#what-a-backup-does-not-include">What a backup does not include</a><a class="level-2" href="#before-uninstalling-on-android-or-windows">Before uninstalling on Android or Windows</a><a class="level-2" href="#windows-and-android-handoff">Windows and Android handoff</a><a class="level-2" href="#safety">Safety</a><a class="level-2" href="#before-a-major-operation">Before a major operation</a><a class="level-2" href="#replace-versus-merge">Replace versus merge</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>

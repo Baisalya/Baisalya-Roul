@@ -16,10 +16,10 @@
   <meta property="og:image" content="assets/img/devdesk-logo-512.png">
   <title>Downloads - DevDesk</title>
   <link rel="icon" type="image/png" sizes="64x64" href="assets/img/devdesk-logo-64.png">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260801.2">
-  <script defer src="assets/js/site-config.js?v=20260801.2"></script>
-  <script defer src="assets/js/search-index.js?v=20260801.2"></script>
-  <script defer src="assets/js/app.js?v=20260801.2"></script>
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260801.5">
+  <script defer src="assets/js/site-config.js?v=20260801.5"></script>
+  <script defer src="assets/js/search-index.js?v=20260801.5"></script>
+  <script defer src="assets/js/app.js?v=20260801.5"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -41,7 +41,7 @@
       <a href="index.html">Home</a>
       <a href="manual/user-manual.html">Manual</a>
       <a class="active" href="downloads.html" aria-current="page">Downloads</a>
-      <a class="nav-demo" href="#agent-demo">Demo project</a>
+      <a class="nav-demo" href="#agent-demo">Demos</a>
       <a
         href="https://baisalya.github.io/devdesk-support/"
         target="_blank"
@@ -143,7 +143,91 @@
       </div>
     </section>
 
-    <section id="agent-demo" class="section agent-demo-section" aria-labelledby="agent-demo-heading">
+    <section id="agent-demo" class="section featured-demo-section" aria-labelledby="featured-demo-heading">
+      <div class="featured-demo-shell">
+        <header class="featured-demo-header">
+          <div>
+            <span class="featured-demo-badge">Featured Demo 1</span>
+            <span class="eyebrow">Recorded end-to-end workflow</span>
+            <h2 id="featured-demo-heading">One Markdown task. One prompt. Reviewed code.</h2>
+            <p>
+              Watch Codex use DevDesk to follow a linked project graph, build a
+              bounded context pack, prepare a two-file proposal, and wait for
+              human approval before anything is written.
+            </p>
+          </div>
+          <ul class="featured-demo-proof" aria-label="Featured demo highlights">
+            <li><strong>8</strong><span>linked notes</span></li>
+            <li><strong>2</strong><span>proposed files</span></li>
+            <li><strong>1</strong><span>required approval</span></li>
+          </ul>
+        </header>
+
+        <div class="featured-demo-layout">
+          <div class="featured-demo-media">
+            <video
+              id="featured-agent-demo-video"
+              class="featured-demo-video"
+              controls
+              preload="metadata"
+              playsinline
+              poster="assets/img/devdesk-tiny-multi-agent-graph-demo-poster.jpg"
+              data-demo-video
+            >
+              <source src="assets/media/devdesk-tiny-multi-agent-graph-demo.mp4" type="video/mp4">
+              Your browser cannot play this video. Download the workspace and follow the written steps instead.
+            </video>
+
+            <div class="demo-language-panel" data-demo-language-panel>
+              <div class="demo-language-heading">
+                <div>
+                  <span>Narration language</span>
+                  <strong data-demo-track-label>Silent demo</strong>
+                </div>
+                <span class="status" data-demo-audio-status>Voice-overs coming soon</span>
+              </div>
+              <div class="demo-language-options" role="group" aria-label="Choose narration language">
+                <button type="button" data-demo-track="" data-track-name="Silent demo" aria-pressed="true">Silent</button>
+                <button type="button" data-demo-track="assets/audio/devdesk-demo-en.mp3" data-track-name="English" aria-pressed="false" disabled>English <small>Coming soon</small></button>
+                <button type="button" data-demo-track="assets/audio/devdesk-demo-hi-en.mp3" data-track-name="Hinglish" aria-pressed="false" disabled>Hinglish <small>Coming soon</small></button>
+                <button type="button" data-demo-track="assets/audio/devdesk-demo-or-en.mp3" data-track-name="Odia + English" aria-pressed="false" disabled>ଓଡ଼ିଆ + English <small>Coming soon</small></button>
+              </div>
+              <label class="demo-volume-control">
+                <span>Narration volume</span>
+                <input type="range" min="0" max="1" step="0.05" value="1" data-demo-volume disabled>
+              </label>
+              <p class="demo-language-note" role="status" aria-live="polite" data-demo-track-status>
+                The video is silent today. English, Hinglish, and Odia-English tracks will activate automatically after they are uploaded.
+              </p>
+            </div>
+          </div>
+
+          <aside class="featured-demo-guide" aria-label="Reproduce the featured demo">
+            <span class="eyebrow">Download and reproduce</span>
+            <h3>Run the same task in your own DevDesk.</h3>
+            <ol>
+              <li><span>1</span><div><strong>Extract the workspace</strong><p>Open <code>project.devdesk</code> from the downloaded folder.</p></div></li>
+              <li><span>2</span><div><strong>Inspect the task graph</strong><p>Start at <code>tasks/ADD-PERCENTAGE.md</code> and follow its linked context.</p></div></li>
+              <li><span>3</span><div><strong>Connect your agent</strong><p>Use the local MCP connector and send the included single prompt.</p></div></li>
+              <li><span>4</span><div><strong>Review before write</strong><p>Compare the complete two-file proposal, then approve or reject it.</p></div></li>
+            </ol>
+            <div class="featured-demo-actions">
+              <a class="btn primary" href="assets/downloads/devdesk-tiny-multi-agent-graph-demo.zip" download>Download Demo 1 ZIP</a>
+              <a class="btn" href="manual/agent-connector.html#try-the-featured-graph-to-code-demo">Open the setup guide</a>
+            </div>
+            <p class="featured-demo-safety">The download contains no connector URL, access key, AI account, dependency, or cloud copy of your project.</p>
+          </aside>
+        </div>
+
+        <div class="featured-demo-outcomes" aria-label="What the featured demo proves">
+          <article><span>01</span><div><strong>Graph-guided understanding</strong><p>The task leads the agent to the brief, architecture, workflow, and review rules.</p></div></article>
+          <article><span>02</span><div><strong>Bounded context</strong><p>The agent reads the exact source and tests instead of receiving an uncontrolled repository dump.</p></div></article>
+          <article><span>03</span><div><strong>Observable and reversible</strong><p>Activity is visible, proposals are conflict-checked, and approved changes retain an Undo path.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="agent-ready-demo" class="section agent-demo-section secondary-demo-section" aria-labelledby="agent-demo-heading">
       <div class="demo-spotlight">
         <div class="demo-preview">
           <img
@@ -151,13 +235,13 @@
             alt="DevDesk Knowledge graph showing linked planning notes, tasks, and code context"
           >
           <div class="demo-preview-caption">
-            <span class="status available">Included demo</span>
+            <span class="status available">Demo 2</span>
             <strong>Linked Markdown becomes usable project context.</strong>
           </div>
         </div>
         <div class="demo-copy">
-          <span class="eyebrow">Agent-ready workspace demo</span>
-          <h2 id="agent-demo-heading">See an agent understand the plan before it changes code.</h2>
+          <span class="eyebrow">Demo 2 · Guided workspace practice</span>
+          <h2 id="agent-demo-heading">Continue with the original agent-ready workspace.</h2>
           <p>
             Download a small, local-first workspace with linked Markdown, a
             tested Python task, and clear instructions for Codex and Gemini
@@ -170,7 +254,7 @@
           </ul>
           <div class="button-row">
             <a class="btn primary" href="assets/downloads/devdesk-agent-ready-workspace-demo.zip" download>Download the free demo ZIP</a>
-            <a class="btn" href="manual/agent-connector.html#try-the-agent-ready-demo">Read the setup guide</a>
+            <a class="btn" href="manual/agent-connector.html#try-the-featured-graph-to-code-demo">Read the setup guide</a>
           </div>
           <p class="demo-note">No access key, AI account, or cloud copy of your project is included in the download.</p>
         </div>

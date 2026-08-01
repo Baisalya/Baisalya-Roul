@@ -1,0 +1,16 @@
+{
+  "format": "devdesk.workspace",
+  "schemaVersion": 1,
+  "projectId": "0adac902-648a-4fc5-b2ad-a3444c7356ac",
+  "name": "Tiny Multi-Agent Graph Demo",
+  "root": ".",
+  "knowledge": {
+    "roots": ["."],
+    "okf": "detect"
+  },
+  "tools": {
+    "markdown": {
+      "enabled": true
+    }
+  }
+}

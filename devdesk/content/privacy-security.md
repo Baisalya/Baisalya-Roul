@@ -17,10 +17,14 @@ the local device loopback address and requires a random access URL. On Android,
 the compatible MCP client must run on the same device and DevDesk must remain
 open.
 
-Safe metadata, graph links, issues, and OKF status are read-only. Markdown text
-sharing, change proposals, and scheduled read-only checks are separate
-permissions that are off by default. A scheduled graph-health check stores its
-plan and run log locally and cannot edit project files.
+Safe metadata, a bounded project map, graph links, issues, and OKF status are
+read-only. **Share redacted workspace text**, change proposals, and scheduled
+read-only checks are separate permissions that are off by default. Project-text
+sharing covers bounded source, configuration, test, and Markdown reads plus
+token-budgeted context packs. DevDesk skips generated folders, links, common
+credential paths, binary or non-UTF-8 files, and applies conservative secret
+redaction. A scheduled graph-health check stores its plan and run log locally
+and cannot edit project files.
 
 A proposal does not write a file. Only **Approve and apply** inside DevDesk can save it, and the save fails when the original file changed.
 

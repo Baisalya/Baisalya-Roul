@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A beginner-first guide to workspaces, planning, Markdown, graph, OKF, APIs, JSON, Git, backup, privacy, and platform help."><meta name="theme-color" content="#5b47e8"><title>Complete user manual · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A beginner-first guide to local-first workspaces, focused AI project context, reviewed changes, knowledge, APIs, Git, backup, and platform help."><meta name="theme-color" content="#5b47e8"><title>Complete user manual · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
   <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
@@ -31,6 +31,8 @@
 <a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
 <a class="" href="../manual/knowledge-workspace.html">Edit workspace Markdown</a>
 <a class="" href="../manual/knowledge-graph.html">Relationships and graph</a>
+<a class="" href="../manual/visual-canvas.html">Visual Canvas</a>
+<a class="" href="../manual/structured-views.html">Structured workspace views</a>
 <a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
 <a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
 <a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
@@ -71,6 +73,39 @@
 <p>This is the beginner-first guide to DevDesk on Windows and Android. Read only
 the section you need. Every major tool also has a shorter focused manual linked
 from this page.</p>
+<section class="manual-usp-showcase" aria-labelledby="make-your-project-ai-ready-without-giving-up-control">
+<div class="manual-usp-copy">
+<span class="manual-usp-kicker">DevDesk + your AI agent</span>
+<h2 id="make-your-project-ai-ready-without-giving-up-control">Make your project AI-ready—without giving up control.<a class="heading-anchor" href="#make-your-project-ai-ready-without-giving-up-control" aria-label="Link to Make your project AI-ready—without giving up control.">#</a></h2>
+<p>Give an MCP-compatible agent focused code, structure, and project knowledge instead of repeatedly sending the whole repository. DevDesk keeps the work inside the selected workspace and every write behind your review.</p>
+<div class="manual-usp-actions">
+<a class="manual-usp-action manual-usp-action-primary" href="agent-connector.html">Explore the AI Agent Connector</a>
+<a class="manual-usp-action" href="getting-started.html">Start in five minutes</a>
+</div>
+<ul class="manual-usp-trust" aria-label="DevDesk project safeguards">
+<li>Local-first</li>
+<li>Token-budgeted context</li>
+<li>Review before write</li>
+</ul>
+</div>
+<div class="manual-usp-flow" aria-label="How DevDesk works with an AI agent">
+<ol>
+<li>
+<span aria-hidden="true">01</span>
+<div><strong>Understand</strong><small>Map stacks, code structure, files, and connected project knowledge.</small></div>
+</li>
+<li>
+<span aria-hidden="true">02</span>
+<div><strong>Propose</strong><small>Prepare a complete multi-file change without writing directly.</small></div>
+</li>
+<li>
+<span aria-hidden="true">03</span>
+<div><strong>You decide</strong><small>Review every file, choose trusted checks, apply, or use verified undo.</small></div>
+</li>
+</ol>
+<p><strong>Your files stay yours.</strong> The connector is optional and uses your own compatible AI client.</p>
+</div>
+</section>
 <h2 id="welcome-to-devdesk">Welcome to DevDesk<a class="heading-anchor" href="#welcome-to-devdesk" aria-label="Link to Welcome to DevDesk">#</a></h2>
 <p>DevDesk turns a normal folder into a workspace for plans, tasks, notes,
 connected knowledge, project files, API testing, and developer tools.</p>
@@ -174,6 +209,10 @@ folder picker asks.</p>
 <td><a href="json-tools.html">JSON Tools</a></td>
 </tr>
 <tr>
+<td>Edit a project text or source file</td>
+<td>Open it from <strong>Files</strong>; use <strong>Open with → Compare</strong> only when you want a diff</td>
+</tr>
+<tr>
 <td>Manage a developer project</td>
 <td><strong>New workspace &gt; Software project</strong></td>
 </tr>
@@ -260,10 +299,10 @@ file identifies the project and stores safe, relative settings. It does not
 store absolute paths, credentials, shell commands, execution trust, or personal
 screen layout.</p>
 <p>From a project workspace, <strong>Developer tools</strong> can open the Markdown editor,
-saved API testing, OpenAPI Studio, JSON tools, comparisons, scoped Git, and
-other tools with the current project already selected. If a tool needs a file,
-choose a compatible project file rather than copying it into a separate global
-workspace.</p>
+workspace text editor, saved API testing, OpenAPI Studio, JSON tools,
+comparisons, scoped Git, and other tools with the current project already
+selected. If a tool needs a file, choose a compatible project file rather than
+copying it into a separate global workspace.</p>
 <h3 id="share-or-move-a-project-safely">Share or move a project safely<a class="heading-anchor" href="#share-or-move-a-project-safely" aria-label="Link to Share or move a project safely">#</a></h3>
 <ol>
 <li>Save the project files you want to keep.</li>
@@ -279,12 +318,19 @@ API requests, AI tools, or a build.</p>
 <p>DevDesk can show the same underlying work in different views:</p>
 <ul>
 <li><strong>List:</strong> a straightforward ordered view.</li>
+<li><strong>Table:</strong> compares selected properties in compact rows.</li>
+<li><strong>Cards:</strong> shows readable summaries in a responsive grid.</li>
 <li><strong>Board:</strong> groups work by status.</li>
 <li><strong>Calendar:</strong> places items with dates on a calendar.</li>
 <li><strong>Timeline:</strong> shows work across time.</li>
 <li><strong>Outline:</strong> shows hierarchy and structure.</li>
+<li><strong>Map:</strong> shows only items with valid saved latitude and longitude.</li>
 <li><strong>Relationships:</strong> shows links between items.</li>
 </ul>
+<p>Table columns include title, type, status, tags, dates, path, and a built-in
+read-only word count. View formulas cannot execute code. Personal saved views
+stay on the device; a shared <code>devdesk-views.json</code> contains only the safe view
+definition. See <a href="structured-views.html">Structured workspace views</a>.</p>
 <p>A <strong>task</strong> is an action to complete. <strong>Status</strong> shows its current stage.
 <strong>Priority</strong> helps you decide what matters first. A <strong>deadline</strong> is the date by
 which work should be completed.</p>
@@ -301,6 +347,12 @@ which work should be completed.</p>
 <p>The views should not create separate copies of the same task. If an item is
 missing from a date-based view, confirm that it has a valid date and that active
 filters are clear.</p>
+<h3 id="visual-brainstorming">Visual brainstorming<a class="heading-anchor" href="#visual-brainstorming" aria-label="Link to Visual brainstorming">#</a></h3>
+<p>Open <strong>Visual Canvas</strong> to arrange text, file, link, and group nodes in a portable
+<code>.canvas</code> file. Add labeled or directed connections, then use drag, pan, zoom,
+fit, undo, and redo. The Canvas can remain independent or be saved to the
+current workspace. Opening it never executes embedded code or URLs. See
+<a href="visual-canvas.html">Visual Canvas</a>.</p>
 <h2 id="markdown-for-complete-beginners">Markdown for Complete Beginners<a class="heading-anchor" href="#markdown-for-complete-beginners" aria-label="Link to Markdown for Complete Beginners">#</a></h2>
 <p><strong>Markdown</strong> is plain text that uses small punctuation marks for formatting.
 DevDesk uses it because the file remains readable without DevDesk.</p>
@@ -426,7 +478,12 @@ link between files.</p>
 <li>Select <strong>Fit view</strong> after changing the window or filters.</li>
 <li>Search or filter by title, path, type, or tag.</li>
 <li>Select a node to inspect or open its note.</li>
+<li>With keyboard focus on the graph, use arrow keys to select a nearby node,
+Enter to open it, and Escape to clear selection.</li>
 </ol>
+<p>The header reports visible notes, links, and orphans. Open <strong>Options</strong> for the
+legend. When a filter produces no result, use the visible <strong>Clear filters</strong>
+action instead of rebuilding the project.</p>
 <p>The graph reads saved Markdown links. It does not prove that a claim is correct.
 Node size does not mean truth or priority.</p>
 <h3 id="missing-or-disconnected-nodes">Missing or disconnected nodes<a class="heading-anchor" href="#missing-or-disconnected-nodes" aria-label="Link to Missing or disconnected nodes">#</a></h3>
@@ -575,6 +632,27 @@ proxy/TLS settings, and execution trust are not written into the portable file.<
 <p>If Git, another editor, or another DevDesk window changes that JSON after you
 opened it, DevDesk stops the save rather than overwriting the external change.
 Reopen the project API file, review the current content, and then continue.</p>
+<h2 id="project-text-editor">Project Text Editor<a class="heading-anchor" href="#project-text-editor" aria-label="Link to Project Text Editor">#</a></h2>
+<p>Opening a supported project text or source file from <strong>Files</strong> now uses the
+workspace text editor by default. Supported extensions include <code>.txt</code>, <code>.log</code>,
+<code>.xml</code>, <code>.html</code>, <code>.css</code>, <code>.js</code>, <code>.ts</code>, <code>.dart</code>, <code>.py</code>, <code>.java</code>, <code>.kt</code>,
+<code>.swift</code>, <code>.sh</code>, <code>.bat</code>, <code>.env</code>, <code>.har</code>, <code>.bru</code>, and <code>.http</code>. Markdown, JSON,
+YAML, and OpenAPI keep their specialist tools. Binary files are not treated as
+general text.</p>
+<ul>
+<li><code>Ctrl+S</code> or <strong>Save workspace file</strong> writes only the active
+workspace-relative path with atomic, fingerprint-based conflict protection.</li>
+<li><code>Ctrl+Shift+S</code> or <strong>Save As</strong> exports an independent copy.</li>
+<li>DevDesk warns before leaving with unsaved changes.</li>
+<li>Read-only workspaces can export a copy but cannot overwrite the project file.</li>
+<li><strong>Save as Snippet</strong> stores app-managed snippet data rather than replacing the
+source file.</li>
+</ul>
+<p>Copying all text uses likely-secret detection and conservative redaction.
+Always review <code>.env</code>, HTTP, HAR, and source content yourself because automatic
+redaction cannot identify every confidential value. Use <strong>Open with → Compare</strong>
+when the goal is a deliberate difference rather than editing.</p>
+<p>See <a href="developer-workspaces.html#edit-a-project-text-file">Folders, portability, and scoped Git</a>.</p>
 <h2 id="openapi-studio">OpenAPI Studio<a class="heading-anchor" href="#openapi-studio" aria-label="Link to OpenAPI Studio">#</a></h2>
 <p><strong>OpenAPI</strong> is a standard description of an HTTP API. It lists endpoints,
 parameters, request bodies, responses, and schemas.</p>
@@ -621,7 +699,7 @@ the real repository is a parent folder.</p>
 <h3 id="verified-devdesk-git-boundary">Verified DevDesk Git boundary<a class="heading-anchor" href="#verified-devdesk-git-boundary" aria-label="Link to Verified DevDesk Git boundary">#</a></h3>
 <ul>
 <li>Opening <code>project.devdesk</code> does not run Git or grant trust.</li>
-<li>Git status needs a separate device-local trust decision.</li>
+<li>Source control needs a separate device-local trust decision.</li>
 <li>Status, diff, stage, unstage, and protected discard stay inside the workspace.</li>
 <li>A local commit is explicit, fingerprint-checked, and skips repository hooks.</li>
 <li>DevDesk does not fetch, pull, push, change remotes, run hooks, or manage credentials.</li>
@@ -629,11 +707,15 @@ the real repository is a parent folder.</p>
 <h3 id="beginner-workflow-2">Beginner workflow<a class="heading-anchor" href="#beginner-workflow-2" aria-label="Link to Beginner workflow">#</a></h3>
 <ol>
 <li>Back up important work.</li>
-<li>Open <strong>Developer tools &gt; Git status</strong> on an eligible local Windows project.</li>
+<li>Open <strong>Developer tools &gt; Source control</strong> on an eligible local Windows
+project.</li>
+<li>Grant local execution trust only after reviewing the displayed workspace
+folder. DevDesk runs no Git command before approval.</li>
+<li>If Git is missing, install Git for Windows and select <strong>Check again</strong>.</li>
+<li>If no repository exists, initialize only when the displayed workspace should
+receive its own <code>.git</code> metadata. Initialization does not stage or commit.</li>
 <li>Review the repository root and displayed workspace scope.</li>
-<li>Grant local execution trust only when both are correct.</li>
-<li>Refresh status.</li>
-<li>Review a diff.</li>
+<li>Open <strong>Changes</strong> and review a diff.</li>
 <li>Stage only the intended workspace path.</li>
 <li>Enter a commit message in DevDesk and select <strong>Commit staged files</strong>, or use
 your normal Git client after one more review.</li>
@@ -647,10 +729,14 @@ git commit -m &quot;Add first DevDesk project notes&quot;
 confirm it is installed, the folder is inside the intended repository, and the
 workspace is an eligible local Windows folder.</p>
 <h3 id="what-the-scoped-git-page-can-do">What the scoped Git page can do<a class="heading-anchor" href="#what-the-scoped-git-page-can-do" aria-label="Link to What the scoped Git page can do">#</a></h3>
-<p>The Windows Git page shows the real repository root separately from the
-DevDesk workspace scope. Use it to refresh status, inspect recent scoped
-history, open a diff, explicitly stage, unstage, or safely discard a file, and
-create a reviewed local commit.</p>
+<p>The Windows Source Control page shows the real repository root separately from
+the DevDesk workspace scope. <strong>Changes</strong> provides inline or wide side-by-side
+text differences, explicit stage/unstage, bounded untracked-file preview, and
+recovery-patch-backed restore for a tracked working file. Untracked files are
+never deleted. <strong>History</strong> filters by commit message, author, or hash and shows
+the selected commit's workspace-scoped files and patch. <strong>Branches</strong> shows the
+current branch, upstream, ahead/behind counts, and remotes without fetching or
+changing them.</p>
 <p>DevDesk creates local commits with <code>--no-verify</code>; it does not fetch, pull, push,
 change remotes, run hooks, or manage Git credentials. A commit uses the
 repository's staged index. For a workspace nested inside a parent repository,
@@ -679,10 +765,15 @@ client, account, API plan, or local model.</p>
 <h3 id="what-the-ai-can-learn">What the AI can learn<a class="heading-anchor" href="#what-the-ai-can-learn" aria-label="Link to What the AI can learn">#</a></h3>
 <ul>
 <li>safe active-workspace metadata;</li>
+<li>bounded project paths, languages, roles, manifest signals, and detected stacks
+without file content;</li>
 <li>indexed document paths, titles, tags, and fingerprints;</li>
 <li>graph nodes, resolved written links, and backlinks;</li>
 <li>workspace issues and OKF status;</li>
-<li>redacted Markdown text only when you enable it.</li>
+<li>redacted source, configuration, test, and Markdown text only when you enable
+<strong>Share redacted workspace text</strong>;</li>
+<li>a token-budgeted context pack combining relevant project snippets, detected
+stacks, and connected Markdown knowledge.</li>
 </ul>
 <p>Nodes and links help an AI follow relevant written relationships. They do not
 prove that an answer is true or that two documents have an unstated semantic
@@ -691,21 +782,34 @@ relationship.</p>
 <ol>
 <li>Open a Windows or Android workspace.</li>
 <li>Open <strong>Settings &gt; DevDesk Agent Connector</strong>.</li>
-<li>Review the three optional permissions.</li>
+<li>Review the optional permissions for text, proposals, verification, and
+scheduled read-only checks.</li>
 <li>Select <strong>Start connector</strong>.</li>
 <li>Copy the Codex or Gemini CLI configuration.</li>
 <li>Add it to the AI client's MCP settings.</li>
 <li>Ask the client to list DevDesk tools.</li>
 </ol>
+<p><code>get_project_map</code> is metadata-only. <code>search_project_files</code> searches paths,
+languages, and roles while text sharing is off, and can also search redacted
+content when it is on. <code>read_project_file</code> and <code>build_context_pack</code> require text
+sharing. DevDesk skips generated folders, links, credential-like paths, binary
+or non-UTF-8 files, and content beyond the enforced limits.</p>
 <h3 id="review-only-changes">Review-only changes<a class="heading-anchor" href="#review-only-changes" aria-label="Link to Review-only changes">#</a></h3>
-<p>When <strong>Allow review proposals</strong> is on, an agent may queue a complete Markdown
-replacement. It cannot apply the replacement.</p>
+<p>When <strong>Allow review proposals</strong> is on, an agent may queue a bounded, complete
+multi-file source, test, configuration, or Markdown change. It cannot approve
+or apply the change.</p>
 <p>Open <strong>Review agent proposals</strong>, compare the current and proposed file, then
 choose <strong>Cancel</strong>, <strong>Reject</strong>, or <strong>Approve and apply</strong>. Approval uses a
 fingerprint and stops if the file changed after the agent read it.</p>
 <p>The connector has no terminal, delete, approval, or Git-push tool. Stop it when
 you finish, and rotate its access key if an old configuration is no longer
 trusted.</p>
+<p>Connected sessions are grouped by assigned workspace, with independent sessions
+shown separately. Each row reports the observed state, current safe tool, last
+activity, request count, in-flight work, permissions, and pending reviews. You
+can reassign only an idle session and DevDesk confirms the old and new scope.
+Concurrent reads are allowed; approved writes are serialized per workspace and
+fingerprint-checked again.</p>
 <p>When <strong>Allow scheduled read-only checks</strong> is on, an agent can schedule or run a
 recurring graph-health check. The task records its plan, steps, result, retries,
 and next run locally. It cannot edit project files, runs only while DevDesk is
@@ -734,6 +838,27 @@ steps, tool names, troubleshooting, privacy, and official MCP references.</p>
 </ol>
 <p>DevDesk's Settings backup covers supported private application records. It does
 not automatically include external project folders or protected secrets.</p>
+<h3 id="export-a-reinstall-recovery-kit">Export a Reinstall Recovery Kit<a class="heading-anchor" href="#export-a-reinstall-recovery-kit" aria-label="Link to Export a Reinstall Recovery Kit">#</a></h3>
+<p>Use a Recovery Kit for supported DevDesk-managed data and a sanitized list of
+external workspaces that you can reconnect after reinstalling:</p>
+<p>Settings also shows <strong>Recovery readiness</strong>, including the last completed file
+export and the number of registered external workspaces. Open its
+<strong>Pre-uninstall checklist</strong> before removing the app.</p>
+<ol>
+<li>Open <strong>Settings &gt; Data backup</strong>.</li>
+<li>Select <strong>Export Reinstall Recovery Kit</strong> and store the JSON somewhere safe.</li>
+<li>Back up each external workspace folder separately, such as with the ZIP steps
+above. The Recovery Kit does not contain those folders.</li>
+<li>After reinstalling, select <strong>Import Recovery Kit or Backup</strong>.</li>
+<li>Select <strong>Reconnect Recorded Workspaces</strong>, review the list, and then select
+<strong>Reconnect a workspace</strong> to choose the original folder. Repeat for the other
+recorded workspaces.</li>
+</ol>
+<p>Version 3 kits contain the reconnection catalog. Older supported backups can
+still import but may not have one. The most recently imported kit replaces the
+stored reconnect list. Protected secrets, Android folder permission, execution
+trust, and Agent Connector access keys are not restored; grant or enter them
+again only when needed.</p>
 <p>Avoid editing the same cloud-synced file on two devices at once. Resolve sync or
 Git conflicts before continuing. See <a href="backup-restore.html">Backup and restore</a>.</p>
 <h2 id="windows-guide">Windows Guide<a class="heading-anchor" href="#windows-guide" aria-label="Link to Windows Guide">#</a></h2>
@@ -769,9 +894,16 @@ the file association.</li>
 <li>Use keyboard focus and shortcuts shown in tooltips.</li>
 </ul>
 <h3 id="uninstall-and-data-preservation">Uninstall and data preservation<a class="heading-anchor" href="#uninstall-and-data-preservation" aria-label="Link to Uninstall and data preservation">#</a></h3>
-<p>Back up DevDesk-private records and external workspace folders before
-uninstalling. Removing the app is not a substitute for deleting or preserving
-user-owned project folders. Verify your files independently.</p>
+<p>Before uninstalling, export <strong>Settings &gt; Data backup &gt; Export Reinstall Recovery
+Kit</strong>, then back up every external workspace folder separately. Removing the app
+does not delete or preserve user-owned project folders for you. After reinstall,
+import the kit, reconnect each recorded folder, re-enter protected secrets, and
+grant trust again only after verifying the displayed path.</p>
+<p>For an Android-to-Windows handoff, copy or sync the project folder separately,
+reopen <code>project.devdesk</code> on Windows, and grant execution trust only after
+checking the path. Android supports editing, graph, Canvas, context, and review;
+local Git CLI actions and allowlisted project verification remain Windows
+capabilities in this release.</p>
 <h2 id="android-guide">Android Guide<a class="heading-anchor" href="#android-guide" aria-label="Link to Android Guide">#</a></h2>
 <p>Android is currently in closed testing.</p>
 <ol>
@@ -974,6 +1106,16 @@ diff, stage, unstage, protected discard, history, and an explicit local commit
 action. It skips hooks and does not fetch, pull, push, change remotes, or manage
 credentials. In a parent repository, verify that unrelated files are not
 already staged before committing.</p>
+<h3 id="can-devdesk-initialize-a-git-repository">Can DevDesk initialize a Git repository?<a class="heading-anchor" href="#can-devdesk-initialize-a-git-repository" aria-label="Link to Can DevDesk initialize a Git repository?">#</a></h3>
+<p>Yes, for an eligible standalone local Windows workspace after you grant local
+execution trust. DevDesk runs only <code>git init</code> during initialization; it does not
+stage, commit, add a remote, or initialize a workspace already inside a parent
+repository.</p>
+<h3 id="can-a-recovery-kit-restore-my-workspace-folders">Can a Recovery Kit restore my workspace folders?<a class="heading-anchor" href="#can-a-recovery-kit-restore-my-workspace-folders" aria-label="Link to Can a Recovery Kit restore my workspace folders?">#</a></h3>
+<p>No. It restores supported DevDesk-managed records and, in version 3, a sanitized
+catalog that helps you reconnect external workspace folders. Back up the folders
+themselves separately. Protected secrets, Android folder permission, execution
+trust, and Agent Connector access keys are intentionally excluded.</p>
 <p>See the complete <a href="faq.html">Frequently asked questions</a>.</p>
 <h2 id="learn-more-and-references">Learn More and References<a class="heading-anchor" href="#learn-more-and-references" aria-label="Link to Learn More and References">#</a></h2>
 <p>DevDesk's manual is sufficient for normal use. These optional official sources
@@ -1110,10 +1252,13 @@ status: draft
 an HTML error page.</p>
 <h3 id="9-create-a-safe-git-checkpoint-when-git-is-available">9. Create a safe Git checkpoint when Git is available<a class="heading-anchor" href="#9-create-a-safe-git-checkpoint-when-git-is-available" aria-label="Link to 9. Create a safe Git checkpoint when Git is available">#</a></h3>
 <ol>
-<li>Open <strong>Developer tools &gt; Git status</strong>.</li>
-<li>Confirm the repository and workspace boundaries.</li>
-<li>Review each diff.</li>
-<li>Stage only the tutorial files.</li>
+<li>Open <strong>Developer tools &gt; Source control</strong> on Windows.</li>
+<li>Review the displayed folder and grant local execution trust.</li>
+<li>If Git is missing, install Git for Windows and select <strong>Check again</strong>. If the
+standalone tutorial folder is not a repository, select <strong>Initialize Git
+repository</strong> only when you intend to add <code>.git</code> metadata there.</li>
+<li>Confirm the repository root and workspace boundaries.</li>
+<li>Open <strong>Changes</strong>, review each diff, and stage only the tutorial files.</li>
 <li>Enter a commit message and select <strong>Commit staged files</strong>. You can also use
 your normal Git client:</li>
 </ol>
@@ -1121,8 +1266,9 @@ your normal Git client:</li>
 git commit -m &quot;Add My First App Project tutorial files&quot;
 </code></pre>
 <p><strong>Expected:</strong> Git records one commit containing only reviewed files.</p>
-<p><strong>If unavailable:</strong> Install Git or skip this optional step. Do not broaden trust
-or move files merely to make the button appear.</p>
+<p><strong>If unavailable:</strong> Follow the page's trust, Git installation, or initialization
+guidance, or skip this optional step. Android provides a handoff to Windows
+instead of running a Git engine on the phone.</p>
 <h3 id="10-back-up-the-workspace">10. Back up the workspace<a class="heading-anchor" href="#10-back-up-the-workspace" aria-label="Link to 10. Back up the workspace">#</a></h3>
 <ol>
 <li>Save everything.</li>
@@ -1133,6 +1279,9 @@ or move files merely to make the button appear.</p>
 </ol>
 <p><strong>Expected:</strong> The backup contains all tutorial files.</p>
 <p><strong>If not:</strong> Recreate the ZIP from the workspace folder, not from one selected file.</p>
+<p>The ZIP is the project backup. To preserve supported DevDesk-managed records as
+well, also export <strong>Settings &gt; Data backup &gt; Export Reinstall Recovery Kit</strong> and
+store that JSON separately. The kit does not replace the ZIP.</p>
 <h3 id="11-reopen-and-verify">11. Reopen and verify<a class="heading-anchor" href="#11-reopen-and-verify" aria-label="Link to 11. Reopen and verify">#</a></h3>
 <ol>
 <li>Close DevDesk.</li>
@@ -1144,7 +1293,7 @@ or move files merely to make the button appear.</p>
 <p>Protected API secrets would need to be entered again on a different device.
 This tutorial deliberately used none.</p>
 
-<div class="article-footer"><span></span><a class="pager" href="getting-started.html"><small>Next</small><strong>Getting started</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#welcome-to-devdesk">Welcome to DevDesk</a><a class="level-3" href="#local-first-and-user-owned-files">Local-first and user-owned files</a><a class="level-3" href="#what-devdesk-does-not-do">What DevDesk does not do</a><a class="level-2" href="#start-here-your-first-five-minutes">Start Here: Your First Five Minutes</a><a class="level-3" href="#create-a-workspace">Create a workspace</a><a class="level-3" href="#create-the-first-note">Create the first note</a><a class="level-3" href="#create-the-first-task">Create the first task</a><a class="level-3" href="#find-the-files-and-reopen-the-workspace">Find the files and reopen the workspace</a><a class="level-2" href="#choose-what-you-want-to-do">Choose What You Want to Do</a><a class="level-2" href="#understanding-a-devdesk-workspace">Understanding a DevDesk Workspace</a><a class="level-3" href="#portable-and-device-local-information">Portable and device-local information</a><a class="level-3" href="#safe-folder-locations">Safe folder locations</a><a class="level-3" href="#moving-or-renaming-a-folder">Moving or renaming a folder</a><a class="level-2" href="#choose-the-right-workspace-style">Choose the right workspace style</a><a class="level-3" href="#everyday-planning-writing-or-study">Everyday planning, writing, or study</a><a class="level-3" href="#software-or-developer-work">Software or developer work</a><a class="level-3" href="#share-or-move-a-project-safely">Share or move a project safely</a><a class="level-2" href="#planning-your-work">Planning Your Work</a><a class="level-3" href="#beginner-workflow">Beginner workflow</a><a class="level-2" href="#markdown-for-complete-beginners">Markdown for Complete Beginners</a><a class="level-3" href="#a-small-example">A small example</a><a class="level-3" href="#common-formatting">Common formatting</a><a class="level-3" href="#create-a-markdown-file">Create a Markdown file</a><a class="level-2" href="#connecting-notes">Connecting Notes</a><a class="level-3" href="#create-a-safe-connection">Create a safe connection</a><a class="level-3" href="#broken-links-and-renames">Broken links and renames</a><a class="level-2" href="#properties-and-metadata">Properties and Metadata</a><a class="level-2" href="#knowledge-graph">Relationships and graph</a><a class="level-3" href="#open-and-use-the-graph">Open and use the graph</a><a class="level-3" href="#missing-or-disconnected-nodes">Missing or disconnected nodes</a><a class="level-2" href="#open-knowledge-format-okf">Open Knowledge Format (OKF)</a><a class="level-3" href="#do-i-need-okf">Do I need OKF?</a><a class="level-3" href="#safest-first-time-workflow">Safest first-time workflow</a><a class="level-3" href="#create-the-first-structured-concept">Create the first structured concept</a><a class="level-3" href="#required-rules">Required rules</a><a class="level-3" href="#understand-the-findings">Understand the findings</a><a class="level-3" href="#import-existing-markdown">Import existing Markdown</a><a class="level-3" href="#manual-advanced-actions">Manual advanced actions</a><a class="level-3" href="#recovery-and-read-only-protection">Recovery and read-only protection</a><a class="level-2" href="#api-workspaces">Saved API testing</a><a class="level-3" href="#safe-public-example">Safe public example</a><a class="level-3" href="#environments-and-secrets">Environments and secrets</a><a class="level-3" href="#keep-a-saved-api-workspace-with-a-project">Keep a saved API workspace with a project</a><a class="level-2" href="#openapi-studio">OpenAPI Studio</a><a class="level-2" href="#json-tools">JSON Tools</a><a class="level-3" href="#format-and-validate-json">Format and validate JSON</a><a class="level-2" href="#git-tools">Git Tools</a><a class="level-3" href="#verified-devdesk-git-boundary">Verified DevDesk Git boundary</a><a class="level-3" href="#beginner-workflow-2">Beginner workflow</a><a class="level-3" href="#what-the-scoped-git-page-can-do">What the scoped Git page can do</a><a class="level-2" href="#search-navigation-and-shortcuts">Search, Navigation, and Shortcuts</a><a class="level-2" href="#connect-an-ai-agent">Connect an AI Agent</a><a class="level-3" href="#what-the-ai-can-learn">What the AI can learn</a><a class="level-3" href="#start-and-connect">Start and connect</a><a class="level-3" href="#review-only-changes">Review-only changes</a><a class="level-2" href="#moving-and-backing-up-a-workspace">Moving and Backing Up a Workspace</a><a class="level-3" href="#copy-to-another-computer">Copy to another computer</a><a class="level-3" href="#create-a-zip-backup">Create a ZIP backup</a><a class="level-2" href="#windows-guide">Windows Guide</a><a class="level-3" href="#install">Install</a><a class="level-3" href="#update">Update</a><a class="level-3" href="#files-windows-and-keyboard">Files, windows, and keyboard</a><a class="level-3" href="#uninstall-and-data-preservation">Uninstall and data preservation</a><a class="level-2" href="#android-guide">Android Guide</a><a class="level-3" href="#update-android">Update Android</a><a class="level-3" href="#folder-access">Folder access</a><a class="level-3" href="#phone-tablet-and-resizable-layouts">Phone, tablet, and resizable layouts</a><a class="level-2" href="#privacy-and-security">Privacy and Security</a><a class="level-3" href="#what-stays-local">What stays local</a><a class="level-3" href="#what-may-leave-the-device">What may leave the device</a><a class="level-3" href="#credentials-and-boundaries">Credentials and boundaries</a><a class="level-2" href="#troubleshooting">Troubleshooting</a><a class="level-3" href="#workspace-does-not-open">Workspace does not open</a><a class="level-3" href="#file-cannot-be-saved">File cannot be saved</a><a class="level-3" href="#link-does-not-work">Link does not work</a><a class="level-3" href="#graph-node-is-missing">Graph node is missing</a><a class="level-3" href="#api-request-fails">API request fails</a><a class="level-3" href="#json-is-invalid">JSON is invalid</a><a class="level-3" href="#git-action-is-unavailable">Git action is unavailable</a><a class="level-3" href="#external-link-does-not-open">External link does not open</a><a class="level-3" href="#android-permission-problem">Android permission problem</a><a class="level-3" href="#windows-store-update-problem">Windows Store update problem</a><a class="level-3" href="#ai-agent-connector-does-not-connect">AI Agent Connector does not connect</a><a class="level-3" href="#layout-or-text-is-too-large">Layout or text is too large</a><a class="level-2" href="#glossary">Glossary</a><a class="level-2" href="#frequently-asked-questions">Frequently Asked Questions</a><a class="level-3" href="#is-devdesk-only-for-developers">Is DevDesk only for developers?</a><a class="level-3" href="#does-devdesk-upload-my-folder">Does DevDesk upload my folder?</a><a class="level-3" href="#can-another-editor-read-my-notes">Can another editor read my notes?</a><a class="level-3" href="#does-removing-a-workspace-delete-its-folder">Does removing a workspace delete its folder?</a><a class="level-3" href="#are-backups-encrypted">Are backups encrypted?</a><a class="level-3" href="#can-devdesk-create-git-commits">Can DevDesk create Git commits?</a><a class="level-2" href="#learn-more-and-references">Learn More and References</a><a class="level-2" href="#contact-support-downloads-and-microsoft-store">Contact, Support, Downloads, and Microsoft Store</a><a class="level-2" href="#complete-beginner-walkthrough-my-first-app-project">Complete Beginner Walkthrough: My First App Project</a><a class="level-3" href="#1-create-the-workspace">1. Create the workspace</a><a class="level-3" href="#2-create-the-project-overview">2. Create the project overview</a><a class="level-3" href="#3-create-a-task-list">3. Create a task list</a><a class="level-3" href="#4-create-and-link-two-notes">4. Create and link two notes</a><a class="level-3" href="#5-add-tags-or-properties">5. Add tags or properties</a><a class="level-3" href="#6-open-the-knowledge-graph">6. Open the knowledge graph</a><a class="level-3" href="#7-create-a-simple-api-request">7. Create a simple API request</a><a class="level-3" href="#8-inspect-the-json-response">8. Inspect the JSON response</a><a class="level-3" href="#9-create-a-safe-git-checkpoint-when-git-is-available">9. Create a safe Git checkpoint when Git is available</a><a class="level-3" href="#10-back-up-the-workspace">10. Back up the workspace</a><a class="level-3" href="#11-reopen-and-verify">11. Reopen and verify</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div class="article-footer"><span></span><a class="pager" href="getting-started.html"><small>Next</small><strong>Getting started</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#make-your-project-ai-ready-without-giving-up-control">Make your project AI-ready—without giving up control.</a><a class="level-2" href="#welcome-to-devdesk">Welcome to DevDesk</a><a class="level-3" href="#local-first-and-user-owned-files">Local-first and user-owned files</a><a class="level-3" href="#what-devdesk-does-not-do">What DevDesk does not do</a><a class="level-2" href="#start-here-your-first-five-minutes">Start Here: Your First Five Minutes</a><a class="level-3" href="#create-a-workspace">Create a workspace</a><a class="level-3" href="#create-the-first-note">Create the first note</a><a class="level-3" href="#create-the-first-task">Create the first task</a><a class="level-3" href="#find-the-files-and-reopen-the-workspace">Find the files and reopen the workspace</a><a class="level-2" href="#choose-what-you-want-to-do">Choose What You Want to Do</a><a class="level-2" href="#understanding-a-devdesk-workspace">Understanding a DevDesk Workspace</a><a class="level-3" href="#portable-and-device-local-information">Portable and device-local information</a><a class="level-3" href="#safe-folder-locations">Safe folder locations</a><a class="level-3" href="#moving-or-renaming-a-folder">Moving or renaming a folder</a><a class="level-2" href="#choose-the-right-workspace-style">Choose the right workspace style</a><a class="level-3" href="#everyday-planning-writing-or-study">Everyday planning, writing, or study</a><a class="level-3" href="#software-or-developer-work">Software or developer work</a><a class="level-3" href="#share-or-move-a-project-safely">Share or move a project safely</a><a class="level-2" href="#planning-your-work">Planning Your Work</a><a class="level-3" href="#beginner-workflow">Beginner workflow</a><a class="level-3" href="#visual-brainstorming">Visual brainstorming</a><a class="level-2" href="#markdown-for-complete-beginners">Markdown for Complete Beginners</a><a class="level-3" href="#a-small-example">A small example</a><a class="level-3" href="#common-formatting">Common formatting</a><a class="level-3" href="#create-a-markdown-file">Create a Markdown file</a><a class="level-2" href="#connecting-notes">Connecting Notes</a><a class="level-3" href="#create-a-safe-connection">Create a safe connection</a><a class="level-3" href="#broken-links-and-renames">Broken links and renames</a><a class="level-2" href="#properties-and-metadata">Properties and Metadata</a><a class="level-2" href="#knowledge-graph">Relationships and graph</a><a class="level-3" href="#open-and-use-the-graph">Open and use the graph</a><a class="level-3" href="#missing-or-disconnected-nodes">Missing or disconnected nodes</a><a class="level-2" href="#open-knowledge-format-okf">Open Knowledge Format (OKF)</a><a class="level-3" href="#do-i-need-okf">Do I need OKF?</a><a class="level-3" href="#safest-first-time-workflow">Safest first-time workflow</a><a class="level-3" href="#create-the-first-structured-concept">Create the first structured concept</a><a class="level-3" href="#required-rules">Required rules</a><a class="level-3" href="#understand-the-findings">Understand the findings</a><a class="level-3" href="#import-existing-markdown">Import existing Markdown</a><a class="level-3" href="#manual-advanced-actions">Manual advanced actions</a><a class="level-3" href="#recovery-and-read-only-protection">Recovery and read-only protection</a><a class="level-2" href="#api-workspaces">Saved API testing</a><a class="level-3" href="#safe-public-example">Safe public example</a><a class="level-3" href="#environments-and-secrets">Environments and secrets</a><a class="level-3" href="#keep-a-saved-api-workspace-with-a-project">Keep a saved API workspace with a project</a><a class="level-2" href="#project-text-editor">Project Text Editor</a><a class="level-2" href="#openapi-studio">OpenAPI Studio</a><a class="level-2" href="#json-tools">JSON Tools</a><a class="level-3" href="#format-and-validate-json">Format and validate JSON</a><a class="level-2" href="#git-tools">Git Tools</a><a class="level-3" href="#verified-devdesk-git-boundary">Verified DevDesk Git boundary</a><a class="level-3" href="#beginner-workflow-2">Beginner workflow</a><a class="level-3" href="#what-the-scoped-git-page-can-do">What the scoped Git page can do</a><a class="level-2" href="#search-navigation-and-shortcuts">Search, Navigation, and Shortcuts</a><a class="level-2" href="#connect-an-ai-agent">Connect an AI Agent</a><a class="level-3" href="#what-the-ai-can-learn">What the AI can learn</a><a class="level-3" href="#start-and-connect">Start and connect</a><a class="level-3" href="#review-only-changes">Review-only changes</a><a class="level-2" href="#moving-and-backing-up-a-workspace">Moving and Backing Up a Workspace</a><a class="level-3" href="#copy-to-another-computer">Copy to another computer</a><a class="level-3" href="#create-a-zip-backup">Create a ZIP backup</a><a class="level-3" href="#export-a-reinstall-recovery-kit">Export a Reinstall Recovery Kit</a><a class="level-2" href="#windows-guide">Windows Guide</a><a class="level-3" href="#install">Install</a><a class="level-3" href="#update">Update</a><a class="level-3" href="#files-windows-and-keyboard">Files, windows, and keyboard</a><a class="level-3" href="#uninstall-and-data-preservation">Uninstall and data preservation</a><a class="level-2" href="#android-guide">Android Guide</a><a class="level-3" href="#update-android">Update Android</a><a class="level-3" href="#folder-access">Folder access</a><a class="level-3" href="#phone-tablet-and-resizable-layouts">Phone, tablet, and resizable layouts</a><a class="level-2" href="#privacy-and-security">Privacy and Security</a><a class="level-3" href="#what-stays-local">What stays local</a><a class="level-3" href="#what-may-leave-the-device">What may leave the device</a><a class="level-3" href="#credentials-and-boundaries">Credentials and boundaries</a><a class="level-2" href="#troubleshooting">Troubleshooting</a><a class="level-3" href="#workspace-does-not-open">Workspace does not open</a><a class="level-3" href="#file-cannot-be-saved">File cannot be saved</a><a class="level-3" href="#link-does-not-work">Link does not work</a><a class="level-3" href="#graph-node-is-missing">Graph node is missing</a><a class="level-3" href="#api-request-fails">API request fails</a><a class="level-3" href="#json-is-invalid">JSON is invalid</a><a class="level-3" href="#git-action-is-unavailable">Git action is unavailable</a><a class="level-3" href="#external-link-does-not-open">External link does not open</a><a class="level-3" href="#android-permission-problem">Android permission problem</a><a class="level-3" href="#windows-store-update-problem">Windows Store update problem</a><a class="level-3" href="#ai-agent-connector-does-not-connect">AI Agent Connector does not connect</a><a class="level-3" href="#layout-or-text-is-too-large">Layout or text is too large</a><a class="level-2" href="#glossary">Glossary</a><a class="level-2" href="#frequently-asked-questions">Frequently Asked Questions</a><a class="level-3" href="#is-devdesk-only-for-developers">Is DevDesk only for developers?</a><a class="level-3" href="#does-devdesk-upload-my-folder">Does DevDesk upload my folder?</a><a class="level-3" href="#can-another-editor-read-my-notes">Can another editor read my notes?</a><a class="level-3" href="#does-removing-a-workspace-delete-its-folder">Does removing a workspace delete its folder?</a><a class="level-3" href="#are-backups-encrypted">Are backups encrypted?</a><a class="level-3" href="#can-devdesk-create-git-commits">Can DevDesk create Git commits?</a><a class="level-3" href="#can-devdesk-initialize-a-git-repository">Can DevDesk initialize a Git repository?</a><a class="level-3" href="#can-a-recovery-kit-restore-my-workspace-folders">Can a Recovery Kit restore my workspace folders?</a><a class="level-2" href="#learn-more-and-references">Learn More and References</a><a class="level-2" href="#contact-support-downloads-and-microsoft-store">Contact, Support, Downloads, and Microsoft Store</a><a class="level-2" href="#complete-beginner-walkthrough-my-first-app-project">Complete Beginner Walkthrough: My First App Project</a><a class="level-3" href="#1-create-the-workspace">1. Create the workspace</a><a class="level-3" href="#2-create-the-project-overview">2. Create the project overview</a><a class="level-3" href="#3-create-a-task-list">3. Create a task list</a><a class="level-3" href="#4-create-and-link-two-notes">4. Create and link two notes</a><a class="level-3" href="#5-add-tags-or-properties">5. Add tags or properties</a><a class="level-3" href="#6-open-the-knowledge-graph">6. Open the knowledge graph</a><a class="level-3" href="#7-create-a-simple-api-request">7. Create a simple API request</a><a class="level-3" href="#8-inspect-the-json-response">8. Inspect the JSON response</a><a class="level-3" href="#9-create-a-safe-git-checkpoint-when-git-is-available">9. Create a safe Git checkpoint when Git is available</a><a class="level-3" href="#10-back-up-the-workspace">10. Back up the workspace</a><a class="level-3" href="#11-reopen-and-verify">11. Reopen and verify</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>

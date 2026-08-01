@@ -4,6 +4,40 @@ This is the beginner-first guide to DevDesk on Windows and Android. Read only
 the section you need. Every major tool also has a shorter focused manual linked
 from this page.
 
+<section class="manual-usp-showcase" aria-labelledby="make-your-project-ai-ready-without-giving-up-control">
+  <div class="manual-usp-copy">
+    <span class="manual-usp-kicker">DevDesk + your AI agent</span>
+    <h2 id="manual-usp-heading">Make your project AI-ready—without giving up control.</h2>
+    <p>Give an MCP-compatible agent focused code, structure, and project knowledge instead of repeatedly sending the whole repository. DevDesk keeps the work inside the selected workspace and every write behind your review.</p>
+    <div class="manual-usp-actions">
+      <a class="manual-usp-action manual-usp-action-primary" href="agent-connector.html">Explore the AI Agent Connector</a>
+      <a class="manual-usp-action" href="getting-started.html">Start in five minutes</a>
+    </div>
+    <ul class="manual-usp-trust" aria-label="DevDesk project safeguards">
+      <li>Local-first</li>
+      <li>Token-budgeted context</li>
+      <li>Review before write</li>
+    </ul>
+  </div>
+  <div class="manual-usp-flow" aria-label="How DevDesk works with an AI agent">
+    <ol>
+      <li>
+        <span aria-hidden="true">01</span>
+        <div><strong>Understand</strong><small>Map stacks, code structure, files, and connected project knowledge.</small></div>
+      </li>
+      <li>
+        <span aria-hidden="true">02</span>
+        <div><strong>Propose</strong><small>Prepare a complete multi-file change without writing directly.</small></div>
+      </li>
+      <li>
+        <span aria-hidden="true">03</span>
+        <div><strong>You decide</strong><small>Review every file, choose trusted checks, apply, or use verified undo.</small></div>
+      </li>
+    </ol>
+    <p><strong>Your files stay yours.</strong> The connector is optional and uses your own compatible AI client.</p>
+  </div>
+</section>
+
 ## Welcome to DevDesk
 
 DevDesk turns a normal folder into a workspace for plans, tasks, notes,
@@ -98,6 +132,7 @@ folder picker asks.
 | Connect knowledge | Add links, then open **Relationships** |
 | Test an API | [Quick API](quick-api.html) for one request or [API Workspaces](api-workspaces.html) for saved work |
 | Inspect JSON | [JSON Tools](json-tools.html) |
+| Edit a project text or source file | Open it from **Files**; use **Open with → Compare** only when you want a diff |
 | Manage a developer project | **New workspace > Software project** |
 | Move to another computer | [Moving and Backing Up a Workspace](#moving-and-backing-up-a-workspace) |
 | Learn every control | [Home, workspace, and navigation](interface-tour.html) |
@@ -160,10 +195,10 @@ store absolute paths, credentials, shell commands, execution trust, or personal
 screen layout.
 
 From a project workspace, **Developer tools** can open the Markdown editor,
-saved API testing, OpenAPI Studio, JSON tools, comparisons, scoped Git, and
-other tools with the current project already selected. If a tool needs a file,
-choose a compatible project file rather than copying it into a separate global
-workspace.
+workspace text editor, saved API testing, OpenAPI Studio, JSON tools,
+comparisons, scoped Git, and other tools with the current project already
+selected. If a tool needs a file, choose a compatible project file rather than
+copying it into a separate global workspace.
 
 ### Share or move a project safely
 
@@ -182,11 +217,19 @@ API requests, AI tools, or a build.
 DevDesk can show the same underlying work in different views:
 
 - **List:** a straightforward ordered view.
+- **Table:** compares selected properties in compact rows.
+- **Cards:** shows readable summaries in a responsive grid.
 - **Board:** groups work by status.
 - **Calendar:** places items with dates on a calendar.
 - **Timeline:** shows work across time.
 - **Outline:** shows hierarchy and structure.
+- **Map:** shows only items with valid saved latitude and longitude.
 - **Relationships:** shows links between items.
+
+Table columns include title, type, status, tags, dates, path, and a built-in
+read-only word count. View formulas cannot execute code. Personal saved views
+stay on the device; a shared `devdesk-views.json` contains only the safe view
+definition. See [Structured workspace views](structured-views.html).
 
 A **task** is an action to complete. **Status** shows its current stage.
 **Priority** helps you decide what matters first. A **deadline** is the date by
@@ -205,6 +248,14 @@ which work should be completed.
 The views should not create separate copies of the same task. If an item is
 missing from a date-based view, confirm that it has a valid date and that active
 filters are clear.
+
+### Visual brainstorming
+
+Open **Visual Canvas** to arrange text, file, link, and group nodes in a portable
+`.canvas` file. Add labeled or directed connections, then use drag, pan, zoom,
+fit, undo, and redo. The Canvas can remain independent or be saved to the
+current workspace. Opening it never executes embedded code or URLs. See
+[Visual Canvas](visual-canvas.html).
 
 ## Markdown for Complete Beginners
 
@@ -369,6 +420,12 @@ The graph helps answer questions such as:
 6. Select **Fit view** after changing the window or filters.
 7. Search or filter by title, path, type, or tag.
 8. Select a node to inspect or open its note.
+9. With keyboard focus on the graph, use arrow keys to select a nearby node,
+   Enter to open it, and Escape to clear selection.
+
+The header reports visible notes, links, and orphans. Open **Options** for the
+legend. When a filter produces no result, use the visible **Clear filters**
+action instead of rebuilding the project.
 
 The graph reads saved Markdown links. It does not prove that a claim is correct.
 Node size does not mean truth or priority.
@@ -555,6 +612,30 @@ If Git, another editor, or another DevDesk window changes that JSON after you
 opened it, DevDesk stops the save rather than overwriting the external change.
 Reopen the project API file, review the current content, and then continue.
 
+## Project Text Editor
+
+Opening a supported project text or source file from **Files** now uses the
+workspace text editor by default. Supported extensions include `.txt`, `.log`,
+`.xml`, `.html`, `.css`, `.js`, `.ts`, `.dart`, `.py`, `.java`, `.kt`,
+`.swift`, `.sh`, `.bat`, `.env`, `.har`, `.bru`, and `.http`. Markdown, JSON,
+YAML, and OpenAPI keep their specialist tools. Binary files are not treated as
+general text.
+
+- `Ctrl+S` or **Save workspace file** writes only the active
+  workspace-relative path with atomic, fingerprint-based conflict protection.
+- `Ctrl+Shift+S` or **Save As** exports an independent copy.
+- DevDesk warns before leaving with unsaved changes.
+- Read-only workspaces can export a copy but cannot overwrite the project file.
+- **Save as Snippet** stores app-managed snippet data rather than replacing the
+  source file.
+
+Copying all text uses likely-secret detection and conservative redaction.
+Always review `.env`, HTTP, HAR, and source content yourself because automatic
+redaction cannot identify every confidential value. Use **Open with → Compare**
+when the goal is a deliberate difference rather than editing.
+
+See [Folders, portability, and scoped Git](developer-workspaces.html#edit-a-project-text-file).
+
 ## OpenAPI Studio
 
 **OpenAPI** is a standard description of an HTTP API. It lists endpoints,
@@ -613,7 +694,7 @@ the real repository is a parent folder.
 ### Verified DevDesk Git boundary
 
 - Opening `project.devdesk` does not run Git or grant trust.
-- Git status needs a separate device-local trust decision.
+- Source control needs a separate device-local trust decision.
 - Status, diff, stage, unstage, and protected discard stay inside the workspace.
 - A local commit is explicit, fingerprint-checked, and skips repository hooks.
 - DevDesk does not fetch, pull, push, change remotes, run hooks, or manage credentials.
@@ -621,13 +702,17 @@ the real repository is a parent folder.
 ### Beginner workflow
 
 1. Back up important work.
-2. Open **Developer tools > Git status** on an eligible local Windows project.
-3. Review the repository root and displayed workspace scope.
-4. Grant local execution trust only when both are correct.
-5. Refresh status.
-6. Review a diff.
-7. Stage only the intended workspace path.
-8. Enter a commit message in DevDesk and select **Commit staged files**, or use
+2. Open **Developer tools > Source control** on an eligible local Windows
+   project.
+3. Grant local execution trust only after reviewing the displayed workspace
+   folder. DevDesk runs no Git command before approval.
+4. If Git is missing, install Git for Windows and select **Check again**.
+5. If no repository exists, initialize only when the displayed workspace should
+   receive its own `.git` metadata. Initialization does not stage or commit.
+6. Review the repository root and displayed workspace scope.
+7. Open **Changes** and review a diff.
+8. Stage only the intended workspace path.
+9. Enter a commit message in DevDesk and select **Commit staged files**, or use
    your normal Git client after one more review.
 
 Example in the workspace root:
@@ -644,10 +729,14 @@ workspace is an eligible local Windows folder.
 
 ### What the scoped Git page can do
 
-The Windows Git page shows the real repository root separately from the
-DevDesk workspace scope. Use it to refresh status, inspect recent scoped
-history, open a diff, explicitly stage, unstage, or safely discard a file, and
-create a reviewed local commit.
+The Windows Source Control page shows the real repository root separately from
+the DevDesk workspace scope. **Changes** provides inline or wide side-by-side
+text differences, explicit stage/unstage, bounded untracked-file preview, and
+recovery-patch-backed restore for a tracked working file. Untracked files are
+never deleted. **History** filters by commit message, author, or hash and shows
+the selected commit's workspace-scoped files and patch. **Branches** shows the
+current branch, upstream, ahead/behind counts, and remotes without fetching or
+changing them.
 
 DevDesk creates local commits with `--no-verify`; it does not fetch, pull, push,
 change remotes, run hooks, or manage Git credentials. A commit uses the
@@ -683,10 +772,15 @@ client, account, API plan, or local model.
 ### What the AI can learn
 
 - safe active-workspace metadata;
+- bounded project paths, languages, roles, manifest signals, and detected stacks
+  without file content;
 - indexed document paths, titles, tags, and fingerprints;
 - graph nodes, resolved written links, and backlinks;
 - workspace issues and OKF status;
-- redacted Markdown text only when you enable it.
+- redacted source, configuration, test, and Markdown text only when you enable
+  **Share redacted workspace text**;
+- a token-budgeted context pack combining relevant project snippets, detected
+  stacks, and connected Markdown knowledge.
 
 Nodes and links help an AI follow relevant written relationships. They do not
 prove that an answer is true or that two documents have an unstated semantic
@@ -696,16 +790,24 @@ relationship.
 
 1. Open a Windows or Android workspace.
 2. Open **Settings > DevDesk Agent Connector**.
-3. Review the three optional permissions.
+3. Review the optional permissions for text, proposals, verification, and
+   scheduled read-only checks.
 4. Select **Start connector**.
 5. Copy the Codex or Gemini CLI configuration.
 6. Add it to the AI client's MCP settings.
 7. Ask the client to list DevDesk tools.
 
+`get_project_map` is metadata-only. `search_project_files` searches paths,
+languages, and roles while text sharing is off, and can also search redacted
+content when it is on. `read_project_file` and `build_context_pack` require text
+sharing. DevDesk skips generated folders, links, credential-like paths, binary
+or non-UTF-8 files, and content beyond the enforced limits.
+
 ### Review-only changes
 
-When **Allow review proposals** is on, an agent may queue a complete Markdown
-replacement. It cannot apply the replacement.
+When **Allow review proposals** is on, an agent may queue a bounded, complete
+multi-file source, test, configuration, or Markdown change. It cannot approve
+or apply the change.
 
 Open **Review agent proposals**, compare the current and proposed file, then
 choose **Cancel**, **Reject**, or **Approve and apply**. Approval uses a
@@ -714,6 +816,13 @@ fingerprint and stops if the file changed after the agent read it.
 The connector has no terminal, delete, approval, or Git-push tool. Stop it when
 you finish, and rotate its access key if an old configuration is no longer
 trusted.
+
+Connected sessions are grouped by assigned workspace, with independent sessions
+shown separately. Each row reports the observed state, current safe tool, last
+activity, request count, in-flight work, permissions, and pending reviews. You
+can reassign only an idle session and DevDesk confirms the old and new scope.
+Concurrent reads are allowed; approved writes are serialized per workspace and
+fingerprint-checked again.
 
 When **Allow scheduled read-only checks** is on, an agent can schedule or run a
 recurring graph-health check. The task records its plan, steps, result, retries,
@@ -746,6 +855,30 @@ steps, tool names, troubleshooting, privacy, and official MCP references.
 
 DevDesk's Settings backup covers supported private application records. It does
 not automatically include external project folders or protected secrets.
+
+### Export a Reinstall Recovery Kit
+
+Use a Recovery Kit for supported DevDesk-managed data and a sanitized list of
+external workspaces that you can reconnect after reinstalling:
+
+Settings also shows **Recovery readiness**, including the last completed file
+export and the number of registered external workspaces. Open its
+**Pre-uninstall checklist** before removing the app.
+
+1. Open **Settings > Data backup**.
+2. Select **Export Reinstall Recovery Kit** and store the JSON somewhere safe.
+3. Back up each external workspace folder separately, such as with the ZIP steps
+   above. The Recovery Kit does not contain those folders.
+4. After reinstalling, select **Import Recovery Kit or Backup**.
+5. Select **Reconnect Recorded Workspaces**, review the list, and then select
+   **Reconnect a workspace** to choose the original folder. Repeat for the other
+   recorded workspaces.
+
+Version 3 kits contain the reconnection catalog. Older supported backups can
+still import but may not have one. The most recently imported kit replaces the
+stored reconnect list. Protected secrets, Android folder permission, execution
+trust, and Agent Connector access keys are not restored; grant or enter them
+again only when needed.
 
 Avoid editing the same cloud-synced file on two devices at once. Resolve sync or
 Git conflicts before continuing. See [Backup and restore](backup-restore.html).
@@ -787,9 +920,17 @@ later. Microsoft Store **Library** is also available for manual update checks.
 
 ### Uninstall and data preservation
 
-Back up DevDesk-private records and external workspace folders before
-uninstalling. Removing the app is not a substitute for deleting or preserving
-user-owned project folders. Verify your files independently.
+Before uninstalling, export **Settings > Data backup > Export Reinstall Recovery
+Kit**, then back up every external workspace folder separately. Removing the app
+does not delete or preserve user-owned project folders for you. After reinstall,
+import the kit, reconnect each recorded folder, re-enter protected secrets, and
+grant trust again only after verifying the displayed path.
+
+For an Android-to-Windows handoff, copy or sync the project folder separately,
+reopen `project.devdesk` on Windows, and grant execution trust only after
+checking the path. Android supports editing, graph, Canvas, context, and review;
+local Git CLI actions and allowlisted project verification remain Windows
+capabilities in this release.
 
 ## Android Guide
 
@@ -988,6 +1129,20 @@ action. It skips hooks and does not fetch, pull, push, change remotes, or manage
 credentials. In a parent repository, verify that unrelated files are not
 already staged before committing.
 
+### Can DevDesk initialize a Git repository?
+
+Yes, for an eligible standalone local Windows workspace after you grant local
+execution trust. DevDesk runs only `git init` during initialization; it does not
+stage, commit, add a remote, or initialize a workspace already inside a parent
+repository.
+
+### Can a Recovery Kit restore my workspace folders?
+
+No. It restores supported DevDesk-managed records and, in version 3, a sanitized
+catalog that helps you reconnect external workspace folders. Back up the folders
+themselves separately. Protected secrets, Android folder permission, execution
+trust, and Agent Connector access keys are intentionally excluded.
+
 See the complete [Frequently asked questions](faq.html).
 
 ## Learn More and References
@@ -1152,11 +1307,14 @@ an HTML error page.
 
 ### 9. Create a safe Git checkpoint when Git is available
 
-1. Open **Developer tools > Git status**.
-2. Confirm the repository and workspace boundaries.
-3. Review each diff.
-4. Stage only the tutorial files.
-5. Enter a commit message and select **Commit staged files**. You can also use
+1. Open **Developer tools > Source control** on Windows.
+2. Review the displayed folder and grant local execution trust.
+3. If Git is missing, install Git for Windows and select **Check again**. If the
+   standalone tutorial folder is not a repository, select **Initialize Git
+   repository** only when you intend to add `.git` metadata there.
+4. Confirm the repository root and workspace boundaries.
+5. Open **Changes**, review each diff, and stage only the tutorial files.
+6. Enter a commit message and select **Commit staged files**. You can also use
    your normal Git client:
 
 ```powershell
@@ -1166,8 +1324,9 @@ git commit -m "Add My First App Project tutorial files"
 
 **Expected:** Git records one commit containing only reviewed files.
 
-**If unavailable:** Install Git or skip this optional step. Do not broaden trust
-or move files merely to make the button appear.
+**If unavailable:** Follow the page's trust, Git installation, or initialization
+guidance, or skip this optional step. Android provides a handoff to Windows
+instead of running a Git engine on the phone.
 
 ### 10. Back up the workspace
 
@@ -1180,6 +1339,10 @@ or move files merely to make the button appear.
 **Expected:** The backup contains all tutorial files.
 
 **If not:** Recreate the ZIP from the workspace folder, not from one selected file.
+
+The ZIP is the project backup. To preserve supported DevDesk-managed records as
+well, also export **Settings > Data backup > Export Reinstall Recovery Kit** and
+store that JSON separately. The kit does not replace the ZIP.
 
 ### 11. Reopen and verify
 

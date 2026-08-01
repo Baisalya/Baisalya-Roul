@@ -1,4 +1,4 @@
-const BUILD_ID = '20260801.2';
+const BUILD_ID = '20260801.6';
 const CACHE_PREFIX = 'devdesk-docs-';
 const CACHE_NAME = `${CACHE_PREFIX}${BUILD_ID}`;
 const ASSETS = [
@@ -25,6 +25,8 @@ const ASSETS = [
   "./manual/links-backlinks-nodes.html",
   "./manual/knowledge-workspace.html",
   "./manual/knowledge-graph.html",
+  "./manual/structured-views.html",
+  "./manual/visual-canvas.html",
   "./manual/graph-connection-editing.html",
   "./manual/markdown-vault.html",
   "./manual/markdown-editor.html",

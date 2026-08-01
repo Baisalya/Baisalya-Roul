@@ -6,7 +6,7 @@
 2. Start Here: Your First Five Minutes
 3. Choose What You Want to Do
 4. Understanding a DevDesk Workspace
-5. Planning Your Work
+5. Planning Your Work, Structured Views, and Visual Canvas
 6. Markdown for Complete Beginners
 7. Connecting Notes
 8. Properties and Metadata
@@ -30,7 +30,8 @@
 
 ## Focused manuals
 
-The website keeps 41 focused topics under `manual/`, grouped as:
+The website keeps 45 searchable manual pages under `manual/`, including dedicated
+**Structured workspace views** and **Visual Canvas** guides, grouped as:
 
 - Start here and installation
 - Knowledge and Markdown

@@ -109,6 +109,30 @@ creation, so an existing file is never replaced. A nested parent folder must
 already exist. Explicitly copy, import, or assign an outside file before using
 it as content in a particular workspace.
 
+### Edit a project text file
+
+The general workspace text editor handles `.txt`, `.log`, `.xml`, `.html`,
+`.css`, `.js`, `.ts`, `.dart`, `.py`, `.java`, `.kt`, `.swift`, `.sh`, `.bat`,
+`.env`, `.har`, `.bru`, and `.http`. Markdown, JSON, YAML, and OpenAPI documents
+continue to use their purpose-built tools by default.
+
+1. Open a supported file from **Files**, or choose **Open with â†’ Edit text**.
+2. Edit or search its decoded text.
+3. Use `Ctrl+S` or **Save workspace file** to write only that
+   workspace-relative path.
+4. Use `Ctrl+Shift+S` or **Save As** to export an independent copy instead.
+
+Workspace save uses the fingerprint captured when the file was opened and an
+atomic workspace write. If another program changed the file, the stale save is
+refused. DevDesk also warns before leaving with unsaved changes. A read-only
+workspace can export a copy but cannot overwrite the project file.
+
+Copying the complete text uses likely-secret detection and conservative
+redaction. This is especially important for `.env`, HTTP, HAR, and source files,
+but automatic redaction cannot recognize every confidential value. **Save as
+Snippet** creates app-managed snippet data rather than replacing the project
+file.
+
 The earlier **Workspace Hub** remains under **Files → Open explorer**. It provides the bounded project tree, breadcrumb navigation, nested-folder browsing, safe **New file**/**New folder** actions, detailed project capabilities, and exact project-file selection.
 
 ### Browse a real project, not a copied vault
@@ -245,6 +269,13 @@ unsupported platform, repository ready, and unexpected failure. A normal new
 workspace therefore receives guided setup rather than a generic red error. If
 a parent repository is detected, DevDesk uses it and refuses to create a nested
 repository. Trust remains independent for every workspace.
+
+The ready workbench separates **Changes**, **History**, and **Branches**.
+Changes provides scoped previews, inline or wide side-by-side differences,
+stage/unstage, recovery-patch-backed restore, and explicit local commit.
+History filters by message, author, or hash and shows each selected commit's
+scoped files and patch. Branches displays local branch, upstream,
+ahead/behind, and remote information without fetching or changing it.
 
 Opening the manifest never grants trust or runs Git.
 

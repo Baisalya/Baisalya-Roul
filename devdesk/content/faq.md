@@ -69,6 +69,16 @@ or local model.
 
 It gives the AI useful structure: document nodes, written links, backlinks, issues, and OKF status. A graph line is not proof that an AI answer is true; document content, source quality, and your instructions still matter.
 
+## Can the Agent Connector help an AI understand source code?
+
+Yes, within explicit limits. The metadata-only project map detects common stacks,
+languages, file roles, and manifest signals. When **Share redacted workspace
+text** is enabled, the agent can search bounded source/configuration content,
+read one eligible UTF-8 file, or request a token-budgeted context pack that also
+includes connected Markdown knowledge. DevDesk skips generated folders, links,
+common credential paths, binary files, and oversized content, then applies
+conservative secret redaction. No connector tool edits source files.
+
 ## Can an AI agent change my files automatically?
 
 No. The connector can queue a Markdown replacement only when review proposals are enabled. You compare both versions. Only **Approve and apply** performs a conflict-checked save.
@@ -89,6 +99,14 @@ Building and storing a request is local. Sending it uses the network and transmi
 
 Portable backup JSON should be treated as sensitive. Protected secret values are excluded, but other confidential content may remain.
 
+## Does a Reinstall Recovery Kit contain my workspace folders?
+
+No. It contains supported independent app records plus a sanitized catalog of
+workspace identity and location hints. Back up each external workspace folder
+separately. After importing the kit, use **Reconnect Recorded Workspaces** and
+the normal folder picker. Protected secrets, permission tokens, execution
+trust, and Agent Connector access keys must be supplied again.
+
 ## Can I recover after uninstalling DevDesk?
 
 Yes, when you prepare first. Export a **Reinstall Recovery Kit** and separately
@@ -97,6 +115,22 @@ restore independent API workspaces, Vault notes, snippets, history, and
 settings, then explicitly reconnect each external workspace folder. Android
 requires folder permission again. Protected secrets and trust decisions are
 not restored.
+
+## Can DevDesk initialize a Git repository?
+
+Yes, on a trusted local Windows workspace when Git is installed and no
+repository already contains the workspace. The confirmed action creates only
+`.git` in the displayed workspace folder. It does not stage files, create a
+commit or remote, connect an account, or use the network. If a parent repository
+already exists, DevDesk uses that repository and refuses to create a nested one.
+
+## Can DevDesk edit project text and source files?
+
+Yes, for the supported text extensions shown in the workspace guide. Save
+writes only the active workspace-relative file with fingerprint conflict
+protection. Save As exports an independent copy. Markdown, JSON, and OpenAPI
+documents keep their specialist editors, and binary files are not treated as
+general text.
 
 ## Why is macOS shown without a download?
 

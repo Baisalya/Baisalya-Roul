@@ -29,7 +29,8 @@ See `PRODUCT_POSITIONING.md` for the message hierarchy and
 
 - benefit-led landing page for everyday users and developers;
 - transparent platform downloads page;
-- an agent-ready workspace demo ZIP with Codex and Gemini CLI instructions;
+- a featured graph-to-code video and downloadable Tiny Multi-Agent Graph Demo;
+- the original agent-ready workspace as a second guided practice demo;
 - a complete beginner-first global manual plus 41 focused tool topics,
   including a five-page API Studio section;
 - responsive sidebar and table of contents;
@@ -50,14 +51,22 @@ Edit `assets/js/site-config.js`.
   `https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare`.
 - macOS and iOS remain disabled until real signed public releases exist.
 
-## Agent-ready demo download
+## Demo downloads
 
-`assets/downloads/devdesk-agent-ready-workspace-demo.zip` is a self-contained
-practice workspace linked from `downloads.html#agent-demo`. Its editable source
-lives in `assets/downloads/devdesk-agent-ready-demo/`. Keep the ZIP free of
-connector URLs, account details, and user-specific content. After changing the
-demo source, run its standard-library tests, rebuild the ZIP, and check the
-download link on the site.
+**Demo 1** is the primary graph-to-code walkthrough. Its editable source is in
+`assets/downloads/devdesk-tiny-multi-agent-graph-demo/`, its public archive is
+`assets/downloads/devdesk-tiny-multi-agent-graph-demo.zip`, and its silent
+recording is `assets/media/devdesk-tiny-multi-agent-graph-demo.mp4`. The page
+auto-detects future narration tracks using the filenames documented in
+`assets/audio/README.md`.
+
+**Demo 2** is the original guided agent-ready workspace. Its editable source is
+in `assets/downloads/devdesk-agent-ready-demo/` and its public archive is
+`assets/downloads/devdesk-agent-ready-workspace-demo.zip`.
+
+Keep every public demo free of connector URLs, access keys, account details,
+and user-specific content. After changing a demo source, run its tests, rebuild
+the ZIP, and check the video, archive, and page links locally.
 
 ## Refresh generated manual pages
 

@@ -36,8 +36,9 @@ contrast or a wider window when text is hard to read.
   compatible client must run on the same device and DevDesk must remain open.
 
 The agent connector is stopped by default. Read
-[AI Agent Connector](agent-connector.html) before enabling either Markdown
-sharing or review proposals.
+[AI Agent Connector](agent-connector.html) before enabling redacted workspace
+text sharing, review proposals, or scheduled read-only checks. All three
+optional permissions are off by default.
 
 ## Backups and privacy
 
@@ -45,6 +46,11 @@ Settings can export a backup file or a redacted backup copy, and it previews an
 import before applying it. Protected secrets are not included in portable
 backups. External project folders are separate from the Settings backup and
 need their own copy, sync, or Git workflow.
+
+After importing a recovery kit, **Reconnect Recorded Workspaces** shows its
+sanitized workspace catalog. Select **Reconnect a workspace** to open the normal
+folder picker; repeat for additional folders. Importing another kit replaces
+this stored reconnection list with the newly imported catalog.
 
 Use the **Privacy Policy**, **Privacy Question**, and **Security Report** items
 to understand data handling or contact the developer. Do not include tokens,

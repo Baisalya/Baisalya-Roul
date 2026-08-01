@@ -15,7 +15,9 @@ Use **Open file** and select a supported Markdown document. DevDesk reads the se
 
 ## Editor and preview
 
-Wide windows show editor and rendered preview side by side. Narrow Android and freeform layouts stack or simplify the view so text remains readable.
+Choose **Edit**, **Preview**, or **Split**. Wide windows can show source and
+rendered output together. Narrow Android and freeform layouts move secondary
+actions into compact menus so the text remains readable.
 
 ## Useful actions
 
@@ -26,6 +28,13 @@ Wide windows show editor and rendered preview side by side. Narrow Android and f
 - Rename internal file
 - Delete internal file
 - Copy Markdown
+- Find and replace
+- Outline navigation
+- Focus mode
+
+Markdown syntax is highlighted without changing the plain-text file. The footer
+reports words, characters, cursor position, and save state. Formatting actions
+insert portable Markdown rather than a hidden editor format.
 
 ## Safety
 

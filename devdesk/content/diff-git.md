@@ -42,6 +42,30 @@ not change or stage existing files, create a commit or remote, connect an
 account, or use the network. DevDesk refuses to create a nested repository
 when the workspace is already inside a parent repository.
 
+### Use the Source Control workbench
+
+When the repository is ready, the Windows page separates three views:
+
+- **Changes:** review staged and working files, open a bounded text difference,
+  switch between inline and side-by-side layout when the window is wide enough,
+  and explicitly stage or unstage one path. A new untracked text file can be
+  previewed and staged, but DevDesk never deletes an untracked file.
+- **History:** filter workspace-scoped commits by message, author, or hash.
+  Select a commit to inspect its changed files and workspace-scoped patch.
+- **Branches:** inspect the current branch, upstream, ahead/behind counts, and
+  configured remotes. This is local status display; opening the view does not
+  fetch from a remote.
+
+**Restore working file safely** is available only for a tracked, unstaged
+working-tree change. DevDesk writes a binary-capable recovery patch to a
+temporary recovery folder first, then restores the selected file to its staged
+version. Copy the displayed recovery-patch path somewhere durable if you may
+need it later.
+
+Repository mutations require the fingerprint from the displayed snapshot. If
+another Git client, editor, or DevDesk window changes repository state, DevDesk
+stops the action and asks you to refresh.
+
 ### Parent repository with a strict workspace scope
 
 When the user explicitly opens Git status, DevDesk resolves the real repository
@@ -78,6 +102,13 @@ credentials, or trust.
   staged. Use the normal Git client instead whenever the staged boundary is
   uncertain.
 - Use your normal Git client for remote operations and conflict resolution.
+
+## Android boundary
+
+Android workspaces are provider-backed document trees, so the Source Control
+page does not start a Git engine on the phone. It offers a Windows handoff for
+status, changes, history, branches, and local commits. Android can still edit
+workspace files safely and use the general Compare & Diff tool.
 
 ## GitHub comparison
 

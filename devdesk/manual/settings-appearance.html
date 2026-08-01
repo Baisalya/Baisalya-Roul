@@ -26,6 +26,8 @@
 <a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
 <a class="" href="../manual/knowledge-workspace.html">Edit workspace Markdown</a>
 <a class="" href="../manual/knowledge-graph.html">Relationships and graph</a>
+<a class="" href="../manual/visual-canvas.html">Visual Canvas</a>
+<a class="" href="../manual/structured-views.html">Structured workspace views</a>
 <a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
 <a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
 <a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
@@ -93,13 +95,18 @@ for an MCP-compatible client such as Codex or Gemini CLI. On Android, the
 compatible client must run on the same device and DevDesk must remain open.</li>
 </ul>
 <p>The agent connector is stopped by default. Read
-<a href="agent-connector.html">AI Agent Connector</a> before enabling either Markdown
-sharing or review proposals.</p>
+<a href="agent-connector.html">AI Agent Connector</a> before enabling redacted workspace
+text sharing, review proposals, or scheduled read-only checks. All three
+optional permissions are off by default.</p>
 <h2 id="backups-and-privacy">Backups and privacy<a class="heading-anchor" href="#backups-and-privacy" aria-label="Link to Backups and privacy">#</a></h2>
 <p>Settings can export a backup file or a redacted backup copy, and it previews an
 import before applying it. Protected secrets are not included in portable
 backups. External project folders are separate from the Settings backup and
 need their own copy, sync, or Git workflow.</p>
+<p>After importing a recovery kit, <strong>Reconnect Recorded Workspaces</strong> shows its
+sanitized workspace catalog. Select <strong>Reconnect a workspace</strong> to open the normal
+folder picker; repeat for additional folders. Importing another kit replaces
+this stored reconnection list with the newly imported catalog.</p>
 <p>Use the <strong>Privacy Policy</strong>, <strong>Privacy Question</strong>, and <strong>Security Report</strong> items
 to understand data handling or contact the developer. Do not include tokens,
 passwords, private source code, or sensitive request bodies in a public report.</p>
