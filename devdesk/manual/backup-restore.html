@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Export, preview, merge, replace, and recover DevDesk-private data."><meta name="theme-color" content="#5b47e8"><title>Backup and restore · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Protect independent data, reconnect external workspaces, and recover safely after reinstall."><meta name="theme-color" content="#5b47e8"><title>Backup, reinstall, and restore · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
   <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
@@ -61,14 +61,18 @@
 <a class="" href="../manual/privacy-security.html">Privacy and security</a>
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
-<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Safety and reference</span></div><div class="doc-meta"><span class="doc-chip">Safety and reference</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="backup-and-restore">Backup and restore<a class="heading-anchor" href="#backup-and-restore" aria-label="Link to Backup and restore">#</a></h1>
-<p>DevDesk can export and import versioned local application data.</p>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Safety and reference</span></div><div class="doc-meta"><span class="doc-chip">Safety and reference</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div>
+<h1 id="backup-and-restore">Backup and restore<a class="heading-anchor" href="#backup-and-restore" aria-label="Link to Backup and restore">#</a></h1>
+<p>DevDesk can export and import versioned local application data. The recommended
+pre-uninstall export is a <strong>Reinstall Recovery Kit</strong>.</p>
 <h2 id="export">Export<a class="heading-anchor" href="#export" aria-label="Link to Export">#</a></h2>
 <ul>
-<li><strong>Export Backup File:</strong> save JSON to a location you choose.</li>
+<li><strong>Export Reinstall Recovery Kit:</strong> save independent DevDesk data plus a safe
+workspace reconnection catalog as JSON outside DevDesk.</li>
 <li><strong>Copy Backup JSON:</strong> copy a conservatively redacted backup.</li>
 </ul>
-<p>Protected secret values are excluded from supported DevDesk backups.</p>
+<p>Protected secret values, Android permission URIs, execution trust, and AI
+connector access keys are excluded.</p>
 <h2 id="import">Import<a class="heading-anchor" href="#import" aria-label="Link to Import">#</a></h2>
 <ol>
 <li>Select a backup file or paste backup JSON.</li>
@@ -76,10 +80,26 @@
 <li>Choose <strong>Replace</strong> or <strong>Merge</strong>.</li>
 <li>Confirm the operation.</li>
 <li>Reopen important tools and verify their state.</li>
+<li>Review <strong>Reconnect external workspaces</strong> and select each original folder.</li>
+<li>Re-enter protected secrets and re-approve trust only when needed.</li>
 </ol>
 <p>Imports are staged and use rollback protection if mutation fails.</p>
 <h2 id="what-a-backup-does-not-include">What a backup does not include<a class="heading-anchor" href="#what-a-backup-does-not-include" aria-label="Link to What a backup does not include">#</a></h2>
-<p>External project folders, exported files, Git repositories, and protected secrets remain separate.</p>
+<p>External project folders, exported files, Git repositories, and protected
+secrets remain separate. The recovery kit records a workspace ID, name,
+portable status, platform, and human-readable location hint; it does not copy
+the folder or restore operating-system permission grants.</p>
+<h2 id="before-uninstalling-on-android-or-windows">Before uninstalling on Android or Windows<a class="heading-anchor" href="#before-uninstalling-on-android-or-windows" aria-label="Link to Before uninstalling on Android or Windows">#</a></h2>
+<ol>
+<li>Open <strong>Settings → Data backup → Export Reinstall Recovery Kit</strong>.</li>
+<li>Save the kit outside DevDesk and verify that the file exists.</li>
+<li>Back up workspace folders independently using a normal file copy or Git.</li>
+<li>After reinstall, import the kit.</li>
+<li>Select <strong>Reconnect a workspace</strong> for every recorded folder. Android always
+requires the folder permission again.</li>
+</ol>
+<p>An app cannot safely create a last-minute backup after the operating system has
+already started uninstalling it. Export first.</p>
 <h2 id="safety">Safety<a class="heading-anchor" href="#safety" aria-label="Link to Safety">#</a></h2>
 <p>Keep backups private. Redaction cannot guarantee that every confidential value is recognized.</p>
 <h2 id="before-a-major-operation">Before a major operation<a class="heading-anchor" href="#before-a-major-operation" aria-label="Link to Before a major operation">#</a></h2>
@@ -96,7 +116,8 @@
 <li><strong>Merge</strong> combines supported records according to the import rules.</li>
 </ul>
 <p>Always read the preview because conflicts and duplicate identifiers can produce different outcomes.</p>
-<div class="article-footer"><a class="pager" href="snippets-notes.html"><small>Previous</small><strong>Snippets and Notes</strong></a><a class="pager" href="settings-appearance.html"><small>Next</small><strong>Settings and appearance</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#export">Export</a><a class="level-2" href="#import">Import</a><a class="level-2" href="#what-a-backup-does-not-include">What a backup does not include</a><a class="level-2" href="#safety">Safety</a><a class="level-2" href="#before-a-major-operation">Before a major operation</a><a class="level-2" href="#replace-versus-merge">Replace versus merge</a></aside></div><footer class="site-footer"><div class="footer-inner">
+
+<div class="article-footer"><a class="pager" href="snippets-notes.html"><small>Previous</small><strong>Snippets and Notes</strong></a><a class="pager" href="settings-appearance.html"><small>Next</small><strong>Settings and appearance</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#export">Export</a><a class="level-2" href="#import">Import</a><a class="level-2" href="#what-a-backup-does-not-include">What a backup does not include</a><a class="level-2" href="#before-uninstalling-on-android-or-windows">Before uninstalling on Android or Windows</a><a class="level-2" href="#safety">Safety</a><a class="level-2" href="#before-a-major-operation">Before a major operation</a><a class="level-2" href="#replace-versus-merge">Replace versus merge</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>

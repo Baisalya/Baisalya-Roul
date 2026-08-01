@@ -17,7 +17,10 @@ the local device loopback address and requires a random access URL. On Android,
 the compatible MCP client must run on the same device and DevDesk must remain
 open.
 
-Safe metadata, graph links, issues, and OKF status are read-only. Markdown text sharing and change proposals are separate permissions that are off by default.
+Safe metadata, graph links, issues, and OKF status are read-only. Markdown text
+sharing, change proposals, and scheduled read-only checks are separate
+permissions that are off by default. A scheduled graph-health check stores its
+plan and run log locally and cannot edit project files.
 
 A proposal does not write a file. Only **Approve and apply** inside DevDesk can save it, and the save fails when the original file changed.
 
@@ -53,6 +56,12 @@ Android uses a Keystore-backed boundary and Windows uses DPAPI where supported. 
 DevDesk accesses files or folders after you choose them. Exported files and clipboard content are outside DevDesk's private storage boundary.
 
 Removing a workspace registration or clearing private app data does not delete external project folders.
+
+A Reinstall Recovery Kit contains redacted independent application records and
+a sanitized workspace reconnection catalog. It excludes raw Android permission
+URIs, protected secrets, execution trust, and AI connector access keys. Treat
+the exported JSON as sensitive because ordinary notes, URLs, file location
+hints, or other confidential non-secret content may still be present.
 
 ## Execution trust
 

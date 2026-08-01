@@ -11,6 +11,13 @@ A Developer Workspace connects DevDesk to a project folder you own. Source files
 5. Choose the parent folder.
 6. DevDesk creates one new child folder and opens the unified workspace shell.
 
+A new workspace does not silently become a Git repository. On Windows, open
+**Developer tools → Source control** when you want Git. DevDesk first requests
+workspace-specific device-local trust, checks the Git installation, and then
+offers **Initialize Git repository** only when no repository exists. That
+confirmed action creates `.git` in the exact workspace folder; it does not
+stage files, commit, add a remote, connect an account, or use the network.
+
 If the child folder or a destination file already exists, creation stops safely. A failed transaction is removed only when the transaction marker, exact created paths, and recorded fingerprints still match. If another app or person added or changed anything, DevDesk preserves the folder for review.
 
 ## Open an existing folder
@@ -232,6 +239,12 @@ folder, status and recent history use only the repository-relative workspace
 pathspec. Diff, stage, unstage, and protected discard validate every selected
 path against the folder containing `project.devdesk`; changes elsewhere in the
 parent repository are excluded and cannot make a scoped mutation stale.
+
+Source Control distinguishes trust required, Git missing, no repository,
+unsupported platform, repository ready, and unexpected failure. A normal new
+workspace therefore receives guided setup rather than a generic red error. If
+a parent repository is detected, DevDesk uses it and refuses to create a nested
+repository. Trust remains independent for every workspace.
 
 Opening the manifest never grants trust or runs Git.
 

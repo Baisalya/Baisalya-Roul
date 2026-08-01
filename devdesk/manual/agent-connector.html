@@ -83,7 +83,8 @@ on the same device; keep DevDesk open because Android can stop background apps.<
 <li>connected graph nodes and links;</li>
 <li>broken links and other workspace issues;</li>
 <li>the current OKF structure report;</li>
-<li>change proposals waiting for your review.</li>
+<li>change proposals waiting for your review;</li>
+<li>local read-only automation plans, results, and retry state.</li>
 </ul>
 <p>This gives the AI the same indexed structure that DevDesk displays. It does not guarantee that every AI answer is correct.</p>
 <h2 id="how-graph-nodes-help-an-ai">How graph nodes help an AI<a class="heading-anchor" href="#how-graph-nodes-help-an-ai" aria-label="Link to How graph nodes help an AI">#</a></h2>
@@ -128,7 +129,7 @@ Codex, Gemini CLI, and another compatible MCP client.</p>
 <p>The download includes <code>AGENTS.md</code> for Codex, <code>GEMINI.md</code> for Gemini CLI, clear prompts, a small Python module, and standard-library tests. It contains no connector URL, API key, AI account, or cloud copy of your project.</p>
 <p>Start with the read-only task. Only then run the small coding task, and ask for a Markdown proposal rather than an automatic Markdown edit.</p>
 <h2 id="choose-permissions">Choose permissions<a class="heading-anchor" href="#choose-permissions" aria-label="Link to Choose permissions">#</a></h2>
-<p>Both optional permissions are off by default.</p>
+<p>All three optional permissions are off by default.</p>
 <h3 id="share-redacted-markdown-text">Share redacted Markdown text<a class="heading-anchor" href="#share-redacted-markdown-text" aria-label="Link to Share redacted Markdown text">#</a></h3>
 <p>Turn this on when the AI needs document bodies.</p>
 <p>DevDesk removes common secret-like values before returning text. Redaction is conservative, but no automatic filter recognizes every possible secret. Review private files before sharing them with any AI.</p>
@@ -137,6 +138,15 @@ Codex, Gemini CLI, and another compatible MCP client.</p>
 <p>Turn this on when the AI should suggest an edit to an existing Markdown file.</p>
 <p>The AI sends a complete proposed replacement and the fingerprint of the version it read. DevDesk stores a pending review. It does not change the file.</p>
 <p>If the file changes before approval, DevDesk refuses the stale proposal.</p>
+<h3 id="allow-scheduled-read-only-checks">Allow scheduled read-only checks<a class="heading-anchor" href="#allow-scheduled-read-only-checks" aria-label="Link to Allow scheduled read-only checks">#</a></h3>
+<p>Turn this on only when the agent should schedule recurring graph-health checks.</p>
+<p>These tasks keep a local plan, step log, result, retry count, and next-run time.
+They can report broken, ambiguous, duplicate, malformed, skipped, or orphaned
+knowledge items, but they cannot edit project files. Tasks run only while
+DevDesk is open; an overdue check resumes after the app reopens.</p>
+<p>You can also schedule a daily graph check directly from the Agent Connector,
+pause a task, run it now, or retry a failed task. Disabling the permission
+pauses scheduled checks.</p>
 <h2 id="connect-codex">Connect Codex<a class="heading-anchor" href="#connect-codex" aria-label="Link to Connect Codex">#</a></h2>
 <p>Use this configuration only in a Codex client running on the same device as
 DevDesk. For Android, use the generic MCP endpoint with a compatible local
@@ -202,6 +212,10 @@ restart or refresh the MCP client.</li>
 <blockquote>
 <p>Propose an improvement to <code>Release plan.md</code>. Do not claim the file changed. I will review it in DevDesk.</p>
 </blockquote>
+<p>When scheduled read-only checks are on:</p>
+<blockquote>
+<p>Schedule a graph health check every 24 hours. Do not edit any files.</p>
+</blockquote>
 <h2 id="tools-exposed-by-devdesk">Tools exposed by DevDesk<a class="heading-anchor" href="#tools-exposed-by-devdesk" aria-label="Link to Tools exposed by DevDesk">#</a></h2>
 <table>
 <thead>
@@ -245,6 +259,21 @@ restart or refresh the MCP client.</li>
 <tr>
 <td><code>list_change_proposals</code></td>
 <td>Show proposal status</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td><code>list_automation_tasks</code></td>
+<td>Show local task plans, logs, results, and retries</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td><code>schedule_graph_health_check</code></td>
+<td>Schedule a recurring read-only graph check</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td><code>run_automation_task</code></td>
+<td>Run one existing read-only task now</td>
 <td align="right">No</td>
 </tr>
 <tr>
@@ -292,6 +321,10 @@ client is on the same device and that DevDesk remains open.</li>
 <p>Turn on <strong>Share redacted Markdown text</strong>. Use the exact workspace-relative path returned by <code>search_documents</code>.</p>
 <h3 id="a-proposal-was-refused">A proposal was refused<a class="heading-anchor" href="#a-proposal-was-refused" aria-label="Link to A proposal was refused">#</a></h3>
 <p>Turn on <strong>Allow review proposals</strong>. If the file changed, ask the AI to read it again and create a fresh proposal.</p>
+<h3 id="a-scheduled-check-does-not-run">A scheduled check does not run<a class="heading-anchor" href="#a-scheduled-check-does-not-run" aria-label="Link to A scheduled check does not run">#</a></h3>
+<p>Turn on <strong>Allow scheduled read-only checks</strong>, keep the task enabled, and keep
+DevDesk open. Confirm the workspace automation policy still allows read-only
+refresh. Overdue tasks resume when DevDesk reopens.</p>
 <h2 id="privacy-and-cost">Privacy and cost<a class="heading-anchor" href="#privacy-and-cost" aria-label="Link to Privacy and cost">#</a></h2>
 <p>DevDesk does not add analytics, an AI subscription, an API key, or a hosted AI backend.</p>
 <p>Your AI client decides where its prompts and tool results are processed. A cloud AI may send requested workspace context to its provider. A local model may keep processing on your device. Check the client's privacy and pricing before connecting it.</p>
@@ -307,7 +340,7 @@ platform protection is available. Otherwise DevDesk uses a session-only key.</p>
 <li><strong>Proposal:</strong> a suggested replacement waiting for your explicit review.</li>
 </ul>
 
-<div class="article-footer"><a class="pager" href="settings-appearance.html"><small>Previous</small><strong>Settings and appearance</strong></a><a class="pager" href="privacy-security.html"><small>Next</small><strong>Privacy and security</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#what-the-connector-adds">What the connector adds</a><a class="level-2" href="#how-graph-nodes-help-an-ai">How graph nodes help an AI</a><a class="level-2" href="#start-the-connector">Start the connector</a><a class="level-2" href="#try-the-agent-ready-demo">Try the Agent-ready demo</a><a class="level-2" href="#choose-permissions">Choose permissions</a><a class="level-3" href="#share-redacted-markdown-text">Share redacted Markdown text</a><a class="level-3" href="#allow-review-proposals">Allow review proposals</a><a class="level-2" href="#connect-codex">Connect Codex</a><a class="level-2" href="#connect-gemini-cli">Connect Gemini CLI</a><a class="level-2" href="#connect-another-mcp-compatible-agent">Connect another MCP-compatible agent</a><a class="level-3" href="#android-checklist">Android checklist</a><a class="level-2" href="#useful-first-requests">Useful first requests</a><a class="level-2" href="#tools-exposed-by-devdesk">Tools exposed by DevDesk</a><a class="level-2" href="#review-a-proposed-change">Review a proposed change</a><a class="level-2" href="#stop-or-remove-access">Stop or remove access</a><a class="level-2" href="#troubleshooting">Troubleshooting</a><a class="level-3" href="#the-ai-cannot-connect">The AI cannot connect</a><a class="level-3" href="#the-ai-says-no-workspace-is-selected">The AI says no workspace is selected</a><a class="level-3" href="#the-ai-cannot-read-a-document">The AI cannot read a document</a><a class="level-3" href="#a-proposal-was-refused">A proposal was refused</a><a class="level-2" href="#privacy-and-cost">Privacy and cost</a><a class="level-2" href="#terms">Terms</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div class="article-footer"><a class="pager" href="settings-appearance.html"><small>Previous</small><strong>Settings and appearance</strong></a><a class="pager" href="privacy-security.html"><small>Next</small><strong>Privacy and security</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#what-the-connector-adds">What the connector adds</a><a class="level-2" href="#how-graph-nodes-help-an-ai">How graph nodes help an AI</a><a class="level-2" href="#start-the-connector">Start the connector</a><a class="level-2" href="#try-the-agent-ready-demo">Try the Agent-ready demo</a><a class="level-2" href="#choose-permissions">Choose permissions</a><a class="level-3" href="#share-redacted-markdown-text">Share redacted Markdown text</a><a class="level-3" href="#allow-review-proposals">Allow review proposals</a><a class="level-3" href="#allow-scheduled-read-only-checks">Allow scheduled read-only checks</a><a class="level-2" href="#connect-codex">Connect Codex</a><a class="level-2" href="#connect-gemini-cli">Connect Gemini CLI</a><a class="level-2" href="#connect-another-mcp-compatible-agent">Connect another MCP-compatible agent</a><a class="level-3" href="#android-checklist">Android checklist</a><a class="level-2" href="#useful-first-requests">Useful first requests</a><a class="level-2" href="#tools-exposed-by-devdesk">Tools exposed by DevDesk</a><a class="level-2" href="#review-a-proposed-change">Review a proposed change</a><a class="level-2" href="#stop-or-remove-access">Stop or remove access</a><a class="level-2" href="#troubleshooting">Troubleshooting</a><a class="level-3" href="#the-ai-cannot-connect">The AI cannot connect</a><a class="level-3" href="#the-ai-says-no-workspace-is-selected">The AI says no workspace is selected</a><a class="level-3" href="#the-ai-cannot-read-a-document">The AI cannot read a document</a><a class="level-3" href="#a-proposal-was-refused">A proposal was refused</a><a class="level-3" href="#a-scheduled-check-does-not-run">A scheduled check does not run</a><a class="level-2" href="#privacy-and-cost">Privacy and cost</a><a class="level-2" href="#terms">Terms</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Plans, knowledge, APIs, and developer tools</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>

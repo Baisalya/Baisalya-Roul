@@ -9,18 +9,38 @@ Diff Workspace compares text, files, folders, supported GitHub content, or a sel
 3. Run the comparison.
 4. Review additions, deletions, and unchanged context.
 
-## Git status from a workspace
+## Source control from a workspace
 
-Eligible local Windows projects can open a focused Git status page:
+Eligible local Windows projects can open a focused Source Control page:
 
 1. Open the workspace.
-2. Open **Developer tools → Git status**. The action appears after a Git
-   repository is detected.
-3. Grant device-local execution trust after reviewing the displayed boundary.
-4. Refresh status.
-5. Stage or unstage a selected path explicitly.
+2. Open **Developer tools → Source control**.
+3. If asked, choose **Allow Git inspection** after reviewing the exact folder.
+   DevDesk runs no Git command before approval.
+4. If Git is missing, install Git for Windows and choose **Check again**.
+5. If the folder is not inside a repository, choose **Initialize Git
+   repository** and confirm the exact location.
+6. Stage or unstage a selected path explicitly.
+7. Enter a commit message and create a local commit after reviewing the staged
+   files.
 
 Opening `project.devdesk` never grants trust. Trust is private to the current device and can be revoked.
+
+### Professional setup states
+
+| State | DevDesk response |
+|---|---|
+| Trust required | Shows a neutral consent screen scoped to this workspace and device. |
+| Git missing | Shows the official Git for Windows link and **Check again**. |
+| No repository | Shows **Initialize Git repository** instead of a generic failure. |
+| Repository ready | Shows workspace-scoped status, changes, history, branches, and local commit controls. |
+| Android document tree | Preserves Android's provider boundary and explains the Windows handoff. |
+| Unexpected command failure | Shows a safe diagnostic code and retry action. |
+
+Initialization creates only `.git` in the displayed workspace root. It does
+not change or stage existing files, create a commit or remote, connect an
+account, or use the network. DevDesk refuses to create a nested repository
+when the workspace is already inside a parent repository.
 
 ### Parent repository with a strict workspace scope
 
@@ -48,8 +68,16 @@ credentials, or trust.
 - Unrelated parent-repository changes do not invalidate a scoped fingerprint.
 - Absolute and cross-workspace paths are rejected.
 - Stage and unstage require explicit actions.
-- DevDesk does not automatically fetch, pull, push, commit, run hooks, or manage credentials.
-- Use your normal Git client for remote operations.
+- Local commits are explicit, fingerprint-checked, and use `--no-verify` so
+  repository hooks are not executed.
+- DevDesk does not fetch, pull, push, change remotes, run hooks, or manage
+  credentials.
+- A Git commit records the repository's staged index. When the DevDesk
+  workspace is nested inside a parent repository, first confirm with your
+  normal Git client that unrelated parent-repository files are not already
+  staged. Use the normal Git client instead whenever the staged boundary is
+  uncertain.
+- Use your normal Git client for remote operations and conflict resolution.
 
 ## GitHub comparison
 

@@ -4,6 +4,17 @@ Settings controls how DevDesk looks, where you find help, backups, privacy,
 updates, and the local-data reset. Changing a setting does not upload your
 workspace.
 
+## Reinstall recovery
+
+Use **Export Reinstall Recovery Kit** before uninstalling Android or Windows.
+The kit contains independent app-managed data and a sanitized workspace
+reconnection catalog. After reinstall, use **Import Recovery Kit or Backup**,
+then **Reconnect Recorded Workspaces**. Workspace source folders are not copied
+into the kit and Android folder access must be granted again.
+
+Protected secrets, permission tokens, execution trust, and AI connector access
+keys are deliberately excluded and must be entered or approved again.
+
 ## Appearance
 
 Choose the options that are easiest to read:

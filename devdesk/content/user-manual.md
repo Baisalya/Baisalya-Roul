@@ -615,7 +615,8 @@ the real repository is a parent folder.
 - Opening `project.devdesk` does not run Git or grant trust.
 - Git status needs a separate device-local trust decision.
 - Status, diff, stage, unstage, and protected discard stay inside the workspace.
-- DevDesk does not automatically fetch, pull, push, commit, run hooks, or manage credentials.
+- A local commit is explicit, fingerprint-checked, and skips repository hooks.
+- DevDesk does not fetch, pull, push, change remotes, run hooks, or manage credentials.
 
 ### Beginner workflow
 
@@ -626,7 +627,8 @@ the real repository is a parent folder.
 5. Refresh status.
 6. Review a diff.
 7. Stage only the intended workspace path.
-8. Create the commit with your normal Git client after one more review.
+8. Enter a commit message in DevDesk and select **Commit staged files**, or use
+   your normal Git client after one more review.
 
 Example in the workspace root:
 
@@ -644,13 +646,14 @@ workspace is an eligible local Windows folder.
 
 The Windows Git page shows the real repository root separately from the
 DevDesk workspace scope. Use it to refresh status, inspect recent scoped
-history, open a diff, and explicitly stage, unstage, or safely discard a file
-inside the workspace boundary.
+history, open a diff, explicitly stage, unstage, or safely discard a file, and
+create a reviewed local commit.
 
-DevDesk does not fetch, pull, push, create commits, run hooks, or manage Git
-credentials. Use your normal Git client for those operations. This separation
-is intentional: the page helps you review the selected workspace without
-granting broad access to unrelated files in a parent repository.
+DevDesk creates local commits with `--no-verify`; it does not fetch, pull, push,
+change remotes, run hooks, or manage Git credentials. A commit uses the
+repository's staged index. For a workspace nested inside a parent repository,
+confirm with your normal Git client that no unrelated parent files are already
+staged before using the DevDesk commit action.
 
 See [Compare files and workspace-scoped Git](diff-git.html).
 
@@ -670,8 +673,9 @@ authoritative local hint. See [Keyboard shortcuts](keyboard-shortcuts.html).
 
 ## Connect an AI Agent
 
-The Windows **DevDesk Agent Connector** lets an MCP-compatible client such as
-Codex or Gemini CLI request selected-workspace context.
+The Windows and Android **DevDesk Agent Connector** lets an MCP-compatible
+client such as Codex or Gemini CLI request selected-workspace context. On
+Android, the client must run on the same device and DevDesk must remain open.
 
 DevDesk does not include an AI provider or AI subscription. You bring your own
 client, account, API plan, or local model.
@@ -690,9 +694,9 @@ relationship.
 
 ### Start and connect
 
-1. Open a Windows workspace.
+1. Open a Windows or Android workspace.
 2. Open **Settings > DevDesk Agent Connector**.
-3. Review the two optional permissions.
+3. Review the three optional permissions.
 4. Select **Start connector**.
 5. Copy the Codex or Gemini CLI configuration.
 6. Add it to the AI client's MCP settings.
@@ -710,6 +714,11 @@ fingerprint and stops if the file changed after the agent read it.
 The connector has no terminal, delete, approval, or Git-push tool. Stop it when
 you finish, and rotate its access key if an old configuration is no longer
 trusted.
+
+When **Allow scheduled read-only checks** is on, an agent can schedule or run a
+recurring graph-health check. The task records its plan, steps, result, retries,
+and next run locally. It cannot edit project files, runs only while DevDesk is
+open, and resumes overdue work after the app reopens.
 
 See [AI Agent Connector](agent-connector.html) for exact Codex and Gemini CLI
 steps, tool names, troubleshooting, privacy, and official MCP references.
@@ -973,9 +982,11 @@ remain.
 
 ### Can DevDesk create Git commits?
 
-The verified DevDesk Git UI provides bounded status, diff, stage, unstage, and
-protected discard actions. Use your normal Git client for commit, fetch, pull,
-push, remotes, and credentials.
+Yes, on an eligible local Windows project. The Git UI provides bounded status,
+diff, stage, unstage, protected discard, history, and an explicit local commit
+action. It skips hooks and does not fetch, pull, push, change remotes, or manage
+credentials. In a parent repository, verify that unrelated files are not
+already staged before committing.
 
 See the complete [Frequently asked questions](faq.html).
 
@@ -1145,7 +1156,8 @@ an HTML error page.
 2. Confirm the repository and workspace boundaries.
 3. Review each diff.
 4. Stage only the tutorial files.
-5. Use your normal Git client to commit:
+5. Enter a commit message and select **Commit staged files**. You can also use
+   your normal Git client:
 
 ```powershell
 git diff --staged

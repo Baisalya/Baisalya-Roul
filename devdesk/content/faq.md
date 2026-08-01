@@ -89,6 +89,15 @@ Building and storing a request is local. Sending it uses the network and transmi
 
 Portable backup JSON should be treated as sensitive. Protected secret values are excluded, but other confidential content may remain.
 
+## Can I recover after uninstalling DevDesk?
+
+Yes, when you prepare first. Export a **Reinstall Recovery Kit** and separately
+protect the external workspace folders. After reinstall, import the kit to
+restore independent API workspaces, Vault notes, snippets, history, and
+settings, then explicitly reconnect each external workspace folder. Android
+requires folder permission again. Protected secrets and trust decisions are
+not restored.
+
 ## Why is macOS shown without a download?
 
 A platform card communicates availability. It does not claim a signed, notarized package exists before one is released.

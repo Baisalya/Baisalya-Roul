@@ -34,6 +34,10 @@ const downloads = await text('devdesk/downloads.html');
 const manual = await text('devdesk/content/user-manual.md');
 const agentGuide = await text('devdesk/content/agent-connector.md');
 const devdeskHome = await text('devdesk/index.html');
+const supportAssistant = await text('devdesk/assets/js/support-assistant.js');
+const devdeskApp = await text('devdesk/assets/js/app.js');
+const serviceWorker = await text('devdesk/sw.js');
+const viteConfig = await text('vite.config.js');
 const manifest = JSON.parse(await text('devdesk/site.webmanifest'));
 
 requireText(portfolio, storeUrl, 'Portfolio Microsoft Store action');
@@ -63,6 +67,42 @@ requireText(
   'manual/agent-connector.html',
   'DevDesk Agent Connector guide link',
 );
+requireText(
+  devdeskHome,
+  'data-assistant-open',
+  'DevDesk support assistant action',
+);
+for (const expected of [
+  'DEVDESK_SUPPORT_ASSISTANT',
+  'Uses this manual only',
+  'Answers are extracts, not AI-generated advice',
+]) {
+  requireText(supportAssistant, expected, 'DevDesk support assistant');
+}
+for (const [source, label] of [
+  [devdeskHome, 'DevDesk homepage assets'],
+  [downloads, 'DevDesk downloads assets'],
+  [devdeskApp, 'DevDesk runtime'],
+  [serviceWorker, 'DevDesk service worker'],
+  [viteConfig, 'DevDesk production build'],
+]) {
+  requireText(source, '20260801.2', label);
+}
+for (const expected of [
+  'controllerchange',
+  'registration.update()',
+  'support-assistant.js?v=${BUILD_ID}',
+]) {
+  requireText(devdeskApp, expected, 'DevDesk fresh-design runtime');
+}
+for (const expected of [
+  "fetch(request, { cache: 'reload' })",
+  'await self.skipWaiting()',
+  'await self.clients.claim()',
+  './assets/js/support-assistant.js',
+]) {
+  requireText(serviceWorker, expected, 'DevDesk fresh-design service worker');
+}
 for (const expected of [
   'get_active_workspace',
   'get_graph_neighbors',
@@ -70,6 +110,7 @@ for (const expected of [
   'Approve and apply',
   'Codex MCP guide',
   'Gemini CLI MCP server guide',
+  'schedule_graph_health_check',
 ]) {
   requireText(agentGuide, expected, 'DevDesk Agent Connector guide');
 }
@@ -122,6 +163,7 @@ for (const relativePath of [
   'devdesk/assets/img/devdesk-logo-16.png',
   'devdesk/manual/user-manual.html',
   'devdesk/manual/agent-connector.html',
+  'devdesk/assets/js/support-assistant.js',
   'devdesk/DOCUMENTATION_COVERAGE_MATRIX.md',
 ]) {
   await requireFile(relativePath, 100);

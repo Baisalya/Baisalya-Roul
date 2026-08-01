@@ -28,11 +28,11 @@
   <title>DevDesk - One folder. Every view. Every tool. Still your files.</title>
   <link rel="icon" type="image/png" sizes="64x64" href="assets/img/devdesk-logo-64.png">
   <link rel="apple-touch-icon" sizes="192x192" href="assets/img/devdesk-logo-192.png">
-  <link rel="manifest" href="site.webmanifest?v=20260801.1">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260801.1">
-  <script defer src="assets/js/site-config.js?v=20260801.1"></script>
-  <script defer src="assets/js/search-index.js?v=20260801.1"></script>
-  <script defer src="assets/js/app.js?v=20260801.1"></script>
+  <link rel="manifest" href="site.webmanifest?v=20260801.2">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260801.2">
+  <script defer src="assets/js/site-config.js?v=20260801.2"></script>
+  <script defer src="assets/js/search-index.js?v=20260801.2"></script>
+  <script defer src="assets/js/app.js?v=20260801.2"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -298,7 +298,7 @@
         </article>
         <article class="card">
           <h3>No surprise Git scope</h3>
-          <p>When Git lives above the workspace, mutations remain limited to workspace paths.</p>
+          <p>File actions stay inside the workspace. Local commits remain explicit and require a final staged-index review.</p>
         </article>
       </div>
     </section>
@@ -319,7 +319,7 @@
           <div><strong>Home and navigation</strong><span>Know where to create, browse, search, and get help.</span></div>
         </a>
         <a class="home-doc-link" href="manual/developer-workspaces.html">
-          <div><strong>Folders, portability, and Git</strong><span>Understand copy, clone, nested folders, and strict Git scope.</span></div>
+          <div><strong>Folders, portability, and Git</strong><span>Understand copy, clone, nested folders, and scoped Git review.</span></div>
         </a>
         <a class="home-doc-link" href="manual/knowledge-graph.html">
           <div><strong>Relationships and graph</strong><span>Use clean connections, filters, list fallback, link editing, and undo.</span></div>
@@ -334,11 +334,35 @@
           <div><strong>Structure checks (OKF)</strong><span>Separate required rules from advice and optional improvements.</span></div>
         </a>
         <a class="home-doc-link" href="manual/diff-git.html">
-          <div><strong>Compare files and scoped Git</strong><span>Review content and make explicit bounded Git changes.</span></div>
+          <div><strong>Compare files and scoped Git</strong><span>Review diffs, control workspace files, and create explicit local checkpoints.</span></div>
         </a>
         <a class="home-doc-link" href="manual/troubleshooting.html">
           <div><strong>Troubleshooting</strong><span>Recover from workspace, file, graph, API, Git, or layout problems.</span></div>
         </a>
+      </div>
+    </section>
+
+    <section class="section support-intro-section" aria-labelledby="support-intro-heading">
+      <div class="support-intro-panel">
+        <div>
+          <span class="eyebrow">Manual-powered support</span>
+          <h2 id="support-intro-heading">Ask about DevDesk. Get the matching manual guidance.</h2>
+          <p>
+            The static DevDesk Support Assistant runs entirely in this website
+            and is ready for GitHub Pages. It searches the published manual,
+            quotes relevant guidance, and links every answer to its source page.
+            No account, API key, or hosted AI service is used.
+          </p>
+          <div class="button-row">
+            <button class="btn primary" type="button" data-assistant-open>Ask DevDesk</button>
+            <button class="btn" type="button" data-search>Search the manual</button>
+          </div>
+        </div>
+        <ul class="support-principles" aria-label="Support assistant principles">
+          <li><strong>Manual only</strong><span>Answers are extracted from published DevDesk guidance.</span></li>
+          <li><strong>Sources included</strong><span>Open the relevant page to verify each answer.</span></li>
+          <li><strong>Private by default</strong><span>Your question stays in the browser and is not stored.</span></li>
+        </ul>
       </div>
     </section>
 

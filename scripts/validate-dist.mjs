@@ -53,6 +53,7 @@ for (const required of [
   'devdesk/assets/js/site-config.js',
   'devdesk/assets/js/search-index.js',
   'devdesk/assets/js/app.js',
+  'devdesk/assets/js/support-assistant.js',
   'devdesk/assets/css/styles.css',
   'devdesk/assets/img/devdesk-logo-64.png',
   'devdesk/assets/img/devdesk-logo-128.png',

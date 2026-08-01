@@ -1,5 +1,5 @@
 (() => {
-  const BUILD_ID = '20260801.1';
+  const BUILD_ID = '20260801.2';
   const root = document.documentElement;
   let storedTheme = null;
   try {
@@ -217,6 +217,11 @@
       }
     }
   });
+
+  const supportAssistantScript = document.createElement('script');
+  supportAssistantScript.src = `${base}assets/js/support-assistant.js?v=${BUILD_ID}`;
+  supportAssistantScript.defer = true;
+  document.head.appendChild(supportAssistantScript);
 
   if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
     window.addEventListener('load', async () => {

@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Understand local-first files, protected values, execution trust, and user-initiated network actions."><meta name="theme-color" content="#5b47e8"><title>Privacy and security · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Understand project files, manifests, local state, execution trust, secrets, and network boundaries."><meta name="theme-color" content="#5b47e8"><title>Privacy and security · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
   <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
@@ -73,7 +73,10 @@
 the local device loopback address and requires a random access URL. On Android,
 the compatible MCP client must run on the same device and DevDesk must remain
 open.</p>
-<p>Safe metadata, graph links, issues, and OKF status are read-only. Markdown text sharing and change proposals are separate permissions that are off by default.</p>
+<p>Safe metadata, graph links, issues, and OKF status are read-only. Markdown text
+sharing, change proposals, and scheduled read-only checks are separate
+permissions that are off by default. A scheduled graph-health check stores its
+plan and run log locally and cannot edit project files.</p>
 <p>A proposal does not write a file. Only <strong>Approve and apply</strong> inside DevDesk can save it, and the save fails when the original file changed.</p>
 <p>DevDesk does not include an AI provider, AI account, analytics, terminal tool, delete tool, or Git push tool. Your AI client decides where requested context is processed.</p>
 <h2 id="user-initiated-network-actions">User-initiated network actions<a class="heading-anchor" href="#user-initiated-network-actions" aria-label="Link to User-initiated network actions">#</a></h2>
@@ -98,6 +101,11 @@ of that comparison to the website.</p>
 <h2 id="files-clipboard-and-exports">Files, clipboard, and exports<a class="heading-anchor" href="#files-clipboard-and-exports" aria-label="Link to Files, clipboard, and exports">#</a></h2>
 <p>DevDesk accesses files or folders after you choose them. Exported files and clipboard content are outside DevDesk's private storage boundary.</p>
 <p>Removing a workspace registration or clearing private app data does not delete external project folders.</p>
+<p>A Reinstall Recovery Kit contains redacted independent application records and
+a sanitized workspace reconnection catalog. It excludes raw Android permission
+URIs, protected secrets, execution trust, and AI connector access keys. Treat
+the exported JSON as sensitive because ordinary notes, URLs, file location
+hints, or other confidential non-secret content may still be present.</p>
 <h2 id="execution-trust">Execution trust<a class="heading-anchor" href="#execution-trust" aria-label="Link to Execution trust">#</a></h2>
 <p>Local Git or another bounded execution feature requires a separate device-local user decision. A project manifest cannot grant this trust, and opening a project never runs commands automatically.</p>
 <h2 id="report-safely">Report safely<a class="heading-anchor" href="#report-safely" aria-label="Link to Report safely">#</a></h2>

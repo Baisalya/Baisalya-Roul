@@ -42,6 +42,12 @@ const _pages = <_Page>[
         'Install or update DevDesk from Microsoft Store or join Android closed testing safely.',
   ),
   _Page(
+    slug: 'backup-restore',
+    title: 'Backup, reinstall, and restore',
+    description:
+        'Protect independent data, reconnect external workspaces, and recover safely after reinstall.',
+  ),
+  _Page(
     slug: 'developer-workspaces',
     title: 'Folders, portability, and scoped Git',
     description:

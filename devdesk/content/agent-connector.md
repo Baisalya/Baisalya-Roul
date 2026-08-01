@@ -20,7 +20,8 @@ With the connector, the AI can ask DevDesk for:
 - connected graph nodes and links;
 - broken links and other workspace issues;
 - the current OKF structure report;
-- change proposals waiting for your review.
+- change proposals waiting for your review;
+- local read-only automation plans, results, and retry state.
 
 This gives the AI the same indexed structure that DevDesk displays. It does not guarantee that every AI answer is correct.
 
@@ -80,7 +81,7 @@ Start with the read-only task. Only then run the small coding task, and ask for 
 
 ## Choose permissions
 
-Both optional permissions are off by default.
+All three optional permissions are off by default.
 
 ### Share redacted Markdown text
 
@@ -97,6 +98,19 @@ Turn this on when the AI should suggest an edit to an existing Markdown file.
 The AI sends a complete proposed replacement and the fingerprint of the version it read. DevDesk stores a pending review. It does not change the file.
 
 If the file changes before approval, DevDesk refuses the stale proposal.
+
+### Allow scheduled read-only checks
+
+Turn this on only when the agent should schedule recurring graph-health checks.
+
+These tasks keep a local plan, step log, result, retry count, and next-run time.
+They can report broken, ambiguous, duplicate, malformed, skipped, or orphaned
+knowledge items, but they cannot edit project files. Tasks run only while
+DevDesk is open; an overdue check resumes after the app reopens.
+
+You can also schedule a daily graph check directly from the Agent Connector,
+pause a task, run it now, or retry a failed task. Disabling the permission
+pauses scheduled checks.
 
 ## Connect Codex
 
@@ -173,6 +187,10 @@ When proposals are on:
 
 > Propose an improvement to `Release plan.md`. Do not claim the file changed. I will review it in DevDesk.
 
+When scheduled read-only checks are on:
+
+> Schedule a graph health check every 24 hours. Do not edit any files.
+
 ## Tools exposed by DevDesk
 
 | Tool | Purpose | Writes a file? |
@@ -184,6 +202,9 @@ When proposals are on:
 | `get_workspace_issues` | Read bounded workspace diagnostics | No |
 | `get_okf_status` | Run the same read-only OKF validation | No |
 | `list_change_proposals` | Show proposal status | No |
+| `list_automation_tasks` | Show local task plans, logs, results, and retries | No |
+| `schedule_graph_health_check` | Schedule a recurring read-only graph check | No |
+| `run_automation_task` | Run one existing read-only task now | No |
 | `propose_document_change` | Queue a complete replacement for review | No |
 
 DevDesk does not expose an MCP tool that approves, rejects, deletes, runs a terminal, or pushes Git changes.
@@ -232,6 +253,12 @@ Turn on **Share redacted Markdown text**. Use the exact workspace-relative path 
 ### A proposal was refused
 
 Turn on **Allow review proposals**. If the file changed, ask the AI to read it again and create a fresh proposal.
+
+### A scheduled check does not run
+
+Turn on **Allow scheduled read-only checks**, keep the task enabled, and keep
+DevDesk open. Confirm the workspace automation policy still allows read-only
+refresh. Overdue tasks resume when DevDesk reopens.
 
 ## Privacy and cost
 
