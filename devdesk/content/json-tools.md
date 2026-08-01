@@ -2,6 +2,19 @@
 
 JSON Tools validates, formats, minifies, and explores JSON.
 
+## Use JSON Tools in a workspace
+
+When opened from a Developer Workspace, JSON Tools uses only `.json` files in
+that active workspace. If no compatible file is selected, choose **Choose
+workspace file** to see the project's JSON files or **Create in workspace** to
+create a new `data.json` starter. DevDesk does not reuse a selected `.txt` file
+or fall back to independent JSON from another tool.
+
+The project Save action writes to the selected workspace-relative file with
+fingerprint conflict protection. Export actions create a separate copy. JSON
+opened outside a workspace remains independent until you explicitly import or
+assign it.
+
 ## Format JSON
 
 1. Paste or open JSON.

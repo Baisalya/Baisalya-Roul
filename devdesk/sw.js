@@ -1,4 +1,6 @@
-const CACHE_NAME = 'devdesk-docs-v7-store-manual-brand-20260729';
+const BUILD_ID = '20260801.1';
+const CACHE_PREFIX = 'devdesk-docs-';
+const CACHE_NAME = `${CACHE_PREFIX}${BUILD_ID}`;
 const ASSETS = [
   "./index.html",
   "./downloads.html",
@@ -63,7 +65,7 @@ async function cacheResponse(request, response) {
 
 async function networkFirst(request) {
   try {
-    const response = await fetch(request, { cache: 'no-store' });
+    const response = await fetch(request, { cache: 'reload' });
     return await cacheResponse(request, response);
   } catch (_) {
     const cached = await caches.match(request, { ignoreSearch: false });
@@ -78,7 +80,11 @@ async function networkFirst(request) {
 self.addEventListener('install', (event) => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
-    await Promise.allSettled(ASSETS.map((asset) => cache.add(asset)));
+    await Promise.allSettled(ASSETS.map(async (asset) => {
+      const request = new Request(asset, { cache: 'reload' });
+      const response = await fetch(request);
+      if (response.ok) await cache.put(asset, response);
+    }));
     await self.skipWaiting();
   })());
 });
@@ -86,13 +92,18 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil((async () => {
     const keys = await caches.keys();
-    await Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)));
+    await Promise.all(keys
+      .filter((key) => key.startsWith(CACHE_PREFIX) && key !== CACHE_NAME)
+      .map((key) => caches.delete(key)));
     await self.clients.claim();
   })());
 });
 
 self.addEventListener('message', (event) => {
   if (event.data?.type === 'SKIP_WAITING') self.skipWaiting();
+  if (event.data?.type === 'GET_VERSION') {
+    event.source?.postMessage({ type: 'VERSION', buildId: BUILD_ID });
+  }
 });
 
 self.addEventListener('fetch', (event) => {

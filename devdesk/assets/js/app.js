@@ -1,6 +1,12 @@
 (() => {
+  const BUILD_ID = '20260801.1';
   const root = document.documentElement;
-  const storedTheme = localStorage.getItem('devdesk-theme');
+  let storedTheme = null;
+  try {
+    storedTheme = localStorage.getItem('devdesk-theme');
+  } catch (_) {
+    // Storage can be unavailable in a private Android WebView.
+  }
   root.dataset.theme = storedTheme === 'light' ? 'light' : 'dark';
 
   const themeButtons = [...document.querySelectorAll('[data-theme-toggle]')];
@@ -16,7 +22,11 @@
   themeButtons.forEach((button) => button.addEventListener('click', () => {
     const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
     root.dataset.theme = nextTheme;
-    localStorage.setItem('devdesk-theme', nextTheme);
+    try {
+      localStorage.setItem('devdesk-theme', nextTheme);
+    } catch (_) {
+      // The theme still works for the current page when storage is unavailable.
+    }
     updateThemeButtons();
   }));
 
@@ -25,9 +35,22 @@
   const homeNavigation = document.querySelector('.top-nav');
   const drawer = docsSidebar || homeNavigation;
   const backdrop = document.querySelector('.mobile-drawer-backdrop');
+  let drawerClose = null;
+
+  if (drawer) {
+    drawerClose = document.createElement('button');
+    drawerClose.className = 'drawer-close';
+    drawerClose.type = 'button';
+    drawerClose.setAttribute('aria-label', 'Close navigation');
+    drawerClose.textContent = '×';
+    drawer.prepend(drawerClose);
+  }
 
   const setMenuExpanded = (expanded) => {
-    menuButtons.forEach((button) => button.setAttribute('aria-expanded', String(expanded)));
+    menuButtons.forEach((button) => {
+      button.setAttribute('aria-expanded', String(expanded));
+      button.setAttribute('aria-label', expanded ? 'Close navigation' : 'Open navigation');
+    });
   };
   const openMenu = () => {
     if (!drawer) return;
@@ -49,6 +72,7 @@
     else openMenu();
   }));
   backdrop?.addEventListener('click', closeMenu);
+  drawerClose?.addEventListener('click', closeMenu);
   drawer?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
   window.addEventListener('resize', () => {
     if (window.innerWidth > 820) closeMenu();
@@ -198,26 +222,57 @@
     window.addEventListener('load', async () => {
       const hadController = Boolean(navigator.serviceWorker.controller);
       let reloading = false;
+
+      const showUpdateStatus = (message) => {
+        let status = document.querySelector('[data-update-status]');
+        if (!status) {
+          status = document.createElement('div');
+          status.className = 'update-status';
+          status.dataset.updateStatus = '';
+          status.setAttribute('role', 'status');
+          status.setAttribute('aria-live', 'polite');
+          document.body.appendChild(status);
+        }
+        status.textContent = message;
+        requestAnimationFrame(() => status.classList.add('visible'));
+      };
+
       if (hadController) {
         navigator.serviceWorker.addEventListener('controllerchange', () => {
           if (reloading) return;
           reloading = true;
-          location.reload();
+          showUpdateStatus('DevDesk updated. Loading the newest design…');
+          window.setTimeout(() => location.reload(), 180);
         });
       }
 
       try {
-        const registration = await navigator.serviceWorker.register(`${base}sw.js`, { updateViaCache: 'none' });
+        const workerUrl = new URL(`${base}sw.js`, location.href);
+        workerUrl.searchParams.set('v', BUILD_ID);
+        const registration = await navigator.serviceWorker.register(workerUrl, {
+          scope: base || './',
+          updateViaCache: 'none',
+        });
         registration.waiting?.postMessage({ type: 'SKIP_WAITING' });
         registration.addEventListener('updatefound', () => {
           const worker = registration.installing;
           worker?.addEventListener('statechange', () => {
             if (worker.state === 'installed' && navigator.serviceWorker.controller) {
+              showUpdateStatus('A fresh DevDesk design is ready. Updating…');
               worker.postMessage({ type: 'SKIP_WAITING' });
             }
           });
         });
         await registration.update();
+
+        const checkForUpdates = () => registration.update().catch(() => {});
+        document.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'visible') checkForUpdates();
+        });
+        window.addEventListener('online', checkForUpdates);
+        window.addEventListener('pageshow', (event) => {
+          if (event.persisted) checkForUpdates();
+        });
       } catch (error) {
         console.warn('DevDesk offline cache registration failed:', error);
       }

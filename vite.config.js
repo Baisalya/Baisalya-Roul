@@ -1,6 +1,8 @@
-import { copyFile, cp, mkdir } from 'node:fs/promises';
+import { copyFile, cp, mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { defineConfig } from 'vite';
+
+const devDeskRelease = '20260801.1';
 
 const devDeskRuntimeFiles = [
   '404.html',
@@ -12,6 +14,26 @@ const devDeskRuntimeFiles = [
   'sitemap.xml',
   'sw.js',
 ];
+
+function versionDevDeskRuntime(html) {
+  return html.replace(
+    /(assets\/(?:css\/styles\.css|js\/(?:app|site-config|search-index)\.js)|site\.webmanifest)(?:\?v=[^"']+)?(?=["'])/g,
+    `$1?v=${devDeskRelease}`,
+  );
+}
+
+async function versionHtmlFiles(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  await Promise.all(entries.map(async (entry) => {
+    const target = path.join(directory, entry.name);
+    if (entry.isDirectory()) {
+      await versionHtmlFiles(target);
+    } else if (entry.name.endsWith('.html')) {
+      const source = await readFile(target, 'utf8');
+      await writeFile(target, versionDevDeskRuntime(source), 'utf8');
+    }
+  }));
+}
 
 export default defineConfig({
   plugins: [
@@ -34,6 +56,7 @@ export default defineConfig({
           recursive: true,
           filter: (source) => !source.endsWith('devdesk-logo-master.png'),
         });
+        await versionHtmlFiles(outputRoot);
       },
     },
   ],

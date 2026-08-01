@@ -84,6 +84,24 @@ The primary workspace combines:
 
 Opening a compatible tool keeps the active project and selected file attached.
 
+DevDesk drops the selected file when it is incompatible with the tool. For
+example, opening JSON Tools or OpenAPI Studio while `HOW_TO_TEST.txt` is
+selected opens that tool's project landing page instead of passing the text
+file or falling back to unrelated global data.
+
+| Project action | DevDesk behavior |
+|---|---|
+| Open `.txt`, `.log`, or supported source text from **Files** | Opens the workspace text editor. Diff remains an explicit **Open with** option. |
+| Open JSON Tools without a selected `.json` file | Shows only compatible JSON files in the active workspace and offers **Create in workspace**. |
+| Open OpenAPI Studio without a selected `.json`, `.yaml`, or `.yml` file | Shows only compatible files in the active workspace and can create an OpenAPI YAML or JSON starter there. |
+| Open an independent file outside a workspace | Keeps it independent. It is not assigned, copied, or imported automatically. |
+| Save a workspace text file | Uses conflict-protected workspace save. **Save As** exports an independent copy. |
+
+Files created from a project tool use a workspace-relative path and exclusive
+creation, so an existing file is never replaced. A nested parent folder must
+already exist. Explicitly copy, import, or assign an outside file before using
+it as content in a particular workspace.
+
 The earlier **Workspace Hub** remains under **Files → Open explorer**. It provides the bounded project tree, breadcrumb navigation, nested-folder browsing, safe **New file**/**New folder** actions, detailed project capabilities, and exact project-file selection.
 
 ### Browse a real project, not a copied vault
@@ -108,7 +126,12 @@ Markdown creation is sent directly to the incremental project index. Other files
 
 ### Recover from an incompatible tool selection
 
-A file-specific tool does not silently open unrelated global data. If its project file is missing, unsupported, or unreadable, the page includes a working Back action and **Choose a project file** button. This returns to the same Workspace and does not change project content.
+A file-specific tool does not silently open unrelated global data. JSON Tools
+and OpenAPI Studio provide **Choose workspace file**, which lists only
+compatible files in the active project, plus **Create in workspace** when a
+safe starter is available. Creation stays inside the workspace and never
+replaces an existing file. Back returns to the same Workspace without changing
+project content.
 
 ## Git clone and portable reopen
 
@@ -178,6 +201,10 @@ If Git, an editor, or another DevDesk instance changes the file after it was ope
 Recovery information is recorded before a managed batch. Partial failures roll back only unchanged DevDesk writes. External edits are preserved. A successful managed plan can remain undoable after restarting DevDesk.
 
 ## Android access
+
+Workspace file selection and creation stay inside the granted Android document
+tree. A file chosen independently through another Android picker stays
+independent until you explicitly place, import, or assign it to the workspace.
 
 Tap `project.devdesk` in a compatible Files provider and choose **Open DevDesk
 project**. Android then asks you to select the folder that directly contains

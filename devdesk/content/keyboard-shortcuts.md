@@ -4,8 +4,8 @@ Available shortcuts depend on the active tool and platform. Tooltips show the au
 
 ## Common examples
 
-- `Ctrl+S`: save in supported editors
-- `Ctrl+Shift+S`: Save As in supported editors
+- `Ctrl+S`: save in supported editors; in the workspace text editor, saves only the active workspace file with conflict protection
+- `Ctrl+Shift+S`: Save As in supported editors; from a workspace text file, exports an independent copy
 - `Ctrl+N`: new document in supported editors
 - `Ctrl+O`: open file in supported editors
 - `Ctrl+P`: quick switcher in Markdown Vault

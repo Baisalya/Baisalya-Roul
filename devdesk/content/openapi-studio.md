@@ -16,6 +16,18 @@ The maximum parsing size is 10 MB. `info.title` is required. Paths must start wi
 
 The visible editor label currently says OpenAPI 3.x. The underlying local parser also converts supported Swagger 2.0 input.
 
+## Use OpenAPI Studio in a workspace
+
+When opened from a Developer Workspace, OpenAPI Studio shows only compatible
+`.json`, `.yaml`, and `.yml` files stored in that workspace. If no compatible
+file is selected, use **Choose workspace file**, or use **Create in workspace**
+to create a valid OpenAPI 3.1 YAML or JSON starter at a workspace-relative
+path. Existing files are never replaced by creation.
+
+An unrelated active file such as `HOW_TO_TEST.txt` is not passed into OpenAPI
+Studio. An OpenAPI document opened outside a workspace remains independent
+until you explicitly import or assign it.
+
 ## Reference handling
 
 Local `$ref` references are resolved with safe depth limits. Remote references are not fetched automatically and must be bundled into the local document set before parsing.

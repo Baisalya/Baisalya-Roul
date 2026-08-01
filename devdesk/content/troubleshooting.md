@@ -19,7 +19,15 @@
 - Select **Refresh project index**.
 - Grant local trust only when a tool clearly explains that bounded execution is required.
 
-If a file-specific page cannot use the selection, choose **Choose a project file** or Back. DevDesk returns to the same Workspace instead of falling back to global data.
+If JSON Tools or OpenAPI Studio cannot use the selection, choose **Choose
+workspace file** to select only from that project, or **Create in workspace**
+to add a safe starter there. DevDesk does not fall back to another workspace or
+independent app data. If creation fails, confirm the workspace is writable, the
+parent folder exists, and the proposed file name is unused.
+
+If a `.txt` file opens in Diff after upgrading, return to **Files** and open it
+again. Text editor is now the default; Diff remains available through **Open
+with** for deliberate comparison.
 
 ## Graph is empty, cluttered, or outdated
 

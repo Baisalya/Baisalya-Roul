@@ -28,11 +28,11 @@
   <title>DevDesk - One folder. Every view. Every tool. Still your files.</title>
   <link rel="icon" type="image/png" sizes="64x64" href="assets/img/devdesk-logo-64.png">
   <link rel="apple-touch-icon" sizes="192x192" href="assets/img/devdesk-logo-192.png">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <script defer src="assets/js/site-config.js"></script>
-  <script defer src="assets/js/search-index.js"></script>
-  <script defer src="assets/js/app.js"></script>
+  <link rel="manifest" href="site.webmanifest?v=20260801.1">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260801.1">
+  <script defer src="assets/js/site-config.js?v=20260801.1"></script>
+  <script defer src="assets/js/search-index.js?v=20260801.1"></script>
+  <script defer src="assets/js/app.js?v=20260801.1"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -94,7 +94,19 @@
         </ul>
       </div>
       <div class="hero-art">
-        <img src="assets/img/welcome.png" alt="DevDesk workspace illustration with planning and project tools">
+        <div class="workspace-window">
+          <div class="workspace-window-bar" aria-hidden="true">
+            <span></span><span></span><span></span>
+            <strong>My workspace · DevDesk</strong>
+          </div>
+          <img src="assets/img/welcome.png" alt="DevDesk workspace illustration with planning and project tools">
+        </div>
+        <div class="hero-signal hero-signal-files" aria-hidden="true">
+          <span>✓</span><strong>Your files</strong><small>Always portable</small>
+        </div>
+        <div class="hero-signal hero-signal-local" aria-hidden="true">
+          <span>●</span><strong>Local-first</strong><small>No account needed</small>
+        </div>
         <div class="floating-badge">
           Open <code>project.devdesk</code>. DevDesk recognises the folder and
           rebuilds the local workspace.

@@ -130,6 +130,44 @@
 <li>compact drawer/details-sheet layouts and wide navigation/inspector layouts.</li>
 </ul>
 <p>Opening a compatible tool keeps the active project and selected file attached.</p>
+<p>DevDesk drops the selected file when it is incompatible with the tool. For
+example, opening JSON Tools or OpenAPI Studio while <code>HOW_TO_TEST.txt</code> is
+selected opens that tool's project landing page instead of passing the text
+file or falling back to unrelated global data.</p>
+<table>
+<thead>
+<tr>
+<th>Project action</th>
+<th>DevDesk behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open <code>.txt</code>, <code>.log</code>, or supported source text from <strong>Files</strong></td>
+<td>Opens the workspace text editor. Diff remains an explicit <strong>Open with</strong> option.</td>
+</tr>
+<tr>
+<td>Open JSON Tools without a selected <code>.json</code> file</td>
+<td>Shows only compatible JSON files in the active workspace and offers <strong>Create in workspace</strong>.</td>
+</tr>
+<tr>
+<td>Open OpenAPI Studio without a selected <code>.json</code>, <code>.yaml</code>, or <code>.yml</code> file</td>
+<td>Shows only compatible files in the active workspace and can create an OpenAPI YAML or JSON starter there.</td>
+</tr>
+<tr>
+<td>Open an independent file outside a workspace</td>
+<td>Keeps it independent. It is not assigned, copied, or imported automatically.</td>
+</tr>
+<tr>
+<td>Save a workspace text file</td>
+<td>Uses conflict-protected workspace save. <strong>Save As</strong> exports an independent copy.</td>
+</tr>
+</tbody>
+</table>
+<p>Files created from a project tool use a workspace-relative path and exclusive
+creation, so an existing file is never replaced. A nested parent folder must
+already exist. Explicitly copy, import, or assign an outside file before using
+it as content in a particular workspace.</p>
 <p>The earlier <strong>Workspace Hub</strong> remains under <strong>Files → Open explorer</strong>. It provides the bounded project tree, breadcrumb navigation, nested-folder browsing, safe <strong>New file</strong>/<strong>New folder</strong> actions, detailed project capabilities, and exact project-file selection.</p>
 <h3 id="browse-a-real-project-not-a-copied-vault">Browse a real project, not a copied vault<a class="heading-anchor" href="#browse-a-real-project-not-a-copied-vault" aria-label="Link to Browse a real project, not a copied vault">#</a></h3>
 <p>The explorer enumerates metadata inside the selected root and applies the same hidden/generated/excluded-path policy as other project discovery. It does not load every file into memory. Directories appear before files. Search can find a nested path; selecting a folder opens it, while selecting a file makes that project-relative path available to compatible tools.</p>
@@ -146,7 +184,12 @@
 <p>Creation is exclusive. If the name already exists, the action stops and leaves the existing file untouched. Names containing traversal separators, control characters, Windows-reserved characters, reserved device names, or trailing spaces/dots are rejected before the filesystem call.</p>
 <p>Markdown creation is sent directly to the incremental project index. Other files become visible by invalidating the bounded project tree; external watching continues to handle changes made by other developer tools.</p>
 <h3 id="recover-from-an-incompatible-tool-selection">Recover from an incompatible tool selection<a class="heading-anchor" href="#recover-from-an-incompatible-tool-selection" aria-label="Link to Recover from an incompatible tool selection">#</a></h3>
-<p>A file-specific tool does not silently open unrelated global data. If its project file is missing, unsupported, or unreadable, the page includes a working Back action and <strong>Choose a project file</strong> button. This returns to the same Workspace and does not change project content.</p>
+<p>A file-specific tool does not silently open unrelated global data. JSON Tools
+and OpenAPI Studio provide <strong>Choose workspace file</strong>, which lists only
+compatible files in the active project, plus <strong>Create in workspace</strong> when a
+safe starter is available. Creation stays inside the workspace and never
+replaces an existing file. Back returns to the same Workspace without changing
+project content.</p>
 <h2 id="git-clone-and-portable-reopen">Git clone and portable reopen<a class="heading-anchor" href="#git-clone-and-portable-reopen" aria-label="Link to Git clone and portable reopen">#</a></h2>
 <p>A professional portable project can use the repository root or a nested
 workspace:</p>
@@ -243,6 +286,9 @@ its Markdown graph/API structure.</p>
 </table>
 <p>Recovery information is recorded before a managed batch. Partial failures roll back only unchanged DevDesk writes. External edits are preserved. A successful managed plan can remain undoable after restarting DevDesk.</p>
 <h2 id="android-access">Android access<a class="heading-anchor" href="#android-access" aria-label="Link to Android access">#</a></h2>
+<p>Workspace file selection and creation stay inside the granted Android document
+tree. A file chosen independently through another Android picker stays
+independent until you explicitly place, import, or assign it to the workspace.</p>
 <p>Tap <code>project.devdesk</code> in a compatible Files provider and choose <strong>Open DevDesk
 project</strong>. Android then asks you to select the folder that directly contains
 the file. Android grants a document-tree URI, not a normal filesystem path.

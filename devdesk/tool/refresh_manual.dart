@@ -54,6 +54,18 @@ const _pages = <_Page>[
         'Build exact saved API workflows and keep a sanitized portable artifact with the project.',
   ),
   _Page(
+    slug: 'json-tools',
+    title: 'JSON Tools',
+    description:
+        'Validate, format, and save JSON while keeping workspace and independent files separate.',
+  ),
+  _Page(
+    slug: 'openapi-studio',
+    title: 'OpenAPI Studio',
+    description:
+        'Validate OpenAPI documents and choose or create project-scoped specifications safely.',
+  ),
+  _Page(
     slug: 'knowledge-workspace',
     title: 'Edit workspace Markdown',
     description:
@@ -142,6 +154,12 @@ const _pages = <_Page>[
     title: 'Settings and appearance',
     description:
         'Adjust appearance, reopen onboarding and manuals, use Store access, and understand local reset.',
+  ),
+  _Page(
+    slug: 'keyboard-shortcuts',
+    title: 'Keyboard shortcuts and accessibility',
+    description:
+        'Use keyboard navigation, conflict-safe saves, and accessible controls.',
   ),
   _Page(
     slug: 'privacy-security',
