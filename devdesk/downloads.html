@@ -180,16 +180,86 @@
 
             <div class="demo-language-panel" data-demo-language-panel>
               <div class="demo-language-heading">
-                <div>
-                  <span>Narration language</span>
-                  <strong data-demo-track-label>Silent demo</strong>
-                </div>
-                <span class="status" data-demo-audio-status>Voice-overs coming soon</span>
-              </div>
+  <div>
+    <span>Audio language</span>
+    <strong data-demo-track-label>Silent demo</strong>
+  </div>
+
+  <span class="status available" data-demo-audio-status>
+    Hinglish audio available
+  </span>
+</div>
+
+<div
+  class="demo-language-options"
+  role="group"
+  aria-label="Choose audio language"
+>
+  <button
+    type="button"
+    data-demo-track=""
+    data-track-name="Silent demo"
+    aria-pressed="true"
+  >
+    Silent
+  </button>
+
+  <button
+    type="button"
+    data-demo-track="assets/audio/devdesk-demo-en.mp3"
+    data-track-name="English"
+    aria-pressed="false"
+    disabled
+  >
+    English <small>Coming soon</small>
+  </button>
+
+  <button
+    type="button"
+    data-demo-track="assets/audio/devdesk-demo-hi-en.m4a"
+    data-track-name="Hinglish"
+    aria-pressed="false"
+  >
+    Hinglish <small>Voice + Music</small>
+  </button>
+
+  <button
+    type="button"
+    data-demo-track="assets/audio/devdesk-demo-or-en.mp3"
+    data-track-name="Odia + English"
+    aria-pressed="false"
+    disabled
+  >
+    ଓଡ଼ିଆ + English <small>Coming soon</small>
+  </button>
+</div>
+
+<label class="demo-volume-control">
+  <span>Audio volume</span>
+  <input
+    type="range"
+    min="0"
+    max="1"
+    step="0.05"
+    value="1"
+    data-demo-volume
+    disabled
+  >
+</label>
+
+<p
+  class="demo-language-note"
+  role="status"
+  aria-live="polite"
+  data-demo-track-status
+>
+  Choose Hinglish to play the demo with narration and background music.
+  English and Odia-English audio are coming soon.
+</p>
               <div class="demo-language-options" role="group" aria-label="Choose narration language">
                 <button type="button" data-demo-track="" data-track-name="Silent demo" aria-pressed="true">Silent</button>
                 <button type="button" data-demo-track="assets/audio/devdesk-demo-en.mp3" data-track-name="English" aria-pressed="false" disabled>English <small>Coming soon</small></button>
-                <button type="button" data-demo-track="assets/audio/devdesk-demo-hi-en.mp3" data-track-name="Hinglish" aria-pressed="false" disabled>Hinglish <small>Coming soon</small></button>
+                <button type="button" data-demo-track="assets/audio/devdesk-demo-hi-en.m4a" data-track-name="Hinglish" aria-pressed="false">Hinglish</button>
                 <button type="button" data-demo-track="assets/audio/devdesk-demo-or-en.mp3" data-track-name="Odia + English" aria-pressed="false" disabled>ଓଡ଼ିଆ + English <small>Coming soon</small></button>
               </div>
               <label class="demo-volume-control">
