@@ -31,6 +31,7 @@ async function requireFile(relativePath, minimumBytes = 1) {
 const portfolio = await text('index.html');
 const siteConfig = await text('devdesk/assets/js/site-config.js');
 const downloads = await text('devdesk/downloads.html');
+const gettingStarted = await text('devdesk/content/getting-started.md');
 const manual = await text('devdesk/content/user-manual.md');
 const agentGuide = await text('devdesk/content/agent-connector.md');
 const devdeskHome = await text('devdesk/index.html');
@@ -73,9 +74,31 @@ requireText(
   'DevDesk support assistant action',
 );
 for (const expected of [
+  'One calm workspace for the work that matters.',
+  'Everyday &amp; work',
+  'Students',
+  'Researchers &amp; writers',
+  'Developers',
+  'devdesk-social-2026.png',
+]) {
+  requireText(devdeskHome, expected, 'DevDesk inclusive homepage');
+}
+for (const expected of [
+  '### Everyday life and work',
+  '### Student work',
+  '### Research and writing',
+  '### Software projects',
+]) {
+  requireText(gettingStarted, expected, 'DevDesk audience guide');
+}
+for (const expected of [
   'DEVDESK_SUPPORT_ASSISTANT',
   'Uses this manual only',
   'Answers are extracts, not AI-generated advice',
+  'Choose the Study starter',
+  'Choose Research / writing',
+  'Choose Personal plan',
+  'Choose Software project',
 ]) {
   requireText(supportAssistant, expected, 'DevDesk support assistant');
 }
@@ -86,7 +109,7 @@ for (const [source, label] of [
   [serviceWorker, 'DevDesk service worker'],
   [viteConfig, 'DevDesk production build'],
 ]) {
-  requireText(source, '20260801.5', label);
+  requireText(source, '20260801.6', label);
 }
 for (const expected of [
   'controllerchange',
@@ -149,6 +172,7 @@ for (const heading of [
 for (const icon of manifest.icons ?? []) {
   await requireFile(path.join('devdesk', icon.src), 100);
 }
+await requireFile('devdesk/assets/img/devdesk-social-2026.png', 100_000);
 
 for (const relativePath of [
   'devdesk/assets/img/devdesk-logo-master.png',

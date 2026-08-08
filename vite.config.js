@@ -2,7 +2,7 @@ import { copyFile, cp, mkdir, readFile, readdir, writeFile } from 'node:fs/promi
 import path from 'node:path';
 import { defineConfig } from 'vite';
 
-const devDeskRelease = '20260801.5';
+const devDeskRelease = '20260801.6';
 
 const devDeskRuntimeFiles = [
   '404.html',

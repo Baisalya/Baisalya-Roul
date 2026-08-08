@@ -4,44 +4,34 @@ This is the beginner-first guide to DevDesk on Windows and Android. Read only
 the section you need. Every major tool also has a shorter focused manual linked
 from this page.
 
-<section class="manual-usp-showcase" aria-labelledby="make-your-project-ai-ready-without-giving-up-control">
-  <div class="manual-usp-copy">
-    <span class="manual-usp-kicker">DevDesk + your AI agent</span>
-    <h2 id="manual-usp-heading">Make your project AI-ready—without giving up control.</h2>
-    <p>Give an MCP-compatible agent focused code, structure, and project knowledge instead of repeatedly sending the whole repository. DevDesk keeps the work inside the selected workspace and every write behind your review.</p>
-    <div class="manual-usp-actions">
-      <a class="manual-usp-action manual-usp-action-primary" href="agent-connector.html">Explore the AI Agent Connector</a>
-      <a class="manual-usp-action" href="getting-started.html">Start in five minutes</a>
+<section class="manual-audience-showcase" aria-labelledby="manual-audience-heading">
+  <div class="manual-audience-copy">
+    <span class="manual-audience-kicker">Choose your starting path</span>
+    <h2 id="manual-audience-heading">DevDesk is for the work—not a job title.</h2>
+    <p>Begin with ordinary tasks and notes. Choose a starter for everyday planning, study, research and writing, or software. The starter adds useful folders, files, and first views without locking or hiding features.</p>
+    <div class="manual-audience-actions">
+      <a class="manual-audience-action manual-audience-action-primary" href="getting-started.html">Start in five minutes</a>
+      <a class="manual-audience-action" href="interface-tour.html">See the interface</a>
     </div>
-    <ul class="manual-usp-trust" aria-label="DevDesk project safeguards">
-      <li>Local-first</li>
-      <li>Token-budgeted context</li>
-      <li>Review before write</li>
+    <ul class="manual-audience-trust" aria-label="DevDesk foundations">
+      <li>No DevDesk account required</li>
+      <li>Ordinary files</li>
+      <li>Technical tools optional</li>
     </ul>
   </div>
-  <div class="manual-usp-flow" aria-label="How DevDesk works with an AI agent">
-    <ol>
-      <li>
-        <span aria-hidden="true">01</span>
-        <div><strong>Understand</strong><small>Map stacks, code structure, files, and connected project knowledge.</small></div>
-      </li>
-      <li>
-        <span aria-hidden="true">02</span>
-        <div><strong>Propose</strong><small>Prepare a complete multi-file change without writing directly.</small></div>
-      </li>
-      <li>
-        <span aria-hidden="true">03</span>
-        <div><strong>You decide</strong><small>Review every file, choose trusted checks, apply, or use verified undo.</small></div>
-      </li>
-    </ol>
-    <p><strong>Your files stay yours.</strong> The connector is optional and uses your own compatible AI client.</p>
+  <div class="manual-path-list" aria-label="DevDesk starting paths">
+    <a href="getting-started.html#everyday-life-and-work"><span>01</span><div><strong>Everyday &amp; work</strong><small>Tasks, notes, goals, meetings, and decisions.</small></div></a>
+    <a href="getting-started.html#student-work"><span>02</span><div><strong>Students</strong><small>Assignments, class notes, resources, and due dates.</small></div></a>
+    <a href="getting-started.html#research-and-writing"><span>03</span><div><strong>Researchers &amp; writers</strong><small>Outline, source notes, drafts, links, and graph.</small></div></a>
+    <a href="getting-started.html#software-projects"><span>04</span><div><strong>Developers</strong><small>Docs, decisions, files, APIs, Diff, and scoped Git.</small></div></a>
   </div>
 </section>
 
 ## Welcome to DevDesk
 
-DevDesk turns a normal folder into a workspace for plans, tasks, notes,
-connected knowledge, project files, API testing, and developer tools.
+DevDesk turns a normal folder into a workspace for everyday plans, tasks,
+study, notes, research, connected knowledge, project files, API testing, and
+optional developer tools.
 
 The main idea is simple:
 
@@ -127,6 +117,10 @@ folder picker asks.
 
 | I want to… | Start here |
 |---|---|
+| Organise everyday tasks, notes, or goals | **New workspace > Personal plan**, then Today, List, or Board |
+| Manage meetings, actions, and decisions | **New workspace > Business project** |
+| Keep assignments, notes, and resources together | **New workspace > Study**, then Today, Board, or Calendar |
+| Build an outline from research and source notes | **New workspace > Research / writing**, then Outline or Relationships |
 | Plan a project | **Tasks**, then List or Board |
 | Write notes | **Notes**, then [Markdown basics](markdown-basics.html) |
 | Connect knowledge | Add links, then open **Relationships** |

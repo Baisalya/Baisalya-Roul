@@ -586,7 +586,11 @@ Future<void> _refreshSharedBrand(Directory siteRoot) async {
         .replaceAll('Developer workspace', 'Your files. Your workspace.')
         .replaceAll(
           'Local knowledge, APIs, and developer tools',
+          'Everyday work, study, research, and software',
+        )
+        .replaceAll(
           'Plans, knowledge, APIs, and developer tools',
+          'Everyday work, study, research, and software',
         )
         .replaceAll(
           '>Developer Workspaces</a>',

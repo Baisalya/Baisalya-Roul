@@ -1,7 +1,7 @@
 {
   "name": "DevDesk Product and Manual",
   "short_name": "DevDesk",
-  "description": "One portable folder for plans, knowledge, APIs, and developer tools.",
+  "description": "A local-first workspace for everyday planning, study, research, writing, and software projects.",
   "start_url": "./index.html",
   "scope": "./",
   "id": "./index.html",

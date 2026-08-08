@@ -28,6 +28,10 @@
     ['openapi', 'swagger', 'schema', 'contract'],
     ['remove', 'delete', 'discard'],
     ['backup', 'restore', 'export', 'copy', 'recovery', 'reinstall', 'reconnect'],
+    ['student', 'study', 'assignment', 'class'],
+    ['research', 'researcher', 'writing', 'writer'],
+    ['personal', 'everyday', 'goal', 'planning'],
+    ['software', 'developer', 'coding', 'programming'],
   ];
   const synonymMap = new Map();
   const genericActionTerms = new Set([
@@ -35,6 +39,26 @@
     'select', 'start', 'use',
   ]);
   const topicRoutes = [
+    {
+      terms: ['student'],
+      url: 'manual/getting-started.html',
+      answer: 'Choose the Study starter for subjects, assignments, notes, and resources. Its first views are Today, Board, Calendar, and Relationships; add a due date when you want an assignment to appear in Calendar.',
+    },
+    {
+      terms: ['research'],
+      url: 'manual/getting-started.html',
+      answer: 'Choose Research / writing for an outline, research notes, source notes, and drafts. Its first views are List, Outline, Relationships, and Graph. Saved links help navigation but do not verify a claim.',
+    },
+    {
+      terms: ['everyday'],
+      url: 'manual/getting-started.html',
+      answer: 'Choose Personal plan for everyday tasks, notes, and goals. Choose Business project instead when meetings and decisions are central. Profiles add starters and first views without locking features.',
+    },
+    {
+      terms: ['developer'],
+      url: 'manual/getting-started.html',
+      answer: 'Choose Software project or open an existing folder. Project docs and decisions start simple; source editing, JSON, OpenAPI, API testing, Diff, Windows Source Control, and the Agent Connector remain optional.',
+    },
     {
       terms: ['recovery', 'kit'],
       url: 'manual/backup-restore.html',
@@ -350,15 +374,15 @@
     message.append(element(
       'p',
       '',
-      'Ask about installation, workspaces, Markdown, graph links, APIs, Git, Android, or the Agent Connector.',
+      'Ask how DevDesk fits everyday planning, study, research, writing, software projects, installation, privacy, or a specific tool.',
     ));
     const quick = element('div', 'support-quick-questions');
     [
-      'How do I create a workspace?',
+      'Which workspace fits everyday planning?',
+      'Which workspace should a student choose?',
+      'How should I start a research project?',
+      'How should a developer start?',
       'How do I recover after reinstalling?',
-      'Can DevDesk create a Git commit?',
-      'How does Android folder access work?',
-      'How does the Agent Connector protect files?',
     ].forEach((question) => {
       const button = element('button', '', question);
       button.type = 'button';

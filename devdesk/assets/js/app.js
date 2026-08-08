@@ -1,5 +1,5 @@
 (() => {
-  const BUILD_ID = '20260801.5';
+  const BUILD_ID = '20260801.6';
   const root = document.documentElement;
   let storedTheme = null;
   try {

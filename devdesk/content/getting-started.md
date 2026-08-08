@@ -1,6 +1,6 @@
 # Getting started with DevDesk
 
-**One folder. Every view. Every tool. Still your files.**
+**One folder. Work your way. Still your files.**
 
 DevDesk turns an ordinary folder into a useful workspace for plans, tasks, notes, research, files, relationships, APIs, and developer work. Start simple. Open advanced tools only when you need them.
 
@@ -29,6 +29,60 @@ This combination is DevDesk's distinctive value. It is not a claim that every in
 | Keep docs and tools with software | **New workspace > Software project** |
 | Use a folder you already have | **Open folder** |
 | Continue recent work | **Continue working** |
+
+## Pick a starting path
+
+The profile changes the starter folders, starter files, and first visible views.
+It does not remove features or lock the workspace into one type of work.
+
+### Everyday life and work
+
+Choose **Personal plan** for ordinary tasks, notes, and goals. Its preview shows
+`Tasks`, `Notes`, and `Goals` folders plus a home page, first task, inbox note,
+and goals note. The first useful views are **Overview**, **Today**, **List**, and
+**Board**.
+
+Choose **Business project** instead when the work revolves around tasks,
+meetings, decisions, and documents. Its first views are **Overview**, **Board**,
+**Timeline**, and **Files**. Timeline becomes more useful after dated items are
+present.
+
+Good first action: create one task that describes the next concrete step. Add a
+deadline or priority only when it helps you decide what to do.
+
+### Student work
+
+Choose **Study**. Its preview creates places for subjects, assignments, notes,
+and resources, with a study home, first assignment, and class-notes starter.
+The first views are **Today**, **Board**, **Calendar**, and **Relationships**.
+
+Good first action: open the first assignment, replace the sample text with the
+real requirements, and add a due date if you want it to appear in Calendar.
+Keep class notes and resource links in the same workspace; connect Markdown
+notes only when a saved relationship is genuinely useful.
+
+### Research and writing
+
+Choose **Research / writing**. Its preview creates `Outline`, `Notes`, `Sources`,
+and `Drafts`, including an outline, research-notes page, and source-notes page.
+The first views are **List**, **Outline**, **Relationships**, and **Graph**.
+
+Good first action: write the question or argument in the outline, then capture
+one claim or question in Research notes and one source link with a citation note
+in Sources. DevDesk can show saved links and backlinks, but a graph connection
+does not verify that a claim is true.
+
+### Software projects
+
+Choose **Software project** or open an existing project folder. The starter
+creates `Docs`, `Decisions`, and `API` plus a project overview, architecture
+note, and decision log. The first views are **Files**, **Overview**, **Outline**,
+and **Graph**.
+
+Good first action: describe the current milestone in the overview. Open source,
+JSON, OpenAPI, API testing, Diff, or Windows Source Control only when the project
+needs them. Opening a project does not run Git, scripts, terminals, or commands,
+and the optional Agent Connector remains off until you start it.
 
 ## Your first five minutes
 
