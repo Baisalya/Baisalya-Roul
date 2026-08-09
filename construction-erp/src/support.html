@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101821">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co mailto:; upgrade-insecure-requests">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script defer src="assets/js/runtime-config.js"></script>
+<script defer src="assets/js/site.js"></script>
+<title>Support — {{APP_NAME}}</title>
+<meta name="description" content="Get Construction ERP help for login, project access, Daily Diary, material, labour, machinery, sync recovery, encrypted backup and installation.">
+<link rel="canonical" href="{{SITE_URL}}/support.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Support — {{APP_NAME}}"><meta property="og:description" content="Request a product walkthrough or get Construction ERP support."><meta property="og:url" content="{{SITE_URL}}/support.html"><meta property="og:image" content="{{SITE_URL}}/assets/images/og.png"><meta name="twitter:card" content="summary_large_image">
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-header>
+  <div class="container nav-shell">
+    <a class="brand" href="index.html" aria-label="{{APP_NAME}} home"><img src="assets/icons/favicon.svg" width="38" height="38" alt=""><span><strong>{{APP_NAME}}</strong><small>Site to office cost control</small></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span><span class="sr-only">Open menu</span></button>
+    <nav class="nav-links" id="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="features.html">Product</a><a href="index.html#workflow">How it works</a><a href="manual.html">User guide</a><a href="downloads.html">Downloads</a><a href="support.html" aria-current="page">Support</a></nav>
+    <a class="button button-small button-primary nav-cta" href="support.html?topic=Product%20walkthrough#contact">Request walkthrough</a>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero"><div class="container narrow"><p class="breadcrumbs"><a href="index.html">Home</a><span>/</span> Contact & support</p><p class="eyebrow">Walkthrough, rollout or product help</p><h1>Tell us what you want to solve.</h1><p class="hero-lead">Request a product walkthrough for your construction workflow or describe a support issue. Submit the form and the request will be delivered to our support inbox.</p></div></section>
+<section class="section" id="contact"><div class="container support-grid"><div class="support-sidebar"><article class="contact-card sales-card"><p class="eyebrow">Product walkthrough</p><h2>Bring one real project flow.</h2><p>Tell us your tender, project budget, daily work, stock, labour, machine and reporting process. Use sample amounts if the information is sensitive.</p></article><article class="contact-card"><p class="eyebrow">Support email</p><a class="contact-email" href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a><p>For support, include app version <strong>{{APP_VERSION}}</strong>, platform, company, project, module and visible message.</p></article><article class="notice notice-warning"><strong>Never send:</strong> passwords, OTPs, Firebase service-account files, signing keys, recovery passwords or full payment-card details.</article><article class="contact-card"><p class="eyebrow">Security issue</p><p>Choose <strong>Security report</strong>. Use sample data when possible and explain the impact and safe reproduction steps.</p></article></div>
+<div class="support-form-card"><h2>Send a request</h2><p class="support-intro">Choose <strong>Product walkthrough</strong> for sales/onboarding, or the matching support topic for an existing app issue.</p><form id="support-form" class="support-form" action="https://formsubmit.co/{{SUPPORT_EMAIL}}" method="POST" accept-charset="UTF-8"><input type="hidden" name="_subject" value="New Construction ERP inquiry"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="app_version" value="{{APP_VERSION}}"><input class="form-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"><div class="form-row"><label>Full name<input name="name" autocomplete="name" required></label><label>Reply email<input name="email" type="email" autocomplete="email" required></label></div><div class="form-row"><label>Platform<select name="platform"><option>Android</option><option>Windows</option><option>Website</option><option>Not decided</option><option>Other</option></select></label><label>Topic<select name="topic"><option>Product walkthrough</option><option>Rollout or onboarding</option><option>Login or account</option><option>Company or project access</option><option>Daily Work / DPR</option><option>Material or stock</option><option>Labour or payroll</option><option>Machinery or fuel</option><option>Project budget approval</option><option>Measurement, billing or finance</option><option>Sync conflict or failed item</option><option>Backup or restore</option><option>Installation</option><option>Security report</option><option>Other</option></select></label></div><label>Company and project<input name="workspace" placeholder="Example: ABC Infra • Highway Package 2"></label><label>What should we know?<textarea name="message" rows="8" required placeholder="Walkthrough: team size, project type and current process. Support: steps, expected result and visible message."></textarea></label><label class="checkbox-label"><input type="checkbox" name="sensitive_data_removed" value="Yes" required> I removed passwords, keys and unnecessary customer data.</label><button class="button button-primary" type="submit">Send request</button><p class="form-status" id="form-status">Free email delivery with anti-spam verification. Do not attach confidential credentials.</p></form></div></div></section>
+<section class="section section-soft" id="quick-fixes"><div class="container"><div class="section-heading"><div><p class="eyebrow">Before contacting support</p><h2>Four safe checks.</h2></div></div><div class="recovery-cards"><article><b>Wrong company/project</b><p>Read the company and project shown at the top. Switch before editing.</p></article><article><b>Offline or pending</b><p>Keep the app open after internet returns and open Sync status.</p></article><article><b>Failed upload</b><p>Inspect the failed item, read the exact reason and use Retry. Export diagnostics if it repeats.</p></article><article><b>Conflict</b><p>Compare both versions with the real site record. Never choose by timestamp alone.</p></article></div></div></section>
+<section class="section" id="faq"><div class="container faq-layout"><div><p class="eyebrow">Frequently asked</p><h2>Fast answers</h2></div><div class="faq-list">
+<div class="faq-item"><button aria-expanded="false">Can I keep working without internet?<span>+</span></button><div><p>Yes. Business records save to the encrypted local database. Authorized changes queue and retry when connectivity returns.</p></div></div>
+<div class="faq-item"><button aria-expanded="false">Why does a record show failed sync?<span>+</span></button><div><p>Open Sync status → Failed items. The app can show the entity, record and reason. Retry after correcting access, validation or connectivity problems.</p></div></div>
+<div class="faq-item"><button aria-expanded="false">What does “Needs review” mean?<span>+</span></button><div><p>Two devices changed the same logical record in different ways. Open Review conflicting changes, compare the real business fields, and choose only after checking the real site or office record. Repeated remote changes for that same logical record are consolidated into one open review.</p></div></div>
+<div class="faq-item"><button aria-expanded="false">What if the Needs review number keeps increasing?<span>+</span></button><div><p>That should not keep happening for the same logical records in the current release. Use Sync now once, reopen Sync status, and contact support with diagnostics if the count keeps growing without new real conflicts.</p></div></div>
+<div class="faq-item"><button aria-expanded="false">Can support recover my backup password?<span>+</span></button><div><p>No. Keep the recovery password outside the app. Without it, an encrypted <code>.construction.erp</code> backup cannot be opened.</p></div></div>
+<div class="faq-item"><button aria-expanded="false">Do attachments and site photos sync?<span>+</span></button><div><p>Attachment metadata can be recorded, but Firebase Storage is not included and file bytes remain local or inside encrypted backups. DPR site-photo upload remains Coming soon.</p></div></div>
+<div class="faq-item"><button aria-expanded="false">How do I delete my account?<span>+</span></button><div><p>Use Account settings → Delete account, or follow the dedicated <a href="account-deletion.html">account deletion page</a>. Active company owners must transfer ownership or close the workspace first.</p></div></div>
+<div class="faq-item"><button aria-expanded="false">Does the app replace an accountant or engineer?<span>+</span></button><div><p>No. The app organizes business records and calculations; the organization remains responsible for professional review, approvals and statutory compliance.</p></div></div>
+</div></div></section></main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><a class="brand brand-footer" href="index.html"><img src="assets/icons/favicon.svg" width="40" height="40" alt=""><span><strong>{{APP_NAME}}</strong><small>Tender to project cost control</small></span></a><p class="footer-copy">Construction operations for authorized site and office teams on Android and Windows.</p></div>
+    <div><h2>Product</h2><a href="features.html">Product</a><a href="index.html#workflow">How it works</a><a href="manual.html">User guide</a><a href="downloads.html">Downloads</a></div>
+    <div><h2>Legal & safety</h2><a href="privacy.html">Privacy policy</a><a href="account-deletion.html">Account deletion</a><a href="terms.html">Terms of use</a><a href="data-safety.html">Data safety overview</a></div>
+    <div><h2>Contact</h2><a href="support.html?topic=Product%20walkthrough#contact">Request walkthrough</a><a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a><p>Do not send passwords, private keys, or complete financial credentials.</p></div>
+  </div>
+  <div class="container footer-bottom"><span>© <span data-year></span> {{PUBLISHER_NAME}}. All rights reserved.</span><span>{{APP_NAME}} v{{APP_VERSION}}</span></div>
+</footer>
+</body>
+</html>

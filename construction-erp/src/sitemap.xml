@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{SITE_URL}}/</loc></url>
+  <url><loc>{{SITE_URL}}/features.html</loc></url>
+  <url><loc>{{SITE_URL}}/manual.html</loc></url>
+  <url><loc>{{SITE_URL}}/downloads.html</loc></url>
+  <url><loc>{{SITE_URL}}/support.html</loc></url>
+  <url><loc>{{SITE_URL}}/privacy.html</loc></url>
+  <url><loc>{{SITE_URL}}/account-deletion.html</loc></url>
+  <url><loc>{{SITE_URL}}/terms.html</loc></url>
+  <url><loc>{{SITE_URL}}/data-safety.html</loc></url>
+</urlset>

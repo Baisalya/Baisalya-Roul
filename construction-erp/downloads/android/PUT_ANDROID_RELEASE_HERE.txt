@@ -1,0 +1,1 @@
+Place the signed APK here for direct distribution, or use your Google Play URL in assets/js/config.js.

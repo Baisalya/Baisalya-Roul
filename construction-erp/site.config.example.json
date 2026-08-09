@@ -1,0 +1,26 @@
+{
+  "appName": "Construction ERP",
+  "publisherName": "REPLACE WITH YOUR LEGAL PUBLISHER NAME",
+  "supportEmail": "REPLACE_WITH_YOUR_SUPPORT_EMAIL",
+  "securityEmail": "",
+  "siteUrl": "https://REPLACE-WITH-YOUR-SITE-URL",
+  "appVersion": "1.22.0+107",
+  "lastUpdated": "9 August 2026",
+  "githubRepositoryUrl": "",
+  "platforms": {
+    "windows": {
+      "enabled": false,
+      "storeUrl": "",
+      "directUrl": "",
+      "label": "Windows 10/11 · 64-bit",
+      "releaseNote": "Add the Microsoft Store or signed installer link when published."
+    },
+    "android": {
+      "enabled": false,
+      "storeUrl": "",
+      "directUrl": "",
+      "label": "Android 6.0 or newer",
+      "releaseNote": "Add the Google Play link when published."
+    }
+  }
+}

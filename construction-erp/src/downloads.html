@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101821">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script defer src="assets/js/runtime-config.js"></script>
+<script defer src="assets/js/site.js"></script>
+<title>Downloads — {{APP_NAME}}</title>
+<meta name="description" content="Download or install Construction ERP for supported Android and Windows devices using verified store or signed release links.">
+<link rel="canonical" href="{{SITE_URL}}/downloads.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Downloads — {{APP_NAME}}"><meta property="og:description" content="Download or install Construction ERP for supported Android and Windows devices using verified store or signed release links."><meta property="og:url" content="{{SITE_URL}}/downloads.html"><meta property="og:image" content="{{SITE_URL}}/assets/images/og.png"><meta name="twitter:card" content="summary_large_image">
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-header>
+  <div class="container nav-shell">
+    <a class="brand" href="index.html" aria-label="{{APP_NAME}} home"><img src="assets/icons/favicon.svg" width="38" height="38" alt=""><span><strong>{{APP_NAME}}</strong><small>Site to office cost control</small></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span><span class="sr-only">Open menu</span></button>
+    <nav class="nav-links" id="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="features.html">Product</a><a href="index.html#workflow">How it works</a><a href="manual.html">User guide</a><a href="downloads.html" aria-current="page">Downloads</a><a href="support.html">Support</a></nav>
+    <a class="button button-small button-primary nav-cta" href="support.html?topic=Product%20walkthrough#contact">Request walkthrough</a>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero"><div class="container narrow"><p class="breadcrumbs"><a href="index.html">Home</a><span>/</span> Downloads</p><p class="eyebrow">Release v{{APP_VERSION}}</p><h1>Use the right build for the right device.</h1><p class="hero-lead">The current supported targets are Android and Windows. Store or signed-download buttons stay disabled until the publisher adds verified production URLs.</p></div></section>
+<section class="section"><div class="container"><div class="platform-download-grid">
+<article class="download-card" data-platform="android"><div class="platform-head"><span class="platform-mark">A</span><div><p class="eyebrow">Site teams</p><h2>Android</h2></div><span class="release-badge" data-platform-status>Coming soon</span></div><p>For engineers, supervisors, storekeepers and staff working around the site.</p><ul><li data-platform-label>Android 6.0 or newer</li><li>Google Sign-In or email/password when enabled</li><li>Offline local work with authorized sync</li></ul><div class="download-actions"><a class="button button-primary button-disabled" data-platform-store href="#" aria-disabled="true" tabindex="-1">Google Play</a><a class="button button-secondary button-disabled" data-platform-direct href="#" aria-disabled="true" tabindex="-1">Direct download</a></div><small data-platform-note>Release link not configured.</small></article>
+<article class="download-card" data-platform="windows"><div class="platform-head"><span class="platform-mark">W</span><div><p class="eyebrow">Office teams</p><h2>Windows</h2></div><span class="release-badge" data-platform-status>Coming soon</span></div><p>For owners, accountants, planners, administrators and detailed reporting.</p><ul><li data-platform-label>Windows 10/11 · 64-bit</li><li>Email/password authentication</li><li>Signed installer recommended for public distribution</li></ul><div class="download-actions"><a class="button button-primary button-disabled" data-platform-store href="#" aria-disabled="true" tabindex="-1">Microsoft Store</a><a class="button button-secondary button-disabled" data-platform-direct href="#" aria-disabled="true" tabindex="-1">Signed installer</a></div><small data-platform-note>Release link not configured.</small></article>
+</div></div></section>
+<section class="section section-soft"><div class="container"><div class="section-heading"><div><p class="eyebrow">Install safely</p><h2>Use verified release channels.</h2></div><p>For a free static website, keep large installers in Google Play, Microsoft Store or GitHub Releases and link to them from this page.</p></div><div class="install-grid"><article><span>1</span><h3>Check the source</h3><p>Use the official store listing or the publisher’s verified release page.</p></article><article><span>2</span><h3>Check the version</h3><p>The current website is prepared for v{{APP_VERSION}}. Do not mix old clients with sync-v2 production rules.</p></article><article><span>3</span><h3>Back up before upgrading</h3><p>Create and test an encrypted backup, especially before the first database-encryption or major sync migration.</p></article><article><span>4</span><h3>Finish setup</h3><p>Sign in, select company and project, confirm permissions and complete one controlled sync test.</p></article></div></div></section>
+<section class="section"><div class="container two-column"><div><p class="eyebrow">Windows installation</p><h2>Office setup</h2><ol class="plain-steps"><li>Download from Microsoft Store or the signed publisher installer.</li><li>Check publisher identity and version.</li><li>Install and open the app.</li><li>Sign in with email/password.</li><li>Confirm company, project and sync status.</li></ol></div><div><p class="eyebrow">Android installation</p><h2>Site setup</h2><ol class="plain-steps"><li>Install from Google Play when published.</li><li>Open the app and sign in.</li><li>Allow only permissions required for the feature you use.</li><li>Select company and project.</li><li>Make one test entry and confirm it reaches the authorized second device.</li></ol></div></div></section>
+<section class="section section-ink"><div class="container split-feature"><div><p class="eyebrow eyebrow-light">Not released</p><h2>macOS and iPhone</h2><p class="large-copy">The current Flutter production targets are Android and Windows. This website does not represent macOS or iPhone builds as available.</p></div><div class="notice-card"><strong>Release rule</strong><p>Keep download buttons disabled until the store listing or signed binary is live, tested and uses the same legal/support URLs shown on this website.</p></div></div></section></main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><a class="brand brand-footer" href="index.html"><img src="assets/icons/favicon.svg" width="40" height="40" alt=""><span><strong>{{APP_NAME}}</strong><small>Tender to project cost control</small></span></a><p class="footer-copy">Construction operations for authorized site and office teams on Android and Windows.</p></div>
+    <div><h2>Product</h2><a href="features.html">Product</a><a href="index.html#workflow">How it works</a><a href="manual.html">User guide</a><a href="downloads.html">Downloads</a></div>
+    <div><h2>Legal & safety</h2><a href="privacy.html">Privacy policy</a><a href="account-deletion.html">Account deletion</a><a href="terms.html">Terms of use</a><a href="data-safety.html">Data safety overview</a></div>
+    <div><h2>Contact</h2><a href="support.html?topic=Product%20walkthrough#contact">Request walkthrough</a><a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a><p>Do not send passwords, private keys, or complete financial credentials.</p></div>
+  </div>
+  <div class="container footer-bottom"><span>© <span data-year></span> {{PUBLISHER_NAME}}. All rights reserved.</span><span>{{APP_NAME}} v{{APP_VERSION}}</span></div>
+</footer>
+</body>
+</html>

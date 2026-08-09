@@ -1415,6 +1415,148 @@ p {
     justify-content: center;
 }
 
+/* A single premium backdrop keeps every app card cohesive while each
+   project keeps its own accent colour. */
+.project-card--devdesk {
+    --project-accent: 0, 196, 255;
+    --project-accent-secondary: 40, 88, 255;
+}
+
+.project-card--shoppilot {
+    --project-accent: 47, 199, 163;
+    --project-accent-secondary: 223, 246, 108;
+}
+
+.project-card--surveycam {
+    --project-accent: 35, 103, 255;
+    --project-accent-secondary: 0, 201, 86;
+}
+
+.project-card--ecommerce {
+    --project-accent: 255, 112, 77;
+    --project-accent-secondary: 255, 190, 61;
+}
+
+.project-card--ai {
+    --project-accent: 151, 71, 255;
+    --project-accent-secondary: 30, 210, 255;
+}
+
+.project-card--chat {
+    --project-accent: 22, 205, 184;
+    --project-accent-secondary: 96, 92, 255;
+}
+
+.project-card--farmer {
+    --project-accent: 61, 201, 102;
+    --project-accent-secondary: 232, 188, 52;
+}
+
+.project-card--erp {
+    --project-accent: 255, 151, 54;
+    --project-accent-secondary: 37, 130, 255;
+}
+
+.project-card--media {
+    --project-accent: 255, 71, 151;
+    --project-accent-secondary: 48, 200, 255;
+}
+
+.project-card--ecommerce .project-image,
+.project-card--ai .project-image,
+.project-card--chat .project-image,
+.project-card--farmer .project-image,
+.project-card--erp .project-image,
+.project-card--media .project-image,
+.project-image--showcase {
+    background-color: #071326;
+    background-image:
+        linear-gradient(135deg, rgba(var(--project-accent), 0.22), rgba(var(--project-accent-secondary), 0.1)),
+        url("assets/images/project-showcase-bg.webp");
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px solid rgba(var(--project-accent), 0.24);
+    isolation: isolate;
+}
+
+.project-card--ecommerce .project-image::before,
+.project-card--ai .project-image::before,
+.project-card--chat .project-image::before,
+.project-card--farmer .project-image::before,
+.project-card--erp .project-image::before,
+.project-card--media .project-image::before,
+.project-image--showcase::before {
+    content: "";
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    border-radius: 42%;
+    background: radial-gradient(circle, rgba(var(--project-accent), 0.34), transparent 68%);
+    filter: blur(14px);
+    z-index: 0;
+}
+
+.project-image--construction {
+    background:
+        radial-gradient(circle at 24% 22%, rgba(246, 186, 24, 0.38), transparent 34%),
+        radial-gradient(circle at 78% 72%, rgba(11, 143, 128, 0.32), transparent 38%),
+        #101821;
+}
+
+.project-image--shoppilot {
+    background:
+        radial-gradient(circle at 22% 18%, rgba(47, 199, 163, 0.3), transparent 34%),
+        radial-gradient(circle at 80% 78%, rgba(223, 246, 108, 0.2), transparent 35%),
+        linear-gradient(135deg, #071d2b, #0c3941);
+    border-bottom: 1px solid rgba(47, 199, 163, 0.28);
+}
+
+.project-image--shoppilot::before {
+    content: "";
+    position: absolute;
+    inset: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+.project-image--shoppilot .project-logo {
+    width: 132px;
+    height: 132px;
+    padding: 10px;
+    border-radius: 28px;
+    background: #fff;
+    box-shadow: 0 24px 58px rgba(0, 0, 0, 0.3);
+}
+
+.project-status {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 3;
+    padding: 0.45rem 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    box-shadow: 0 10px 24px rgba(16, 24, 33, 0.2);
+}
+
+.project-status--soon {
+    background: #f6ba18;
+    color: #101821;
+}
+
+.project-status--preview {
+    color: #071d2b;
+    background: #dff66c;
+}
+
 .project-overlay {
     position: absolute;
     top: 0;
@@ -1435,6 +1577,38 @@ p {
     color: white;
     z-index: 2;
     animation: bounce 2s infinite;
+}
+
+.project-card--ecommerce .project-icon,
+.project-card--ai .project-icon,
+.project-card--chat .project-icon,
+.project-card--farmer .project-icon,
+.project-card--erp .project-icon,
+.project-card--media .project-icon {
+    display: grid;
+    width: 112px;
+    height: 112px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 30px;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.06)),
+        rgba(6, 15, 31, 0.48);
+    box-shadow:
+        0 22px 46px rgba(0, 0, 0, 0.36),
+        0 0 40px rgba(var(--project-accent), 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    animation: none;
+    transition: transform var(--duration-normal) var(--ease-out-cubic), box-shadow var(--duration-normal) var(--ease-out-cubic);
+}
+
+.project-card:hover .project-icon {
+    transform: translateY(-5px) scale(1.06);
+    box-shadow:
+        0 28px 56px rgba(0, 0, 0, 0.42),
+        0 0 54px rgba(var(--project-accent), 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.24);
 }
 
 @keyframes bounce {
@@ -1681,13 +1855,15 @@ p {
 }
 
 .contact-content {
-    max-width: 800px;
+    max-width: 1180px;
     margin: 0 auto;
 }
 
 .contact-grid {
     display: grid;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
     gap: var(--spacing-2xl);
+    align-items: stretch;
 }
 
 .contact-card {
@@ -1698,6 +1874,7 @@ p {
     padding: var(--spacing-3xl);
     position: relative;
     overflow: hidden;
+    height: 100%;
 }
 
 .contact-description {
@@ -1798,6 +1975,156 @@ p {
     transform: translateX(5px);
 }
 
+.contact-form-card {
+    position: relative;
+    padding: var(--spacing-3xl);
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+    border-radius: 24px;
+    background:
+        radial-gradient(circle at 100% 0, rgba(102, 126, 234, 0.2), transparent 36%),
+        var(--bg-glass);
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(20px);
+}
+
+.contact-form-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    right: 2rem;
+    height: 2px;
+    background: var(--gradient-primary);
+}
+
+.contact-form-heading {
+    margin-bottom: var(--spacing-xl);
+}
+
+.contact-form-kicker {
+    display: inline-flex;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.contact-form-heading h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+}
+
+.contact-form-heading p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+.contact-form {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.contact-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.contact-field {
+    display: grid;
+    gap: 0.55rem;
+}
+
+.contact-field > span {
+    color: var(--text-primary);
+    font-size: 0.86rem;
+    font-weight: 700;
+}
+
+.contact-field input,
+.contact-field select,
+.contact-field textarea {
+    width: 100%;
+    border: 1px solid var(--border-light);
+    border-radius: 14px;
+    outline: none;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font: inherit;
+    transition: border-color var(--duration-fast) ease, box-shadow var(--duration-fast) ease, transform var(--duration-fast) ease;
+}
+
+.contact-field input,
+.contact-field select {
+    min-height: 50px;
+    padding: 0 1rem;
+}
+
+.contact-field textarea {
+    min-height: 132px;
+    padding: 0.9rem 1rem;
+    resize: vertical;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.contact-field input:focus,
+.contact-field select:focus,
+.contact-field textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.14);
+}
+
+.contact-submit {
+    display: inline-flex;
+    min-height: 52px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    border: 0;
+    border-radius: 14px;
+    background: var(--gradient-primary);
+    color: #ffffff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 800;
+    box-shadow: 0 14px 30px rgba(102, 126, 234, 0.28);
+    transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
+}
+
+.contact-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 36px rgba(102, 126, 234, 0.38);
+}
+
+.contact-submit:focus-visible {
+    outline: 3px solid rgba(102, 126, 234, 0.38);
+    outline-offset: 3px;
+}
+
+.contact-form-note {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    line-height: 1.55;
+    text-align: center;
+}
+
+.contact-honey {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+}
+
 /* Footer */
 .footer {
     background: var(--bg-tertiary);
@@ -1881,6 +2208,10 @@ p {
     
     .projects-grid {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
     }
     
     #gameCanvas {
@@ -1999,6 +2330,15 @@ p {
     .contact-arrow {
         display: none;
     }
+
+    .contact-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card,
+    .contact-form-card {
+        padding: var(--spacing-xl);
+    }
     
     .footer-content {
         flex-direction: column;
@@ -2064,7 +2404,8 @@ p {
     .project-card,
     .about-card,
     .education-card,
-    .contact-card {
+    .contact-card,
+    .contact-form-card {
         padding: var(--spacing-lg);
     }
     
@@ -2247,6 +2588,22 @@ p {
         filter var(--duration-normal) var(--ease-out-cubic);
 }
 
+.project-image--showcase .project-logo {
+    width: 138px;
+    box-sizing: border-box;
+    padding: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 30px;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04)),
+        rgba(5, 14, 29, 0.52);
+    box-shadow:
+        0 22px 46px rgba(0, 0, 0, 0.34),
+        0 0 42px rgba(var(--project-accent), 0.24),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+}
+
 /* Hover Effect */
 .project-card:hover .project-logo {
     transform: scale(1.08);
@@ -2275,4 +2632,96 @@ p {
 
 .project-card:hover .project-image::after {
     left: 100%;
+}
+
+/* SurveyCam uses a field-map treatment instead of the shared tech backdrop. */
+.project-card--surveycam .project-image {
+    background-color: #06243a;
+    background-image:
+        radial-gradient(circle at 78% 18%, rgba(69, 226, 158, 0.28), transparent 26%),
+        radial-gradient(circle at 16% 82%, rgba(39, 129, 255, 0.38), transparent 34%),
+        repeating-linear-gradient(0deg, rgba(162, 222, 255, 0.09) 0 1px, transparent 1px 36px),
+        repeating-linear-gradient(90deg, rgba(162, 222, 255, 0.09) 0 1px, transparent 1px 36px),
+        linear-gradient(145deg, #073858, #06182d 70%);
+    border-bottom-color: rgba(76, 220, 163, 0.34);
+}
+
+.project-card--surveycam .project-image::before {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: repeating-radial-gradient(
+        circle,
+        transparent 0 25px,
+        rgba(90, 221, 178, 0.2) 26px 27px,
+        transparent 28px 48px
+    );
+    filter: none;
+    opacity: 0.9;
+    animation: surveycamMapPulse 4.5s ease-in-out infinite;
+}
+
+.surveycam-logo-frame {
+    position: relative;
+    z-index: 2;
+    width: 144px;
+    height: 132px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.82);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow:
+        0 24px 48px rgba(0, 0, 0, 0.34),
+        0 0 40px rgba(57, 207, 160, 0.22),
+        inset 0 1px 0 #ffffff;
+    transform: translateY(-12px);
+    transition: transform var(--duration-normal) var(--ease-out-cubic), box-shadow var(--duration-normal) var(--ease-out-cubic);
+}
+
+.surveycam-logo {
+    display: block;
+    width: 144px;
+    height: 144px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.surveycam-visual-label {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    z-index: 3;
+    padding: 0.4rem 0.72rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    background: rgba(3, 22, 37, 0.78);
+    color: #d9fff0;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.055em;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(10px);
+    transform: translateX(-50%);
+}
+
+.project-card--surveycam:hover .surveycam-logo-frame {
+    box-shadow:
+        0 30px 58px rgba(0, 0, 0, 0.42),
+        0 0 54px rgba(57, 207, 160, 0.34),
+        inset 0 1px 0 #ffffff;
+    transform: translateY(-16px) scale(1.04);
+}
+
+@keyframes surveycamMapPulse {
+    0%, 100% { opacity: 0.58; transform: scale(0.92); }
+    50% { opacity: 0.95; transform: scale(1.04); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-card--surveycam .project-image::before {
+        animation: none;
+    }
 }

@@ -15,6 +15,38 @@ const devDeskRuntimeFiles = [
   'sw.js',
 ];
 
+const constructionErpRuntimeFiles = [
+  '404.html',
+  'account-deletion.html',
+  'data-safety.html',
+  'downloads.html',
+  'features.html',
+  'index.html',
+  'manifest.webmanifest',
+  'manual.html',
+  'privacy.html',
+  'robots.txt',
+  'sitemap.xml',
+  'support.html',
+  'terms.html',
+  '_headers',
+];
+
+const shopPilotRuntimeFiles = [
+  'data-deletion.html',
+  'index.html',
+  'manual.css',
+  'manual.js',
+  'privacy-policy.html',
+  'quick-start.html',
+  'robots.txt',
+  'site.js',
+  'sitemap.xml',
+  'styles.css',
+  'terms-of-service.html',
+  'user-manual.html',
+];
+
 function versionDevDeskRuntime(html) {
   return html.replace(
     /(assets\/(?:css\/styles\.css|js\/(?:app|site-config|search-index)\.js)|site\.webmanifest)(?:\?v=[^"']+)?(?=["'])/g,
@@ -57,6 +89,47 @@ export default defineConfig({
           filter: (source) => !source.endsWith('devdesk-logo-master.png'),
         });
         await versionHtmlFiles(outputRoot);
+
+        const constructionSourceRoot = path.resolve('construction-erp');
+        const constructionOutputRoot = path.resolve('dist', 'construction-erp');
+        await mkdir(constructionOutputRoot, { recursive: true });
+        await Promise.all(
+          constructionErpRuntimeFiles.map((file) =>
+            copyFile(
+              path.join(constructionSourceRoot, file),
+              path.join(constructionOutputRoot, file),
+            ),
+          ),
+        );
+        await cp(
+          path.join(constructionSourceRoot, 'assets'),
+          path.join(constructionOutputRoot, 'assets'),
+          { recursive: true },
+        );
+
+        const shopPilotSourceRoot = path.resolve('shoppilot erp');
+        const shopPilotOutputRoot = path.resolve('dist', 'shoppilot-erp');
+        await mkdir(shopPilotOutputRoot, { recursive: true });
+        await Promise.all(
+          shopPilotRuntimeFiles.map((file) =>
+            copyFile(
+              path.join(shopPilotSourceRoot, file),
+              path.join(shopPilotOutputRoot, file),
+            ),
+          ),
+        );
+        await cp(
+          path.join(shopPilotSourceRoot, 'assets'),
+          path.join(shopPilotOutputRoot, 'assets'),
+          { recursive: true },
+        );
+
+        const sitesServerRoot = path.resolve('dist', 'server');
+        await mkdir(sitesServerRoot, { recursive: true });
+        await copyFile(
+          path.resolve('sites-worker.js'),
+          path.join(sitesServerRoot, 'index.js'),
+        );
       },
     },
   ],

@@ -39,6 +39,10 @@ const supportAssistant = await text('devdesk/assets/js/support-assistant.js');
 const devdeskApp = await text('devdesk/assets/js/app.js');
 const serviceWorker = await text('devdesk/sw.js');
 const viteConfig = await text('vite.config.js');
+const constructionSupport = await text('construction-erp/support.html');
+const shopPilotHome = await text('shoppilot erp/index.html');
+const shopPilotQuickStart = await text('shoppilot erp/quick-start.html');
+const shopPilotManual = await text('shoppilot erp/user-manual.html');
 const manifest = JSON.parse(await text('devdesk/site.webmanifest'));
 
 requireText(portfolio, storeUrl, 'Portfolio Microsoft Store action');
@@ -52,6 +56,106 @@ requireText(
   'alt="DevDesk application logo"',
   'Portfolio DevDesk logo',
 );
+for (const expected of [
+  'Construction ERP',
+  'Coming Soon',
+  'construction-erp/index.html',
+  'aria-label="View the Construction ERP website"',
+]) {
+  requireText(portfolio, expected, 'Portfolio Construction ERP card');
+}
+for (const expected of [
+  'ShopPilot',
+  'Private Preview',
+  'shoppilot-erp/index.html',
+  'shoppilot-erp/quick-start.html',
+  'shoppilot-erp/user-manual.html',
+  '<option value="ShopPilot">ShopPilot</option>',
+]) {
+  requireText(portfolio, expected, 'Portfolio ShopPilot integration');
+}
+for (const expected of [
+  'action="https://formsubmit.co/baishalya@gmail.com"',
+  'name="interested_in"',
+  'name="message"',
+  'name="_honey"',
+  'Send requirement',
+]) {
+  requireText(portfolio, expected, 'Portfolio inquiry form');
+}
+await requireFile('construction-erp/index.html', 1_000);
+await requireFile('construction-erp/assets/icons/favicon.svg', 100);
+await requireFile('construction-erp/assets/images/og.png', 100_000);
+for (const [relativePath, minimumBytes] of [
+  ['shoppilot erp/index.html', 10_000],
+  ['shoppilot erp/quick-start.html', 10_000],
+  ['shoppilot erp/user-manual.html', 20_000],
+  ['shoppilot erp/assets/shoppilot-logo.png', 100_000],
+  ['shoppilot erp/assets/og.png', 100_000],
+  ['shoppilot erp/privacy-policy.html', 1_000],
+  ['shoppilot erp/terms-of-service.html', 1_000],
+  ['shoppilot erp/data-deletion.html', 1_000],
+]) {
+  await requireFile(relativePath, minimumBytes);
+}
+for (const expected of [
+  'Private preview · Release qualification in progress',
+  'No public installer is offered',
+  'data-shop="repair"',
+  'data-shop="garage"',
+  'Net Sales',
+  'Customer Dues',
+  'quick-start.html',
+  'user-manual.html',
+  'action="https://formsubmit.co/baishalya1999@gmail.com"',
+  'name="sensitive_data_removed"',
+]) {
+  requireText(shopPilotHome, expected, 'ShopPilot marketing truth contract');
+}
+for (const expected of [
+  '10-minute quick start',
+  'Repair shop',
+  'Bakery',
+  'Grocery or retail',
+  'Restaurant or cafe',
+  'Tailor',
+  'Garage',
+  'Make the first backup recoverable',
+  'The shop-owner daily checklist',
+]) {
+  requireText(shopPilotQuickStart, expected, 'ShopPilot easy manual');
+}
+for (const expected of [
+  'id="repair-shop"',
+  'id="bakery"',
+  'id="grocery-retail"',
+  'id="restaurant"',
+  'id="tailor"',
+  'id="garage"',
+  'id="reports"',
+  'Gross Profit',
+  'Cost completeness matters',
+  'id="staff-branches"',
+  'id="backup"',
+  'id="troubleshooting"',
+]) {
+  requireText(shopPilotManual, expected, 'ShopPilot detailed manual');
+}
+for (const expected of [
+  "path.resolve('shoppilot erp')",
+  "path.resolve('dist', 'shoppilot-erp')",
+  'shopPilotRuntimeFiles',
+]) {
+  requireText(viteConfig, expected, 'ShopPilot production build integration');
+}
+for (const expected of [
+  'action="https://formsubmit.co/baishalya@gmail.com"',
+  'name="_honey"',
+  'name="sensitive_data_removed"',
+  'Send request',
+]) {
+  requireText(constructionSupport, expected, 'Construction ERP inquiry form');
+}
 requireText(siteConfig, storeUrl, 'DevDesk site Microsoft Store action');
 requireText(
   siteConfig,

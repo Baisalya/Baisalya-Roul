@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101821">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script defer src="assets/js/runtime-config.js"></script>
+<script defer src="assets/js/site.js"></script>
+<title>Data Safety Overview — {{APP_NAME}}</title>
+<meta name="description" content="Plain-language data safety overview for Construction ERP, covering account data, business content, device sync metadata, Crashlytics, encryption and deletion.">
+<link rel="canonical" href="{{SITE_URL}}/data-safety.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Data Safety Overview — {{APP_NAME}}"><meta property="og:description" content="Plain-language data safety overview for Construction ERP, covering account data, business content, device sync metadata, Crashlytics, encryption and deletion."><meta property="og:url" content="{{SITE_URL}}/data-safety.html"><meta property="og:image" content="{{SITE_URL}}/assets/images/og.png"><meta name="twitter:card" content="summary_large_image">
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-header>
+  <div class="container nav-shell">
+    <a class="brand" href="index.html" aria-label="{{APP_NAME}} home"><img src="assets/icons/favicon.svg" width="38" height="38" alt=""><span><strong>{{APP_NAME}}</strong><small>Site to office cost control</small></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span><span class="sr-only">Open menu</span></button>
+    <nav class="nav-links" id="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="features.html">Product</a><a href="index.html#workflow">How it works</a><a href="manual.html">User guide</a><a href="downloads.html">Downloads</a><a href="support.html">Support</a></nav>
+    <a class="button button-small button-primary nav-cta" href="support.html?topic=Product%20walkthrough#contact">Request walkthrough</a>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero legal-hero"><div class="container narrow"><p class="breadcrumbs"><a href="index.html">Home</a><span>/</span> Data safety</p><p class="eyebrow">Store disclosure helper</p><h1>Data Safety Overview</h1><p class="hero-lead">A plain-language summary of the inspected app behavior. The publisher must still complete Google Play Data safety and Microsoft Store declarations based on the exact production configuration.</p></div></section>
+<section class="section"><div class="container narrow-wide"><div class="notice notice-warning"><strong>Not a substitute for store forms:</strong> Firebase settings, sign-in methods, support processes and future SDKs can change the correct answers. Re-check the final release binary and console configuration.</div><div class="data-table" role="table" aria-label="Data safety overview">
+<div class="data-row data-head" role="row"><span role="columnheader">Category</span><span role="columnheader">Current behavior</span><span role="columnheader">Main purpose</span></div>
+<div class="data-row" role="row"><b>Account information</b><span>Email, display name, authentication ID, company membership and staff access metadata.</span><span>Authentication and authorization</span></div>
+<div class="data-row" role="row"><b>Business content</b><span>Construction operational, financial, workforce, safety, quality and document records entered by authorized users.</span><span>ERP functionality and reporting</span></div>
+<div class="data-row" role="row"><b>Device and sync data</b><span>Device ID, platform, app/schema version, versions, timestamps, queue, conflict and permission context.</span><span>Security, synchronization and recovery</span></div>
+<div class="data-row" role="row"><b>Crash diagnostics</b><span>Android release builds may send crash and device/app context to Firebase Crashlytics.</span><span>Reliability and troubleshooting</span></div>
+<div class="data-row" role="row"><b>Advertising</b><span>No advertising SDK is included in the inspected current app.</span><span>Not applicable</span></div>
+<div class="data-row" role="row"><b>Data sale</b><span>The current privacy design does not sell personal information.</span><span>Not applicable</span></div>
+<div class="data-row" role="row"><b>Local protection</b><span>Encrypted local database and device-secured key.</span><span>Protect data at rest</span></div>
+<div class="data-row" role="row"><b>Backup protection</b><span>Argon2id + AES-256-GCM encrypted user-created backup.</span><span>Disaster recovery</span></div>
+<div class="data-row" role="row"><b>Account deletion</b><span>In-app deletion and a public request pathway; active company ownership must be transferred or closed first.</span><span>User control and legal compliance</span></div>
+</div><h2>Production checklist</h2><ul class="check-list dark"><li>Confirm the store developer/publisher name matches the Privacy Policy.</li><li>Publish working HTTPS privacy, support and account-deletion URLs.</li><li>Review Firebase Authentication, Firestore, App Check and Crashlytics settings.</li><li>Verify whether production support emails or logs create additional retained data.</li><li>Keep Data safety answers consistent with the final binary and actual business process.</li><li>Update this page whenever a new SDK, analytics tool, cloud attachment service or payment system is added.</li></ul></div></section></main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><a class="brand brand-footer" href="index.html"><img src="assets/icons/favicon.svg" width="40" height="40" alt=""><span><strong>{{APP_NAME}}</strong><small>Tender to project cost control</small></span></a><p class="footer-copy">Construction operations for authorized site and office teams on Android and Windows.</p></div>
+    <div><h2>Product</h2><a href="features.html">Product</a><a href="index.html#workflow">How it works</a><a href="manual.html">User guide</a><a href="downloads.html">Downloads</a></div>
+    <div><h2>Legal & safety</h2><a href="privacy.html">Privacy policy</a><a href="account-deletion.html">Account deletion</a><a href="terms.html">Terms of use</a><a href="data-safety.html">Data safety overview</a></div>
+    <div><h2>Contact</h2><a href="support.html?topic=Product%20walkthrough#contact">Request walkthrough</a><a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a><p>Do not send passwords, private keys, or complete financial credentials.</p></div>
+  </div>
+  <div class="container footer-bottom"><span>© <span data-year></span> {{PUBLISHER_NAME}}. All rights reserved.</span><span>{{APP_NAME}} v{{APP_VERSION}}</span></div>
+</footer>
+</body>
+</html>

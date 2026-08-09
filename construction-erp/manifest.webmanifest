@@ -1,0 +1,17 @@
+{
+  "name": "Construction ERP Website",
+  "short_name": "Construction ERP",
+  "description": "Tender-to-project cost control for Indian construction teams on Android and Windows.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f8f6f0",
+  "theme_color": "#101821",
+  "icons": [
+    {
+      "src": "assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
         name="description"
-        content="Baishalya Roul's Flutter and Android development portfolio, featuring DevDesk and production mobile applications."
+        content="Baishalya Roul's Flutter and Android development portfolio, featuring ShopPilot, DevDesk, Construction ERP, and production mobile applications."
     >
     <title>Baishalya Roul - Flutter & Android Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -878,8 +878,8 @@
           </div>
           <div class="projects-grid">
             <!-- DevDesk -->
-            <div class="project-card" data-tilt>
-              <div class="project-image">
+            <div class="project-card project-card--devdesk" data-tilt>
+              <div class="project-image project-image--showcase">
                 <div class="project-overlay"></div>
                 <img
                   src="devdesk/assets/img/devdesk-logo-256.png"
@@ -942,15 +942,127 @@
               </div>
             </div>
 
-            <!-- SurveyCam: published Android application -->
-            <div class="project-card" data-tilt>
-              <div class="project-image">
+            <!-- ShopPilot: private preview while real-device release qualification completes -->
+            <div class="project-card project-card--shoppilot" data-tilt>
+              <div class="project-image project-image--shoppilot">
                 <div class="project-overlay"></div>
                 <img
-                  src="assets/images/App_logo.png"
-                  alt="SurveyCam application logo"
+                  src="assets/images/shoppilot-logo.png"
+                  alt="ShopPilot application logo"
                   class="project-logo"
+                  width="1024"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
                 >
+                <span class="project-status project-status--preview">Private Preview</span>
+                <div class="project-particles"></div>
+              </div>
+
+              <div class="project-content">
+                <h3>ShopPilot</h3>
+                <p>
+                  An offline-first billing and operations app for repair shops, bakeries,
+                  grocery and retail stores, restaurants, tailors, and garages, with stock,
+                  purchases, staff access, branches, owner reports, and encrypted recovery.
+                </p>
+
+                <div class="project-tech">
+                  <span class="tech-tag">Flutter</span>
+                  <span class="tech-tag">Android</span>
+                  <span class="tech-tag">Windows</span>
+                  <span class="tech-tag">SQLite</span>
+                </div>
+
+                <div class="project-links">
+                  <a
+                    href="shoppilot-erp/index.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                    aria-label="View the ShopPilot product website"
+                  >Website</a>
+                  <a
+                    href="shoppilot-erp/quick-start.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                    aria-label="Open the easy ShopPilot quick-start guide"
+                  >Quick start</a>
+                  <a
+                    href="shoppilot-erp/user-manual.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                    aria-label="Open the detailed ShopPilot operations manual"
+                  >Detailed manual</a>
+                </div>
+                <p class="project-platform-note">
+                  Private preview: Android and Windows public installers are held until
+                  real-device backup and restore qualification is complete.
+                </p>
+              </div>
+            </div>
+
+            <!-- Construction ERP: website preview, product coming soon -->
+            <div class="project-card project-card--construction" data-tilt>
+              <div class="project-image project-image--construction">
+                <div class="project-overlay"></div>
+                <img
+                  src="construction-erp/assets/icons/favicon.svg"
+                  alt="Construction ERP application logo"
+                  class="project-logo"
+                  width="160"
+                  height="160"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <span class="project-status project-status--soon">Coming Soon</span>
+                <div class="project-particles"></div>
+              </div>
+
+              <div class="project-content">
+                <h3>Construction ERP</h3>
+                <p>
+                  An offline-first construction operations system connecting tender value,
+                  project cost budgets, daily work, stock, labour, machinery, approvals,
+                  and reports for site and office teams.
+                </p>
+
+                <div class="project-tech">
+                  <span class="tech-tag">Flutter</span>
+                  <span class="tech-tag">Android</span>
+                  <span class="tech-tag">Windows</span>
+                </div>
+
+                <div class="project-links">
+                  <a
+                    href="construction-erp/index.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                    aria-label="View the Construction ERP website"
+                  >Website</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- SurveyCam: published Android application -->
+            <div class="project-card project-card--surveycam" data-tilt>
+              <div class="project-image project-image--showcase">
+                <div class="project-overlay"></div>
+                <div class="surveycam-logo-frame">
+                  <img
+                    src="assets/images/App_logo.png"
+                    alt="SurveyCam application logo"
+                    class="surveycam-logo"
+                    width="1254"
+                    height="1254"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </div>
+                <span class="surveycam-visual-label">GPS &bull; Weather &bull; Timestamp</span>
                 <div class="project-particles"></div>
               </div>
 
@@ -987,7 +1099,7 @@
             </div>
 
             <!-- E-Commerce Mobile App -->
-            <div class="project-card" data-tilt>
+            <div class="project-card project-card--ecommerce" data-tilt>
               <div class="project-image"><div class="project-overlay"></div><div class="project-icon">🚀</div><div class="project-particles"></div></div>
               <div class="project-content">
                 <h3>E-Commerce Mobile App</h3>
@@ -1003,7 +1115,7 @@
               </div>
             </div>
             <!-- 2. Chatbot App with AI -->
-            <div class="project-card" data-tilt>
+            <div class="project-card project-card--ai" data-tilt>
               <div class="project-image"><div class="project-overlay"></div><div class="project-icon">🤖</div><div class="project-particles"></div></div>
               <div class="project-content">
                 <h3>AI Chatbot App</h3>
@@ -1020,7 +1132,7 @@
             </div>
       
             <!-- 3. Chatting App (Android + Firebase) -->
-            <div class="project-card" data-tilt>
+            <div class="project-card project-card--chat" data-tilt>
               <div class="project-image"><div class="project-overlay"></div><div class="project-icon">💬</div><div class="project-particles"></div></div>
               <div class="project-content">
                 <h3>Chatting App (Android)</h3>
@@ -1037,7 +1149,7 @@
             </div>
       
             <!-- 4. Farmer App (Android + AI backend) -->
-            <div class="project-card" data-tilt>
+            <div class="project-card project-card--farmer" data-tilt>
               <div class="project-image"><div class="project-overlay"></div><div class="project-icon">🌾</div><div class="project-particles"></div></div>
               <div class="project-content">
                 <h3>Farmer Assistance App</h3>
@@ -1054,7 +1166,7 @@
             </div>
       
             <!-- 5. Small ERP App (Android) -->
-            <div class="project-card" data-tilt>
+            <div class="project-card project-card--erp" data-tilt>
               <div class="project-image"><div class="project-overlay"></div><div class="project-icon">📊</div><div class="project-particles"></div></div>
               <div class="project-content">
                 <h3>Small ERP System (Android)</h3>
@@ -1071,7 +1183,7 @@
             </div>
       
             <!-- 6. Media Player (Flutter) -->
-            <div class="project-card" data-tilt>
+            <div class="project-card project-card--media" data-tilt>
               <div class="project-image"><div class="project-overlay"></div><div class="project-icon">🎧</div><div class="project-particles"></div></div>
               <div class="project-content">
                 <h3>Flutter Media Player</h3>
@@ -1213,7 +1325,7 @@
                     <span class="title-text">Get In Touch</span>
                     <div class="title-decoration"></div>
                 </h2>
-                <p class="section-subtitle">Let's create something amazing together</p>
+                <p class="section-subtitle">Tell me what you want to build and I will reply by email</p>
             </div>
             <div class="contact-content">
                 <div class="contact-grid">
@@ -1225,7 +1337,7 @@
                                 Let's discuss how we can work together to bring your ideas to life.
                             </p>
                             <div class="contact-methods">
-                                <a href="mailto:baishalya1999@gmail.com" class="contact-method">
+                                <a href="mailto:baishalya@gmail.com" class="contact-method">
                                     <div class="contact-icon">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -1234,7 +1346,7 @@
                                     </div>
                                     <div class="contact-details">
                                         <h4>Email</h4>
-                                        <p>baishalya1999@gmail.com</p>
+                                        <p>baishalya@gmail.com</p>
                                     </div>
                                     <div class="contact-arrow">→</div>
                                 </a>
@@ -1264,6 +1376,74 @@
                                 </a>
                             </div>
                         </div>
+                    </div>
+                    <div class="contact-form-card">
+                        <div class="contact-form-heading">
+                            <span class="contact-form-kicker">Project inquiry</span>
+                            <h3>Send your requirement</h3>
+                            <p>Your message will arrive directly in my email inbox.</p>
+                        </div>
+                        <form
+                            class="contact-form"
+                            action="https://formsubmit.co/baishalya@gmail.com"
+                            method="POST"
+                            accept-charset="UTF-8"
+                        >
+                            <input type="hidden" name="_subject" value="New portfolio project inquiry">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="true">
+                            <input
+                                class="contact-honey"
+                                type="text"
+                                name="_honey"
+                                tabindex="-1"
+                                autocomplete="off"
+                                aria-hidden="true"
+                            >
+
+                            <div class="contact-form-row">
+                                <label class="contact-field">
+                                    <span>Your name</span>
+                                    <input type="text" name="name" autocomplete="name" placeholder="Full name" required>
+                                </label>
+                                <label class="contact-field">
+                                    <span>Email address</span>
+                                    <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required>
+                                </label>
+                            </div>
+
+                            <label class="contact-field">
+                                <span>Interested in</span>
+                                <select name="interested_in" required>
+                                    <option value="" selected disabled>Select an app or service</option>
+                                    <option value="ShopPilot">ShopPilot</option>
+                                    <option value="Construction ERP">Construction ERP</option>
+                                    <option value="SurveyCam">SurveyCam</option>
+                                    <option value="DevDesk">DevDesk</option>
+                                    <option value="Mobile app development">Mobile app development</option>
+                                    <option value="Website development">Website development</option>
+                                    <option value="Other">Other requirement</option>
+                                </select>
+                            </label>
+
+                            <label class="contact-field">
+                                <span>Requirement</span>
+                                <textarea
+                                    name="message"
+                                    rows="5"
+                                    placeholder="Briefly describe what you need, your platform, and expected timeline."
+                                    required
+                                ></textarea>
+                            </label>
+
+                            <button class="contact-submit" type="submit">
+                                <span>Send requirement</span>
+                                <span aria-hidden="true">&rarr;</span>
+                            </button>
+                            <p class="contact-form-note">
+                                Free email delivery with spam protection. Please do not send passwords, OTPs, or payment details.
+                            </p>
+                        </form>
                     </div>
                 </div>
             </div>

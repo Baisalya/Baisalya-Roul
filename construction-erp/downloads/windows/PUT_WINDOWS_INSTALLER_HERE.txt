@@ -1,0 +1,1 @@
+Place the signed Windows installer here, then enable and update the URL in assets/js/config.js.

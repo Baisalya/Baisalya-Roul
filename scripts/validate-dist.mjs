@@ -48,6 +48,30 @@ await validateLocalReferences('devdesk/index.html');
 await validateLocalReferences('devdesk/downloads.html');
 await validateLocalReferences('devdesk/manual/user-manual.html');
 await validateLocalReferences('devdesk/manual/agent-connector.html');
+for (const page of [
+  'index.html',
+  'features.html',
+  'manual.html',
+  'downloads.html',
+  'support.html',
+  'privacy.html',
+  'account-deletion.html',
+  'terms.html',
+  'data-safety.html',
+  '404.html',
+]) {
+  await validateLocalReferences(`construction-erp/${page}`);
+}
+for (const page of [
+  'index.html',
+  'quick-start.html',
+  'user-manual.html',
+  'privacy-policy.html',
+  'terms-of-service.html',
+  'data-deletion.html',
+]) {
+  await validateLocalReferences(`shoppilot-erp/${page}`);
+}
 
 for (const required of [
   'devdesk/assets/js/site-config.js',
@@ -62,6 +86,21 @@ for (const required of [
   'devdesk/site.webmanifest',
   'devdesk/sw.js',
   'devdesk/manual/agent-connector.html',
+  'construction-erp/assets/css/styles.css',
+  'construction-erp/assets/js/site.js',
+  'construction-erp/assets/js/runtime-config.js',
+  'construction-erp/assets/icons/favicon.svg',
+  'construction-erp/assets/images/og.png',
+  'construction-erp/manifest.webmanifest',
+  'shoppilot-erp/styles.css',
+  'shoppilot-erp/manual.css',
+  'shoppilot-erp/site.js',
+  'shoppilot-erp/manual.js',
+  'shoppilot-erp/assets/shoppilot-logo.png',
+  'shoppilot-erp/assets/og.png',
+  'shoppilot-erp/robots.txt',
+  'shoppilot-erp/sitemap.xml',
+  'server/index.js',
 ]) {
   await exists(required);
 }

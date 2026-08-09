@@ -1,0 +1,1 @@
+window.CONSTRUCTION_ERP_CONFIG = {};
