@@ -39,7 +39,7 @@ const _pages = <_Page>[
     slug: 'downloads-installation',
     title: 'Downloads and installation',
     description:
-        'Install or update DevDesk from Microsoft Store or join Android closed testing safely.',
+        'Install or update DevDesk from Microsoft Store or get it on Google Play.',
   ),
   _Page(
     slug: 'backup-restore',

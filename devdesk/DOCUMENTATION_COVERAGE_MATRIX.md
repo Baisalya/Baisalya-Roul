@@ -34,7 +34,7 @@ limits instead of inventing verification.
 | Backup/import | `content/backup-restore.md` | Settings > Backup | Protect app data | Moving and Backing Up | Static validation | Import rollback tests unavailable | External folders and secrets are separate |
 | Settings/onboarding | `content/settings-appearance.md` | Settings | Theme, manuals, replay onboarding | Windows/Android guides | Static validation | App navigation tests unavailable | Clear All Data removes private records |
 | Windows install/update | `content/downloads-installation.md`, `assets/js/site-config.js` | Downloads / Microsoft Store | Install/update Windows app | Windows Guide | Release content validator | MSIX/Windows source absent | Use official Store listing |
-| Android closed testing | `content/downloads-installation.md`, `assets/js/site-config.js` | Downloads / support | Join test and install | Android Guide | Release content validator | Android packaging source absent | Do not expose tester addresses |
+| Android production | `content/downloads-installation.md`, `assets/js/site-config.js` | Downloads / support | Join test and install | Android Guide | Release content validator | Android packaging source absent | Do not expose tester addresses |
 | Privacy/security | `content/privacy-security.md` | Settings / manual | Understand data boundaries | Privacy and Security | Static validation | Fresh code-level network audit unavailable | API/external destinations receive data |
 | Troubleshooting | `content/troubleshooting.md` | Help / manual | Recover common failures | Troubleshooting | Static validation | In-app deep-link tests unavailable | Preserve external edits and backups |
 
@@ -44,7 +44,7 @@ limits instead of inventing verification.
 - Added a complete “My First App Project” walkthrough.
 - Kept all 41 focused tool manuals.
 - Added global-manual navigation and official deeper-learning links.
-- Added explicit Store/closed-test/install/update guidance.
+- Added explicit Store/production/install/update guidance.
 - Added the Windows AI Agent Connector guide, global-manual section, search
   entry, safety guidance, and verified code/test evidence.
 

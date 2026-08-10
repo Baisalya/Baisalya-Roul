@@ -17,17 +17,14 @@ When a newer Windows build is available, DevDesk opens Microsoft Store. The
 Store can update apps automatically; its **Library** also lets you search for
 updates manually.
 
-## Android — closed testing
+## Android — available now
 
 1. Open the Google Play link from an Android device.
-2. Sign in with the Google account the developer added to the closed test.
+2. Sign in with your Google account.
 3. Install the Play-delivered build.
 4. Open DevDesk and complete the privacy acknowledgement and onboarding.
 5. Use **Settings → About → Check for Updates** to compare the installed
    Android build with the official Android release record.
-
-If you need test access, contact the developer through the public support page.
-Do not post a tester email address, password, or access token publicly.
 
 ## What DevDesk checks
 

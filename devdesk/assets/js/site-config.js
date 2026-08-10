@@ -1,11 +1,11 @@
 window.DEVDESK_SITE_CONFIG = {
   version: "1.0.4",
   android: {
-    status: "testing",
-    label: "Open Android closed test",
+    status: "available",
+    label: "Get DevDesk on Google Play",
     url: "https://play.google.com/store/apps/details?id=com.baishalya.devdesk",
-    note: "Android closed testing — contact the developer to join.",
-    accessibleLabel: "Open the DevDesk Android closed-testing page on Google Play"
+    note: "Android version — available on Google Play.",
+    accessibleLabel: "Get the DevDesk Android app on Google Play"
   },
   windows: {
     status: "available",

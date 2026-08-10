@@ -41,8 +41,7 @@ Network activity can occur when you:
 - open a store, support, privacy, portfolio, or other external page.
 
 The Windows download action opens the official Microsoft Store listing. The
-Android listing is currently a closed test and may require an approved tester
-account.
+Android listing is publicly available on Google Play.
 
 The update check downloads only a small public JSON record from the official
 DevDesk website. The installed version comparison happens on your device;

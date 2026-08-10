@@ -14,14 +14,14 @@ Date: 2026-07-29
   sitemap updates.
 - Transparent platform messaging:
   - Windows is available on Microsoft Store.
-  - Android is in Google Play closed testing.
+  - Android is in Google Play production.
   - macOS and iOS are not presented as released.
 
 ## Verified release links
 
 - Microsoft Store:
   `https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare`
-- Android closed test:
+- Android production:
   `https://play.google.com/store/apps/details?id=com.baishalya.devdesk`
 - Support:
   `https://github.com/Baisalya/devdesk-support/issues`

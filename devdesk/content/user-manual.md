@@ -928,12 +928,10 @@ capabilities in this release.
 
 ## Android Guide
 
-Android is currently in closed testing.
+Android is publicly available on Google Play.
 
-1. Open the DevDesk support page.
-2. Contact the developer to request testing access.
-3. Use the Google account approved for the closed test.
-4. Install the Play-delivered build.
+1. Open the DevDesk Google Play page.
+2. Install the Play-delivered build.
 
 Do not post tester email addresses or credentials publicly.
 
@@ -1162,7 +1160,7 @@ DevDesk manuals describe how this application uses those concepts.
 - [Get DevDesk for Windows on Microsoft Store](https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare)
 - [DevDesk support](https://baisalya.github.io/devdesk-support/)
 - [Privacy policy](https://baisalya.github.io/devdesk-support/privacy-policy.html)
-- Android closed testing — contact the developer through the support page to join.
+- Get DevDesk for Android on Google Play.
 
 Never include tokens, passwords, private project files, or personal API data in
 a public support report.

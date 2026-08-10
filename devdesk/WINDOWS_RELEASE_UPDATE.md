@@ -42,7 +42,7 @@ Use this checklist the next time a new DevDesk MSIX version is ready.
 4. Replace screenshots when the visible interface changed.
 5. Keep the support, privacy, and website links current.
 6. Check that the Windows Store wording is accurate.
-7. Do not describe Android closed testing as a public Android release.
+7. Do not describe Android production as a public Android release.
 
 ## Finish the submission
 

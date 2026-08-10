@@ -46,7 +46,7 @@ See `PRODUCT_POSITIONING.md` for the message hierarchy and
 Edit `assets/js/site-config.js`.
 
 - Android currently points to the Google Play package ID and is labelled
-  closed testing. The public text asks users to contact the developer to join.
+  production. The public text asks users to contact the developer to join.
 - Windows points to the official Microsoft Store listing:
   `https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare`.
 - macOS and iOS remain disabled until real signed public releases exist.

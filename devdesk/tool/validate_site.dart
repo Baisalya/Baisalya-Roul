@@ -128,8 +128,8 @@ Future<void> main() async {
   if (!siteConfig.contains(storeUrl)) {
     failures.add('site-config.js does not contain the official Store URL.');
   }
-  if (!siteConfig.contains('Android closed testing')) {
-    failures.add('site-config.js does not explain Android closed testing.');
+  if (!siteConfig.contains('available on Google Play')) {
+    failures.add('site-config.js does not explain Android production.');
   }
 
   final userManual = File(
