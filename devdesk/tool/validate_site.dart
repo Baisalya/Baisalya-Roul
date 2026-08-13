@@ -8,8 +8,8 @@ Future<void> main() async {
   final siteRoot = File.fromUri(Platform.script).parent.parent;
   final htmlFiles = <File>[
     ...siteRoot.listSync().whereType<File>().where(
-      (file) => file.path.endsWith('.html'),
-    ),
+          (file) => file.path.endsWith('.html'),
+        ),
     ...Directory(
       '${siteRoot.path}${Platform.pathSeparator}manual',
     ).listSync().whereType<File>().where((file) => file.path.endsWith('.html')),
@@ -67,8 +67,7 @@ Future<void> main() async {
         continue;
       }
       if (uri.fragment.isEmpty || !target.path.endsWith('.html')) continue;
-      final targetDocument =
-          documents[target.absolute.path.toLowerCase()] ??
+      final targetDocument = documents[target.absolute.path.toLowerCase()] ??
           html_parser.parse(await target.readAsString(encoding: utf8));
       final expectedId = Uri.decodeComponent(uri.fragment);
       if (!targetDocument
@@ -95,9 +94,9 @@ Future<void> main() async {
     final entries =
         jsonDecode(searchSource.substring(searchStart, searchEnd + 1))
             as List<dynamic>;
-    if (entries.length != 45) {
+    if (entries.length != 48) {
       failures.add(
-        'Expected 45 searchable manuals after adding structured views and Canvas; '
+        'Expected 48 searchable manuals after adding the visual guide, workbench, and Diagram Studio; '
         'found ${entries.length}.',
       );
     }
@@ -118,8 +117,7 @@ Future<void> main() async {
     stdout.writeln('Search entries: ${entries.length}');
   }
 
-  const storeUrl =
-      'https://apps.microsoft.com/detail/'
+  const storeUrl = 'https://apps.microsoft.com/detail/'
       '9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare';
   final siteConfig = await File(
     '${siteRoot.path}${Platform.pathSeparator}assets'
@@ -166,6 +164,34 @@ Future<void> main() async {
           .any((element) => element.id == id)) {
         failures.add('Global manual is missing section #$id.');
       }
+    }
+  }
+
+  for (final requiredPath in const <String>[
+    'assets/js/manual-visuals.js',
+    'manual/visual-feature-guide.html',
+    'manual/workspace-workbench.html',
+    'manual/diagram-studio.html',
+  ]) {
+    if (!File.fromUri(siteRoot.uri.resolve(requiredPath)).existsSync()) {
+      failures.add('$requiredPath does not exist.');
+    }
+  }
+
+  for (final entry in const <(String, String)>[
+    ('manual/visual-feature-guide.html', 'data-visual-card'),
+    ('manual/workspace-workbench.html', 'five tabs visible'),
+    ('manual/diagram-studio.html', 'portable <code>.flowchart</code>'),
+    ('manual/knowledge-graph.html', 'floating play button'),
+  ]) {
+    final file = File.fromUri(siteRoot.uri.resolve(entry.$1));
+    if (!file.existsSync()) continue;
+    final source = await file.readAsString(encoding: utf8);
+    if (!source.contains(entry.$2)) {
+      failures.add('${entry.$1} is missing ${entry.$2}.');
+    }
+    if (!source.contains('manual-visuals.js')) {
+      failures.add('${entry.$1} does not load manual-visuals.js.');
     }
   }
 

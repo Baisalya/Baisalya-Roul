@@ -42,7 +42,10 @@ limits instead of inventing verification.
 
 - Added one beginner-first global manual with 24 required subject sections.
 - Added a complete “My First App Project” walkthrough.
-- Kept all 41 focused tool manuals.
+- Expanded the searchable manual to 48 topics with a visual feature atlas,
+  Diagram Studio, and workspace workbench guides.
+- Added an app-matched HTML/CSS preview to every manual page without embedding
+  private workspace screenshots.
 - Added global-manual navigation and official deeper-learning links.
 - Added explicit Store/production/install/update guidance.
 - Added the Windows AI Agent Connector guide, global-manual section, search

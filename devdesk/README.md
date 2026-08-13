@@ -31,8 +31,13 @@ See `PRODUCT_POSITIONING.md` for the message hierarchy and
 - transparent platform downloads page;
 - a featured graph-to-code video and downloadable Tiny Multi-Agent Graph Demo;
 - the original agent-ready workspace as a second guided practice demo;
-- a complete beginner-first global manual plus 41 focused tool topics,
+- a complete beginner-first global manual plus 47 focused and visual topics,
   including a five-page API Studio section;
+- an app-matched visual feature atlas and an HTML/CSS screen preview on every
+  manual topic;
+- dedicated Diagram Studio and workspace workbench guides covering responsive
+  layouts, five visible tabs, hidden editors, contextual tools, Source Control,
+  project terminals, and Android freeform behavior;
 - responsive sidebar and table of contents;
 - offline search index;
 - dark and light themes;

@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A beginner-first guide to local-first workspaces, focused AI project context, reviewed changes, knowledge, APIs, Git, backup, and platform help."><meta name="theme-color" content="#5b47e8"><title>Complete user manual · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A beginner-first guide to local-first workspaces, focused AI project context, reviewed changes, knowledge, APIs, Git, backup, and platform help."><meta name="theme-color" content="#5b47e8"><title>Complete user manual · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script><script defer src="../assets/js/manual-visuals.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
   <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
@@ -19,6 +19,8 @@
     <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
   </div>
 </header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<a class="" href="../manual/visual-feature-guide.html">Visual feature guide</a>
+<a class="" href="../manual/workspace-workbench.html">Workspace workbench and tabs</a>
 <a class="active" href="../manual/user-manual.html" aria-current="page">Complete user manual</a>
 <a class="" href="../manual/getting-started.html">Getting started</a>
 <a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
@@ -31,6 +33,7 @@
 <a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
 <a class="" href="../manual/knowledge-workspace.html">Edit workspace Markdown</a>
 <a class="" href="../manual/knowledge-graph.html">Relationships and graph</a>
+<a class="" href="../manual/diagram-studio.html">Diagram Studio</a>
 <a class="" href="../manual/visual-canvas.html">Visual Canvas</a>
 <a class="" href="../manual/structured-views.html">Structured workspace views</a>
 <a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
@@ -207,6 +210,18 @@ folder picker asks.</p>
 <td>Add links, then open <strong>Relationships</strong></td>
 </tr>
 <tr>
+<td>See what every major screen does</td>
+<td><a href="visual-feature-guide.html">Visual feature guide</a></td>
+</tr>
+<tr>
+<td>Create a flowchart, system diagram, mind map, or study plan</td>
+<td><a href="diagram-studio.html">Diagram Studio</a></td>
+</tr>
+<tr>
+<td>Arrange ideas, files, and links freely</td>
+<td><a href="visual-canvas.html">Visual Canvas</a></td>
+</tr>
+<tr>
 <td>Test an API</td>
 <td><a href="quick-api.html">Quick API</a> for one request or <a href="api-workspaces.html">Saved API testing</a> for saved work</td>
 </tr>
@@ -221,6 +236,10 @@ folder picker asks.</p>
 <tr>
 <td>Manage a developer project</td>
 <td><strong>New workspace &gt; Software project</strong></td>
+</tr>
+<tr>
+<td>Manage many open files and tools</td>
+<td><a href="workspace-workbench.html">Workspace workbench, tabs, and tools</a></td>
 </tr>
 <tr>
 <td>Move to another computer</td>
@@ -305,10 +324,13 @@ file identifies the project and stores safe, relative settings. It does not
 store absolute paths, credentials, shell commands, execution trust, or personal
 screen layout.</p>
 <p>From a project workspace, <strong>Developer tools</strong> can open the Markdown editor,
-workspace text editor, saved API testing, OpenAPI Studio, JSON tools,
-comparisons, scoped Git, and other tools with the current project already
-selected. If a tool needs a file, choose a compatible project file rather than
-copying it into a separate global workspace.</p>
+workspace text editor, Diagram Studio, Visual Canvas, saved API testing,
+OpenAPI Studio, JSON tools, comparisons, scoped Git, and other tools with the
+current project already selected. If a tool needs a file, choose a compatible
+project file rather than copying it into a separate global workspace. See
+<a href="workspace-workbench.html">Workspace workbench, tabs, and tools</a> for the five
+visible-tab limit, hidden-tab menu, contextual tool cards, Source Control, and
+project terminals.</p>
 <h3 id="share-or-move-a-project-safely">Share or move a project safely<a class="heading-anchor" href="#share-or-move-a-project-safely" aria-label="Link to Share or move a project safely">#</a></h3>
 <ol>
 <li>Save the project files you want to keep.</li>
@@ -354,11 +376,20 @@ which work should be completed.</p>
 missing from a date-based view, confirm that it has a valid date and that active
 filters are clear.</p>
 <h3 id="visual-brainstorming">Visual brainstorming<a class="heading-anchor" href="#visual-brainstorming" aria-label="Link to Visual brainstorming">#</a></h3>
-<p>Open <strong>Visual Canvas</strong> to arrange text, file, link, and group nodes in a portable
-<code>.canvas</code> file. Add labeled or directed connections, then use drag, pan, zoom,
-fit, undo, and redo. The Canvas can remain independent or be saved to the
-current workspace. Opening it never executes embedded code or URLs. See
-<a href="visual-canvas.html">Visual Canvas</a>.</p>
+<p>Choose the visual tool that matches the work:</p>
+<ul>
+<li>Open <strong>Diagram Studio</strong> for a formal flowchart, software architecture, UML or
+ER sketch, network, organization chart, mind map, research map, literature
+map, study plan, or thesis plan. Its portable <code>.flowchart</code> source supports a
+searchable shape library, connections, templates, automatic layout, and PNG
+or SVG export. See <a href="diagram-studio.html">Diagram Studio</a>.</li>
+<li>Open <strong>Visual Canvas</strong> to arrange text, file, link, and group nodes more
+freely in a portable <code>.canvas</code> file. Add labeled or directed connections,
+then use drag, pan, zoom, fit, undo, and redo. See
+<a href="visual-canvas.html">Visual Canvas</a>.</li>
+</ul>
+<p>Either file can remain independent or belong to the current workspace. Opening
+one treats its content as data and never executes embedded code or URLs.</p>
 <h2 id="markdown-for-complete-beginners">Markdown for Complete Beginners<a class="heading-anchor" href="#markdown-for-complete-beginners" aria-label="Link to Markdown for Complete Beginners">#</a></h2>
 <p><strong>Markdown</strong> is plain text that uses small punctuation marks for formatting.
 DevDesk uses it because the file remains readable without DevDesk.</p>
@@ -486,10 +517,19 @@ link between files.</p>
 <li>Select a node to inspect or open its note.</li>
 <li>With keyboard focus on the graph, use arrow keys to select a nearby node,
 Enter to open it, and Escape to clear selection.</li>
+<li>Open <strong>Controls</strong> to create color groups, include or hide tag/attachment/
+unresolved nodes, tune display and forces, or replay the selected scope.</li>
+<li>Select the floating play button to replay either Local or Workspace without
+keeping the controls panel open.</li>
 </ol>
-<p>The header reports visible notes, links, and orphans. Open <strong>Options</strong> for the
-legend. When a filter produces no result, use the visible <strong>Clear filters</strong>
-action instead of rebuilding the project.</p>
+<p>The header reports visible notes, links, and orphans. The controls include a
+legend, persistent device-local display preferences, filter query help, and a
+timeline based on each item's created date. When a filter produces no result,
+use the visible <strong>Clear filters</strong> action instead of rebuilding the project.</p>
+<p>Dense Workspace graphs use bounded force layout and a final collision pass to
+reduce overlapping labels dynamically. Increase <strong>Repel force</strong> or <strong>Link
+distance</strong> gradually, then use <strong>Fit view</strong>, when a large project still feels
+crowded.</p>
 <p>The graph reads saved Markdown links. It does not prove that a claim is correct.
 Node size does not mean truth or priority.</p>
 <h3 id="missing-or-disconnected-nodes">Missing or disconnected nodes<a class="heading-anchor" href="#missing-or-disconnected-nodes" aria-label="Link to Missing or disconnected nodes">#</a></h3>
@@ -708,7 +748,10 @@ the real repository is a parent folder.</p>
 <li>Source control needs a separate device-local trust decision.</li>
 <li>Status, diff, stage, unstage, and protected discard stay inside the workspace.</li>
 <li>A local commit is explicit, fingerprint-checked, and skips repository hooks.</li>
-<li>DevDesk does not fetch, pull, push, change remotes, run hooks, or manage credentials.</li>
+<li>Fetch, fast-forward-only pull, push, and branch creation are separate explicit
+actions for a trusted local Windows repository.</li>
+<li>DevDesk does not silently fetch, merge, push, change remote URLs, run hooks,
+or manage credentials.</li>
 </ul>
 <h3 id="beginner-workflow-2">Beginner workflow<a class="heading-anchor" href="#beginner-workflow-2" aria-label="Link to Beginner workflow">#</a></h3>
 <ol>
@@ -725,6 +768,9 @@ receive its own <code>.git</code> metadata. Initialization does not stage or com
 <li>Stage only the intended workspace path.</li>
 <li>Enter a commit message in DevDesk and select <strong>Commit staged files</strong>, or use
 your normal Git client after one more review.</li>
+<li>Use <strong>Fetch</strong>, <strong>Pull</strong>, or <strong>Push</strong> only after checking the current branch,
+upstream, ahead/behind counts, and remote. Pull refuses an implicit merge
+and stops when it cannot fast-forward.</li>
 </ol>
 <p>Example in the workspace root:</p>
 <pre><code class="language-powershell">git status
@@ -743,11 +789,13 @@ never deleted. <strong>History</strong> filters by commit message, author, or ha
 the selected commit's workspace-scoped files and patch. <strong>Branches</strong> shows the
 current branch, upstream, ahead/behind counts, and remotes without fetching or
 changing them.</p>
-<p>DevDesk creates local commits with <code>--no-verify</code>; it does not fetch, pull, push,
-change remotes, run hooks, or manage Git credentials. A commit uses the
-repository's staged index. For a workspace nested inside a parent repository,
-confirm with your normal Git client that no unrelated parent files are already
-staged before using the DevDesk commit action.</p>
+<p>DevDesk creates local commits with <code>--no-verify</code>; that commit action does not
+push. Fetch, fast-forward-only pull, push, create branch, and branch-switch
+actions remain separate and explicit. DevDesk does not change remote URLs, run
+repository hooks, or store Git credentials. A commit uses the repository's
+staged index. For a workspace nested inside a parent repository, confirm with
+your normal Git client that no unrelated parent files are already staged before
+using the DevDesk commit action.</p>
 <p>See <a href="diff-git.html">Compare files and workspace-scoped Git</a>.</p>
 <h2 id="search-navigation-and-shortcuts">Search, Navigation, and Shortcuts<a class="heading-anchor" href="#search-navigation-and-shortcuts" aria-label="Link to Search, Navigation, and Shortcuts">#</a></h2>
 <ul>
@@ -755,6 +803,10 @@ staged before using the DevDesk commit action.</p>
 <li>Use workspace Search for a quick filter.</li>
 <li>Use <strong>Developer tools &gt; Search workspace</strong> for full indexed search.</li>
 <li>Use <strong>Files &gt; Open explorer</strong> for nested folders and exact file selection.</li>
+<li>DevDesk shows up to five workbench tabs. Use the numbered dropdown at the
+right of the tab strip for every additional open file or tool.</li>
+<li>Right-click a Windows workbench tab for close-others, close-to-right,
+close-saved, close-all, and reopen-closed actions.</li>
 <li>Press <code>/</code> on this website to search the manual.</li>
 <li>Use <code>Tab</code> and <code>Shift+Tab</code> to move focus.</li>
 <li>Use <code>Enter</code> or <code>Space</code> to activate focused buttons.</li>

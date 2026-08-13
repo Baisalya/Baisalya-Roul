@@ -1,4 +1,4 @@
-const BUILD_ID = '20260801.6';
+const BUILD_ID = '20260813.1';
 const CACHE_PREFIX = 'devdesk-docs-';
 const CACHE_NAME = `${CACHE_PREFIX}${BUILD_ID}`;
 const ASSETS = [
@@ -8,12 +8,16 @@ const ASSETS = [
   "./assets/js/app.js",
   "./assets/js/site-config.js",
   "./assets/js/search-index.js",
+  "./assets/js/manual-visuals.js",
   "./assets/js/support-assistant.js",
   "./assets/img/devdesk-logo-64.png",
   "./assets/img/devdesk-logo-128.png",
   "./assets/img/devdesk-logo-192.png",
   "./assets/img/devdesk-logo-512.png",
   "./manual/user-manual.html",
+  "./manual/visual-feature-guide.html",
+  "./manual/workspace-workbench.html",
+  "./manual/diagram-studio.html",
   "./manual/agent-connector.html",
   "./manual/getting-started.html",
   "./manual/downloads-installation.html",

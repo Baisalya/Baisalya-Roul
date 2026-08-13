@@ -44,7 +44,8 @@ when the workspace is already inside a parent repository.
 
 ### Use the Source Control workbench
 
-When the repository is ready, the Windows page separates three views:
+When the repository is ready, the Windows workbench combines contextual
+changes with resizable history, branch, and commit-details panels:
 
 - **Changes:** review staged and working files, open a bounded text difference,
   switch between inline and side-by-side layout when the window is wide enough,
@@ -53,8 +54,16 @@ When the repository is ready, the Windows page separates three views:
 - **History:** filter workspace-scoped commits by message, author, or hash.
   Select a commit to inspect its changed files and workspace-scoped patch.
 - **Branches:** inspect the current branch, upstream, ahead/behind counts, and
-  configured remotes. This is local status display; opening the view does not
-  fetch from a remote.
+  configured remotes. Create or switch a branch explicitly after checking for
+  unsaved or conflicting changes. Opening the view alone does not fetch.
+
+The toolbar exposes separate **Fetch**, **Pull**, and **Push** actions. Fetch
+updates configured remote references and prunes stale remote references. Pull
+uses fast-forward only and refuses to create an implicit merge commit. Push
+uses the current branch and can establish its upstream on the first configured
+remote when none exists. Each action is user-initiated, uses the displayed
+repository, may contact its configured remote, and relies on the user's normal
+Git credential setup.
 
 **Restore working file safely** is available only for a tracked, unstaged
 working-tree change. DevDesk writes a binary-capable recovery patch to a
@@ -94,21 +103,28 @@ credentials, or trust.
 - Stage and unstage require explicit actions.
 - Local commits are explicit, fingerprint-checked, and use `--no-verify` so
   repository hooks are not executed.
-- DevDesk does not fetch, pull, push, change remotes, run hooks, or manage
-  credentials.
+- Fetch, fast-forward-only pull, push, branch creation, and branch switching
+  require separate explicit actions in a trusted local Windows workspace.
+- DevDesk does not silently contact a remote, change remote URLs, run hooks, or
+  store Git credentials.
 - A Git commit records the repository's staged index. When the DevDesk
   workspace is nested inside a parent repository, first confirm with your
   normal Git client that unrelated parent-repository files are not already
   staged. Use the normal Git client instead whenever the staged boundary is
   uncertain.
-- Use your normal Git client for remote operations and conflict resolution.
+- Use your normal Git client for rebase, merge-conflict resolution, remote URL
+  configuration, credential setup, force-push, or any operation not shown by
+  DevDesk.
 
 ## Android boundary
 
 Android workspaces are provider-backed document trees, so the Source Control
 page does not start a Git engine on the phone. It offers a Windows handoff for
-status, changes, history, branches, and local commits. Android can still edit
-workspace files safely and use the general Compare & Diff tool.
+status, changes, history, branches, commits, and remote operations. Android can
+still edit workspace files safely and use the general Compare & Diff tool.
+
+For workbench tabs, the contextual Source Control sidebar, and project
+terminals, see [Workspace workbench, tabs, and tools](workspace-workbench.html).
 
 ## GitHub comparison
 

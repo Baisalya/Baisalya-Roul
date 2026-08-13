@@ -2,7 +2,7 @@ import { copyFile, cp, mkdir, readFile, readdir, writeFile } from 'node:fs/promi
 import path from 'node:path';
 import { defineConfig } from 'vite';
 
-const devDeskRelease = '20260801.6';
+const devDeskRelease = '20260813.1';
 
 const devDeskRuntimeFiles = [
   '404.html',
@@ -49,7 +49,7 @@ const shopPilotRuntimeFiles = [
 
 function versionDevDeskRuntime(html) {
   return html.replace(
-    /(assets\/(?:css\/styles\.css|js\/(?:app|site-config|search-index)\.js)|site\.webmanifest)(?:\?v=[^"']+)?(?=["'])/g,
+    /(assets\/(?:css\/styles\.css|js\/(?:app|site-config|search-index|manual-visuals)\.js)|site\.webmanifest)(?:\?v=[^"']+)?(?=["'])/g,
     `$1?v=${devDeskRelease}`,
   );
 }

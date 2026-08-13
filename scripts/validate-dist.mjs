@@ -48,6 +48,9 @@ await validateLocalReferences('devdesk/index.html');
 await validateLocalReferences('devdesk/downloads.html');
 await validateLocalReferences('devdesk/manual/user-manual.html');
 await validateLocalReferences('devdesk/manual/agent-connector.html');
+await validateLocalReferences('devdesk/manual/visual-feature-guide.html');
+await validateLocalReferences('devdesk/manual/workspace-workbench.html');
+await validateLocalReferences('devdesk/manual/diagram-studio.html');
 for (const page of [
   'index.html',
   'features.html',
@@ -77,6 +80,7 @@ for (const required of [
   'devdesk/assets/js/site-config.js',
   'devdesk/assets/js/search-index.js',
   'devdesk/assets/js/app.js',
+  'devdesk/assets/js/manual-visuals.js',
   'devdesk/assets/js/support-assistant.js',
   'devdesk/assets/css/styles.css',
   'devdesk/assets/img/devdesk-logo-64.png',
@@ -86,6 +90,9 @@ for (const required of [
   'devdesk/site.webmanifest',
   'devdesk/sw.js',
   'devdesk/manual/agent-connector.html',
+  'devdesk/manual/visual-feature-guide.html',
+  'devdesk/manual/workspace-workbench.html',
+  'devdesk/manual/diagram-studio.html',
   'construction-erp/assets/css/styles.css',
   'construction-erp/assets/js/site.js',
   'construction-erp/assets/js/runtime-config.js',

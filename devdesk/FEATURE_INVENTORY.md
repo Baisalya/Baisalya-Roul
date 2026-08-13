@@ -9,9 +9,9 @@ source (`pubspec.yaml`, `lib/`, `android/`, or `windows/`).
 This inventory therefore distinguishes:
 
 - **Static site implementation:** verified directly in this repository.
-- **Published product behavior:** grounded in the 41 maintained Markdown topics
-  and existing generated manual, which state that they were reviewed against
-  the application source on 2026-07-28.
+- **Published product behavior:** grounded in the 48 searchable manual topics
+  and generated manual. The workbench, Diagram Studio, and advanced graph
+  sections were rechecked against the application source on 2026-08-13.
 - **Unavailable for fresh source verification:** application widgets, routing,
   packaging, launcher icons, manifests, signing, and Flutter tests.
 
@@ -41,6 +41,9 @@ No unavailable application behavior is reported as newly implemented.
 | Files | Bounded project explorer, nested folders, exclusive file/folder creation |
 | Markdown | Standalone, vault, and project-aware editing paths |
 | Knowledge | Links, backlinks, properties, search, issues, local/workspace graph |
+| Advanced graph | Filters, custom color groups, Local/Workspace timeline replay, display and force controls, device-local preferences, collision-aware large layouts |
+| Visual tools | Portable JSON Canvas plus Diagram Studio `.flowchart` files with shape libraries, templates, auto layout, and PNG/SVG export |
+| Workspace workbench | Project tree, five visible tabs, hidden-tab dropdown, contextual tool cards, scoped Source Control, and explicit Windows project terminals |
 | Graph writes | Standard Markdown managed block, one source note, conflict-safe undo |
 | OKF | Code-verified Open Knowledge Format v0.2 analysis, concept templates, safe-fix preview, reviewed conversion, managed indexes/log, provenance, verification, lifecycle, recovery journal, rollback, and undo |
 | API | Quick API and saved API workspaces with collections, environments, assertions, extraction, runner, imports/exports |

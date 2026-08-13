@@ -48,7 +48,7 @@ const manifest = JSON.parse(await text('devdesk/site.webmanifest'));
 requireText(portfolio, storeUrl, 'Portfolio Microsoft Store action');
 requireText(
   portfolio,
-  'Android closed testing',
+  'https://play.google.com/store/apps/details?id=com.baishalya.devdesk',
   'Portfolio Android availability message',
 );
 requireText(
@@ -159,19 +159,28 @@ for (const expected of [
 requireText(siteConfig, storeUrl, 'DevDesk site Microsoft Store action');
 requireText(
   siteConfig,
-  'Android closed testing',
+  'available on Google Play',
   'DevDesk Android availability message',
 );
 requireText(
   downloads,
-  'contact the developer to join',
-  'Downloads closed-testing guidance',
+  'Follow the public Google Play link to install.',
+  'Downloads public Google Play guidance',
 );
 requireText(
   devdeskHome,
   'manual/agent-connector.html',
   'DevDesk Agent Connector guide link',
 );
+for (const expected of [
+  'manual/visual-feature-guide.html',
+  'manual/workspace-workbench.html',
+  'manual/diagram-studio.html',
+  'data-manual-preview="graph"',
+  'assets/js/manual-visuals.js?v=20260813.1',
+]) {
+  requireText(devdeskHome, expected, 'DevDesk visual manual upgrade');
+}
 requireText(
   devdeskHome,
   'data-assistant-open',
@@ -183,7 +192,7 @@ for (const expected of [
   'Students',
   'Researchers &amp; writers',
   'Developers',
-  'devdesk-social-2026.png',
+  'devdesk-social-visual-manual-2026.png',
 ]) {
   requireText(devdeskHome, expected, 'DevDesk inclusive homepage');
 }
@@ -213,7 +222,7 @@ for (const [source, label] of [
   [serviceWorker, 'DevDesk service worker'],
   [viteConfig, 'DevDesk production build'],
 ]) {
-  requireText(source, '20260801.6', label);
+  requireText(source, '20260813.1', label);
 }
 for (const expected of [
   'controllerchange',
@@ -227,6 +236,10 @@ for (const expected of [
   'await self.skipWaiting()',
   'await self.clients.claim()',
   './assets/js/support-assistant.js',
+  './assets/js/manual-visuals.js',
+  './manual/visual-feature-guide.html',
+  './manual/workspace-workbench.html',
+  './manual/diagram-studio.html',
 ]) {
   requireText(serviceWorker, expected, 'DevDesk fresh-design service worker');
 }
@@ -276,7 +289,10 @@ for (const heading of [
 for (const icon of manifest.icons ?? []) {
   await requireFile(path.join('devdesk', icon.src), 100);
 }
-await requireFile('devdesk/assets/img/devdesk-social-2026.png', 100_000);
+await requireFile(
+  'devdesk/assets/img/devdesk-social-visual-manual-2026.png',
+  100_000,
+);
 
 for (const relativePath of [
   'devdesk/assets/img/devdesk-logo-master.png',
@@ -291,6 +307,10 @@ for (const relativePath of [
   'devdesk/assets/img/devdesk-logo-16.png',
   'devdesk/manual/user-manual.html',
   'devdesk/manual/agent-connector.html',
+  'devdesk/manual/visual-feature-guide.html',
+  'devdesk/manual/workspace-workbench.html',
+  'devdesk/manual/diagram-studio.html',
+  'devdesk/assets/js/manual-visuals.js',
   'devdesk/assets/js/support-assistant.js',
   'devdesk/DOCUMENTATION_COVERAGE_MATRIX.md',
 ]) {

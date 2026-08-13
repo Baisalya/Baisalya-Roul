@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Explore clean local and workspace relationships, filters, accessible lists, link editing, and undo."><meta name="theme-color" content="#5b47e8"><title>Relationships and graph · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Explore clean local and workspace relationships, filters, accessible lists, link editing, and undo."><meta name="theme-color" content="#5b47e8"><title>Relationships and graph · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script><script defer src="../assets/js/manual-visuals.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
   <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
@@ -14,6 +14,8 @@
     <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
   </div>
 </header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<a class="" href="../manual/visual-feature-guide.html">Visual feature guide</a>
+<a class="" href="../manual/workspace-workbench.html">Workspace workbench and tabs</a>
 <a class="" href="../manual/user-manual.html">Complete user manual</a>
 <a class="" href="../manual/getting-started.html">Getting started</a>
 <a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
@@ -69,7 +71,32 @@
 <li><strong>Local:</strong> active note plus nearby outgoing links and backlinks.</li>
 <li><strong>Workspace:</strong> a bounded view of indexed relationships across the active project.</li>
 </ul>
-<p>Use <strong>Depth</strong> to expand the Local neighborhood. Use title, path, type, or tag filters to narrow either view.</p>
+<p>Use <strong>Depth</strong> to expand the Local neighborhood. Local and Workspace now have the same replay action: select the small floating play button or open <strong>Timeline</strong> in the controls panel. DevDesk replays the currently selected scope instead of switching back to Workspace.</p>
+<h2 id="professional-graph-controls">Professional graph controls<a class="heading-anchor" href="#professional-graph-controls" aria-label="Link to Professional graph controls">#</a></h2>
+<p>Open <strong>Controls</strong> to use filters, color groups, timeline, display, and layout forces. These choices are optional device-local presentation preferences. They do not rewrite Markdown or add portable metadata.</p>
+<h3 id="filters">Filters<a class="heading-anchor" href="#filters" aria-label="Link to Filters">#</a></h3>
+<p>Type ordinary words to match titles and paths, or use focused terms such as:</p>
+<ul>
+<li><code>tag:api</code> for a tag;</li>
+<li><code>type:note</code> for an item type;</li>
+<li><code>status:todo</code> for a status;</li>
+<li><code>folder:docs</code> for a project folder;</li>
+<li><code>link:release</code> for a relationship target.</li>
+</ul>
+<p>The panel can also include or hide tag nodes, attachments, existing files only, unresolved targets, and orphans. An active-filter summary remains visible on the canvas with <strong>Clear filters</strong> so an empty graph is recoverable.</p>
+<h3 id="color-groups">Color groups<a class="heading-anchor" href="#color-groups" aria-label="Link to Color groups">#</a></h3>
+<p>Select <strong>New color group</strong>, give the group a name, enter the same query syntax used by filters, and choose a color. The first enabled group that matches a note wins. Toggle, edit, or delete a group from the panel.</p>
+<p>Groups help distinguish research, API, release, study, or other user-defined areas. Color remains supplementary: labels, paths, type, focus, and the legend continue to communicate meaning.</p>
+<h3 id="timeline-and-floating-replay">Timeline and floating replay<a class="heading-anchor" href="#timeline-and-floating-replay" aria-label="Link to Timeline and floating replay">#</a></h3>
+<p>Timeline reveals notes in created-date order. When a valid <code>created</code> property is unavailable, DevDesk uses the file's indexed modified date as the fallback.</p>
+<ul>
+<li>Select <strong>Play</strong> to start or pause.</li>
+<li>Drag the slider to inspect a point in workspace history.</li>
+<li>Choose a playback speed.</li>
+<li>Use the floating play button on the graph when the controls panel is closed.</li>
+<li>At the end, the floating action becomes <strong>Replay</strong>.</li>
+</ul>
+<p>The floating control is intentionally small and labeled on hover or focus. It works for both Local and Workspace scope. Playback changes only what is visible; it does not edit dates or files.</p>
 <h2 id="professional-focus-behavior">Professional focus behavior<a class="heading-anchor" href="#professional-focus-behavior" aria-label="Link to Professional focus behavior">#</a></h2>
 <p>The graph keeps dense projects readable:</p>
 <ul>
@@ -80,6 +107,9 @@
 <li>unrelated nodes and links remain as quiet context;</li>
 <li>arrows appear on focused connections to show outgoing direction;</li>
 <li>the selected node uses a clear surface, border, and readable label.</li>
+<li>force-directed spacing resolves visible label collisions after layout;</li>
+<li>very large graphs switch to a bounded roomy layout instead of running an expensive all-pairs simulation;</li>
+<li>residual overlaps are placed into open positions dynamically for the current window.</li>
 </ul>
 <h2 id="navigate-and-arrange">Navigate and arrange<a class="heading-anchor" href="#navigate-and-arrange" aria-label="Link to Navigate and arrange">#</a></h2>
 <ul>
@@ -125,7 +155,7 @@ remain visible with a <strong>Clear filters</strong> action, including in an emp
 <td>Changes node rendering size</td>
 </tr>
 <tr>
-<td>Link width</td>
+<td>Link thickness</td>
 <td>Adjusts connection emphasis inside a safe range</td>
 </tr>
 <tr>
@@ -140,9 +170,42 @@ remain visible with a <strong>Clear filters</strong> action, including in an emp
 <td>Orphans</td>
 <td>Includes or hides unconnected notes</td>
 </tr>
+<tr>
+<td>Text fade</td>
+<td>Controls when non-selected labels simplify while zooming out</td>
+</tr>
 </tbody>
 </table>
-<p>Link width is deliberately bounded so zooming or moving the control cannot turn connections into opaque bands.</p>
+<p>Link thickness is deliberately bounded so zooming or moving the control cannot turn connections into opaque bands.</p>
+<h2 id="layout-forces">Layout forces<a class="heading-anchor" href="#layout-forces" aria-label="Link to Layout forces">#</a></h2>
+<p>The <strong>Forces</strong> section changes the Workspace layout without changing project files:</p>
+<table>
+<thead>
+<tr>
+<th>Force</th>
+<th>What it changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Center force</td>
+<td>Pulls the complete layout toward the viewport center</td>
+</tr>
+<tr>
+<td>Repel force</td>
+<td>Creates space between nodes and labels</td>
+</tr>
+<tr>
+<td>Link force</td>
+<td>Pulls connected notes toward their preferred relationship distance</td>
+</tr>
+<tr>
+<td>Link distance</td>
+<td>Changes the preferred space along a connection</td>
+</tr>
+</tbody>
+</table>
+<p>Select <strong>Reset forces</strong> if the graph becomes too loose or tight. DevDesk fits the graph again after a meaningful control change. On a dense project, increase repel or link distance slightly, then use <strong>Fit view</strong>. Extreme values remain bounded for usability.</p>
 <h2 id="edit-connections">Edit connections<a class="heading-anchor" href="#edit-connections" aria-label="Link to Edit connections">#</a></h2>
 <ol>
 <li>Open the source note.</li>
@@ -167,12 +230,15 @@ remain visible with a <strong>Clear filters</strong> action, including in an emp
 <li>Select <strong>Fit view</strong>.</li>
 <li>Clear filters.</li>
 <li>Hover one node to isolate its neighborhood.</li>
-<li>Reduce <strong>Link width</strong> if you increased it.</li>
+<li>Reduce <strong>Link thickness</strong> if you increased it.</li>
+<li>Reset forces, then increase <strong>Repel force</strong> or <strong>Link distance</strong> gradually when labels still feel crowded.</li>
+<li>Hide tag nodes, attachments, unresolved targets, or orphans when they are not part of the current question.</li>
+<li>Pause Timeline or move its slider to the end when expected nodes have not appeared yet.</li>
 <li>Inspect unresolved and ambiguous links.</li>
 <li>Refresh the project index when watching is unavailable.</li>
 </ul>
 
-<div class="article-footer"><a class="pager" href="knowledge-workspace.html"><small>Previous</small><strong>Knowledge Workspace</strong></a><a class="pager" href="graph-connection-editing.html"><small>Next</small><strong>Edit graph connections</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#local-and-workspace-views">Local and Workspace views</a><a class="level-2" href="#professional-focus-behavior">Professional focus behavior</a><a class="level-2" href="#navigate-and-arrange">Navigate and arrange</a><a class="level-2" href="#display-controls">Display controls</a><a class="level-2" href="#edit-connections">Edit connections</a><a class="level-2" href="#what-a-graph-edge-means">What a graph edge means</a><a class="level-2" href="#troubleshooting">Troubleshooting</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div class="article-footer"><a class="pager" href="knowledge-workspace.html"><small>Previous</small><strong>Knowledge Workspace</strong></a><a class="pager" href="graph-connection-editing.html"><small>Next</small><strong>Edit graph connections</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#local-and-workspace-views">Local and Workspace views</a><a class="level-2" href="#professional-graph-controls">Professional graph controls</a><a class="level-3" href="#filters">Filters</a><a class="level-3" href="#color-groups">Color groups</a><a class="level-3" href="#timeline-and-floating-replay">Timeline and floating replay</a><a class="level-2" href="#professional-focus-behavior">Professional focus behavior</a><a class="level-2" href="#navigate-and-arrange">Navigate and arrange</a><a class="level-2" href="#display-controls">Display controls</a><a class="level-2" href="#layout-forces">Layout forces</a><a class="level-2" href="#edit-connections">Edit connections</a><a class="level-2" href="#what-a-graph-edge-means">What a graph edge means</a><a class="level-2" href="#troubleshooting">Troubleshooting</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>

@@ -24,6 +24,12 @@ const _pages = <_Page>[
         'A beginner-first guide to local-first workspaces, focused AI project context, reviewed changes, knowledge, APIs, Git, backup, and platform help.',
   ),
   _Page(
+    slug: 'visual-feature-guide',
+    title: 'Visual feature guide',
+    description:
+        'Recognize every major DevDesk screen through app-matched HTML and CSS illustrations, then open the exact focused guide.',
+  ),
+  _Page(
     slug: 'getting-started',
     title: 'Getting started',
     description:
@@ -34,6 +40,12 @@ const _pages = <_Page>[
     title: 'Interface tour',
     description:
         'Understand Home, unified workspace navigation, files, tools, and responsive layouts.',
+  ),
+  _Page(
+    slug: 'workspace-workbench',
+    title: 'Workspace workbench, tabs, and tools',
+    description:
+        'Manage five visible tabs, hidden editors, contextual tools, Source Control, project terminals, and responsive workspace panels.',
   ),
   _Page(
     slug: 'downloads-installation',
@@ -100,6 +112,12 @@ const _pages = <_Page>[
     title: 'Visual Canvas',
     description:
         'Brainstorm with portable JSON Canvas nodes, groups, links, and connections.',
+  ),
+  _Page(
+    slug: 'diagram-studio',
+    title: 'Diagram Studio',
+    description:
+        'Create flowcharts, software diagrams, mind maps, research maps, and study plans in portable project files with PNG or SVG export.',
   ),
   _Page(
     slug: 'agent-connector',
@@ -200,8 +218,8 @@ Future<void> main(List<String> arguments) async {
   final selected = arguments.isEmpty
       ? _pages
       : _pages
-            .where((page) => arguments.contains(page.slug))
-            .toList(growable: false);
+          .where((page) => arguments.contains(page.slug))
+          .toList(growable: false);
 
   if (selected.isEmpty) {
     stderr.writeln(
@@ -318,6 +336,9 @@ Future<void> _refreshPage(
   if (page.slug == 'agent-connector') {
     searchEntry['group'] = 'Safety and reference';
   }
+  if (page.slug == 'diagram-studio') {
+    searchEntry['group'] = 'Knowledge and Markdown';
+  }
 }
 
 String _prepareManualTemplate(String source, String slug) {
@@ -328,21 +349,50 @@ String _prepareManualTemplate(String source, String slug) {
   const safetyHeading = '<h2>Safety and reference</h2>';
   final userManualLink = slug == 'user-manual'
       ? '<a class="active" href="../manual/user-manual.html" '
-            'aria-current="page">Complete user manual</a>'
+          'aria-current="page">Complete user manual</a>'
       : '<a class="" href="../manual/user-manual.html">'
-            'Complete user manual</a>';
+          'Complete user manual</a>';
   if (!source.contains('>Complete user manual</a>')) {
     source = source.replaceFirst(
       startHeading,
       '$startHeading\n$userManualLink',
     );
   }
+  for (final page in const <(String, String)>[
+    ('workspace-workbench', 'Workspace workbench and tabs'),
+    ('visual-feature-guide', 'Visual feature guide'),
+  ]) {
+    final link = slug == page.$1
+        ? '<a class="active" href="../manual/${page.$1}.html" '
+            'aria-current="page">${page.$2}</a>'
+        : '<a class="" href="../manual/${page.$1}.html">${page.$2}</a>';
+    if (!source.contains('>${page.$2}</a>')) {
+      source = source.replaceFirst(startHeading, '$startHeading\n$link');
+    }
+    if (slug == page.$1) {
+      source = source.replaceFirst(
+        '<a class="" href="../manual/${page.$1}.html">${page.$2}</a>',
+        link,
+      );
+      source = source.replaceFirst(
+        '<a class="active" href="../manual/getting-started.html" '
+            'aria-current="page">Getting started</a>',
+        '<a class="" href="../manual/getting-started.html">Getting started</a>',
+      );
+    } else {
+      source = source.replaceFirst(
+        '<a class="active" href="../manual/${page.$1}.html" '
+            'aria-current="page">${page.$2}</a>',
+        '<a class="" href="../manual/${page.$1}.html">${page.$2}</a>',
+      );
+    }
+  }
   if (!source.contains('>AI Agent Connector</a>')) {
     final link = slug == 'agent-connector'
         ? '<a class="active" href="../manual/agent-connector.html" '
-              'aria-current="page">AI Agent Connector</a>'
+            'aria-current="page">AI Agent Connector</a>'
         : '<a class="" href="../manual/agent-connector.html">'
-              'AI Agent Connector</a>';
+            'AI Agent Connector</a>';
     source = source.replaceFirst(safetyHeading, '$safetyHeading\n$link');
   }
   if (slug == 'agent-connector') {
@@ -403,10 +453,11 @@ String _prepareManualTemplate(String source, String slug) {
   for (final page in const <(String, String)>[
     ('structured-views', 'Structured workspace views'),
     ('visual-canvas', 'Visual Canvas'),
+    ('diagram-studio', 'Diagram Studio'),
   ]) {
     final link = slug == page.$1
         ? '<a class="active" href="../manual/${page.$1}.html" '
-              'aria-current="page">${page.$2}</a>'
+            'aria-current="page">${page.$2}</a>'
         : '<a class="" href="../manual/${page.$1}.html">${page.$2}</a>';
     if (!source.contains('>${page.$2}</a>')) {
       source = source.replaceFirst(
@@ -440,6 +491,61 @@ String _prepareManualTemplate(String source, String slug) {
           'Demo project</a>',
     );
   }
+  final pageChrome = switch (slug) {
+    'visual-feature-guide' => (
+        'Visual feature guide',
+        'Visual guide',
+        'HTML + CSS previews',
+        'Android + Windows',
+      ),
+    'workspace-workbench' => (
+        'Workspace workbench and tabs',
+        'Workspace',
+        'Project context',
+        'Windows + Android',
+      ),
+    'diagram-studio' => (
+        'Diagram Studio',
+        'Visual tools',
+        'Portable .flowchart',
+        'Android + Windows',
+      ),
+    _ => null,
+  };
+  if (pageChrome != null) {
+    source = source.replaceFirst(
+      '<span>Start here</span></div><div class="doc-meta">'
+          '<span class="doc-chip">Start here</span>'
+          '<span class="doc-chip">Offline documentation</span>'
+          '<span class="doc-chip">Android + Windows</span>',
+      '<span>${pageChrome.$1}</span></div><div class="doc-meta">'
+          '<span class="doc-chip">${pageChrome.$2}</span>'
+          '<span class="doc-chip">${pageChrome.$3}</span>'
+          '<span class="doc-chip">${pageChrome.$4}</span>',
+    );
+  }
+  final footer = switch (slug) {
+    'visual-feature-guide' => '<div class="article-footer"><span></span>'
+        '<a class="pager" href="getting-started.html">'
+        '<small>Next</small><strong>Getting started</strong></a></div>',
+    'workspace-workbench' => '<div class="article-footer">'
+        '<a class="pager" href="interface-tour.html">'
+        '<small>Previous</small><strong>Interface tour</strong></a>'
+        '<a class="pager" href="developer-workspaces.html">'
+        '<small>Next</small><strong>Folders and portability</strong></a></div>',
+    'diagram-studio' => '<div class="article-footer">'
+        '<a class="pager" href="visual-canvas.html">'
+        '<small>Previous</small><strong>Visual Canvas</strong></a>'
+        '<a class="pager" href="structured-views.html">'
+        '<small>Next</small><strong>Structured workspace views</strong></a></div>',
+    _ => null,
+  };
+  if (footer != null) {
+    source = source.replaceFirst(
+      RegExp(r'<div class="article-footer">.*?</div>', dotAll: true),
+      footer,
+    );
+  }
   return source
       .replaceAll(
         'href="../manual/getting-started.html">Manual</a>',
@@ -454,8 +560,7 @@ String _prepareManualTemplate(String source, String slug) {
 String _secureExternalLinks(String source) {
   return source.replaceAllMapped(
     RegExp(r'<a href="https?://[^"]+"'),
-    (match) =>
-        '${match.group(0)} target="_blank" '
+    (match) => '${match.group(0)} target="_blank" '
         'rel="noopener noreferrer"',
   );
 }
@@ -504,8 +609,7 @@ String _renderToc(List<_Heading> headings) {
   final links = headings
       .where((heading) => heading.level == 2 || heading.level == 3)
       .map(
-        (heading) =>
-            '<a class="level-${heading.level}" href="#${heading.id}">'
+        (heading) => '<a class="level-${heading.level}" href="#${heading.id}">'
             '${_htmlEscape.convert(heading.text)}</a>',
       )
       .join();
@@ -553,12 +657,23 @@ Future<void> _refreshSharedBrand(Directory siteRoot) async {
       '${Platform.pathSeparator}manual',
     );
     final isUserManual = file.uri.pathSegments.last == 'user-manual.html';
+    if (isManualPage) {
+      final slug = file.uri.pathSegments.last.replaceFirst('.html', '');
+      source = _prepareManualTemplate(source, slug);
+      if (!source.contains('manual-visuals.js')) {
+        source = source.replaceFirst(
+          '<script defer src="../assets/js/app.js"></script>',
+          '<script defer src="../assets/js/app.js"></script>'
+              '<script defer src="../assets/js/manual-visuals.js"></script>',
+        );
+      }
+    }
     if (isManualPage && !source.contains('>Complete user manual</a>')) {
       final link = isUserManual
           ? '<a class="active" href="../manual/user-manual.html" '
-                'aria-current="page">Complete user manual</a>'
+              'aria-current="page">Complete user manual</a>'
           : '<a class="" href="../manual/user-manual.html">'
-                'Complete user manual</a>';
+              'Complete user manual</a>';
       source = source.replaceFirst(
         '<h2>Start here</h2>',
         '<h2>Start here</h2>\n$link',
@@ -569,9 +684,9 @@ Future<void> _refreshSharedBrand(Directory siteRoot) async {
           file.uri.pathSegments.last == 'agent-connector.html';
       final link = isAgentConnector
           ? '<a class="active" href="../manual/agent-connector.html" '
-                'aria-current="page">AI Agent Connector</a>'
+              'aria-current="page">AI Agent Connector</a>'
           : '<a class="" href="../manual/agent-connector.html">'
-                'AI Agent Connector</a>';
+              'AI Agent Connector</a>';
       source = source.replaceFirst(
         '<h2>Safety and reference</h2>',
         '<h2>Safety and reference</h2>\n$link',

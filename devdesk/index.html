@@ -21,19 +21,20 @@
     property="og:description"
     content="Plan a week, finish an assignment, build an argument, or ship software in one local-first workspace."
   >
-  <meta property="og:image" content="assets/img/devdesk-social-2026.png">
-  <meta property="og:image:alt" content="DevDesk — Work your way. Keep your files. Everyday, Study, Research, Software.">
+  <meta property="og:image" content="assets/img/devdesk-social-visual-manual-2026.png">
+  <meta property="og:image:alt" content="DevDesk visual feature guide with workspace tabs, a knowledge graph, Diagram Studio, and API Studio.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="assets/img/devdesk-social-2026.png">
+  <meta name="twitter:image" content="assets/img/devdesk-social-visual-manual-2026.png">
   <meta name="theme-color" content="#5b47e8">
   <title>DevDesk - One calm workspace for everyday work, study, research, and code</title>
   <link rel="icon" type="image/png" sizes="64x64" href="assets/img/devdesk-logo-64.png">
   <link rel="apple-touch-icon" sizes="192x192" href="assets/img/devdesk-logo-192.png">
-  <link rel="manifest" href="site.webmanifest?v=20260801.6">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260801.6">
-  <script defer src="assets/js/site-config.js?v=20260801.6"></script>
-  <script defer src="assets/js/search-index.js?v=20260801.6"></script>
-  <script defer src="assets/js/app.js?v=20260801.6"></script>
+  <link rel="manifest" href="site.webmanifest?v=20260813.1">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260813.1">
+  <script defer src="assets/js/site-config.js?v=20260813.1"></script>
+  <script defer src="assets/js/search-index.js?v=20260813.1"></script>
+  <script defer src="assets/js/app.js?v=20260813.1"></script>
+  <script defer src="assets/js/manual-visuals.js?v=20260813.1"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -48,6 +49,7 @@
       <a class="active" href="index.html" aria-current="page">Home</a>
       <a href="#start">Who it helps</a>
       <a href="#why">Why DevDesk</a>
+      <a href="manual/visual-feature-guide.html">Visual tour</a>
       <a href="manual/user-manual.html">Manual</a>
       <a href="downloads.html">Downloads</a>
       <a class="nav-demo" href="downloads.html#agent-demo">Demos</a>
@@ -78,6 +80,7 @@
             aria-label="Get DevDesk for Windows on Microsoft Store (opens in a new tab)"
           >Get DevDesk on Microsoft Store</a>
           <a class="btn" href="#start">Find your starting path</a>
+          <a class="btn" href="manual/visual-feature-guide.html">See every feature</a>
           <a class="btn" href="manual/getting-started.html">Start in 5 minutes</a>
         </div>
         <p class="availability-note">
@@ -242,6 +245,42 @@
           </ul>
           <a href="manual/user-manual.html#choose-the-right-workspace-style">See how a workspace grows</a>
         </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="visual-manual-home">
+        <div class="section-header">
+          <span class="eyebrow">Visual product tour</span>
+          <h2>Know what each screen does before you click.</h2>
+          <p>
+            App-matched HTML previews show the real DevDesk layout without using
+            a private project screenshot. Open any card for the exact workflow,
+            platform behavior, and safety boundary.
+          </p>
+        </div>
+        <div class="visual-feature-grid">
+          <article class="visual-feature-card">
+            <div data-manual-preview="workbench" data-preview-size="compact"></div>
+            <div class="visual-feature-copy"><span>Workspace</span><h3>Files, tools, and calm tab management</h3><p>Five tabs stay visible. Every additional file or tool remains in the numbered hidden-tab menu.</p><a href="manual/workspace-workbench.html">Tour the workspace workbench</a></div>
+          </article>
+          <article class="visual-feature-card">
+            <div data-manual-preview="graph" data-preview-size="compact"></div>
+            <div class="visual-feature-copy"><span>Knowledge</span><h3>A graph that explains itself</h3><p>Local or Workspace scope, filters, groups, timeline replay, display controls, and dynamic spacing.</p><a href="manual/knowledge-graph.html">Understand the knowledge graph</a></div>
+          </article>
+          <article class="visual-feature-card">
+            <div data-manual-preview="diagram" data-preview-size="compact"></div>
+            <div class="visual-feature-copy"><span>Visual thinking</span><h3>Professional diagrams, portable source</h3><p>Search shapes, connect ideas, use templates or auto layout, then export PNG or SVG.</p><a href="manual/diagram-studio.html">Open the Diagram Studio guide</a></div>
+          </article>
+          <article class="visual-feature-card">
+            <div data-manual-preview="api" data-preview-size="compact"></div>
+            <div class="visual-feature-copy"><span>Developer</span><h3>API work without losing project context</h3><p>Collections, environments, checks, responses, and protected values stay organized around the selected project.</p><a href="manual/api-workspaces.html">Explore API Studio</a></div>
+          </article>
+        </div>
+        <div class="button-row">
+          <a class="btn primary" href="manual/visual-feature-guide.html">Open the complete visual feature guide</a>
+          <a class="btn" href="manual/user-manual.html">Read the complete manual</a>
+        </div>
       </div>
     </section>
 
@@ -413,6 +452,12 @@
         <a class="home-doc-link" href="manual/user-manual.html">
           <div><strong>Complete user manual</strong><span>Beginner-first guide, walkthrough, glossary, troubleshooting, and references.</span></div>
         </a>
+        <a class="home-doc-link" href="manual/visual-feature-guide.html">
+          <div><strong>Visual feature guide</strong><span>App-matched HTML previews for every major screen, tool, and workflow.</span></div>
+        </a>
+        <a class="home-doc-link" href="manual/workspace-workbench.html">
+          <div><strong>Workspace workbench and tabs</strong><span>Five visible tabs, hidden editors, contextual tools, Source Control, and terminals.</span></div>
+        </a>
         <a class="home-doc-link" href="manual/interface-tour.html">
           <div><strong>Home and navigation</strong><span>Know where to create, browse, search, and get help.</span></div>
         </a>
@@ -424,6 +469,9 @@
         </a>
         <a class="home-doc-link" href="manual/visual-canvas.html">
           <div><strong>Visual Canvas</strong><span>Brainstorm in the portable JSON Canvas format on Windows or Android.</span></div>
+        </a>
+        <a class="home-doc-link" href="manual/diagram-studio.html">
+          <div><strong>Diagram Studio</strong><span>Create flowcharts, software diagrams, mind maps, research maps, and study plans.</span></div>
         </a>
         <a class="home-doc-link" href="manual/agent-connector.html">
           <div><strong>AI Agent Connector</strong><span>Connect Codex or Gemini CLI to selected workspace context with review-only changes.</span></div>
@@ -528,6 +576,7 @@
       <div>
         <h3>Start</h3>
         <a href="manual/user-manual.html">Complete user manual</a>
+        <a href="manual/visual-feature-guide.html">Visual feature guide</a>
         <a href="manual/getting-started.html">Getting started</a>
         <a href="manual/interface-tour.html">Interface tour</a>
         <a href="downloads.html">Downloads</a>

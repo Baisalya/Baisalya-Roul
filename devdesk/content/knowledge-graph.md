@@ -7,7 +7,41 @@ The graph visualizes relationships resolved from saved Markdown links. Markdown 
 - **Local:** active note plus nearby outgoing links and backlinks.
 - **Workspace:** a bounded view of indexed relationships across the active project.
 
-Use **Depth** to expand the Local neighborhood. Use title, path, type, or tag filters to narrow either view.
+Use **Depth** to expand the Local neighborhood. Local and Workspace now have the same replay action: select the small floating play button or open **Timeline** in the controls panel. DevDesk replays the currently selected scope instead of switching back to Workspace.
+
+## Professional graph controls
+
+Open **Controls** to use filters, color groups, timeline, display, and layout forces. These choices are optional device-local presentation preferences. They do not rewrite Markdown or add portable metadata.
+
+### Filters
+
+Type ordinary words to match titles and paths, or use focused terms such as:
+
+- `tag:api` for a tag;
+- `type:note` for an item type;
+- `status:todo` for a status;
+- `folder:docs` for a project folder;
+- `link:release` for a relationship target.
+
+The panel can also include or hide tag nodes, attachments, existing files only, unresolved targets, and orphans. An active-filter summary remains visible on the canvas with **Clear filters** so an empty graph is recoverable.
+
+### Color groups
+
+Select **New color group**, give the group a name, enter the same query syntax used by filters, and choose a color. The first enabled group that matches a note wins. Toggle, edit, or delete a group from the panel.
+
+Groups help distinguish research, API, release, study, or other user-defined areas. Color remains supplementary: labels, paths, type, focus, and the legend continue to communicate meaning.
+
+### Timeline and floating replay
+
+Timeline reveals notes in created-date order. When a valid `created` property is unavailable, DevDesk uses the file's indexed modified date as the fallback.
+
+- Select **Play** to start or pause.
+- Drag the slider to inspect a point in workspace history.
+- Choose a playback speed.
+- Use the floating play button on the graph when the controls panel is closed.
+- At the end, the floating action becomes **Replay**.
+
+The floating control is intentionally small and labeled on hover or focus. It works for both Local and Workspace scope. Playback changes only what is visible; it does not edit dates or files.
 
 ## Professional focus behavior
 
@@ -20,6 +54,9 @@ The graph keeps dense projects readable:
 - unrelated nodes and links remain as quiet context;
 - arrows appear on focused connections to show outgoing direction;
 - the selected node uses a clear surface, border, and readable label.
+- force-directed spacing resolves visible label collisions after layout;
+- very large graphs switch to a bounded roomy layout instead of running an expensive all-pairs simulation;
+- residual overlaps are placed into open positions dynamically for the current window.
 
 ## Navigate and arrange
 
@@ -46,12 +83,26 @@ remain visible with a **Clear filters** action, including in an empty result.
 | `+` / `-` | Zooms the complete canvas |
 | Fit view | Centers and scales visible nodes |
 | Node size | Changes node rendering size |
-| Link width | Adjusts connection emphasis inside a safe range |
+| Link thickness | Adjusts connection emphasis inside a safe range |
 | Labels | Shows or hides node titles |
 | Arrows | Shows direction on focused links |
 | Orphans | Includes or hides unconnected notes |
+| Text fade | Controls when non-selected labels simplify while zooming out |
 
-Link width is deliberately bounded so zooming or moving the control cannot turn connections into opaque bands.
+Link thickness is deliberately bounded so zooming or moving the control cannot turn connections into opaque bands.
+
+## Layout forces
+
+The **Forces** section changes the Workspace layout without changing project files:
+
+| Force | What it changes |
+|---|---|
+| Center force | Pulls the complete layout toward the viewport center |
+| Repel force | Creates space between nodes and labels |
+| Link force | Pulls connected notes toward their preferred relationship distance |
+| Link distance | Changes the preferred space along a connection |
+
+Select **Reset forces** if the graph becomes too loose or tight. DevDesk fits the graph again after a meaningful control change. On a dense project, increase repel or link distance slightly, then use **Fit view**. Extreme values remain bounded for usability.
 
 ## Edit connections
 
@@ -80,6 +131,9 @@ If the source already has unsaved text, the connection stays in the draft instea
 - Select **Fit view**.
 - Clear filters.
 - Hover one node to isolate its neighborhood.
-- Reduce **Link width** if you increased it.
+- Reduce **Link thickness** if you increased it.
+- Reset forces, then increase **Repel force** or **Link distance** gradually when labels still feel crowded.
+- Hide tag nodes, attachments, unresolved targets, or orphans when they are not part of the current question.
+- Pause Timeline or move its slider to the end when expected nodes have not appeared yet.
 - Inspect unresolved and ambiguous links.
 - Refresh the project index when watching is unavailable.

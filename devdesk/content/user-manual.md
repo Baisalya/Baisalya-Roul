@@ -124,10 +124,14 @@ folder picker asks.
 | Plan a project | **Tasks**, then List or Board |
 | Write notes | **Notes**, then [Markdown basics](markdown-basics.html) |
 | Connect knowledge | Add links, then open **Relationships** |
+| See what every major screen does | [Visual feature guide](visual-feature-guide.html) |
+| Create a flowchart, system diagram, mind map, or study plan | [Diagram Studio](diagram-studio.html) |
+| Arrange ideas, files, and links freely | [Visual Canvas](visual-canvas.html) |
 | Test an API | [Quick API](quick-api.html) for one request or [API Workspaces](api-workspaces.html) for saved work |
 | Inspect JSON | [JSON Tools](json-tools.html) |
 | Edit a project text or source file | Open it from **Files**; use **Open with → Compare** only when you want a diff |
 | Manage a developer project | **New workspace > Software project** |
+| Manage many open files and tools | [Workspace workbench, tabs, and tools](workspace-workbench.html) |
 | Move to another computer | [Moving and Backing Up a Workspace](#moving-and-backing-up-a-workspace) |
 | Learn every control | [Home, workspace, and navigation](interface-tour.html) |
 
@@ -189,10 +193,13 @@ store absolute paths, credentials, shell commands, execution trust, or personal
 screen layout.
 
 From a project workspace, **Developer tools** can open the Markdown editor,
-workspace text editor, saved API testing, OpenAPI Studio, JSON tools,
-comparisons, scoped Git, and other tools with the current project already
-selected. If a tool needs a file, choose a compatible project file rather than
-copying it into a separate global workspace.
+workspace text editor, Diagram Studio, Visual Canvas, saved API testing,
+OpenAPI Studio, JSON tools, comparisons, scoped Git, and other tools with the
+current project already selected. If a tool needs a file, choose a compatible
+project file rather than copying it into a separate global workspace. See
+[Workspace workbench, tabs, and tools](workspace-workbench.html) for the five
+visible-tab limit, hidden-tab menu, contextual tool cards, Source Control, and
+project terminals.
 
 ### Share or move a project safely
 
@@ -245,11 +252,20 @@ filters are clear.
 
 ### Visual brainstorming
 
-Open **Visual Canvas** to arrange text, file, link, and group nodes in a portable
-`.canvas` file. Add labeled or directed connections, then use drag, pan, zoom,
-fit, undo, and redo. The Canvas can remain independent or be saved to the
-current workspace. Opening it never executes embedded code or URLs. See
-[Visual Canvas](visual-canvas.html).
+Choose the visual tool that matches the work:
+
+- Open **Diagram Studio** for a formal flowchart, software architecture, UML or
+  ER sketch, network, organization chart, mind map, research map, literature
+  map, study plan, or thesis plan. Its portable `.flowchart` source supports a
+  searchable shape library, connections, templates, automatic layout, and PNG
+  or SVG export. See [Diagram Studio](diagram-studio.html).
+- Open **Visual Canvas** to arrange text, file, link, and group nodes more
+  freely in a portable `.canvas` file. Add labeled or directed connections,
+  then use drag, pan, zoom, fit, undo, and redo. See
+  [Visual Canvas](visual-canvas.html).
+
+Either file can remain independent or belong to the current workspace. Opening
+one treats its content as data and never executes embedded code or URLs.
 
 ## Markdown for Complete Beginners
 
@@ -416,10 +432,20 @@ The graph helps answer questions such as:
 8. Select a node to inspect or open its note.
 9. With keyboard focus on the graph, use arrow keys to select a nearby node,
    Enter to open it, and Escape to clear selection.
+10. Open **Controls** to create color groups, include or hide tag/attachment/
+    unresolved nodes, tune display and forces, or replay the selected scope.
+11. Select the floating play button to replay either Local or Workspace without
+    keeping the controls panel open.
 
-The header reports visible notes, links, and orphans. Open **Options** for the
-legend. When a filter produces no result, use the visible **Clear filters**
-action instead of rebuilding the project.
+The header reports visible notes, links, and orphans. The controls include a
+legend, persistent device-local display preferences, filter query help, and a
+timeline based on each item's created date. When a filter produces no result,
+use the visible **Clear filters** action instead of rebuilding the project.
+
+Dense Workspace graphs use bounded force layout and a final collision pass to
+reduce overlapping labels dynamically. Increase **Repel force** or **Link
+distance** gradually, then use **Fit view**, when a large project still feels
+crowded.
 
 The graph reads saved Markdown links. It does not prove that a claim is correct.
 Node size does not mean truth or priority.
@@ -691,7 +717,10 @@ the real repository is a parent folder.
 - Source control needs a separate device-local trust decision.
 - Status, diff, stage, unstage, and protected discard stay inside the workspace.
 - A local commit is explicit, fingerprint-checked, and skips repository hooks.
-- DevDesk does not fetch, pull, push, change remotes, run hooks, or manage credentials.
+- Fetch, fast-forward-only pull, push, and branch creation are separate explicit
+  actions for a trusted local Windows repository.
+- DevDesk does not silently fetch, merge, push, change remote URLs, run hooks,
+  or manage credentials.
 
 ### Beginner workflow
 
@@ -708,6 +737,9 @@ the real repository is a parent folder.
 8. Stage only the intended workspace path.
 9. Enter a commit message in DevDesk and select **Commit staged files**, or use
    your normal Git client after one more review.
+10. Use **Fetch**, **Pull**, or **Push** only after checking the current branch,
+    upstream, ahead/behind counts, and remote. Pull refuses an implicit merge
+    and stops when it cannot fast-forward.
 
 Example in the workspace root:
 
@@ -732,11 +764,13 @@ the selected commit's workspace-scoped files and patch. **Branches** shows the
 current branch, upstream, ahead/behind counts, and remotes without fetching or
 changing them.
 
-DevDesk creates local commits with `--no-verify`; it does not fetch, pull, push,
-change remotes, run hooks, or manage Git credentials. A commit uses the
-repository's staged index. For a workspace nested inside a parent repository,
-confirm with your normal Git client that no unrelated parent files are already
-staged before using the DevDesk commit action.
+DevDesk creates local commits with `--no-verify`; that commit action does not
+push. Fetch, fast-forward-only pull, push, create branch, and branch-switch
+actions remain separate and explicit. DevDesk does not change remote URLs, run
+repository hooks, or store Git credentials. A commit uses the repository's
+staged index. For a workspace nested inside a parent repository, confirm with
+your normal Git client that no unrelated parent files are already staged before
+using the DevDesk commit action.
 
 See [Compare files and workspace-scoped Git](diff-git.html).
 
@@ -746,6 +780,10 @@ See [Compare files and workspace-scoped Git](diff-git.html).
 - Use workspace Search for a quick filter.
 - Use **Developer tools > Search workspace** for full indexed search.
 - Use **Files > Open explorer** for nested folders and exact file selection.
+- DevDesk shows up to five workbench tabs. Use the numbered dropdown at the
+  right of the tab strip for every additional open file or tool.
+- Right-click a Windows workbench tab for close-others, close-to-right,
+  close-saved, close-all, and reopen-closed actions.
 - Press `/` on this website to search the manual.
 - Use `Tab` and `Shift+Tab` to move focus.
 - Use `Enter` or `Space` to activate focused buttons.
