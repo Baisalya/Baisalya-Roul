@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+# Add your production Sitemap URL after publishing.
