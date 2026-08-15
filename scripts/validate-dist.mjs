@@ -75,6 +75,8 @@ for (const page of [
 ]) {
   await validateLocalReferences(`shoppilot-erp/${page}`);
 }
+await validateLocalReferences('notivault-website/index.html');
+await validateLocalReferences('notivault-website/privacy-policy/index.html');
 
 for (const required of [
   'devdesk/assets/js/site-config.js',
@@ -107,6 +109,10 @@ for (const required of [
   'shoppilot-erp/assets/og.png',
   'shoppilot-erp/robots.txt',
   'shoppilot-erp/sitemap.xml',
+  'notivault-website/index.html',
+  'notivault-website/privacy-policy/index.html',
+  'notivault-website/favicon.svg',
+  'notivault-website/og-deleted-message.png',
   'server/index.js',
 ]) {
   await exists(required);

@@ -1,6 +1,7 @@
 import { copyFile, cp, mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { defineConfig } from 'vite';
+import { exportNotiVaultStatic } from './scripts/export-notivault-static.mjs';
 
 const devDeskRelease = '20260813.1';
 
@@ -122,6 +123,11 @@ export default defineConfig({
           path.join(shopPilotSourceRoot, 'assets'),
           path.join(shopPilotOutputRoot, 'assets'),
           { recursive: true },
+        );
+
+        await exportNotiVaultStatic(
+          path.resolve('.'),
+          path.resolve('dist', 'notivault-website'),
         );
 
         const sitesServerRoot = path.resolve('dist', 'server');

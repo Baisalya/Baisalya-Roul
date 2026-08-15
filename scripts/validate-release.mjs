@@ -17,6 +17,12 @@ function requireText(source, expected, label) {
   }
 }
 
+function rejectText(source, unexpected, label) {
+  if (source.includes(unexpected)) {
+    failures.push(`${label} must not contain: ${unexpected}`);
+  }
+}
+
 async function requireFile(relativePath, minimumBytes = 1) {
   try {
     const details = await stat(path.join(root, relativePath));
@@ -43,6 +49,10 @@ const constructionSupport = await text('construction-erp/support.html');
 const shopPilotHome = await text('shoppilot erp/index.html');
 const shopPilotQuickStart = await text('shoppilot erp/quick-start.html');
 const shopPilotManual = await text('shoppilot erp/user-manual.html');
+const notivaultStaticHome = await text('notivault-website/index.html');
+const notivaultStaticPrivacy = await text(
+  'notivault-website/privacy-policy/index.html',
+);
 const manifest = JSON.parse(await text('devdesk/site.webmanifest'));
 
 requireText(portfolio, storeUrl, 'Portfolio Microsoft Store action');
@@ -75,6 +85,19 @@ for (const expected of [
   requireText(portfolio, expected, 'Portfolio ShopPilot integration');
 }
 for (const expected of [
+  'project-card--notivault',
+  'NotiVault',
+  'notivault-website/public/og-deleted-message.png',
+  'href="notivault-website/"',
+  'aria-label="View the NotiVault website"',
+  'Google Play &middot; Coming soon',
+  'No public installer is offered yet.',
+  'voice notes and media saved when the notification exposes them',
+  '<option value="NotiVault">NotiVault</option>',
+]) {
+  requireText(portfolio, expected, 'Portfolio NotiVault integration');
+}
+for (const expected of [
   'action="https://formsubmit.co/baishalya@gmail.com"',
   'name="interested_in"',
   'name="message"',
@@ -86,6 +109,34 @@ for (const expected of [
 await requireFile('construction-erp/index.html', 1_000);
 await requireFile('construction-erp/assets/icons/favicon.svg', 100);
 await requireFile('construction-erp/assets/images/og.png', 100_000);
+await requireFile('notivault-website/public/og.png', 100_000);
+await requireFile('notivault-website/public/og-deleted-message.png', 100_000);
+await requireFile('notivault-website/index.html', 10_000);
+await requireFile('notivault-website/privacy-policy/index.html', 10_000);
+for (const expected of [
+  'href="./_next/static/css/',
+  'href="./privacy-policy/index.html"',
+  'https://baisalya.github.io/Baisalya-Roul/notivault-website/',
+]) {
+  requireText(notivaultStaticHome, expected, 'NotiVault GitHub Pages home');
+}
+for (const expected of [
+  'href="../_next/static/css/',
+  'href="../index.html"',
+]) {
+  requireText(notivaultStaticPrivacy, expected, 'NotiVault GitHub Pages privacy policy');
+}
+for (const unexpected of [
+  'localhost:5173',
+  'rel="modulepreload"',
+  '<script',
+]) {
+  rejectText(
+    `${notivaultStaticHome}\n${notivaultStaticPrivacy}`,
+    unexpected,
+    'NotiVault GitHub Pages export',
+  );
+}
 for (const [relativePath, minimumBytes] of [
   ['shoppilot erp/index.html', 10_000],
   ['shoppilot erp/quick-start.html', 10_000],
@@ -147,6 +198,12 @@ for (const expected of [
   'shopPilotRuntimeFiles',
 ]) {
   requireText(viteConfig, expected, 'ShopPilot production build integration');
+}
+for (const expected of [
+  'exportNotiVaultStatic',
+  "path.resolve('dist', 'notivault-website')",
+]) {
+  requireText(viteConfig, expected, 'NotiVault production build integration');
 }
 for (const expected of [
   'action="https://formsubmit.co/baishalya@gmail.com"',
