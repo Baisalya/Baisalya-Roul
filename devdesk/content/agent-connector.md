@@ -3,6 +3,11 @@
 The AI Agent Connector gives each MCP-compatible AI client an isolated session
 that can ask DevDesk about one explicitly assigned workspace.
 
+This connector is for an **external** AI client. For DevDesk's in-app provider
+chat, review-first coding loop, terminal verification, parallel worktrees, and
+isolated Edge automation, use the separate
+[AI Workbench and coding agents](ai-workbench.html) guide.
+
 Examples include Codex and Gemini CLI. DevDesk does not provide or pay for the AI. You use your own client and its account, subscription, API plan, or local model.
 
 The connector is available on Windows and Android. It works only while DevDesk
@@ -315,8 +320,10 @@ When scheduled read-only checks are on:
 | `propose_document_change` | Queue a complete replacement for review | No |
 | `propose_project_change` | Queue a fingerprinted multi-file change set for review | No |
 
-DevDesk does not expose an MCP tool that approves, rejects, undoes, deletes,
-runs an arbitrary terminal command, or pushes Git changes.
+The external connector does not expose an MCP tool that approves, rejects,
+undoes, deletes, runs an arbitrary terminal command, or pushes Git changes.
+Those connector limits are separate from explicitly approved Windows tools
+inside AI Workbench.
 
 ## Professional coding and repair loop
 

@@ -7,7 +7,7 @@
     <a class="active" href="../manual/user-manual.html">Manual</a>
     <a class="" href="../downloads.html">Downloads</a>
     <a class="nav-demo" href="../downloads.html#agent-demo">Demo project</a>
-    <a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
+    <a href="https://baisalya.github.io/Baisalya-Roul/devdesk/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
   </nav>
   <div class="header-actions">
     <button class="search-btn" type="button" data-search aria-label="Search manual"><span>Search manual</span> <kbd>/</kbd></button>
@@ -60,6 +60,8 @@
 <a class="" href="../manual/diff-git.html">Compare files and scoped Git</a>
 <a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
 <h2>Safety and reference</h2>
+<a class="" href="../manual/notifications-routines.html">Notifications and AI routines</a>
+<a class="" href="../manual/ai-workbench.html">AI Harness, Workbench, and coding agents</a>
 <a class="" href="../manual/agent-connector.html">AI Agent Connector</a>
 <a class="" href="../manual/backup-restore.html">Backup and restore</a>
 <a class="" href="../manual/settings-appearance.html">Settings and appearance</a>
@@ -87,7 +89,45 @@ credential paths, binary or non-UTF-8 files, and applies conservative secret
 redaction. A scheduled graph-health check stores its plan and run log locally
 and cannot edit project files.</p>
 <p>A proposal does not write a file. Only <strong>Approve and apply</strong> inside DevDesk can save it, and the save fails when the original file changed.</p>
-<p>DevDesk does not include an AI provider, AI account, analytics, terminal tool, delete tool, or Git push tool. Your AI client decides where requested context is processed.</p>
+<p>The external connector does not include an AI provider or AI account and does
+not expose terminal, delete, approval, or Git-push tools. Your external AI
+client decides where requested connector context is processed.</p>
+<h2 id="ai-workbench-terminal-parallel-workers-and-browser-sessions">AI Workbench, terminal, parallel workers, and browser sessions<a class="heading-anchor" href="#ai-workbench-terminal-parallel-workers-and-browser-sessions" aria-label="Link to AI Workbench, terminal, parallel workers, and browser sessions">#</a></h2>
+<p>The optional in-app AI Workbench connects only to a provider or compatible
+local endpoint that you configure. DevDesk does not include free model usage or
+a DevDesk-operated model proxy. Provider credentials use protected platform
+storage where supported and are excluded from project files and supported
+portable exports.</p>
+<p>Completed user and assistant messages, bounded redacted run evidence, memory,
+pins, proposal links, and recovery checkpoints may remain in DevDesk's private
+local storage. Transient tool arguments/results, provider continuation values,
+and private model reasoning are not exported as a portable transcript.</p>
+<p>Trusted Windows workspaces may use explicitly approved terminal commands,
+terminal plans, detected verification, Git worktrees, and an isolated Edge
+Browser Agent. Command classification and approval are safety controls, not an
+operating-system sandbox: an approved process runs with the current Windows
+user's authority. Android does not provide the Windows terminal, Git worktree,
+or Edge automation path.</p>
+<p>Parallel implementation workers stay inside isolated Git worktrees and cannot
+approve their own integration. The main workspace changes only through the
+normal reviewed proposal path.</p>
+<p>Browser automation uses a temporary Edge profile separate from the normal
+browser profile. Sensitive sign-in uses an explicit User control handoff. The
+temporary profile is deleted on a best-effort basis when the session closes;
+browser cookies and storage are not part of supported portable exports.</p>
+<p>See <a href="ai-workbench.html">AI Harness, Workbench, and coding agents</a> for the exact platform,
+approval, verification, and browser limitations.</p>
+<h2 id="ai-harness-attachments-notifications-and-routines">AI Harness attachments, notifications, and routines<a class="heading-anchor" href="#ai-harness-attachments-notifications-and-routines" aria-label="Link to AI Harness attachments, notifications, and routines">#</a></h2>
+<p>AI Harness reads a device file only after the user selects it. Safe text is
+bounded and redacted locally. Supported images are transient vision input for
+the selected provider request and are not copied into chat history or backups.</p>
+<p>Notification Center records, read state, routine schedules, and routine prompts
+stay in local DevDesk storage and can be included in a backup. A routine
+prepares a reviewable prompt; it does not automatically send, reply, or post.</p>
+<p>The current release does not request access to WhatsApp, Facebook, or other
+apps' notifications. Those platform-sensitive capabilities remain a separate
+roadmap phase requiring prominent consent, revocation, per-app controls, device
+tests, and Store-policy review.</p>
 <h2 id="user-initiated-network-actions">User-initiated network actions<a class="heading-anchor" href="#user-initiated-network-actions" aria-label="Link to User-initiated network actions">#</a></h2>
 <p>Network activity can occur when you:</p>
 <ul>
@@ -119,9 +159,9 @@ hints, or other confidential non-secret content may still be present.</p>
 <h2 id="report-safely">Report safely<a class="heading-anchor" href="#report-safely" aria-label="Link to Report safely">#</a></h2>
 <p>Use public support only for non-sensitive reports. Use the private security advisory or developer email for vulnerabilities. Never post tokens, credentials, private request bodies, proprietary code, or personal data publicly.</p>
 
-<div class="article-footer"><a class="pager" href="settings-appearance.html"><small>Previous</small><strong>Settings and appearance</strong></a><a class="pager" href="keyboard-shortcuts.html"><small>Next</small><strong>Keyboard shortcuts and accessibility</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#project-data-stays-in-your-folder">Project data stays in your folder</a><a class="level-2" href="#ai-agent-connector">AI Agent Connector</a><a class="level-2" href="#user-initiated-network-actions">User-initiated network actions</a><a class="level-2" href="#protected-secrets">Protected secrets</a><a class="level-2" href="#files-clipboard-and-exports">Files, clipboard, and exports</a><a class="level-2" href="#execution-trust">Execution trust</a><a class="level-2" href="#report-safely">Report safely</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div class="article-footer"><a class="pager" href="settings-appearance.html"><small>Previous</small><strong>Settings and appearance</strong></a><a class="pager" href="keyboard-shortcuts.html"><small>Next</small><strong>Keyboard shortcuts and accessibility</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#project-data-stays-in-your-folder">Project data stays in your folder</a><a class="level-2" href="#ai-agent-connector">AI Agent Connector</a><a class="level-2" href="#ai-workbench-terminal-parallel-workers-and-browser-sessions">AI Workbench, terminal, parallel workers, and browser sessions</a><a class="level-2" href="#ai-harness-attachments-notifications-and-routines">AI Harness attachments, notifications, and routines</a><a class="level-2" href="#user-initiated-network-actions">User-initiated network actions</a><a class="level-2" href="#protected-secrets">Protected secrets</a><a class="level-2" href="#files-clipboard-and-exports">Files, clipboard, and exports</a><a class="level-2" href="#execution-trust">Execution trust</a><a class="level-2" href="#report-safely">Report safely</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
-<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/devdesk-support/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.github.io/Baisalya-Roul/devdesk/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>
 <div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener noreferrer">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
 </div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>

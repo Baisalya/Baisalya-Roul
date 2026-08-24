@@ -11,7 +11,7 @@ This inventory therefore distinguishes:
 - **Static site implementation:** verified directly in this repository.
 - **Published product behavior:** grounded in the 48 searchable manual topics
   and generated manual. The workbench, Diagram Studio, and advanced graph
-  sections were rechecked against the application source on 2026-08-13.
+  sections were rechecked against the application source on 2026-08-20.
 - **Unavailable for fresh source verification:** application widgets, routing,
   packaging, launcher icons, manifests, signing, and Flutter tests.
 
@@ -44,6 +44,8 @@ No unavailable application behavior is reported as newly implemented.
 | Advanced graph | Filters, custom color groups, Local/Workspace timeline replay, display and force controls, device-local preferences, collision-aware large layouts |
 | Visual tools | Portable JSON Canvas plus Diagram Studio `.flowchart` files with shape libraries, templates, auto layout, and PNG/SVG export |
 | Workspace workbench | Project tree, five visible tabs, hidden-tab dropdown, contextual tool cards, scoped Source Control, and explicit Windows project terminals |
+| AI Harness and Workbench | Standalone project selector, bounded redacted text files, transient vision input, provider profiles, review-first proposals, Windows terminal plans and verification, background recovery, read-only specialists, isolated worktree workers, and visible Edge Browser Agent handoff |
+| Notifications and AI routines | Local unread inbox, action routing, retention controls, Once/Daily/Weekdays/Weekly review-first prompt schedules, and missed-occurrence recovery on next app launch |
 | Graph writes | Standard Markdown managed block, one source note, conflict-safe undo |
 | OKF | Code-verified Open Knowledge Format v0.2 analysis, concept templates, safe-fix preview, reviewed conversion, managed indexes/log, provenance, verification, lifecycle, recovery journal, rollback, and undo |
 | API | Quick API and saved API workspaces with collections, environments, assertions, extraction, runner, imports/exports |

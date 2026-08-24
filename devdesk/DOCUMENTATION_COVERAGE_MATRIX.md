@@ -19,7 +19,9 @@ limits instead of inventing verification.
 | Links and backlinks | `content/links-backlinks-nodes.md` | Markdown editor / inspector | Connect notes | Connecting Notes | Static validation | Parser/navigation tests unavailable | Review broken/ambiguous links |
 | Properties/frontmatter | `content/frontmatter-properties.md` | Properties | Organize by metadata | Properties and Metadata | Static validation | Properties UI tests unavailable | Malformed YAML blocks save/analysis |
 | Knowledge graph | `content/knowledge-graph.md` | Views > Relationships | Explore connections | Knowledge Graph | Static validation | Canvas/responsive tests unavailable | Graph does not prove truth |
-| AI Agent Connector | `C:\Users\baish\StudioProjects\devdesk\lib\features\agent_connector\`; `content/agent-connector.md` | Settings > DevDesk Agent Connector | Let an MCP-compatible client use selected workspace structure | Connect an AI Agent; AI Agent Connector | Protocol, loopback transport, permissions, proposal, approval, and 360/1400 px widget tests; full 607-test app suite; static production validation | Physical third-party Codex/Gemini end-to-end connection remains a release smoke check | Windows loopback only; optional text/proposals off by default; no direct writes; review AI-provider privacy |
+| AI Agent Connector | `C:\Users\baish\StudioProjects\devdesk\lib\features\agent_connector\`; `content/agent-connector.md` | Settings > DevDesk Agent Connector | Let an MCP-compatible client use selected workspace structure | Connect an AI Agent; AI Agent Connector | Protocol, loopback transport, permissions, proposal, approval, responsive widget, and static production tests; full current suite is a release gate | Physical third-party Codex/Gemini end-to-end connection remains a release smoke check | Loopback only; compatible client must be on the same device; optional text/proposals off by default; no direct writes; review AI-provider privacy |
+| AI Harness, Workbench, and coding agents | `C:\Users\baish\StudioProjects\devdesk\lib\features\ai_workbench\`; `lib\features\ai\`; `lib\features\ai_parallel_agents\`; `lib\features\browser_agent\`; `content/ai-workbench.md` | All tools > AI Harness; project AI Workbench | Use an in-app provider for everyday prompts, bounded text/photo input, reviewed coding, verification, parallel workers, and browser evidence | AI Harness, Workbench, and coding agents | Multimodal provider encoding, focused harness/workbench/project-intelligence/parallel-agent/Browser Agent suites; static manual validation | Live provider, clean-MSIX, physical-device, and secure-login smoke tests remain release checks | Image bytes are transient; Windows commands use current-user authority, not an OS sandbox; Android has no Windows terminal/worktree/Edge path |
+| Notifications and AI routines | `C:\Users\baish\StudioProjects\devdesk\lib\features\notifications\`; `content/notifications-routines.md` | Bell > Notifications & Routines | Review local app alerts and schedule review-first prompts | Notifications and AI routines | Domain, due-recovery, recurrence, action, analysis, and static manual tests | OS background notifications/widgets and other-app notification access remain later native phases | Phase 1 checks while app runs and recovers the latest missed occurrence at next launch; no silent send/reply/post |
 | Graph connection editing | `content/graph-connection-editing.md` | Graph > Edit links | Add/remove portable links | Connecting Notes | Static validation | Conflict/undo tests unavailable | Only managed block can be removed |
 | Workspace search | `content/unified-search.md` | Search workspace | Find project content | Search and Navigation | Static validation | Indexer tests unavailable | Keep results workspace-scoped |
 | OKF validation and concept creation | `C:\Users\baish\StudioProjects\devdesk\lib\features\okf\presentation\okf_dashboard_page.dart`; `domain/okf_validator.dart`; `domain/okf_template_service.dart` | Developer tools > Structure and OKF | Analyze portable structure and create a concept | Open Knowledge Format; Structure checks; Concepts and metadata | 27 targeted OKF service/widget tests passed; static website validation | Full application source remains external to this website repository | Required vs optional findings; creating a concept writes a new file and never replaces an existing path |
@@ -42,14 +44,17 @@ limits instead of inventing verification.
 
 - Added one beginner-first global manual with 24 required subject sections.
 - Added a complete “My First App Project” walkthrough.
-- Expanded the searchable manual to 48 topics with a visual feature atlas,
-  Diagram Studio, and workspace workbench guides.
+- Expanded the searchable manual to 49 topics with a visual feature atlas,
+  Diagram Studio, workspace workbench, and separate AI Workbench guide.
 - Added an app-matched HTML/CSS preview to every manual page without embedding
   private workspace screenshots.
 - Added global-manual navigation and official deeper-learning links.
 - Added explicit Store/production/install/update guidance.
 - Added the Windows AI Agent Connector guide, global-manual section, search
   entry, safety guidance, and verified code/test evidence.
+- Added a distinct in-app AI Workbench module covering provider setup,
+  review-first changes, Windows execution boundaries, verification, parallel
+  worktrees, Browser Agent handoff, Android limits, and release evidence.
 
 ## Coverage action blocked by missing source
 

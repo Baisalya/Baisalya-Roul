@@ -1197,7 +1197,7 @@ DevDesk manuals describe how this application uses those concepts.
 - [Download DevDesk](../downloads.html)
 - [Get DevDesk for Windows on Microsoft Store](https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare)
 - [DevDesk support](https://baisalya.github.io/devdesk-support/)
-- [Privacy policy](https://baisalya.github.io/devdesk-support/privacy-policy.html)
+- [Privacy policy](https://baisalya.github.io/Baisalya-Roul/devdesk/privacy-policy.html)
 - Get DevDesk for Android on Google Play.
 
 Never include tokens, passwords, private project files, or personal API data in

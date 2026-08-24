@@ -126,6 +126,18 @@ const _pages = <_Page>[
         'Connect Codex, Gemini CLI, or another MCP client to selected DevDesk workspace context with explicit permissions and review-only changes.',
   ),
   _Page(
+    slug: 'ai-workbench',
+    title: 'AI Harness, Workbench, and coding agents',
+    description:
+        'Use standalone review-first AI with bounded files and photos, or use project coding, Windows verification, parallel worktrees, and the isolated Edge Browser Agent safely.',
+  ),
+  _Page(
+    slug: 'notifications-routines',
+    title: 'Notifications and AI routines',
+    description:
+        'Review local alerts and schedule AI prompts that always wait for user confirmation.',
+  ),
+  _Page(
     slug: 'structured-knowledge-okf',
     title: 'Structure checks (OKF)',
     description:
@@ -333,7 +345,9 @@ Future<void> _refreshPage(
   searchEntry['title'] = page.title;
   searchEntry['summary'] = page.description;
   searchEntry['text'] = _plainText(body);
-  if (page.slug == 'agent-connector') {
+  if (page.slug == 'agent-connector' ||
+      page.slug == 'ai-workbench' ||
+      page.slug == 'notifications-routines') {
     searchEntry['group'] = 'Safety and reference';
   }
   if (page.slug == 'diagram-studio') {
@@ -342,6 +356,10 @@ Future<void> _refreshPage(
 }
 
 String _prepareManualTemplate(String source, String slug) {
+  source = source.replaceAll(
+    '>AI Workbench and coding agents</a>',
+    '>AI Harness, Workbench, and coding agents</a>',
+  );
   const startHeading = '<h2>Start here</h2>';
   const knowledgeGraphLink =
       '<a class="" href="../manual/knowledge-graph.html">'
@@ -387,28 +405,30 @@ String _prepareManualTemplate(String source, String slug) {
       );
     }
   }
-  if (!source.contains('>AI Agent Connector</a>')) {
-    final link = slug == 'agent-connector'
-        ? '<a class="active" href="../manual/agent-connector.html" '
-            'aria-current="page">AI Agent Connector</a>'
-        : '<a class="" href="../manual/agent-connector.html">'
-            'AI Agent Connector</a>';
-    source = source.replaceFirst(safetyHeading, '$safetyHeading\n$link');
-  }
-  if (slug == 'agent-connector') {
-    source = source.replaceFirst(
-      '<a class="" href="../manual/agent-connector.html">'
-          'AI Agent Connector</a>',
-      '<a class="active" href="../manual/agent-connector.html" '
-          'aria-current="page">AI Agent Connector</a>',
-    );
-  } else {
-    source = source.replaceFirst(
-      '<a class="active" href="../manual/agent-connector.html" '
-          'aria-current="page">AI Agent Connector</a>',
-      '<a class="" href="../manual/agent-connector.html">'
-          'AI Agent Connector</a>',
-    );
+  for (final page in const <(String, String)>[
+    ('agent-connector', 'AI Agent Connector'),
+    ('ai-workbench', 'AI Harness, Workbench, and coding agents'),
+    ('notifications-routines', 'Notifications and AI routines'),
+  ]) {
+    final link = slug == page.$1
+        ? '<a class="active" href="../manual/${page.$1}.html" '
+            'aria-current="page">${page.$2}</a>'
+        : '<a class="" href="../manual/${page.$1}.html">${page.$2}</a>';
+    if (!source.contains('>${page.$2}</a>')) {
+      source = source.replaceFirst(safetyHeading, '$safetyHeading\n$link');
+    }
+    if (slug == page.$1) {
+      source = source.replaceFirst(
+        '<a class="" href="../manual/${page.$1}.html">${page.$2}</a>',
+        link,
+      );
+    } else {
+      source = source.replaceFirst(
+        '<a class="active" href="../manual/${page.$1}.html" '
+            'aria-current="page">${page.$2}</a>',
+        '<a class="" href="../manual/${page.$1}.html">${page.$2}</a>',
+      );
+    }
   }
   if (slug == 'user-manual') {
     source = source.replaceFirst(
@@ -510,6 +530,18 @@ String _prepareManualTemplate(String source, String slug) {
         'Portable .flowchart',
         'Android + Windows',
       ),
+    'ai-workbench' => (
+        'AI Harness, Workbench, and coding agents',
+        'AI Harness',
+        'Files + photos',
+        'Windows + Android',
+      ),
+    'notifications-routines' => (
+        'Notifications and AI routines',
+        'Local notifications',
+        'Review-first schedules',
+        'Windows + Android',
+      ),
     _ => null,
   };
   if (pageChrome != null) {
@@ -538,6 +570,16 @@ String _prepareManualTemplate(String source, String slug) {
         '<small>Previous</small><strong>Visual Canvas</strong></a>'
         '<a class="pager" href="structured-views.html">'
         '<small>Next</small><strong>Structured workspace views</strong></a></div>',
+    'ai-workbench' => '<div class="article-footer">'
+        '<a class="pager" href="agent-connector.html">'
+        '<small>Previous</small><strong>AI Agent Connector</strong></a>'
+        '<a class="pager" href="notifications-routines.html">'
+        '<small>Next</small><strong>Notifications and AI routines</strong></a></div>',
+    'notifications-routines' => '<div class="article-footer">'
+        '<a class="pager" href="ai-workbench.html">'
+        '<small>Previous</small><strong>AI Harness and Workbench</strong></a>'
+        '<a class="pager" href="privacy-security.html">'
+        '<small>Next</small><strong>Privacy and security</strong></a></div>',
     _ => null,
   };
   if (footer != null) {
@@ -734,6 +776,10 @@ Future<void> _refreshSharedBrand(Directory siteRoot) async {
         .replaceAll(
           '<a href="getting-started.html">Manual</a>',
           '<a href="user-manual.html">Manual</a>',
+        )
+        .replaceAll(
+          'https://baisalya.github.io/devdesk-support/privacy-policy.html',
+          'https://baisalya.github.io/Baisalya-Roul/devdesk/privacy-policy.html',
         )
         .replaceAll(
           '<link rel="icon" href="../assets/img/devdesk-logo.png">',

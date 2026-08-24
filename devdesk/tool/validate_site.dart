@@ -94,9 +94,9 @@ Future<void> main() async {
     final entries =
         jsonDecode(searchSource.substring(searchStart, searchEnd + 1))
             as List<dynamic>;
-    if (entries.length != 48) {
+    if (entries.length != 50) {
       failures.add(
-        'Expected 48 searchable manuals after adding the visual guide, workbench, and Diagram Studio; '
+        'Expected 50 searchable manuals after adding notifications and AI routines; '
         'found ${entries.length}.',
       );
     }
@@ -172,6 +172,8 @@ Future<void> main() async {
     'manual/visual-feature-guide.html',
     'manual/workspace-workbench.html',
     'manual/diagram-studio.html',
+    'manual/ai-workbench.html',
+    'manual/notifications-routines.html',
   ]) {
     if (!File.fromUri(siteRoot.uri.resolve(requiredPath)).existsSync()) {
       failures.add('$requiredPath does not exist.');
@@ -183,6 +185,8 @@ Future<void> main() async {
     ('manual/workspace-workbench.html', 'five tabs visible'),
     ('manual/diagram-studio.html', 'portable <code>.flowchart</code>'),
     ('manual/knowledge-graph.html', 'floating play button'),
+    ('manual/ai-workbench.html', 'current Windows user'),
+    ('manual/notifications-routines.html', 'latest missed occurrence'),
   ]) {
     final file = File.fromUri(siteRoot.uri.resolve(entry.$1));
     if (!file.existsSync()) continue;

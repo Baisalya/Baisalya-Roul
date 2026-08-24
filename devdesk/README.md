@@ -9,8 +9,9 @@ for GitHub Pages or any static host.
 **One folder. Every view. Every tool. Still your files.**
 
 DevDesk is a portable local workspace for everyday plans, connected knowledge,
-project files, saved API testing, and workspace-scoped Git. Ordinary files stay
-the source of truth. A DevDesk account or DevDesk cloud copy is not required.
+project files, optional review-first AI assistance, saved API testing, and
+workspace-scoped Git. Ordinary files stay the source of truth. A DevDesk
+account or DevDesk cloud copy is not required.
 
 The defensible USP is the combination:
 
@@ -19,6 +20,9 @@ The defensible USP is the combination:
   same source items;
 - copy or Git-clone portability through `project.devdesk`;
 - contextual Markdown, JSON, OpenAPI, API, Diff, OKF, and scoped Git tools;
+- one standalone AI Harness for planning, study, writing, and project work;
+- bounded text attachments, supported photo input, and local review-first
+  notification routines;
 - protected values and device trust kept out of portable project files;
 - manual, review-first, or bounded recoverable automation.
 
@@ -27,12 +31,18 @@ See `PRODUCT_POSITIONING.md` for the message hierarchy and
 
 ## Website contents
 
-- benefit-led landing page for everyday users and developers;
+- benefit-led landing page with separate non-technical and developer journeys;
+- a complete-app capability story covering organization, connected thinking,
+  AI creation, local reminders, developer tools, and file ownership;
 - transparent platform downloads page;
 - a featured graph-to-code video and downloadable Tiny Multi-Agent Graph Demo;
 - the original agent-ready workspace as a second guided practice demo;
-- a complete beginner-first global manual plus 47 focused and visual topics,
+- a complete beginner-first global manual plus 50 focused and visual topics,
   including a five-page API Studio section;
+- separate guides for the external MCP Agent Connector and the in-app AI
+  Workbench coding, verification, parallel-worker, and Browser Agent flows;
+- dedicated AI Harness and notifications/routines guidance for non-technical,
+  student, writing, planning, and developer use cases;
 - an app-matched visual feature atlas and an HTML/CSS screen preview on every
   manual topic;
 - dedicated Diagram Studio and workspace workbench guides covering responsive
@@ -101,7 +111,7 @@ Open `http://localhost:8080/`.
 ## Documentation basis
 
 The site is synchronized with the reviewed DevDesk application source and
-bundled manuals as of 2026-07-28. It describes Android and Windows behavior
+bundled manuals as of 2026-08-24. It describes Android and Windows behavior
 without presenting unreleased Apple packages as available. When UI labels
 change, update the matching `content/*.md` source, regenerate, and verify the
 search entry.

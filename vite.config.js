@@ -3,7 +3,7 @@ import path from 'node:path';
 import { defineConfig } from 'vite';
 import { exportNotiVaultStatic } from './scripts/export-notivault-static.mjs';
 
-const devDeskRelease = '20260813.1';
+const devDeskRelease = '20260824.4';
 
 const devDeskRuntimeFiles = [
   '404.html',
@@ -50,7 +50,7 @@ const shopPilotRuntimeFiles = [
 
 function versionDevDeskRuntime(html) {
   return html.replace(
-    /(assets\/(?:css\/styles\.css|js\/(?:app|site-config|search-index|manual-visuals)\.js)|site\.webmanifest)(?:\?v=[^"']+)?(?=["'])/g,
+    /(assets\/(?:css\/styles\.css|js\/(?:app|site-config|search-index|manual-visuals|marketing-model)\.js)|site\.webmanifest)(?:\?v=[^"']+)?(?=["'])/g,
     `$1?v=${devDeskRelease}`,
   );
 }

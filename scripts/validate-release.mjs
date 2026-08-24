@@ -5,6 +5,7 @@ import process from 'node:process';
 const root = process.cwd();
 const storeUrl =
   'https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare';
+const devDeskRelease = '20260824.4';
 const failures = [];
 
 async function text(relativePath) {
@@ -40,6 +41,10 @@ const downloads = await text('devdesk/downloads.html');
 const gettingStarted = await text('devdesk/content/getting-started.md');
 const manual = await text('devdesk/content/user-manual.md');
 const agentGuide = await text('devdesk/content/agent-connector.md');
+const aiWorkbenchGuide = await text('devdesk/content/ai-workbench.md');
+const notificationsGuide = await text(
+  'devdesk/content/notifications-routines.md',
+);
 const devdeskHome = await text('devdesk/index.html');
 const supportAssistant = await text('devdesk/assets/js/support-assistant.js');
 const devdeskApp = await text('devdesk/assets/js/app.js');
@@ -233,8 +238,14 @@ for (const expected of [
   'manual/visual-feature-guide.html',
   'manual/workspace-workbench.html',
   'manual/diagram-studio.html',
+  'manual/ai-workbench.html',
+  'manual/notifications-routines.html',
   'data-manual-preview="graph"',
-  'assets/js/manual-visuals.js?v=20260813.1',
+  `assets/js/manual-visuals.js?v=${devDeskRelease}`,
+  `assets/js/marketing-model.js?v=${devDeskRelease}`,
+  'data-model-slot="banner"',
+  'data-model-slot="finalCta"',
+  'assets/img/devdesk-workspace-banner.webp',
 ]) {
   requireText(devdeskHome, expected, 'DevDesk visual manual upgrade');
 }
@@ -244,14 +255,52 @@ requireText(
   'DevDesk support assistant action',
 );
 for (const expected of [
-  'One calm workspace for the work that matters.',
-  'Everyday &amp; work',
-  'Students',
-  'Researchers &amp; writers',
-  'Developers',
-  'devdesk-social-visual-manual-2026.png',
+  'Bring your files, questions, and projects to one review-first AI Harness.',
+  'For normal &amp; non-technical users',
+  'Students, teachers, writers, researchers',
+  'For developers &amp; project teams',
+  'No coding needed',
+  'devdesk-workspace-banner.webp',
 ]) {
   requireText(devdeskHome, expected, 'DevDesk inclusive homepage');
+}
+for (const expected of [
+  'No technical skills required. Developer power when the project demands it.',
+  'id="non-tech-path"',
+  'Bring the messy work. Leave with a clear next step.',
+  'id="developer-path"',
+  'Move from project context to a verified proposal',
+  'Prompt → reviewed + verified change',
+  'The complete workspace around the answer.',
+  'Tasks, goals, meetings, assignments, and decisions',
+  'Browser + MCP agents',
+  'Tour every major feature',
+]) {
+  requireText(devdeskHome, expected, 'DevDesk audience and complete-app story');
+}
+for (const expected of [
+  'Coming in DevDesk 1.2',
+  'id="ai-harness"',
+  'One Harness. Four ways to move work forward.',
+  'Bounded file + supported photo input',
+  '1,266',
+  'WACK PASS',
+  'zero required failures',
+  'Android + Windows builds validated',
+  'DevDesk does not read WhatsApp',
+  'Native OS widgets are not included',
+  'When work becomes a project, the Harness grows with it.',
+]) {
+  requireText(devdeskHome, expected, 'DevDesk 1.2 AI Harness marketing');
+}
+for (const expected of [
+  'Coming in DevDesk 1.2',
+  'AI help that starts with your work',
+  'Preview AI Harness',
+  '1,266 tests, WACK PASS',
+  'currently published version until',
+]) {
+  requireText(downloads, expected, 'DevDesk downloads 1.2 preview');
 }
 for (const expected of [
   '### Everyday life and work',
@@ -279,7 +328,25 @@ for (const [source, label] of [
   [serviceWorker, 'DevDesk service worker'],
   [viteConfig, 'DevDesk production build'],
 ]) {
-  requireText(source, '20260813.1', label);
+  requireText(source, devDeskRelease, label);
+}
+for (const expected of [
+  "AI Harness is DevDesk's standalone optional AI tool",
+  'Attach a file or photo',
+  'bytes are transient',
+  'current Windows user',
+  'Browser Agent on Windows',
+  'worktree',
+]) {
+  requireText(aiWorkbenchGuide, expected, 'DevDesk AI Workbench guide');
+}
+for (const expected of [
+  'review-first AI routines',
+  'request access to notifications from WhatsApp',
+  'does not provide a generic reply API',
+  'latest missed occurrence is recovered',
+]) {
+  requireText(notificationsGuide, expected, 'DevDesk notifications guide');
 }
 for (const expected of [
   'controllerchange',
@@ -294,9 +361,14 @@ for (const expected of [
   'await self.clients.claim()',
   './assets/js/support-assistant.js',
   './assets/js/manual-visuals.js',
+  './assets/js/marketing-model.js',
+  './assets/img/devdesk-model-confident.png',
+  './assets/img/devdesk-model-thoughtful.png',
+  './assets/img/devdesk-workspace-banner.webp',
   './manual/visual-feature-guide.html',
   './manual/workspace-workbench.html',
   './manual/diagram-studio.html',
+  './manual/notifications-routines.html',
 ]) {
   requireText(serviceWorker, expected, 'DevDesk fresh-design service worker');
 }
@@ -368,7 +440,13 @@ for (const relativePath of [
   'devdesk/manual/workspace-workbench.html',
   'devdesk/manual/diagram-studio.html',
   'devdesk/assets/js/manual-visuals.js',
+  'devdesk/assets/js/marketing-model.js',
   'devdesk/assets/js/support-assistant.js',
+  'devdesk/assets/img/devdesk-model-arms-crossed.png',
+  'devdesk/assets/img/devdesk-model-standing.png',
+  'devdesk/assets/img/devdesk-model-confident.png',
+  'devdesk/assets/img/devdesk-model-thoughtful.png',
+  'devdesk/assets/img/devdesk-workspace-banner.webp',
   'devdesk/DOCUMENTATION_COVERAGE_MATRIX.md',
 ]) {
   await requireFile(relativePath, 100);

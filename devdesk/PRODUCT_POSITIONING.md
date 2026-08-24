@@ -3,7 +3,8 @@
 ## Purpose
 
 DevDesk helps a person keep planning, writing, connected knowledge, project
-files, API work, and relevant Git context around one folder they own.
+files, optional AI assistance, API work, and relevant Git context around one
+folder they own.
 
 It is deliberately useful before someone knows Markdown or developer concepts.
 Advanced features appear when the workspace profile or selected file makes them
@@ -11,12 +12,16 @@ relevant.
 
 ## Primary message
 
-**One folder. Every view. Every tool. Still your files.**
+**Your files. One Harness. You stay in control.**
 
 Supporting sentence:
 
-> Plan, write, connect ideas, test APIs, and inspect project Git in one portable
-> workspace—without an account, file lock-in, or rebuilding after clone.
+> Attach a note or photo, prepare a plan, study guide, draft, or code proposal,
+> and review important changes in one portable workspace built around your files.
+
+The durable product anchor remains:
+
+> One folder. Every view. Every tool. Still your files.
 
 ## Defensible USP
 
@@ -34,7 +39,15 @@ The distinctive DevDesk proposition is the complete combination:
    Git while protected values remain local;
 5. a parent Git repository may be detected while DevDesk mutations remain
    strictly bounded to the selected nested workspace;
-6. project changes can be Manual, Review changes, or bounded Safe automatic.
+6. one standalone AI Harness supports everyday planning, study, writing, and
+   project work without making AI mandatory for the rest of the product;
+7. bounded text attachments and supported photos can add context without
+   persisting raw image bytes in chat history or backups;
+8. local notifications and routines prepare work, then wait for the person to
+   confirm before a provider request;
+9. project changes can be Manual, Review changes, or bounded Safe automatic,
+   with reviewed proposals, verification evidence, isolated worktrees, and
+   recovery controls where supported.
 
 ## Audience messages
 
@@ -48,7 +61,28 @@ Benefits:
 - useful starters for personal, study, business, and writing work;
 - no frontmatter, JSON, node, edge, or OKF knowledge required;
 - one place for deadlines, notes, meetings, decisions, sources, and drafts;
+- optional AI assistance for turning existing notes or photos into a plan,
+  summary, checklist, or first draft;
+- local routines that surface the next prompt without silently contacting an AI
+  provider;
 - an accessible relationship List when the graph is not the best interface.
+
+### Student
+
+“Bring the material you already have. Turn notes and supported photos into a
+clear study plan, explanation, revision checklist, or practice prompt.”
+
+Benefits:
+
+- bounded attachments keep the task grounded in the student's material;
+- the Study starter keeps subjects, assignments, notes, and resources together;
+- the AI Harness can prepare learning help without taking over the final work;
+- local routines can prompt a revision session and wait for confirmation.
+
+### Researcher or writer
+
+“Keep sources, notes, outline, and drafts connected; use AI to prepare an angle,
+summary, or draft while you remain responsible for evidence and publication.”
 
 ### Developer
 
@@ -62,6 +96,9 @@ Benefits:
 - a sanitized API artifact is created or reopened automatically;
 - copy or clone, open `project.devdesk`, and continue;
 - parent-repository Git never broadens the selected workspace boundary.
+- reviewed code proposals and bounded verification make AI output inspectable;
+- parallel Git worktrees isolate workers instead of sharing one mutable tree;
+- terminal and browser actions remain behind exact local permissions.
 
 ## Trust messages
 
@@ -70,17 +107,21 @@ Benefits:
 - No silent replacement of existing paths.
 - No portable tokens, passwords, cookies, or execution trust by default.
 - No claim that automatic rules invent sources, verification, or project facts.
+- No silent AI provider request from a routine.
+- No claim that DevDesk reads other apps' notifications, replies to WhatsApp or
+  Facebook, posts on a person's behalf, or ships a native OS widget in 1.2.
+- No claim that an AI provider or subscription is bundled with DevDesk.
 - No unreleased platform presented as available.
 
 ## Store-ready copy
 
-Google Play short description, under 80 characters:
+Future 1.2 store short description, under 80 characters:
 
-> Plan, connect, test APIs, and keep every workspace as ordinary local files
+> Plan, study, draft, and build with AI—review every important change
 
 Alternative:
 
-> One portable folder for plans, knowledge, API testing, and project tools
+> Your files, one review-first AI Harness, and project tools when needed
 
 Future App Store subtitle, under 30 characters:
 
@@ -88,8 +129,8 @@ Future App Store subtitle, under 30 characters:
 
 First description sentence:
 
-> DevDesk turns one ordinary folder into a portable workspace for everyday
-> plans, connected knowledge, API testing, and project tools.
+> DevDesk combines your ordinary files with a review-first AI Harness for
+> planning, study, writing, and project work.
 
 ## Message guardrails
 
@@ -102,6 +143,10 @@ Use:
 - safe or bounded automation;
 - workspace-scoped Git;
 - sanitized portable API structure.
+- review-first AI assistance;
+- bounded file and supported photo input;
+- local routines that wait for confirmation;
+- verification evidence and recovery.
 
 Avoid:
 
@@ -111,6 +156,11 @@ Avoid:
   encrypted;
 - “sync” for copy, Git, or local rebuild;
 - “AI-powered” for deterministic OKF and graph maintenance;
+- “autonomous” when a flow still requires review or confirmation;
+- “reads your notifications,” “replies for you,” or “posts for you” when those
+  cross-app capabilities are not shipped;
+- “private AI” without explaining that the chosen provider receives the prompt;
+- “DevDesk 1.2 available now” before store certification is complete;
 - “available on iOS/macOS” before a real signed release.
 
 ## Research basis
@@ -130,4 +180,3 @@ The positioning was checked against current official product documentation:
 
 These products solve real problems. DevDesk should win through a clear combined
 workflow and trustworthy execution, not an unverifiable exclusivity claim.
-

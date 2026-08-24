@@ -1,12 +1,14 @@
-const BUILD_ID = '20260813.1';
+const BUILD_ID = '20260824.4';
 const CACHE_PREFIX = 'devdesk-docs-';
 const CACHE_NAME = `${CACHE_PREFIX}${BUILD_ID}`;
 const ASSETS = [
   "./index.html",
   "./downloads.html",
+  "./privacy-policy.html",
   "./assets/css/styles.css",
   "./assets/js/app.js",
   "./assets/js/site-config.js",
+  "./assets/js/marketing-model.js",
   "./assets/js/search-index.js",
   "./assets/js/manual-visuals.js",
   "./assets/js/support-assistant.js",
@@ -14,11 +16,18 @@ const ASSETS = [
   "./assets/img/devdesk-logo-128.png",
   "./assets/img/devdesk-logo-192.png",
   "./assets/img/devdesk-logo-512.png",
+  "./assets/img/devdesk-workspace-banner.webp",
+  "./assets/img/devdesk-model-arms-crossed.png",
+  "./assets/img/devdesk-model-standing.png",
+  "./assets/img/devdesk-model-confident.png",
+  "./assets/img/devdesk-model-thoughtful.png",
   "./manual/user-manual.html",
   "./manual/visual-feature-guide.html",
   "./manual/workspace-workbench.html",
   "./manual/diagram-studio.html",
   "./manual/agent-connector.html",
+  "./manual/ai-workbench.html",
+  "./manual/notifications-routines.html",
   "./manual/getting-started.html",
   "./manual/downloads-installation.html",
   "./manual/interface-tour.html",
