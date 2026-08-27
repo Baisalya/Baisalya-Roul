@@ -44,7 +44,7 @@ Use these DNS records in Spaceship Advanced DNS:
 | A | `@` | `185.199.111.153` |
 | CNAME | `www` | `baisalya.github.io` |
 
-Use the default/automatic TTL. Do not add wildcard records. Add the custom domain in GitHub Pages before changing DNS. DNS can take up to 24 hours to propagate. After GitHub reports the DNS check successful, enable **Enforce HTTPS**.
+Use the default/automatic TTL. Do not add wildcard records. Add the custom domain in GitHub Pages before changing DNS. DNS can take up to 24 hours to propagate. After GitHub reports the DNS check successful, enable **Enforce HTTPS**. Keep the repository root `CNAME` file set to exactly `baisalya.com`; the release builder publishes it with every GitHub Pages artifact.
 
 Check DNS from PowerShell:
 

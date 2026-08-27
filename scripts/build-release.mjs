@@ -13,7 +13,7 @@ const planOnly = process.argv.includes('--plan');
 const devDeskRelease = '20260824.4';
 
 const rootRuntimeFiles = [
-  'index.html', 'privacy.html', 'main.js', 'style.css', 'robots.txt', 'sitemap.xml', 'javascript.svg',
+  'index.html', 'privacy.html', 'main.js', 'style.css', 'robots.txt', 'sitemap.xml', 'javascript.svg', 'CNAME',
 ];
 const rootRuntimeDirectories = ['assets', 'src/site'];
 const rootOptionalRuntimeFiles = ['ads.txt'];
