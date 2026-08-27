@@ -1,0 +1,2 @@
+easter-egg.js
+src/site/styles/components/easter-egg-compat.css

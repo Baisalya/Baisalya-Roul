@@ -1,0 +1,30 @@
+.debug-mode { position: fixed; inset: 0; z-index: 9999; display: flex; flex-direction: column; background: rgba(0,0,0,.96); color: #fff; }
+.debug-console { margin: 20px; max-height: 200px; overflow: hidden; border: 2px solid #ff6b6b; border-radius: 8px; background: #1a1a2e; box-shadow: 0 0 20px rgba(255,107,107,.5); }
+.console-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 15px; background: #ff6b6b; font: 700 .9rem/1.2 var(--font-mono); }
+.console-close { width: 28px; height: 28px; display: grid; place-items: center; border: 0; border-radius: 50%; background: transparent; color: #fff; font-size: 20px; cursor: pointer; }
+.console-content { padding: 15px; font: 400 12px/1.5 var(--font-mono); }
+.error-line { margin: 5px 0; color: #ff6b6b; opacity: 0; transform: translateX(-20px); transition: opacity .5s ease, transform .5s ease; }
+.error-line:nth-child(2) { color: #ffa726; } .error-line:nth-child(3) { color: #42a5f5; } .error-line:nth-child(4) { color: #66bb6a; }
+.game-container { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; position: relative; min-height: 0; }
+#gameCanvas { width: min(800px,100%); height: auto; border: 2px solid #42a5f5; border-radius: 8px; background: #1a1a2e; box-shadow: 0 0 20px rgba(66,165,245,.3); }
+.game-ui { width: min(800px,100%); display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 15px; font-family: var(--font-mono); }
+.score, .lives { padding: 8px 15px; border: 1px solid #42a5f5; border-radius: 999px; background: rgba(66,165,245,.2); font-weight: 700; }
+.game-tips { display: grid; gap: 4px; text-align: center; } .tip { color: #aaa; font-size: 12px; }
+.game-over { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: min(440px,calc(100% - 30px)); padding: 30px; border: 2px solid #ff6b6b; border-radius: 15px; background: rgba(0,0,0,.94); text-align: center; box-shadow: 0 0 30px rgba(255,107,107,.5); font-family: var(--font-mono); }
+.game-over h2 { margin-bottom: 15px; color: #ff6b6b; font-size: 24px; } .game-over p { color: #fff; } .final-score { margin: 15px 0; color: #42a5f5; font-size: 18px; }
+.game-buttons { display: flex; gap: 15px; justify-content: center; margin-top: 20px; } .game-btn { padding: 10px 20px; border: 0; border-radius: 999px; color: white; font-weight: 700; cursor: pointer; } .restart-btn { background: #4caf50; } .exit-btn { background: #ff6b6b; }
+@media (max-width: 680px) { .debug-console { margin: 8px; } .game-container { padding: 8px; } .game-ui { flex-direction: column; } .game-buttons { flex-direction: column; } .game-btn { width: 100%; } }
+body.easter-egg-open { overflow: hidden; }
+body.easter-egg-shake { animation: screenShake .5s ease-in-out; }
+@keyframes screenShake {
+  0%,100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+.glitch-overlay { position: fixed; inset: 0; z-index: 10000; display: grid; place-items: center; background: rgba(0,0,0,.92); pointer-events: none; animation: glitchFlicker .7s ease-in-out both; }
+.glitch-text { color: #ff5b5b; font: 700 clamp(1rem,3vw,2rem)/1.5 var(--font-mono); text-align: center; }
+.glitch-text span { display: block; }
+@keyframes glitchFlicker { 0%,100% { opacity: 0; } 12%,82% { opacity: 1; } 32% { opacity: .72; } 48% { opacity: 1; } 63% { opacity: .82; } }
+@media (prefers-reduced-motion: reduce) { body.easter-egg-shake, .glitch-overlay { animation: none; } }

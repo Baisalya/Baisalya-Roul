@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://baisalya.com/sitemap.xml

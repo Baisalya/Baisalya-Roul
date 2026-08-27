@@ -1,0 +1,12 @@
+package.json
+package-lock.json
+scripts/build-release.mjs
+scripts/validate-release-preflight.mjs
+scripts/validate-protected-products.mjs
+scripts/protected-product-manifest.json
+scripts/validate-batch-d.mjs
+scripts/validate-release.mjs
+scripts/validate-dist.mjs
+BATCH_D_REFACTOR_REPORT.md
+BATCH_D_CHANGED_FILES.txt
+BATCH_D_DELETED_FILES.txt

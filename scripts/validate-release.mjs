@@ -49,7 +49,7 @@ const devdeskHome = await text('devdesk/index.html');
 const supportAssistant = await text('devdesk/assets/js/support-assistant.js');
 const devdeskApp = await text('devdesk/assets/js/app.js');
 const serviceWorker = await text('devdesk/sw.js');
-const viteConfig = await text('vite.config.js');
+const releaseBuild = await text('scripts/build-release.mjs');
 const constructionSupport = await text('construction-erp/support.html');
 const shopPilotHome = await text('shoppilot erp/index.html');
 const shopPilotQuickStart = await text('shoppilot erp/quick-start.html');
@@ -103,7 +103,7 @@ for (const expected of [
   requireText(portfolio, expected, 'Portfolio NotiVault integration');
 }
 for (const expected of [
-  'action="https://formsubmit.co/baishalya@gmail.com"',
+  'action="https://formsubmit.co/baishalya1999@gmail.com"',
   'name="interested_in"',
   'name="message"',
   'name="_honey"',
@@ -198,20 +198,20 @@ for (const expected of [
   requireText(shopPilotManual, expected, 'ShopPilot detailed manual');
 }
 for (const expected of [
-  "path.resolve('shoppilot erp')",
-  "path.resolve('dist', 'shoppilot-erp')",
+  "'shoppilot erp'",
+  "path.join(outputRoot,'shoppilot-erp')",
   'shopPilotRuntimeFiles',
 ]) {
-  requireText(viteConfig, expected, 'ShopPilot production build integration');
+  requireText(releaseBuild, expected, 'ShopPilot production build integration');
 }
 for (const expected of [
   'exportNotiVaultStatic',
-  "path.resolve('dist', 'notivault-website')",
+  "path.join(outputRoot,'notivault-website')",
 ]) {
-  requireText(viteConfig, expected, 'NotiVault production build integration');
+  requireText(releaseBuild, expected, 'NotiVault production build integration');
 }
 for (const expected of [
-  'action="https://formsubmit.co/baishalya@gmail.com"',
+  'action="https://formsubmit.co/baishalya1999@gmail.com"',
   'name="_honey"',
   'name="sensitive_data_removed"',
   'Send request',
@@ -326,7 +326,7 @@ for (const [source, label] of [
   [downloads, 'DevDesk downloads assets'],
   [devdeskApp, 'DevDesk runtime'],
   [serviceWorker, 'DevDesk service worker'],
-  [viteConfig, 'DevDesk production build'],
+  [releaseBuild, 'DevDesk production build'],
 ]) {
   requireText(source, devDeskRelease, label);
 }

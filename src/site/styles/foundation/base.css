@@ -1,0 +1,15 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+body { margin: 0; min-width: 320px; font-family: var(--font-sans); line-height: 1.6; background: var(--bg); color: var(--text); text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+body.professional-home { background: radial-gradient(circle at 72% 2%, color-mix(in srgb, var(--accent-strong) 17%, transparent), transparent 34rem), radial-gradient(circle at 10% 42%, color-mix(in srgb, var(--mint) 8%, transparent), transparent 30rem), var(--bg); }
+img, svg, canvas { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { color: var(--text); }
+p { color: var(--text-muted); }
+::selection { background: color-mix(in srgb, var(--accent) 28%, transparent); color: var(--text); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.hidden { display: none !important; }
+.contact-honey { position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }

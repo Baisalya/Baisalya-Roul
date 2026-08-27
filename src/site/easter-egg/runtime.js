@@ -23,6 +23,7 @@ class FlutterBirdGame {
         this.obstacles = [];
         this.powerups = [];
         this.particles = [];
+        this.animationFrameId = null;
         
         // Game messages
         this.funnyMessages = [
@@ -46,7 +47,6 @@ class FlutterBirdGame {
     init() {
         this.setupEventListeners();
         this.showRandomMessage();
-        this.gameLoop();
     }
     
     setupEventListeners() {
@@ -377,210 +377,168 @@ class FlutterBirdGame {
         this.updateScore();
         this.updateLives();
         document.getElementById('gameOver').classList.add('hidden');
+        if (this.animationFrameId === null) this.gameLoop();
+    }
+
+    stop() {
+        this.gameRunning = false;
+        if (this.animationFrameId !== null) {
+            cancelAnimationFrame(this.animationFrameId);
+            this.animationFrameId = null;
+        }
     }
     
     gameLoop() {
-        this.update();
-        this.render();
-        requestAnimationFrame(() => this.gameLoop());
-    }
-}
-
-// Easter Egg Trigger System
-class EasterEggManager {
-    constructor() {
-        this.clickCount = 0;
-        this.clickTimer = null;
-        this.game = null;
-        this.debugMode = false;
-        
-        this.init();
-    }
-    
-    init() {
-        const logoTrigger = document.getElementById('logo-trigger');
-        if (logoTrigger) {
-            logoTrigger.addEventListener('click', () => this.handleLogoClick());
-        }
-    }
-    
-    handleLogoClick() {
-        this.clickCount++;
-        
-        // Clear existing timer
-        if (this.clickTimer) {
-            clearTimeout(this.clickTimer);
-        }
-        
-        // Check for  click
-        if (this.clickCount >= 1) {
-            this.triggerEasterEgg();
-            this.clickCount = 0;
+        if (!this.gameRunning) {
+            this.animationFrameId = null;
             return;
         }
-        
-        // Reset click count after 1 second
-        this.clickTimer = setTimeout(() => {
-            this.clickCount = 0;
-        }, 1000);
-    }
-    
-    triggerEasterEgg() {
-        if (this.debugMode) return;
-        
-        this.debugMode = true;
-        
-        // Screen shake effect
-        document.body.style.animation = 'screenShake 0.5s ease-in-out';
-        
-        // Show glitch effect
-        this.createGlitchEffect();
-        
-        // Show debug console with delay
-        setTimeout(() => {
-            this.showDebugConsole();
-        }, 1000);
-        
-        // Start the game
-        setTimeout(() => {
-            this.startGame();
-        }, 3000);
-    }
-    
-    createGlitchEffect() {
-        const glitch = document.createElement('div');
-        glitch.className = 'glitch-overlay';
-        glitch.innerHTML = `
-            <div class="glitch-text">
-                <span>SYSTEM ERROR</span>
-                <span>WIDGET OVERFLOW DETECTED</span>
-                <span>REBOOTING...</span>
-            </div>
-        `;
-        document.body.appendChild(glitch);
-        
-        setTimeout(() => {
-            glitch.remove();
-        }, 2000);
-    }
-    
-    showDebugConsole() {
-        const debugMode = document.getElementById('debug-mode');
-        debugMode.classList.remove('hidden');
-        
-        // Animate console messages
-        const errorLines = document.querySelectorAll('.error-line');
-        errorLines.forEach((line, index) => {
-            setTimeout(() => {
-                line.style.opacity = '1';
-                line.style.transform = 'translateX(0)';
-            }, index * 500);
-        });
-    }
-    
-    startGame() {
-        if (!this.game) {
-            this.game = new FlutterBirdGame();
-        }
-        this.game.start();
+        this.update();
+        this.render();
+        this.animationFrameId = requestAnimationFrame(() => this.gameLoop());
     }
 }
 
-// Global functions for game controls
-function restartGame() {
-    const easterEgg = window.easterEggManager;
-    if (easterEgg && easterEgg.game) {
-        easterEgg.game.start();
-    }
+let game = null;
+let previousFocus = null;
+let consoleTimers = [];
+let gameTimer = null;
+
+const markup = `
+  <div id="debug-mode" class="debug-mode hidden" role="dialog" aria-modal="true" aria-labelledby="debug-title" aria-hidden="true">
+    <div class="debug-console">
+      <div class="console-header">
+        <span class="console-title" id="debug-title">Developer Mode Unlocked · BR Debug Run</span>
+        <button class="console-close" type="button" data-easter-action="close" aria-label="Close developer mode">×</button>
+      </div>
+      <div class="console-content">
+        <div class="error-messages">
+          <div class="error-line">[ERROR:flutter/runtime] Widget overflow detected!</div>
+          <div class="error-line">[WARNING] Too much padding in your life...</div>
+          <div class="error-line">[INFO] Secret profile gesture accepted. Developer Mode Unlocked.</div>
+          <div class="error-line">[DEBUG] Initializing BR Debug Run...</div>
+        </div>
+      </div>
+    </div>
+    <div class="game-container">
+      <canvas id="gameCanvas" width="800" height="400" aria-label="BR Debug Run developer easter egg game"></canvas>
+      <div class="game-ui">
+        <div class="score">Score: <span id="score">0</span></div>
+        <div class="lives">Lives: <span id="lives">3</span></div>
+        <div class="game-tips">
+          <div class="tip">Use SPACE or CLICK to fly.</div>
+          <div class="tip">Avoid red errors and yellow warnings.</div>
+          <div class="tip">Collect hot reload icons for points.</div>
+        </div>
+      </div>
+      <div class="game-over hidden" id="gameOver">
+        <h2>App Crashed in Production!</h2>
+        <p>Time for a hot restart.</p>
+        <div class="final-score">Final Score: <span id="finalScore">0</span></div>
+        <div class="game-buttons">
+          <button type="button" data-easter-action="restart" class="game-btn restart-btn">Hot Restart</button>
+          <button type="button" data-easter-action="close" class="game-btn exit-btn">Return to site</button>
+        </div>
+      </div>
+    </div>
+  </div>`;
+
+function ensureMarkup() {
+  let overlay = document.getElementById('debug-mode');
+  if (overlay) return overlay;
+  document.body.insertAdjacentHTML('beforeend', markup);
+  overlay = document.getElementById('debug-mode');
+  overlay.addEventListener('click', (event) => {
+    const action = event.target.closest('[data-easter-action]')?.dataset.easterAction;
+    if (action === 'close') closeEasterEgg();
+    if (action === 'restart') game?.start();
+  });
+  return overlay;
 }
 
-function exitDebugMode() {
-    const debugMode = document.getElementById('debug-mode');
-    debugMode.classList.add('hidden');
-    
-    const easterEgg = window.easterEggManager;
-    if (easterEgg) {
-        easterEgg.debugMode = false;
-        if (easterEgg.game) {
-            easterEgg.game.gameRunning = false;
-        }
-    }
-    
-    // Remove screen shake
-    document.body.style.animation = '';
+function clearTimers() {
+  consoleTimers.forEach(clearTimeout);
+  consoleTimers = [];
+  if (gameTimer !== null) clearTimeout(gameTimer);
+  gameTimer = null;
 }
 
-window.restartGame = restartGame;
-window.exitDebugMode = exitDebugMode;
+function showGlitch() {
+  const glitch = document.createElement('div');
+  glitch.className = 'glitch-overlay';
+  glitch.setAttribute('aria-hidden', 'true');
+  glitch.innerHTML = '<div class="glitch-text"><span>SYSTEM ERROR</span><span>WIDGET OVERFLOW DETECTED</span><span>REBOOTING...</span></div>';
+  document.body.appendChild(glitch);
+  window.setTimeout(() => glitch.remove(), 700);
+}
 
-// Initialize Easter Egg Manager
-document.addEventListener('DOMContentLoaded', () => {
-    window.easterEggManager = new EasterEggManager();
+function animateConsole(overlay) {
+  overlay.querySelectorAll('.error-line').forEach((line, index) => {
+    const timer = window.setTimeout(() => {
+      line.style.opacity = '1';
+      line.style.transform = 'translateX(0)';
+    }, index * 140);
+    consoleTimers.push(timer);
+  });
+}
+
+export function openEasterEgg() {
+  const overlay = ensureMarkup();
+  if (!overlay.classList.contains('hidden')) return;
+  clearTimers();
+  previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+  overlay.querySelectorAll('.error-line').forEach((line) => {
+    line.style.opacity = '0';
+    line.style.transform = 'translateX(-20px)';
+  });
+  overlay.classList.remove('hidden');
+  overlay.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('easter-egg-open', 'easter-egg-shake');
+  window.setTimeout(() => document.body.classList.remove('easter-egg-shake'), 520);
+  showGlitch();
+  animateConsole(overlay);
+  overlay.querySelector('.console-close')?.focus();
+
+  if (!game) game = new FlutterBirdGame();
+  gameTimer = window.setTimeout(() => {
+    game?.start();
+    gameTimer = null;
+  }, 650);
+}
+
+export function closeEasterEgg() {
+  const overlay = document.getElementById('debug-mode');
+  if (!overlay || overlay.classList.contains('hidden')) return;
+  clearTimers();
+  game?.stop();
+  overlay.classList.add('hidden');
+  overlay.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('easter-egg-open', 'easter-egg-shake');
+  previousFocus?.focus?.();
+  previousFocus = null;
+}
+
+document.addEventListener('keydown', (event) => {
+  const overlay = document.getElementById('debug-mode');
+  if (!overlay || overlay.classList.contains('hidden')) return;
+
+  if (event.key === 'Escape') {
+    event.preventDefault();
+    closeEasterEgg();
+    return;
+  }
+
+  if (event.key !== 'Tab') return;
+  const focusable = [...overlay.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex=\"-1\"])')]
+    .filter((element) => !element.hasAttribute('disabled'));
+  if (!focusable.length) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
 });
-
-// Add CSS animations
-const easterEggStyles = document.createElement('style');
-easterEggStyles.textContent = `
-    @keyframes screenShake {
-        0%, 100% { transform: translateX(0); }
-        10% { transform: translateX(-10px) rotate(1deg); }
-        20% { transform: translateX(10px) rotate(-1deg); }
-        30% { transform: translateX(-8px) rotate(1deg); }
-        40% { transform: translateX(8px) rotate(-1deg); }
-        50% { transform: translateX(-6px) rotate(1deg); }
-        60% { transform: translateX(6px) rotate(-1deg); }
-        70% { transform: translateX(-4px) rotate(1deg); }
-        80% { transform: translateX(4px) rotate(-1deg); }
-        90% { transform: translateX(-2px) rotate(1deg); }
-    }
-    
-    .glitch-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        z-index: 10000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        animation: glitchFlicker 2s ease-in-out;
-    }
-    
-    .glitch-text {
-        color: #ff0000;
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 2rem;
-        text-align: center;
-        animation: textGlitch 0.5s infinite;
-    }
-    
-    .glitch-text span {
-        display: block;
-        margin: 10px 0;
-    }
-    
-    @keyframes glitchFlicker {
-        0%, 100% { opacity: 0; }
-        10%, 90% { opacity: 1; }
-        20% { opacity: 0.8; }
-        30% { opacity: 1; }
-        40% { opacity: 0.9; }
-        50% { opacity: 1; }
-        60% { opacity: 0.7; }
-        70% { opacity: 1; }
-        80% { opacity: 0.9; }
-    }
-    
-    @keyframes textGlitch {
-        0% { transform: translateX(0); }
-        20% { transform: translateX(-2px); }
-        40% { transform: translateX(2px); }
-        60% { transform: translateX(-1px); }
-        80% { transform: translateX(1px); }
-        100% { transform: translateX(0); }
-    }
-`;
-
-document.head.appendChild(easterEggStyles);

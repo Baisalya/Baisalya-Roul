@@ -1,0 +1,14 @@
+Batch A — Steps 2 + 3 + 4
+
+Modified/new root-site files:
+- index.html
+- package.json
+- scripts/validate-professional-home.mjs
+- src/site/ARCHITECTURE.md
+- src/site/content/SOFTWARE_CATALOG.md
+- src/site/styles/professional-home.css
+- src/site/styles/site.css
+- BATCH_A_REFACTOR_REPORT.md
+- BATCH_A_CHANGED_FILES.txt
+
+Protected product directories were not modified.

@@ -1,0 +1,175 @@
+.bmc-button {
+            --bmc-yellow: #ffdd00;
+            --bmc-yellow-hover: #ffe74d;
+            --bmc-ink: #111111;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            min-height: 52px;
+            padding: 0.85rem 1.2rem;
+            border: 1px solid rgba(17, 17, 17, 0.12);
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--bmc-yellow), #ffc83d);
+            color: var(--bmc-ink);
+            font-family: Inter, sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            line-height: 1;
+            text-decoration: none;
+            white-space: nowrap;
+            box-shadow: 0 12px 30px rgba(255, 221, 0, 0.2),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.65);
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+        }
+
+        .bmc-button::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.65) 48%, transparent 75%);
+            transform: translateX(-130%);
+            transition: transform 550ms ease;
+        }
+
+        .bmc-button:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, var(--bmc-yellow-hover), #ffd451);
+            box-shadow: 0 16px 36px rgba(255, 221, 0, 0.3),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.75);
+        }
+
+        .bmc-button:hover::before {
+            transform: translateX(130%);
+        }
+
+        .bmc-button:focus-visible {
+            outline: 3px solid rgba(255, 221, 0, 0.45);
+            outline-offset: 4px;
+        }
+
+        .bmc-button__icon {
+            width: 23px;
+            height: 23px;
+            flex: 0 0 auto;
+        }
+
+        .bmc-button__label {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 0.28rem;
+        }
+
+        .bmc-button__label strong {
+            font-weight: 900;
+        }
+
+        .hero-buttons .bmc-button {
+            min-width: 205px;
+        }
+
+        .hero-support-note {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: fit-content;
+            margin-top: 0.85rem;
+            color: var(--text-secondary, rgba(255, 255, 255, 0.72));
+            font-size: 0.82rem;
+            line-height: 1.5;
+        }
+
+        .hero-support-note::before {
+            content: "♥";
+            color: #ff5a73;
+            font-size: 0.92rem;
+        }
+
+        .footer-support {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.9rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+            border-radius: 16px;
+            background: var(--card-bg, rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .footer-support__copy {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            min-width: 0;
+        }
+
+        .footer-support__copy strong {
+            color: var(--text-primary, #ffffff);
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+        .footer-support__copy span {
+            color: var(--text-secondary, rgba(255, 255, 255, 0.68));
+            font-size: 0.76rem;
+            line-height: 1.35;
+        }
+
+        .footer-support .bmc-button {
+            min-height: 44px;
+            padding: 0.7rem 0.95rem;
+            border-radius: 12px;
+            font-size: 0.84rem;
+            flex: 0 0 auto;
+        }
+
+        @media (max-width: 900px) {
+            .footer-content {
+                gap: 1.25rem;
+                flex-wrap: wrap;
+            }
+
+            .footer-support {
+                order: 3;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-buttons {
+                align-items: stretch;
+            }
+
+            .hero-buttons .bmc-button {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .hero-support-note {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .footer-support {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-support .bmc-button {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .bmc-button,
+            .bmc-button::before {
+                transition: none;
+            }
+        }

@@ -90,7 +90,7 @@ export default function Home() {
       "@type": "Person",
       name: "Baisalya",
       url: "https://baisalya.github.io/Baisalya-Roul/",
-      email: "mailto:baishalya@gmail.com",
+      email: "mailto:baishalya1999@gmail.com",
       jobTitle: "Flutter & Android App Developer",
     },
   };
@@ -435,7 +435,7 @@ export default function Home() {
             <div className="developer-facts" aria-label="Developer details">
               <span><small>Developer</small><strong>Baisalya</strong></span>
               <span><small>Speciality</small><strong>Flutter & Android</strong></span>
-              <span><small>Support</small><strong>baishalya@gmail.com</strong></span>
+              <span><small>Support</small><strong>baishalya1999@gmail.com</strong></span>
             </div>
             <div className="developer-actions">
               <a
@@ -446,7 +446,7 @@ export default function Home() {
               >
                 Visit developer website <span aria-hidden="true">↗</span>
               </a>
-              <a className="button button-secondary" href="mailto:baishalya@gmail.com">
+              <a className="button button-secondary" href="mailto:baishalya1999@gmail.com">
                 Email support
               </a>
             </div>
@@ -475,7 +475,7 @@ export default function Home() {
         <div className="footer-links">
           <div><strong>Product</strong><a href="#deleted-messages">Deleted messages</a><a href="#features">Features</a><a href="#privacy">Privacy</a></div>
           <div><strong>Legal</strong><Link href="/privacy-policy">Privacy policy</Link><a href="#faq">FAQ</a></div>
-          <div><strong>Developer</strong><a href="#developer">Developer details</a><a href="https://baisalya.github.io/Baisalya-Roul/" target="_blank" rel="noreferrer">Baisalya ↗</a><a href="mailto:baishalya@gmail.com">Email support</a></div>
+          <div><strong>Developer</strong><a href="#developer">Developer details</a><a href="https://baisalya.github.io/Baisalya-Roul/" target="_blank" rel="noreferrer">Baisalya ↗</a><a href="mailto:baishalya1999@gmail.com">Email support</a></div>
         </div>
         <div className="footer-bottom"><span>© 2026 Baisalya. All rights reserved.</span><span>Made with care for Android.</span></div>
       </footer>

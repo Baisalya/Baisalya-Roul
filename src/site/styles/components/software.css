@@ -1,0 +1,28 @@
+.professional-software { border-top: 1px solid var(--border); background: color-mix(in srgb, var(--bg-elevated) 34%, transparent); }
+.software-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+.software-card { min-width: 0; display: grid; grid-template-columns: minmax(170px,.42fr) minmax(0,.58fr); min-height: 335px; overflow: hidden; border: 1px solid var(--border); border-radius: 22px; background: color-mix(in srgb, var(--bg-elevated) 90%, transparent); box-shadow: var(--shadow-card); transition: transform var(--duration-fast) ease, border-color var(--duration-fast) ease, box-shadow var(--duration-fast) ease; }
+.software-card:hover { transform: translateY(-4px); border-color: var(--border-strong); box-shadow: 0 24px 70px rgba(0,0,0,.16); }
+.software-card--featured { grid-column: 1 / -1; grid-template-columns: minmax(280px,.46fr) minmax(0,.54fr); min-height: 390px; }
+.software-card__visual { position: relative; min-height: 100%; display: grid; place-items: center; overflow: hidden; background: #0a1420; border-right: 1px solid rgba(255,255,255,.08); }
+.software-card__visual::before { content: ''; position: absolute; inset: -20%; background: radial-gradient(circle at 50% 50%, rgba(121,169,255,.24), transparent 45%); }
+.software-card__visual img { position: relative; z-index: 1; width: min(132px,58%); height: auto; max-height: 138px; object-fit: contain; border-radius: 24px; filter: drop-shadow(0 18px 28px rgba(0,0,0,.34)); }
+.software-card--featured .software-card__visual img { width: min(170px,48%); max-height: 175px; }
+.software-card__visual--notivault img { width: 82%; max-height: 170px; object-fit: cover; border-radius: 18px; }
+.software-card__visual--edusheet { background: linear-gradient(145deg,#09182b,#0c2442); }
+.software-card__visual--surveycam { background: linear-gradient(145deg,#06243a,#073858); }
+.software-card__visual--shoppilot { background: linear-gradient(145deg,#11182b,#17213b); }
+.software-card__visual--construction { background: linear-gradient(145deg,#102017,#152d21); }
+.software-status { position: absolute; z-index: 2; left: 14px; bottom: 14px; padding: .42rem .62rem; border: 1px solid rgba(255,255,255,.15); border-radius: 999px; background: rgba(5,12,20,.7); color: #d8e5f3; font: 600 .62rem/1 var(--font-mono); backdrop-filter: blur(10px); }
+.software-status--live { color: #aaf1d3; } .software-status--preview { color: #ffd792; } .software-status--soon { color: #cbd8ff; } .software-status--tool { color: #a8dcff; }
+.software-card__body { display: flex; flex-direction: column; padding: 1.55rem; }
+.software-card__topline { display: flex; justify-content: space-between; gap: 1rem; color: var(--text-soft); font: 500 .62rem/1.2 var(--font-mono); text-transform: uppercase; letter-spacing: .06em; }
+.software-card h3 { margin: 1rem 0 .7rem; font-size: 1.45rem; letter-spacing: -.035em; }
+.software-card p { margin-bottom: 1.15rem; font-size: .87rem; line-height: 1.7; }
+.software-card__links { display: flex; gap: .55rem; flex-wrap: wrap; margin-top: auto; }
+.software-card__links a, .software-link-muted { display: inline-flex; align-items: center; gap: .28rem; padding: .5rem .65rem; border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text); font-size: .7rem; font-weight: 650; text-decoration: none; }
+.software-card__links a:hover { border-color: var(--border-strong); background: var(--surface); }
+.software-link-muted { color: var(--text-soft); }
+.software-card__note { margin: .7rem 0 0 !important; color: var(--text-soft) !important; font-size: .68rem !important; }
+@media (max-width: 1040px) { .software-grid { grid-template-columns: 1fr; } .software-card--featured { grid-column: auto; } }
+@media (max-width: 768px) { .software-card, .software-card--featured { grid-template-columns: 1fr; min-height: 0; } .software-card__visual { min-height: 230px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.08); } .software-card--featured .software-card__visual img { width: 140px; } .software-card__visual--notivault img { max-height: 160px; } }
+@media (max-width: 520px) { .software-card__topline { flex-direction: column; gap: .35rem; } }

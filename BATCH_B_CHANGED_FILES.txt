@@ -1,0 +1,34 @@
+Batch B — Steps 5–7
+
+Added/modified files included in this ZIP:
+- BATCH_B_CHANGED_FILES.txt
+- BATCH_B_DELETED_FILES.txt
+- BATCH_B_REFACTOR_REPORT.md
+- index.html
+- package.json
+- scripts/validate-batch-b.mjs
+- src/site/ARCHITECTURE.md
+- src/site/core/navigation.js
+- src/site/core/theme.js
+- src/site/interactions/reveal.js
+- src/site/main.js
+- src/site/styles/components/about.css
+- src/site/styles/components/contact.css
+- src/site/styles/components/easter-egg-compat.css
+- src/site/styles/components/engineering.css
+- src/site/styles/components/footer.css
+- src/site/styles/components/hero.css
+- src/site/styles/components/navigation.css
+- src/site/styles/components/software.css
+- src/site/styles/foundation/base.css
+- src/site/styles/foundation/tokens.css
+- src/site/styles/layout/shell.css
+- src/site/styles/site.css
+- src/site/styles/utilities/motion.css
+- src/site/utilities/motion.js
+
+Delete these legacy files when applying to Batch A manually:
+- src/site/runtime/legacy-root-runtime.js
+- src/site/styles/components/support-button.css
+- src/site/styles/legacy-root.css
+- src/site/styles/professional-home.css

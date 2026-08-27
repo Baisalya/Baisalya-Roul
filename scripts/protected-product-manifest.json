@@ -1,0 +1,1865 @@
+{
+  "version": 3,
+  "baseline": "Current protected product source snapshot",
+  "protected_roots": [
+    "devdesk",
+    "construction-erp",
+    "EduSheet",
+    "notivault-website",
+    "shoppilot erp",
+    "shoppilot-erp"
+  ],
+  "file_count": 370,
+  "files": [
+    {
+      "path": "construction-erp/_headers",
+      "sha256": "04859325015a5df9c54bf61aad34ad10424911ab022489d3bdee005b85693f03",
+      "bytes": 571
+    },
+    {
+      "path": "construction-erp/.github/workflows/deploy-pages.yml",
+      "sha256": "4d97b84f24e2367bd209427a94e47617b6f3c5b2950841cd206ac895572fc5fd",
+      "bytes": 960
+    },
+    {
+      "path": "construction-erp/.nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "construction-erp/404.html",
+      "sha256": "1b6b751d5342494918cf570c7a2a0da1662ea61cc7e1f42fca577fcc90aab8ee",
+      "bytes": 4214
+    },
+    {
+      "path": "construction-erp/account-deletion.html",
+      "sha256": "84c8d0a1476f1e37e03e6a35bce8c27a8dbb22df740d71a3822e3d1ab8f38b8a",
+      "bytes": 8113
+    },
+    {
+      "path": "construction-erp/assets/css/styles.css",
+      "sha256": "864a2c526fa12e4effc88b7bc2133d7c8517cd77fb66149abf6bb580106224cd",
+      "bytes": 39979
+    },
+    {
+      "path": "construction-erp/assets/icons/favicon.svg",
+      "sha256": "aa1ebfda05097486882bbfdcf597ced098354489db5bf47502bbf70375000479",
+      "bytes": 306
+    },
+    {
+      "path": "construction-erp/assets/images/complete-showcase.webp",
+      "sha256": "297b239972984d67bf60269f0464d0c59ccff30394ab2ce620006abd74e57f3c",
+      "bytes": 177216
+    },
+    {
+      "path": "construction-erp/assets/images/construction-pattern.svg",
+      "sha256": "b5f8f6a461e53720a2ede2e6702321b334b2fe8285c33c237790a8d4553c8ee5",
+      "bytes": 519
+    },
+    {
+      "path": "construction-erp/assets/images/dpr-guide-showcase.webp",
+      "sha256": "5d6fda67a7f52b0a1da13e70c509d442d2faac8fa1f049526e2f8534e8594120",
+      "bytes": 43006
+    },
+    {
+      "path": "construction-erp/assets/images/grid-pattern.svg",
+      "sha256": "e8b3ccf71348740e268e1aa6a02a03205ed6dfac9618b1081643cc106efbf6dd",
+      "bytes": 302
+    },
+    {
+      "path": "construction-erp/assets/images/manual-showcase.webp",
+      "sha256": "cce859725e6ed522377d282af8ade1e04dfd314cf8167597ae94a99a5b196237",
+      "bytes": 41978
+    },
+    {
+      "path": "construction-erp/assets/images/og.png",
+      "sha256": "a0afcafb4aa4dca0cabf14543c4d1c34dbcccc753fbc9ff857451df45187f0d0",
+      "bytes": 1371590
+    },
+    {
+      "path": "construction-erp/assets/images/slide-assets.webp",
+      "sha256": "5d3411b01ef48f8aeaf10b9529c1c9aacd035efa07512fa2815dcbeec2b27690",
+      "bytes": 39328
+    },
+    {
+      "path": "construction-erp/assets/images/slide-dashboard.webp",
+      "sha256": "f249835cd39b8e0227c0a8573cc8d83e2c0bc6f6b3657e8241aa0ab5d9e2be2a",
+      "bytes": 46930
+    },
+    {
+      "path": "construction-erp/assets/images/slide-dpr.webp",
+      "sha256": "ce53edd51c727348a68df213f00dc28282f389cf800d47372a9cabda88a58ad0",
+      "bytes": 22136
+    },
+    {
+      "path": "construction-erp/assets/images/slide-manual.webp",
+      "sha256": "c2df3e656e146af1ce3040410d9a908fe99d1dde7dcb6074a53f8a0d0bc37ebd",
+      "bytes": 31218
+    },
+    {
+      "path": "construction-erp/assets/images/sync-flow.svg",
+      "sha256": "798cfaf0a0060d13535682d9e96d8f539adebe6411a381e8f09b421b14b2ee38",
+      "bytes": 3189
+    },
+    {
+      "path": "construction-erp/assets/images/website-showcase.webp",
+      "sha256": "eb059b39b424a900efd46e8728101d75684d3a3153f9b854b5f0a11712f1e603",
+      "bytes": 93318
+    },
+    {
+      "path": "construction-erp/assets/js/config.js",
+      "sha256": "00c97727ecaeadfa0425f7c7bb551cc2456303fbe76cc17cc9bf94bb91144cc5",
+      "bytes": 895
+    },
+    {
+      "path": "construction-erp/assets/js/runtime-config.js",
+      "sha256": "05ec1288dbe41f7f1257f0a17c3566467e404d6161c070d4f524328bf84ce429",
+      "bytes": 711
+    },
+    {
+      "path": "construction-erp/assets/js/site.js",
+      "sha256": "ba1085a4222825283ba778370a16a0e24f4fc11fe6b1cbae198c8e722ecc4efe",
+      "bytes": 3272
+    },
+    {
+      "path": "construction-erp/configure_and_build.ps1",
+      "sha256": "4fa4a0b89ac4be00a71b2584b3eec12da08d2b0bddbcff6d8e01770018431fec",
+      "bytes": 3061
+    },
+    {
+      "path": "construction-erp/data-safety.html",
+      "sha256": "a62d681d366bc2bfd0b01911b0d19d3a49a9dc42043e4c525ea4788c65443c94",
+      "bytes": 7420
+    },
+    {
+      "path": "construction-erp/DEPLOYMENT.md",
+      "sha256": "163e24405f89e316e16cffc4770e1fc584010019cf7278373556cdc8c6e293a6",
+      "bytes": 1394
+    },
+    {
+      "path": "construction-erp/downloads.html",
+      "sha256": "32c5debf1dc2c145a39c27d09c45f4220af09a8f2eeaaa5c4512b4ef175a9759",
+      "bytes": 8567
+    },
+    {
+      "path": "construction-erp/downloads/android/PUT_ANDROID_RELEASE_HERE.txt",
+      "sha256": "762619ac1c60c1bbff1e66c56f03daaea0c441e124d24b388bcf1137bcd39678",
+      "bytes": 103
+    },
+    {
+      "path": "construction-erp/downloads/windows/PUT_WINDOWS_INSTALLER_HERE.txt",
+      "sha256": "aed984285c199bb2a5e5b29e1a4d2b921b5d8062d73be915bf587d9e2efd5984",
+      "bytes": 96
+    },
+    {
+      "path": "construction-erp/features.html",
+      "sha256": "cee74dc71b0e50f882a8bfd8f6e09be0dd9be2b7e758b2cdfea0eb2a89e01131",
+      "bytes": 12115
+    },
+    {
+      "path": "construction-erp/index.html",
+      "sha256": "23b57dbf2c5b351cbbd7c2c8c7cab908bb1933321f82752359e554f328d9e2b1",
+      "bytes": 17954
+    },
+    {
+      "path": "construction-erp/manifest.webmanifest",
+      "sha256": "8632d45ad3c30223156a565e5c66db2c02651417fd175758e4ea411443be1197",
+      "bytes": 455
+    },
+    {
+      "path": "construction-erp/manual.html",
+      "sha256": "33646ad6a23f21ee2501562eb975d500c9261804e912e03885c1819b6e801bc1",
+      "bytes": 20534
+    },
+    {
+      "path": "construction-erp/netlify.toml",
+      "sha256": "fdb4c3c7925a92875f253fd2273c5da9295623664309bf64a93d82b0ab3192dc",
+      "bytes": 320
+    },
+    {
+      "path": "construction-erp/privacy.html",
+      "sha256": "c473a883d81ff4982452744282b9130a770eb457242afdcb65c6def9d8380b2c",
+      "bytes": 12701
+    },
+    {
+      "path": "construction-erp/README.md",
+      "sha256": "a551f981f7a16b1b983bedb6fe880da188631a57595051e43d5ec745a0152d14",
+      "bytes": 2895
+    },
+    {
+      "path": "construction-erp/robots.txt",
+      "sha256": "0f1cc4dc9fa20446ca1025912fccb9a87d6ad82ddf3e043fbee8374628c0c3d6",
+      "bytes": 82
+    },
+    {
+      "path": "construction-erp/scripts/build_site.py",
+      "sha256": "cd45b49eb05163e98d6700ba07d5e7589f9d9c0ce3b02d7f3457b446e1ddad53",
+      "bytes": 4915
+    },
+    {
+      "path": "construction-erp/scripts/validate_site.py",
+      "sha256": "981a85d24b3f9c5fd236b4d44a1cb182deda3968d605400d7d41990c3d757fa3",
+      "bytes": 4777
+    },
+    {
+      "path": "construction-erp/site.config.example.json",
+      "sha256": "352ccafc3e6dfb0fda70f7b604102174c79e2b4c7f7d08691c0d4af0c7a97e01",
+      "bytes": 757
+    },
+    {
+      "path": "construction-erp/site.config.json",
+      "sha256": "6ac0608b78fb1bfb6a61d75c79e0a5d2a815471328fe663225f52bf6f683d9b5",
+      "bytes": 749
+    },
+    {
+      "path": "construction-erp/sitemap.xml",
+      "sha256": "ea26d440df9a966b46b8605de62a5e28529c2b215210414153195614e75fb026",
+      "bytes": 771
+    },
+    {
+      "path": "construction-erp/src/_headers",
+      "sha256": "c24cc8875743b7e59de20a569db6384a09745fd49cf1e3727ca5e4f56bef4bfd",
+      "bytes": 559
+    },
+    {
+      "path": "construction-erp/src/.nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "construction-erp/src/404.html",
+      "sha256": "18641a6e1e0f7a8d95017d1730581e8f31f0e414f29bd44394c25f80e5004359",
+      "bytes": 4097
+    },
+    {
+      "path": "construction-erp/src/account-deletion.html",
+      "sha256": "833d5329f5abfa782a8be17bd6f3e7f80d9d78b246f5a43aca579f39c0722203",
+      "bytes": 7934
+    },
+    {
+      "path": "construction-erp/src/assets/css/styles.css",
+      "sha256": "dc25928b9219cd0a2fe7e7f5287591ac7bf69c41bfca00d92794e5e4b930bb0b",
+      "bytes": 39948
+    },
+    {
+      "path": "construction-erp/src/assets/icons/favicon.svg",
+      "sha256": "aa1ebfda05097486882bbfdcf597ced098354489db5bf47502bbf70375000479",
+      "bytes": 306
+    },
+    {
+      "path": "construction-erp/src/assets/images/complete-showcase.webp",
+      "sha256": "297b239972984d67bf60269f0464d0c59ccff30394ab2ce620006abd74e57f3c",
+      "bytes": 177216
+    },
+    {
+      "path": "construction-erp/src/assets/images/construction-pattern.svg",
+      "sha256": "5ce103e25a1f0fba07792085cee18a7a91ef189242471713e61910687a30ac57",
+      "bytes": 518
+    },
+    {
+      "path": "construction-erp/src/assets/images/dpr-guide-showcase.webp",
+      "sha256": "5d6fda67a7f52b0a1da13e70c509d442d2faac8fa1f049526e2f8534e8594120",
+      "bytes": 43006
+    },
+    {
+      "path": "construction-erp/src/assets/images/grid-pattern.svg",
+      "sha256": "e8b3ccf71348740e268e1aa6a02a03205ed6dfac9618b1081643cc106efbf6dd",
+      "bytes": 302
+    },
+    {
+      "path": "construction-erp/src/assets/images/manual-showcase.webp",
+      "sha256": "cce859725e6ed522377d282af8ade1e04dfd314cf8167597ae94a99a5b196237",
+      "bytes": 41978
+    },
+    {
+      "path": "construction-erp/src/assets/images/og.png",
+      "sha256": "a0afcafb4aa4dca0cabf14543c4d1c34dbcccc753fbc9ff857451df45187f0d0",
+      "bytes": 1371590
+    },
+    {
+      "path": "construction-erp/src/assets/images/slide-assets.webp",
+      "sha256": "5d3411b01ef48f8aeaf10b9529c1c9aacd035efa07512fa2815dcbeec2b27690",
+      "bytes": 39328
+    },
+    {
+      "path": "construction-erp/src/assets/images/slide-dashboard.webp",
+      "sha256": "f249835cd39b8e0227c0a8573cc8d83e2c0bc6f6b3657e8241aa0ab5d9e2be2a",
+      "bytes": 46930
+    },
+    {
+      "path": "construction-erp/src/assets/images/slide-dpr.webp",
+      "sha256": "ce53edd51c727348a68df213f00dc28282f389cf800d47372a9cabda88a58ad0",
+      "bytes": 22136
+    },
+    {
+      "path": "construction-erp/src/assets/images/slide-manual.webp",
+      "sha256": "c2df3e656e146af1ce3040410d9a908fe99d1dde7dcb6074a53f8a0d0bc37ebd",
+      "bytes": 31218
+    },
+    {
+      "path": "construction-erp/src/assets/images/sync-flow.svg",
+      "sha256": "798cfaf0a0060d13535682d9e96d8f539adebe6411a381e8f09b421b14b2ee38",
+      "bytes": 3189
+    },
+    {
+      "path": "construction-erp/src/assets/images/website-showcase.webp",
+      "sha256": "eb059b39b424a900efd46e8728101d75684d3a3153f9b854b5f0a11712f1e603",
+      "bytes": 93318
+    },
+    {
+      "path": "construction-erp/src/assets/js/runtime-config.js",
+      "sha256": "6dd021f3ad6904ce44402d500199d1a78f4965ae2701e8828d692286643027fc",
+      "bytes": 37
+    },
+    {
+      "path": "construction-erp/src/assets/js/site.js",
+      "sha256": "967ac6af818d0d46060bfa6bebfa1524c88cc1a8b2698a1f46357f5ac68b67d4",
+      "bytes": 3197
+    },
+    {
+      "path": "construction-erp/src/data-safety.html",
+      "sha256": "1aa4d7bfef1c22f31c6fa75fefa2ea623bf079816ba891c10910b61ae5dc5023",
+      "bytes": 7303
+    },
+    {
+      "path": "construction-erp/src/downloads.html",
+      "sha256": "451f5804967c210d2c0fcfd5c1ec29f381745ce0243c947277c90b161668f893",
+      "bytes": 8460
+    },
+    {
+      "path": "construction-erp/src/features.html",
+      "sha256": "c9f473572ae1f37058167c35fbd09592d045ff989bb5b831f73a0b3fbeaef814",
+      "bytes": 11994
+    },
+    {
+      "path": "construction-erp/src/index.html",
+      "sha256": "ae715ee9a4c4bfab04260e919c11c68dcfa4cf87ec2ee93833d6693002627330",
+      "bytes": 17105
+    },
+    {
+      "path": "construction-erp/src/manifest.webmanifest",
+      "sha256": "e773d1a76f0e7fb514460e049f2f66a6fdd3ace19b5b22dd1e05897fd48fb6d4",
+      "bytes": 430
+    },
+    {
+      "path": "construction-erp/src/manual.html",
+      "sha256": "33c0302fecfc118a6736c07ad6b3b852fe5fc3b4ba32f783efea2e5d92742a40",
+      "bytes": 20417
+    },
+    {
+      "path": "construction-erp/src/privacy.html",
+      "sha256": "f65490eb78f5641af864f0a22f3955fd9102f43bdec59aadb9890907fa3419ad",
+      "bytes": 12463
+    },
+    {
+      "path": "construction-erp/src/robots.txt",
+      "sha256": "f0d26488e24b1b21d9068fd434441a4ed6fb13e2f602be5a8f47f3bb4b9273ab",
+      "bytes": 57
+    },
+    {
+      "path": "construction-erp/src/sitemap.xml",
+      "sha256": "3d6d8e8f1a730033c6afaa96845704f17d9c94ca0e245db2a8d9f82b5f80e576",
+      "bytes": 561
+    },
+    {
+      "path": "construction-erp/src/support.html",
+      "sha256": "469bb0eee39ea320156308f915b950ac0bc20e378c3c6e9cf7e7acf9fae817a2",
+      "bytes": 11172
+    },
+    {
+      "path": "construction-erp/src/terms.html",
+      "sha256": "7ac97cbc00b7ca229477d59d1f4080b6d0dfec8a1a81361230d72cfadeca3046",
+      "bytes": 10153
+    },
+    {
+      "path": "construction-erp/STORE_SUBMISSION_CHECKLIST.md",
+      "sha256": "d08ddcbca5a5763053b7f6030e6a4a9bdfd64843d6057f7461b05184d2e3f04d",
+      "bytes": 1301
+    },
+    {
+      "path": "construction-erp/support.html",
+      "sha256": "37e578dc5379d629acc98e0ba680f5230a3c5bd51d268fb1795694c0d6d84b51",
+      "bytes": 11297
+    },
+    {
+      "path": "construction-erp/terms.html",
+      "sha256": "f4ae0652c8fb246c70e3b7a5fb8771c97b6e71ada23e27f11eef8fd2011feef0",
+      "bytes": 10375
+    },
+    {
+      "path": "construction-erp/WEBSITE_CHANGED_FILES.txt",
+      "sha256": "209c9bf307b5ea5d3eb6d8420a6eefdfdf12de92e7124e79b560bc144f8d3337",
+      "bytes": 1135
+    },
+    {
+      "path": "construction-erp/WEBSITE_REFACTOR_REPORT.md",
+      "sha256": "99e37c3f7791af865dae36978d0e19a75ca5ed71b5aa8877c0ba35819d606f4f",
+      "bytes": 736
+    },
+    {
+      "path": "construction-erp/WEBSITE_SURVEY_AND_REFACTOR_REPORT.md",
+      "sha256": "3cad5d7deb7c69f7e8ad9030a7f3d2cc2ad93f030b827d96755f2c3697b163f4",
+      "bytes": 2181
+    },
+    {
+      "path": "devdesk/.openai/hosting.json",
+      "sha256": "f683805be6a211ae0d050a8d4a2fcfbb7626aa5584efab95d9cbb6f8baf184c2",
+      "bytes": 63
+    },
+    {
+      "path": "devdesk/404.html",
+      "sha256": "776ca49af01aa9655493dcb3c39211a852687b2555f2d43138ee19f796f46a16",
+      "bytes": 3329
+    },
+    {
+      "path": "devdesk/assets/audio/devdesk-demo-hi-en.m4a",
+      "sha256": "c1095365e745a0009cb73a9d4aa6b26cb9e4f6853f8bfa2055e84f3b81842b63",
+      "bytes": 5157603
+    },
+    {
+      "path": "devdesk/assets/audio/README.md",
+      "sha256": "275a9836dcf44f654b88b79af7b35f7899490441a75ab780580d51fc9e16baf3",
+      "bytes": 674
+    },
+    {
+      "path": "devdesk/assets/css/styles.css",
+      "sha256": "97231ec1ac18a0169ef70baee4fafc38e42c81ef73ecc2ba30177a2a973e0210",
+      "bytes": 120271
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/AGENTS.md",
+      "sha256": "c819434d512b0d0549c164611beb2f8bfd17ee407b60d51da875c4ea25ec7386",
+      "bytes": 1480
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/docs/AGENT-WORKFLOW.md",
+      "sha256": "a1987e736e0cc3cc0cbb5335ce3300ff219b6eb393541cc27b431c4f52b2efab",
+      "bytes": 1345
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/docs/CONNECT-AN-AGENT.md",
+      "sha256": "f56f73ac3cdaa7b7311ded5d7739bccb44222fe6a691d3b9901bceae189a5f40",
+      "bytes": 1502
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/docs/DEMO-SCRIPT.md",
+      "sha256": "db497b6c6357af88b57f0c4b04e04ad916ca5059ac1b0b6827ebcd34183eecd9",
+      "bytes": 1779
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/GEMINI.md",
+      "sha256": "6db2f4285e4e7238764caafbd8893bf5e7331e4bee96dac0625b362d9bebb6da",
+      "bytes": 678
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/notes/Architecture.md",
+      "sha256": "62df1f3295fd280f6fdfcf00ae8f3cc4feb687ab87324fbcc599b976064f22db",
+      "bytes": 661
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/notes/Product Brief.md",
+      "sha256": "28a795d25bfb43cd9a9bdc46d8a0356858b11a10cf6c393f226e1791e4546e64",
+      "bytes": 778
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/notes/Release Checklist.md",
+      "sha256": "8ca02f416ec0e25131ff2a852d9ba011726e8b2bd6877acf808929f35233ed3c",
+      "bytes": 464
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/project.devdesk",
+      "sha256": "3ded872ff9d7efeaf3c370c9cb5df77902b77b18961c35c430d1a7dc22e28c20",
+      "bytes": 302
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/README.md",
+      "sha256": "1add35c3182d968915ca494aa0699169a96986d3493d972fe87f908fe64dbd37",
+      "bytes": 310
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/src/__pycache__/release_summary.cpython-312.pyc",
+      "sha256": "e93aa0b3c0ef46e87d574361d3e13f25747582fe4ea5635d07c7c1591711c9e8",
+      "bytes": 1564
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/src/release_summary.py",
+      "sha256": "4c9d1217864a5288e1e1bdb8c90484bcbf0dd34a45f05b35920529f833a24a2a",
+      "bytes": 785
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/START-HERE.md",
+      "sha256": "197933b3907fa63a61fcb5cf5f9e53d46d925cdbf25a41311d2691eb8e1e4e45",
+      "bytes": 1267
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/tasks/01-Understand the workspace.md",
+      "sha256": "894d6d185be2e51ea78f193a2c87b283b575adbf9fcfa7fdc23e848e20414f9f",
+      "bytes": 615
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/tasks/02-Add a small feature.md",
+      "sha256": "632be0a065f793c1a7942b4f1885a8ac97c566b110c8fd2d6b529d8afe867e8c",
+      "bytes": 724
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/tasks/03-Review the result.md",
+      "sha256": "7cb351aa1a45967822ab998c186b3a1b348cebe93ef139b6c713945f14ce6170",
+      "bytes": 708
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/tests/__pycache__/test_release_summary.cpython-312.pyc",
+      "sha256": "1c559b353c69d5d9bf45dae843a579ad0d68ec2c248d12e6ab946cb3411ba9f5",
+      "bytes": 1876
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/tests/test_release_summary.py",
+      "sha256": "0c8c9006dde91163b01c8a6db1df0b2ce54e2b097b77658d33c4a24b3eafbc33",
+      "bytes": 786
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-agent-ready-workspace-demo.zip",
+      "sha256": "13eac6d4febff6a7cd4ce5de46a633f3effe0801729f90248626546e91695938",
+      "bytes": 12708
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-tiny-multi-agent-graph-demo.zip",
+      "sha256": "2ec97052cddae7e3a76396e199623e9827b072ce0d3b21b1b5d526dfc02fed09",
+      "bytes": 6879
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-tiny-multi-agent-graph-demo/AGENTS.md",
+      "sha256": "adb0de69da52a456a6959a6e54edb38f1fe4616ccd549c6fab10c7b2b958958b",
+      "bytes": 613
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-tiny-multi-agent-graph-demo/docs/ARCHITECTURE.md",
+      "sha256": "8852f90427536f1d68cfafa5cb1b9356ae097129d3bef6f75693ad74679c2fd4",
+      "bytes": 652
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-tiny-multi-agent-graph-demo/docs/MULTI-AGENT-WORKFLOW.md",
+      "sha256": "ddb4f49a953c3617ce91b71e209dbe67edec36f8216d8443aed71547b185658c",
+      "bytes": 732
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-tiny-multi-agent-graph-demo/docs/PROJECT-BRIEF.md",
+      "sha256": "c7b49f4903e4f0399b69bf11a5249c1fe13f7c268e11e03fa74b473b5f392b80",
+      "bytes": 569
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-tiny-multi-agent-graph-demo/project.devdesk",
+      "sha256": "10813ed2a1c29704871a48fb116fe3a73c8c4fe856cc6e3a97a6927c05fa6442",
+      "bytes": 295
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-tiny-multi-agent-graph-demo/README.md",
+      "sha256": "86b42e02a76b63e30b64b2280a5363f8faf208cdbb9426a18e2421548f3874de",
+      "bytes": 1471
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-tiny-multi-agent-graph-demo/src/__init__.py",
+      "sha256": "51c1d9f66d5a60ab697e6123cfab0a991e0be1e5c6227b7ca571689cc63322b7",
+      "bytes": 43
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-tiny-multi-agent-graph-demo/src/status_summary.py",
+      "sha256": "106b3da3f0a148d2acc6aa96521617a742562b20965f63d637b0dd2d5fd2f954",
+      "bytes": 826
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-tiny-multi-agent-graph-demo/START-HERE.md",
+      "sha256": "a7fd8dfc72224421fcfc54780d01d8ed789f844c8cd3bea9bcea9009bef0e4c7",
+      "bytes": 729
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-tiny-multi-agent-graph-demo/tasks/ADD-PERCENTAGE.md",
+      "sha256": "0faf345583231e06cb08e6d9c052cecdcb0a238ec1bf7d84e4dc0290f3393340",
+      "bytes": 803
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-tiny-multi-agent-graph-demo/tasks/REVIEW.md",
+      "sha256": "50368bd2b8ba7ce03910e7f96fa5743beff6047b539cacf980ccd1aca3f9c141",
+      "bytes": 636
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-tiny-multi-agent-graph-demo/tests/test_status_summary.py",
+      "sha256": "b8852e7f1db4293f7c141e67e6949227b9245b33e8d7a52e60c5f6924b0b3773",
+      "bytes": 636
+    },
+    {
+      "path": "devdesk/assets/img/agent-demo-automation.jpg",
+      "sha256": "6a1719b956edc76df8dbdb4d4a7bcb8d258ef84906043a0c00cde7cc7b26d22d",
+      "bytes": 187263
+    },
+    {
+      "path": "devdesk/assets/img/agent-demo-codex-result-redacted.png",
+      "sha256": "e15f8fc2a681169a9f1d4fc92b42aa5f415dae3cb239f599f54ec622f225854a",
+      "bytes": 1212586
+    },
+    {
+      "path": "devdesk/assets/img/agent-demo-connector-redacted.png",
+      "sha256": "018cc096998b965587550a7fa7b662ce1cb9026c144f95d897250710e768e906",
+      "bytes": 1277499
+    },
+    {
+      "path": "devdesk/assets/img/agent-demo-graph.jpg",
+      "sha256": "ac0b91f570ac34d9467bc95a9ccd569f8f86ee794df1a9a575539cd210b9b633",
+      "bytes": 170486
+    },
+    {
+      "path": "devdesk/assets/img/api.png",
+      "sha256": "aeaaa7b7efb9ac74c069d16f0d54bfa61f7a986eda0eae3b1ce09b44dc811c2f",
+      "bytes": 13741
+    },
+    {
+      "path": "devdesk/assets/img/dashboard-reference.jpg",
+      "sha256": "f61c31824f8d369b93e02417b89fec3ad2b810a745114b2e930f8d89dd87e048",
+      "bytes": 218732
+    },
+    {
+      "path": "devdesk/assets/img/devdesk-logo-128.png",
+      "sha256": "9194e5d385505d8128c4b8abac1e6f76488d12c84e3c1fa87de8cfd39d2f9175",
+      "bytes": 19143
+    },
+    {
+      "path": "devdesk/assets/img/devdesk-logo-16.png",
+      "sha256": "36bba8c31e7ea534947682d95ab5e82ee4dd266cb2b7e2ba1ba990d9da470c25",
+      "bytes": 692
+    },
+    {
+      "path": "devdesk/assets/img/devdesk-logo-192.png",
+      "sha256": "f7306bf4be7a5b4c414440e5e7d1442e2beefcacbd650c3ee0c06119dd344655",
+      "bytes": 39702
+    },
+    {
+      "path": "devdesk/assets/img/devdesk-logo-24.png",
+      "sha256": "2572f4c7d863ad5656043fd4995cdd119b5e3328f337b7dc5bbd2640a958ccf6",
+      "bytes": 1238
+    },
+    {
+      "path": "devdesk/assets/img/devdesk-logo-256.png",
+      "sha256": "a4f8462484a694489f4b03177bb4fb8508a47461f56553c5c7bfc6c9fab10382",
+      "bytes": 69282
+    },
+    {
+      "path": "devdesk/assets/img/devdesk-logo-32.png",
+      "sha256": "0f3fa25ec765d6f2d52e3bb4f128a89dc86356150ddb26ae582b7799b5ead9d2",
+      "bytes": 1939
+    },
+    {
+      "path": "devdesk/assets/img/devdesk-logo-48.png",
+      "sha256": "dc3e2d434f67501cd79d7208600255afeaaa344ef504ad6942cd505b0d53858b",
+      "bytes": 3697
+    },
+    {
+      "path": "devdesk/assets/img/devdesk-logo-512.png",
+      "sha256": "b45392abf0da432dfb441f34d09d515c86b4f08c6303858d33a7b390183476a1",
+      "bytes": 275112
+    },
+    {
+      "path": "devdesk/assets/img/devdesk-logo-64.png",
+      "sha256": "3612994c7ea2f32b68beec43c7328167909a41c9cf12c7e794d6b8412ee7b15c",
+      "bytes": 5920
+    },
+    {
+      "path": "devdesk/assets/img/devdesk-logo-master.png",
+      "sha256": "9878e0236ab97e6b28d641507da712e5c4ded1e3d42fe1700f345febfcf470da",
+      "bytes": 1243467
+    },
+    {
+      "path": "devdesk/assets/img/devdesk-model-arms-crossed.png",
+      "sha256": "6e76c1b663ed5ae25648d908e128a18c9b63dfb1fdf0af89419b516192b10a6a",
+      "bytes": 1280929
+    },
+    {
+      "path": "devdesk/assets/img/devdesk-model-confident.png",
+      "sha256": "b2b786a096cf961b5dfdb4a19201af602f523fd969f014d25d864d3dc395612d",
+      "bytes": 666457
+    },
+    {
+      "path": "devdesk/assets/img/devdesk-model-standing.png",
+      "sha256": "8aea178680013c0c9c128f3f5b302a1d7f2a27cb69978523b54c5dc550f5e12e",
+      "bytes": 763468
+    },
+    {
+      "path": "devdesk/assets/img/devdesk-model-thoughtful.png",
+      "sha256": "0e566fe48ebfef728bddfc98b5b13b554140021b6e27998c4de739eb159f4992",
+      "bytes": 616601
+    },
+    {
+      "path": "devdesk/assets/img/devdesk-social-2026.png",
+      "sha256": "c7ef0948825fc0fe7dc45ba95430bb8666ade5b186c1c7bea8386857abdf8223",
+      "bytes": 1474078
+    },
+    {
+      "path": "devdesk/assets/img/devdesk-social-visual-manual-2026.png",
+      "sha256": "d339a32d553bbbb35758c19bf95add9be47c0f9bd18ea91205ae2685e0799716",
+      "bytes": 1306248
+    },
+    {
+      "path": "devdesk/assets/img/devdesk-tiny-multi-agent-graph-demo-poster.jpg",
+      "sha256": "ede919a671db89c4b38772dd8a83f9b167989eb83bd4a645df250fe2a28808ba",
+      "bytes": 75106
+    },
+    {
+      "path": "devdesk/assets/img/devdesk-workspace-banner.webp",
+      "sha256": "1d63226d0e635451026a3810fc92f27feea335e70295545d0b50e0b8ac43ab37",
+      "bytes": 149884
+    },
+    {
+      "path": "devdesk/assets/img/graph-reference.jpg",
+      "sha256": "97daf670f856d05c607bbd49845a83d0fe10b38dcad778781b4c43ef4ed56bb6",
+      "bytes": 143770
+    },
+    {
+      "path": "devdesk/assets/img/knowledge.png",
+      "sha256": "3c0a034883ed2c8a03704b24d690c9e46b15f59a732e4739dc24a23e449cd943",
+      "bytes": 18024
+    },
+    {
+      "path": "devdesk/assets/img/manual.png",
+      "sha256": "172745ed2e906e4f6d7c038e983502aff4589c0fa8015cb7f9c74b7f11359986",
+      "bytes": 15225
+    },
+    {
+      "path": "devdesk/assets/img/privacy.png",
+      "sha256": "539fec89b53e92c443a4c12e7891c07ad6cfeddb5b616987de5c0f6f3da5eb75",
+      "bytes": 14579
+    },
+    {
+      "path": "devdesk/assets/img/structured-knowledge.png",
+      "sha256": "4ce66fad4a0bb7c4efcfbb32a4df14e62a71d712c439c118c3d05c9911aa3e8b",
+      "bytes": 6095
+    },
+    {
+      "path": "devdesk/assets/img/welcome.png",
+      "sha256": "62efdb045ebcd2f2f0105babc0ba30df9d3458c4e3767a1d3564a3c1173d6a5a",
+      "bytes": 14782
+    },
+    {
+      "path": "devdesk/assets/js/app.js",
+      "sha256": "a7fc2f22c48a5ff4f2102439b15f735ada066bc6d5508f5f9017f95dbcc71ab7",
+      "bytes": 17005
+    },
+    {
+      "path": "devdesk/assets/js/manual-visuals.js",
+      "sha256": "829019542b2c4df004643736f75e756e2543381dc7bdee54d9c4b1dab99a370f",
+      "bytes": 22320
+    },
+    {
+      "path": "devdesk/assets/js/marketing-model.js",
+      "sha256": "bab05f9da7a9bc1843697a0777b64ad55e326223caa07ee1fa83e2878a7106f2",
+      "bytes": 2439
+    },
+    {
+      "path": "devdesk/assets/js/search-index.js",
+      "sha256": "9472791a8f6c666bf9710fcef6862f901f398acde45352fe7fac1057f8a53301",
+      "bytes": 258415
+    },
+    {
+      "path": "devdesk/assets/js/site-config.js",
+      "sha256": "f2da0ea8fc8185827732d6e2bb1f4de086bdb8b166454847d4d65016f0d18bfc",
+      "bytes": 1265
+    },
+    {
+      "path": "devdesk/assets/js/support-assistant.js",
+      "sha256": "37bfe1f1fb3bab6d4dc9fe24c4fe192bd032b4fc397c9d5cb85ef02e96ed474d",
+      "bytes": 21006
+    },
+    {
+      "path": "devdesk/assets/media/devdesk-tiny-multi-agent-graph-demo.mp4",
+      "sha256": "6169b92acb65f77da75b80ac2930f3c59ea60b18805a755a804d1e898b9b4097",
+      "bytes": 9136134
+    },
+    {
+      "path": "devdesk/BRANDING_AND_LINKS_REPORT.md",
+      "sha256": "1dd59f7d8375e1f2937ae06efbc6bcbf7423420cf57a95cdc22d60b8cc8570c4",
+      "bytes": 2904
+    },
+    {
+      "path": "devdesk/BUILD_REPORT.md",
+      "sha256": "f9abf44efba79d74127bddb84ba94816df5fdfe3736f181b0ffef7bf44efd9e4",
+      "bytes": 2623
+    },
+    {
+      "path": "devdesk/content/agent-connector.md",
+      "sha256": "01e0ab1bb7db5a309ed4d940cc92fa1cab76ca3f2e346b25efee64c483a62dc6",
+      "bytes": 22614
+    },
+    {
+      "path": "devdesk/content/ai-workbench.md",
+      "sha256": "e2650ca9baafde57d8f7575d90dd1f2a20ee4df3305620f632e9c9f408215867",
+      "bytes": 11738
+    },
+    {
+      "path": "devdesk/content/api-assertions-extraction.md",
+      "sha256": "86b32dcb77ba4945a80416628eed4659d73ebde61576e6178d76969e14f59368",
+      "bytes": 6265
+    },
+    {
+      "path": "devdesk/content/api-environments-secrets.md",
+      "sha256": "db4223cefe952d38c50b0ed1561641b80c942946fa85f558d64bf171f9a27e41",
+      "bytes": 6735
+    },
+    {
+      "path": "devdesk/content/api-workspaces.md",
+      "sha256": "442d2637f544e19c85e737117f13006691c4a1fe8ef7dfde2bd3f94da00dde1f",
+      "bytes": 13456
+    },
+    {
+      "path": "devdesk/content/backup-restore.md",
+      "sha256": "615ede0eacea91910ca886c44515ef71a42058874b5a136713a49a7c4dd414ad",
+      "bytes": 3730
+    },
+    {
+      "path": "devdesk/content/base64.md",
+      "sha256": "f70ff6b4146a32835f7542fc696c0a1425d71c1cbc778ffdcd5681d42b1b0c69",
+      "bytes": 689
+    },
+    {
+      "path": "devdesk/content/developer-workspaces.md",
+      "sha256": "fc4b88883833c5de15ad48d745d0412a8016f24e9710cd522b070232760496cd",
+      "bytes": 14318
+    },
+    {
+      "path": "devdesk/content/diagram-studio.md",
+      "sha256": "ce552b0ff31fc3a8c17e63e3cf931ab9095e487a80c72cdd0f4762e2578869a5",
+      "bytes": 5204
+    },
+    {
+      "path": "devdesk/content/diff-git.md",
+      "sha256": "9c43cc29b3a53bc35c3a52926808324d0d8d1aef9b3aa136b11dcb41b9613dcc",
+      "bytes": 6370
+    },
+    {
+      "path": "devdesk/content/downloads-installation.md",
+      "sha256": "b82a7447d2f7fec73d268ec00bb63a132814c268ff7c529565d5dcc4013e5935",
+      "bytes": 2962
+    },
+    {
+      "path": "devdesk/content/faq.md",
+      "sha256": "943c021ffab996d46d7d1d0a31e0692bdfa3786e96eb928686613dc2f19659f4",
+      "bytes": 7176
+    },
+    {
+      "path": "devdesk/content/frontmatter-properties.md",
+      "sha256": "a7fea8e7af8d89a1e04eb7dba567baf2af84b6b9631990fd52190210a5c701c7",
+      "bytes": 1629
+    },
+    {
+      "path": "devdesk/content/getting-started.md",
+      "sha256": "2f2cd042970467dc6ffdb28785918fbe6d0c6bfa07f0fe0314d9d709552311bf",
+      "bytes": 8383
+    },
+    {
+      "path": "devdesk/content/graph-connection-editing.md",
+      "sha256": "8494f31059bf338ae74b9ee88a33b36cbb87d7fd71da7b905f4d3114d258cdd7",
+      "bytes": 1898
+    },
+    {
+      "path": "devdesk/content/interface-tour.md",
+      "sha256": "60b203600e7556118bd47b0ca27554a447b995f70dc2ce4c0d6418a4ae37ff59",
+      "bytes": 2392
+    },
+    {
+      "path": "devdesk/content/json-tools.md",
+      "sha256": "7d8ec59097148c2059569827154b3494a78d9a5929c624389d781d43dad05147",
+      "bytes": 1768
+    },
+    {
+      "path": "devdesk/content/jwt-decoder.md",
+      "sha256": "98108f1b41ef359722b354eaa5a5254af6ac15b8795d4df2ec208544910c23c6",
+      "bytes": 1009
+    },
+    {
+      "path": "devdesk/content/keyboard-shortcuts.md",
+      "sha256": "42fbe4a4a482dcca89d466772b9f54854c84b73d7cace458b4ac6927acaa64e9",
+      "bytes": 1422
+    },
+    {
+      "path": "devdesk/content/knowledge-graph.md",
+      "sha256": "6e3874201b2238280f1b73f40a763f3d1ede6cc17860a6ca3093aca4554c2028",
+      "bytes": 6980
+    },
+    {
+      "path": "devdesk/content/knowledge-workspace.md",
+      "sha256": "90fc4c4c75d3926e31ba710f947b1cc01197d910a0d12ed8cebef58bfad4d8aa",
+      "bytes": 2179
+    },
+    {
+      "path": "devdesk/content/links-backlinks-nodes.md",
+      "sha256": "d4cca634578d85e43b802008d256d6eed790fc0240e288dfa2dd5ee8111a7e6e",
+      "bytes": 3169
+    },
+    {
+      "path": "devdesk/content/markdown-basics.md",
+      "sha256": "01cf32611244f431e71c857af26a153e9474d7cd6698adc3454356481e2d3292",
+      "bytes": 1453
+    },
+    {
+      "path": "devdesk/content/markdown-editor.md",
+      "sha256": "52b312e6951ebeaefba38a5ccd6bd02d251eb9ee22e56db7c405aa4e1f9facb3",
+      "bytes": 1771
+    },
+    {
+      "path": "devdesk/content/markdown-vault.md",
+      "sha256": "51f5447f4a0d34cd51624409a7179169f054a8cea51fd9ef6028e13a282b13f3",
+      "bytes": 1521
+    },
+    {
+      "path": "devdesk/content/notifications-routines.md",
+      "sha256": "624a6f7298ed0355fd867a2cf558d12947558d9c4cf734379b20aa3546e7ea2c",
+      "bytes": 2730
+    },
+    {
+      "path": "devdesk/content/okf-attested-computation.md",
+      "sha256": "8d78dd82d438608b21b5b65973c5da935147f929571f9b08d119df498f1e3c37",
+      "bytes": 4235
+    },
+    {
+      "path": "devdesk/content/okf-bundle-structure.md",
+      "sha256": "aff38b7df286f987c43349624dd3f5711dd4792cafbeb5494c1bd1065541f684",
+      "bytes": 3668
+    },
+    {
+      "path": "devdesk/content/okf-concepts-metadata.md",
+      "sha256": "002998c9aa67e8c9e3ca2febf8bc92518313c5b06a97cd5cf86003f0dde01704",
+      "bytes": 4486
+    },
+    {
+      "path": "devdesk/content/okf-conversion-migration.md",
+      "sha256": "1afbee1afdff08eb01b57c97fad0ee851375f734304555917c17ac915f62f124",
+      "bytes": 4957
+    },
+    {
+      "path": "devdesk/content/okf-trust-sources-lifecycle.md",
+      "sha256": "b3fdeb26e8a13032ba08dd32bb2a513afac1fcad67a3f1eee3c8cb78f1734d6a",
+      "bytes": 4395
+    },
+    {
+      "path": "devdesk/content/openapi-studio.md",
+      "sha256": "b925ab6d0845f4a0b774dafd52dd31b97e1dbba1b2168d1e4f69ffb32695882e",
+      "bytes": 5731
+    },
+    {
+      "path": "devdesk/content/privacy-security.md",
+      "sha256": "cb3fb24dafc2d99e091b05819b00177c7e75b87093b05aae68a27af3973db698",
+      "bytes": 6652
+    },
+    {
+      "path": "devdesk/content/project-folder-structure.md",
+      "sha256": "808ec2c4a040539ce73803001a3798896e2348cc2affe7ceec3f495cbe49b3d5",
+      "bytes": 2062
+    },
+    {
+      "path": "devdesk/content/quick-api.md",
+      "sha256": "7bdf5643bb813db939d65dfc63fe2d5a33a9a3dea53724a33322ccfccdfb64a3",
+      "bytes": 4119
+    },
+    {
+      "path": "devdesk/content/readme-generator.md",
+      "sha256": "783c8b08a203a71161dfa441ce5615d0bb63dceb081f3415bc19188b8dce0b82",
+      "bytes": 1097
+    },
+    {
+      "path": "devdesk/content/regex-tester.md",
+      "sha256": "8890694e13159b8c975108415478c9ac6ae21396b063a7d0d8f70e61f1191e3e",
+      "bytes": 1298
+    },
+    {
+      "path": "devdesk/content/settings-appearance.md",
+      "sha256": "2f973624dd3b8d2aaa3ae03a2b5bdb43dde92a65895292cccec18f7d84adc95f",
+      "bytes": 3957
+    },
+    {
+      "path": "devdesk/content/snippets-notes.md",
+      "sha256": "c4b396b6d58e4385566e5ac79439d7a47e0e16ac87a4dded6a551080d4dcdba5",
+      "bytes": 921
+    },
+    {
+      "path": "devdesk/content/structured-knowledge-okf.md",
+      "sha256": "138e81335d07f3f2c6ded9f3c35f66391043c1195920c5b81f802b97c7454463",
+      "bytes": 8163
+    },
+    {
+      "path": "devdesk/content/structured-views.md",
+      "sha256": "6755684bda91c35ea796bbf8ea5a7bd11f1d64745242c03737301a75ea9fa8e0",
+      "bytes": 1799
+    },
+    {
+      "path": "devdesk/content/timestamp.md",
+      "sha256": "ad73d4ac5bac3ff859c3f2ca2e55ff474e2af9c823fffd773ce445705105f805",
+      "bytes": 825
+    },
+    {
+      "path": "devdesk/content/troubleshooting.md",
+      "sha256": "40d0f88b348a9fbc0df05f3ad20d11a87cf365606ab3e17802ef57d4d39e0d16",
+      "bytes": 6907
+    },
+    {
+      "path": "devdesk/content/unified-search.md",
+      "sha256": "babb5b3c7df934076c81cfa28f04b00ce74d7c4a35facd7a7092af7bcc24c6d0",
+      "bytes": 1141
+    },
+    {
+      "path": "devdesk/content/url-tools.md",
+      "sha256": "5ea5f2c376e2c2ec6ad3769e42a72e84e0fa57b426e13e799ac58525fe83b715",
+      "bytes": 986
+    },
+    {
+      "path": "devdesk/content/user-manual.md",
+      "sha256": "8fb432afcde6a6bdad99cbb1d4edc74eb740717e35df020e1243794959ab36d9",
+      "bytes": 54420
+    },
+    {
+      "path": "devdesk/content/uuid.md",
+      "sha256": "332341f2029c828b141e5072e2e052c8ac79929acd219ce4e85fbd375011c3b2",
+      "bytes": 621
+    },
+    {
+      "path": "devdesk/content/visual-canvas.md",
+      "sha256": "244116bcd31b24ef71aea9caf432d9cb1509e47894df26790cae6dbaa3a43330",
+      "bytes": 1718
+    },
+    {
+      "path": "devdesk/content/visual-feature-guide.md",
+      "sha256": "7792e3f131225739a951f3825ebcafc716de044b8ec4d78ddcf442938c6712cf",
+      "bytes": 10324
+    },
+    {
+      "path": "devdesk/content/workspace-workbench.md",
+      "sha256": "eed74e39ea323bfe9a5e5ff19b9abc21cecf2b060d572ae1a6ad46b130d6d76b",
+      "bytes": 5884
+    },
+    {
+      "path": "devdesk/DOCUMENTATION_AUDIT_2026-08-13.md",
+      "sha256": "a82e9af2c929b613e4cbb6594eeaf9521c25107a295988cf02718cdbfa0d17ff",
+      "bytes": 3204
+    },
+    {
+      "path": "devdesk/DOCUMENTATION_COVERAGE_MATRIX.md",
+      "sha256": "1c11a5fefd13a693d48a0df7aaa6379c846a70cfa12f6a5d659a0f482aa0e53e",
+      "bytes": 10631
+    },
+    {
+      "path": "devdesk/downloads.html",
+      "sha256": "9e6d12aae853193de5b2368423d7f7782fb85fe132da76f104dfda72219d09c1",
+      "bytes": 24516
+    },
+    {
+      "path": "devdesk/FEATURE_INVENTORY.md",
+      "sha256": "4cdddfbb2c7757e035f17389a2cb6ba7e90ad6c949eb0f2366748f8f727b49e7",
+      "bytes": 4223
+    },
+    {
+      "path": "devdesk/index.html",
+      "sha256": "66a87a60f22533111ca1e479a87aef69a8af9dfb4bec519d9674afd39b85f69f",
+      "bytes": 38648
+    },
+    {
+      "path": "devdesk/MANUAL_TABLE_OF_CONTENTS.md",
+      "sha256": "a65c23446cd945d0e0c671f79fd3dfb9159e2cde8d6be090da35f2d51f5170e5",
+      "bytes": 1302
+    },
+    {
+      "path": "devdesk/manual/agent-connector.html",
+      "sha256": "3e1c8a504aad2379d6792da2098e0c41b052900a05bb0bbec4670bde1e102b85",
+      "bytes": 42592
+    },
+    {
+      "path": "devdesk/manual/ai-workbench.html",
+      "sha256": "c242d72fbaaae5ccb5b58c929454b50ef73cf3fdbf7b1be7128fb0b9c2bf46d4",
+      "bytes": 26181
+    },
+    {
+      "path": "devdesk/manual/api-assertions-extraction.html",
+      "sha256": "18949b6424275d7c957d16d5879eb65822f2b1a701a167b54b966c7a7783f733",
+      "bytes": 20348
+    },
+    {
+      "path": "devdesk/manual/api-environments-secrets.html",
+      "sha256": "a31a21002d22db2ae85557d224c261f77aa6ee83d5ece1a7c7ebd981b5297c9d",
+      "bytes": 21373
+    },
+    {
+      "path": "devdesk/manual/api-workspaces.html",
+      "sha256": "e7eaf89cf9754e8770caf860263249839c2040c6a149d1b52009dfeb4bb67acf",
+      "bytes": 30767
+    },
+    {
+      "path": "devdesk/manual/backup-restore.html",
+      "sha256": "fe8d5c2de0cae721ef7f24a1d5b5a4bc834ca2e9a43f9b84027a149997ede45a",
+      "bytes": 15013
+    },
+    {
+      "path": "devdesk/manual/base64.html",
+      "sha256": "79811be492207566bf4ddfc45200ad4922bbf935956f5b3caf1f7f86fb8e313a",
+      "bytes": 10698
+    },
+    {
+      "path": "devdesk/manual/developer-workspaces.html",
+      "sha256": "ac522e285b2771921a3447c606b7ce1b92ce273315e3acbae0335cc95dfb6e9b",
+      "bytes": 29647
+    },
+    {
+      "path": "devdesk/manual/diagram-studio.html",
+      "sha256": "2aae484440e1df377358e82d6ced5966e4ec2988c5cf47cb3a22ccc0c2331133",
+      "bytes": 16938
+    },
+    {
+      "path": "devdesk/manual/diff-git.html",
+      "sha256": "7696a63bf971541979807fc703a97a246305fa284e3443e4a2bd821da117ad45",
+      "bytes": 18224
+    },
+    {
+      "path": "devdesk/manual/downloads-installation.html",
+      "sha256": "4d299f88e98f3a798e4991404d77785978b23042a5b90272db01c8213bb96fff",
+      "bytes": 13705
+    },
+    {
+      "path": "devdesk/manual/faq.html",
+      "sha256": "52f7d702788b096e32c9ba70dced6e340355e24dbd55fdfb715ff9919fee0206",
+      "bytes": 24276
+    },
+    {
+      "path": "devdesk/manual/frontmatter-properties.html",
+      "sha256": "8b72f1d4df869286815f9778999d6017bb1d5145dbd078fdbf21110b13cd6390",
+      "bytes": 12465
+    },
+    {
+      "path": "devdesk/manual/getting-started.html",
+      "sha256": "66984fceb039c7122d95e646dcabae6c08affbc004fde3fa11fd23bc1f5c41d8",
+      "bytes": 22318
+    },
+    {
+      "path": "devdesk/manual/graph-connection-editing.html",
+      "sha256": "4382bfc776527b0a399718ce245afbfff716c159ef6d66b3c7a156e7404289e0",
+      "bytes": 12431
+    },
+    {
+      "path": "devdesk/manual/index.html",
+      "sha256": "cf50c08bed47e0d5c067c5c469eeb3b0b5e80e65a55532f133aba134b5943b6a",
+      "bytes": 175
+    },
+    {
+      "path": "devdesk/manual/interface-tour.html",
+      "sha256": "f2b256882c8b727d18e8c2a87722bfa8e6ffe7e2daa242284b4f542cbb15a75b",
+      "bytes": 13241
+    },
+    {
+      "path": "devdesk/manual/json-tools.html",
+      "sha256": "4d3797d1091f9c0a05986df1616a9d355eeba129e2f4f9fd19d608c65d1a04a4",
+      "bytes": 12654
+    },
+    {
+      "path": "devdesk/manual/jwt-decoder.html",
+      "sha256": "c049ca4ca1538d2cb8ad0793a753397d73c41f56421c6d9831601dce1f194cf1",
+      "bytes": 10983
+    },
+    {
+      "path": "devdesk/manual/keyboard-shortcuts.html",
+      "sha256": "28cdc5aa742de1c54db11d8d1ba10b64641beb010749da3407f31b6da6f450df",
+      "bytes": 11731
+    },
+    {
+      "path": "devdesk/manual/knowledge-graph.html",
+      "sha256": "fbcd258542043ca70836191171c090a12e3fbd9ed7caa425769f4dd85856efd6",
+      "bytes": 19737
+    },
+    {
+      "path": "devdesk/manual/knowledge-workspace.html",
+      "sha256": "e63501da8e4dc0bc2080674616a6c6106e7b2a3a7c4aa903750d35f40673a470",
+      "bytes": 13086
+    },
+    {
+      "path": "devdesk/manual/links-backlinks-nodes.html",
+      "sha256": "37155a6669e851046e15d762507755cb44db61a8284958ad8af61930719ad005",
+      "bytes": 14076
+    },
+    {
+      "path": "devdesk/manual/markdown-basics.html",
+      "sha256": "7dfd8d833b8068986f136231345084a543cced61171fba7feda1866a230ac78a",
+      "bytes": 12180
+    },
+    {
+      "path": "devdesk/manual/markdown-editor.html",
+      "sha256": "19878f1e282524bc0da4b0955cbc0f59267417a8e51c5fd2d1ba6f3275700a57",
+      "bytes": 12823
+    },
+    {
+      "path": "devdesk/manual/markdown-vault.html",
+      "sha256": "3c47198059ed541b47ef75e32e75408450da28c6eb90fba49a7e900cb5c68b31",
+      "bytes": 12336
+    },
+    {
+      "path": "devdesk/manual/notifications-routines.html",
+      "sha256": "3a9aa61253b3072c64ff1f5631c4c17319118fcab1217bcd6e72a705ac8700c1",
+      "bytes": 13490
+    },
+    {
+      "path": "devdesk/manual/okf-attested-computation.html",
+      "sha256": "ab8575c148e96c4ddd9725e58763c2b5b65e122026ff595b2a1f9d061c773fdb",
+      "bytes": 16051
+    },
+    {
+      "path": "devdesk/manual/okf-bundle-structure.html",
+      "sha256": "d9694236d7ba364e5958d67773b2b8d2e51fdbf2c79e2e461756dd93f5bbee32",
+      "bytes": 15253
+    },
+    {
+      "path": "devdesk/manual/okf-concepts-metadata.html",
+      "sha256": "0d69adb17c047ccf5f27ef61e70487de4104c2e044af91dd4fa0080d11291732",
+      "bytes": 16959
+    },
+    {
+      "path": "devdesk/manual/okf-conversion-migration.html",
+      "sha256": "d10077e6b95332054fc418934d8eba96eb1200bbbfe39f2cf9eb8178b3595724",
+      "bytes": 18532
+    },
+    {
+      "path": "devdesk/manual/okf-trust-sources-lifecycle.html",
+      "sha256": "c24e720deb878038c465b0deef615f23e3d71d55948c348fe34f482fadeae055",
+      "bytes": 16564
+    },
+    {
+      "path": "devdesk/manual/openapi-studio.html",
+      "sha256": "9a9839c2f56a403af7c2308f67e311e4202d8fba596c317e9d41bbf9e4a5194a",
+      "bytes": 18403
+    },
+    {
+      "path": "devdesk/manual/privacy-security.html",
+      "sha256": "cf0e9c682a6bdaddfef759e6a15c255b44d51b7032fc2a81bbcdca797b004e3c",
+      "bytes": 18332
+    },
+    {
+      "path": "devdesk/manual/project-folder-structure.html",
+      "sha256": "590b2e6dfdc400e30e3c9dcbb10ca0680f98b9c32cf16933d80d2c722e440718",
+      "bytes": 12461
+    },
+    {
+      "path": "devdesk/manual/quick-api.html",
+      "sha256": "ae60704eb2aae5885d83103190ea67da6b8552ef2a4d59ca16bc905b98290ea9",
+      "bytes": 17657
+    },
+    {
+      "path": "devdesk/manual/readme-generator.html",
+      "sha256": "ef5940851a104b9bd4b64fe364a3ae2ddbecab771e7c0743ec95fa674ea5b908",
+      "bytes": 11363
+    },
+    {
+      "path": "devdesk/manual/regex-tester.html",
+      "sha256": "67971fffc2689c728ab6e196001d632e7314a179d31a4c06e163fe9a5ed787a1",
+      "bytes": 11696
+    },
+    {
+      "path": "devdesk/manual/settings-appearance.html",
+      "sha256": "19586da8785bdd614e05d4e7cad7893f1da2d2d28e82b1b8aded9f84b4d7064f",
+      "bytes": 14890
+    },
+    {
+      "path": "devdesk/manual/snippets-notes.html",
+      "sha256": "57ee02ddadcf2a00d1b0cc5e4f26144a9411aa4abeea44f146fd167a725afba8",
+      "bytes": 11189
+    },
+    {
+      "path": "devdesk/manual/structured-knowledge-okf.html",
+      "sha256": "67920bf217bb3669c01688103e4270e69b4f3b0130791342a5690e1f75ca02ac",
+      "bytes": 21898
+    },
+    {
+      "path": "devdesk/manual/structured-views.html",
+      "sha256": "72c38e76c7805ad8baea2166b27d3d2329a1ea6fb30d06700430345f01d97f69",
+      "bytes": 12128
+    },
+    {
+      "path": "devdesk/manual/timestamp.html",
+      "sha256": "d5d3c9a28d0e0ed18253b2334a5dd103963bb762bf09dc3b1d7b9d0ce00690b5",
+      "bytes": 10853
+    },
+    {
+      "path": "devdesk/manual/troubleshooting.html",
+      "sha256": "074cd47901a77893eb69feef5d835711d727ed9fa05cb88f23fd67ade5994ad1",
+      "bytes": 20168
+    },
+    {
+      "path": "devdesk/manual/unified-search.html",
+      "sha256": "03440c88ec660b38e3c0526b584b1f2056ede9f12c81779bde7e1c568f19fe45",
+      "bytes": 11076
+    },
+    {
+      "path": "devdesk/manual/url-tools.html",
+      "sha256": "6620149b5db4dba976c9fda45bc895bc14f33ba4148c7d9f1cc58e55b230bcba",
+      "bytes": 11035
+    },
+    {
+      "path": "devdesk/manual/user-manual.html",
+      "sha256": "1198005d3204ccbb910d7e97cc4e3edebcb99b7b96d63d89c936218997d8a445",
+      "bytes": 98247
+    },
+    {
+      "path": "devdesk/manual/uuid.html",
+      "sha256": "880fa6d98b939c7ab01f552dfb8e7be6b698127f5865a1daac69ec6f1b53768a",
+      "bytes": 10595
+    },
+    {
+      "path": "devdesk/manual/visual-canvas.html",
+      "sha256": "b5446b0e9ea5bf2d2f6caba826438807c2a4e1525fba0ada71fe363c65a8b72e",
+      "bytes": 11756
+    },
+    {
+      "path": "devdesk/manual/visual-feature-guide.html",
+      "sha256": "c760affce35cde6230bbb5198445fe84c7585ea92bcd3007cb257aa3e0da8f6f",
+      "bytes": 24733
+    },
+    {
+      "path": "devdesk/manual/workspace-workbench.html",
+      "sha256": "b8b67c4f19c206e785ee46af80c4918feb58e6ee37bc77ff931688e23c02fb3e",
+      "bytes": 17661
+    },
+    {
+      "path": "devdesk/privacy-policy.html",
+      "sha256": "7206e1436de7b05ea5fcc37847a7bb64b6ace975f0908ca69ca756418e1f9200",
+      "bytes": 18385
+    },
+    {
+      "path": "devdesk/PRODUCT_POSITIONING.md",
+      "sha256": "8c92767c68a566899c6cd376b03eba44d99410a5de4b113d5206e15d81c657c4",
+      "bytes": 7253
+    },
+    {
+      "path": "devdesk/README.md",
+      "sha256": "7d9645cac0f23a48a4babdd0a383f7d1ecc4d7f2f5788d61427f6e6480a56202",
+      "bytes": 5332
+    },
+    {
+      "path": "devdesk/releases.json",
+      "sha256": "4d38a37cefee75fbadd5427e3a6f5e7e903d596a0bf9cc589251c35ab6f395bd",
+      "bytes": 3186
+    },
+    {
+      "path": "devdesk/robots.txt",
+      "sha256": "8b4604163be349c76612d805e2f6034635904904b855bc5ef277c6211a2be5ba",
+      "bytes": 93
+    },
+    {
+      "path": "devdesk/site.webmanifest",
+      "sha256": "954b108e8b48159ed3a483d810b7b1c75ae2fc45759b8153988fa67bc948d85a",
+      "bytes": 661
+    },
+    {
+      "path": "devdesk/sitemap.xml",
+      "sha256": "860424c6f961127676ac560c44ab048cc00966c0fb9fc92ad377b2ddd0346ecd",
+      "bytes": 5406
+    },
+    {
+      "path": "devdesk/STORE_CREATIVE_PROMPTS.md",
+      "sha256": "2b7ddcb095264d479fd1ee45b3161fe80d465c077495fd0f76b381a724f30a7f",
+      "bytes": 11629
+    },
+    {
+      "path": "devdesk/sw.js",
+      "sha256": "0f946a3ec8b312501fd9ee9b4f60439c23221860204b642ad158c341bfef846c",
+      "bytes": 4531
+    },
+    {
+      "path": "devdesk/tool/.dart_tool/package_config.json",
+      "sha256": "c300e15ab78b4e2a64058508df4c99893e38974b6661716b056cefff0562bca2",
+      "bytes": 2096
+    },
+    {
+      "path": "devdesk/tool/.dart_tool/package_graph.json",
+      "sha256": "702e56a1367e22849a0457d010c601d11720c9ad8b83c889e08ade48aa90c97f",
+      "bytes": 1231
+    },
+    {
+      "path": "devdesk/tool/pubspec.lock",
+      "sha256": "343bba5feb9abbc0149898c7a756b0763d0e761dee483f4e18a631930691bed1",
+      "bytes": 2138
+    },
+    {
+      "path": "devdesk/tool/pubspec.yaml",
+      "sha256": "506764b9150a7cdc2572aec1e5c80b5475499ee576774ebe90f4251e67926577",
+      "bytes": 153
+    },
+    {
+      "path": "devdesk/tool/refresh_manual.dart",
+      "sha256": "abc7cff817001327a21da0cee3d9fa8b18ffd456b375a15ea0225400363775a2",
+      "bytes": 29778
+    },
+    {
+      "path": "devdesk/tool/validate_site.dart",
+      "sha256": "2efa1fc38bd0fea1528293b04102ccc7ac59696dea445b53ab023849db14ef72",
+      "bytes": 8593
+    },
+    {
+      "path": "devdesk/VERIFICATION_REPORT.md",
+      "sha256": "b0d9596b786c93ea110e4819ffee4a043ac181232ecfd4322231944cbc3b1906",
+      "bytes": 9014
+    },
+    {
+      "path": "devdesk/WINDOWS_RELEASE_UPDATE.md",
+      "sha256": "4e52f8b2fc6b57a2daa1b3dec9146fb18e31a9d614a21123fa1fb822263c3816",
+      "bytes": 3438
+    },
+    {
+      "path": "EduSheet/404.html",
+      "sha256": "717a0190757b507d7c0e988c4bbb7b8a283e81c3e54074178dd3b087d2cb545f",
+      "bytes": 647
+    },
+    {
+      "path": "EduSheet/assets/css/styles.css",
+      "sha256": "e5caf3d0e3ae99cd34543ad1cd1145cbd8761e01512d915d3fa3d9775dc02c73",
+      "bytes": 25155
+    },
+    {
+      "path": "EduSheet/assets/images/edusheet-brand-mark.png",
+      "sha256": "e17c6009ffc5976ba3f4ba7e5403f4203e8d99bb83b53ed60083bb7d83a72dde",
+      "bytes": 268996
+    },
+    {
+      "path": "EduSheet/assets/images/favicon.png",
+      "sha256": "3d8b1cf495df8e85f926d09b3f26049f198f1b3b13cacd001172f1aa9df2f2e1",
+      "bytes": 2675
+    },
+    {
+      "path": "EduSheet/assets/js/site.js",
+      "sha256": "263f2e35400e34721ed43c6b26f6b8dcf19855b676875c2a1d7994c142662957",
+      "bytes": 5135
+    },
+    {
+      "path": "EduSheet/download.html",
+      "sha256": "a6b25f97d7e3dfe9d237f3593d7fe9666102c8fab1e41bea7bb8a78507aac187",
+      "bytes": 7042
+    },
+    {
+      "path": "EduSheet/features.html",
+      "sha256": "d69a072b89f5785edd7652ef34f409129af32a4bb35d85cb87fe121af432e679",
+      "bytes": 9954
+    },
+    {
+      "path": "EduSheet/index.html",
+      "sha256": "c7737e52d5b8d68bf3e35a0b3d20fdedf47fc448f950de2b0e154bbf5fbb636b",
+      "bytes": 16862
+    },
+    {
+      "path": "EduSheet/manual.html",
+      "sha256": "b6ec72c5797fddf5c90928b548ff3cbd14f118c08ef7197f3bc8350211bf7318",
+      "bytes": 17924
+    },
+    {
+      "path": "EduSheet/privacy.html",
+      "sha256": "e96d8526fea2fcff7ab01ffbc6126ea4721ba824db071b9163afadbb3de97f4c",
+      "bytes": 12237
+    },
+    {
+      "path": "EduSheet/quick-start.html",
+      "sha256": "d993a4dcbcfa8a2ef764ea5134b187fa87a03c453775e9bdf65bc375033e093b",
+      "bytes": 7022
+    },
+    {
+      "path": "EduSheet/README_DEPLOY.md",
+      "sha256": "fb3bbdd1e66f252c557028ea78b5f5ab3932e6d838d488bec760115cfc3206f1",
+      "bytes": 1249
+    },
+    {
+      "path": "EduSheet/robots.txt",
+      "sha256": "388f6d07f5f67584c3d4eeab3a754e7f952a148a410d388ec87d7a84b3b3aa53",
+      "bytes": 75
+    },
+    {
+      "path": "EduSheet/sitemap.xml",
+      "sha256": "5bbecb6297b8c1c53b96c0c99c76068bc72ac8afac05162aaf2fa91bb5df8d68",
+      "bytes": 506
+    },
+    {
+      "path": "notivault-website/_next/static/_vinext_fonts/geist-8ac0455e797f/geist-001175b1.woff2",
+      "sha256": "58a6b173d5ca1dec92166ea3c6cb1a84a4144556d10928ac14e8e6b40e4787bd",
+      "bytes": 16540
+    },
+    {
+      "path": "notivault-website/_next/static/_vinext_fonts/geist-8ac0455e797f/geist-52306abf.woff2",
+      "sha256": "f689f638f29fff460a2d5749edb5d5c38d7bef0389f32032d871f23fc6ebb008",
+      "bytes": 7968
+    },
+    {
+      "path": "notivault-website/_next/static/_vinext_fonts/geist-8ac0455e797f/geist-875ccdd4.woff2",
+      "sha256": "6129fc8571c3e0cb0a4c41f5160c974a843b055009dc4ad8858bd808e18a2d86",
+      "bytes": 14900
+    },
+    {
+      "path": "notivault-website/_next/static/_vinext_fonts/geist-8ac0455e797f/geist-98bbbccb.woff2",
+      "sha256": "9b6f5ff45b278c744b5f379a2c4ecbaf858a842b8eaf82ac8d21b699ca16c608",
+      "bytes": 29288
+    },
+    {
+      "path": "notivault-website/_next/static/_vinext_fonts/geist-8ac0455e797f/geist-ff2310f5.woff2",
+      "sha256": "b7a545bbb08256bd809f11cfe66d88da3e22d169ea4407737b1ef0ec1ed3d791",
+      "bytes": 7252
+    },
+    {
+      "path": "notivault-website/_next/static/_vinext_fonts/geist-mono-00e989178794/geist-mono-013b2f2f.woff2",
+      "sha256": "5f3d6ad60f29d6cb708414ec6887163d63bf197377ef5417d2483ff31ace6c3b",
+      "bytes": 23108
+    },
+    {
+      "path": "notivault-website/_next/static/_vinext_fonts/geist-mono-00e989178794/geist-mono-0638449e.woff2",
+      "sha256": "d67e4a94ba498635f764ddca7d1ec4271f5642f032eb24b426764480f66f8497",
+      "bytes": 5892
+    },
+    {
+      "path": "notivault-website/_next/static/_vinext_fonts/geist-mono-00e989178794/geist-mono-44745446.woff2",
+      "sha256": "745994b5cd950ec201b66526375f057d540847cccfc70f4f24f5f571d26d3923",
+      "bytes": 14712
+    },
+    {
+      "path": "notivault-website/_next/static/_vinext_fonts/geist-mono-00e989178794/geist-mono-44e03052.woff2",
+      "sha256": "75b3bedbebc35f347c0ae3b416aa871941555357e7b0f83767eb5987875589ed",
+      "bytes": 12872
+    },
+    {
+      "path": "notivault-website/_next/static/_vinext_fonts/geist-mono-00e989178794/geist-mono-971fb274.woff2",
+      "sha256": "16e1d48b6dd29eb240aec5db36184eb182933c082cd43de7f35af686d58087d2",
+      "bytes": 7728
+    },
+    {
+      "path": "notivault-website/_next/static/_vinext_fonts/geist-mono-00e989178794/geist-mono-f6b33328.woff2",
+      "sha256": "e27f657e38d52887baa3b6b2f812bef93dfdd356f0810e40edd4ee284cc7e9f6",
+      "bytes": 6204
+    },
+    {
+      "path": "notivault-website/_next/static/css/index.DDhOtQ_A.css",
+      "sha256": "8675ba0d5d719f9a295c35d67b0e15ae3c1eca00e171b22338986a6cf5211ddc",
+      "bytes": 39341
+    },
+    {
+      "path": "notivault-website/.gitignore",
+      "sha256": "143b0d35966ca049441511ea972080e1a9068eed25384d62a0d99ec5128d5768",
+      "bytes": 504
+    },
+    {
+      "path": "notivault-website/app/globals.css",
+      "sha256": "df608c6651a2acdddec6e661a94f06e65261f42f95b703e1600c10cccf9b6827",
+      "bytes": 40002
+    },
+    {
+      "path": "notivault-website/app/layout.tsx",
+      "sha256": "53a4c9f88edd58d1c5d758d5a50df700006ce1c04b4080a50a39c97d7421525a",
+      "bytes": 2543
+    },
+    {
+      "path": "notivault-website/app/page.tsx",
+      "sha256": "e826913452b104ff7d7fc5477d96c99ceb3b92fc2c4d193fc41d1464ae66451d",
+      "bytes": 23402
+    },
+    {
+      "path": "notivault-website/app/privacy-policy/page.tsx",
+      "sha256": "e09a3019fd25dc329304d39495c1ac883bc057b4a44273563642e41ca09a802a",
+      "bytes": 15931
+    },
+    {
+      "path": "notivault-website/eslint.config.mjs",
+      "sha256": "30e084654e5072ab8d1e780e0782a155b587213d36677fed7b07026edc3d2366",
+      "bytes": 1050
+    },
+    {
+      "path": "notivault-website/favicon.svg",
+      "sha256": "c257efdc7aed445d169c8a117fb732cb70e1963bd0ec7dfef3fb9e9e752b85b6",
+      "bytes": 885
+    },
+    {
+      "path": "notivault-website/index.html",
+      "sha256": "74a44ff957cbc92622ff25668655e91f67f92ce99e6fc96cc5e0dc23889695b1",
+      "bytes": 25953
+    },
+    {
+      "path": "notivault-website/MARKETING_COPY.md",
+      "sha256": "175cc11888388ecfc854379ad1f2938cc3ba9cbf92b869a37d20daaed9dcaacf",
+      "bytes": 1488
+    },
+    {
+      "path": "notivault-website/next-env.d.ts",
+      "sha256": "74ecf1a3bc702f296a7363c9ec6fe560278e32bd7f44c1bbac987f81ef7aa6df",
+      "bytes": 194
+    },
+    {
+      "path": "notivault-website/next.config.ts",
+      "sha256": "a972c4f0ffa6dd714e7909b02d1ac19d2f2fe3d01f191efd2c5054bd6f142ec1",
+      "bytes": 140
+    },
+    {
+      "path": "notivault-website/og-deleted-message.png",
+      "sha256": "19c2b811155b306a9ccea7741fad1d90c9730616e53f11817b753f437154c2cf",
+      "bytes": 1787663
+    },
+    {
+      "path": "notivault-website/og.png",
+      "sha256": "cd0dcc8c6f06d37ade07e40e48a95bde07ee4b054d10dfc08df23802e70d76c3",
+      "bytes": 1745353
+    },
+    {
+      "path": "notivault-website/package-lock.json",
+      "sha256": "439d7d460ae874f91a226e763b94dbda2ae4122a8ba892e4d2499c5c8b1b3476",
+      "bytes": 308701
+    },
+    {
+      "path": "notivault-website/package.json",
+      "sha256": "958840db0b8b96c9af592722286136da70bb4cdf9ac304672d31be3f5f9d443b",
+      "bytes": 1213
+    },
+    {
+      "path": "notivault-website/PLAYSTORE_PRIVACY_CHECKLIST.md",
+      "sha256": "9304e7452eb89407b94af10f6628f8c96f09b671f9751126eb45883fc83499b5",
+      "bytes": 3214
+    },
+    {
+      "path": "notivault-website/postcss.config.mjs",
+      "sha256": "7b299d3d3b16699ddda397c0b2373b3af4f25f8fc9ccc9b3d9e64ef083bc1c21",
+      "bytes": 101
+    },
+    {
+      "path": "notivault-website/privacy-policy/index.html",
+      "sha256": "7f913898b54a63606072316587d82b5000365647929e2893141cadfda60d0745",
+      "bytes": 19419
+    },
+    {
+      "path": "notivault-website/public/favicon.svg",
+      "sha256": "c257efdc7aed445d169c8a117fb732cb70e1963bd0ec7dfef3fb9e9e752b85b6",
+      "bytes": 885
+    },
+    {
+      "path": "notivault-website/public/og-deleted-message.png",
+      "sha256": "19c2b811155b306a9ccea7741fad1d90c9730616e53f11817b753f437154c2cf",
+      "bytes": 1787663
+    },
+    {
+      "path": "notivault-website/public/og.png",
+      "sha256": "cd0dcc8c6f06d37ade07e40e48a95bde07ee4b054d10dfc08df23802e70d76c3",
+      "bytes": 1745353
+    },
+    {
+      "path": "notivault-website/README.md",
+      "sha256": "b9294fbfe37bee2c43c2f85c9ed026222b7516d401189cca1963f2ded93b0ac7",
+      "bytes": 607
+    },
+    {
+      "path": "notivault-website/tests/rendered-html.test.mjs",
+      "sha256": "0bd30002e35ee10c3230bedf4db4240e9d67b5e40ab03411872909a7e024b4cf",
+      "bytes": 1989
+    },
+    {
+      "path": "notivault-website/tsconfig.json",
+      "sha256": "f9fdabe75eb7a192ea4c515e92ae00b84c6cb655e838e6dcc7ab17004376336d",
+      "bytes": 632
+    },
+    {
+      "path": "notivault-website/vite.config.ts",
+      "sha256": "2619fd07d584d21aa83f9a1626f6714106309e0c0b69ac30d410d89e83d3f070",
+      "bytes": 1198
+    },
+    {
+      "path": "notivault-website/worker/index.ts",
+      "sha256": "6f8983ab616309202039ad672b1a46a835bede1bb77636dc751613c664f969e5",
+      "bytes": 1778
+    },
+    {
+      "path": "shoppilot erp/assets/app-logo-placeholder.svg",
+      "sha256": "e33a08e15b4552f0733962da096c871311e6c0c24cb170a8ce05497eb6388fe6",
+      "bytes": 740
+    },
+    {
+      "path": "shoppilot erp/assets/erp-laptop-mockup.webp",
+      "sha256": "525d9077435c6b111c79bfc7e9be505b03a3d23465b38543dc4cc5bab20804ea",
+      "bytes": 141918
+    },
+    {
+      "path": "shoppilot erp/assets/hero-business-bg.webp",
+      "sha256": "05a41c9e1bf258824a8a53e0ca673fec6257d745cdd4e2ca766f6763cdbbff0f",
+      "bytes": 100380
+    },
+    {
+      "path": "shoppilot erp/assets/og.png",
+      "sha256": "f09231fe4c468259766c130ce23d9ac5933a38ecc1e1a82eb5a4916dc6ed9692",
+      "bytes": 1137377
+    },
+    {
+      "path": "shoppilot erp/assets/shop-phone-mockup.webp",
+      "sha256": "ec2061980c81c7ab69a97375d7edf7f66d107d8d141cf55f5fad7cae4f6fc4af",
+      "bytes": 80976
+    },
+    {
+      "path": "shoppilot erp/assets/shoppilot-logo.png",
+      "sha256": "2ad1c5e7a2f066cccbaa2590f12ad2d60c305367cd99d87d72e77d506808060e",
+      "bytes": 898873
+    },
+    {
+      "path": "shoppilot erp/data-deletion.html",
+      "sha256": "2c54caceb114976aafe5929f7299edd30eca114a077fa42ef35c3c4101d9735b",
+      "bytes": 8173
+    },
+    {
+      "path": "shoppilot erp/index.html",
+      "sha256": "b0ec2e1bcb7c7e261584056591e6beb4015cefa3142548f0a496e2bd3d5773a4",
+      "bytes": 21608
+    },
+    {
+      "path": "shoppilot erp/manual.css",
+      "sha256": "c38f88aff759e7e62d90a281ed2ac9797a1a1fad07cc016c2f736a7f736dc5cd",
+      "bytes": 21409
+    },
+    {
+      "path": "shoppilot erp/manual.js",
+      "sha256": "6fd7952c20c23419d90e658a0869c0908a401b7cceb007fa0bba947cea281716",
+      "bytes": 2324
+    },
+    {
+      "path": "shoppilot erp/privacy-policy.html",
+      "sha256": "1a51ae181a71e970e6be4741f4c60385ce83d99c94e88c3cc7872d8a0232826e",
+      "bytes": 32499
+    },
+    {
+      "path": "shoppilot erp/quick-start.html",
+      "sha256": "69f3c5d40d0fd2c82ed0a53590781f79fab4613c5341a6efeabf7e1da35ee153",
+      "bytes": 17437
+    },
+    {
+      "path": "shoppilot erp/README.txt",
+      "sha256": "88a8dc5b68b8b0f4ef5307afedb9e0fe77ad4c5d17b9d3fe088f95a43116561f",
+      "bytes": 1170
+    },
+    {
+      "path": "shoppilot erp/robots.txt",
+      "sha256": "f56271e5fd2838e69e7f3698f0f070a81bddd92642294050162808c4bcb91c5a",
+      "bytes": 100
+    },
+    {
+      "path": "shoppilot erp/site.js",
+      "sha256": "b20c87ff339e8e5be5cf063dd1a3d0161b6206ea4845489a2c11e46b745b13db",
+      "bytes": 7419
+    },
+    {
+      "path": "shoppilot erp/sitemap.xml",
+      "sha256": "5e42d6f202a0430b1d11c3167fd6cef5acfdf3d6ced0b11fbc62a6f59aa50bd4",
+      "bytes": 824
+    },
+    {
+      "path": "shoppilot erp/styles.css",
+      "sha256": "167b4a91e82f15ec2a56bc644616feafcd45afa5bbfae9d7895631d4e9570591",
+      "bytes": 23998
+    },
+    {
+      "path": "shoppilot erp/terms-of-service.html",
+      "sha256": "6262a6a19b809d2384d390f7ac95740d2ea67fe0f15788e8c21f5b3e8b62d35b",
+      "bytes": 7953
+    },
+    {
+      "path": "shoppilot erp/user-manual.html",
+      "sha256": "667aebf9bac8f5204535f78fe1ee237638db0c5a9a9af949e0697a798ba470f3",
+      "bytes": 40467
+    },
+    {
+      "path": "shoppilot erp/user-manual.md",
+      "sha256": "194f9aa17deb38bd51450b608c3381acf553a52cecf442a12310ed44a0a0f103",
+      "bytes": 4275
+    },
+    {
+      "path": "shoppilot-erp/assets/app-logo-placeholder.svg",
+      "sha256": "e33a08e15b4552f0733962da096c871311e6c0c24cb170a8ce05497eb6388fe6",
+      "bytes": 740
+    },
+    {
+      "path": "shoppilot-erp/assets/erp-laptop-mockup.webp",
+      "sha256": "525d9077435c6b111c79bfc7e9be505b03a3d23465b38543dc4cc5bab20804ea",
+      "bytes": 141918
+    },
+    {
+      "path": "shoppilot-erp/assets/hero-business-bg.webp",
+      "sha256": "05a41c9e1bf258824a8a53e0ca673fec6257d745cdd4e2ca766f6763cdbbff0f",
+      "bytes": 100380
+    },
+    {
+      "path": "shoppilot-erp/assets/og.png",
+      "sha256": "f09231fe4c468259766c130ce23d9ac5933a38ecc1e1a82eb5a4916dc6ed9692",
+      "bytes": 1137377
+    },
+    {
+      "path": "shoppilot-erp/assets/shop-phone-mockup.webp",
+      "sha256": "ec2061980c81c7ab69a97375d7edf7f66d107d8d141cf55f5fad7cae4f6fc4af",
+      "bytes": 80976
+    },
+    {
+      "path": "shoppilot-erp/assets/shoppilot-logo.png",
+      "sha256": "2ad1c5e7a2f066cccbaa2590f12ad2d60c305367cd99d87d72e77d506808060e",
+      "bytes": 898873
+    },
+    {
+      "path": "shoppilot-erp/data-deletion.html",
+      "sha256": "2c54caceb114976aafe5929f7299edd30eca114a077fa42ef35c3c4101d9735b",
+      "bytes": 8173
+    },
+    {
+      "path": "shoppilot-erp/index.html",
+      "sha256": "392acd16e34aa339b8a956c248dc1ff0cdd39837400027f0b716c3fa745263b7",
+      "bytes": 21019
+    },
+    {
+      "path": "shoppilot-erp/manual.css",
+      "sha256": "c38f88aff759e7e62d90a281ed2ac9797a1a1fad07cc016c2f736a7f736dc5cd",
+      "bytes": 21409
+    },
+    {
+      "path": "shoppilot-erp/manual.js",
+      "sha256": "6fd7952c20c23419d90e658a0869c0908a401b7cceb007fa0bba947cea281716",
+      "bytes": 2324
+    },
+    {
+      "path": "shoppilot-erp/privacy-policy.html",
+      "sha256": "1a51ae181a71e970e6be4741f4c60385ce83d99c94e88c3cc7872d8a0232826e",
+      "bytes": 32499
+    },
+    {
+      "path": "shoppilot-erp/quick-start.html",
+      "sha256": "69f3c5d40d0fd2c82ed0a53590781f79fab4613c5341a6efeabf7e1da35ee153",
+      "bytes": 17437
+    },
+    {
+      "path": "shoppilot-erp/README.txt",
+      "sha256": "88a8dc5b68b8b0f4ef5307afedb9e0fe77ad4c5d17b9d3fe088f95a43116561f",
+      "bytes": 1170
+    },
+    {
+      "path": "shoppilot-erp/robots.txt",
+      "sha256": "f56271e5fd2838e69e7f3698f0f070a81bddd92642294050162808c4bcb91c5a",
+      "bytes": 100
+    },
+    {
+      "path": "shoppilot-erp/site.js",
+      "sha256": "b20c87ff339e8e5be5cf063dd1a3d0161b6206ea4845489a2c11e46b745b13db",
+      "bytes": 7419
+    },
+    {
+      "path": "shoppilot-erp/sitemap.xml",
+      "sha256": "5e42d6f202a0430b1d11c3167fd6cef5acfdf3d6ced0b11fbc62a6f59aa50bd4",
+      "bytes": 824
+    },
+    {
+      "path": "shoppilot-erp/styles.css",
+      "sha256": "167b4a91e82f15ec2a56bc644616feafcd45afa5bbfae9d7895631d4e9570591",
+      "bytes": 23998
+    },
+    {
+      "path": "shoppilot-erp/terms-of-service.html",
+      "sha256": "6262a6a19b809d2384d390f7ac95740d2ea67fe0f15788e8c21f5b3e8b62d35b",
+      "bytes": 7953
+    },
+    {
+      "path": "shoppilot-erp/user-manual.html",
+      "sha256": "667aebf9bac8f5204535f78fe1ee237638db0c5a9a9af949e0697a798ba470f3",
+      "bytes": 40467
+    },
+    {
+      "path": "shoppilot-erp/user-manual.md",
+      "sha256": "194f9aa17deb38bd51450b608c3381acf553a52cecf442a12310ed44a0a0f103",
+      "bytes": 4275
+    }
+  ]
+}

@@ -1,17 +1,29 @@
 {
-  "name": "vite-starter",
+  "name": "baisalya-site",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "test": "node scripts/validate-release.mjs",
+    "build": "node scripts/build-release.mjs",
+    "build:plan": "node scripts/build-release.mjs --plan",
+    "test": "npm run test:site-boundary && npm run test:professional-home && npm run test:batch-b && npm run test:batch-c && npm run test:batch-d && npm run test:brand-experience && npm run test:surveycam && npm run test:revenue-ready && npm run test:protected-products && node scripts/validate-release.mjs",
     "test:dist": "node scripts/validate-dist.mjs",
-    "check": "npm run test && npm run build && npm run test:dist"
+    "test:site-boundary": "node scripts/validate-site-boundary.mjs",
+    "test:professional-home": "node scripts/validate-professional-home.mjs",
+    "test:batch-b": "node scripts/validate-batch-b.mjs",
+    "test:batch-c": "node scripts/validate-batch-c.mjs",
+    "test:batch-d": "node scripts/validate-batch-d.mjs",
+    "test:protected-products": "node scripts/validate-protected-products.mjs",
+    "protected:refresh": "node scripts/update-protected-product-manifest.mjs",
+    "release:preflight": "node scripts/validate-release-preflight.mjs",
+    "release": "npm run test && npm run release:preflight && npm run build && npm run test:dist",
+    "check": "npm run release",
+    "test:brand-experience": "node scripts/validate-brand-experience.mjs",
+    "test:surveycam": "node scripts/validate-surveycam-site.mjs",
+    "test:revenue-ready": "node scripts/validate-revenue-ready.mjs",
+    "adsense:configure": "node scripts/configure-adsense.mjs"
   },
-  "devDependencies": {
-    "vite": "^8.1.5"
+  "engines": {
+    "node": ">=20"
   }
 }

@@ -1,0 +1,16 @@
+.professional-about { border-top: 1px solid var(--border); }
+.professional-about__grid { display: grid; grid-template-columns: minmax(0,.92fr) minmax(0,1.08fr); gap: clamp(2.5rem,6vw,6rem); align-items: start; }
+.professional-about__story { padding-top: .65rem; }
+.professional-about__story p { font-size: 1.06rem; line-height: 1.85; }
+.professional-about__principles { display: grid; border-top: 1px solid var(--border); }
+.principle-card { display: grid; grid-template-columns: 54px 1fr; gap: 1.2rem; padding: 1.45rem 0; border-bottom: 1px solid var(--border); }
+.principle-card__number { color: var(--accent); font: 500 .72rem/1.4 var(--font-mono); }
+.principle-card h3 { margin-bottom: .42rem; font-size: 1rem; }
+.principle-card p { margin: 0; font-size: .88rem; line-height: 1.65; }
+.professional-background { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; margin-top: 4rem; overflow: hidden; border: 1px solid var(--border); border-radius: 18px; background: var(--border); }
+.professional-background > div { display: grid; gap: .3rem; padding: 1.35rem; background: var(--bg-elevated); }
+.professional-background span { color: var(--accent); font: 500 .67rem/1.2 var(--font-mono); }
+.professional-background strong { color: var(--text); font-size: .92rem; }
+.professional-background small { color: var(--text-soft); font-size: .78rem; }
+@media (max-width: 1040px) { .professional-about__grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .professional-background { grid-template-columns: 1fr; } }

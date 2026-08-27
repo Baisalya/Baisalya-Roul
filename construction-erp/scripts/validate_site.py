@@ -92,7 +92,7 @@ required_product_copy = {
     'manual.html': ('Tender → Project → Daily Work → Stock → Labour → Machinery → Report', 'budget-approval'),
     'support.html': (
         'Product walkthrough',
-        'action="https://formsubmit.co/baishalya@gmail.com"',
+        'action="https://formsubmit.co/baishalya1999@gmail.com"',
         'name="_honey"',
         'Send request',
     ),

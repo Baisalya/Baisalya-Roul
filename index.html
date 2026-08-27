@@ -3,14 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta
-        name="description"
-        content="Baishalya Roul's Flutter and Android development portfolio, featuring NotiVault, ShopPilot, DevDesk, Construction ERP, and production mobile applications."
-    >
-    <title>Baishalya Roul - Flutter & Android Developer</title>
+    <meta name="description" content="Baishalya Roul builds practical software for Android, Windows, and the web — from local-first developer tools to business operations and field apps.">
+    <meta name="author" content="Baishalya Roul">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="theme-color" content="#071019" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f5f7fb" media="(prefers-color-scheme: light)">
+    <title>Baishalya Roul — Software Builder</title>
+    <link rel="canonical" href="https://baisalya.com/">
+    <link rel="icon" href="/assets/brand/br-mark.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Baishalya Roul">
+    <meta property="og:title" content="Baishalya Roul — Software Builder">
+    <meta property="og:description" content="Practical software for Android, Windows, and the web — built around real workflows, local-first ownership, and dependable product delivery.">
+    <meta property="og:url" content="https://baisalya.com/">
+    <meta property="og:image" content="https://baisalya.com/assets/brand/baisalya-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Baishalya Roul — Software Builder">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Baishalya Roul — Software Builder">
+    <meta name="twitter:description" content="Practical software for Android, Windows, and the web.">
+    <meta name="twitter:image" content="https://baisalya.com/assets/brand/baisalya-og.png">
+    <meta name="twitter:image:alt" content="Baishalya Roul — Software Builder">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <script>
         try {
             const savedTheme = localStorage.getItem('theme');
@@ -19,1535 +39,557 @@
             document.documentElement.setAttribute('data-theme', 'dark');
         }
     </script>
-    <link rel="stylesheet" href="style.css">
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "DevDesk",
-        "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "Windows, Android",
-        "description": "A local-first workspace for plans, Markdown knowledge, API testing, JSON tools, and workspace-scoped Git.",
-        "image": "devdesk/assets/img/devdesk-logo-512.png",
-        "downloadUrl": "https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        }
+      "@type": "Person",
+      "@id": "https://baisalya.com/#person",
+      "name": "Baishalya Roul",
+      "url": "https://baisalya.com/",
+      "image": "https://baisalya.com/assets/brand/baisalya-og.png",
+      "jobTitle": "Software Developer",
+      "email": "mailto:baishalya1999@gmail.com",
+      "description": "Software developer building practical Android, Windows, and web products with a focus on local-first workflows and dependable product delivery.",
+      "sameAs": [
+        "https://github.com/Baisalya",
+        "https://www.linkedin.com/in/baishalya-roul-02a0b9153/"
+      ],
+      "knowsAbout": [
+        "Flutter",
+        "Android application development",
+        "Windows application development",
+        "Local-first software",
+        "Responsive web development",
+        "Software product engineering"
+      ],
+      "mainEntityOfPage": {
+        "@id": "https://baisalya.com/#website"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://baisalya.com/#website",
+      "url": "https://baisalya.com/",
+      "name": "Baishalya Roul",
+      "description": "Professional website of software developer Baishalya Roul.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://baisalya.com/#person"
+      }
     }
+  ]
+}
     </script>
-
-    <!-- Buy Me a Coffee component styles -->
-    <style>
-        .bmc-button {
-            --bmc-yellow: #ffdd00;
-            --bmc-yellow-hover: #ffe74d;
-            --bmc-ink: #111111;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.65rem;
-            min-height: 52px;
-            padding: 0.85rem 1.2rem;
-            border: 1px solid rgba(17, 17, 17, 0.12);
-            border-radius: 14px;
-            background: linear-gradient(135deg, var(--bmc-yellow), #ffc83d);
-            color: var(--bmc-ink);
-            font-family: Inter, sans-serif;
-            font-size: 0.95rem;
-            font-weight: 800;
-            line-height: 1;
-            text-decoration: none;
-            white-space: nowrap;
-            box-shadow: 0 12px 30px rgba(255, 221, 0, 0.2),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.65);
-            position: relative;
-            isolation: isolate;
-            overflow: hidden;
-            transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
-        }
-
-        .bmc-button::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            z-index: -1;
-            background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.65) 48%, transparent 75%);
-            transform: translateX(-130%);
-            transition: transform 550ms ease;
-        }
-
-        .bmc-button:hover {
-            transform: translateY(-3px);
-            background: linear-gradient(135deg, var(--bmc-yellow-hover), #ffd451);
-            box-shadow: 0 16px 36px rgba(255, 221, 0, 0.3),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.75);
-        }
-
-        .bmc-button:hover::before {
-            transform: translateX(130%);
-        }
-
-        .bmc-button:focus-visible {
-            outline: 3px solid rgba(255, 221, 0, 0.45);
-            outline-offset: 4px;
-        }
-
-        .bmc-button__icon {
-            width: 23px;
-            height: 23px;
-            flex: 0 0 auto;
-        }
-
-        .bmc-button__label {
-            display: inline-flex;
-            align-items: baseline;
-            gap: 0.28rem;
-        }
-
-        .bmc-button__label strong {
-            font-weight: 900;
-        }
-
-        .hero-buttons .bmc-button {
-            min-width: 205px;
-        }
-
-        .hero-support-note {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            width: fit-content;
-            margin-top: 0.85rem;
-            color: var(--text-secondary, rgba(255, 255, 255, 0.72));
-            font-size: 0.82rem;
-            line-height: 1.5;
-        }
-
-        .hero-support-note::before {
-            content: "♥";
-            color: #ff5a73;
-            font-size: 0.92rem;
-        }
-
-        .footer-support {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.9rem;
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
-            border-radius: 16px;
-            background: var(--card-bg, rgba(255, 255, 255, 0.05));
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-
-        .footer-support__copy {
-            display: flex;
-            flex-direction: column;
-            gap: 0.2rem;
-            min-width: 0;
-        }
-
-        .footer-support__copy strong {
-            color: var(--text-primary, #ffffff);
-            font-size: 0.9rem;
-            font-weight: 800;
-        }
-
-        .footer-support__copy span {
-            color: var(--text-secondary, rgba(255, 255, 255, 0.68));
-            font-size: 0.76rem;
-            line-height: 1.35;
-        }
-
-        .footer-support .bmc-button {
-            min-height: 44px;
-            padding: 0.7rem 0.95rem;
-            border-radius: 12px;
-            font-size: 0.84rem;
-            flex: 0 0 auto;
-        }
-
-        @media (max-width: 900px) {
-            .footer-content {
-                gap: 1.25rem;
-                flex-wrap: wrap;
-            }
-
-            .footer-support {
-                order: 3;
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .hero-buttons {
-                align-items: stretch;
-            }
-
-            .hero-buttons .bmc-button {
-                width: 100%;
-                min-width: 0;
-            }
-
-            .hero-support-note {
-                width: 100%;
-                justify-content: center;
-                text-align: center;
-            }
-
-            .footer-support {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-support .bmc-button {
-                width: 100%;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .bmc-button,
-            .bmc-button::before {
-                transition: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <!-- Easter Egg Debug Mode Overlay -->
-    <div id="debug-mode" class="debug-mode hidden">
-        <div class="debug-console">
-            <div class="console-header">
-                <span class="console-title">🐛 Flutter Debug Console</span>
-                <button class="console-close" onclick="exitDebugMode()">×</button>
-            </div>
-            <div class="console-content">
-                <div class="error-messages">
-                    <div class="error-line">[ERROR:flutter/runtime] Widget overflow detected!</div>
-                    <div class="error-line">[WARNING] Too much padding in your life...</div>
-                    <div class="error-line">[INFO] Rebooting into Debug Mode...</div>
-                    <div class="error-line">[DEBUG] Initializing Flutter Bird Game...</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mini Game Canvas -->
-        <div class="game-container">
-            <canvas id="gameCanvas" width="800" height="400"></canvas>
-            <div class="game-ui">
-                <div class="score">Score: <span id="score">0</span></div>
-                <div class="lives">Lives: <span id="lives">3</span></div>
-                <div class="game-tips">
-                    <div class="tip">Use SPACE or CLICK to fly!</div>
-                    <div class="tip">Avoid red errors and yellow warnings!</div>
-                    <div class="tip">Collect hot reload icons for points!</div>
-                </div>
-            </div>
-            <div class="game-over hidden" id="gameOver">
-                <h2>App Crashed in Production! 💥</h2>
-                <p>Time to blame the backend 🤷‍♂️</p>
-                <div class="final-score">Final Score: <span id="finalScore">0</span></div>
-                <div class="game-buttons">
-                    <button onclick="restartGame()" class="game-btn restart-btn">🔄 Hot Restart</button>
-                    <button onclick="exitDebugMode()" class="game-btn exit-btn">← Return to Portfolio</button>
-                </div>
-            </div>
-        </div>
-    </div>
+<body class="professional-home">
 
-    <!-- Animated Background -->
-    <div class="animated-bg">
-        <div class="floating-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-            <div class="shape shape-4"></div>
-            <div class="shape shape-5"></div>
-        </div>
-        <div class="grid-overlay"></div>
-    </div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <div class="logo-3d" id="logo-trigger">
-                    <span class="logo-text">BR</span>
-                    <div class="logo-glow"></div>
-                </div>
+    <nav class="nav professional-nav" aria-label="Primary navigation">
+        <div class="nav-container professional-nav__inner">
+            <div class="professional-brand" aria-label="Baishalya Roul brand">
+                <button
+                    class="professional-brand__mark"
+                    id="identity-trigger"
+                    type="button"
+                    aria-label="Open Baishalya Roul identity card and return to top"
+                    aria-haspopup="dialog"
+                    aria-controls="identity-card"
+                >
+                    <img src="assets/brand/br-mark.svg" alt="" width="48" height="48" aria-hidden="true">
+                </button>
+                <a class="professional-brand__copy" href="#home" aria-label="Baishalya Roul home">
+                    <strong>Baishalya Roul</strong>
+                    <small>Software Builder</small>
+                </a>
             </div>
-            <ul class="nav-menu" id="nav-menu">
+
+            <ul class="nav-menu professional-nav__menu" id="nav-menu">
                 <li><a href="#home" class="nav-link" data-text="Home">Home</a></li>
                 <li><a href="#about" class="nav-link" data-text="About">About</a></li>
-                <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
-                <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
-                <li><a href="#education" class="nav-link" data-text="Education">Education</a></li>
+                <li><a href="#software" class="nav-link" data-text="Software">Software</a></li>
+                <li><a href="#engineering" class="nav-link" data-text="Engineering">Engineering</a></li>
                 <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
             </ul>
-            <div class="nav-controls">
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                    <div class="toggle-track">
-                        <div class="toggle-thumb">
-                            <span class="sun-icon">☀️</span>
-                            <span class="moon-icon">🌙</span>
-                        </div>
-                    </div>
+
+            <div class="nav-controls professional-nav__controls">
+                <a
+                    class="nav-coffee"
+                    href="https://www.buymeacoffee.com/baisalya"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Buy Baishalya a coffee (opens in a new tab)"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h12v3h1.5A3.5 3.5 0 0 1 22 10.5v1A4.5 4.5 0 0 1 17.5 16H17v1a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V4Zm12 5v5h.5a2.5 2.5 0 0 0 2.5-2.5v-1A1.5 1.5 0 0 0 18.5 9H17ZM7 6v11a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6H7Z"/></svg>
+                    <span>Buy me a coffee</span>
+                </a>
+                <button class="theme-toggle professional-theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light and dark theme">
+                    <span class="professional-theme-toggle__sun" aria-hidden="true">☀</span>
+                    <span class="professional-theme-toggle__moon" aria-hidden="true">☾</span>
                 </button>
-                <div class="nav-toggle" id="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <button class="nav-toggle professional-nav__toggle" id="nav-toggle" type="button" aria-label="Open navigation" aria-controls="nav-menu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-badge">
-                        <span class="badge-text">Available for Projects</span>
-                        <div class="badge-pulse"></div>
-                    </div>
-                    <h1 class="hero-title">
-                        <span class="title-line">Hi, I'm</span>
-                        <span class="title-name">Baishalya Roul</span>
-                        <div class="title-underline"></div>
-                    </h1>
-                    <div class="hero-subtitle-container">
-                        <h2 class="hero-subtitle">
-                            <span class="typing-text" data-words="Flutter Developer,Android Developer,Mobile App Creator,UI/UX Enthusiast"></span>
-                            <span class="cursor">|</span>
-                        </h2>
-                    </div>
-                    <p class="hero-description">
-                        Passionate mobile app developer with expertise in Flutter and Android development. 
-                        I create beautiful, performant, and user-friendly mobile applications that solve real-world problems.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">
-                            <span class="btn-text">Get In Touch</span>
-                            <div class="btn-glow"></div>
-                        </a>
-                        <a href="#projects" class="btn btn-secondary">
-                            <span class="btn-text">View My Work</span>
-                            <div class="btn-particles"></div>
-                        </a>
-                        <a
-                            href="https://www.buymeacoffee.com/baisalya"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="bmc-button"
-                            aria-label="Support Baishalya on Buy Me a Coffee (opens in a new tab)"
-                        >
-                            <svg class="bmc-button__icon" viewBox="0 0 24 24" aria-hidden="true">
-                                <path fill="currentColor" d="M4 3h13a2 2 0 0 1 2 2v2h1.25A2.75 2.75 0 0 1 23 9.75v1.5A4.75 4.75 0 0 1 18.25 16H18v1a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V3Zm14 6v5h.25A2.75 2.75 0 0 0 21 11.25v-1.5A.75.75 0 0 0 20.25 9H18ZM6 5v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V5H6Zm2.25 2.25a1 1 0 0 1 1.4.15c.62.77.62 1.68 0 2.45-.14.18-.14.32 0 .5.62.77.62 1.68 0 2.45a1 1 0 1 1-1.55-1.25c.14-.18.14-.32 0-.5-.62-.77-.62-1.68 0-2.45a1 1 0 0 1 .15-1.4Zm4 0a1 1 0 0 1 1.4.15c.62.77.62 1.68 0 2.45-.14.18-.14.32 0 .5.62.77.62 1.68 0 2.45a1 1 0 1 1-1.55-1.25c.14-.18.14-.32 0-.5-.62-.77-.62-1.68 0-2.45a1 1 0 0 1 .15-1.4Z"/>
-                            </svg>
-                            <span class="bmc-button__label">Buy me a <strong>coffee</strong></span>
-                        </a>
-                    </div>
-                    <p class="hero-support-note">Support independent apps, experiments, and open-source work.</p>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="50">0</div>
-                            <div class="stat-label">Projects</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="3">0</div>
-                            <div class="stat-label">Years Exp</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="100">0</div>
-                            <div class="stat-label">Satisfaction</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="profile-3d">
-                        <div class="profile-container">
-                            <div class="profile-image">
-                                <div class="profile-avatar">
-                                    <div class="avatar-inner">
-                                        <img src="https://avatars.githubusercontent.com/u/84311059?v=4" alt="Profile" style="width: 220px; height: 220px; border-radius: 50%; object-fit: cover;" />
-                                    </div>
-                                    
-                                </div>
-                                <div class="profile-rings">
-                                    <div class="ring ring-1"></div>
-                                    <div class="ring ring-2"></div>
-                                    <div class="ring ring-3"></div>
-                                </div>
-                            </div>
-                            <div class="floating-icons">
-                                <div class="icon-item" style="--delay: 0s">📱</div>
-                                <div class="icon-item" style="--delay: 0.5s">⚡</div>
-                                <div class="icon-item" style="--delay: 1s">🚀</div>
-                                <div class="icon-item" style="--delay: 1.5s">💡</div>
-                                <div class="icon-item" style="--delay: 2s">🎯</div>
-                                <div class="icon-item" style="--delay: 2.5s">✨</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="title-text">About Me</span>
-                    <div class="title-decoration"></div>
-                </h2>
-                <p class="section-subtitle">Discover my journey and passion</p>
-            </div>
-            <div class="about-content">
-                <div class="about-card">
-                    <div class="card-glow"></div>
-                    <div class="about-text">
-                        <p class="about-intro">
-                            I'm a dedicated Flutter and Android developer with a passion for creating innovative mobile solutions. 
-                            With expertise in modern development practices and a keen eye for user experience, I transform ideas 
-                            into beautiful, functional applications.
-                        </p>
-                        <p class="about-details">
-                            My journey in mobile development has equipped me with comprehensive skills in both frontend and backend 
-                            technologies, allowing me to deliver end-to-end solutions that exceed expectations.
-                        </p>
-                        <div class="about-highlights">
-                            <div class="highlight-item">
-                                <div class="highlight-icon">🎯</div>
-                                <div class="highlight-text">
-                                    <h4>Problem Solver</h4>
-                                    <p>Turning complex challenges into elegant solutions</p>
-                                </div>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">🚀</div>
-                                <div class="highlight-text">
-                                    <h4>Innovation Driven</h4>
-                                    <p>Always exploring cutting-edge technologies</p>
-                                </div>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">💡</div>
-                                <div class="highlight-text">
-                                    <h4>User Focused</h4>
-                                    <p>Creating intuitive and delightful experiences</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="title-text">Skills & Technologies</span>
-                    <div class="title-decoration"></div>
-                </h2>
-                <p class="section-subtitle">My technical expertise and tools</p>
-            </div>
-            
-            <!-- Enhanced Skills Grid -->
-            <div class="skills-showcase">
-                <!-- Mobile Development -->
-                <div class="skill-category-enhanced" data-category="mobile">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <div class="icon-bg">📱</div>
-                        </div>
-                        <h3>Mobile Development</h3>
-                        <p>Building cross-platform mobile applications</p>
-                    </div>
-                    <div class="skills-grid-enhanced">
-                        <div class="skill-card" data-level="95">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>Flutter</h4>
-                                <div class="skill-level">Expert</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="95"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">95%</div>
-                        </div>
-                        
-                        <div class="skill-card" data-level="90">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>Android</h4>
-                                <div class="skill-level">Expert</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="90"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">90%</div>
-                        </div>
-                        
-                        <div class="skill-card" data-level="92">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>Dart</h4>
-                                <div class="skill-level">Expert</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="92"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">92%</div>
-                        </div>
-                        
-                        <div class="skill-card" data-level="88">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>Kotlin</h4>
-                                <div class="skill-level">Advanced</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="88"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">88%</div>
-                        </div>
-                        
-                        <div class="skill-card" data-level="85">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>Java</h4>
-                                <div class="skill-level">Advanced</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="85"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">85%</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Backend & API -->
-                <div class="skill-category-enhanced" data-category="backend">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <div class="icon-bg">⚙️</div>
-                        </div>
-                        <h3>Backend & API</h3>
-                        <p>Server-side development and API integration</p>
-                    </div>
-                    <div class="skills-grid-enhanced">
-                        <div class="skill-card" data-level="80">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>Node.js</h4>
-                                <div class="skill-level">Advanced</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="80"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">80%</div>
-                        </div>
-                        
-                        <div class="skill-card" data-level="85">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>FastAPI</h4>
-                                <div class="skill-level">Advanced</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="85"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">85%</div>
-                        </div>
-                        
-                        <div class="skill-card" data-level="90">
-                            <div class="skill-logo">
-                                <div class="api-icon">🔗</div>
-                            </div>
-                            <div class="skill-info">
-                                <h4>REST API</h4>
-                                <div class="skill-level">Expert</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="90"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">90%</div>
-                        </div>
-                        
-                        <div class="skill-card" data-level="75">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GraphQL" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>GraphQL</h4>
-                                <div class="skill-level">Intermediate</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="75"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">75%</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Database -->
-                <div class="skill-category-enhanced" data-category="database">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <div class="icon-bg">🗄️</div>
-                        </div>
-                        <h3>Database</h3>
-                        <p>Data storage and management solutions</p>
-                    </div>
-                    <div class="skills-grid-enhanced">
-                        <div class="skill-card" data-level="85">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>MongoDB</h4>
-                                <div class="skill-level">Advanced</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="85"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">85%</div>
-                        </div>
-                        
-                        <div class="skill-card" data-level="90">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>Firebase</h4>
-                                <div class="skill-level">Expert</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="90"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">90%</div>
-                        </div>
-                        
-                        <div class="skill-card" data-level="80">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>SQLite</h4>
-                                <div class="skill-level">Advanced</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="80"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">80%</div>
-                        </div>
-                        
-                        <div class="skill-card" data-level="75">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>PostgreSQL</h4>
-                                <div class="skill-level">Intermediate</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="75"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">75%</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cloud & DevOps -->
-                <div class="skill-category-enhanced" data-category="cloud">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <div class="icon-bg">☁️</div>
-                        </div>
-                        <h3>Cloud & DevOps</h3>
-                        <p>Cloud platforms and deployment solutions</p>
-                    </div>
-                    <div class="skills-grid-enhanced">
-                        <div class="skill-card" data-level="80">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>Azure Cloud</h4>
-                                <div class="skill-level">Advanced</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="80"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">80%</div>
-                        </div>
-                        
-                        <div class="skill-card" data-level="85">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase Hosting" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>Firebase Hosting</h4>
-                                <div class="skill-level">Advanced</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="85"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">85%</div>
-                        </div>
-                        
-                        <div class="skill-card" data-level="70">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>Docker</h4>
-                                <div class="skill-level">Intermediate</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="70"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">70%</div>
-                        </div>
-                        
-                        <div class="skill-card" data-level="75">
-                            <div class="skill-logo">
-                                <div class="api-icon">🔄</div>
-                            </div>
-                            <div class="skill-info">
-                                <h4>CI/CD</h4>
-                                <div class="skill-level">Intermediate</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="75"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">75%</div>
-                        </div>
-                        <!-- 🐚 Bash Scripting -->
-<div class="skill-card" data-level="80">
-    <div class="skill-logo">
-        <div class="api-icon">💻</div>
-    </div>
-    <div class="skill-info">
-        <h4>Bash Scripting</h4>
-        <div class="skill-level">Advanced</div>
-        <div class="skill-bar-modern">
-            <div class="skill-progress-modern" data-width="80"></div>
-        </div>
-    </div>
-    <div class="skill-percentage">80%</div>
-</div>
-
-<!-- ⚙️ Build Automation -->
-<div class="skill-card" data-level="70">
-    <div class="skill-logo">
-        <div class="api-icon">⚙️</div>
-    </div>
-    <div class="skill-info">
-        <h4>Build Automation</h4>
-        <div class="skill-level">Intermediate</div>
-        <div class="skill-bar-modern">
-            <div class="skill-progress-modern" data-width="70"></div>
-        </div>
-    </div>
-    <div class="skill-percentage">70%</div>
-</div>
-
-<!-- ☁️ Azure CLI -->
-<div class="skill-card" data-level="65">
-    <div class="skill-logo">
-        <div class="api-icon">☁️</div>
-    </div>
-    <div class="skill-info">
-        <h4>Azure CLI</h4>
-        <div class="skill-level">Intermediate</div>
-        <div class="skill-bar-modern">
-            <div class="skill-progress-modern" data-width="65"></div>
-        </div>
-    </div>
-    <div class="skill-percentage">65%</div>
-</div>
-
-                    </div>
-                </div>
-
-                <!-- Tools & Design -->
-                <div class="skill-category-enhanced" data-category="tools">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <div class="icon-bg">🛠️</div>
-                        </div>
-                        <h3>Tools & Design</h3>
-                        <p>Development tools and design software</p>
-                    </div>
-                    <div class="skills-grid-enhanced">
-                        <div class="skill-card" data-level="85">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>Adobe Photoshop</h4>
-                                <div class="skill-level">Advanced</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="85"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">85%</div>
-                        </div>
-                        
-                        <div class="skill-card" data-level="95">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>Git & GitHub</h4>
-                                <div class="skill-level">Expert</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="95"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">95%</div>
-                        </div>
-                        
-                        <div class="skill-card" data-level="80">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>Figma</h4>
-                                <div class="skill-level">Advanced</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="80"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">80%</div>
-                        </div>
-                        
-                        <div class="skill-card" data-level="90">
-                            <div class="skill-logo">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" />
-                            </div>
-                            <div class="skill-info">
-                                <h4>VS Code</h4>
-                                <div class="skill-level">Expert</div>
-                                <div class="skill-bar-modern">
-                                    <div class="skill-progress-modern" data-width="90"></div>
-                                </div>
-                            </div>
-                            <div class="skill-percentage">90%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">
-              <span class="title-text">Featured Projects</span>
-              <div class="title-decoration"></div>
-            </h2>
-            <p class="section-subtitle">Privacy-first apps, practical tools, and products built for real work</p>
-          </div>
-          <div class="projects-grid">
-            <!-- DevDesk -->
-            <div class="project-card project-card--devdesk" data-tilt>
-              <div class="project-image project-image--showcase">
-                <div class="project-overlay"></div>
-                <img
-                  src="devdesk/assets/img/devdesk-logo-256.png"
-                  srcset="
-                    devdesk/assets/img/devdesk-logo-256.png 1x,
-                    devdesk/assets/img/devdesk-logo-512.png 2x
-                  "
-                  alt="DevDesk application logo"
-                  class="project-logo"
-                  width="256"
-                  height="256"
-                  loading="lazy"
-                  decoding="async"
-                >
-                <div class="project-particles"></div>
-              </div>
-
-              <div class="project-content">
-                <h3>DevDesk</h3>
-                <p>
-                  A local-first workspace for plans, Markdown knowledge, API testing,
-                  JSON tools, and workspace-scoped Git. Your project stays in ordinary
-                  files that you control.
-                </p>
-
-                <div class="project-tech">
-                  <span class="tech-tag">Flutter</span>
-                  <span class="tech-tag">Windows</span>
-                  <span class="tech-tag">Android</span>
-                </div>
-
-                <div class="project-links">
-                  <a
-                    href="devdesk/index.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link"
-                    aria-label="View DevDesk website"
-                  >Website</a>
-                  <a
-                    href="https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&amp;gl=IN&amp;ocid=pdpshare"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link project-link--store"
-                    aria-label="Get DevDesk for Windows on Microsoft Store (opens in a new tab)"
-                  >Microsoft Store</a>
-                     <a
-                    href="https://play.google.com/store/apps/details?id=com.baishalya.devdesk&amp;pcampaignid=web_share"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link project-link--store"
-                    aria-label="Get DevDesk for Android on Google Play (opens in a new tab)"
-                  >Google Play</a>
-                  <a
-                    href="devdesk/manual/user-manual.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link"
-                    aria-label="Open the complete DevDesk user manual"
-                  >User manual</a>
-                </div>
-            
-              </div>
+    <dialog class="identity-dialog" id="identity-card" aria-labelledby="identity-card-name">
+        <article class="identity-card">
+            <div class="identity-card__topbar">
+                <span class="identity-card__eyebrow">BR / IDENTITY</span>
+                <button type="button" class="identity-card__close" data-identity-close aria-label="Close identity card">×</button>
             </div>
 
-            <!-- ShopPilot: private preview while real-device release qualification completes -->
-            <div class="project-card project-card--shoppilot" data-tilt>
-              <div class="project-image project-image--shoppilot">
-                <div class="project-overlay"></div>
-                <img
-                  src="assets/images/shoppilot-logo.png"
-                  alt="ShopPilot application logo"
-                  class="project-logo"
-                  width="1024"
-                  height="1024"
-                  loading="lazy"
-                  decoding="async"
-                >
-                <span class="project-status project-status--preview">Private Preview</span>
-                <div class="project-particles"></div>
-              </div>
-
-              <div class="project-content">
-                <h3>ShopPilot</h3>
-                <p>
-                  An offline-first billing and operations app for repair shops, bakeries,
-                  grocery and retail stores, restaurants, tailors, and garages, with stock,
-                  purchases, staff access, branches, owner reports, and encrypted recovery.
-                </p>
-
-                <div class="project-tech">
-                  <span class="tech-tag">Flutter</span>
-                  <span class="tech-tag">Android</span>
-                  <span class="tech-tag">Windows</span>
-                  <span class="tech-tag">SQLite</span>
-                </div>
-
-                <div class="project-links">
-                  <a
-                    href="shoppilot-erp/index.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link"
-                    aria-label="View the ShopPilot product website"
-                  >Website</a>
-                  <a
-                    href="shoppilot-erp/quick-start.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link"
-                    aria-label="Open the easy ShopPilot quick-start guide"
-                  >Quick start</a>
-                  <a
-                    href="shoppilot-erp/user-manual.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link"
-                    aria-label="Open the detailed ShopPilot operations manual"
-                  >Detailed manual</a>
-                </div>
-                <p class="project-platform-note">
-                  Private preview: Android and Windows public installers are held until
-                  real-device backup and restore qualification is complete.
-                </p>
-              </div>
-            </div>
-
-            <!-- NotiVault: Android release coming soon -->
-            <div class="project-card project-card--notivault" data-tilt>
-              <div class="project-image project-image--notivault">
-                <div class="project-overlay"></div>
-                <img
-                  src="notivault-website/public/og-deleted-message.png"
-                  alt="NotiVault private notification history app preview"
-                  class="project-poster"
-                  width="1733"
-                  height="908"
-                  loading="lazy"
-                  decoding="async"
-                >
-                <span class="project-status project-status--soon">Coming Soon</span>
-                <div class="project-particles"></div>
-              </div>
-
-              <div class="project-content">
-                <h3>NotiVault</h3>
-                <p>
-                  Preserve selected WhatsApp and chat notification previews before they
-                  disappear or are later deleted. Messages stay searchable on-device, with
-                  voice notes and media saved when the notification exposes them.
-                </p>
-
-                <div class="project-tech">
-                  <span class="tech-tag">Flutter</span>
-                  <span class="tech-tag">Android</span>
-                  <span class="tech-tag">SQLite</span>
-                  <span class="tech-tag">Local-first</span>
-                </div>
-
-                <div class="project-links">
-                  <a
-                    href="notivault-website/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link"
-                    aria-label="View the NotiVault website"
-                  >Website</a>
-                  <span class="project-link project-link--coming" aria-label="NotiVault is coming soon to Google Play">
-                    Google Play &middot; Coming soon
-                  </span>
-                </div>
-                <p class="project-platform-note">
-                  Works only after setup and notification capture. Release preparation is in
-                  progress. No public installer is offered yet.
-                </p>
-              </div>
-            </div>
-
-            <!-- Construction ERP: website preview, product coming soon -->
-            <div class="project-card project-card--construction" data-tilt>
-              <div class="project-image project-image--construction">
-                <div class="project-overlay"></div>
-                <img
-                  src="construction-erp/assets/icons/favicon.svg"
-                  alt="Construction ERP application logo"
-                  class="project-logo"
-                  width="160"
-                  height="160"
-                  loading="lazy"
-                  decoding="async"
-                >
-                <span class="project-status project-status--soon">Coming Soon</span>
-                <div class="project-particles"></div>
-              </div>
-
-              <div class="project-content">
-                <h3>Construction ERP</h3>
-                <p>
-                  An offline-first construction operations system connecting tender value,
-                  project cost budgets, daily work, stock, labour, machinery, approvals,
-                  and reports for site and office teams.
-                </p>
-
-                <div class="project-tech">
-                  <span class="tech-tag">Flutter</span>
-                  <span class="tech-tag">Android</span>
-                  <span class="tech-tag">Windows</span>
-                </div>
-
-                <div class="project-links">
-                  <a
-                    href="construction-erp/index.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link"
-                    aria-label="View the Construction ERP website"
-                  >Website</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- SurveyCam: published Android application -->
-            <div class="project-card project-card--surveycam" data-tilt>
-              <div class="project-image project-image--showcase">
-                <div class="project-overlay"></div>
-                <div class="surveycam-logo-frame">
-                  <img
-                    src="assets/images/App_logo.png"
-                    alt="SurveyCam application logo"
-                    class="surveycam-logo"
-                    width="1254"
-                    height="1254"
-                    loading="lazy"
-                    decoding="async"
-                  >
-                </div>
-                <span class="surveycam-visual-label">GPS &bull; Weather &bull; Timestamp</span>
-                <div class="project-particles"></div>
-              </div>
-
-              <div class="project-content">
-                <h3>SurveyCam - GPS Camera</h3>
-                <p>
-                  A production-ready field documentation app published on Google Play. SurveyCam
-                  captures photos and videos with GPS, timestamps, weather, notes, and custom
-                  watermarks, then organizes evidence into project folders and PDF proof reports.
-                </p>
-
-                <div class="project-tech">
-                  <span class="tech-tag">Flutter</span>
-        
-                </div>
-
-                <div class="project-links">
-                  <a
-                    href="https://play.google.com/store/apps/details?id=com.baishalya.surveycam&amp;pcampaignid=web_share"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link"
-                    aria-label="View SurveyCam on Google Play"
-                  >Google Play</a>
-                  <a
-                    href="https://github.com/Baisalya/siteSnap.git"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link"
-                    aria-label="View SurveyCam source code on GitHub"
-                  >GitHub</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- E-Commerce Mobile App -->
-            <div class="project-card project-card--ecommerce" data-tilt>
-              <div class="project-image"><div class="project-overlay"></div><div class="project-icon">🚀</div><div class="project-particles"></div></div>
-              <div class="project-content">
-                <h3>E-Commerce Mobile App</h3>
-                <p>A full-featured e-commerce application built with Flutter, featuring user authentication, product catalog, shopping cart, and payment integration.</p>
-                <div class="project-tech">
-                  <span class="tech-tag">Flutter</span>
-                  <span class="tech-tag">Firebase</span>
-                  <span class="tech-tag">Node.js</span>
-                </div>
-                <div class="project-links">
-                  <a href="#" class="project-link">GitHub</a><a href="https://github.com/Baisalya/dairyapp.git" class="project-link">Demo</a>
-                </div>
-              </div>
-            </div>
-            <!-- 2. Chatbot App with AI -->
-            <div class="project-card project-card--ai" data-tilt>
-              <div class="project-image"><div class="project-overlay"></div><div class="project-icon">🤖</div><div class="project-particles"></div></div>
-              <div class="project-content">
-                <h3>AI Chatbot App</h3>
-                <p>An intelligent chatbot application powered by AI/ML, with natural language processing for smart user interaction.</p>
-                <div class="project-tech">
-                  <span class="tech-tag">Flutter</span>
-                  <span class="tech-tag">TensorFlow</span>
-                  <span class="tech-tag">Firebase</span>
-                </div>
-                <div class="project-links">
-                  <a href="#" class="project-link">GitHub</a><a href="#" class="project-link">Demo</a>
-                </div>
-              </div>
-            </div>
-      
-            <!-- 3. Chatting App (Android + Firebase) -->
-            <div class="project-card project-card--chat" data-tilt>
-              <div class="project-image"><div class="project-overlay"></div><div class="project-icon">💬</div><div class="project-particles"></div></div>
-              <div class="project-content">
-                <h3>Chatting App (Android)</h3>
-                <p>A real-time chat application on Android using Firebase for authentication, messaging, and push notifications.</p>
-                <div class="project-tech">
-                  <span class="tech-tag">Android</span>
-                  <span class="tech-tag">Firebase</span>
-                  <span class="tech-tag">Java/Kotlin</span>
-                </div>
-                <div class="project-links">
-                  <a href="#" class="project-link">GitHub</a><a href="#" class="project-link">Demo</a>
-                </div>
-              </div>
-            </div>
-      
-            <!-- 4. Farmer App (Android + AI backend) -->
-            <div class="project-card project-card--farmer" data-tilt>
-              <div class="project-image"><div class="project-overlay"></div><div class="project-icon">🌾</div><div class="project-particles"></div></div>
-              <div class="project-content">
-                <h3>Farmer Assistance App</h3>
-                <p>An Android app for farmers with AI-powered insights, real-time weather, crop suggestions, and market trends.</p>
-                <div class="project-tech">
-                  <span class="tech-tag">Android</span>
-                  <span class="tech-tag">TensorFlow</span>
-                  <span class="tech-tag">Node.js</span>
-                </div>
-                <div class="project-links">
-                  <a href="#" class="project-link">GitHub</a><a href="#" class="project-link">Demo</a>
-                </div>
-              </div>
-            </div>
-      
-            <!-- 5. Small ERP App (Android) -->
-            <div class="project-card project-card--erp" data-tilt>
-              <div class="project-image"><div class="project-overlay"></div><div class="project-icon">📊</div><div class="project-particles"></div></div>
-              <div class="project-content">
-                <h3>Small ERP System (Android)</h3>
-                <p>An Android ERP app for SMEs featuring inventory management, invoicing, and basic analytics.</p>
-                <div class="project-tech">
-                  <span class="tech-tag">Android</span>
-                  <span class="tech-tag">SQLite</span>
-                  <span class="tech-tag">Java/Kotlin</span>
-                </div>
-                <div class="project-links">
-                  <a href="#" class="project-link">GitHub</a><a href="#" class="project-link">Demo</a>
-                </div>
-              </div>
-            </div>
-      
-            <!-- 6. Media Player (Flutter) -->
-            <div class="project-card project-card--media" data-tilt>
-              <div class="project-image"><div class="project-overlay"></div><div class="project-icon">🎧</div><div class="project-particles"></div></div>
-              <div class="project-content">
-                <h3>Flutter Media Player</h3>
-                <p>A Flutter-based media player with video/audio playback, playlists, and an audio bookmark feature.</p>
-                <div class="project-tech">
-                  <span class="tech-tag">Flutter</span>
-                  <span class="tech-tag">Dart</span>
-                  <span class="tech-tag">SQLite</span>
-                </div>
-                <div class="project-links">
-                  <a href="#" class="project-link">GitHub</a><a href="#" class="project-link">Demo</a>
-                </div>
-              </div>
-            </div>
-      
-            <!-- Additional projects can follow the same pattern... -->
-          </div>
-        </div>
-      </section>
-      
-
-   <!-- Education Section -->
-<section id="education" class="education">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">
-                <span class="title-text">Education</span>
-                <div class="title-decoration"></div>
-            </h2>
-            <p class="section-subtitle">My academic journey and achievements</p>
-        </div>
-        <div class="education-content">
-            <div class="education-timeline">
-                <div class="timeline-line"></div>
-
-                <!-- MCA -->
-                <div class="education-item">
-                    <div class="education-marker">
-                        <div class="marker-inner">🎓</div>
-                    </div>
-                    <div class="education-card">
-                        <div class="card-glow"></div>
-                        <div class="education-header">
-                            <h3>Master of Computer Applications (MCA)</h3>
-                            <div class="education-meta">
-                                <span class="university">Centurion University</span>
-                                <span class="duration">2021 — 2023</span>
-                            </div>
-                        </div>
-                        <div class="education-content-text">
-                            <p>
-                                Specialized in advanced computing concepts, full-stack development, cloud computing, and software architecture. 
-                                Focused on building enterprise-grade applications and scalable systems.
-                            </p>
-                        </div>
-                        <div class="education-highlights">
-                            <div class="highlight-grid">
-                                <span class="highlight-tag">Advanced Java</span>
-                                <span class="highlight-tag">Android App Development</span>
-                                <span class="highlight-tag">Full Stack Development</span>
-                                <span class="highlight-tag">Cloud Computing</span>
-                                <span class="highlight-tag">Project Management</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BCA -->
-                <div class="education-item">
-                    <div class="education-marker">
-                        <div class="marker-inner">🎓</div>
-                    </div>
-                    <div class="education-card">
-                        <div class="card-glow"></div>
-                        <div class="education-header">
-                            <h3>Bachelor of Computer Applications (BCA)</h3>
-                            <div class="education-meta">
-                                <span class="university">Utkal University</span>
-                                <span class="duration">2017 — 2020</span>
-                            </div>
-                        </div>
-                        <div class="education-content-text">
-                            <p>
-                                Built a strong foundation in programming, database management, web development, and data structures. 
-                                Completed several practical projects in mobile and web application development.
-                            </p>
-                        </div>
-                        <div class="education-highlights">
-                            <div class="highlight-grid">
-                                <span class="highlight-tag">C/C++</span>
-                                <span class="highlight-tag">DBMS</span>
-                                <span class="highlight-tag">Android Development</span>
-                                <span class="highlight-tag">Web Programming</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 12th Science (IT) -->
-                <div class="education-item">
-                    <div class="education-marker">
-                        <div class="marker-inner">🎓</div>
-                    </div>
-                    <div class="education-card">
-                        <div class="card-glow"></div>
-                        <div class="education-header">
-                            <h3>12th Science (Information Technology)</h3>
-                            <div class="education-meta">
-                                <span class="university">Navajyoti Science College</span>
-                                <span class="duration">2015 — 2017</span>
-                            </div>
-                        </div>
-                        <div class="education-content-text">
-                            <p>
-                                Introduced to the basics of computer science and information technology. Gained knowledge in logic building, programming, and internet technologies.
-                            </p>
-                        </div>
-                        <div class="education-highlights">
-                            <div class="highlight-grid">
-                                <span class="highlight-tag">Computer Fundamentals</span>
-                                <span class="highlight-tag">HTML/CSS</span>
-                                <span class="highlight-tag">Basic Programming</span>
-                                <span class="highlight-tag">Networking Basics</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="title-text">Get In Touch</span>
-                    <div class="title-decoration"></div>
-                </h2>
-                <p class="section-subtitle">Tell me what you want to build and I will reply by email</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <div class="contact-card">
-                            <div class="card-glow"></div>
-                            <p class="contact-description">
-                                I'm always interested in new opportunities and exciting projects. 
-                                Let's discuss how we can work together to bring your ideas to life.
-                            </p>
-                            <div class="contact-methods">
-                                <a href="mailto:baishalya@gmail.com" class="contact-method">
-                                    <div class="contact-icon">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                            <polyline points="22,6 12,13 2,6"/>
-                                        </svg>
-                                    </div>
-                                    <div class="contact-details">
-                                        <h4>Email</h4>
-                                        <p>baishalya@gmail.com</p>
-                                    </div>
-                                    <div class="contact-arrow">→</div>
-                                </a>
-                                <a href="https://github.com/Baisalya" target="_blank" rel="noopener noreferrer" class="contact-method">
-                                    <div class="contact-icon">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="contact-details">
-                                        <h4>GitHub</h4>
-                                        <p>github.com/Baisalya</p>
-                                    </div>
-                                    <div class="contact-arrow">→</div>
-                                </a>
-                                <a href="https://www.linkedin.com/in/baishalya-roul-02a0b9153/" target="_blank" rel="noopener noreferrer" class="contact-method">
-                                    <div class="contact-icon">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="contact-details">
-                                        <h4>LinkedIn</h4>
-                                        <p>linkedin.com/in/baishalyaroul</p>
-                                    </div>
-                                    <div class="contact-arrow">→</div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-form-card">
-                        <div class="contact-form-heading">
-                            <span class="contact-form-kicker">Project inquiry</span>
-                            <h3>Send your requirement</h3>
-                            <p>Your message will arrive directly in my email inbox.</p>
-                        </div>
-                        <form
-                            class="contact-form"
-                            action="https://formsubmit.co/baishalya@gmail.com"
-                            method="POST"
-                            accept-charset="UTF-8"
-                        >
-                            <input type="hidden" name="_subject" value="New portfolio project inquiry">
-                            <input type="hidden" name="_template" value="table">
-                            <input type="hidden" name="_captcha" value="true">
-                            <input
-                                class="contact-honey"
-                                type="text"
-                                name="_honey"
-                                tabindex="-1"
-                                autocomplete="off"
-                                aria-hidden="true"
-                            >
-
-                            <div class="contact-form-row">
-                                <label class="contact-field">
-                                    <span>Your name</span>
-                                    <input type="text" name="name" autocomplete="name" placeholder="Full name" required>
-                                </label>
-                                <label class="contact-field">
-                                    <span>Email address</span>
-                                    <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required>
-                                </label>
-                            </div>
-
-                            <label class="contact-field">
-                                <span>Interested in</span>
-                                <select name="interested_in" required>
-                                    <option value="" selected disabled>Select an app or service</option>
-                                    <option value="ShopPilot">ShopPilot</option>
-                                    <option value="NotiVault">NotiVault</option>
-                                    <option value="Construction ERP">Construction ERP</option>
-                                    <option value="SurveyCam">SurveyCam</option>
-                                    <option value="DevDesk">DevDesk</option>
-                                    <option value="Mobile app development">Mobile app development</option>
-                                    <option value="Website development">Website development</option>
-                                    <option value="Other">Other requirement</option>
-                                </select>
-                            </label>
-
-                            <label class="contact-field">
-                                <span>Requirement</span>
-                                <textarea
-                                    name="message"
-                                    rows="5"
-                                    placeholder="Briefly describe what you need, your platform, and expected timeline."
-                                    required
-                                ></textarea>
-                            </label>
-
-                            <button class="contact-submit" type="submit">
-                                <span>Send requirement</span>
-                                <span aria-hidden="true">&rarr;</span>
-                            </button>
-                            <p class="contact-form-note">
-                                Free email delivery with spam protection. Please do not send passwords, OTPs, or payment details.
-                            </p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-text">
-                    <p>&copy; 2026 Baishalya Roul. All rights reserved.</p>
-                    <p>Built with passion using HTML, CSS, and JavaScript</p>
-                </div>
-                <div class="footer-support" aria-label="Support my work">
-                    <div class="footer-support__copy">
-                        <strong>Enjoying my work?</strong>
-                        <span>Help me keep building useful apps and open-source projects.</span>
-                    </div>
-                    <a
-                        href="https://www.buymeacoffee.com/baisalya"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="bmc-button"
-                        aria-label="Buy Baishalya a coffee (opens in a new tab)"
+            <div class="identity-card__hero">
+                <div class="identity-card__portrait" data-profile-portrait data-easter-secret>
+                    <img
+                        src="https://avatars.githubusercontent.com/u/84311059?v=4"
+                        alt="Baishalya Roul profile photo"
+                        width="176"
+                        height="176"
+                        loading="lazy"
+                        referrerpolicy="no-referrer"
                     >
-                        <svg class="bmc-button__icon" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill="currentColor" d="M4 3h13a2 2 0 0 1 2 2v2h1.25A2.75 2.75 0 0 1 23 9.75v1.5A4.75 4.75 0 0 1 18.25 16H18v1a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V3Zm14 6v5h.25A2.75 2.75 0 0 0 21 11.25v-1.5A.75.75 0 0 0 20.25 9H18ZM6 5v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V5H6Zm2.25 2.25a1 1 0 0 1 1.4.15c.62.77.62 1.68 0 2.45-.14.18-.14.32 0 .5.62.77.62 1.68 0 2.45a1 1 0 1 1-1.55-1.25c.14-.18.14-.32 0-.5-.62-.77-.62-1.68 0-2.45a1 1 0 0 1 .15-1.4Zm4 0a1 1 0 0 1 1.4.15c.62.77.62 1.68 0 2.45-.14.18-.14.32 0 .5.62.77.62 1.68 0 2.45a1 1 0 1 1-1.55-1.25c.14-.18.14-.32 0-.5-.62-.77-.62-1.68 0-2.45a1 1 0 0 1 .15-1.4Z"/>
-                        </svg>
-                        <span class="bmc-button__label">Buy me a <strong>coffee</strong></span>
-                    </a>
+                    <span class="identity-card__portrait-fallback" aria-hidden="true"><img src="assets/brand/br-mark.svg" alt="" width="88" height="88"></span>
                 </div>
-                <div class="footer-social">
-                    <a href="https://github.com/Baisalya" target="_blank" rel="noopener noreferrer" class="social-link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/baishalya-roul-02a0b9153/" target="_blank" rel="noopener noreferrer" class="social-link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                    </a>
+                <div class="identity-card__identity">
+                    <img class="identity-card__mini-mark" src="assets/brand/br-mark.svg" alt="BR brand mark" width="48" height="48">
+                    <p>Independent software builder</p>
+                    <h2 id="identity-card-name">Baishalya Roul</h2>
+                    <span>Android · Windows · Web · Local-first systems</span>
                 </div>
+            </div>
+
+            <dl class="identity-card__details">
+                <div><dt>Official email</dt><dd><a href="mailto:baishalya1999@gmail.com">baishalya1999@gmail.com</a></dd></div>
+                <div><dt>Website</dt><dd><a href="https://baisalya.com/">baisalya.com</a></dd></div>
+                <div><dt>GitHub</dt><dd><a href="https://github.com/Baisalya" target="_blank" rel="noopener noreferrer">@Baisalya ↗</a></dd></div>
+                <div><dt>Current focus</dt><dd>Practical software products and dependable releases</dd></div>
+            </dl>
+
+            <div class="identity-card__actions">
+                <a href="#software" data-identity-close>View software</a>
+            </div>
+            <p class="identity-card__note">BR is the personal mark for Baishalya Roul. Click it anytime to return home and reopen this card.</p>
+        </article>
+    </dialog>
+
+    <main id="main-content">
+        <section id="home" class="professional-hero" aria-labelledby="hero-title">
+            <div class="container professional-hero__grid">
+                <div class="professional-hero__content">
+                    <div class="eyebrow"><span class="eyebrow__dot"></span>Independent software builder</div>
+                    <h1 id="hero-title">Building software that stays useful after the demo.</h1>
+                    <p class="professional-hero__lede">
+                        I’m Baishalya Roul. I design and build practical software for Android, Windows, and the web — with a focus on local-first workflows, clear product experiences, and tools that solve real operational problems.
+                    </p>
+                    <div class="professional-hero__actions">
+                        <a class="professional-button professional-button--primary" href="#software">Explore software <span aria-hidden="true">→</span></a>
+                        <a class="professional-button professional-button--secondary" href="#contact">Start a conversation</a>
+                    </div>
+                    <div class="professional-hero__proof" aria-label="Current engineering focus">
+                        <span>Flutter</span>
+                        <span>Android</span>
+                        <span>Windows</span>
+                        <span>Local-first systems</span>
+                    </div>
+                </div>
+
+                <div class="professional-hero__visual" aria-label="Software ecosystem overview">
+                    <div class="builder-window">
+                        <div class="builder-window__bar">
+                            <span></span><span></span><span></span>
+                            <small>baisalya.com / build</small>
+                        </div>
+                        <div class="builder-window__body">
+                            <p class="builder-window__command"><span>$</span> current-work --show</p>
+                            <div class="builder-window__line"><span class="builder-window__key">developer_tools</span><strong>DevDesk</strong></div>
+                            <div class="builder-window__line"><span class="builder-window__key">business_ops</span><strong>ShopPilot</strong></div>
+                            <div class="builder-window__line"><span class="builder-window__key">field_systems</span><strong>Construction ERP</strong></div>
+                            <div class="builder-window__line"><span class="builder-window__key">android_utility</span><strong>NotiVault</strong></div>
+                            <div class="builder-window__line"><span class="builder-window__key">teacher_tools</span><strong>EduSheet</strong></div>
+                            <div class="builder-window__status"><span></span>Shipping practical products, one system at a time.</div>
+                        </div>
+                    </div>
+                    <div class="professional-hero__orbit professional-hero__orbit--one"></div>
+                    <div class="professional-hero__orbit professional-hero__orbit--two"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="professional-section professional-about" aria-labelledby="about-title">
+            <div class="container">
+                <div class="professional-section__heading" data-reveal>
+                    <span class="section-kicker">About</span>
+                    <h2 id="about-title">Software engineering with a product mindset.</h2>
+                    <p>
+                        My work sits between product design and implementation: understand the workflow, reduce unnecessary complexity, then build the software so it remains dependable in everyday use.
+                    </p>
+                </div>
+
+                <div class="professional-about__grid">
+                    <article class="professional-about__story">
+                        <p>
+                            I work primarily with Flutter and Android, and I also build Windows and web experiences around the products I ship. The current software in this repository spans developer tooling, shop operations, construction workflows, teacher tools, notification history, and field documentation.
+                        </p>
+                        <p>
+                            A recurring theme across these products is ownership: ordinary files where possible, offline or local-first workflows where they matter, and product surfaces that explain what the software actually does rather than hiding behind feature lists.
+                        </p>
+                    </article>
+
+                    <div class="professional-about__principles" aria-label="Working principles">
+                        <article class="principle-card">
+                            <span class="principle-card__number">01</span>
+                            <div><h3>Practical first</h3><p>Start from the real workflow and build around the job the software needs to finish.</p></div>
+                        </article>
+                        <article class="principle-card">
+                            <span class="principle-card__number">02</span>
+                            <div><h3>Local where it matters</h3><p>Use offline and local-first patterns when reliability, ownership, or field use makes them the better fit.</p></div>
+                        </article>
+                        <article class="principle-card">
+                            <span class="principle-card__number">03</span>
+                            <div><h3>Release-minded</h3><p>Treat documentation, validation, platform behavior, and recovery as part of the product — not cleanup after coding.</p></div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="professional-background" aria-label="Education background">
+                    <div><span>2021 — 2023</span><strong>Master of Computer Applications</strong><small>Centurion University</small></div>
+                    <div><span>2017 — 2020</span><strong>Bachelor of Computer Applications</strong><small>Utkal University</small></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="software" class="professional-section professional-software" aria-labelledby="software-title">
+            <div class="container">
+                <div class="professional-section__heading professional-section__heading--split" data-reveal>
+                    <div>
+                        <span class="section-kicker">Software</span>
+                        <h2 id="software-title">Products built around real work.</h2>
+                    </div>
+                    <p>Each product has its own dedicated website or release surface. This page is the professional index; the software sites themselves remain independent.</p>
+                </div>
+
+                <div class="software-grid">
+                    <article data-reveal class="software-card software-card--featured">
+                        <div class="software-card__visual software-card__visual--devdesk">
+                            <img src="devdesk/assets/img/devdesk-logo-256.png" srcset="devdesk/assets/img/devdesk-logo-256.png 1x, devdesk/assets/img/devdesk-logo-512.png 2x" alt="DevDesk application logo" width="256" height="256" loading="lazy" decoding="async">
+                            <span class="software-status software-status--live">Windows + Android</span>
+                        </div>
+                        <div class="software-card__body">
+                            <div class="software-card__topline"><span>Developer workspace</span><span>Local-first</span></div>
+                            <h3>DevDesk</h3>
+                            <p>A local-first workspace for plans, Markdown knowledge, API testing, JSON tools, workspace-scoped Git, and review-first AI workflows.</p>
+                            <div class="software-card__links">
+                                <a href="devdesk/index.html" target="_blank" rel="noopener noreferrer" aria-label="View DevDesk website">Website <span>↗</span></a>
+                                <a href="https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare" target="_blank" rel="noopener noreferrer">Microsoft Store <span>↗</span></a>
+                                <a href="https://play.google.com/store/apps/details?id=com.baishalya.devdesk&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Google Play <span>↗</span></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article data-reveal class="software-card">
+                        <div class="software-card__visual software-card__visual--shoppilot">
+                            <img src="assets/images/shoppilot-logo.png" alt="ShopPilot application logo" width="1024" height="1024" loading="lazy" decoding="async">
+                            <span class="software-status software-status--preview">Private Preview</span>
+                        </div>
+                        <div class="software-card__body">
+                            <div class="software-card__topline"><span>Shop operations</span><span>Offline-first</span></div>
+                            <h3>ShopPilot</h3>
+                            <p>Billing and operations for repair shops, bakeries, grocery and retail stores, restaurants, tailors, and garages — with stock, staff, branches, reports, and recovery.</p>
+                            <div class="software-card__links">
+                                <a href="shoppilot-erp/index.html" target="_blank" rel="noopener noreferrer">Website <span>↗</span></a>
+                                <a href="shoppilot-erp/quick-start.html" target="_blank" rel="noopener noreferrer">Quick start <span>↗</span></a>
+                                <a href="shoppilot-erp/user-manual.html" target="_blank" rel="noopener noreferrer">Manual <span>↗</span></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article data-reveal class="software-card">
+                        <div class="software-card__visual software-card__visual--construction">
+                            <img src="construction-erp/assets/icons/favicon.svg" alt="Construction ERP application logo" width="160" height="160" loading="lazy" decoding="async">
+                            <span class="software-status software-status--soon">Coming Soon</span>
+                        </div>
+                        <div class="software-card__body">
+                            <div class="software-card__topline"><span>Construction operations</span><span>Offline-first</span></div>
+                            <h3>Construction ERP</h3>
+                            <p>Connects tender value, project budgets, daily work, stock, labour, machinery, approvals, and reports for site and office teams.</p>
+                            <div class="software-card__links">
+                                <a href="construction-erp/index.html" target="_blank" rel="noopener noreferrer" aria-label="View the Construction ERP website">Website <span>↗</span></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article data-reveal class="software-card project-card--notivault">
+                        <div class="software-card__visual software-card__visual--notivault">
+                            <img src="notivault-website/public/og-deleted-message.png" alt="NotiVault private notification history app preview" width="1733" height="908" loading="lazy" decoding="async">
+                            <span class="software-status software-status--soon">Coming Soon</span>
+                        </div>
+                        <div class="software-card__body">
+                            <div class="software-card__topline"><span>Android utility</span><span>Private + local-first</span></div>
+                            <h3>NotiVault</h3>
+                            <p>Preserves selected chat notification previews before they disappear, with voice notes and media saved when the notification exposes them.</p>
+                            <div class="software-card__links">
+                                <a href="notivault-website/" target="_blank" rel="noopener noreferrer" aria-label="View the NotiVault website">Website <span>↗</span></a>
+                                <span class="software-link-muted" aria-label="NotiVault is coming soon to Google Play">Google Play &middot; Coming soon</span>
+                            </div>
+                            <p class="software-card__note">No public installer is offered yet.</p>
+                        </div>
+                    </article>
+
+                    <article data-reveal class="software-card">
+                        <div class="software-card__visual software-card__visual--edusheet">
+                            <img src="EduSheet/assets/images/edusheet-brand-mark.png" alt="EduSheet brand mark" loading="lazy" decoding="async">
+                            <span class="software-status software-status--tool">Teacher tool</span>
+                        </div>
+                        <div class="software-card__body">
+                            <div class="software-card__topline"><span>Education</span><span>Question papers</span></div>
+                            <h3>EduSheet</h3>
+                            <p>A math-first question paper maker for teachers, designed to make equations and structured paper creation faster to work with.</p>
+                            <div class="software-card__links">
+                                <a href="EduSheet/index.html" target="_blank" rel="noopener noreferrer">Website <span>↗</span></a>
+                                <a href="EduSheet/quick-start.html" target="_blank" rel="noopener noreferrer">Quick start <span>↗</span></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article data-reveal class="software-card">
+                        <div class="software-card__visual software-card__visual--surveycam">
+                            <img src="assets/images/App_logo.png" alt="SurveyCam application logo" width="1254" height="1254" loading="lazy" decoding="async">
+                            <span class="software-status software-status--live">Published</span>
+                        </div>
+                        <div class="software-card__body">
+                            <div class="software-card__topline"><span>Field documentation</span><span>Android</span></div>
+                            <h3>SurveyCam - Location &amp; Geo Tag</h3>
+                            <p>A published Android field-proof camera for GPS and timestamped photos/videos, project folders, field notes, custom overlays, and PDF proof reports.</p>
+                            <div class="software-card__links">
+                                <a href="surveycam/index.html" target="_blank" rel="noopener noreferrer">Website <span>↗</span></a>
+                                <a href="https://play.google.com/store/apps/details?id=com.baishalya.surveycam&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Google Play <span>↗</span></a>
+                                <a href="https://github.com/Baisalya/siteSnap.git" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="engineering" class="professional-section professional-engineering" aria-labelledby="engineering-title">
+            <div class="container">
+                <div class="professional-section__heading professional-section__heading--split" data-reveal>
+                    <div>
+                        <span class="section-kicker">Engineering</span>
+                        <h2 id="engineering-title">Engineering choices shaped by the work, not a technology checklist.</h2>
+                    </div>
+                    <p>I work across product structure, application behavior, local data, platform delivery, and release hardening. The emphasis changes by product, but the goal stays the same: software that is understandable, recoverable, and dependable in everyday use.</p>
+                </div>
+
+                <div class="capability-grid" aria-label="Engineering capabilities">
+                    <article class="capability-card" data-reveal>
+                        <span class="capability-card__index">01</span>
+                        <div>
+                            <p class="capability-card__kicker">Application engineering</p>
+                            <h3>Cross-platform product delivery</h3>
+                            <p>Flutter-based applications for Android and Windows, with platform behavior treated as part of the product rather than as a final packaging step.</p>
+                        </div>
+                        <ul>
+                            <li>Flutter &amp; Dart application architecture</li>
+                            <li>Android interaction and release surfaces</li>
+                            <li>Windows desktop workflows and distribution</li>
+                        </ul>
+                    </article>
+
+                    <article class="capability-card" data-reveal>
+                        <span class="capability-card__index">02</span>
+                        <div>
+                            <p class="capability-card__kicker">Data &amp; resilience</p>
+                            <h3>Offline and local-first systems</h3>
+                            <p>Products such as DevDesk, ShopPilot, Construction ERP, and NotiVault are designed around local ownership, offline continuity, recovery, or device-first storage where the workflow calls for it.</p>
+                        </div>
+                        <ul>
+                            <li>SQLite and device-local persistence</li>
+                            <li>Backup, restore, recovery, and migration thinking</li>
+                            <li>Ordinary-file workflows where appropriate</li>
+                        </ul>
+                    </article>
+
+                    <article class="capability-card" data-reveal>
+                        <span class="capability-card__index">03</span>
+                        <div>
+                            <p class="capability-card__kicker">Workflow design</p>
+                            <h3>Operational software, not isolated screens</h3>
+                            <p>I structure interfaces around the work that has to move through them: billing, inventory, project operations, field evidence, teaching tools, API workspaces, and documentation.</p>
+                        </div>
+                        <ul>
+                            <li>Task and information-flow modelling</li>
+                            <li>Dense desktop and touch-first mobile surfaces</li>
+                            <li>Clear states, actions, and recovery paths</li>
+                        </ul>
+                    </article>
+
+                    <article class="capability-card" data-reveal>
+                        <span class="capability-card__index">04</span>
+                        <div>
+                            <p class="capability-card__kicker">Release engineering</p>
+                            <h3>Shipping includes the reliability work.</h3>
+                            <p>Validation scripts, documentation, privacy/support surfaces, platform-specific release checks, and regression protection are treated as engineering deliverables.</p>
+                        </div>
+                        <ul>
+                            <li>Automated release-content validation</li>
+                            <li>Regression and reference-integrity checks</li>
+                            <li>Manuals, support, privacy, and release surfaces</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <div class="engineering-stack" data-reveal>
+                    <div class="engineering-stack__intro">
+                        <span class="section-kicker">Working stack</span>
+                        <h3>Tools are selected around the product boundary.</h3>
+                        <p>No percentage bars or arbitrary proficiency scores — these are the technologies and engineering areas visible in the software being built here.</p>
+                    </div>
+                    <div class="engineering-stack__groups">
+                        <div class="stack-group">
+                            <span>Applications</span>
+                            <div><strong>Flutter</strong><strong>Dart</strong><strong>Android</strong><strong>Windows</strong></div>
+                        </div>
+                        <div class="stack-group">
+                            <span>Local systems</span>
+                            <div><strong>SQLite</strong><strong>Local-first</strong><strong>Offline workflows</strong><strong>Recovery</strong></div>
+                        </div>
+                        <div class="stack-group">
+                            <span>Developer tooling</span>
+                            <div><strong>APIs</strong><strong>OpenAPI</strong><strong>Git workflows</strong><strong>JSON tooling</strong></div>
+                        </div>
+                        <div class="stack-group">
+                            <span>Product delivery</span>
+                            <div><strong>Responsive web</strong><strong>Validation</strong><strong>Documentation</strong><strong>Release hardening</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="engineering-process" aria-label="Engineering delivery approach" data-reveal>
+                    <div class="engineering-process__step"><span>01</span><strong>Understand</strong><p>Start with the job, constraints, platform, and failure cases.</p></div>
+                    <div class="engineering-process__step"><span>02</span><strong>Structure</strong><p>Define product boundaries, data ownership, states, and navigation.</p></div>
+                    <div class="engineering-process__step"><span>03</span><strong>Build</strong><p>Implement the smallest coherent architecture that supports the real workflow.</p></div>
+                    <div class="engineering-process__step"><span>04</span><strong>Harden</strong><p>Exercise recovery, regressions, accessibility, responsiveness, and edge cases.</p></div>
+                    <div class="engineering-process__step"><span>05</span><strong>Ship</strong><p>Package documentation, release surfaces, and validation with the product.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="professional-section professional-contact" aria-labelledby="contact-title">
+            <div class="container professional-contact__grid">
+                <div class="professional-contact__intro" data-reveal>
+                    <span class="section-kicker">Contact</span>
+                    <h2 id="contact-title">Start with the problem the software needs to solve.</h2>
+                    <p>
+                        For a product question, choose the product below. For a new build, share the target platform, the workflow that matters, and the constraint that cannot be ignored.
+                    </p>
+
+                    <div class="professional-contact__routes" aria-label="Ways to start a conversation">
+                        <article>
+                            <span>Product question</span>
+                            <strong>Ask about existing software</strong>
+                            <p>Use the product selector so the message arrives with the right context.</p>
+                        </article>
+                        <article>
+                            <span>New software requirement</span>
+                            <strong>Describe the workflow first</strong>
+                            <p>What should become faster, clearer, safer, or easier to recover?</p>
+                        </article>
+                    </div>
+
+                    <div class="professional-contact__links">
+                        <a href="mailto:baishalya1999@gmail.com">baishalya1999@gmail.com</a>
+                        <a href="https://github.com/Baisalya" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                        <a href="https://www.linkedin.com/in/baishalya-roul-02a0b9153/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                    </div>
+                </div>
+
+                <form class="professional-contact__form" data-reveal action="https://formsubmit.co/baishalya1999@gmail.com" method="POST" aria-describedby="contact-form-note">
+                    <input type="hidden" name="_subject" value="New baisalya.com software inquiry">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="source" value="baisalya.com">
+                    <input class="contact-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                    <div class="professional-contact__form-heading">
+                        <span>Software inquiry</span>
+                        <strong>Give the message enough context to be useful.</strong>
+                    </div>
+
+                    <div class="professional-form-row">
+                        <label>
+                            <span>Your name</span>
+                            <input type="text" name="name" autocomplete="name" maxlength="100" required>
+                        </label>
+                        <label>
+                            <span>Email</span>
+                            <input type="email" name="email" autocomplete="email" inputmode="email" maxlength="160" required>
+                        </label>
+                    </div>
+
+                    <div class="professional-form-row">
+                        <label>
+                            <span>Interested in</span>
+                            <select name="interested_in" required>
+                                <option value="" selected disabled>Select a product or service</option>
+                                <option value="ShopPilot">ShopPilot</option>
+                                <option value="NotiVault">NotiVault</option>
+                                <option value="Construction ERP">Construction ERP</option>
+                                <option value="EduSheet">EduSheet</option>
+                                <option value="SurveyCam">SurveyCam</option>
+                                <option value="DevDesk">DevDesk</option>
+                                <option value="Mobile app development">Mobile app development</option>
+                                <option value="Website development">Website development</option>
+                                    <option value="Partnership / sponsorship">Partnership / sponsorship</option>
+                                <option value="Other">Other requirement</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>Platform</span>
+                            <select name="platform" required>
+                                <option value="" selected disabled>Select the closest fit</option>
+                                <option value="Android">Android</option>
+                                <option value="Windows">Windows</option>
+                                <option value="Web">Web</option>
+                                <option value="Cross-platform">Cross-platform</option>
+                                <option value="Not sure yet">Not sure yet</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <label>
+                        <span>Requirement</span>
+                        <textarea name="message" rows="7" minlength="20" maxlength="2500" placeholder="What should the software help you do? Include the current workflow, important constraints, and what a useful outcome looks like." required></textarea>
+                    </label>
+
+                    <div class="professional-form-guidance" aria-label="Helpful context for a software inquiry">
+                        <span>Useful details</span>
+                        <p>Current workflow · target platform · offline or sync needs · release status · recovery or privacy constraints</p>
+                    </div>
+
+                    <button type="submit">Send requirement <span aria-hidden="true">→</span></button>
+                    <p id="contact-form-note">The form sends your message by email. Please do not send passwords, OTPs, payment details, recovery keys, or other secrets.</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="professional-footer">
+        <div class="container professional-footer__inner">
+            <div><strong>Baishalya Roul</strong><span>Software Builder</span></div>
+            <p>&copy; 2026 Baishalya Roul. Built for practical software and long-term work.</p>
+            <div class="professional-footer__links"><a href="privacy.html">Website privacy</a>
+                <a href="https://www.buymeacoffee.com/baisalya" target="_blank" rel="noopener noreferrer">Support my work ↗</a>
+                <a href="#home">Back to top ↑</a>
             </div>
         </div>
     </footer>
 
     <script type="module" src="main.js"></script>
-    <script type="module" src="easter-egg.js"></script>
 </body>
 </html>

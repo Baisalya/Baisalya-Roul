@@ -1,0 +1,8 @@
+HIDDEN_EASTER_EGG_UPDATE.md
+index.html
+scripts/validate-batch-c.mjs
+scripts/validate-brand-experience.mjs
+src/site/easter-egg/runtime.js
+src/site/interactions/easter-egg-loader.js
+src/site/styles/components/footer.css
+src/site/styles/components/navigation.css

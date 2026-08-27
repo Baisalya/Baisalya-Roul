@@ -280,7 +280,7 @@ export default function PrivacyPolicy() {
               NotiVault is developed by <strong>Baisalya</strong>. For privacy questions,
               support, or concerns, email:
             </p>
-            <p><a href="mailto:baishalya@gmail.com">baishalya@gmail.com</a></p>
+            <p><a href="mailto:baishalya1999@gmail.com">baishalya1999@gmail.com</a></p>
             <p>
               <a href="https://baisalya.github.io/Baisalya-Roul/" target="_blank" rel="noreferrer">
                 baisalya.github.io/Baisalya-Roul/ ↗

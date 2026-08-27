@@ -1,8 +1,8 @@
 window.CONSTRUCTION_ERP_CONFIG = {
   "appName": "Construction ERP",
   "appVersion": "1.22.0+107",
-  "supportEmail": "baishalya@gmail.com",
-  "securityEmail": "baishalya@gmail.com",
+  "supportEmail": "baishalya1999@gmail.com",
+  "securityEmail": "baishalya1999@gmail.com",
   "siteUrl": "https://REPLACE-WITH-YOUR-SITE-URL",
   "githubRepositoryUrl": "",
   "platforms": {
