@@ -7,7 +7,7 @@ import { promisify } from 'node:util';
 const execFileAsync = promisify(execFile);
 
 const publicSiteBase =
-  'https://baisalya.github.io/Baisalya-Roul/notivault-website/';
+  'https://baisalya.com/notivault-website/';
 
 function makeStaticHtml(source, page) {
   const onHomePage = page === 'home';

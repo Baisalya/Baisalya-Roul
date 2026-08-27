@@ -96,7 +96,33 @@ First-use activation is important:
 
 The form has a hidden honeypot and browser validation. CAPTCHA is currently disabled. Never use the form for passwords, OTPs, payment details, recovery keys, or other secrets. If messages stop arriving, check Spam, verify the exact destination in `index.html`, and repeat a harmless test.
 
-## 5. Common test failures
+## 5. Sitemap, Search Console, and SEO
+
+The sitemap address is exactly `https://baisalya.com/sitemap.xml`. The extension is `.xml`; `sitemap.xm` is a typo and should return 404. The root sitemap is an index that points Google to the main pages and every product sitemap.
+
+After a successful deployment:
+
+1. Open `https://baisalya.com/sitemap.xml` in an incognito window and confirm it loads XML.
+2. Open Google Search Console for the `baisalya.com` domain property.
+3. Go to **Sitemaps**, enter `sitemap.xml`, and select **Submit**.
+4. If an older row says **Couldn't fetch**, resubmit after the live XML works. Google may take time to refresh the status.
+5. Use **URL inspection** for the home page and important product pages, run **Test live URL**, and request indexing when the live test succeeds.
+
+Useful URLs to inspect are:
+
+- `https://baisalya.com/`
+- `https://baisalya.com/devdesk/`
+- `https://baisalya.com/surveycam/`
+- `https://baisalya.com/shoppilot-erp/`
+- `https://baisalya.com/construction-erp/`
+- `https://baisalya.com/notivault-website/`
+- `https://baisalya.com/EduSheet/`
+
+The release process automatically enforces a canonical `baisalya.com` URL and indexable robots metadata on public HTML pages. It also rejects stale GitHub Pages URLs, placeholder domains, missing sitemap targets, and sitemap URLs that do not match a real production file. Never edit `dist/` directly; update the source and run `npm run release`.
+
+Search engines decide ranking and indexing. A valid sitemap, structured data, canonical URLs, and Search Console submission improve discovery but do not guarantee an immediate result or a trending position. Keep product pages accurate, publish useful updates, link to them from relevant official profiles and repositories, and monitor Search Console **Pages**, **Sitemaps**, and **Performance** reports.
+
+## 6. Common test failures
 
 Run the failing test by itself after each fix.
 
@@ -107,7 +133,7 @@ Run the failing test by itself after each fix.
 - `Protected ... changed from baseline`: first review `git diff -- devdesk construction-erp EduSheet notivault-website "shoppilot erp" shoppilot-erp`. If every change is intentional, run `npm run protected:refresh`; otherwise restore or fix the unexpected file. Then run `npm run test:protected-products`.
 - `test:dist` failure: never patch `dist/` directly. Fix the source, run `npm run build`, then `npm run test:dist`.
 
-## 6. Site or deployment recovery
+## 7. Site or deployment recovery
 
 If GitHub Actions fails, open the failed step, reproduce its command locally, fix the source, and push a new commit. Do not disable a release validator to make deployment green.
 

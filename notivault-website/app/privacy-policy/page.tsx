@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "How NotiVault accesses, stores, uses and protects notification data on Android.",
-  alternates: { canonical: "/privacy-policy" },
+  alternates: { canonical: "https://baisalya.com/notivault-website/privacy-policy/" },
 };
 
 const toc = [
@@ -282,7 +282,7 @@ export default function PrivacyPolicy() {
             </p>
             <p><a href="mailto:baishalya1999@gmail.com">baishalya1999@gmail.com</a></p>
             <p>
-              <a href="https://baisalya.github.io/Baisalya-Roul/" target="_blank" rel="noreferrer">
+              <a href="https://baisalya.com/" target="_blank" rel="noreferrer">
                 baisalya.github.io/Baisalya-Roul/ ↗
               </a>
             </p>
@@ -299,7 +299,7 @@ export default function PrivacyPolicy() {
 
       <footer className="site-footer">
         <div><span className="brand footer-brand">NotiVault</span><p>Private notification history with a softer little personality.</p></div>
-        <div className="footer-links"><div><strong>Product</strong><Link href="/">Home</Link><Link href="/#features">Features</Link></div><div><strong>Legal</strong><Link href="/privacy-policy">Privacy policy</Link></div><div><strong>Developer</strong><a href="https://baisalya.github.io/Baisalya-Roul/" target="_blank" rel="noreferrer">Baisalya ↗</a></div></div>
+        <div className="footer-links"><div><strong>Product</strong><Link href="/">Home</Link><Link href="/#features">Features</Link></div><div><strong>Legal</strong><Link href="/privacy-policy">Privacy policy</Link></div><div><strong>Developer</strong><a href="https://baisalya.com/" target="_blank" rel="noreferrer">Baisalya ↗</a></div></div>
         <div className="footer-bottom"><span>© 2026 Baisalya. All rights reserved.</span><span>Last updated 13 August 2026.</span></div>
       </footer>
     </main>

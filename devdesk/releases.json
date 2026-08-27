@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "publishedAt": "2026-07-31T15:53:00Z",
   "releaseStatus": "available",
-  "releasePage": "https://baisalya.github.io/Baisalya-Roul/devdesk/downloads.html",
+  "releasePage": "https://baisalya.com/devdesk/downloads.html",
   "android": {
     "enabled": true,
     "packageName": "com.baishalya.devdesk",
@@ -12,7 +12,7 @@
     "mandatoryUpdateGap": 2,
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.baishalya.devdesk",
     "apkUrl": "",
-    "releaseNotesUrl": "https://baisalya.github.io/Baisalya-Roul/devdesk/downloads.html",
+    "releaseNotesUrl": "https://baisalya.com/devdesk/downloads.html",
     "summary": "Windows availability, reliable update checks, and workspace improvements.",
     "publishedAt": "2026-07-31T15:53:00Z"
   },
@@ -25,7 +25,7 @@
     "mandatoryUpdateGap": 2,
     "storeUrl": "https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare",
     "installerUrl": "",
-    "releaseNotesUrl": "https://baisalya.github.io/Baisalya-Roul/devdesk/downloads.html",
+    "releaseNotesUrl": "https://baisalya.com/devdesk/downloads.html",
     "summary": "Windows availability, reliable update checks, and workspace improvements.",
     "publishedAt": "2026-07-31T15:53:00Z"
   },
@@ -77,14 +77,14 @@
       "status": "coming-soon",
       "version": "",
       "build": 0,
-      "primaryUrl": "https://baisalya.github.io/Baisalya-Roul/devdesk/downloads.html",
+      "primaryUrl": "https://baisalya.com/devdesk/downloads.html",
       "artifacts": []
     },
     "ios": {
       "status": "coming-soon",
       "version": "",
       "build": 0,
-      "primaryUrl": "https://baisalya.github.io/Baisalya-Roul/devdesk/downloads.html",
+      "primaryUrl": "https://baisalya.com/devdesk/downloads.html",
       "artifacts": []
     }
   }

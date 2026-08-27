@@ -51,6 +51,7 @@ rejectText(siteCss, 'easter-egg-compat.css', 'eager easter-egg stylesheet');
 for (const file of [
   'robots.txt',
   'sitemap.xml',
+  'sitemap-pages.xml',
   'assets/brand/br-mark.svg',
   'assets/brand/apple-touch-icon.png',
   'assets/brand/baisalya-og.png',
@@ -66,8 +67,11 @@ for (const file of [
 
 const robots = await readFile(path.join(root, 'robots.txt'), 'utf8');
 const sitemap = await readFile(path.join(root, 'sitemap.xml'), 'utf8');
+const sitemapPages = await readFile(path.join(root, 'sitemap-pages.xml'), 'utf8');
 requireText(robots, 'Sitemap: https://baisalya.com/sitemap.xml', 'robots sitemap reference');
-requireText(sitemap, '<loc>https://baisalya.com/</loc>', 'canonical sitemap entry');
+requireText(sitemap, '<sitemapindex', 'root sitemap index');
+requireText(sitemap, '<loc>https://baisalya.com/sitemap-pages.xml</loc>', 'main-pages sitemap entry');
+requireText(sitemapPages, '<loc>https://baisalya.com/</loc>', 'canonical home sitemap entry');
 
 const ldMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
 if (!ldMatch) failures.push('Batch C JSON-LD block not found');

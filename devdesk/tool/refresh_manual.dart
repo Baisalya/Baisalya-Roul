@@ -779,7 +779,7 @@ Future<void> _refreshSharedBrand(Directory siteRoot) async {
         )
         .replaceAll(
           'https://baisalya.github.io/devdesk-support/privacy-policy.html',
-          'https://baisalya.github.io/Baisalya-Roul/devdesk/privacy-policy.html',
+          'https://baisalya.com/devdesk/privacy-policy.html',
         )
         .replaceAll(
           '<link rel="icon" href="../assets/img/devdesk-logo.png">',

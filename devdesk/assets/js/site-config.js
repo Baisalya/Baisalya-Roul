@@ -28,6 +28,6 @@ window.DEVDESK_SITE_CONFIG = {
   },
   support: "https://github.com/Baisalya/devdesk-support/issues/new/choose",
   repository: "https://github.com/Baisalya/devdesk",
-  privacy: "https://baisalya.github.io/Baisalya-Roul/devdesk/privacy-policy.html",
-  portfolio: "https://baisalya.github.io/Baisalya-Roul/"
+  privacy: "https://baisalya.com/devdesk/privacy-policy.html",
+  portfolio: "https://baisalya.com/"
 };

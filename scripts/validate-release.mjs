@@ -121,9 +121,9 @@ await requireFile('notivault-website/privacy-policy/index.html', 10_000);
 for (const expected of [
   'href="./_next/static/css/',
   'href="./privacy-policy/index.html"',
-  'https://baisalya.github.io/Baisalya-Roul/notivault-website/',
+  'https://baisalya.com/notivault-website/',
 ]) {
-  requireText(notivaultStaticHome, expected, 'NotiVault GitHub Pages home');
+  requireText(notivaultStaticHome, expected, 'NotiVault custom-domain home');
 }
 for (const expected of [
   'href="../_next/static/css/',

@@ -8,7 +8,7 @@ This website is intentionally **100% static**: HTML + CSS + vanilla JavaScript o
 3. Set `microsoftStoreUrl` to the official Microsoft Store listing.
 4. Verify `supportEmail`.
 5. Open `privacy.html` and replace every square-bracket legal placeholder.
-6. Replace `https://example.com` in `sitemap.xml` with the final website origin.
+6. Confirm `sitemap.xml` keeps the production origin `https://baisalya.com/EduSheet/`.
 7. Re-check the privacy wording against the exact release APK/MSIX and all third-party SDK behavior.
 
 ## GitHub Pages

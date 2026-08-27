@@ -3,7 +3,7 @@ window.CONSTRUCTION_ERP_CONFIG = {
   "appVersion": "1.22.0+107",
   "supportEmail": "baishalya1999@gmail.com",
   "securityEmail": "baishalya1999@gmail.com",
-  "siteUrl": "https://REPLACE-WITH-YOUR-SITE-URL",
+  "siteUrl": "https://baisalya.com/construction-erp",
   "githubRepositoryUrl": "",
   "platforms": {
     "windows": {

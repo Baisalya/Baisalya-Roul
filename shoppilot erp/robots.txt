@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://baisalya.github.io/Baisalya-Roul/shoppilot-erp/sitemap.xml
+Sitemap: https://baisalya.com/shoppilot-erp/sitemap.xml

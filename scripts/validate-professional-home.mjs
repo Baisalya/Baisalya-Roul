@@ -17,7 +17,9 @@ function rejectText(unexpected, label = unexpected) {
 }
 
 for (const [expected, label] of [
-  ['<title>Baishalya Roul — Software Builder</title>', 'professional title'],
+  ['<title>Baishalya Roul (Baisalya) — Software Builder</title>', 'professional title'],
+  ['"alternateName": "Baisalya"', 'Baisalya person alias'],
+  ['"alternateName": "SiteSnap"', 'SiteSnap product alias'],
   ['id="software"', 'software section'],
   ['id="engineering"', 'engineering section'],
   ['devdesk/index.html', 'DevDesk route'],

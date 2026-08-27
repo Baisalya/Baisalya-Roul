@@ -13,12 +13,13 @@ const planOnly = process.argv.includes('--plan');
 const devDeskRelease = '20260824.4';
 
 const rootRuntimeFiles = [
-  'index.html', 'privacy.html', 'main.js', 'style.css', 'robots.txt', 'sitemap.xml', 'javascript.svg', 'CNAME',
+  'index.html', 'privacy.html', 'main.js', 'style.css', 'robots.txt', 'sitemap.xml', 'sitemap-pages.xml',
+  'javascript.svg', 'CNAME',
 ];
 const rootRuntimeDirectories = ['assets', 'src/site'];
 const rootOptionalRuntimeFiles = ['ads.txt'];
 const devDeskRuntimeFiles = [
-  '404.html', 'downloads.html', 'index.html', 'releases.json', 'robots.txt',
+  '404.html', 'downloads.html', 'index.html', 'privacy-policy.html', 'releases.json', 'robots.txt',
   'site.webmanifest', 'sitemap.xml', 'sw.js',
 ];
 const constructionErpRuntimeFiles = [
@@ -71,6 +72,57 @@ async function versionHtmlFiles(directory) {
     else if (entry.name.endsWith('.html')) {
       await writeFile(target, versionDevDeskRuntime(await readFile(target, 'utf8')), 'utf8');
     }
+  }
+}
+function canonicalUrlForHtml(relativePath) {
+  const normalized = relativePath.replaceAll('\\', '/');
+  if (normalized === 'index.html') return 'https://baisalya.com/';
+  if (normalized.endsWith('/index.html')) {
+    return `https://baisalya.com/${normalized.slice(0, -'index.html'.length)}`;
+  }
+  return `https://baisalya.com/${normalized}`;
+}
+function upsertHeadElement(html, matcher, element) {
+  return matcher.test(html)
+    ? html.replace(matcher, element)
+    : html.replace('</head>', `    ${element}\n</head>`);
+}
+async function ensureSeoMetadata(directory, relative = '') {
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const target = path.join(directory, entry.name);
+    const nextRelative = path.posix.join(relative, entry.name);
+    if (entry.isDirectory()) {
+      await ensureSeoMetadata(target, nextRelative);
+      continue;
+    }
+    if (!entry.name.endsWith('.html')) continue;
+
+    let html = await readFile(target, 'utf8');
+    const isNotFound = entry.name.toLowerCase() === '404.html';
+    const isRedirect = /<meta\b(?=[^>]*\bhttp-equiv=["']refresh["'])[^>]*>/i.test(html);
+    const robots = isNotFound || isRedirect
+      ? '<meta name="robots" content="noindex, follow">'
+      : '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">';
+    html = upsertHeadElement(
+      html,
+      /<meta\b(?=[^>]*\bname=["']robots["'])[^>]*>/i,
+      robots,
+    );
+
+    if (!isNotFound && !isRedirect) {
+      const canonical = canonicalUrlForHtml(nextRelative);
+      html = upsertHeadElement(
+        html,
+        /<link\b(?=[^>]*\brel=["']canonical["'])[^>]*>/i,
+        `<link rel="canonical" href="${canonical}">`,
+      );
+      html = upsertHeadElement(
+        html,
+        /<meta\b(?=[^>]*\bproperty=["']og:url["'])[^>]*>/i,
+        `<meta property="og:url" content="${canonical}">`,
+      );
+    }
+    await writeFile(target, html, 'utf8');
   }
 }
 async function validateSourcePlan() {
@@ -194,5 +246,6 @@ await cp(path.join(projectRoot,'notivault-website','public'), path.join(notiVaul
 const serverOutput=path.join(outputRoot,'server');
 await mkdir(serverOutput,{recursive:true});
 await copyFile(path.join(projectRoot,'sites-worker.js'),path.join(serverOutput,'index.js'));
+await ensureSeoMetadata(outputRoot);
 await writeReleaseManifest();
 console.log('Production release build: passed');

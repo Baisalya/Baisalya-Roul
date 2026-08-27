@@ -89,7 +89,7 @@ export default function Home() {
     author: {
       "@type": "Person",
       name: "Baisalya",
-      url: "https://baisalya.github.io/Baisalya-Roul/",
+      url: "https://baisalya.com/",
       email: "mailto:baishalya1999@gmail.com",
       jobTitle: "Flutter & Android App Developer",
     },
@@ -440,7 +440,7 @@ export default function Home() {
             <div className="developer-actions">
               <a
                 className="button button-primary"
-                href="https://baisalya.github.io/Baisalya-Roul/"
+                href="https://baisalya.com/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -487,7 +487,7 @@ export default function Home() {
         <div className="footer-links">
           <div><strong>Product</strong><a href="#deleted-messages">Deleted messages</a><a href="#features">Features</a><a href="#privacy">Privacy</a></div>
           <div><strong>Legal</strong><Link href="/privacy-policy">Privacy policy</Link><a href="#faq">FAQ</a></div>
-          <div><strong>Developer</strong><a href="#developer">Developer details</a><a href="https://baisalya.github.io/Baisalya-Roul/" target="_blank" rel="noreferrer">Baisalya ↗</a><a href="mailto:baishalya1999@gmail.com">Email support</a></div>
+          <div><strong>Developer</strong><a href="#developer">Developer details</a><a href="https://baisalya.com/" target="_blank" rel="noreferrer">Baisalya ↗</a><a href="mailto:baishalya1999@gmail.com">Email support</a></div>
         </div>
         <div className="footer-bottom"><span>© 2026 Baisalya. All rights reserved.</span><span>Made with care for Android.</span></div>
       </footer>

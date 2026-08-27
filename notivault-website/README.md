@@ -3,10 +3,10 @@
 Marketing website and Play Store privacy policy for the NotiVault Android app.
 
 Public website:
-https://baisalya.github.io/Baisalya-Roul/notivault-website/
+https://baisalya.com/notivault-website/
 
 This project is exported as static HTML for GitHub Pages. The canonical public
-link is the folder URL above.
+link is the custom-domain folder URL above.
 
 ## Local development
 
