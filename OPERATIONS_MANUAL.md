@@ -59,6 +59,8 @@ The apex result should contain the four GitHub Pages addresses above, and `www` 
 
 The existing publisher account must first have website monetization active. Add `baisalya.com` in AdSense and use the AdSense code or meta-tag verification method Google provides.
 
+The live site is connected to publisher `ca-pub-1529558529658186`. The root page carries Google's account meta tag and `/ads.txt` declares the same publisher. These values are public identifiers, not passwords. Keep them consistent if the AdSense account ever changes.
+
 Keep ads disabled while the site is unapproved or consent is not ready:
 
 ```javascript
@@ -78,6 +80,8 @@ npm run release
 ```
 
 This writes `assets/monetization/config.js` and creates `ads.txt`. Review both before committing. Never commit a fake publisher ID. The site intentionally limits manual ads to eligible long-form EduSheet and SurveyCam pages.
+
+An AdSense status such as **Getting your site ready to show ads** means Google is still reviewing the site. Do not turn on the monetization runtime until AdSense shows the site as ready, a real responsive ad-unit slot has been created, and the consent solution is live.
 
 ## 4. Contact form: how messages arrive
 
