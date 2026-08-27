@@ -26,15 +26,14 @@ The approved public identifiers are:
 `ads.txt` contains the matching publisher record.
 
 ### Production activation
-AdSense is enabled **after** the release build, only in `dist/`, so source validation and protected product baselines remain stable.
+AdSense is enabled **after** the release build, only in `dist/`, so the repository-safe source config remains disabled and protected product baselines stay stable.
 
-Before enabling the deployment gate, configure a compliant consent/CMP solution for regions where consent is required. Then create this GitHub Actions repository variable:
+The production workflow now activates the approved AdSense client and responsive slot by default:
 
-`ADSENSE_CONSENT_READY=true`
+- Publisher/client: `ca-pub-1529558529658186`
+- Responsive manual slot: `9546051599`
 
-Path: **Repository Settings → Secrets and variables → Actions → Variables**.
-
-On the next push to `main`, the workflow runs:
+The workflow runs:
 
 ```powershell
 npm run release
@@ -42,7 +41,13 @@ npm run adsense:configure -- --root=dist --client=ca-pub-1529558529658186 --slot
 npm run test:dist
 ```
 
-If `ADSENSE_CONSENT_READY` is absent or not `true`, deployment still succeeds but the checked-in disabled config remains in `dist`, so no AdSense request is made.
+To temporarily stop production AdSense requests, create/set this GitHub Actions repository variable:
+
+`ADSENSE_CONSENT_READY=false`
+
+Path: **Repository Settings → Secrets and variables → Actions → Variables**.
+
+Before leaving production ads enabled for visitors in regions where consent is required, keep a Google-certified consent/CMP solution configured (for example through AdSense Privacy & messaging). The main portfolio, NotiVault, legal/privacy/deletion pages and 404 pages remain intentionally ad-free.
 
 ## Local production test
 To test the fully activated output locally after your consent solution is ready:
