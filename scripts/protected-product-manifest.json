@@ -9,7 +9,7 @@
     "shoppilot erp",
     "shoppilot-erp"
   ],
-  "file_count": 371,
+  "file_count": 372,
   "files": [
     {
       "path": "construction-erp/_headers",
@@ -28,13 +28,13 @@
     },
     {
       "path": "construction-erp/404.html",
-      "sha256": "a89e6dc091bdcf7ef3febdd3249ac46ca5715feb28190a8a236cf0ba6e6d733b",
-      "bytes": 4223
+      "sha256": "f5552901e7905362c95de4ca1cd660ad00e1f3feb357ea9061661d5ad2736b5a",
+      "bytes": 4459
     },
     {
       "path": "construction-erp/account-deletion.html",
-      "sha256": "95c17ffa1e548c25449cc14228b4e5e5abf5ee32b3f26a1772574d21189307ae",
-      "bytes": 8122
+      "sha256": "8c7823720c1c11be8913bf597543d57be0902302ac41c4cbbb46f1e983eb8ca7",
+      "bytes": 8419
     },
     {
       "path": "construction-erp/assets/css/styles.css",
@@ -128,8 +128,8 @@
     },
     {
       "path": "construction-erp/data-safety.html",
-      "sha256": "47730588732e6708d9bebd2aa0907a524462eb62d0142dbf55c8703e042f4c23",
-      "bytes": 7429
+      "sha256": "e7384a4953838a6b64817517d9241af80804f9fa235904aa5dbda780551d3361",
+      "bytes": 7726
     },
     {
       "path": "construction-erp/DEPLOYMENT.md",
@@ -138,8 +138,8 @@
     },
     {
       "path": "construction-erp/downloads.html",
-      "sha256": "c0b36f9ac071606fe91ce3beb05865c0d26a7a5830928fb5ce3cce3eabfde3e5",
-      "bytes": 8576
+      "sha256": "3dc739a29a780f93f9300fef0547ea9d034077e435709f9d767e0dd13c99bf40",
+      "bytes": 9227
     },
     {
       "path": "construction-erp/downloads/android/PUT_ANDROID_RELEASE_HERE.txt",
@@ -153,13 +153,13 @@
     },
     {
       "path": "construction-erp/features.html",
-      "sha256": "d0c55ccffe02a655b1bb3c05e80cd7d7decf4c8a6846ef9ad49ba0fb204a6b7b",
-      "bytes": 12124
+      "sha256": "d353c9050ba5557d8e5a9510efedf1e5f7123c1009147366cd3ac0f9160287e1",
+      "bytes": 12784
     },
     {
       "path": "construction-erp/index.html",
-      "sha256": "bbdc8d62b2d4fdc33344892fed454ceddf93185a434660e2728bd98b3f8664b4",
-      "bytes": 17966
+      "sha256": "948f4d3b4470f616150ffa69fc4b7a8e830f8803b6e974dcf76cc9732550bbda",
+      "bytes": 20167
     },
     {
       "path": "construction-erp/manifest.webmanifest",
@@ -168,8 +168,8 @@
     },
     {
       "path": "construction-erp/manual.html",
-      "sha256": "412c3f49b1106ceb3083a979e36bccc05f8de42cbd24c7d1191731e2f59d3dfa",
-      "bytes": 20543
+      "sha256": "391401ae430eb901385aff7d8b039ca19f66044df688f5cdbacef1860d2baae8",
+      "bytes": 21178
     },
     {
       "path": "construction-erp/netlify.toml",
@@ -178,8 +178,8 @@
     },
     {
       "path": "construction-erp/privacy.html",
-      "sha256": "d65ebe099dea1ce876f194a39848dbfd2cec7f9512f3ae0f6301837c0af66c0f",
-      "bytes": 12716
+      "sha256": "e643f82801f6c4e968e6cb511b3b127b66284f9d795a276da9c136392d161f34",
+      "bytes": 13024
     },
     {
       "path": "construction-erp/README.md",
@@ -213,8 +213,8 @@
     },
     {
       "path": "construction-erp/sitemap.xml",
-      "sha256": "6c08991fcb846044f26a89ca4872e71e828054d3bb0e691bffa5250b6bdc25c5",
-      "bytes": 786
+      "sha256": "a1c0e5d571e50bc84beb22d4a505b9a5b96f09c9b57555d695d93e88b03eac96",
+      "bytes": 815
     },
     {
       "path": "construction-erp/src/_headers",
@@ -378,13 +378,13 @@
     },
     {
       "path": "construction-erp/support.html",
-      "sha256": "ad4a818385c865811a448dcb35d314881af314be640946e7fbde178b93fd7566",
-      "bytes": 11306
+      "sha256": "7fdf38d54098a8c3cc205109979d22babfdf879fc2aa6ecb737f4e45f4302023",
+      "bytes": 11950
     },
     {
       "path": "construction-erp/terms.html",
-      "sha256": "b6b5180be7e2765937fed0c5bb4b09ee4ab1933fbb23880afa6a5d504822906b",
-      "bytes": 10390
+      "sha256": "c31c4065fdbf58036499ef5ef8fcfaf9de61cb75ad5e90b8ae50acbd1d51940d",
+      "bytes": 10693
     },
     {
       "path": "construction-erp/WEBSITE_CHANGED_FILES.txt",
@@ -408,8 +408,8 @@
     },
     {
       "path": "devdesk/404.html",
-      "sha256": "13cfa2643d943431e59705187e2f968808114ed9ddd9691b0999d5c1d3e2f3b4",
-      "bytes": 3270
+      "sha256": "fe5d83ab0bb8b780717554b74af072b1c332eb2c75b435d17220c277bf80784d",
+      "bytes": 3506
     },
     {
       "path": "devdesk/assets/audio/devdesk-demo-hi-en.m4a",
@@ -1043,8 +1043,8 @@
     },
     {
       "path": "devdesk/downloads.html",
-      "sha256": "75366c5b45a08cc72a02c4ccfcec64a528856c87da1fecdbc7957eca65e6ff6d",
-      "bytes": 23935
+      "sha256": "f673e50ebeadf7bd1d94c19fec527ca41c12fc6168d9cb7d967d7083cba0dbdc",
+      "bytes": 20992
     },
     {
       "path": "devdesk/FEATURE_INVENTORY.md",
@@ -1053,8 +1053,8 @@
     },
     {
       "path": "devdesk/index.html",
-      "sha256": "66a87a60f22533111ca1e479a87aef69a8af9dfb4bec519d9674afd39b85f69f",
-      "bytes": 38648
+      "sha256": "8045e590fcebc6c3b65fe55f28327793c75363e6f75c4dc870700f84a2d5e877",
+      "bytes": 36801
     },
     {
       "path": "devdesk/MANUAL_TABLE_OF_CONTENTS.md",
@@ -1063,263 +1063,263 @@
     },
     {
       "path": "devdesk/manual/agent-connector.html",
-      "sha256": "e60948f5f318731542bdf83d42f4abd5234546c4e5e98839576d4fb37a971607",
-      "bytes": 42480
+      "sha256": "f964b16ad0c433ef33fb1f14580095f1509f309671caf5b318b9d163f3085c83",
+      "bytes": 43335
     },
     {
       "path": "devdesk/manual/ai-workbench.html",
-      "sha256": "47b6d127de18b4a4be52fedb30548fbaa1429b15373dd89059dce539ae73e646",
-      "bytes": 26066
+      "sha256": "9110eae959f44e967f8296f49314c0ba902b78b845183f4399cf234bbf71a5b5",
+      "bytes": 26902
     },
     {
       "path": "devdesk/manual/api-assertions-extraction.html",
-      "sha256": "c11e4904df2e2b084e8323ee8737048d75b74983f4035e6543f34db35425cb74",
-      "bytes": 20056
+      "sha256": "1bc6347f72cf515f81083c72acaa2d78bc82456ba483564e2a1342598cf34a7e",
+      "bytes": 20909
     },
     {
       "path": "devdesk/manual/api-environments-secrets.html",
-      "sha256": "e3d4921df78eed12cd408506ecb9e62f448137844ade5d746607d935ce9d5f6f",
-      "bytes": 21097
+      "sha256": "c11f6702c7b7ea75776dbb6e55d11c18b241ac54a264887bce7ec04b3165ae6b",
+      "bytes": 21997
     },
     {
       "path": "devdesk/manual/api-workspaces.html",
-      "sha256": "581320551888a381d191890318f790624c6ccefe915e0c203acf0851bc1acd8c",
-      "bytes": 30660
+      "sha256": "23fb071781c4b02e0a1e0ad63d4844aafe468a974dec8cf523e65c2c90bea344",
+      "bytes": 31499
     },
     {
       "path": "devdesk/manual/backup-restore.html",
-      "sha256": "6e1090c5db2838d0c984c6e7a84f0ddd5b264f7da90c03e95c4b1a40f62e806e",
-      "bytes": 14905
+      "sha256": "98d2ccb8783e95feae91c853f142612fb1a7dd602e9660bfd35b98e09e90c55a",
+      "bytes": 15794
     },
     {
       "path": "devdesk/manual/base64.html",
-      "sha256": "577cc9bb42b1d96fb988157f58a655a2671d67f20a31234cbcd8723cec85112e",
-      "bytes": 10571
+      "sha256": "e2809e6713caeef7b2b5b8069a1fd2d996429a0a48b7f1e1e0b6c08265ec4635",
+      "bytes": 11437
     },
     {
       "path": "devdesk/manual/developer-workspaces.html",
-      "sha256": "01ca3985442b2822134810ee27e54eae9970dce443bbf7fc2e66528b023b0494",
-      "bytes": 29540
+      "sha256": "9b7f043a9d3609acea2802afbe6af7bdb5b7494709a6ab30afb7e7e1a40a2547",
+      "bytes": 30277
     },
     {
       "path": "devdesk/manual/diagram-studio.html",
-      "sha256": "108b1bc43afa00621a9438ae64790df588a17f9812a9822e7244c0f1edd0563b",
-      "bytes": 16823
+      "sha256": "57262d3b483b455bf42c610172a060a3a91d75ed02e5f14808bd9b11ccbb6b2b",
+      "bytes": 17675
     },
     {
       "path": "devdesk/manual/diff-git.html",
-      "sha256": "a443f382ade0dc4f5eba1ed8563d3eb97ecf8c44da690d0870611546baa50a6d",
-      "bytes": 18117
+      "sha256": "8109deceac2af11e5cb149de88e8424c70d371567cf3154a063466ad46c1e769",
+      "bytes": 18988
     },
     {
       "path": "devdesk/manual/downloads-installation.html",
-      "sha256": "1deb71e99f589c62c517200d73bf2015cebcef11e2580692f0f42880ea7fa5e9",
-      "bytes": 13595
+      "sha256": "73e19b54137e0f5e4803d69344baafa66560ec4f8790ce37fc63c6b7dd115c96",
+      "bytes": 14516
     },
     {
       "path": "devdesk/manual/faq.html",
-      "sha256": "05b58cefdc45506fdf0d13de4cc8bd98c78b8d609fc2618a85559ed60f13618c",
-      "bytes": 24169
+      "sha256": "f089fc274e07df8d0f590a887c2090de374d5ec4a6fd0cf4edcc574645a2eb48",
+      "bytes": 25025
     },
     {
       "path": "devdesk/manual/frontmatter-properties.html",
-      "sha256": "942fc6d865fd342f0a1d798715ea78fcb1bdfd2730a6133fd88e118ec8aa4626",
-      "bytes": 12273
+      "sha256": "e5ea7fd7ecd30c7fed30e4c40a64b3264237f5b6ed5fdb4eb62ae31bfe2eca28",
+      "bytes": 13143
     },
     {
       "path": "devdesk/manual/getting-started.html",
-      "sha256": "de4a4979ce12f4ae0a23a1cdaebc403812d0b807800c5b2e39f497ac6d99b1e0",
-      "bytes": 22203
+      "sha256": "0109de271d0593a3426bcd910aa2a10ef682f243059ae8af427cceb3d77eb8a6",
+      "bytes": 23067
     },
     {
       "path": "devdesk/manual/graph-connection-editing.html",
-      "sha256": "648eb012064f77ef6981a91a03bb05077e75466005c09c54a92cd11ffc5d4ff2",
-      "bytes": 12323
+      "sha256": "136c967e6234af349e07427475ed8529705c59579c34725a2455bb4206733b89",
+      "bytes": 13242
     },
     {
       "path": "devdesk/manual/index.html",
-      "sha256": "d07634560a229e2daecbbb5b56a51d3ed9115ae533a17af93a06f59f846d30b3",
-      "bytes": 403
+      "sha256": "f59592165f6e1ef664f0e46235fbc12d6ddcc062a0d325ef58c14f2c4ebb862d",
+      "bytes": 967
     },
     {
       "path": "devdesk/manual/interface-tour.html",
-      "sha256": "36da6745d5405de4068fb0051dd78b94abfbae6b8d01bbe8ce280936bb532dac",
-      "bytes": 13134
+      "sha256": "e93f45e8a5434527f9eae99aa11145a1763d2774765b95c20d3ecf27ff51970f",
+      "bytes": 14023
     },
     {
       "path": "devdesk/manual/json-tools.html",
-      "sha256": "f1be67ff12e3289400546f34c0a9bcd11e781ff8a20de253c87d42e24472d1bf",
-      "bytes": 12546
+      "sha256": "bde0afbb4006d56b65c6834e7e90c9eed126ffeed8012e55f4bba7ae200c4c7b",
+      "bytes": 13303
     },
     {
       "path": "devdesk/manual/jwt-decoder.html",
-      "sha256": "8cb2a76ec464c454e8241e58b4b0bf7ac67704bd8940d5c4d453edc13ac2ee68",
-      "bytes": 10851
+      "sha256": "c8db0798b3e32169e1784d79807b22d025665acb5658c000b29ea1e4642ddf26",
+      "bytes": 11682
     },
     {
       "path": "devdesk/manual/keyboard-shortcuts.html",
-      "sha256": "72116d5432185831b2e22b62d062162a13cf8e5a271c5fec11cf1c536f61a8cb",
-      "bytes": 11623
+      "sha256": "42c57725960ee4eda477dbf668ff8bd573d1626a4a29fc33e0752e18c953d16f",
+      "bytes": 12524
     },
     {
       "path": "devdesk/manual/knowledge-graph.html",
-      "sha256": "77679a48684c7e8792ed788c25c51ec6865cc8aa1b3a17ff73d5b0ac5a3d51c0",
-      "bytes": 19630
+      "sha256": "bc10c175523201650ea3963d86dfef1274e90ea8a18392202eee72467824c470",
+      "bytes": 20522
     },
     {
       "path": "devdesk/manual/knowledge-workspace.html",
-      "sha256": "f7acc5e4b58f66d7dd31708dbac255c82d15c25019d70f11a1228e2642c00a76",
-      "bytes": 12979
+      "sha256": "6abaac03d3420e129dddd18c4b1aaa659acdef9de6bac08ef2b301fa236244ca",
+      "bytes": 13883
     },
     {
       "path": "devdesk/manual/links-backlinks-nodes.html",
-      "sha256": "53a75be4d7f96f8d7db29201013b652f95688985c3bd68bc9a50c726680c46a2",
-      "bytes": 13918
+      "sha256": "25bc6f4235eeeac3a1e5a2505690847e0367dcabf1d958da1d56e9a26b28c8db",
+      "bytes": 14863
     },
     {
       "path": "devdesk/manual/markdown-basics.html",
-      "sha256": "d7d9ec476f2aaaad182b8b278b8bf61d17b951db3d98a1f7d672bfa74c73c6f1",
-      "bytes": 12014
+      "sha256": "e4776aa77923414d4f8c9cc542ab09aa12f67a9f1fe74c77eb4cfb9feeef4487",
+      "bytes": 12907
     },
     {
       "path": "devdesk/manual/markdown-editor.html",
-      "sha256": "e4a8f2b51434bae382106c756b84538c4a6ce60aab58c1a148041766f4239d64",
-      "bytes": 12715
+      "sha256": "91fc1504dc77b2fe9d67febf4df10d7c93ecbe55d7b092b10a85a97168c17f68",
+      "bytes": 13607
     },
     {
       "path": "devdesk/manual/markdown-vault.html",
-      "sha256": "7bae7e417afefc01dd47839f8eb54a37820d3ce20718ece37c9e82e11d4990e8",
-      "bytes": 12170
+      "sha256": "2cf71550145cce2a0dc179c3305ad20ef730071585f029c81278a275f3a19950",
+      "bytes": 13044
     },
     {
       "path": "devdesk/manual/notifications-routines.html",
-      "sha256": "72a20e91feb92ab228c2e907e3defb7620a85dbcdd47f6e43a5eabf58e181b6a",
-      "bytes": 13375
+      "sha256": "973c1056ed804bf77dee7d5527bd82d6ccd41cf8b615982acc50632edcdfbad7",
+      "bytes": 14251
     },
     {
       "path": "devdesk/manual/okf-attested-computation.html",
-      "sha256": "eae5ea44e5e0a97a9714f6fc11f2ea4f707da49992038bb774184b2af8b3089a",
-      "bytes": 15944
+      "sha256": "d7bba8db133ca0e4293e20667be1a2d5e6784bcc8e378b11cfe992a08d2faf3e",
+      "bytes": 16733
     },
     {
       "path": "devdesk/manual/okf-bundle-structure.html",
-      "sha256": "d6cab9573919d86110c25e1f2341e348ff71a610968ca7f21dcd3d0bdd55ef4c",
-      "bytes": 15146
+      "sha256": "6f5e5b66676c14898911c669a9b16157d27e7f4ada59dc3fc9b2be9dc06fd108",
+      "bytes": 16043
     },
     {
       "path": "devdesk/manual/okf-concepts-metadata.html",
-      "sha256": "adb984e7f09cf96eae14d464090e3ae48b779e2d74bb4f0a04cf7d086ba73b74",
-      "bytes": 16852
+      "sha256": "f9f186c8d8ee0112b1bf531c304afc4c3bcb6136f4df9853566cf9726ba22279",
+      "bytes": 17692
     },
     {
       "path": "devdesk/manual/okf-conversion-migration.html",
-      "sha256": "044b17412bbbb406618466137ee770c869bd8aab1b2ed4129e77f55698f033a0",
-      "bytes": 18425
+      "sha256": "ec6856c24966514008ba1fa5f830247ba1248fd0242382df1aed6c33131fe4b2",
+      "bytes": 19344
     },
     {
       "path": "devdesk/manual/okf-trust-sources-lifecycle.html",
-      "sha256": "857bace07b48beb74480f11bf7907a785dde6c3809d75c0bac251f29fdeff4d1",
-      "bytes": 16457
+      "sha256": "72348d0469da2fea1f86e140bbe3f8e624f79a43df1f2b19f77aa51203f5b00f",
+      "bytes": 17385
     },
     {
       "path": "devdesk/manual/openapi-studio.html",
-      "sha256": "1beeff3abc1236a030fcabce6a28c402da604f8c158d233ccb8a098b08f1a00c",
-      "bytes": 18295
+      "sha256": "2ca9294358cd6ba06ec12e7685de5a091a466ac22093b5332f588c06aa49da4c",
+      "bytes": 19184
     },
     {
       "path": "devdesk/manual/privacy-security.html",
-      "sha256": "fb4790923530165b5e4c85ba918179ef2561559df1df51ae95f02cd6c55f0968",
-      "bytes": 18222
+      "sha256": "3fe4eaddcf80707d0f8eec74579fd51c6df9fdbc4104060dba5ea486fcec57b0",
+      "bytes": 19117
     },
     {
       "path": "devdesk/manual/project-folder-structure.html",
-      "sha256": "9f91e431a50dbbf8dc280fe1e1a5c99e6813378d6013af7a98b1feaa85085833",
-      "bytes": 12354
+      "sha256": "4dfec8e600b32a19e125fbb702087c46007487a17c81458cd872355ad18be287",
+      "bytes": 13263
     },
     {
       "path": "devdesk/manual/quick-api.html",
-      "sha256": "a77e72816afa90fe6e48a984bfeb2d379457306dc50d667e8bb5c60a7f487296",
-      "bytes": 17463
+      "sha256": "1dee73e4adfc05319317bbf8152cb2a894802cfa18b3a656f60da322623e40fb",
+      "bytes": 18338
     },
     {
       "path": "devdesk/manual/readme-generator.html",
-      "sha256": "3506a048f02b87c2fa1222081a0aab06e40fe3fadd60572c7eae0c38d5e11d7f",
-      "bytes": 11211
+      "sha256": "a923d619cbbfaaba62c422b1ffab0db4ce6f0d521c270234e9aa2ff5fbea4ccc",
+      "bytes": 12107
     },
     {
       "path": "devdesk/manual/regex-tester.html",
-      "sha256": "ba352a1eeb121ee76824dd33591b4458ae8bda3f235b666b8bc793f156730c8c",
-      "bytes": 11552
+      "sha256": "9f1ce629513ccf4ea91fa6018cd2a0b9a92508ed30e6920d191f28fc7fae1989",
+      "bytes": 12436
     },
     {
       "path": "devdesk/manual/settings-appearance.html",
-      "sha256": "5bc1b16d1b1a4f1fa0f6b9f71da96c2a219ccc77ef362ed3e863d9a7ffe7afde",
-      "bytes": 14783
+      "sha256": "f09041a0a4a451f72dc8daf2972676b5d46903e91ad886dfb04e5e66fb2a3210",
+      "bytes": 15687
     },
     {
       "path": "devdesk/manual/snippets-notes.html",
-      "sha256": "8d836daccaf8f0cad41dd6687b0511f3e2e3fc90f4626d75c8dfa51a5bbdefc6",
-      "bytes": 11049
+      "sha256": "1d30f45f005c1915ca63c3fd7df656d35a37037fe1b15e48f569d45196a5bf65",
+      "bytes": 11939
     },
     {
       "path": "devdesk/manual/structured-knowledge-okf.html",
-      "sha256": "667e621a28997b82c88fe1e39959e5487b5f0c78f70cb270fd2ef89bd25cbe1f",
-      "bytes": 21791
+      "sha256": "2f2a8bbee77fe69b0083db77101e4ab6d8ef66f58c71c4dc0601ef574351dc63",
+      "bytes": 22710
     },
     {
       "path": "devdesk/manual/structured-views.html",
-      "sha256": "9a51f5435c18d21aa2112f3190f3239bf0eb8d9bdee5be9e82385841976f6dd2",
-      "bytes": 12016
+      "sha256": "26b070fe461c824ce83a5fdb1e6634edee381b1d5aceef44b88b0299a3d212b1",
+      "bytes": 12874
     },
     {
       "path": "devdesk/manual/timestamp.html",
-      "sha256": "60416590f0f31b2d3625ef605f342ec3c3e218d55e54ad4c45bfeae64fcba343",
-      "bytes": 10725
+      "sha256": "0b401aedbc6628ccf4b73fa032cca0c5ef69011cc7300982a51f4bb28c39652a",
+      "bytes": 11600
     },
     {
       "path": "devdesk/manual/troubleshooting.html",
-      "sha256": "1321546677b399de41b58e39b7e9d7743754587a72e9874b5be8e5149b944fc5",
-      "bytes": 20061
+      "sha256": "b6e2fcb377249f44eccf568f0301720e3883c00d87aa21d090cb4119a15f38b9",
+      "bytes": 20953
     },
     {
       "path": "devdesk/manual/unified-search.html",
-      "sha256": "f52f083ac143ce913d06380d8bfddcc7ac4d5f36e09c578aefbcc42d13698e1c",
-      "bytes": 10969
+      "sha256": "cc9ed8e161e3797ac1389cdf98b08d5bb537822a792bdda9e1c402b83071c401",
+      "bytes": 11858
     },
     {
       "path": "devdesk/manual/url-tools.html",
-      "sha256": "e72fad11ed3750822bfc18ca7fe9cbc8ea61b7697fa7f7a30b4254926ff7a55e",
-      "bytes": 10912
+      "sha256": "2178e5f54d53e9689056a3e5a3cee6566837c22e2ad10a5ecb4e0e45024b8461",
+      "bytes": 11787
     },
     {
       "path": "devdesk/manual/user-manual.html",
-      "sha256": "067c308673126f625cce2882a2a09b8626673c98e18e55ad02e0bebffaed045a",
-      "bytes": 98112
+      "sha256": "11a61cdd5df332ca22de7655261c0ac9b77e89de20e6ef2348cdbcdf83f338a5",
+      "bytes": 98891
     },
     {
       "path": "devdesk/manual/uuid.html",
-      "sha256": "c49bcc63548901be5dbee305ea578e779c693752053f8d7c4046ad4a354c2eb9",
-      "bytes": 10468
+      "sha256": "d1c201a266239988bb4a55d00fcce138b3814ccce28320baffe67693429b1f9d",
+      "bytes": 11328
     },
     {
       "path": "devdesk/manual/visual-canvas.html",
-      "sha256": "7f006373991682977145eb84d5156101dc2c505a0b0f1584e54b1133bd5a3005",
-      "bytes": 11644
+      "sha256": "fee9666254d4aafcd96d0a5431fbc687e67d862dbec6836d2a594c5ce3ada95a",
+      "bytes": 12493
     },
     {
       "path": "devdesk/manual/visual-feature-guide.html",
-      "sha256": "f7bc78439f6ee58f1a5c772a67ce4c8626351163187ee0997652ab41e90f34db",
-      "bytes": 24618
+      "sha256": "0d05888fe429cc1e0195188229c779a303b0e5a086a4c3df1c8fac58bec69a8f",
+      "bytes": 25325
     },
     {
       "path": "devdesk/manual/workspace-workbench.html",
-      "sha256": "0a7acd5e2f838f8821ca08c21bad224c146611b9beab9833f2e9efba5ee2fcab",
-      "bytes": 17546
+      "sha256": "6fa812aa344d081f99bc8bdddb903ad3d2aadf3b4675a7c07f1890ef4f1f84fe",
+      "bytes": 18413
     },
     {
       "path": "devdesk/privacy-policy.html",
-      "sha256": "3a710d3eafd7867d722023fc11c138fbf951a5fc22babfae0ca1644831b095ac",
-      "bytes": 18325
+      "sha256": "cee6b13739f39de041a1116cbc6d05a3da6856f4b5e3e103859c8cabef9bb343",
+      "bytes": 18728
     },
     {
       "path": "devdesk/PRODUCT_POSITIONING.md",
@@ -1348,8 +1348,8 @@
     },
     {
       "path": "devdesk/sitemap.xml",
-      "sha256": "8757fb6a6743a76bff7d3cec120f01a1ff171235bdd5283e4c3a18c2c523c837",
-      "bytes": 4305
+      "sha256": "c428f60521d629ffdeb2ce98b485871085ebf323814fe77da331e0f9f938013a",
+      "bytes": 4334
     },
     {
       "path": "devdesk/STORE_CREATIVE_PROMPTS.md",
@@ -1403,8 +1403,8 @@
     },
     {
       "path": "EduSheet/404.html",
-      "sha256": "717a0190757b507d7c0e988c4bbb7b8a283e81c3e54074178dd3b087d2cb545f",
-      "bytes": 647
+      "sha256": "80bc7cf005ef9e17738c99576324d1cd55de5e9936d20a14eb5d90f984d58c41",
+      "bytes": 940
     },
     {
       "path": "EduSheet/assets/css/styles.css",
@@ -1428,33 +1428,33 @@
     },
     {
       "path": "EduSheet/download.html",
-      "sha256": "a6b25f97d7e3dfe9d237f3593d7fe9666102c8fab1e41bea7bb8a78507aac187",
-      "bytes": 7042
+      "sha256": "0db55317ff3be5fa6bb57d1f33db92a53c4a16766ee1edda366184f45b11288e",
+      "bytes": 7886
     },
     {
       "path": "EduSheet/features.html",
-      "sha256": "d69a072b89f5785edd7652ef34f409129af32a4bb35d85cb87fe121af432e679",
-      "bytes": 9954
+      "sha256": "ce8a5a03edd6de7bdae344ce43d3fbcfd6cdcef471c43cb54d46edc335f37a1c",
+      "bytes": 10874
     },
     {
       "path": "EduSheet/index.html",
-      "sha256": "c7737e52d5b8d68bf3e35a0b3d20fdedf47fc448f950de2b0e154bbf5fbb636b",
-      "bytes": 16862
+      "sha256": "7128957001d89d0064e14b1729caa498df130054a2892104e3356e51f8fe89dc",
+      "bytes": 20310
     },
     {
       "path": "EduSheet/manual.html",
-      "sha256": "b6ec72c5797fddf5c90928b548ff3cbd14f118c08ef7197f3bc8350211bf7318",
-      "bytes": 17924
+      "sha256": "24503e0641646e7f51602d51304514512e63c0cbfbd843b0bd039f79176f5eb5",
+      "bytes": 18870
     },
     {
       "path": "EduSheet/privacy.html",
-      "sha256": "e96d8526fea2fcff7ab01ffbc6126ea4721ba824db071b9163afadbb3de97f4c",
-      "bytes": 12237
+      "sha256": "67fac2afe19743c914017518ec556ff10099930ca57f9513903feb4f0de3beb0",
+      "bytes": 12731
     },
     {
       "path": "EduSheet/quick-start.html",
-      "sha256": "d993a4dcbcfa8a2ef764ea5134b187fa87a03c453775e9bdf65bc375033e093b",
-      "bytes": 7022
+      "sha256": "fdf6568a9da7beb258990333ed3b8546a5796d8d857a62499b19a8be4f672e9c",
+      "bytes": 7853
     },
     {
       "path": "EduSheet/README_DEPLOY.md",
@@ -1468,8 +1468,8 @@
     },
     {
       "path": "EduSheet/sitemap.xml",
-      "sha256": "049489e29080491fd3a64c9dfafd718f4666ece62290c0e91e8fa6170c0ee11d",
-      "bytes": 488
+      "sha256": "9a7ec60b0b0092eac13d44e3e279bc12113b93954373002a8d6478a89185f777",
+      "bytes": 517
     },
     {
       "path": "notivault-website/_next/static/_vinext_fonts/geist-8ac0455e797f/geist-001175b1.woff2",
@@ -1573,8 +1573,8 @@
     },
     {
       "path": "notivault-website/index.html",
-      "sha256": "402de91fe9e3e38d0e9e5007a4fa14767728dbedbfe7cdaac4d136df63e1013b",
-      "bytes": 25925
+      "sha256": "12d2bc17b1fa7fa284e288fc17cfac0f8711a99c3108cc4e65613a08cff936ef",
+      "bytes": 28127
     },
     {
       "path": "notivault-website/MARKETING_COPY.md",
@@ -1623,8 +1623,8 @@
     },
     {
       "path": "notivault-website/privacy-policy/index.html",
-      "sha256": "cb54b82d7a6346c3425f783f38d8e207c59837c826fe37b11fae24092824f5fc",
-      "bytes": 19381
+      "sha256": "0b2fb9552e2dfd778c92e4c590ed2b60badeea146bd7522fb0df099e88d77d1e",
+      "bytes": 19683
     },
     {
       "path": "notivault-website/public/favicon.svg",
@@ -1645,6 +1645,11 @@
       "path": "notivault-website/README.md",
       "sha256": "d24adf7777f3090ec830184eafcd2d767a1de0091a67884a88207044599576ec",
       "bytes": 601
+    },
+    {
+      "path": "notivault-website/sitemap.xml",
+      "sha256": "f223d0d4bf23c3e9c18eb9ae6712706d2059b167a188a316e1f4800504b83e80",
+      "bytes": 282
     },
     {
       "path": "notivault-website/tests/rendered-html.test.mjs",
@@ -1798,13 +1803,13 @@
     },
     {
       "path": "shoppilot-erp/data-deletion.html",
-      "sha256": "fcd8459022326f3f1c5dbda5e2a51d8d04144e2a105c274cd9dab23184468ef5",
-      "bytes": 8153
+      "sha256": "3fc9e4e1b66d9c90d337c8d0139f43d2b27157fe4e77d4ae26d0d1a3e640dc12",
+      "bytes": 8438
     },
     {
       "path": "shoppilot-erp/index.html",
-      "sha256": "38dd8f1f0bcd56879301e1696951f2ee90b029a61812ddac0b1142726108e66e",
-      "bytes": 20939
+      "sha256": "5dabfc44d5bdf608c53753bd88bb13448420531000ab039e40c41742295057d6",
+      "bytes": 22440
     },
     {
       "path": "shoppilot-erp/manual.css",
@@ -1818,13 +1823,13 @@
     },
     {
       "path": "shoppilot-erp/privacy-policy.html",
-      "sha256": "0d71de559e8c9d5e422a149694a87a490c962ee72e48aafa990663b81985c73f",
-      "bytes": 32479
+      "sha256": "1d333c9419e559cd8d2421f7c8c4e79e0ee104aaf3c7db6ec50b5fb97ab8bded",
+      "bytes": 30294
     },
     {
       "path": "shoppilot-erp/quick-start.html",
-      "sha256": "51427d61478d4f04288a30d41d56914278dd0b1db8046d3c51d1c53e290b81d3",
-      "bytes": 17417
+      "sha256": "fad64ca75b7eb50e8d508be9ba656c94189f4c9c0d37db8ceca751a7fba78b53",
+      "bytes": 16677
     },
     {
       "path": "shoppilot-erp/README.txt",
@@ -1843,8 +1848,8 @@
     },
     {
       "path": "shoppilot-erp/sitemap.xml",
-      "sha256": "4ac0cbd98abad26acb45f3d3d0fa04277caefeafa91e2c7852526372a969db15",
-      "bytes": 704
+      "sha256": "d4057e40c34408a2687f4bc34ad49df38d222d2af81f12a87858faca4e2fd5fe",
+      "bytes": 733
     },
     {
       "path": "shoppilot-erp/styles.css",
@@ -1853,13 +1858,13 @@
     },
     {
       "path": "shoppilot-erp/terms-of-service.html",
-      "sha256": "1e9c5828d94f1ed13adb1845f6e78e31bb391744ac21297f81b547cf9a8d43dc",
-      "bytes": 7933
+      "sha256": "850a5f93ca09c0d1173030432733f44c75707bb5e7f0309ec006b16ab6c08c4a",
+      "bytes": 8266
     },
     {
       "path": "shoppilot-erp/user-manual.html",
-      "sha256": "9f3da21bb46e56ad19a4850bcefd0a3712820e164b4bdebb4cbc85e997ecfca3",
-      "bytes": 40447
+      "sha256": "af30f5810131b2961850b901f1ced1f3bec7764d46e96ce08b54597b5bb3ede7",
+      "bytes": 35293
     },
     {
       "path": "shoppilot-erp/user-manual.md",

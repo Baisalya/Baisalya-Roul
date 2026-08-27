@@ -18,7 +18,11 @@ function makeStaticHtml(source, page) {
     : './index.html';
 
   return source
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
+    .replace(
+      /<script\b([^>]*)>[\s\S]*?<\/script>/gi,
+      (match, attributes) =>
+        /\btype=["']application\/ld\+json["']/i.test(attributes) ? match : '',
+    )
     .replace(/<link\b(?=[^>]*\brel="modulepreload")[^>]*\/?\s*>/gi, '')
     .replaceAll('https://notivault.local/', publicSiteBase)
     .replaceAll('url(/_next/', `url(${assetPrefix}_next/`)
@@ -141,6 +145,6 @@ export async function exportNotiVaultStatic(projectRoot, outputRoot) {
     );
   }
 
-  await writeStaticSite(sourceRoot);
+  // Build output only. Do not rewrite checked-in protected source HTML during release.
   await writeStaticSite(outputRoot);
 }

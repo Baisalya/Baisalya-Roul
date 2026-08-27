@@ -30,6 +30,11 @@ jobs:
         run: npm ci --prefix notivault-website
       - name: Build and validate all sites
         run: npm run release
+      - name: Configure production AdSense after consent gate
+        if: ${{ vars.ADSENSE_CONSENT_READY == 'true' }}
+        run: npm run adsense:configure -- --root=dist --client=ca-pub-1529558529658186 --slot=9546051599 --consent-ready=true
+      - name: Revalidate production output
+        run: npm run test:dist
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact

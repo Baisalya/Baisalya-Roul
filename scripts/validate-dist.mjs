@@ -79,6 +79,8 @@ async function validateSitemaps(){
     'shoppilot-erp/sitemap.xml',
     'EduSheet/sitemap.xml',
     'surveycam/sitemap.xml',
+    'notivault-website/sitemap.xml',
+    'sitesnap/sitemap.xml',
   ];
   const indexSource=await readFile(path.join(root,'sitemap.xml'),'utf8');
   if(!indexSource.includes('<sitemapindex')) failures.push('Root sitemap.xml is not a sitemap index.');
@@ -123,9 +125,9 @@ for(const required of [
   'assets/monetization/config.js','assets/monetization/monetization.js','assets/monetization/monetization.css',
   'src/site/main.js','devdesk/index.html','construction-erp/index.html','shoppilot-erp/index.html',
   'EduSheet/index.html','EduSheet/assets/css/styles.css','surveycam/index.html','surveycam/privacy.html',
-  'surveycam/support.html','surveycam/assets/surveycam-logo.png','notivault-website/index.html',
+  'surveycam/support.html','surveycam/assets/surveycam-logo.png','notivault-website/index.html','notivault-website/sitemap.xml',
   'notivault-website/privacy-policy/index.html','notivault-website/public/og-deleted-message.png',
-  'server/index.js','release-manifest.json',
+  'sitesnap/index.html','sitesnap/sitemap.xml','server/index.js','release-manifest.json',
 ]) await exists(required);
 
 await walk(root);
@@ -133,11 +135,19 @@ await validateSitemaps();
 await validateReleaseManifest();
 
 const index=await readFile(path.join(root,'index.html'),'utf8');
-for(const expected of ['https://baisalya.com/','href="EduSheet/index.html"','href="surveycam/index.html"','href="notivault-website/"']){
+for(const expected of ['https://baisalya.com/','href="/EduSheet/"','href="/surveycam/"','href="/notivault-website/"','href="/sitesnap/"']){
   if(!index.includes(expected)) failures.push(`Production root identity missing: ${expected}`);
 }
 const monetizationConfig=await readFile(path.join(root,'assets/monetization/config.js'),'utf8');
 const notiVaultHome=await readFile(path.join(root,'notivault-website/index.html'),'utf8');
+if(!/type=["']application\/ld\+json["']/i.test(notiVaultHome)) failures.push('Production NotiVault structured data missing.');
+for(const match of notiVaultHome.matchAll(/<script\b([^>]*)>/gi)){
+  const attributes=match[1]??'';
+  if(!/\btype=["']application\/ld\+json["']/i.test(attributes)){
+    failures.push('Production NotiVault export contains executable script.');
+    break;
+  }
+}
 for(const expected of ['creator-support','https://www.buymeacoffee.com/baisalya','baishalya1999@gmail.com']){
   if(!notiVaultHome.includes(expected)) failures.push(`Production NotiVault revenue surface missing: ${expected}`);
 }
@@ -147,6 +157,19 @@ if(adsEnabled){
   if(!/ca-pub-\d{10,20}/.test(monetizationConfig)) failures.push('AdSense enabled without a valid publisher client.');
   if(!(await exists('ads.txt'))) failures.push('AdSense enabled but ads.txt is missing.');
 }
+async function deployedAdCount(relativeFile){
+  const source=await readFile(path.join(root,relativeFile),'utf8');
+  return (source.match(/data-ad-unit="manual"/g)||[]).length;
+}
+for(const page of ['devdesk/index.html','construction-erp/index.html','shoppilot-erp/index.html','EduSheet/index.html','surveycam/index.html','sitesnap/index.html']){
+  const count=await deployedAdCount(page);
+  if(count!==1) failures.push(`Production manual-ad policy mismatch in ${page}: expected 1, found ${count}`);
+}
+for(const page of ['index.html','privacy.html','notivault-website/index.html','notivault-website/privacy-policy/index.html']){
+  const count=await deployedAdCount(page);
+  if(count!==0) failures.push(`Production ad-free policy mismatch in ${page}: found ${count}`);
+}
+
 for(const forbidden of ['vite.config.js','package.json','package-lock.json','BATCH_A_REFACTOR_REPORT.md']){
   try{await access(path.join(root,forbidden));failures.push(`Source-only file leaked into dist: ${forbidden}`)}catch{}
 }

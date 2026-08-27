@@ -40,6 +40,7 @@ const eduSheetRuntimeFiles = [
 const surveyCamRuntimeFiles = [
   'index.html', 'privacy.html', 'support.html', 'robots.txt', 'sitemap.xml', 'site.js', 'styles.css',
 ];
+const siteSnapRuntimeFiles = ['index.html', 'sitemap.xml'];
 
 async function isFile(relativePath) {
   try { return (await stat(path.join(projectRoot, relativePath))).isFile(); }
@@ -125,6 +126,30 @@ async function ensureSeoMetadata(directory, relative = '') {
     await writeFile(target, html, 'utf8');
   }
 }
+async function injectShopPilotManualAds(outputDir) {
+  const pages = ['index.html', 'quick-start.html', 'user-manual.html'];
+  const css = '<link rel="stylesheet" href="../assets/monetization/monetization.css">';
+  const placement = '<aside class="monetization-ad" data-ad-unit="manual" hidden aria-label="Advertisement"></aside>';
+  const configScript = '<script src="../assets/monetization/config.js"></script>';
+  const runtimeScript = '<script src="../assets/monetization/monetization.js" defer></script>';
+  for (const page of pages) {
+    const file = path.join(outputDir, page);
+    let html = await readFile(file, 'utf8');
+    if (!html.includes('assets/monetization/monetization.css')) {
+      html = html.replace('</head>', '    ' + css + '\n</head>');
+    }
+    if (!html.includes('data-ad-unit="manual"')) {
+      html = /<footer\b/i.test(html)
+        ? html.replace(/<footer\b/i, placement + '\n<footer')
+        : html.replace('</body>', placement + '\n</body>');
+    }
+    if (!html.includes('assets/monetization/config.js')) {
+      html = html.replace('</body>', configScript + runtimeScript + '\n</body>');
+    }
+    await writeFile(file, html, 'utf8');
+  }
+}
+
 async function validateSourcePlan() {
   for (const file of rootRuntimeFiles) await requireSourceFile(file);
   for (const directory of rootRuntimeDirectories) await requireSourceDirectory(directory);
@@ -139,7 +164,9 @@ async function validateSourcePlan() {
   await requireSourceDirectory('EduSheet/assets');
   for (const file of surveyCamRuntimeFiles) await requireSourceFile(path.join('surveycam', file));
   await requireSourceDirectory('surveycam/assets');
+  for (const file of siteSnapRuntimeFiles) await requireSourceFile(path.join('sitesnap', file));
   await requireSourceFile('notivault-website/package.json');
+  await requireSourceFile('notivault-website/sitemap.xml');
   await requireSourceFile('notivault-website/index.html');
   await requireSourceFile('notivault-website/privacy-policy/index.html');
   await requireSourceDirectory('notivault-website/public');
@@ -228,6 +255,7 @@ await cp(path.join(projectRoot,'construction-erp','assets'), path.join(construct
 const shopPilotOutput=path.join(outputRoot,'shoppilot-erp');
 await copyFiles(path.join(projectRoot,'shoppilot erp'), shopPilotOutput, shopPilotRuntimeFiles);
 await cp(path.join(projectRoot,'shoppilot erp','assets'), path.join(shopPilotOutput,'assets'), {recursive:true,force:true});
+await injectShopPilotManualAds(shopPilotOutput);
 
 const eduSheetOutput=path.join(outputRoot,'EduSheet');
 await copyFiles(path.join(projectRoot,'EduSheet'), eduSheetOutput, eduSheetRuntimeFiles);
@@ -237,9 +265,13 @@ const surveyCamOutput=path.join(outputRoot,'surveycam');
 await copyFiles(path.join(projectRoot,'surveycam'), surveyCamOutput, surveyCamRuntimeFiles);
 await cp(path.join(projectRoot,'surveycam','assets'), path.join(surveyCamOutput,'assets'), {recursive:true,force:true});
 
+const siteSnapOutput=path.join(outputRoot,'sitesnap');
+await copyFiles(path.join(projectRoot,'sitesnap'), siteSnapOutput, siteSnapRuntimeFiles);
+
 const notiVaultOutput=path.join(outputRoot,'notivault-website');
 await exportNotiVaultStatic(projectRoot, notiVaultOutput);
 await addNotiVaultRevenueSurface(notiVaultOutput);
+await copyFile(path.join(projectRoot,'notivault-website','sitemap.xml'), path.join(notiVaultOutput,'sitemap.xml'));
 // The root professional home deliberately uses the checked-in public preview path.
 await cp(path.join(projectRoot,'notivault-website','public'), path.join(notiVaultOutput,'public'), {recursive:true,force:true});
 

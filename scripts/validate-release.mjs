@@ -74,7 +74,7 @@ requireText(
 for (const expected of [
   'Construction ERP',
   'Coming Soon',
-  'construction-erp/index.html',
+  'href="/construction-erp/"',
   'aria-label="View the Construction ERP website"',
 ]) {
   requireText(portfolio, expected, 'Portfolio Construction ERP card');
@@ -82,7 +82,7 @@ for (const expected of [
 for (const expected of [
   'ShopPilot',
   'Private Preview',
-  'shoppilot-erp/index.html',
+  'href="/shoppilot-erp/"',
   'shoppilot-erp/quick-start.html',
   'shoppilot-erp/user-manual.html',
   '<option value="ShopPilot">ShopPilot</option>',
@@ -93,7 +93,7 @@ for (const expected of [
   'project-card--notivault',
   'NotiVault',
   'notivault-website/public/og-deleted-message.png',
-  'href="notivault-website/"',
+  'href="/notivault-website/"',
   'aria-label="View the NotiVault website"',
   'Google Play &middot; Coming soon',
   'No public installer is offered yet.',
@@ -134,13 +134,20 @@ for (const expected of [
 for (const unexpected of [
   'localhost:5173',
   'rel="modulepreload"',
-  '<script',
 ]) {
   rejectText(
     `${notivaultStaticHome}\n${notivaultStaticPrivacy}`,
     unexpected,
     'NotiVault GitHub Pages export',
   );
+}
+const notiVaultStaticCombined = `${notivaultStaticHome}\n${notivaultStaticPrivacy}`;
+for (const match of notiVaultStaticCombined.matchAll(/<script\b([^>]*)>/gi)) {
+  const attributes = match[1] ?? '';
+  if (!/\btype=["']application\/ld\+json["']/i.test(attributes)) {
+    failures.push('NotiVault GitHub Pages export must not contain executable scripts');
+    break;
+  }
 }
 for (const [relativePath, minimumBytes] of [
   ['shoppilot erp/index.html', 10_000],
