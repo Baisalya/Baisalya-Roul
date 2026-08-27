@@ -71,6 +71,10 @@ for(const expected of ['https://baisalya.com/','href="EduSheet/index.html"','hre
   if(!index.includes(expected)) failures.push(`Production root identity missing: ${expected}`);
 }
 const monetizationConfig=await readFile(path.join(root,'assets/monetization/config.js'),'utf8');
+const notiVaultHome=await readFile(path.join(root,'notivault-website/index.html'),'utf8');
+for(const expected of ['creator-support','https://www.buymeacoffee.com/baisalya','baishalya1999@gmail.com']){
+  if(!notiVaultHome.includes(expected)) failures.push(`Production NotiVault revenue surface missing: ${expected}`);
+}
 const adsEnabled=monetizationConfig.includes('enabled: true');
 if(adsEnabled){
   if(!monetizationConfig.includes('consentReady: true')) failures.push('AdSense enabled without consent-ready gate.');

@@ -9,7 +9,7 @@
     "shoppilot erp",
     "shoppilot-erp"
   ],
-  "file_count": 370,
+  "file_count": 371,
   "files": [
     {
       "path": "construction-erp/_headers",
@@ -1532,14 +1532,19 @@
       "bytes": 39341
     },
     {
+      "path": "notivault-website/_next/static/css/index.DOhCwe6r.css",
+      "sha256": "0b997c5d862043e8bd27d44dfce8c553bae78a5d4022ac354e71997a2eb9dbe3",
+      "bytes": 40571
+    },
+    {
       "path": "notivault-website/.gitignore",
       "sha256": "143b0d35966ca049441511ea972080e1a9068eed25384d62a0d99ec5128d5768",
       "bytes": 504
     },
     {
       "path": "notivault-website/app/globals.css",
-      "sha256": "df608c6651a2acdddec6e661a94f06e65261f42f95b703e1600c10cccf9b6827",
-      "bytes": 40002
+      "sha256": "ee086b8220ce20032fc25cae9d4edd6776f438b9b73f6dae9b61d65dd11db7f3",
+      "bytes": 41432
     },
     {
       "path": "notivault-website/app/layout.tsx",
@@ -1548,8 +1553,8 @@
     },
     {
       "path": "notivault-website/app/page.tsx",
-      "sha256": "e826913452b104ff7d7fc5477d96c99ceb3b92fc2c4d193fc41d1464ae66451d",
-      "bytes": 23402
+      "sha256": "3b8e6f52170fa37872df9bf6e81ab14e77d78afba92e3ac854722f9b1e4a0fb2",
+      "bytes": 24139
     },
     {
       "path": "notivault-website/app/privacy-policy/page.tsx",
@@ -1568,8 +1573,8 @@
     },
     {
       "path": "notivault-website/index.html",
-      "sha256": "74a44ff957cbc92622ff25668655e91f67f92ce99e6fc96cc5e0dc23889695b1",
-      "bytes": 25953
+      "sha256": "c6b14f2f15fd98dd3eb1091202e5d9bf04a6eaef98080e1bdd3eb70c60a73236",
+      "bytes": 25874
     },
     {
       "path": "notivault-website/MARKETING_COPY.md",
@@ -1618,7 +1623,7 @@
     },
     {
       "path": "notivault-website/privacy-policy/index.html",
-      "sha256": "7f913898b54a63606072316587d82b5000365647929e2893141cadfda60d0745",
+      "sha256": "b0c2b04631af1ecbd0385fa3c852979d79b8fcc5c79f5cee6ea6939baf2c26f1",
       "bytes": 19419
     },
     {

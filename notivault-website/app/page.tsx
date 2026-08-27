@@ -467,6 +467,18 @@ export default function Home() {
         </div>
       </section>
 
+      <aside className="creator-support" aria-label="Support NotiVault development">
+        <div className="creator-support__copy">
+          <span className="creator-support__eyebrow">Independent software</span>
+          <strong>Support thoughtful NotiVault development</strong>
+          <p>Support privacy-focused Android development directly. The NotiVault website intentionally has no advertising slot.</p>
+        </div>
+        <div className="creator-support__actions">
+          <a href="https://www.buymeacoffee.com/baisalya" target="_blank" rel="noreferrer">Buy me a coffee ↗</a>
+          <a href="mailto:baishalya1999@gmail.com?subject=NotiVault%20business%20inquiry">Business inquiry</a>
+        </div>
+      </aside>
+
       <footer className="site-footer">
         <div>
           <a className="brand footer-brand" href="#top"><span className="brand-mark small-mark" aria-hidden="true"><span className="ear ear-left" /><span className="ear ear-right" /><span className="brand-face" /></span><span>NotiVault</span></a>
