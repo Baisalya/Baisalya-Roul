@@ -17,6 +17,11 @@ const protectedRoots = [
   'shoppilot-erp',
 ];
 
+function canonicalBytes(data) {
+  if (data.includes(0)) return data;
+  return Buffer.from(data.toString('utf8').replaceAll('\r\n', '\n'), 'utf8');
+}
+
 const { stdout } = await execFileAsync(
   'git',
   ['ls-files', '-z', '--cached', '--others', '--exclude-standard', '--', ...protectedRoots],
@@ -35,10 +40,11 @@ for (const relativePath of paths) {
   const absolutePath = path.join(root, relativePath);
   if (!(await stat(absolutePath)).isFile()) continue;
   const data = await readFile(absolutePath);
+  const canonical = canonicalBytes(data);
   files.push({
     path: relativePath,
-    sha256: crypto.createHash('sha256').update(data).digest('hex'),
-    bytes: data.length,
+    sha256: crypto.createHash('sha256').update(canonical).digest('hex'),
+    bytes: canonical.length,
   });
 }
 

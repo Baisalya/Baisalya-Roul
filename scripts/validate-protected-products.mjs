@@ -8,10 +8,14 @@ const root=process.cwd();
 const manifest=JSON.parse(await readFile(path.join(root,'scripts/protected-product-manifest.json'),'utf8'));
 const failures=[];
 let checked=0;
+function canonicalBytes(data){
+  if(data.includes(0)) return data;
+  return Buffer.from(data.toString('utf8').replaceAll('\r\n','\n'),'utf8');
+}
 for (const item of manifest.files){
   try {
     const data=await readFile(path.join(root,item.path));
-    const hash=crypto.createHash('sha256').update(data).digest('hex');
+    const hash=crypto.createHash('sha256').update(canonicalBytes(data)).digest('hex');
     if (hash!==item.sha256) failures.push(`${item.path} changed from protected baseline.`);
     checked++;
   } catch { failures.push(`${item.path} is missing from protected baseline.`); }
