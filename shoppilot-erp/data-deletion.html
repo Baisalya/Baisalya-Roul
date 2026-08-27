@@ -1,12 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ShopPilot Data Export and Deletion</title>
-  <meta name="description" content="Public instructions for exporting and deleting ShopPilot local, Google Drive, Firebase, subscription, diagnostic, and support data.">
-  <link rel="canonical" href="https://baisalya.com/shoppilot-erp/data-deletion.html">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>ShopPilot Data Export and Deletion</title>
+<meta content="Public instructions for exporting and deleting ShopPilot local, Google Drive, Firebase, subscription, diagnostic, and support data." name="description"/>
+<link href="https://baisalya.com/shoppilot-erp/data-deletion.html" rel="canonical"/>
+<style>
     :root { color-scheme: light dark; font-family: system-ui, sans-serif; line-height: 1.55; }
     body { margin: 0; background: Canvas; color: CanvasText; }
     main { max-width: 860px; margin: auto; padding: 32px 20px 64px; }
@@ -16,13 +17,14 @@
     li { margin: 8px 0; }
     code { overflow-wrap: anywhere; }
   </style>
-</head>
-<body>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="https://baisalya.com/shoppilot-erp/data-deletion.html" property="og:url"/>
+<link href="../assets/site-network.css" rel="stylesheet"/></head>
+<body><div aria-label="Baisalya network navigation" class="baisalya-network-bar" role="navigation"><a class="baisalya-network-link" href="https://baisalya.com/">← Baisalya.com</a></div>
 <main>
-  <h1>ShopPilot data export and deletion</h1>
-  <p><strong>App:</strong> ShopPilot<br><strong>Publisher:</strong> Baisalya Roul<br><strong>Last updated:</strong> 22 July 2026</p>
-
-  <div class="notice">
+<h1>ShopPilot data export and deletion</h1>
+<p><strong>App:</strong> ShopPilot<br/><strong>Publisher:</strong> Baisalya Roul<br/><strong>Last updated:</strong> 22 July 2026</p>
+<div class="notice">
     ShopPilot uses Google Sign-In and does not create a separate password-based
     account. Configured premium and subscription features create a linked Firebase
     Authentication identity and may store entitlement, membership, and encrypted
@@ -30,84 +32,76 @@
     Firebase records, Google Play subscriptions, business-controlled records, and
     developer-controlled diagnostic/support data have different deletion paths below.
   </div>
-
-  <h2>Before deleting</h2>
-  <p>Export any invoices, reports, recovery codes, or authenticated backups you
+<h2>Before deleting</h2>
+<p>Export any invoices, reports, recovery codes, or authenticated backups you
   need to keep. Deletion can make encrypted backups permanently unrecoverable.
   Never email customer records, passwords, PINs, OAuth tokens, database files,
   encryption keys, or recovery codes.</p>
-
-  <h2>Delete local app data</h2>
-  <ol>
-    <li>In ShopPilot, open the workspace selector and use <strong>Delete workspace</strong> for each owner workspace you control.</li>
-    <li>Confirm the displayed scope. This removes that device's workspace database, downloaded attachments, pending sync files, restore/upgrade remnants, and workspace recovery secrets after the database closes safely.</li>
-    <li>Uninstall ShopPilot or clear its storage to remove remaining local app preferences and caches from that device.</li>
-  </ol>
-  <p>Deleting one device's local copy does not prove that Google Drive backups,
+<h2>Delete local app data</h2>
+<ol>
+<li>In ShopPilot, open the workspace selector and use <strong>Delete workspace</strong> for each owner workspace you control.</li>
+<li>Confirm the displayed scope. This removes that device's workspace database, downloaded attachments, pending sync files, restore/upgrade remnants, and workspace recovery secrets after the database closes safely.</li>
+<li>Uninstall ShopPilot or clear its storage to remove remaining local app preferences and caches from that device.</li>
+</ol>
+<p>Deleting one device's local copy does not prove that Google Drive backups,
   shared business records, another device, Firebase identity/Firestore records,
   Crashlytics diagnostics, Google Play subscription records, or support messages
   were deleted.</p>
-
-  <h2>Delete Google Drive data and disconnect access</h2>
-  <ol>
-    <li>If you are the business owner, revoke staff access in ShopPilot before deleting the owner workspace. Staff deletion must not delete the owner's business history.</li>
-    <li>Owner workspace deletion attempts to remove ShopPilot's visible folder and hidden application-data objects for that shop. Network, permission, ownership, or service failures can prevent verification.</li>
-    <li>Remove remaining ShopPilot files and folders that you own from Google Drive. Hidden application-data files are not visible in the normal Drive file list. The publisher can provide cleanup guidance but cannot access your Drive without your authorization.</li>
-    <li>Disconnect ShopPilot from your Google Account's third-party access page to revoke future OAuth access.</li>
-    <li>Check other signed-in devices and remove their local workspace copies separately.</li>
-  </ol>
-
-  <h2>Request deletion of Firebase identity and cloud records</h2>
-  <p>Signing out, disconnecting Google Drive, deleting a local workspace, or
+<h2>Delete Google Drive data and disconnect access</h2>
+<ol>
+<li>If you are the business owner, revoke staff access in ShopPilot before deleting the owner workspace. Staff deletion must not delete the owner's business history.</li>
+<li>Owner workspace deletion attempts to remove ShopPilot's visible folder and hidden application-data objects for that shop. Network, permission, ownership, or service failures can prevent verification.</li>
+<li>Remove remaining ShopPilot files and folders that you own from Google Drive. Hidden application-data files are not visible in the normal Drive file list. The publisher can provide cleanup guidance but cannot access your Drive without your authorization.</li>
+<li>Disconnect ShopPilot from your Google Account's third-party access page to revoke future OAuth access.</li>
+<li>Check other signed-in devices and remove their local workspace copies separately.</li>
+</ol>
+<h2>Request deletion of Firebase identity and cloud records</h2>
+<p>Signing out, disconnecting Google Drive, deleting a local workspace, or
   uninstalling ShopPilot does not automatically delete the linked Firebase
   Authentication identity or all Firestore records. Use the publisher request
   process below and ask for deletion of the applicable categories:</p>
-  <ul>
-    <li>Firebase Authentication identity associated with your Google email;</li>
-    <li>premium entitlement and subscription-verification records controlled by ShopPilot;</li>
-    <li>owner/staff membership and access-routing metadata; and</li>
-    <li>temporary encrypted near-live delta envelopes and acknowledgements.</li>
-  </ul>
-  <p>Deleting a staff identity does not delete the business owner's customer,
+<ul>
+<li>Firebase Authentication identity associated with your Google email;</li>
+<li>premium entitlement and subscription-verification records controlled by ShopPilot;</li>
+<li>owner/staff membership and access-routing metadata; and</li>
+<li>temporary encrypted near-live delta envelopes and acknowledgements.</li>
+</ul>
+<p>Deleting a staff identity does not delete the business owner's customer,
   transaction, or audit history. Some membership or security records may be
   retained or de-identified when needed to protect the owner workspace, resolve
   disputes, prevent fraud, or meet legal obligations. The response to the request
   will explain what was deleted, retained, or controlled by another party.</p>
-
-  <h2>Cancel a Google Play subscription separately</h2>
-  <p>Deleting ShopPilot data or your Firebase identity does not automatically cancel
+<h2>Cancel a Google Play subscription separately</h2>
+<p>Deleting ShopPilot data or your Firebase identity does not automatically cancel
   a Google Play subscription. Open Google Play, go to
   <strong>Payments &amp; subscriptions &gt; Subscriptions</strong>, select ShopPilot,
   and cancel the subscription. Google controls payment-method and Play purchase
   history under Google's terms.</p>
-
-  <h2>Business owner, staff, and customer roles</h2>
-  <ul>
-    <li><strong>Business owners</strong> control customer, staff, transaction, and collaboration records entered in their workspace.</li>
-    <li><strong>Staff members</strong> should ask the business owner to access, correct, export, or delete business-controlled records. Removing a staff device does not erase the owner's records.</li>
-    <li><strong>Customers of a ShopPilot business</strong> should normally contact that business first because the publisher does not have routine access to its local or Drive business database.</li>
-  </ul>
-
-  <h2>Request deletion of developer-controlled data</h2>
-  <p>To request deletion of diagnostic or support data controlled by the
+<h2>Business owner, staff, and customer roles</h2>
+<ul>
+<li><strong>Business owners</strong> control customer, staff, transaction, and collaboration records entered in their workspace.</li>
+<li><strong>Staff members</strong> should ask the business owner to access, correct, export, or delete business-controlled records. Removing a staff device does not erase the owner's records.</li>
+<li><strong>Customers of a ShopPilot business</strong> should normally contact that business first because the publisher does not have routine access to its local or Drive business database.</li>
+</ul>
+<h2>Request deletion of developer-controlled data</h2>
+<p>To request deletion of diagnostic or support data controlled by the
   publisher, email
   <a href="mailto:baishalya1999@gmail.com?subject=ShopPilot%20data%20deletion%20request">baishalya1999@gmail.com</a>
   with the subject <code>ShopPilot data deletion request</code>. Include:</p>
-  <ul>
-    <li>the Google email used with ShopPilot;</li>
-    <li>whether you are an owner, staff member, or customer of a business;</li>
-    <li>the categories to delete: Firebase Authentication identity, Firestore entitlement/membership/sync records, support correspondence, diagnostic data, or Drive app-data cleanup guidance; and</li>
-    <li>a safe way to confirm the request.</li>
-  </ul>
-  <p>This web page is the public deletion-request resource for ShopPilot. Identity
+<ul>
+<li>the Google email used with ShopPilot;</li>
+<li>whether you are an owner, staff member, or customer of a business;</li>
+<li>the categories to delete: Firebase Authentication identity, Firestore entitlement/membership/sync records, support correspondence, diagnostic data, or Drive app-data cleanup guidance; and</li>
+<li>a safe way to confirm the request.</li>
+</ul>
+<p>This web page is the public deletion-request resource for ShopPilot. Identity
   and authority may need to be verified. The publisher will acknowledge the
   request and explain the applicable scope, expected completion period, or whether
   the business owner or Google controls the requested record. Limited information
   may be retained when required for security, fraud prevention, disputes, or legal
   compliance, and the applicable reason will be explained.</p>
-
-  <h2>Retention</h2>
-  <p>Local and Drive business data remains until it is deleted by the relevant
+<h2>Retention</h2>
+<p>Local and Drive business data remains until it is deleted by the relevant
   device user or Drive owner. Firestore near-live deltas and acknowledgements are
   assigned a 30-day expiry, and subscription-event deduplication records are
   assigned a 90-day expiry. Premium entitlement records remain while needed to
@@ -117,9 +111,8 @@
   and backup systems within 180 days after the publisher initiates deletion.
   Support correspondence is kept only as long as reasonably needed to answer the
   request, maintain security records, or meet legal duties.</p>
-
-  <h2>Related information</h2>
-  <p>Read the <a href="privacy-policy.html">ShopPilot Privacy Policy</a> and
+<h2>Related information</h2>
+<p>Read the <a href="privacy-policy.html">ShopPilot Privacy Policy</a> and
   <a href="terms-of-service.html">Terms of Service</a>. Store
   declarations and legal review must match these actual product flows before a
   production release.</p>

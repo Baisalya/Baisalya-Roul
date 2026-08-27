@@ -1,19 +1,23 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Resolve workspace, manifest, graph, automation, Git, file, API, and layout problems."><meta name="theme-color" content="#5b47e8"><title>Troubleshooting · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script><script defer src="../assets/js/manual-visuals.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!DOCTYPE html>
+<html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Resolve workspace, manifest, graph, automation, Git, file, API, and layout problems." name="description"/><meta content="#5b47e8" name="theme-color"/><title>Troubleshooting · DevDesk Manual</title><link href="../assets/img/devdesk-logo-64.png" rel="icon" sizes="64x64" type="image/png"/><link href="../assets/css/styles.css?v=20260824.4" rel="stylesheet"/><script defer="" src="../assets/js/site-config.js?v=20260824.4"></script><script defer="" src="../assets/js/search-index.js?v=20260824.4"></script><script defer="" src="../assets/js/app.js?v=20260824.4"></script><script defer="" src="../assets/js/manual-visuals.js?v=20260824.4"></script> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<link href="https://baisalya.com/devdesk/manual/troubleshooting.html" rel="canonical"/>
+<meta content="https://baisalya.com/devdesk/manual/troubleshooting.html" property="og:url"/>
+<link href="../../assets/site-network.css" rel="stylesheet"/><link href="../../assets/monetization/monetization.css" rel="stylesheet"/></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
-  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
-  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
-  <nav class="top-nav" aria-label="Primary navigation">
-    <a class="" href="../index.html">Home</a>
-    <a class="active" href="../manual/user-manual.html">Manual</a>
-    <a class="" href="../downloads.html">Downloads</a>
-    <a class="nav-demo" href="../downloads.html#agent-demo">Demo project</a>
-    <a href="https://baisalya.com/devdesk/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
-  </nav>
-  <div class="header-actions">
-    <button class="search-btn" type="button" data-search aria-label="Search manual"><span>Search manual</span> <kbd>/</kbd></button>
-    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
-  </div>
-</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<button aria-label="Open documentation menu" class="icon-btn mobile-menu" data-menu="" type="button">☰</button>
+<a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Your files. Your workspace.</small></span></a>
+<nav aria-label="Primary navigation" class="top-nav">
+<a class="" href="../index.html">Home</a>
+<a class="active" href="../manual/user-manual.html">Manual</a>
+<a class="" href="../downloads.html">Downloads</a>
+<a class="nav-demo" href="../downloads.html#agent-demo">Demo project</a>
+<a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy</a>
+<a aria-label="Visit Baisalya.com portfolio and software hub" class="baisalya-network-link" href="https://baisalya.com/">Baisalya.com</a></nav>
+<div class="header-actions">
+<button aria-label="Search manual" class="search-btn" data-search="" type="button"><span>Search manual</span> <kbd>/</kbd></button>
+<button aria-label="Toggle light and dark theme" class="icon-btn" data-theme-toggle="" type="button">◐</button>
+</div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside aria-label="Manual contents" class="docs-sidebar"><h2>Start here</h2>
 <a class="" href="../manual/visual-feature-guide.html">Visual feature guide</a>
 <a class="" href="../manual/workspace-workbench.html">Workspace workbench and tabs</a>
 <a class="" href="../manual/user-manual.html">Complete user manual</a>
@@ -67,10 +71,10 @@
 <a class="" href="../manual/settings-appearance.html">Settings and appearance</a>
 <a class="" href="../manual/privacy-security.html">Privacy and security</a>
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
-<a class="active" href="../manual/troubleshooting.html" aria-current="page">Troubleshooting</a>
+<a aria-current="page" class="active" href="../manual/troubleshooting.html">Troubleshooting</a>
 <a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Safety and reference</span></div><div class="doc-meta"><span class="doc-chip">Safety and reference</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div>
-<h1 id="troubleshooting">Troubleshooting<a class="heading-anchor" href="#troubleshooting" aria-label="Link to Troubleshooting">#</a></h1>
-<h2 id="a-project-does-not-open">A project does not open<a class="heading-anchor" href="#a-project-does-not-open" aria-label="Link to A project does not open">#</a></h2>
+<h1 id="troubleshooting">Troubleshooting<a aria-label="Link to Troubleshooting" class="heading-anchor" href="#troubleshooting">#</a></h1>
+<h2 id="a-project-does-not-open">A project does not open<a aria-label="Link to A project does not open" class="heading-anchor" href="#a-project-does-not-open">#</a></h2>
 <ul>
 <li>Confirm the folder and <code>project.devdesk</code> still exist.</li>
 <li>On Android, select the folder that directly contains the manifest.</li>
@@ -78,7 +82,7 @@
 <li>Check Windows permissions, removable-drive availability, and antivirus locks.</li>
 <li>Review any corrupt, duplicate, mismatched, or future-version diagnostic. DevDesk will not overwrite that manifest automatically.</li>
 </ul>
-<h2 id="workspace-shows-no-files-or-tools">Workspace shows no files or tools<a class="heading-anchor" href="#workspace-shows-no-files-or-tools" aria-label="Link to Workspace shows no files or tools">#</a></h2>
+<h2 id="workspace-shows-no-files-or-tools">Workspace shows no files or tools<a aria-label="Link to Workspace shows no files or tools" class="heading-anchor" href="#workspace-shows-no-files-or-tools">#</a></h2>
 <ul>
 <li>Clear workspace Search and check <strong>Files</strong>.</li>
 <li>Use <strong>Files → Open explorer</strong>, then use the breadcrumb to return to <strong>Root</strong>
@@ -97,7 +101,7 @@ parent folder exists, and the proposed file name is unused.</p>
 <p>If a <code>.txt</code> file opens in Diff after upgrading, return to <strong>Files</strong> and open it
 again. Text editor is now the default; Diff remains available through <strong>Open
 with</strong> for deliberate comparison.</p>
-<h2 id="graph-is-empty-cluttered-or-outdated">Graph is empty, cluttered, or outdated<a class="heading-anchor" href="#graph-is-empty-cluttered-or-outdated" aria-label="Link to Graph is empty, cluttered, or outdated">#</a></h2>
+<h2 id="graph-is-empty-cluttered-or-outdated">Graph is empty, cluttered, or outdated<a aria-label="Link to Graph is empty, cluttered, or outdated" class="heading-anchor" href="#graph-is-empty-cluttered-or-outdated">#</a></h2>
 <ul>
 <li>Save the source note.</li>
 <li>Select <strong>Fit view</strong>.</li>
@@ -108,7 +112,7 @@ with</strong> for deliberate comparison.</p>
 <li>Inspect unresolved and ambiguous links.</li>
 <li>Refresh the project index when watching is unavailable.</li>
 </ul>
-<h2 id="a-managed-plan-cannot-apply">A managed plan cannot apply<a class="heading-anchor" href="#a-managed-plan-cannot-apply" aria-label="Link to A managed plan cannot apply">#</a></h2>
+<h2 id="a-managed-plan-cannot-apply">A managed plan cannot apply<a aria-label="Link to A managed plan cannot apply" class="heading-anchor" href="#a-managed-plan-cannot-apply">#</a></h2>
 <ul>
 <li>Refresh analysis and create a new plan.</li>
 <li>Check write permission.</li>
@@ -117,7 +121,7 @@ with</strong> for deliberate comparison.</p>
 <li>Open <strong>Review changes</strong> for a queued plan.</li>
 <li>Use <strong>Undo</strong> only while affected files still match the applied result.</li>
 </ul>
-<h2 id="source-control-is-unavailable">Source control is unavailable<a class="heading-anchor" href="#source-control-is-unavailable" aria-label="Link to Source control is unavailable">#</a></h2>
+<h2 id="source-control-is-unavailable">Source control is unavailable<a aria-label="Link to Source control is unavailable" class="heading-anchor" href="#source-control-is-unavailable">#</a></h2>
 <ul>
 <li>Use an eligible local Windows project.</li>
 <li>Open <strong>Developer tools → Source control</strong> and approve device-local execution
@@ -139,14 +143,14 @@ client that unrelated parent files are not already staged.</li>
 <li>On Android, use safe file editing or Compare &amp; Diff, then open the same folder
 in Windows DevDesk for the Git workbench.</li>
 </ul>
-<h2 id="api-request-fails">API request fails<a class="heading-anchor" href="#api-request-fails" aria-label="Link to API request fails">#</a></h2>
+<h2 id="api-request-fails">API request fails<a aria-label="Link to API request fails" class="heading-anchor" href="#api-request-fails">#</a></h2>
 <ul>
 <li>Check the final URL and HTTPS.</li>
 <li>Verify environment variables, authorization, cookies, and headers.</li>
 <li>Check timeout, certificate, proxy, and network errors.</li>
 <li>Confirm the endpoint accepts the selected body type.</li>
 </ul>
-<h2 id="check-for-updates-cannot-finish">Check for Updates cannot finish<a class="heading-anchor" href="#check-for-updates-cannot-finish" aria-label="Link to Check for Updates cannot finish">#</a></h2>
+<h2 id="check-for-updates-cannot-finish">Check for Updates cannot finish<a aria-label="Link to Check for Updates cannot finish" class="heading-anchor" href="#check-for-updates-cannot-finish">#</a></h2>
 <ul>
 <li>Confirm that the official <a href="../downloads.html">Downloads page</a> opens in your
 browser.</li>
@@ -156,7 +160,7 @@ browser.</li>
 </ul>
 <p>DevDesk remains usable when an initial update check cannot reach the release
 record. It never downloads or installs an update silently.</p>
-<h2 id="portable-api-workspace-does-not-update">Portable API workspace does not update<a class="heading-anchor" href="#portable-api-workspace-does-not-update" aria-label="Link to Portable API workspace does not update">#</a></h2>
+<h2 id="portable-api-workspace-does-not-update">Portable API workspace does not update<a aria-label="Link to Portable API workspace does not update" class="heading-anchor" href="#portable-api-workspace-does-not-update">#</a></h2>
 <ul>
 <li>Confirm <strong>Developer tools → API testing</strong> opened the intended project API
 JSON.</li>
@@ -164,7 +168,7 @@ JSON.</li>
 <li>If Git, an editor, or another instance changed the file, reopen it before making further API edits.</li>
 <li>Never solve a portable-save issue by putting credentials into ordinary JSON fields; protected secrets are intentionally local.</li>
 </ul>
-<h2 id="a-file-cannot-be-saved">A file cannot be saved<a class="heading-anchor" href="#a-file-cannot-be-saved" aria-label="Link to A file cannot be saved">#</a></h2>
+<h2 id="a-file-cannot-be-saved">A file cannot be saved<a aria-label="Link to A file cannot be saved" class="heading-anchor" href="#a-file-cannot-be-saved">#</a></h2>
 <ul>
 <li>Confirm the target is writable.</li>
 <li>Check whether another program changed it.</li>
@@ -175,9 +179,9 @@ JSON.</li>
 is stale. Use <strong>Save As</strong> when the workspace is read-only or you need an
 independent copy.</li>
 </ul>
-<h2 id="ui-looks-cramped">UI looks cramped<a class="heading-anchor" href="#ui-looks-cramped" aria-label="Link to UI looks cramped">#</a></h2>
+<h2 id="ui-looks-cramped">UI looks cramped<a aria-label="Link to UI looks cramped" class="heading-anchor" href="#ui-looks-cramped">#</a></h2>
 <p>Resize the Android freeform or Windows window, close optional panels, or keep advanced controls collapsed. DevDesk supports responsive layouts rather than requiring one fixed orientation.</p>
-<h2 id="ai-agent-connector-does-not-connect">AI Agent Connector does not connect<a class="heading-anchor" href="#ai-agent-connector-does-not-connect" aria-label="Link to AI Agent Connector does not connect">#</a></h2>
+<h2 id="ai-agent-connector-does-not-connect">AI Agent Connector does not connect<a aria-label="Link to AI Agent Connector does not connect" class="heading-anchor" href="#ai-agent-connector-does-not-connect">#</a></h2>
 <ul>
 <li>The connector is available on Windows and Android. On Android, use an MCP
 client on the same device and keep DevDesk open.</li>
@@ -190,7 +194,7 @@ again.</li>
 </ul>
 <p>If a tool says no workspace is selected, open a workspace and repeat the request. If document reading or proposals are refused, enable only the required permission.</p>
 <p>If approval fails, keep the newer Markdown file and ask the agent to read it again.</p>
-<h2 id="data-reset-or-recovery">Data reset or recovery<a class="heading-anchor" href="#data-reset-or-recovery" aria-label="Link to Data reset or recovery">#</a></h2>
+<h2 id="data-reset-or-recovery">Data reset or recovery<a aria-label="Link to Data reset or recovery" class="heading-anchor" href="#data-reset-or-recovery">#</a></h2>
 <p>Export <strong>Settings → Data backup → Export Reinstall Recovery Kit</strong> before a
 major change or uninstall, and separately back up the external workspace
 folders. After import, open <strong>Reconnect Recorded Workspaces</strong>, review the
@@ -199,16 +203,15 @@ Older backups may not contain a reconnection catalog.</p>
 <p>Clear All Data removes DevDesk-private records but does not delete external
 project folders. Protected secrets, permission URIs, execution trust, and Agent
 Connector access keys are not restored by a recovery kit.</p>
-<h2 id="windows-manifest-launch-opens-the-wrong-state">Windows manifest launch opens the wrong state<a class="heading-anchor" href="#windows-manifest-launch-opens-the-wrong-state" aria-label="Link to Windows manifest launch opens the wrong state">#</a></h2>
+<h2 id="windows-manifest-launch-opens-the-wrong-state">Windows manifest launch opens the wrong state<a aria-label="Link to Windows manifest launch opens the wrong state" class="heading-anchor" href="#windows-manifest-launch-opens-the-wrong-state">#</a></h2>
 <ul>
 <li>Confirm the selected filename is exactly <code>project.devdesk</code>.</li>
 <li>Close duplicate old DevDesk processes if operating-system activation is misconfigured.</li>
 <li>Open the manifest again; a running supported build forwards it to the existing main window.</li>
 </ul>
-
-<div class="article-footer"><a class="pager" href="keyboard-shortcuts.html"><small>Previous</small><strong>Keyboard shortcuts and accessibility</strong></a><a class="pager" href="faq.html"><small>Next</small><strong>Frequently asked questions</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#a-project-does-not-open">A project does not open</a><a class="level-2" href="#workspace-shows-no-files-or-tools">Workspace shows no files or tools</a><a class="level-2" href="#graph-is-empty-cluttered-or-outdated">Graph is empty, cluttered, or outdated</a><a class="level-2" href="#a-managed-plan-cannot-apply">A managed plan cannot apply</a><a class="level-2" href="#source-control-is-unavailable">Source control is unavailable</a><a class="level-2" href="#api-request-fails">API request fails</a><a class="level-2" href="#check-for-updates-cannot-finish">Check for Updates cannot finish</a><a class="level-2" href="#portable-api-workspace-does-not-update">Portable API workspace does not update</a><a class="level-2" href="#a-file-cannot-be-saved">A file cannot be saved</a><a class="level-2" href="#ui-looks-cramped">UI looks cramped</a><a class="level-2" href="#ai-agent-connector-does-not-connect">AI Agent Connector does not connect</a><a class="level-2" href="#data-reset-or-recovery">Data reset or recovery</a><a class="level-2" href="#windows-manifest-launch-opens-the-wrong-state">Windows manifest launch opens the wrong state</a></aside></div><footer class="site-footer"><div class="footer-inner">
-<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div class="article-footer"><a class="pager" href="keyboard-shortcuts.html"><small>Previous</small><strong>Keyboard shortcuts and accessibility</strong></a><a class="pager" href="faq.html"><small>Next</small><strong>Frequently asked questions</strong></a></div></article><aside aria-label="Advertisement" class="monetization-ad" data-ad-context="troubleshooting" data-ad-unit="manual" hidden=""></aside></main><aside aria-label="On this page" class="toc"><h2>On this page</h2><a class="level-2" href="#a-project-does-not-open">A project does not open</a><a class="level-2" href="#workspace-shows-no-files-or-tools">Workspace shows no files or tools</a><a class="level-2" href="#graph-is-empty-cluttered-or-outdated">Graph is empty, cluttered, or outdated</a><a class="level-2" href="#a-managed-plan-cannot-apply">A managed plan cannot apply</a><a class="level-2" href="#source-control-is-unavailable">Source control is unavailable</a><a class="level-2" href="#api-request-fails">API request fails</a><a class="level-2" href="#check-for-updates-cannot-finish">Check for Updates cannot finish</a><a class="level-2" href="#portable-api-workspace-does-not-update">Portable API workspace does not update</a><a class="level-2" href="#a-file-cannot-be-saved">A file cannot be saved</a><a class="level-2" href="#ui-looks-cramped">UI looks cramped</a><a class="level-2" href="#ai-agent-connector-does-not-connect">AI Agent Connector does not connect</a><a class="level-2" href="#data-reset-or-recovery">Data reset or recovery</a><a class="level-2" href="#windows-manifest-launch-opens-the-wrong-state">Windows manifest launch opens the wrong state</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
-<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>
-<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener noreferrer">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
-</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" rel="noopener noreferrer" target="_blank">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" rel="noopener noreferrer" target="_blank">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" rel="noopener noreferrer" target="_blank">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div aria-hidden="true" class="search-overlay" data-search-overlay=""><div aria-label="Search DevDesk documentation" aria-modal="true" class="search-panel" role="dialog"><input autocomplete="off" data-search-input="" placeholder="Search manuals, commands, OKF, graph, APIs…" type="search"/><div class="search-results" data-search-results=""><div class="empty-search">Start typing to search the complete manual.</div></div></div></div><script src="../../assets/monetization/config.js"></script><script defer="" src="../../assets/monetization/monetization.js"></script></body></html>

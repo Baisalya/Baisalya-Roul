@@ -1,19 +1,23 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Encode and decode Base64 while understanding that it is not encryption."><meta name="theme-color" content="#5b47e8"><title>Base64 Tool · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script><script defer src="../assets/js/manual-visuals.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!DOCTYPE html>
+<html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Encode and decode Base64 while understanding that it is not encryption." name="description"/><meta content="#5b47e8" name="theme-color"/><title>Base64 Tool · DevDesk Manual</title><link href="../assets/img/devdesk-logo-64.png" rel="icon" sizes="64x64" type="image/png"/><link href="../assets/css/styles.css?v=20260824.4" rel="stylesheet"/><script defer="" src="../assets/js/site-config.js?v=20260824.4"></script><script defer="" src="../assets/js/search-index.js?v=20260824.4"></script><script defer="" src="../assets/js/app.js?v=20260824.4"></script><script defer="" src="../assets/js/manual-visuals.js?v=20260824.4"></script> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<link href="https://baisalya.com/devdesk/manual/base64.html" rel="canonical"/>
+<meta content="https://baisalya.com/devdesk/manual/base64.html" property="og:url"/>
+<link href="../../assets/site-network.css" rel="stylesheet"/><link href="../../assets/monetization/monetization.css" rel="stylesheet"/></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
-  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
-  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
-  <nav class="top-nav" aria-label="Primary navigation">
-    <a class="" href="../index.html">Home</a>
-    <a class="active" href="../manual/user-manual.html">Manual</a>
-    <a class="" href="../downloads.html">Downloads</a>
-    <a class="nav-demo" href="../downloads.html#agent-demo">Demo project</a>
-    <a href="https://baisalya.com/devdesk/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
-  </nav>
-  <div class="header-actions">
-    <button class="search-btn" type="button" data-search aria-label="Search manual"><span>Search manual</span> <kbd>/</kbd></button>
-    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
-  </div>
-</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<button aria-label="Open documentation menu" class="icon-btn mobile-menu" data-menu="" type="button">☰</button>
+<a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Your files. Your workspace.</small></span></a>
+<nav aria-label="Primary navigation" class="top-nav">
+<a class="" href="../index.html">Home</a>
+<a class="active" href="../manual/user-manual.html">Manual</a>
+<a class="" href="../downloads.html">Downloads</a>
+<a class="nav-demo" href="../downloads.html#agent-demo">Demo project</a>
+<a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy</a>
+<a aria-label="Visit Baisalya.com portfolio and software hub" class="baisalya-network-link" href="https://baisalya.com/">Baisalya.com</a></nav>
+<div class="header-actions">
+<button aria-label="Search manual" class="search-btn" data-search="" type="button"><span>Search manual</span> <kbd>/</kbd></button>
+<button aria-label="Toggle light and dark theme" class="icon-btn" data-theme-toggle="" type="button">◐</button>
+</div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside aria-label="Manual contents" class="docs-sidebar"><h2>Start here</h2>
 <a class="" href="../manual/visual-feature-guide.html">Visual feature guide</a>
 <a class="" href="../manual/workspace-workbench.html">Workspace workbench and tabs</a>
 <a class="" href="../manual/user-manual.html">Complete user manual</a>
@@ -53,7 +57,7 @@
 <a class="" href="../manual/json-tools.html">JSON Tools</a>
 <a class="" href="../manual/jwt-decoder.html">JWT Decoder</a>
 <a class="" href="../manual/regex-tester.html">Regex Tester</a>
-<a class="active" href="../manual/base64.html" aria-current="page">Base64 Tool</a>
+<a aria-current="page" class="active" href="../manual/base64.html">Base64 Tool</a>
 <a class="" href="../manual/url-tools.html">URL Encoder and Decoder</a>
 <a class="" href="../manual/timestamp.html">Timestamp Converter</a>
 <a class="" href="../manual/uuid.html">UUID Generator</a>
@@ -68,28 +72,28 @@
 <a class="" href="../manual/privacy-security.html">Privacy and security</a>
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
-<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Developer utilities</span></div><div class="doc-meta"><span class="doc-chip">Developer utilities</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="base64-tool">Base64 Tool<a class="heading-anchor" href="#base64-tool" aria-label="Link to Base64 Tool">#</a></h1>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Developer utilities</span></div><div class="doc-meta"><span class="doc-chip">Developer utilities</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="base64-tool">Base64 Tool<a aria-label="Link to Base64 Tool" class="heading-anchor" href="#base64-tool">#</a></h1>
 <p>Base64 Tool converts text or bytes to and from Base64.</p>
-<h2 id="encode">Encode<a class="heading-anchor" href="#encode" aria-label="Link to Encode">#</a></h2>
+<h2 id="encode">Encode<a aria-label="Link to Encode" class="heading-anchor" href="#encode">#</a></h2>
 <p>Enter text and select encode. The result is an encoding, not encryption.</p>
-<h2 id="decode">Decode<a class="heading-anchor" href="#decode" aria-label="Link to Decode">#</a></h2>
+<h2 id="decode">Decode<a aria-label="Link to Decode" class="heading-anchor" href="#decode">#</a></h2>
 <p>Paste a valid Base64 string and select decode. Binary output may not be readable as text.</p>
-<h2 id="common-mistakes">Common mistakes<a class="heading-anchor" href="#common-mistakes" aria-label="Link to Common mistakes">#</a></h2>
+<h2 id="common-mistakes">Common mistakes<a aria-label="Link to Common mistakes" class="heading-anchor" href="#common-mistakes">#</a></h2>
 <ul>
 <li>Missing padding</li>
 <li>URL-safe Base64 used as standard Base64</li>
 <li>Treating Base64 as secure storage</li>
 <li>Decoding untrusted binary content without checking its type</li>
 </ul>
-<h2 id="privacy">Privacy<a class="heading-anchor" href="#privacy" aria-label="Link to Privacy">#</a></h2>
+<h2 id="privacy">Privacy<a aria-label="Link to Privacy" class="heading-anchor" href="#privacy">#</a></h2>
 <p>Processing is local. Base64 can still contain credentials, tokens, files, or personal data.</p>
-<h2 id="example">Example<a class="heading-anchor" href="#example" aria-label="Link to Example">#</a></h2>
+<h2 id="example">Example<a aria-label="Link to Example" class="heading-anchor" href="#example">#</a></h2>
 <pre><code class="language-text">DevDesk → RGV2RGVzaw==
 </code></pre>
 <p>URL-safe Base64 may use <code>-</code> and <code>_</code> instead of <code>+</code> and <code>/</code>. Padding rules also vary by protocol.</p>
-<div class="article-footer"><a class="pager" href="regex-tester.html"><small>Previous</small><strong>Regex Tester</strong></a><a class="pager" href="url-tools.html"><small>Next</small><strong>URL Encoder and Decoder</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#encode">Encode</a><a class="level-2" href="#decode">Decode</a><a class="level-2" href="#common-mistakes">Common mistakes</a><a class="level-2" href="#privacy">Privacy</a><a class="level-2" href="#example">Example</a></aside></div><footer class="site-footer"><div class="footer-inner">
-<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div class="article-footer"><a class="pager" href="regex-tester.html"><small>Previous</small><strong>Regex Tester</strong></a><a class="pager" href="url-tools.html"><small>Next</small><strong>URL Encoder and Decoder</strong></a></div></article><aside aria-label="Advertisement" class="monetization-ad" data-ad-context="base64" data-ad-unit="manual" hidden=""></aside></main><aside aria-label="On this page" class="toc"><h2>On this page</h2><a class="level-2" href="#encode">Encode</a><a class="level-2" href="#decode">Decode</a><a class="level-2" href="#common-mistakes">Common mistakes</a><a class="level-2" href="#privacy">Privacy</a><a class="level-2" href="#example">Example</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
-<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>
-<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener noreferrer">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
-</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" rel="noopener noreferrer" target="_blank">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" rel="noopener noreferrer" target="_blank">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" rel="noopener noreferrer" target="_blank">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div aria-hidden="true" class="search-overlay" data-search-overlay=""><div aria-label="Search DevDesk documentation" aria-modal="true" class="search-panel" role="dialog"><input autocomplete="off" data-search-input="" placeholder="Search manuals, commands, OKF, graph, APIs…" type="search"/><div class="search-results" data-search-results=""><div class="empty-search">Start typing to search the complete manual.</div></div></div></div><script src="../../assets/monetization/config.js"></script><script defer="" src="../../assets/monetization/monetization.js"></script></body></html>

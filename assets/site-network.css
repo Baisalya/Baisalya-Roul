@@ -1,0 +1,35 @@
+/* Cross-product navigation back to the Baisalya software hub. */
+.baisalya-network-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem;
+  min-height: 38px;
+  padding: .5rem .72rem;
+  border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+  border-radius: 999px;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: .82rem;
+  line-height: 1;
+  white-space: nowrap;
+  background: color-mix(in srgb, Canvas 94%, transparent);
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+}
+.baisalya-network-link::after { content: "↗"; font-size: .82em; opacity: .7; }
+.baisalya-network-link:hover { transform: translateY(-1px); border-color: color-mix(in srgb, currentColor 30%, transparent); }
+.baisalya-network-link:focus-visible { outline: 3px solid Highlight; outline-offset: 3px; }
+.baisalya-network-bar {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  justify-content: flex-end;
+  width: min(1200px, calc(100% - 2rem));
+  margin: .75rem auto 0;
+}
+@media (max-width: 760px) {
+  nav .baisalya-network-link { width: auto; }
+  .baisalya-network-link { min-height: 40px; }
+}
+@media (prefers-reduced-motion: reduce) { .baisalya-network-link { transition: none; } }

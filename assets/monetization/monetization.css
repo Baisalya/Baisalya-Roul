@@ -25,3 +25,6 @@
 .monetization-ad.is-active { min-height:90px; padding:.5rem; border:1px solid color-mix(in srgb, currentColor 10%, transparent); background:color-mix(in srgb, Canvas 96%, transparent); }
 @media (max-width:760px) { .creator-support { align-items:flex-start; flex-direction:column; } .creator-support__actions { width:100%; } .creator-support__actions a { flex:1 1 150px; } }
 @media (prefers-reduced-motion:reduce) { .creator-support__actions a { transition:none; } }
+
+.monetization-ad.is-active { position:relative; min-height:100px; padding:1.65rem .6rem .65rem; }
+.monetization-ad__label { position:absolute; top:.48rem; left:50%; transform:translateX(-50%); font-size:.66rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; opacity:.52; }

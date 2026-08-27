@@ -1,19 +1,23 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Validate OpenAPI documents and choose or create project-scoped specifications safely."><meta name="theme-color" content="#5b47e8"><title>OpenAPI Studio · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script><script defer src="../assets/js/manual-visuals.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!DOCTYPE html>
+<html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Validate OpenAPI documents and choose or create project-scoped specifications safely." name="description"/><meta content="#5b47e8" name="theme-color"/><title>OpenAPI Studio · DevDesk Manual</title><link href="../assets/img/devdesk-logo-64.png" rel="icon" sizes="64x64" type="image/png"/><link href="../assets/css/styles.css?v=20260824.4" rel="stylesheet"/><script defer="" src="../assets/js/site-config.js?v=20260824.4"></script><script defer="" src="../assets/js/search-index.js?v=20260824.4"></script><script defer="" src="../assets/js/app.js?v=20260824.4"></script><script defer="" src="../assets/js/manual-visuals.js?v=20260824.4"></script> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<link href="https://baisalya.com/devdesk/manual/openapi-studio.html" rel="canonical"/>
+<meta content="https://baisalya.com/devdesk/manual/openapi-studio.html" property="og:url"/>
+<link href="../../assets/site-network.css" rel="stylesheet"/><link href="../../assets/monetization/monetization.css" rel="stylesheet"/></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
-  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
-  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
-  <nav class="top-nav" aria-label="Primary navigation">
-    <a class="" href="../index.html">Home</a>
-    <a class="active" href="../manual/user-manual.html">Manual</a>
-    <a class="" href="../downloads.html">Downloads</a>
-    <a class="nav-demo" href="../downloads.html#agent-demo">Demo project</a>
-    <a href="https://baisalya.com/devdesk/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
-  </nav>
-  <div class="header-actions">
-    <button class="search-btn" type="button" data-search aria-label="Search manual"><span>Search manual</span> <kbd>/</kbd></button>
-    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
-  </div>
-</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<button aria-label="Open documentation menu" class="icon-btn mobile-menu" data-menu="" type="button">☰</button>
+<a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Your files. Your workspace.</small></span></a>
+<nav aria-label="Primary navigation" class="top-nav">
+<a class="" href="../index.html">Home</a>
+<a class="active" href="../manual/user-manual.html">Manual</a>
+<a class="" href="../downloads.html">Downloads</a>
+<a class="nav-demo" href="../downloads.html#agent-demo">Demo project</a>
+<a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy</a>
+<a aria-label="Visit Baisalya.com portfolio and software hub" class="baisalya-network-link" href="https://baisalya.com/">Baisalya.com</a></nav>
+<div class="header-actions">
+<button aria-label="Search manual" class="search-btn" data-search="" type="button"><span>Search manual</span> <kbd>/</kbd></button>
+<button aria-label="Toggle light and dark theme" class="icon-btn" data-theme-toggle="" type="button">◐</button>
+</div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside aria-label="Manual contents" class="docs-sidebar"><h2>Start here</h2>
 <a class="" href="../manual/visual-feature-guide.html">Visual feature guide</a>
 <a class="" href="../manual/workspace-workbench.html">Workspace workbench and tabs</a>
 <a class="" href="../manual/user-manual.html">Complete user manual</a>
@@ -47,7 +51,7 @@
 <a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
 <a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
 <a class="" href="../manual/quick-api.html">Quick API</a>
-<a class="active" href="../manual/openapi-studio.html" aria-current="page">OpenAPI Studio</a>
+<a aria-current="page" class="active" href="../manual/openapi-studio.html">OpenAPI Studio</a>
 <a class="" href="../manual/unified-search.html">Search this workspace</a>
 <h2>Developer utilities</h2>
 <a class="" href="../manual/json-tools.html">JSON Tools</a>
@@ -69,9 +73,9 @@
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
 <a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>API and documentation</span></div><div class="doc-meta"><span class="doc-chip">API and documentation</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div>
-<h1 id="openapi-studio">OpenAPI Studio<a class="heading-anchor" href="#openapi-studio" aria-label="Link to OpenAPI Studio">#</a></h1>
+<h1 id="openapi-studio">OpenAPI Studio<a aria-label="Link to OpenAPI Studio" class="heading-anchor" href="#openapi-studio">#</a></h1>
 <p>OpenAPI Studio parses an API contract locally, lets you inspect its operations and schemas, and can generate an API Workspaces collection.</p>
-<h2 id="supported-documents">Supported documents<a class="heading-anchor" href="#supported-documents" aria-label="Link to Supported documents">#</a></h2>
+<h2 id="supported-documents">Supported documents<a aria-label="Link to Supported documents" class="heading-anchor" href="#supported-documents">#</a></h2>
 <p>The parser supports:</p>
 <ul>
 <li>Swagger 2.0.</li>
@@ -82,7 +86,7 @@
 </ul>
 <p>The maximum parsing size is 10 MB. <code>info.title</code> is required. Paths must start with <code>/</code>.</p>
 <p>The visible editor label currently says OpenAPI 3.x. The underlying local parser also converts supported Swagger 2.0 input.</p>
-<h2 id="use-openapi-studio-in-a-workspace">Use OpenAPI Studio in a workspace<a class="heading-anchor" href="#use-openapi-studio-in-a-workspace" aria-label="Link to Use OpenAPI Studio in a workspace">#</a></h2>
+<h2 id="use-openapi-studio-in-a-workspace">Use OpenAPI Studio in a workspace<a aria-label="Link to Use OpenAPI Studio in a workspace" class="heading-anchor" href="#use-openapi-studio-in-a-workspace">#</a></h2>
 <p>When opened from a Developer Workspace, OpenAPI Studio shows only compatible
 <code>.json</code>, <code>.yaml</code>, and <code>.yml</code> files stored in that workspace. If no compatible
 file is selected, use <strong>Choose workspace file</strong>, or use <strong>Create in workspace</strong>
@@ -91,10 +95,10 @@ path. Existing files are never replaced by creation.</p>
 <p>An unrelated active file such as <code>HOW_TO_TEST.txt</code> is not passed into OpenAPI
 Studio. An OpenAPI document opened outside a workspace remains independent
 until you explicitly import or assign it.</p>
-<h2 id="reference-handling">Reference handling<a class="heading-anchor" href="#reference-handling" aria-label="Link to Reference handling">#</a></h2>
+<h2 id="reference-handling">Reference handling<a aria-label="Link to Reference handling" class="heading-anchor" href="#reference-handling">#</a></h2>
 <p>Local <code>$ref</code> references are resolved with safe depth limits. Remote references are not fetched automatically and must be bundled into the local document set before parsing.</p>
 <p>This keeps parsing deterministic and avoids silently contacting external servers.</p>
-<h2 id="minimal-example">Minimal example<a class="heading-anchor" href="#minimal-example" aria-label="Link to Minimal example">#</a></h2>
+<h2 id="minimal-example">Minimal example<a aria-label="Link to Minimal example" class="heading-anchor" href="#minimal-example">#</a></h2>
 <pre><code class="language-yaml">openapi: 3.0.3
 info:
   title: Customer API
@@ -110,7 +114,7 @@ paths:
         '200':
           description: Successful response
 </code></pre>
-<h2 id="validate-and-inspect">Validate and inspect<a class="heading-anchor" href="#validate-and-inspect" aria-label="Link to Validate and inspect">#</a></h2>
+<h2 id="validate-and-inspect">Validate and inspect<a aria-label="Link to Validate and inspect" class="heading-anchor" href="#validate-and-inspect">#</a></h2>
 <ol>
 <li>Open <strong>OpenAPI Studio</strong>.</li>
 <li>Paste the JSON or YAML document.</li>
@@ -120,7 +124,7 @@ paths:
 <li>Inspect component schema names, types, and property counts.</li>
 </ol>
 <p>Validation is structural. It does not contact the API and does not prove that the described server is reachable, secure, or safe.</p>
-<h2 id="create-a-collection">Create a collection<a class="heading-anchor" href="#create-a-collection" aria-label="Link to Create a collection">#</a></h2>
+<h2 id="create-a-collection">Create a collection<a aria-label="Link to Create a collection" class="heading-anchor" href="#create-a-collection">#</a></h2>
 <p>After validation, select <strong>Create collection</strong>. The generated collection can include:</p>
 <ul>
 <li>Stable collection and request identifiers.</li>
@@ -135,10 +139,10 @@ paths:
 <li>Environment <code>baseUrl</code> from the first server URL.</li>
 </ul>
 <p>Generated requests are drafts. Review unresolved variables, credentials, file fields, example bodies, and the exact request preview before sending.</p>
-<h2 id="swagger-2-0-conversion">Swagger 2.0 conversion<a class="heading-anchor" href="#swagger-2-0-conversion" aria-label="Link to Swagger 2.0 conversion">#</a></h2>
+<h2 id="swagger-2-0-conversion">Swagger 2.0 conversion<a aria-label="Link to Swagger 2.0 conversion" class="heading-anchor" href="#swagger-2-0-conversion">#</a></h2>
 <p>Supported Swagger 2.0 fields are rewritten into the internal OpenAPI model, including definitions, security definitions, body/form parameters, response schemas, host/basePath/schemes, and reference paths where representable.</p>
 <p>Migration can still lose source-specific extensions or behavior. Keep the original Swagger file in version control.</p>
-<h2 id="stable-synchronization">Stable synchronization<a class="heading-anchor" href="#stable-synchronization" aria-label="Link to Stable synchronization">#</a></h2>
+<h2 id="stable-synchronization">Stable synchronization<a aria-label="Link to Stable synchronization" class="heading-anchor" href="#stable-synchronization">#</a></h2>
 <p>The service layer can synchronize a previously generated collection with a new contract while preserving user-authored request details such as:</p>
 <ul>
 <li>Assertions.</li>
@@ -148,9 +152,9 @@ paths:
 <li>Notes and selected editable fields.</li>
 </ul>
 <p>Stable IDs are derived from the API structure to make changes meaningful. The current OpenAPI Studio page does not yet expose a dedicated synchronization button; this capability exists in the service layer.</p>
-<h2 id="markdown-generation">Markdown generation<a class="heading-anchor" href="#markdown-generation" aria-label="Link to Markdown generation">#</a></h2>
+<h2 id="markdown-generation">Markdown generation<a aria-label="Link to Markdown generation" class="heading-anchor" href="#markdown-generation">#</a></h2>
 <p>The service can generate linked Markdown documentation from the parsed contract. The current visible page focuses on inspect and create-collection actions, so use the available application export workflow when documentation generation is wired to the UI.</p>
-<h2 id="breaking-change-comparison">Breaking-change comparison<a class="heading-anchor" href="#breaking-change-comparison" aria-label="Link to Breaking-change comparison">#</a></h2>
+<h2 id="breaking-change-comparison">Breaking-change comparison<a aria-label="Link to Breaking-change comparison" class="heading-anchor" href="#breaking-change-comparison">#</a></h2>
 <p>The comparison service can identify:</p>
 <ul>
 <li>Removed operations.</li>
@@ -161,10 +165,10 @@ paths:
 <li>Added operations as non-breaking changes.</li>
 </ul>
 <p>Complex JSON Schema compatibility and real business compatibility still require human review. For example, narrowing an enum or changing undocumented semantics may be breaking even when a simple structural comparison does not flag it.</p>
-<h2 id="openapi-contract-assertions">OpenAPI contract assertions<a class="heading-anchor" href="#openapi-contract-assertions" aria-label="Link to OpenAPI contract assertions">#</a></h2>
+<h2 id="openapi-contract-assertions">OpenAPI contract assertions<a aria-label="Link to OpenAPI contract assertions" class="heading-anchor" href="#openapi-contract-assertions">#</a></h2>
 <p>API Workspaces can use an OpenAPI contract assertion to compare a live response with an expected operation response. Combine it with status, JSONPath, timing, header, and business assertions.</p>
 <p>A contract-valid response can still contain the wrong customer, wrong permission decision, or stale business state.</p>
-<h2 id="recommended-workflow">Recommended workflow<a class="heading-anchor" href="#recommended-workflow" aria-label="Link to Recommended workflow">#</a></h2>
+<h2 id="recommended-workflow">Recommended workflow<a aria-label="Link to Recommended workflow" class="heading-anchor" href="#recommended-workflow">#</a></h2>
 <ol>
 <li>Keep the API contract in version control.</li>
 <li>Bundle required references.</li>
@@ -177,14 +181,13 @@ paths:
 <li>Review the exact prepared request.</li>
 <li>Run against a safe test environment before production.</li>
 </ol>
-<h2 id="openapi-and-okf">OpenAPI and OKF<a class="heading-anchor" href="#openapi-and-okf" aria-label="Link to OpenAPI and OKF">#</a></h2>
+<h2 id="openapi-and-okf">OpenAPI and OKF<a aria-label="Link to OpenAPI and OKF" class="heading-anchor" href="#openapi-and-okf">#</a></h2>
 <p>OpenAPI describes an API contract. OKF can describe the surrounding knowledge: ownership, decisions, runbooks, sources, trust, lifecycle, and links to the contract. They are complementary and should remain portable files.</p>
-<h2 id="privacy">Privacy<a class="heading-anchor" href="#privacy" aria-label="Link to Privacy">#</a></h2>
+<h2 id="privacy">Privacy<a aria-label="Link to Privacy" class="heading-anchor" href="#privacy">#</a></h2>
 <p>Parsing and collection generation are local. The specification can still contain internal URLs, proprietary schemas, or personal example data. Review it before export, issue attachment, or public sharing. Network activity starts only when a generated request is deliberately sent.</p>
-
-<div class="article-footer"><a class="pager" href="quick-api.html"><small>Previous</small><strong>Quick API</strong></a><a class="pager" href="unified-search.html"><small>Next</small><strong>Unified Search</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#supported-documents">Supported documents</a><a class="level-2" href="#use-openapi-studio-in-a-workspace">Use OpenAPI Studio in a workspace</a><a class="level-2" href="#reference-handling">Reference handling</a><a class="level-2" href="#minimal-example">Minimal example</a><a class="level-2" href="#validate-and-inspect">Validate and inspect</a><a class="level-2" href="#create-a-collection">Create a collection</a><a class="level-2" href="#swagger-2-0-conversion">Swagger 2.0 conversion</a><a class="level-2" href="#stable-synchronization">Stable synchronization</a><a class="level-2" href="#markdown-generation">Markdown generation</a><a class="level-2" href="#breaking-change-comparison">Breaking-change comparison</a><a class="level-2" href="#openapi-contract-assertions">OpenAPI contract assertions</a><a class="level-2" href="#recommended-workflow">Recommended workflow</a><a class="level-2" href="#openapi-and-okf">OpenAPI and OKF</a><a class="level-2" href="#privacy">Privacy</a></aside></div><footer class="site-footer"><div class="footer-inner">
-<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div class="article-footer"><a class="pager" href="quick-api.html"><small>Previous</small><strong>Quick API</strong></a><a class="pager" href="unified-search.html"><small>Next</small><strong>Unified Search</strong></a></div></article><aside aria-label="Advertisement" class="monetization-ad" data-ad-context="openapi-studio" data-ad-unit="manual" hidden=""></aside></main><aside aria-label="On this page" class="toc"><h2>On this page</h2><a class="level-2" href="#supported-documents">Supported documents</a><a class="level-2" href="#use-openapi-studio-in-a-workspace">Use OpenAPI Studio in a workspace</a><a class="level-2" href="#reference-handling">Reference handling</a><a class="level-2" href="#minimal-example">Minimal example</a><a class="level-2" href="#validate-and-inspect">Validate and inspect</a><a class="level-2" href="#create-a-collection">Create a collection</a><a class="level-2" href="#swagger-2-0-conversion">Swagger 2.0 conversion</a><a class="level-2" href="#stable-synchronization">Stable synchronization</a><a class="level-2" href="#markdown-generation">Markdown generation</a><a class="level-2" href="#breaking-change-comparison">Breaking-change comparison</a><a class="level-2" href="#openapi-contract-assertions">OpenAPI contract assertions</a><a class="level-2" href="#recommended-workflow">Recommended workflow</a><a class="level-2" href="#openapi-and-okf">OpenAPI and OKF</a><a class="level-2" href="#privacy">Privacy</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
-<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>
-<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener noreferrer">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
-</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" rel="noopener noreferrer" target="_blank">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" rel="noopener noreferrer" target="_blank">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" rel="noopener noreferrer" target="_blank">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div aria-hidden="true" class="search-overlay" data-search-overlay=""><div aria-label="Search DevDesk documentation" aria-modal="true" class="search-panel" role="dialog"><input autocomplete="off" data-search-input="" placeholder="Search manuals, commands, OKF, graph, APIs…" type="search"/><div class="search-results" data-search-results=""><div class="empty-search">Start typing to search the complete manual.</div></div></div></div><script src="../../assets/monetization/config.js"></script><script defer="" src="../../assets/monetization/monetization.js"></script></body></html>

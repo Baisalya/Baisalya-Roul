@@ -1,19 +1,23 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Send and inspect one-off HTTP requests with bounded responses, history, streaming, and code snippets."><meta name="theme-color" content="#5b47e8"><title>Quick API · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script><script defer src="../assets/js/manual-visuals.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!DOCTYPE html>
+<html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Send and inspect one-off HTTP requests with bounded responses, history, streaming, and code snippets." name="description"/><meta content="#5b47e8" name="theme-color"/><title>Quick API · DevDesk Manual</title><link href="../assets/img/devdesk-logo-64.png" rel="icon" sizes="64x64" type="image/png"/><link href="../assets/css/styles.css?v=20260824.4" rel="stylesheet"/><script defer="" src="../assets/js/site-config.js?v=20260824.4"></script><script defer="" src="../assets/js/search-index.js?v=20260824.4"></script><script defer="" src="../assets/js/app.js?v=20260824.4"></script><script defer="" src="../assets/js/manual-visuals.js?v=20260824.4"></script> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<link href="https://baisalya.com/devdesk/manual/quick-api.html" rel="canonical"/>
+<meta content="https://baisalya.com/devdesk/manual/quick-api.html" property="og:url"/>
+<link href="../../assets/site-network.css" rel="stylesheet"/><link href="../../assets/monetization/monetization.css" rel="stylesheet"/></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
-  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
-  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
-  <nav class="top-nav" aria-label="Primary navigation">
-    <a class="" href="../index.html">Home</a>
-    <a class="active" href="../manual/user-manual.html">Manual</a>
-    <a class="" href="../downloads.html">Downloads</a>
-    <a class="nav-demo" href="../downloads.html#agent-demo">Demo project</a>
-    <a href="https://baisalya.com/devdesk/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
-  </nav>
-  <div class="header-actions">
-    <button class="search-btn" type="button" data-search aria-label="Search manual"><span>Search manual</span> <kbd>/</kbd></button>
-    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
-  </div>
-</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<button aria-label="Open documentation menu" class="icon-btn mobile-menu" data-menu="" type="button">☰</button>
+<a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Your files. Your workspace.</small></span></a>
+<nav aria-label="Primary navigation" class="top-nav">
+<a class="" href="../index.html">Home</a>
+<a class="active" href="../manual/user-manual.html">Manual</a>
+<a class="" href="../downloads.html">Downloads</a>
+<a class="nav-demo" href="../downloads.html#agent-demo">Demo project</a>
+<a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy</a>
+<a aria-label="Visit Baisalya.com portfolio and software hub" class="baisalya-network-link" href="https://baisalya.com/">Baisalya.com</a></nav>
+<div class="header-actions">
+<button aria-label="Search manual" class="search-btn" data-search="" type="button"><span>Search manual</span> <kbd>/</kbd></button>
+<button aria-label="Toggle light and dark theme" class="icon-btn" data-theme-toggle="" type="button">◐</button>
+</div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside aria-label="Manual contents" class="docs-sidebar"><h2>Start here</h2>
 <a class="" href="../manual/visual-feature-guide.html">Visual feature guide</a>
 <a class="" href="../manual/workspace-workbench.html">Workspace workbench and tabs</a>
 <a class="" href="../manual/user-manual.html">Complete user manual</a>
@@ -46,7 +50,7 @@
 <a class="" href="../manual/api-workspaces.html">Saved API testing</a>
 <a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
 <a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
-<a class="active" href="../manual/quick-api.html" aria-current="page">Quick API</a>
+<a aria-current="page" class="active" href="../manual/quick-api.html">Quick API</a>
 <a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
 <a class="" href="../manual/unified-search.html">Search this workspace</a>
 <h2>Developer utilities</h2>
@@ -68,9 +72,9 @@
 <a class="" href="../manual/privacy-security.html">Privacy and security</a>
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
-<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>API and documentation</span></div><div class="doc-meta"><span class="doc-chip">API and documentation</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="quick-api">Quick API<a class="heading-anchor" href="#quick-api" aria-label="Link to Quick API">#</a></h1>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>API and documentation</span></div><div class="doc-meta"><span class="doc-chip">API and documentation</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="quick-api">Quick API<a aria-label="Link to Quick API" class="heading-anchor" href="#quick-api">#</a></h1>
 <p>Quick API is a compact screen for one-off HTTP testing. It is useful when you want to diagnose one endpoint without creating a complete saved workspace.</p>
-<h2 id="use-quick-api-when">Use Quick API when<a class="heading-anchor" href="#use-quick-api-when" aria-label="Link to Use Quick API when">#</a></h2>
+<h2 id="use-quick-api-when">Use Quick API when<a aria-label="Link to Use Quick API when" class="heading-anchor" href="#use-quick-api-when">#</a></h2>
 <ul>
 <li>You need one temporary request.</li>
 <li>You are checking a health endpoint.</li>
@@ -79,7 +83,7 @@
 <li>You are working in a small Android, split-screen, freeform, or Windows window.</li>
 </ul>
 <p>Move to <a href="api-workspaces.html">Saved API testing</a> when the request needs reusable environments, protected variables, inherited auth, multiple related requests, assertions, extraction, examples, runner reports, or long-term documentation.</p>
-<h2 id="build-the-request">Build the request<a class="heading-anchor" href="#build-the-request" aria-label="Link to Build the request">#</a></h2>
+<h2 id="build-the-request">Build the request<a aria-label="Link to Build the request" class="heading-anchor" href="#build-the-request">#</a></h2>
 <ol>
 <li>Select the method.</li>
 <li>Enter the URL.</li>
@@ -91,16 +95,16 @@
 <li>Select <strong>Send</strong>.</li>
 </ol>
 <p>For a large or exact download, use <strong>Send and stream response to file</strong>. An active request can be cancelled.</p>
-<h2 id="request-tabs">Request tabs<a class="heading-anchor" href="#request-tabs" aria-label="Link to Request tabs">#</a></h2>
-<h3 id="params">Params<a class="heading-anchor" href="#params" aria-label="Link to Params">#</a></h3>
+<h2 id="request-tabs">Request tabs<a aria-label="Link to Request tabs" class="heading-anchor" href="#request-tabs">#</a></h2>
+<h3 id="params">Params<a aria-label="Link to Params" class="heading-anchor" href="#params">#</a></h3>
 <p>Add query names and values as rows. Use this editor instead of manually joining unescaped values into the URL.</p>
-<h3 id="headers">Headers<a class="heading-anchor" href="#headers" aria-label="Link to Headers">#</a></h3>
+<h3 id="headers">Headers<a aria-label="Link to Headers" class="heading-anchor" href="#headers">#</a></h3>
 <p>Add request headers. Protect credentials and do not duplicate <code>Content-Type</code> unless the endpoint requires a deliberate override.</p>
-<h3 id="body">Body<a class="heading-anchor" href="#body" aria-label="Link to Body">#</a></h3>
+<h3 id="body">Body<a aria-label="Link to Body" class="heading-anchor" href="#body">#</a></h3>
 <p>Enter supported body content. The Quick API screen disables GET request bodies. Use the saved workspace editor for the complete body model, binary files, richer multipart workflows, and request-level tests.</p>
-<h3 id="auth-environments">Auth / Environments<a class="heading-anchor" href="#auth-environments" aria-label="Link to Auth / Environments">#</a></h3>
+<h3 id="auth-environments">Auth / Environments<a aria-label="Link to Auth / Environments" class="heading-anchor" href="#auth-environments">#</a></h3>
 <p>Select an environment helper, edit base URL values, insert <code>{{baseUrl}}</code>, and configure request authentication. Quick API is not the best place to maintain multiple production secrets over time.</p>
-<h2 id="send-safely">Send safely<a class="heading-anchor" href="#send-safely" aria-label="Link to Send safely">#</a></h2>
+<h2 id="send-safely">Send safely<a aria-label="Link to Send safely" class="heading-anchor" href="#send-safely">#</a></h2>
 <p>Before sending, confirm:</p>
 <ul>
 <li>The scheme and host.</li>
@@ -112,7 +116,7 @@
 <li>Maximum response size.</li>
 </ul>
 <p>A locally created request still transmits data to the remote endpoint.</p>
-<h2 id="response-summary">Response summary<a class="heading-anchor" href="#response-summary" aria-label="Link to Response summary">#</a></h2>
+<h2 id="response-summary">Response summary<a aria-label="Link to Response summary" class="heading-anchor" href="#response-summary">#</a></h2>
 <p>Quick API shows:</p>
 <ul>
 <li>Status code.</li>
@@ -121,16 +125,16 @@
 <li>Preview-truncated state.</li>
 <li>Saved-to-file state.</li>
 </ul>
-<h2 id="response-tabs">Response tabs<a class="heading-anchor" href="#response-tabs" aria-label="Link to Response tabs">#</a></h2>
-<h3 id="pretty">Pretty<a class="heading-anchor" href="#pretty" aria-label="Link to Pretty">#</a></h3>
+<h2 id="response-tabs">Response tabs<a aria-label="Link to Response tabs" class="heading-anchor" href="#response-tabs">#</a></h2>
+<h3 id="pretty">Pretty<a aria-label="Link to Pretty" class="heading-anchor" href="#pretty">#</a></h3>
 <p>Shows formatted text or a bounded binary preview. Image, hex, and Base64 views are used where appropriate.</p>
-<h3 id="raw">Raw<a class="heading-anchor" href="#raw" aria-label="Link to Raw">#</a></h3>
+<h3 id="raw">Raw<a aria-label="Link to Raw" class="heading-anchor" href="#raw">#</a></h3>
 <p>Shows the raw bounded response text.</p>
-<h3 id="headers-2">Headers<a class="heading-anchor" href="#headers-2" aria-label="Link to Headers">#</a></h3>
+<h3 id="headers-2">Headers<a aria-label="Link to Headers" class="heading-anchor" href="#headers-2">#</a></h3>
 <p>Shows response headers.</p>
-<h3 id="timeline-info">Timeline / Info<a class="heading-anchor" href="#timeline-info" aria-label="Link to Timeline / Info">#</a></h3>
+<h3 id="timeline-info">Timeline / Info<a aria-label="Link to Timeline / Info" class="heading-anchor" href="#timeline-info">#</a></h3>
 <p>Shows method, final URL, status, response time, and header count.</p>
-<h3 id="code-snippets">Code Snippets<a class="heading-anchor" href="#code-snippets" aria-label="Link to Code Snippets">#</a></h3>
+<h3 id="code-snippets">Code Snippets<a aria-label="Link to Code Snippets" class="heading-anchor" href="#code-snippets">#</a></h3>
 <p>Generates:</p>
 <ul>
 <li>cURL.</li>
@@ -138,25 +142,25 @@
 <li>JavaScript <code>fetch</code>.</li>
 </ul>
 <p>Generated snippets are starting points. Review encoding, platform APIs, file handling, redirects, and secrets before using them in production code.</p>
-<h2 id="history">History<a class="heading-anchor" href="#history" aria-label="Link to History">#</a></h2>
+<h2 id="history">History<a aria-label="Link to History" class="heading-anchor" href="#history">#</a></h2>
 <p>Quick API keeps a small local history. You can reload, duplicate, or delete an entry. <strong>Clear history</strong> removes all saved Quick API requests.</p>
 <p>Protected request-history handling can omit or redact sensitive values, but ordinary URLs and bodies may still be confidential.</p>
-<h2 id="import-and-export">Import and export<a class="heading-anchor" href="#import-and-export" aria-label="Link to Import and export">#</a></h2>
+<h2 id="import-and-export">Import and export<a aria-label="Link to Import and export" class="heading-anchor" href="#import-and-export">#</a></h2>
 <p>Quick API can import a compatible collection after showing a safety preview and can export a small collection. Use API Workspaces for detailed migration reports, nested organization, environments, assertions, and documentation export.</p>
-<h2 id="common-failures">Common failures<a class="heading-anchor" href="#common-failures" aria-label="Link to Common failures">#</a></h2>
-<h3 id="dns-or-connection-error">DNS or connection error<a class="heading-anchor" href="#dns-or-connection-error" aria-label="Link to DNS or connection error">#</a></h3>
+<h2 id="common-failures">Common failures<a aria-label="Link to Common failures" class="heading-anchor" href="#common-failures">#</a></h2>
+<h3 id="dns-or-connection-error">DNS or connection error<a aria-label="Link to DNS or connection error" class="heading-anchor" href="#dns-or-connection-error">#</a></h3>
 <p>Confirm the hostname, internet connection, VPN, proxy, firewall, and server availability.</p>
-<h3 id="tls-error">TLS error<a class="heading-anchor" href="#tls-error" aria-label="Link to TLS error">#</a></h3>
+<h3 id="tls-error">TLS error<a aria-label="Link to TLS error" class="heading-anchor" href="#tls-error">#</a></h3>
 <p>Do not disable certificate verification blindly. Confirm date/time, certificate chain, host name, and development CA setup.</p>
-<h3 id="timeout">Timeout<a class="heading-anchor" href="#timeout" aria-label="Link to Timeout">#</a></h3>
+<h3 id="timeout">Timeout<a aria-label="Link to Timeout" class="heading-anchor" href="#timeout">#</a></h3>
 <p>Check server performance and response size. Increase limits only when the endpoint behavior is understood.</p>
-<h3 id="empty-or-malformed-response">Empty or malformed response<a class="heading-anchor" href="#empty-or-malformed-response" aria-label="Link to Empty or malformed response">#</a></h3>
+<h3 id="empty-or-malformed-response">Empty or malformed response<a aria-label="Link to Empty or malformed response" class="heading-anchor" href="#empty-or-malformed-response">#</a></h3>
 <p>Review status, headers, content type, raw body, and server logs. A body parser error may be caused by the server returning HTML or plain text instead of JSON.</p>
-<h2 id="privacy">Privacy<a class="heading-anchor" href="#privacy" aria-label="Link to Privacy">#</a></h2>
+<h2 id="privacy">Privacy<a aria-label="Link to Privacy" class="heading-anchor" href="#privacy">#</a></h2>
 <p>The destination receives the selected method, URL, headers, authorization, query values, cookies, body, files, and normal network information such as your public IP address. DevDesk does not relay the request through a DevDesk-operated server.</p>
-<div class="article-footer"><a class="pager" href="api-assertions-extraction.html"><small>Previous</small><strong>Assertions, extraction, examples, and history</strong></a><a class="pager" href="openapi-studio.html"><small>Next</small><strong>OpenAPI Studio</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#use-quick-api-when">Use Quick API when</a><a class="level-2" href="#build-the-request">Build the request</a><a class="level-2" href="#request-tabs">Request tabs</a><a class="level-3" href="#params">Params</a><a class="level-3" href="#headers">Headers</a><a class="level-3" href="#body">Body</a><a class="level-3" href="#auth-environments">Auth / Environments</a><a class="level-2" href="#send-safely">Send safely</a><a class="level-2" href="#response-summary">Response summary</a><a class="level-2" href="#response-tabs">Response tabs</a><a class="level-3" href="#pretty">Pretty</a><a class="level-3" href="#raw">Raw</a><a class="level-3" href="#headers-2">Headers</a><a class="level-3" href="#timeline-info">Timeline / Info</a><a class="level-3" href="#code-snippets">Code Snippets</a><a class="level-2" href="#history">History</a><a class="level-2" href="#import-and-export">Import and export</a><a class="level-2" href="#common-failures">Common failures</a><a class="level-3" href="#dns-or-connection-error">DNS or connection error</a><a class="level-3" href="#tls-error">TLS error</a><a class="level-3" href="#timeout">Timeout</a><a class="level-3" href="#empty-or-malformed-response">Empty or malformed response</a><a class="level-2" href="#privacy">Privacy</a></aside></div><footer class="site-footer"><div class="footer-inner">
-<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div class="article-footer"><a class="pager" href="api-assertions-extraction.html"><small>Previous</small><strong>Assertions, extraction, examples, and history</strong></a><a class="pager" href="openapi-studio.html"><small>Next</small><strong>OpenAPI Studio</strong></a></div></article><aside aria-label="Advertisement" class="monetization-ad" data-ad-context="quick-api" data-ad-unit="manual" hidden=""></aside></main><aside aria-label="On this page" class="toc"><h2>On this page</h2><a class="level-2" href="#use-quick-api-when">Use Quick API when</a><a class="level-2" href="#build-the-request">Build the request</a><a class="level-2" href="#request-tabs">Request tabs</a><a class="level-3" href="#params">Params</a><a class="level-3" href="#headers">Headers</a><a class="level-3" href="#body">Body</a><a class="level-3" href="#auth-environments">Auth / Environments</a><a class="level-2" href="#send-safely">Send safely</a><a class="level-2" href="#response-summary">Response summary</a><a class="level-2" href="#response-tabs">Response tabs</a><a class="level-3" href="#pretty">Pretty</a><a class="level-3" href="#raw">Raw</a><a class="level-3" href="#headers-2">Headers</a><a class="level-3" href="#timeline-info">Timeline / Info</a><a class="level-3" href="#code-snippets">Code Snippets</a><a class="level-2" href="#history">History</a><a class="level-2" href="#import-and-export">Import and export</a><a class="level-2" href="#common-failures">Common failures</a><a class="level-3" href="#dns-or-connection-error">DNS or connection error</a><a class="level-3" href="#tls-error">TLS error</a><a class="level-3" href="#timeout">Timeout</a><a class="level-3" href="#empty-or-malformed-response">Empty or malformed response</a><a class="level-2" href="#privacy">Privacy</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
-<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>
-<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener noreferrer">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
-</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" rel="noopener noreferrer" target="_blank">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" rel="noopener noreferrer" target="_blank">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" rel="noopener noreferrer" target="_blank">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div aria-hidden="true" class="search-overlay" data-search-overlay=""><div aria-label="Search DevDesk documentation" aria-modal="true" class="search-panel" role="dialog"><input autocomplete="off" data-search-input="" placeholder="Search manuals, commands, OKF, graph, APIs…" type="search"/><div class="search-results" data-search-results=""><div class="empty-search">Start typing to search the complete manual.</div></div></div></div><script src="../../assets/monetization/config.js"></script><script defer="" src="../../assets/monetization/monetization.js"></script></body></html>

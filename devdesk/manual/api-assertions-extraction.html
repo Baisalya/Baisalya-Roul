@@ -1,19 +1,23 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Build no-code response checks, extraction workflows, examples, history, runner results, and CLI reports."><meta name="theme-color" content="#5b47e8"><title>Assertions, extraction, examples, and history · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script><script defer src="../assets/js/manual-visuals.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!DOCTYPE html>
+<html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Build no-code response checks, extraction workflows, examples, history, runner results, and CLI reports." name="description"/><meta content="#5b47e8" name="theme-color"/><title>Assertions, extraction, examples, and history · DevDesk Manual</title><link href="../assets/img/devdesk-logo-64.png" rel="icon" sizes="64x64" type="image/png"/><link href="../assets/css/styles.css?v=20260824.4" rel="stylesheet"/><script defer="" src="../assets/js/site-config.js?v=20260824.4"></script><script defer="" src="../assets/js/search-index.js?v=20260824.4"></script><script defer="" src="../assets/js/app.js?v=20260824.4"></script><script defer="" src="../assets/js/manual-visuals.js?v=20260824.4"></script> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<link href="https://baisalya.com/devdesk/manual/api-assertions-extraction.html" rel="canonical"/>
+<meta content="https://baisalya.com/devdesk/manual/api-assertions-extraction.html" property="og:url"/>
+<link href="../../assets/site-network.css" rel="stylesheet"/><link href="../../assets/monetization/monetization.css" rel="stylesheet"/></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
-  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
-  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
-  <nav class="top-nav" aria-label="Primary navigation">
-    <a class="" href="../index.html">Home</a>
-    <a class="active" href="../manual/user-manual.html">Manual</a>
-    <a class="" href="../downloads.html">Downloads</a>
-    <a class="nav-demo" href="../downloads.html#agent-demo">Demo project</a>
-    <a href="https://baisalya.com/devdesk/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
-  </nav>
-  <div class="header-actions">
-    <button class="search-btn" type="button" data-search aria-label="Search manual"><span>Search manual</span> <kbd>/</kbd></button>
-    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
-  </div>
-</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<button aria-label="Open documentation menu" class="icon-btn mobile-menu" data-menu="" type="button">☰</button>
+<a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Your files. Your workspace.</small></span></a>
+<nav aria-label="Primary navigation" class="top-nav">
+<a class="" href="../index.html">Home</a>
+<a class="active" href="../manual/user-manual.html">Manual</a>
+<a class="" href="../downloads.html">Downloads</a>
+<a class="nav-demo" href="../downloads.html#agent-demo">Demo project</a>
+<a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy</a>
+<a aria-label="Visit Baisalya.com portfolio and software hub" class="baisalya-network-link" href="https://baisalya.com/">Baisalya.com</a></nav>
+<div class="header-actions">
+<button aria-label="Search manual" class="search-btn" data-search="" type="button"><span>Search manual</span> <kbd>/</kbd></button>
+<button aria-label="Toggle light and dark theme" class="icon-btn" data-theme-toggle="" type="button">◐</button>
+</div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside aria-label="Manual contents" class="docs-sidebar"><h2>Start here</h2>
 <a class="" href="../manual/visual-feature-guide.html">Visual feature guide</a>
 <a class="" href="../manual/workspace-workbench.html">Workspace workbench and tabs</a>
 <a class="" href="../manual/user-manual.html">Complete user manual</a>
@@ -45,7 +49,7 @@
 <a class="" href="../manual/readme-generator.html">README Generator</a>
 <a class="" href="../manual/api-workspaces.html">Saved API testing</a>
 <a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
-<a class="active" href="../manual/api-assertions-extraction.html" aria-current="page">Assertions, extraction, examples, and history</a>
+<a aria-current="page" class="active" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
 <a class="" href="../manual/quick-api.html">Quick API</a>
 <a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
 <a class="" href="../manual/unified-search.html">Search this workspace</a>
@@ -68,11 +72,11 @@
 <a class="" href="../manual/privacy-security.html">Privacy and security</a>
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
-<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>API and documentation</span></div><div class="doc-meta"><span class="doc-chip">API and documentation</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="assertions-extraction-examples-and-history">Assertions, extraction, examples, and history<a class="heading-anchor" href="#assertions-extraction-examples-and-history" aria-label="Link to Assertions, extraction, examples, and history">#</a></h1>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>API and documentation</span></div><div class="doc-meta"><span class="doc-chip">API and documentation</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="assertions-extraction-examples-and-history">Assertions, extraction, examples, and history<a aria-label="Link to Assertions, extraction, examples, and history" class="heading-anchor" href="#assertions-extraction-examples-and-history">#</a></h1>
 <p>These features turn individual requests into repeatable API checks without requiring arbitrary operating-system scripts in the visible request editor.</p>
-<h2 id="assertions">Assertions<a class="heading-anchor" href="#assertions" aria-label="Link to Assertions">#</a></h2>
+<h2 id="assertions">Assertions<a aria-label="Link to Assertions" class="heading-anchor" href="#assertions">#</a></h2>
 <p>An assertion checks an observed response condition. Each saved assertion has a type, optional target, and expected value.</p>
-<h3 id="status-and-timing">Status and timing<a class="heading-anchor" href="#status-and-timing" aria-label="Link to Status and timing">#</a></h3>
+<h3 id="status-and-timing">Status and timing<a aria-label="Link to Status and timing" class="heading-anchor" href="#status-and-timing">#</a></h3>
 <ul>
 <li>Status code equals.</li>
 <li>Status code range.</li>
@@ -88,7 +92,7 @@ Expected: 200-299
 <pre><code class="language-text">Response time &lt; ms
 Expected: 750
 </code></pre>
-<h3 id="json">JSON<a class="heading-anchor" href="#json" aria-label="Link to JSON">#</a></h3>
+<h3 id="json">JSON<a aria-label="Link to JSON" class="heading-anchor" href="#json">#</a></h3>
 <ul>
 <li>JSONPath exists.</li>
 <li>JSONPath equals.</li>
@@ -104,7 +108,7 @@ Target: $.data.customer.status
 Expected: active
 </code></pre>
 <p>Use JSON Schema for structural checks and smaller JSONPath assertions for business-critical values. A schema-valid response can still contain the wrong business data.</p>
-<h3 id="xml">XML<a class="heading-anchor" href="#xml" aria-label="Link to XML">#</a></h3>
+<h3 id="xml">XML<a aria-label="Link to XML" class="heading-anchor" href="#xml">#</a></h3>
 <ul>
 <li>XPath exists.</li>
 <li>XPath equals.</li>
@@ -113,7 +117,7 @@ Expected: active
 Target: /customer/status/text()
 Expected: active
 </code></pre>
-<h3 id="headers-and-cookies">Headers and cookies<a class="heading-anchor" href="#headers-and-cookies" aria-label="Link to Headers and cookies">#</a></h3>
+<h3 id="headers-and-cookies">Headers and cookies<a aria-label="Link to Headers and cookies" class="heading-anchor" href="#headers-and-cookies">#</a></h3>
 <ul>
 <li>Header exists.</li>
 <li>Header equals.</li>
@@ -126,7 +130,7 @@ Target: content-type
 Expected: application/(json|problem\+json)
 </code></pre>
 <p>Header names are case-insensitive at protocol level, but keep documentation spelling consistent.</p>
-<h3 id="body-and-contract">Body and contract<a class="heading-anchor" href="#body-and-contract" aria-label="Link to Body and contract">#</a></h3>
+<h3 id="body-and-contract">Body and contract<a aria-label="Link to Body and contract" class="heading-anchor" href="#body-and-contract">#</a></h3>
 <ul>
 <li>Body contains.</li>
 <li>Body content type.</li>
@@ -135,10 +139,10 @@ Expected: application/(json|problem\+json)
 <li>OpenAPI contract.</li>
 </ul>
 <p>Snapshot checks are useful for stable fixtures. Update a snapshot only after reviewing the intentional difference. OpenAPI checks compare the live response with the selected API contract; they do not prove that the API's business behavior is correct.</p>
-<h2 id="reading-assertion-results">Reading assertion results<a class="heading-anchor" href="#reading-assertion-results" aria-label="Link to Reading assertion results">#</a></h2>
+<h2 id="reading-assertion-results">Reading assertion results<a aria-label="Link to Reading assertion results" class="heading-anchor" href="#reading-assertion-results">#</a></h2>
 <p>The response <strong>Assertions</strong> tab shows the assertion name, pass/fail state, and message. A failed assertion means the observed response did not match the rule. It does not necessarily mean the network request failed or DevDesk crashed.</p>
 <p>The collection runner counts failed assertions as request failures according to run policy.</p>
-<h2 id="extraction-rules">Extraction rules<a class="heading-anchor" href="#extraction-rules" aria-label="Link to Extraction rules">#</a></h2>
+<h2 id="extraction-rules">Extraction rules<a aria-label="Link to Extraction rules" class="heading-anchor" href="#extraction-rules">#</a></h2>
 <p>Extraction stores a selected part of a response for later requests.</p>
 <p>Supported sources are:</p>
 <ul>
@@ -147,11 +151,11 @@ Expected: application/(json|problem\+json)
 <li>Bounded regular-expression match from the response body.</li>
 </ul>
 <p>Each rule defines source, path/header/regex, destination variable, scope, and whether the result is secret.</p>
-<h3 id="example-login-then-use-token">Example: login then use token<a class="heading-anchor" href="#example-login-then-use-token" aria-label="Link to Example: login then use token">#</a></h3>
+<h3 id="example-login-then-use-token">Example: login then use token<a aria-label="Link to Example: login then use token" class="heading-anchor" href="#example-login-then-use-token">#</a></h3>
 <p>Login response:</p>
 <pre><code class="language-json">{
-  &quot;access_token&quot;: &quot;temporary-token&quot;,
-  &quot;expires_in&quot;: 900
+  "access_token": "temporary-token",
+  "expires_in": 900
 }
 </code></pre>
 <p>Extraction:</p>
@@ -164,14 +168,14 @@ Secret: yes
 <p>Later request:</p>
 <pre><code class="language-text">Authorization: Bearer {{accessToken}}
 </code></pre>
-<h3 id="scope-choice">Scope choice<a class="heading-anchor" href="#scope-choice" aria-label="Link to Scope choice">#</a></h3>
+<h3 id="scope-choice">Scope choice<a aria-label="Link to Scope choice" class="heading-anchor" href="#scope-choice">#</a></h3>
 <ul>
 <li><strong>Temporary</strong>: best for tokens and IDs produced during one run.</li>
 <li><strong>Workspace</strong>: reusable across environments; avoid for target-specific values.</li>
 <li><strong>Environment</strong>: useful for environment-specific IDs or non-secret state.</li>
 </ul>
 <p>Request-local variables have higher resolution priority than temporary, environment, collection/folder, and workspace values.</p>
-<h3 id="extraction-safety">Extraction safety<a class="heading-anchor" href="#extraction-safety" aria-label="Link to Extraction safety">#</a></h3>
+<h3 id="extraction-safety">Extraction safety<a aria-label="Link to Extraction safety" class="heading-anchor" href="#extraction-safety">#</a></h3>
 <ul>
 <li>Mark tokens, session IDs, reset links, and password-like values as secret.</li>
 <li>Keep regex bounded and specific.</li>
@@ -179,7 +183,7 @@ Secret: yes
 <li>Clear or overwrite stale values when changing accounts.</li>
 <li>Review a failed extraction before later requests run with an old value.</li>
 </ul>
-<h2 id="examples">Examples<a class="heading-anchor" href="#examples" aria-label="Link to Examples">#</a></h2>
+<h2 id="examples">Examples<a aria-label="Link to Examples" class="heading-anchor" href="#examples">#</a></h2>
 <p>A request can save:</p>
 <ul>
 <li>Expected response note.</li>
@@ -187,14 +191,14 @@ Secret: yes
 </ul>
 <p>Use examples for onboarding and generated documentation. Replace live values with safe placeholders:</p>
 <pre><code class="language-json">{
-  &quot;id&quot;: &quot;cus_example&quot;,
-  &quot;email&quot;: &quot;customer@example.com&quot;
+  "id": "cus_example",
+  "email": "customer@example.com"
 }
 </code></pre>
 <p>Never store live passwords, access tokens, private customer data, or proprietary production payloads in an example.</p>
-<h2 id="workspace-documentation">Workspace documentation<a class="heading-anchor" href="#workspace-documentation" aria-label="Link to Workspace documentation">#</a></h2>
+<h2 id="workspace-documentation">Workspace documentation<a aria-label="Link to Workspace documentation" class="heading-anchor" href="#workspace-documentation">#</a></h2>
 <p>Workspace Settings includes overview Markdown, base URL explanation, and authentication instructions. These notes are included in generated Markdown API documentation and should explain required setup without embedding credentials.</p>
-<h2 id="history">History<a class="heading-anchor" href="#history" aria-label="Link to History">#</a></h2>
+<h2 id="history">History<a aria-label="Link to History" class="heading-anchor" href="#history">#</a></h2>
 <p>History can contain:</p>
 <ul>
 <li>Final URL.</li>
@@ -206,7 +210,7 @@ Secret: yes
 </ul>
 <p>From History you can filter entries, inspect them, save one as a request, re-run it, or clear the workspace history.</p>
 <p>History is local but still sensitive. Redaction reduces accidental disclosure; it does not guarantee that every ordinary body value is safe to share.</p>
-<h2 id="in-app-collection-runner">In-app collection runner<a class="heading-anchor" href="#in-app-collection-runner" aria-label="Link to In-app collection runner">#</a></h2>
+<h2 id="in-app-collection-runner">In-app collection runner<a aria-label="Link to In-app collection runner" class="heading-anchor" href="#in-app-collection-runner">#</a></h2>
 <p>The visible runner supports:</p>
 <ul>
 <li>Selected collection execution.</li>
@@ -215,7 +219,7 @@ Secret: yes
 <li>Live and final result summary.</li>
 </ul>
 <p>The summary includes total, passed, failed, skipped, and average response time.</p>
-<h2 id="advanced-automation-and-cli">Advanced automation and CLI<a class="heading-anchor" href="#advanced-automation-and-cli" aria-label="Link to Advanced automation and CLI">#</a></h2>
+<h2 id="advanced-automation-and-cli">Advanced automation and CLI<a aria-label="Link to Advanced automation and CLI" class="heading-anchor" href="#advanced-automation-and-cli">#</a></h2>
 <p>The repository automation runner and CLI support:</p>
 <ul>
 <li>Multiple iterations.</li>
@@ -240,10 +244,10 @@ Secret: yes
   --report html \
   --output build/api-report.html
 </code></pre>
-<h2 id="safe-script-boundary">Safe script boundary<a class="heading-anchor" href="#safe-script-boundary" aria-label="Link to Safe script boundary">#</a></h2>
+<h2 id="safe-script-boundary">Safe script boundary<a aria-label="Link to Safe script boundary" class="heading-anchor" href="#safe-script-boundary">#</a></h2>
 <p>The repository contains a versioned declarative safe-script model with no direct filesystem or operating-system API, explicit network allowlists, imported-script review gates, cancellation, redacted console output, and operation/state/time limits.</p>
 <p>The current API Workspaces screen does not provide a general JavaScript-like script editor. Do not expect arbitrary Postman scripts to execute automatically after import. Unsupported behavior should appear in the import report rather than run silently.</p>
-<h2 id="sharing-reports">Sharing reports<a class="heading-anchor" href="#sharing-reports" aria-label="Link to Sharing reports">#</a></h2>
+<h2 id="sharing-reports">Sharing reports<a aria-label="Link to Sharing reports" class="heading-anchor" href="#sharing-reports">#</a></h2>
 <p>Before sharing a report:</p>
 <ul>
 <li>Search for tokens and cookies.</li>
@@ -252,9 +256,9 @@ Secret: yes
 <li>Confirm that example and snapshot content is safe.</li>
 <li>Prefer a sanitized reproduction with test credentials.</li>
 </ul>
-<div class="article-footer"><a class="pager" href="api-environments-secrets.html"><small>Previous</small><strong>API environments and protected secrets</strong></a><a class="pager" href="quick-api.html"><small>Next</small><strong>Quick API</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#assertions">Assertions</a><a class="level-3" href="#status-and-timing">Status and timing</a><a class="level-3" href="#json">JSON</a><a class="level-3" href="#xml">XML</a><a class="level-3" href="#headers-and-cookies">Headers and cookies</a><a class="level-3" href="#body-and-contract">Body and contract</a><a class="level-2" href="#reading-assertion-results">Reading assertion results</a><a class="level-2" href="#extraction-rules">Extraction rules</a><a class="level-3" href="#example-login-then-use-token">Example: login then use token</a><a class="level-3" href="#scope-choice">Scope choice</a><a class="level-3" href="#extraction-safety">Extraction safety</a><a class="level-2" href="#examples">Examples</a><a class="level-2" href="#workspace-documentation">Workspace documentation</a><a class="level-2" href="#history">History</a><a class="level-2" href="#in-app-collection-runner">In-app collection runner</a><a class="level-2" href="#advanced-automation-and-cli">Advanced automation and CLI</a><a class="level-2" href="#safe-script-boundary">Safe script boundary</a><a class="level-2" href="#sharing-reports">Sharing reports</a></aside></div><footer class="site-footer"><div class="footer-inner">
-<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div class="article-footer"><a class="pager" href="api-environments-secrets.html"><small>Previous</small><strong>API environments and protected secrets</strong></a><a class="pager" href="quick-api.html"><small>Next</small><strong>Quick API</strong></a></div></article><aside aria-label="Advertisement" class="monetization-ad" data-ad-context="api-assertions-extraction" data-ad-unit="manual" hidden=""></aside></main><aside aria-label="On this page" class="toc"><h2>On this page</h2><a class="level-2" href="#assertions">Assertions</a><a class="level-3" href="#status-and-timing">Status and timing</a><a class="level-3" href="#json">JSON</a><a class="level-3" href="#xml">XML</a><a class="level-3" href="#headers-and-cookies">Headers and cookies</a><a class="level-3" href="#body-and-contract">Body and contract</a><a class="level-2" href="#reading-assertion-results">Reading assertion results</a><a class="level-2" href="#extraction-rules">Extraction rules</a><a class="level-3" href="#example-login-then-use-token">Example: login then use token</a><a class="level-3" href="#scope-choice">Scope choice</a><a class="level-3" href="#extraction-safety">Extraction safety</a><a class="level-2" href="#examples">Examples</a><a class="level-2" href="#workspace-documentation">Workspace documentation</a><a class="level-2" href="#history">History</a><a class="level-2" href="#in-app-collection-runner">In-app collection runner</a><a class="level-2" href="#advanced-automation-and-cli">Advanced automation and CLI</a><a class="level-2" href="#safe-script-boundary">Safe script boundary</a><a class="level-2" href="#sharing-reports">Sharing reports</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
-<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>
-<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener noreferrer">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
-</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" rel="noopener noreferrer" target="_blank">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" rel="noopener noreferrer" target="_blank">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" rel="noopener noreferrer" target="_blank">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div aria-hidden="true" class="search-overlay" data-search-overlay=""><div aria-label="Search DevDesk documentation" aria-modal="true" class="search-panel" role="dialog"><input autocomplete="off" data-search-input="" placeholder="Search manuals, commands, OKF, graph, APIs…" type="search"/><div class="search-results" data-search-results=""><div class="empty-search">Start typing to search the complete manual.</div></div></div></div><script src="../../assets/monetization/config.js"></script><script defer="" src="../../assets/monetization/monetization.js"></script></body></html>

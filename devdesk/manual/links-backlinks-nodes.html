@@ -1,19 +1,23 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Connect files manually and understand how links become graph nodes and edges."><meta name="theme-color" content="#5b47e8"><title>Links, backlinks, and nodes · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script><script defer src="../assets/js/manual-visuals.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!DOCTYPE html>
+<html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Connect files manually and understand how links become graph nodes and edges." name="description"/><meta content="#5b47e8" name="theme-color"/><title>Links, backlinks, and nodes · DevDesk Manual</title><link href="../assets/img/devdesk-logo-64.png" rel="icon" sizes="64x64" type="image/png"/><link href="../assets/css/styles.css?v=20260824.4" rel="stylesheet"/><script defer="" src="../assets/js/site-config.js?v=20260824.4"></script><script defer="" src="../assets/js/search-index.js?v=20260824.4"></script><script defer="" src="../assets/js/app.js?v=20260824.4"></script><script defer="" src="../assets/js/manual-visuals.js?v=20260824.4"></script> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<link href="https://baisalya.com/devdesk/manual/links-backlinks-nodes.html" rel="canonical"/>
+<meta content="https://baisalya.com/devdesk/manual/links-backlinks-nodes.html" property="og:url"/>
+<link href="../../assets/site-network.css" rel="stylesheet"/><link href="../../assets/monetization/monetization.css" rel="stylesheet"/></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
-  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
-  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
-  <nav class="top-nav" aria-label="Primary navigation">
-    <a class="" href="../index.html">Home</a>
-    <a class="active" href="../manual/user-manual.html">Manual</a>
-    <a class="" href="../downloads.html">Downloads</a>
-    <a class="nav-demo" href="../downloads.html#agent-demo">Demo project</a>
-    <a href="https://baisalya.com/devdesk/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
-  </nav>
-  <div class="header-actions">
-    <button class="search-btn" type="button" data-search aria-label="Search manual"><span>Search manual</span> <kbd>/</kbd></button>
-    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
-  </div>
-</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<button aria-label="Open documentation menu" class="icon-btn mobile-menu" data-menu="" type="button">☰</button>
+<a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Your files. Your workspace.</small></span></a>
+<nav aria-label="Primary navigation" class="top-nav">
+<a class="" href="../index.html">Home</a>
+<a class="active" href="../manual/user-manual.html">Manual</a>
+<a class="" href="../downloads.html">Downloads</a>
+<a class="nav-demo" href="../downloads.html#agent-demo">Demo project</a>
+<a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy</a>
+<a aria-label="Visit Baisalya.com portfolio and software hub" class="baisalya-network-link" href="https://baisalya.com/">Baisalya.com</a></nav>
+<div class="header-actions">
+<button aria-label="Search manual" class="search-btn" data-search="" type="button"><span>Search manual</span> <kbd>/</kbd></button>
+<button aria-label="Toggle light and dark theme" class="icon-btn" data-theme-toggle="" type="button">◐</button>
+</div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside aria-label="Manual contents" class="docs-sidebar"><h2>Start here</h2>
 <a class="" href="../manual/visual-feature-guide.html">Visual feature guide</a>
 <a class="" href="../manual/workspace-workbench.html">Workspace workbench and tabs</a>
 <a class="" href="../manual/user-manual.html">Complete user manual</a>
@@ -25,7 +29,7 @@
 <a class="" href="../manual/project-folder-structure.html">Create a project knowledge structure</a>
 <a class="" href="../manual/markdown-basics.html">Markdown basics</a>
 <a class="" href="../manual/frontmatter-properties.html">YAML frontmatter and properties</a>
-<a class="active" href="../manual/links-backlinks-nodes.html" aria-current="page">Links, backlinks, and nodes</a>
+<a aria-current="page" class="active" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
 <a class="" href="../manual/knowledge-workspace.html">Edit workspace Markdown</a>
 <a class="" href="../manual/knowledge-graph.html">Relationships and graph</a>
 <a class="" href="../manual/diagram-studio.html">Diagram Studio</a>
@@ -68,43 +72,42 @@
 <a class="" href="../manual/privacy-security.html">Privacy and security</a>
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
-<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Knowledge and Markdown</span></div><div class="doc-meta"><span class="doc-chip">Knowledge and Markdown</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="links-backlinks-and-nodes">Links, backlinks, and nodes<a class="heading-anchor" href="#links-backlinks-and-nodes" aria-label="Link to Links, backlinks, and nodes">#</a></h1>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Knowledge and Markdown</span></div><div class="doc-meta"><span class="doc-chip">Knowledge and Markdown</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="links-backlinks-and-nodes">Links, backlinks, and nodes<a aria-label="Link to Links, backlinks, and nodes" class="heading-anchor" href="#links-backlinks-and-nodes">#</a></h1>
 <p>A Markdown file becomes a graph <strong>node</strong>. A saved link from one file to another becomes a directed <strong>edge</strong>.</p>
-<div class="diagram-card" role="img" aria-label="Directed graph example showing Architecture linking to API Contract and Data Model, and both linking to Deployment Runbook">
-<svg class="graph-diagram" viewBox="0 0 920 400" xmlns="http://www.w3.org/2000/svg">
-  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" /></marker></defs>
-  <path class="edge" d="M235 110 C340 110, 360 85, 470 85" marker-end="url(#arrow)"/>
-  <path class="edge" d="M235 132 C345 165, 360 250, 470 260" marker-end="url(#arrow)"/>
-  <path class="edge" d="M635 95 C740 120, 760 170, 765 230" marker-end="url(#arrow)"/>
-  <path class="edge" d="M635 260 C705 260, 730 260, 765 260" marker-end="url(#arrow)"/>
-  <g class="node primary"><rect x="45" y="70" width="190" height="90" rx="22"/><text x="140" y="108">Architecture</text><text class="sub" x="140" y="134">active note</text></g>
-  <g class="node"><rect x="470" y="45" width="165" height="80" rx="20"/><text x="552" y="82">API Contract</text><text class="sub" x="552" y="106">outgoing link</text></g>
-  <g class="node"><rect x="470" y="225" width="165" height="80" rx="20"/><text x="552" y="262">Data Model</text><text class="sub" x="552" y="286">outgoing link</text></g>
-  <g class="node"><rect x="765" y="215" width="130" height="90" rx="20"/><text x="830" y="252">Deployment</text><text x="830" y="274">Runbook</text></g>
+<div aria-label="Directed graph example showing Architecture linking to API Contract and Data Model, and both linking to Deployment Runbook" class="diagram-card" role="img">
+<svg class="graph-diagram" viewbox="0 0 920 400" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="arrow" markerheight="10" markerwidth="10" orient="auto" refx="8" refy="3"><path d="M0,0 L0,6 L9,3 z"></path></marker></defs>
+<path class="edge" d="M235 110 C340 110, 360 85, 470 85" marker-end="url(#arrow)"></path>
+<path class="edge" d="M235 132 C345 165, 360 250, 470 260" marker-end="url(#arrow)"></path>
+<path class="edge" d="M635 95 C740 120, 760 170, 765 230" marker-end="url(#arrow)"></path>
+<path class="edge" d="M635 260 C705 260, 730 260, 765 260" marker-end="url(#arrow)"></path>
+<g class="node primary"><rect height="90" rx="22" width="190" x="45" y="70"></rect><text x="140" y="108">Architecture</text><text class="sub" x="140" y="134">active note</text></g>
+<g class="node"><rect height="80" rx="20" width="165" x="470" y="45"></rect><text x="552" y="82">API Contract</text><text class="sub" x="552" y="106">outgoing link</text></g>
+<g class="node"><rect height="80" rx="20" width="165" x="470" y="225"></rect><text x="552" y="262">Data Model</text><text class="sub" x="552" y="286">outgoing link</text></g>
+<g class="node"><rect height="90" rx="20" width="130" x="765" y="215"></rect><text x="830" y="252">Deployment</text><text x="830" y="274">Runbook</text></g>
 </svg>
 <p class="diagram-caption">Each saved Markdown link becomes a directed edge. The target note receives a backlink automatically.</p>
 </div>
-
-<h2 id="standard-markdown-link">Standard Markdown link<a class="heading-anchor" href="#standard-markdown-link" aria-label="Link to Standard Markdown link">#</a></h2>
+<h2 id="standard-markdown-link">Standard Markdown link<a aria-label="Link to Standard Markdown link" class="heading-anchor" href="#standard-markdown-link">#</a></h2>
 <pre><code class="language-markdown">See the [API contract](../api/customer-api.md).
 </code></pre>
 <p>This is the portable form used by OKF and standard Markdown tools.</p>
-<h2 id="wiki-style-link">Wiki-style link<a class="heading-anchor" href="#wiki-style-link" aria-label="Link to Wiki-style link">#</a></h2>
+<h2 id="wiki-style-link">Wiki-style link<a aria-label="Link to Wiki-style link" class="heading-anchor" href="#wiki-style-link">#</a></h2>
 <pre><code class="language-markdown">See [[Customer API]].
 </code></pre>
 <p>DevDesk can recognize wiki-style links in supported knowledge workflows. A wiki link depends on title/path resolution and can become ambiguous when multiple notes have the same name.</p>
-<h2 id="absolute-bundle-relative-link">Absolute bundle-relative link<a class="heading-anchor" href="#absolute-bundle-relative-link" aria-label="Link to Absolute bundle-relative link">#</a></h2>
+<h2 id="absolute-bundle-relative-link">Absolute bundle-relative link<a aria-label="Link to Absolute bundle-relative link" class="heading-anchor" href="#absolute-bundle-relative-link">#</a></h2>
 <pre><code class="language-markdown">See the [Customer API](/api/customer-api.md).
 </code></pre>
 <p>For OKF bundles, a leading <code>/</code> means “from the bundle root.” It is often more stable when a file moves inside its current directory.</p>
-<h2 id="backlinks">Backlinks<a class="heading-anchor" href="#backlinks" aria-label="Link to Backlinks">#</a></h2>
+<h2 id="backlinks">Backlinks<a aria-label="Link to Backlinks" class="heading-anchor" href="#backlinks">#</a></h2>
 <p>If <code>architecture.md</code> links to <code>api.md</code>:</p>
 <ul>
 <li><code>architecture.md</code> has an <strong>outgoing link</strong> to <code>api.md</code>.</li>
 <li><code>api.md</code> automatically shows an <strong>incoming backlink</strong> from <code>architecture.md</code>.</li>
 <li>You do not manually write a second reverse link unless the content truly needs one.</li>
 </ul>
-<h2 id="create-a-connection-manually">Create a connection manually<a class="heading-anchor" href="#create-a-connection-manually" aria-label="Link to Create a connection manually">#</a></h2>
+<h2 id="create-a-connection-manually">Create a connection manually<a aria-label="Link to Create a connection manually" class="heading-anchor" href="#create-a-connection-manually">#</a></h2>
 <ol>
 <li>Open the source note.</li>
 <li>Place the cursor where the relationship is explained.</li>
@@ -112,15 +115,15 @@
 <li>Save the file.</li>
 <li>Rebuild or refresh the graph if it does not update immediately.</li>
 </ol>
-<h2 id="avoid-meaningless-links">Avoid meaningless links<a class="heading-anchor" href="#avoid-meaningless-links" aria-label="Link to Avoid meaningless links">#</a></h2>
+<h2 id="avoid-meaningless-links">Avoid meaningless links<a aria-label="Link to Avoid meaningless links" class="heading-anchor" href="#avoid-meaningless-links">#</a></h2>
 <p>The link text and surrounding sentence should explain the relationship:</p>
 <pre><code class="language-markdown">The mobile client sends validated requests using the
 [Customer API contract](../api/customer-api.md).
 </code></pre>
 <p>A graph edge is intentionally untyped; the prose gives it meaning.</p>
-<div class="article-footer"><a class="pager" href="frontmatter-properties.html"><small>Previous</small><strong>YAML frontmatter and properties</strong></a><a class="pager" href="knowledge-workspace.html"><small>Next</small><strong>Knowledge Workspace</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#standard-markdown-link">Standard Markdown link</a><a class="level-2" href="#wiki-style-link">Wiki-style link</a><a class="level-2" href="#absolute-bundle-relative-link">Absolute bundle-relative link</a><a class="level-2" href="#backlinks">Backlinks</a><a class="level-2" href="#create-a-connection-manually">Create a connection manually</a><a class="level-2" href="#avoid-meaningless-links">Avoid meaningless links</a></aside></div><footer class="site-footer"><div class="footer-inner">
-<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div class="article-footer"><a class="pager" href="frontmatter-properties.html"><small>Previous</small><strong>YAML frontmatter and properties</strong></a><a class="pager" href="knowledge-workspace.html"><small>Next</small><strong>Knowledge Workspace</strong></a></div></article><aside aria-label="Advertisement" class="monetization-ad" data-ad-context="links-backlinks-nodes" data-ad-unit="manual" hidden=""></aside></main><aside aria-label="On this page" class="toc"><h2>On this page</h2><a class="level-2" href="#standard-markdown-link">Standard Markdown link</a><a class="level-2" href="#wiki-style-link">Wiki-style link</a><a class="level-2" href="#absolute-bundle-relative-link">Absolute bundle-relative link</a><a class="level-2" href="#backlinks">Backlinks</a><a class="level-2" href="#create-a-connection-manually">Create a connection manually</a><a class="level-2" href="#avoid-meaningless-links">Avoid meaningless links</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
-<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>
-<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener noreferrer">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
-</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" rel="noopener noreferrer" target="_blank">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" rel="noopener noreferrer" target="_blank">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" rel="noopener noreferrer" target="_blank">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div aria-hidden="true" class="search-overlay" data-search-overlay=""><div aria-label="Search DevDesk documentation" aria-modal="true" class="search-panel" role="dialog"><input autocomplete="off" data-search-input="" placeholder="Search manuals, commands, OKF, graph, APIs…" type="search"/><div class="search-results" data-search-results=""><div class="empty-search">Start typing to search the complete manual.</div></div></div></div><script src="../../assets/monetization/config.js"></script><script defer="" src="../../assets/monetization/monetization.js"></script></body></html>

@@ -1,19 +1,23 @@
-<!doctype html><html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Protect independent data, reconnect external workspaces, and recover safely after reinstall."><meta name="theme-color" content="#5b47e8"><title>Backup, reinstall, and restore · DevDesk Manual</title><link rel="icon" type="image/png" sizes="64x64" href="../assets/img/devdesk-logo-64.png"><link rel="stylesheet" href="../assets/css/styles.css"><script defer src="../assets/js/site-config.js"></script><script defer src="../assets/js/search-index.js"></script><script defer src="../assets/js/app.js"></script><script defer src="../assets/js/manual-visuals.js"></script></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<!DOCTYPE html>
+<html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Protect independent data, reconnect external workspaces, and recover safely after reinstall." name="description"/><meta content="#5b47e8" name="theme-color"/><title>Backup, reinstall, and restore · DevDesk Manual</title><link href="../assets/img/devdesk-logo-64.png" rel="icon" sizes="64x64" type="image/png"/><link href="../assets/css/styles.css?v=20260824.4" rel="stylesheet"/><script defer="" src="../assets/js/site-config.js?v=20260824.4"></script><script defer="" src="../assets/js/search-index.js?v=20260824.4"></script><script defer="" src="../assets/js/app.js?v=20260824.4"></script><script defer="" src="../assets/js/manual-visuals.js?v=20260824.4"></script> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<link href="https://baisalya.com/devdesk/manual/backup-restore.html" rel="canonical"/>
+<meta content="https://baisalya.com/devdesk/manual/backup-restore.html" property="og:url"/>
+<link href="../../assets/site-network.css" rel="stylesheet"/><link href="../../assets/monetization/monetization.css" rel="stylesheet"/></head><body><a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
-  <button class="icon-btn mobile-menu" type="button" data-menu aria-label="Open documentation menu">☰</button>
-  <a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Your files. Your workspace.</small></span></a>
-  <nav class="top-nav" aria-label="Primary navigation">
-    <a class="" href="../index.html">Home</a>
-    <a class="active" href="../manual/user-manual.html">Manual</a>
-    <a class="" href="../downloads.html">Downloads</a>
-    <a class="nav-demo" href="../downloads.html#agent-demo">Demo project</a>
-    <a href="https://baisalya.com/devdesk/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
-  </nav>
-  <div class="header-actions">
-    <button class="search-btn" type="button" data-search aria-label="Search manual"><span>Search manual</span> <kbd>/</kbd></button>
-    <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle light and dark theme">◐</button>
-  </div>
-</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside class="docs-sidebar" aria-label="Manual contents"><h2>Start here</h2>
+<button aria-label="Open documentation menu" class="icon-btn mobile-menu" data-menu="" type="button">☰</button>
+<a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Your files. Your workspace.</small></span></a>
+<nav aria-label="Primary navigation" class="top-nav">
+<a class="" href="../index.html">Home</a>
+<a class="active" href="../manual/user-manual.html">Manual</a>
+<a class="" href="../downloads.html">Downloads</a>
+<a class="nav-demo" href="../downloads.html#agent-demo">Demo project</a>
+<a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy</a>
+<a aria-label="Visit Baisalya.com portfolio and software hub" class="baisalya-network-link" href="https://baisalya.com/">Baisalya.com</a></nav>
+<div class="header-actions">
+<button aria-label="Search manual" class="search-btn" data-search="" type="button"><span>Search manual</span> <kbd>/</kbd></button>
+<button aria-label="Toggle light and dark theme" class="icon-btn" data-theme-toggle="" type="button">◐</button>
+</div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside aria-label="Manual contents" class="docs-sidebar"><h2>Start here</h2>
 <a class="" href="../manual/visual-feature-guide.html">Visual feature guide</a>
 <a class="" href="../manual/workspace-workbench.html">Workspace workbench and tabs</a>
 <a class="" href="../manual/user-manual.html">Complete user manual</a>
@@ -63,16 +67,16 @@
 <a class="" href="../manual/notifications-routines.html">Notifications and AI routines</a>
 <a class="" href="../manual/ai-workbench.html">AI Harness, Workbench, and coding agents</a>
 <a class="" href="../manual/agent-connector.html">AI Agent Connector</a>
-<a class="active" href="../manual/backup-restore.html" aria-current="page">Backup and restore</a>
+<a aria-current="page" class="active" href="../manual/backup-restore.html">Backup and restore</a>
 <a class="" href="../manual/settings-appearance.html">Settings and appearance</a>
 <a class="" href="../manual/privacy-security.html">Privacy and security</a>
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
 <a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Safety and reference</span></div><div class="doc-meta"><span class="doc-chip">Safety and reference</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div>
-<h1 id="backup-and-restore">Backup and restore<a class="heading-anchor" href="#backup-and-restore" aria-label="Link to Backup and restore">#</a></h1>
+<h1 id="backup-and-restore">Backup and restore<a aria-label="Link to Backup and restore" class="heading-anchor" href="#backup-and-restore">#</a></h1>
 <p>DevDesk can export and import versioned local application data. The recommended
 pre-uninstall export is a <strong>Reinstall Recovery Kit</strong>.</p>
-<h2 id="export">Export<a class="heading-anchor" href="#export" aria-label="Link to Export">#</a></h2>
+<h2 id="export">Export<a aria-label="Link to Export" class="heading-anchor" href="#export">#</a></h2>
 <ul>
 <li><strong>Export Reinstall Recovery Kit:</strong> save independent DevDesk data plus a safe
 workspace reconnection catalog as JSON outside DevDesk.</li>
@@ -80,7 +84,7 @@ workspace reconnection catalog as JSON outside DevDesk.</li>
 </ul>
 <p>Protected secret values, Android permission URIs, execution trust, and AI
 connector access keys are excluded.</p>
-<h2 id="import">Import<a class="heading-anchor" href="#import" aria-label="Link to Import">#</a></h2>
+<h2 id="import">Import<a aria-label="Link to Import" class="heading-anchor" href="#import">#</a></h2>
 <ol>
 <li>Select a backup file or paste backup JSON.</li>
 <li>Review the import preview.</li>
@@ -94,7 +98,7 @@ workspace</strong>.</li>
 <li>Re-enter protected secrets and re-approve trust only when needed.</li>
 </ol>
 <p>Imports are staged and use rollback protection if mutation fails.</p>
-<h2 id="what-a-backup-does-not-include">What a backup does not include<a class="heading-anchor" href="#what-a-backup-does-not-include" aria-label="Link to What a backup does not include">#</a></h2>
+<h2 id="what-a-backup-does-not-include">What a backup does not include<a aria-label="Link to What a backup does not include" class="heading-anchor" href="#what-a-backup-does-not-include">#</a></h2>
 <p>External project folders, exported files, Git repositories, and protected
 secrets remain separate. The recovery kit records a workspace ID, name,
 portable status, platform, and human-readable location hint; it does not copy
@@ -104,7 +108,7 @@ supported backups can still import their independent records, but they may not
 contain a workspace list; reconnect those folders manually. The stored
 reconnection list is replaced by the catalog from the most recently imported
 kit, even when the independent records are merged.</p>
-<h2 id="before-uninstalling-on-android-or-windows">Before uninstalling on Android or Windows<a class="heading-anchor" href="#before-uninstalling-on-android-or-windows" aria-label="Link to Before uninstalling on Android or Windows">#</a></h2>
+<h2 id="before-uninstalling-on-android-or-windows">Before uninstalling on Android or Windows<a aria-label="Link to Before uninstalling on Android or Windows" class="heading-anchor" href="#before-uninstalling-on-android-or-windows">#</a></h2>
 <p>Settings shows a <strong>Recovery readiness</strong> card with the date of the last completed
 file export and the number of registered external workspaces. Open its
 <strong>Pre-uninstall checklist</strong> before removing the app.</p>
@@ -119,7 +123,7 @@ folder again; Android also requires the system folder permission again.</li>
 </ol>
 <p>An app cannot safely create a last-minute backup after the operating system has
 already started uninstalling it. Export first.</p>
-<h2 id="windows-and-android-handoff">Windows and Android handoff<a class="heading-anchor" href="#windows-and-android-handoff" aria-label="Link to Windows and Android handoff">#</a></h2>
+<h2 id="windows-and-android-handoff">Windows and Android handoff<a aria-label="Link to Windows and Android handoff" class="heading-anchor" href="#windows-and-android-handoff">#</a></h2>
 <p>The recovery kit restores supported independent DevDesk data and a reconnection
 catalog; it does not move external project folders. Copy or sync those folders
 separately, reopen <code>project.devdesk</code>, and grant permission again.</p>
@@ -127,9 +131,9 @@ separately, reopen <code>project.devdesk</code>, and grant permission again.</p>
 Windows provides local Git CLI actions and allowlisted verification adapters
 after explicit workspace execution trust. Continue verification on Windows when
 a mobile change requires project commands.</p>
-<h2 id="safety">Safety<a class="heading-anchor" href="#safety" aria-label="Link to Safety">#</a></h2>
+<h2 id="safety">Safety<a aria-label="Link to Safety" class="heading-anchor" href="#safety">#</a></h2>
 <p>Keep backups private. Redaction cannot guarantee that every confidential value is recognized.</p>
-<h2 id="before-a-major-operation">Before a major operation<a class="heading-anchor" href="#before-a-major-operation" aria-label="Link to Before a major operation">#</a></h2>
+<h2 id="before-a-major-operation">Before a major operation<a aria-label="Link to Before a major operation" class="heading-anchor" href="#before-a-major-operation">#</a></h2>
 <ol>
 <li>Export a backup.</li>
 <li>Save it to a private location.</li>
@@ -137,16 +141,15 @@ a mobile change requires project commands.</p>
 <li>Keep external project folders under their own backup or version-control strategy.</li>
 <li>After import, reopen important tools and verify state.</li>
 </ol>
-<h2 id="replace-versus-merge">Replace versus merge<a class="heading-anchor" href="#replace-versus-merge" aria-label="Link to Replace versus merge">#</a></h2>
+<h2 id="replace-versus-merge">Replace versus merge<a aria-label="Link to Replace versus merge" class="heading-anchor" href="#replace-versus-merge">#</a></h2>
 <ul>
 <li><strong>Replace</strong> uses the imported supported records as the new local set.</li>
 <li><strong>Merge</strong> combines supported records according to the import rules.</li>
 </ul>
 <p>Always read the preview because conflicts and duplicate identifiers can produce different outcomes.</p>
-
-<div class="article-footer"><a class="pager" href="snippets-notes.html"><small>Previous</small><strong>Snippets and Notes</strong></a><a class="pager" href="settings-appearance.html"><small>Next</small><strong>Settings and appearance</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#export">Export</a><a class="level-2" href="#import">Import</a><a class="level-2" href="#what-a-backup-does-not-include">What a backup does not include</a><a class="level-2" href="#before-uninstalling-on-android-or-windows">Before uninstalling on Android or Windows</a><a class="level-2" href="#windows-and-android-handoff">Windows and Android handoff</a><a class="level-2" href="#safety">Safety</a><a class="level-2" href="#before-a-major-operation">Before a major operation</a><a class="level-2" href="#replace-versus-merge">Replace versus merge</a></aside></div><footer class="site-footer"><div class="footer-inner">
-<div><a class="brand" href="../index.html"><img src="../assets/img/devdesk-logo-128.png" alt="DevDesk application logo"><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div class="article-footer"><a class="pager" href="snippets-notes.html"><small>Previous</small><strong>Snippets and Notes</strong></a><a class="pager" href="settings-appearance.html"><small>Next</small><strong>Settings and appearance</strong></a></div></article><aside aria-label="Advertisement" class="monetization-ad" data-ad-context="backup-restore" data-ad-unit="manual" hidden=""></aside></main><aside aria-label="On this page" class="toc"><h2>On this page</h2><a class="level-2" href="#export">Export</a><a class="level-2" href="#import">Import</a><a class="level-2" href="#what-a-backup-does-not-include">What a backup does not include</a><a class="level-2" href="#before-uninstalling-on-android-or-windows">Before uninstalling on Android or Windows</a><a class="level-2" href="#windows-and-android-handoff">Windows and Android handoff</a><a class="level-2" href="#safety">Safety</a><a class="level-2" href="#before-a-major-operation">Before a major operation</a><a class="level-2" href="#replace-versus-merge">Replace versus merge</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
-<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" target="_blank" rel="noopener noreferrer">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" target="_blank" rel="noopener noreferrer">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>
-<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" target="_blank" rel="noopener noreferrer">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
-</div></footer><div class="search-overlay" data-search-overlay aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="Search DevDesk documentation"><input type="search" data-search-input placeholder="Search manuals, commands, OKF, graph, APIs…" autocomplete="off"><div class="search-results" data-search-results><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" rel="noopener noreferrer" target="_blank">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" rel="noopener noreferrer" target="_blank">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" rel="noopener noreferrer" target="_blank">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div aria-hidden="true" class="search-overlay" data-search-overlay=""><div aria-label="Search DevDesk documentation" aria-modal="true" class="search-panel" role="dialog"><input autocomplete="off" data-search-input="" placeholder="Search manuals, commands, OKF, graph, APIs…" type="search"/><div class="search-results" data-search-results=""><div class="empty-search">Start typing to search the complete manual.</div></div></div></div><script src="../../assets/monetization/config.js"></script><script defer="" src="../../assets/monetization/monetization.js"></script></body></html>
