@@ -3,6 +3,9 @@ html { scroll-behavior: smooth; scroll-padding-top: 86px; }
 body { margin: 0; min-width: 320px; font-family: var(--font-sans); line-height: 1.6; background: var(--bg); color: var(--text); text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
 body.professional-home { background: radial-gradient(circle at 72% 2%, color-mix(in srgb, var(--accent-strong) 17%, transparent), transparent 34rem), radial-gradient(circle at 10% 42%, color-mix(in srgb, var(--mint) 8%, transparent), transparent 30rem), var(--bg); }
 img, svg, canvas { display: block; max-width: 100%; }
+.icon-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.link-icon { width: 1rem; height: 1rem; flex: 0 0 auto; fill: currentColor; }
+.link-arrow { margin-left: auto; color: var(--text-soft); font-size: .72rem; line-height: 1; }
 button, input, select, textarea { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a { color: inherit; }

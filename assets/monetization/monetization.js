@@ -9,11 +9,11 @@
   if (!config.enabled || !config.consentReady || !validClient || !validSlot || !placements.length) return;
 
   const ensureLibrary = () => {
-    if (document.querySelector('script[data-baisalya-adsense]')) return;
+    if (document.getElementById('baisalya-adsense')) return;
     const script = document.createElement('script');
+    script.id = 'baisalya-adsense';
     script.async = true;
     script.crossOrigin = 'anonymous';
-    script.dataset.baisalyaAdsense = 'true';
     script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(client)}`;
     document.head.appendChild(script);
   };
@@ -41,18 +41,11 @@
 
   const activate = () => {
     ensureLibrary();
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          renderPlacement(entry.target);
-          obs.unobserve(entry.target);
-        });
-      }, { rootMargin: '500px 0px' });
-      placements.forEach((placement) => observer.observe(placement));
-    } else {
-      placements.forEach(renderPlacement);
-    }
+    // Placements start with the native `hidden` attribute so disabled ads never
+    // reserve empty space. A hidden element cannot intersect the viewport, so
+    // observing it before rendering creates a deadlock. Each eligible page has
+    // one restrained slot; initialize it once the consent/config gate passes.
+    placements.forEach(renderPlacement);
   };
 
   if ('requestIdleCallback' in window) requestIdleCallback(activate, { timeout: 1800 });

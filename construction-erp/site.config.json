@@ -5,6 +5,7 @@
   "securityEmail": "",
   "siteUrl": "https://baisalya.com/construction-erp",
   "appVersion": "1.22.0+107",
+  "salesModel": "per-customer",
   "lastUpdated": "9 August 2026",
   "githubRepositoryUrl": "",
   "platforms": {

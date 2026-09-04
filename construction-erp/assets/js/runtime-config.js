@@ -4,6 +4,7 @@ window.CONSTRUCTION_ERP_CONFIG = {
   "supportEmail": "baishalya1999@gmail.com",
   "securityEmail": "baishalya1999@gmail.com",
   "siteUrl": "https://baisalya.com/construction-erp",
+  "salesModel": "per-customer",
   "githubRepositoryUrl": "",
   "platforms": {
     "windows": {

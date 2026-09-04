@@ -75,7 +75,7 @@ def main() -> None:
         for old,new in reps.items(): text=text.replace(old,new)
         p.write_text(text,encoding='utf-8')
     runtime = 'window.CONSTRUCTION_ERP_CONFIG = ' + json.dumps({
-      'appName':cfg['appName'],'appVersion':cfg['appVersion'],'supportEmail':cfg['supportEmail'],
+      'appName':cfg['appName'],'appVersion':cfg['appVersion'],'salesModel':cfg.get('salesModel',''),'supportEmail':cfg['supportEmail'],
       'securityEmail':cfg.get('securityEmail') or cfg['supportEmail'],'siteUrl':cfg['siteUrl'],
       'githubRepositoryUrl':cfg.get('githubRepositoryUrl',''),'platforms':cfg.get('platforms',{})
     }, ensure_ascii=False, indent=2) + ';\n'

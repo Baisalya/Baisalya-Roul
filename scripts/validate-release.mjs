@@ -50,6 +50,10 @@ const supportAssistant = await text('devdesk/assets/js/support-assistant.js');
 const devdeskApp = await text('devdesk/assets/js/app.js');
 const serviceWorker = await text('devdesk/sw.js');
 const releaseBuild = await text('scripts/build-release.mjs');
+const constructionHome = await text('construction-erp/index.html');
+const constructionFeatures = await text('construction-erp/features.html');
+const constructionDownloads = await text('construction-erp/downloads.html');
+const constructionManual = await text('construction-erp/manual.html');
 const constructionSupport = await text('construction-erp/support.html');
 const shopPilotHome = await text('shoppilot erp/index.html');
 const shopPilotQuickStart = await text('shoppilot erp/quick-start.html');
@@ -73,15 +77,21 @@ requireText(
 );
 for (const expected of [
   'Construction ERP',
-  'Coming Soon',
+  'Customer deployment',
+  'Sold per customer',
+  'View customer deployment',
+  'customer-specific Construction ERP deployments',
   'href="/construction-erp/"',
-  'aria-label="View the Construction ERP website"',
+  'aria-label="View the Construction ERP customer deployment page"',
 ]) {
   requireText(portfolio, expected, 'Portfolio Construction ERP card');
 }
 for (const expected of [
   'ShopPilot',
-  'Private Preview',
+  'Windows release is now live',
+  '9N9XDS5G5F77',
+  'https://play.google.com/store/apps/details?id=com.baishalya.shoppilot',
+  'Android closed testing',
   'href="/shoppilot-erp/"',
   'shoppilot-erp/quick-start.html',
   'shoppilot-erp/user-manual.html',
@@ -162,10 +172,13 @@ for (const [relativePath, minimumBytes] of [
   await requireFile(relativePath, minimumBytes);
 }
 for (const expected of [
-  'Private preview · Release qualification in progress',
-  'No public installer is offered',
+  'Windows release live · Android closed testing',
+  'https://apps.microsoft.com/store/detail/9N9XDS5G5F77?cid=DevShareMCLPCB',
+  'https://play.google.com/store/apps/details?id=com.baishalya.shoppilot',
+  'Current release channels',
   'data-shop="repair"',
   'data-shop="garage"',
+  'data-shop="retail"',
   'Net Sales',
   'Customer Dues',
   'quick-start.html',
@@ -222,8 +235,46 @@ for (const expected of [
   'name="_honey"',
   'name="sensitive_data_removed"',
   'Send request',
+  'Per-customer rollout',
 ]) {
   requireText(constructionSupport, expected, 'Construction ERP inquiry form');
+}
+for (const [source, label, expectedPhrases] of [
+  [
+    constructionHome,
+    'Construction ERP homepage',
+    [
+      'Construction ERP is sold per customer',
+      'Request customer walkthrough',
+      'How is Construction ERP sold?',
+    ],
+  ],
+  [
+    constructionFeatures,
+    'Construction ERP product page',
+    [
+      'It is sold per customer',
+      'Pricing and deployment are discussed for each customer',
+    ],
+  ],
+  [
+    constructionDownloads,
+    'Construction ERP deployment page',
+    [
+      'Customer deployments',
+      'not as a one-size-fits-all public download',
+      'Request your deployment plan',
+    ],
+  ],
+  [
+    constructionManual,
+    'Construction ERP user guide',
+    ['Customer team guide', 'Customer rollout support'],
+  ],
+]) {
+  for (const expected of expectedPhrases) {
+    requireText(source, expected, label);
+  }
 }
 requireText(siteConfig, storeUrl, 'DevDesk site Microsoft Store action');
 requireText(

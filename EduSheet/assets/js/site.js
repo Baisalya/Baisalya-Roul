@@ -1,13 +1,18 @@
-/* EduSheet static site configuration. Replace store URLs before publishing. */
+/* EduSheet static site configuration. */
 const EDUSHEET_CONFIG = {
-  googlePlayUrl: "",
-  microsoftStoreUrl: "",
+  googlePlayUrl: "https://play.google.com/store/apps/details?id=com.baishalya.edusheet",
+  microsoftStoreUrl: "https://apps.microsoft.com/store/detail/9N8NH1LMZX1S?cid=DevShareMCLPCB",
   supportEmail: "support@edusheet.com"
 };
 
 (function(){
   const body = document.body;
-  const saved = localStorage.getItem('edusheet-language');
+  // Device recommendation is local-only and can be refreshed when language changes.
+  const ua = navigator.userAgent.toLowerCase();
+  const rec = document.querySelector('[data-platform-recommendation]');
+  const saved = (() => {
+    try { return localStorage.getItem('edusheet-language'); } catch (_) { return null; }
+  })();
   const initial = saved === 'hi' ? 'hi' : 'en';
   setLanguage(initial);
 
@@ -16,7 +21,7 @@ const EDUSHEET_CONFIG = {
     body.classList.toggle('lang-hi', lang === 'hi');
     body.dataset.language = lang;
     document.documentElement.lang = lang === 'hi' ? 'hi' : 'en';
-    localStorage.setItem('edusheet-language', lang);
+    try { localStorage.setItem('edusheet-language', lang); } catch (_) { /* Storage can be blocked. */ }
     document.querySelectorAll('[data-set-lang]').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.setLang === lang);
       btn.setAttribute('aria-pressed', btn.dataset.setLang === lang ? 'true' : 'false');
@@ -24,6 +29,7 @@ const EDUSHEET_CONFIG = {
     const titleEn = document.body.dataset.titleEn;
     const titleHi = document.body.dataset.titleHi;
     if(titleEn && titleHi) document.title = lang === 'hi' ? titleHi : titleEn;
+    updatePlatformRecommendation();
   }
   window.setEduSheetLanguage = setLanguage;
   document.querySelectorAll('[data-set-lang]').forEach(btn => btn.addEventListener('click',()=>setLanguage(btn.dataset.setLang)));
@@ -31,22 +37,27 @@ const EDUSHEET_CONFIG = {
   const menuBtn = document.querySelector('.menu-btn');
   const navLinks = document.querySelector('.nav-links');
   if(menuBtn && navLinks){
+    const closeMenu = () => {
+      navLinks.classList.remove('mobile-open');
+      body.classList.remove('menu-open');
+      menuBtn.setAttribute('aria-expanded','false');
+    };
     menuBtn.addEventListener('click',()=>{
       const open = navLinks.classList.toggle('mobile-open');
       body.classList.toggle('menu-open',open);
       menuBtn.setAttribute('aria-expanded',open?'true':'false');
     });
-    navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-      navLinks.classList.remove('mobile-open');body.classList.remove('menu-open');menuBtn.setAttribute('aria-expanded','false');
-    }));
+    navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+    document.addEventListener('keydown', event => { if(event.key === 'Escape') closeMenu(); });
   }
 
   document.querySelectorAll('[data-store]').forEach(link=>{
     const type = link.dataset.store;
     const url = type === 'android' ? EDUSHEET_CONFIG.googlePlayUrl : EDUSHEET_CONFIG.microsoftStoreUrl;
-    if(url){link.href=url;link.target='_blank';link.rel='noopener';link.classList.remove('disabled')}
+    if(url){link.href=url;link.target='_blank';link.rel='noopener';link.classList.remove('disabled');link.removeAttribute('aria-disabled')}
     else{
       link.classList.add('disabled');
+      link.setAttribute('aria-disabled','true');
       link.addEventListener('click',(e)=>{
         e.preventDefault();
         const lang = body.dataset.language;
@@ -56,8 +67,66 @@ const EDUSHEET_CONFIG = {
   });
 
   document.querySelectorAll('.faq-q').forEach(btn=>btn.addEventListener('click',()=>{
-    btn.closest('.faq-item').classList.toggle('open');
+    const item = btn.closest('.faq-item');
+    const open = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
   }));
+
+  // Let visitors scan the feature library by the job they need to finish.
+  const featureFilters = [...document.querySelectorAll('[data-feature-filter]')];
+  const featureCards = [...document.querySelectorAll('.feature-wide')];
+  const featureCount = document.querySelector('[data-feature-count]');
+  if(featureFilters.length && featureCards.length){
+    const categoriesByTitle = {
+      'Math Keyboard + Inline Formula Editing': ['author','math'],
+      'Question Bank': ['author','reuse'],
+      'Geometry Studio': ['author','math'],
+      'OCR Question Capture': ['author'],
+      'Professional Paper Styles + PDF/Word': ['author','export'],
+      'OMR Generator': ['assess','export'],
+      'Document Reader & Converter': ['export'],
+      'Scientific Calculator': ['author','math'],
+    };
+    const applyFeatureFilter = (filter) => {
+      let visible = 0;
+      featureCards.forEach(card => {
+        const title = card.querySelector('h3')?.textContent.trim() || '';
+        const categories = categoriesByTitle[title] || [];
+        const show = filter === 'all' || categories.includes(filter);
+        card.hidden = !show;
+        if(show) visible++;
+      });
+      featureFilters.forEach(btn => {
+        const active = btn.dataset.featureFilter === filter;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      if(featureCount){
+        const suffix = body.dataset.language === 'hi'
+          ? featureCount.dataset.countSuffixHi || 'features dikh rahe hain'
+          : featureCount.dataset.countSuffixEn || 'features shown';
+        featureCount.textContent = `${visible} ${suffix}`;
+      }
+    };
+    featureFilters.forEach(btn => btn.addEventListener('click', () => applyFeatureFilter(btn.dataset.featureFilter || 'all')));
+    applyFeatureFilter('all');
+  }
+
+  // Small, static audience switcher for the marketing page; no tracking or account is required.
+  const audienceButtons = [...document.querySelectorAll('[data-audience-tab]')];
+  const audiencePanels = [...document.querySelectorAll('[data-audience-panel]')];
+  if(audienceButtons.length && audiencePanels.length){
+    const showAudience = (audience) => {
+      audienceButtons.forEach(btn => {
+        const active = btn.dataset.audienceTab === audience;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      audiencePanels.forEach(panel => { panel.hidden = panel.dataset.audiencePanel !== audience; });
+    };
+    audienceButtons.forEach(btn => btn.addEventListener('click', () => showAudience(btn.dataset.audienceTab || 'teacher')));
+    showAudience(audienceButtons[0].dataset.audienceTab || 'teacher');
+  }
 
   const observer = 'IntersectionObserver' in window ? new IntersectionObserver(entries=>{
     entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}});
@@ -93,12 +162,12 @@ const EDUSHEET_CONFIG = {
   }
 
   // Mark best matching platform without transmitting any device data.
-  const ua=navigator.userAgent.toLowerCase();
-  const rec=document.querySelector('[data-platform-recommendation]');
-  if(rec){
+  function updatePlatformRecommendation(){
+    if(!rec) return;
     let text='';
     if(ua.includes('android')) text=body.dataset.language==='hi'?'Aapke device ke liye Android version recommended hai.':'Android version is recommended for this device.';
     else if(ua.includes('windows')) text=body.dataset.language==='hi'?'Aapke device ke liye Windows version recommended hai.':'Windows version is recommended for this device.';
     if(text){rec.textContent=text;rec.hidden=false;}
   }
+  updatePlatformRecommendation();
 })();

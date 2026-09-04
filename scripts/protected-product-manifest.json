@@ -28,18 +28,18 @@
     },
     {
       "path": "construction-erp/404.html",
-      "sha256": "f5552901e7905362c95de4ca1cd660ad00e1f3feb357ea9061661d5ad2736b5a",
-      "bytes": 4459
+      "sha256": "11d3028121de8e4eaeff816fbd292db5b3fb6c7fb62a9d316118570a13e0215a",
+      "bytes": 4490
     },
     {
       "path": "construction-erp/account-deletion.html",
-      "sha256": "8c7823720c1c11be8913bf597543d57be0902302ac41c4cbbb46f1e983eb8ca7",
-      "bytes": 8419
+      "sha256": "882d64a99e143c952f1f23d91a5b9b54b639a5095869d974156e977670b8f492",
+      "bytes": 8450
     },
     {
       "path": "construction-erp/assets/css/styles.css",
-      "sha256": "dc25928b9219cd0a2fe7e7f5287591ac7bf69c41bfca00d92794e5e4b930bb0b",
-      "bytes": 39948
+      "sha256": "5d7198768f75dea6df3be14128341aec335c4f5da44a0d0e3fcca428bbda0942",
+      "bytes": 40058
     },
     {
       "path": "construction-erp/assets/icons/favicon.svg",
@@ -113,13 +113,13 @@
     },
     {
       "path": "construction-erp/assets/js/runtime-config.js",
-      "sha256": "5962d8afce71e23479d507a8d5ac4f2fe0f6f34af1a9d9bbfe64675016b577fa",
-      "bytes": 714
+      "sha256": "01aafde212a2a14e097cd7ed09a039eb98e5c2df967ddc47ff0069c6d61663bf",
+      "bytes": 746
     },
     {
       "path": "construction-erp/assets/js/site.js",
-      "sha256": "967ac6af818d0d46060bfa6bebfa1524c88cc1a8b2698a1f46357f5ac68b67d4",
-      "bytes": 3197
+      "sha256": "76355af5be15af9eb80f35af3163b4e020691c020abc641790b40c84a0962555",
+      "bytes": 3325
     },
     {
       "path": "construction-erp/configure_and_build.ps1",
@@ -128,8 +128,8 @@
     },
     {
       "path": "construction-erp/data-safety.html",
-      "sha256": "e7384a4953838a6b64817517d9241af80804f9fa235904aa5dbda780551d3361",
-      "bytes": 7726
+      "sha256": "dec3c81afdfcb5ddaf21673cad412a47b2e1575695847e53f7c005bc9c61ec58",
+      "bytes": 7757
     },
     {
       "path": "construction-erp/DEPLOYMENT.md",
@@ -138,8 +138,8 @@
     },
     {
       "path": "construction-erp/downloads.html",
-      "sha256": "3dc739a29a780f93f9300fef0547ea9d034077e435709f9d767e0dd13c99bf40",
-      "bytes": 9227
+      "sha256": "d22bbdf371e60206df3954c9b4411a545c43a7f44c296ca8eac4b9fcf1e5087b",
+      "bytes": 9562
     },
     {
       "path": "construction-erp/downloads/android/PUT_ANDROID_RELEASE_HERE.txt",
@@ -153,13 +153,13 @@
     },
     {
       "path": "construction-erp/features.html",
-      "sha256": "d353c9050ba5557d8e5a9510efedf1e5f7123c1009147366cd3ac0f9160287e1",
-      "bytes": 12784
+      "sha256": "22e4859f14c7f5cceb9079fa1dac94473817dff66052bff740e5182fa4b3e5a4",
+      "bytes": 13040
     },
     {
       "path": "construction-erp/index.html",
-      "sha256": "948f4d3b4470f616150ffa69fc4b7a8e830f8803b6e974dcf76cc9732550bbda",
-      "bytes": 20167
+      "sha256": "28e1a5fe391ea80702d15c5da71566d0b5ecdd0eed2a9dd016341a8bb1b0590b",
+      "bytes": 20794
     },
     {
       "path": "construction-erp/manifest.webmanifest",
@@ -168,8 +168,8 @@
     },
     {
       "path": "construction-erp/manual.html",
-      "sha256": "391401ae430eb901385aff7d8b039ca19f66044df688f5cdbacef1860d2baae8",
-      "bytes": 21178
+      "sha256": "eb99af6f8bf8dbc9e5cc75403d33a05f586067f394b13059b68d4b11dce0bdf2",
+      "bytes": 21303
     },
     {
       "path": "construction-erp/netlify.toml",
@@ -178,8 +178,8 @@
     },
     {
       "path": "construction-erp/privacy.html",
-      "sha256": "e643f82801f6c4e968e6cb511b3b127b66284f9d795a276da9c136392d161f34",
-      "bytes": 13024
+      "sha256": "ac10a8a08ae2b8da93302c7eecf78c4fe1d78e7125a373962339a1aeb8818db2",
+      "bytes": 13055
     },
     {
       "path": "construction-erp/README.md",
@@ -193,13 +193,13 @@
     },
     {
       "path": "construction-erp/scripts/build_site.py",
-      "sha256": "cd45b49eb05163e98d6700ba07d5e7589f9d9c0ce3b02d7f3457b446e1ddad53",
-      "bytes": 4915
+      "sha256": "e7daf2ab753788b22d53fe3c82d102bc86fea6ca6aba5fc8b2eb46d627d883b4",
+      "bytes": 4953
     },
     {
       "path": "construction-erp/scripts/validate_site.py",
-      "sha256": "981a85d24b3f9c5fd236b4d44a1cb182deda3968d605400d7d41990c3d757fa3",
-      "bytes": 4777
+      "sha256": "b1b50c14d9f38882eb46fb6801000a38f2daa2474b4b501b176d0d3f23bdd6e5",
+      "bytes": 5235
     },
     {
       "path": "construction-erp/site.config.example.json",
@@ -208,8 +208,8 @@
     },
     {
       "path": "construction-erp/site.config.json",
-      "sha256": "b9ab31ea60f09f742a269dccf7623c0984cef12593efba3da04805b617c92e70",
-      "bytes": 752
+      "sha256": "9d2a7907359a44c90018ee341b6ce35caac9859610abe608da41540857826b89",
+      "bytes": 784
     },
     {
       "path": "construction-erp/sitemap.xml",
@@ -228,18 +228,18 @@
     },
     {
       "path": "construction-erp/src/404.html",
-      "sha256": "18641a6e1e0f7a8d95017d1730581e8f31f0e414f29bd44394c25f80e5004359",
-      "bytes": 4097
+      "sha256": "641e060cf5573e7bab0c22855f20cee2721f1b2b784c2ea0b09e45eb6f17bf76",
+      "bytes": 4128
     },
     {
       "path": "construction-erp/src/account-deletion.html",
-      "sha256": "833d5329f5abfa782a8be17bd6f3e7f80d9d78b246f5a43aca579f39c0722203",
-      "bytes": 7934
+      "sha256": "9db61975fd80144c25db021dc54cb87656725e6de14384c6e3792844d5c9318d",
+      "bytes": 7965
     },
     {
       "path": "construction-erp/src/assets/css/styles.css",
-      "sha256": "dc25928b9219cd0a2fe7e7f5287591ac7bf69c41bfca00d92794e5e4b930bb0b",
-      "bytes": 39948
+      "sha256": "5d7198768f75dea6df3be14128341aec335c4f5da44a0d0e3fcca428bbda0942",
+      "bytes": 40058
     },
     {
       "path": "construction-erp/src/assets/icons/favicon.svg",
@@ -313,28 +313,28 @@
     },
     {
       "path": "construction-erp/src/assets/js/site.js",
-      "sha256": "967ac6af818d0d46060bfa6bebfa1524c88cc1a8b2698a1f46357f5ac68b67d4",
-      "bytes": 3197
+      "sha256": "76355af5be15af9eb80f35af3163b4e020691c020abc641790b40c84a0962555",
+      "bytes": 3325
     },
     {
       "path": "construction-erp/src/data-safety.html",
-      "sha256": "1aa4d7bfef1c22f31c6fa75fefa2ea623bf079816ba891c10910b61ae5dc5023",
-      "bytes": 7303
+      "sha256": "a6ec63e6f22d6775e4f092fd53132de32e855410bc08abf76c8b935a4acbcff9",
+      "bytes": 7334
     },
     {
       "path": "construction-erp/src/downloads.html",
-      "sha256": "451f5804967c210d2c0fcfd5c1ec29f381745ce0243c947277c90b161668f893",
-      "bytes": 8460
+      "sha256": "257ab7db162e6112c7f9e0a3d5492e7b43d2ed20a97a802ca31c6c5eb84cb388",
+      "bytes": 8790
     },
     {
       "path": "construction-erp/src/features.html",
-      "sha256": "c9f473572ae1f37058167c35fbd09592d045ff989bb5b831f73a0b3fbeaef814",
-      "bytes": 11994
+      "sha256": "4bde35256532b4ac2b21ac05d9eb8f2984a906fe64860fbe11c7c66758bbe9ea",
+      "bytes": 12250
     },
     {
       "path": "construction-erp/src/index.html",
-      "sha256": "ae715ee9a4c4bfab04260e919c11c68dcfa4cf87ec2ee93833d6693002627330",
-      "bytes": 17105
+      "sha256": "aa424483b4dc689035f433de5d2c0b95b5fbfcd61533c76d16d23962dc24e0a7",
+      "bytes": 17736
     },
     {
       "path": "construction-erp/src/manifest.webmanifest",
@@ -343,13 +343,13 @@
     },
     {
       "path": "construction-erp/src/manual.html",
-      "sha256": "33c0302fecfc118a6736c07ad6b3b852fe5fc3b4ba32f783efea2e5d92742a40",
-      "bytes": 20417
+      "sha256": "0f1765e35561c6a3be30f7833d52a487ff72dd94f4c367e33364f9c6960ca16f",
+      "bytes": 20542
     },
     {
       "path": "construction-erp/src/privacy.html",
-      "sha256": "f65490eb78f5641af864f0a22f3955fd9102f43bdec59aadb9890907fa3419ad",
-      "bytes": 12463
+      "sha256": "ad36d77c2499d3ff9da64a8eb9759569a57813c8110f2ba2e640268c4493a64a",
+      "bytes": 12494
     },
     {
       "path": "construction-erp/src/robots.txt",
@@ -363,13 +363,13 @@
     },
     {
       "path": "construction-erp/src/support.html",
-      "sha256": "469bb0eee39ea320156308f915b950ac0bc20e378c3c6e9cf7e7acf9fae817a2",
-      "bytes": 11172
+      "sha256": "bb1d24733062d66b975de8ae53cd7a0e911ec4b7b22b0afa5ae31b8f343538a9",
+      "bytes": 11398
     },
     {
       "path": "construction-erp/src/terms.html",
-      "sha256": "7ac97cbc00b7ca229477d59d1f4080b6d0dfec8a1a81361230d72cfadeca3046",
-      "bytes": 10153
+      "sha256": "31615feeae22102a7fe2fe7193c205f217052314bd42387f8732c8f05e1844e6",
+      "bytes": 10184
     },
     {
       "path": "construction-erp/STORE_SUBMISSION_CHECKLIST.md",
@@ -378,13 +378,13 @@
     },
     {
       "path": "construction-erp/support.html",
-      "sha256": "7fdf38d54098a8c3cc205109979d22babfdf879fc2aa6ecb737f4e45f4302023",
-      "bytes": 11950
+      "sha256": "22ec4b6a31d0c12acf010be7241dd04518b89f1edac8514a5a09720d2696b466",
+      "bytes": 12176
     },
     {
       "path": "construction-erp/terms.html",
-      "sha256": "c31c4065fdbf58036499ef5ef8fcfaf9de61cb75ad5e90b8ae50acbd1d51940d",
-      "bytes": 10693
+      "sha256": "5577355fcfb9a8a2a419ae77733f5fa5a40f1ad426a838a6364cce33e53a9d52",
+      "bytes": 10724
     },
     {
       "path": "construction-erp/WEBSITE_CHANGED_FILES.txt",
@@ -1408,8 +1408,8 @@
     },
     {
       "path": "EduSheet/assets/css/styles.css",
-      "sha256": "e5caf3d0e3ae99cd34543ad1cd1145cbd8761e01512d915d3fa3d9775dc02c73",
-      "bytes": 25155
+      "sha256": "7f79dd1534dcb54e2600e03d327d69bed1aaff84e8dae5864841d664aeccdfc9",
+      "bytes": 27952
     },
     {
       "path": "EduSheet/assets/images/edusheet-brand-mark.png",
@@ -1423,23 +1423,23 @@
     },
     {
       "path": "EduSheet/assets/js/site.js",
-      "sha256": "263f2e35400e34721ed43c6b26f6b8dcf19855b676875c2a1d7994c142662957",
-      "bytes": 5135
+      "sha256": "8528352b445e1fc16d6cd8c0872f96966b56bbbf7c39ca01ac6e9dc6d4618b6e",
+      "bytes": 8646
     },
     {
       "path": "EduSheet/download.html",
-      "sha256": "0db55317ff3be5fa6bb57d1f33db92a53c4a16766ee1edda366184f45b11288e",
-      "bytes": 7886
+      "sha256": "09d384b22b2e4153886d75605bb299aa93dc289a25d402932b6bbf76c1350db5",
+      "bytes": 8242
     },
     {
       "path": "EduSheet/features.html",
-      "sha256": "ce8a5a03edd6de7bdae344ce43d3fbcfd6cdcef471c43cb54d46edc335f37a1c",
-      "bytes": 10874
+      "sha256": "0dd439650651268c8a4b7246e12a0cfcb941024c63291471c58c59346d6f07be",
+      "bytes": 11751
     },
     {
       "path": "EduSheet/index.html",
-      "sha256": "7128957001d89d0064e14b1729caa498df130054a2892104e3356e51f8fe89dc",
-      "bytes": 20310
+      "sha256": "0844e3042f07180838dcf5fadcac92046f10864b5e85cf05940b8d76d31049fe",
+      "bytes": 27688
     },
     {
       "path": "EduSheet/manual.html",
@@ -1708,8 +1708,8 @@
     },
     {
       "path": "shoppilot erp/index.html",
-      "sha256": "5b038528ab56bf26b2c47a2ee5ea881281961da324658bceffaa085ce0a348ad",
-      "bytes": 21528
+      "sha256": "d9a8680a16fa6729062c93d81ba914d9a244e7b5b87671f048b64a2d81879b9a",
+      "bytes": 28132
     },
     {
       "path": "shoppilot erp/manual.css",
@@ -1718,8 +1718,8 @@
     },
     {
       "path": "shoppilot erp/manual.js",
-      "sha256": "6fd7952c20c23419d90e658a0869c0908a401b7cceb007fa0bba947cea281716",
-      "bytes": 2324
+      "sha256": "57f1f39a25a069d703ccdf4862b2b2ef4b142c191f351fdd9a15ef8c101e3258",
+      "bytes": 3162
     },
     {
       "path": "shoppilot erp/privacy-policy.html",
@@ -1728,13 +1728,13 @@
     },
     {
       "path": "shoppilot erp/quick-start.html",
-      "sha256": "51427d61478d4f04288a30d41d56914278dd0b1db8046d3c51d1c53e290b81d3",
-      "bytes": 17417
+      "sha256": "a89bbdcb0ae436e6e350716ba16568754253fbb6e35ff2efb0811ce306b1c813",
+      "bytes": 17442
     },
     {
       "path": "shoppilot erp/README.txt",
-      "sha256": "88a8dc5b68b8b0f4ef5307afedb9e0fe77ad4c5d17b9d3fe088f95a43116561f",
-      "bytes": 1170
+      "sha256": "95510e34bafdb6f4b5e1ba17322bbb5448f6b38e1bb3a3e8226175dc67df4635",
+      "bytes": 1174
     },
     {
       "path": "shoppilot erp/robots.txt",
@@ -1743,8 +1743,8 @@
     },
     {
       "path": "shoppilot erp/site.js",
-      "sha256": "b20c87ff339e8e5be5cf063dd1a3d0161b6206ea4845489a2c11e46b745b13db",
-      "bytes": 7419
+      "sha256": "5eb844532dfab11123afc34c231f2fa12ab0a9185f5e2f582aa4b9483d43d6d0",
+      "bytes": 9448
     },
     {
       "path": "shoppilot erp/sitemap.xml",
@@ -1753,8 +1753,8 @@
     },
     {
       "path": "shoppilot erp/styles.css",
-      "sha256": "167b4a91e82f15ec2a56bc644616feafcd45afa5bbfae9d7895631d4e9570591",
-      "bytes": 23998
+      "sha256": "b36dfc29ee89c8327a785b0131e0f46b2a2f9d82b96854716ba9fc0a2613edd9",
+      "bytes": 28755
     },
     {
       "path": "shoppilot erp/terms-of-service.html",
@@ -1763,8 +1763,8 @@
     },
     {
       "path": "shoppilot erp/user-manual.html",
-      "sha256": "9f3da21bb46e56ad19a4850bcefd0a3712820e164b4bdebb4cbc85e997ecfca3",
-      "bytes": 40447
+      "sha256": "e34b31ba318220bf30ad12fb5c7410e30dd9bbcd89036687f9765f07d4b9cba5",
+      "bytes": 40513
     },
     {
       "path": "shoppilot erp/user-manual.md",
@@ -1808,8 +1808,8 @@
     },
     {
       "path": "shoppilot-erp/index.html",
-      "sha256": "5dabfc44d5bdf608c53753bd88bb13448420531000ab039e40c41742295057d6",
-      "bytes": 22440
+      "sha256": "deb14967574859dfb70f349da71fd64ee1ace8169ab3924e0a1fcc677ec63946",
+      "bytes": 28567
     },
     {
       "path": "shoppilot-erp/manual.css",
@@ -1818,8 +1818,8 @@
     },
     {
       "path": "shoppilot-erp/manual.js",
-      "sha256": "6fd7952c20c23419d90e658a0869c0908a401b7cceb007fa0bba947cea281716",
-      "bytes": 2324
+      "sha256": "57f1f39a25a069d703ccdf4862b2b2ef4b142c191f351fdd9a15ef8c101e3258",
+      "bytes": 3162
     },
     {
       "path": "shoppilot-erp/privacy-policy.html",
@@ -1828,13 +1828,13 @@
     },
     {
       "path": "shoppilot-erp/quick-start.html",
-      "sha256": "fad64ca75b7eb50e8d508be9ba656c94189f4c9c0d37db8ceca751a7fba78b53",
-      "bytes": 16677
+      "sha256": "539093c653c1b626af2baa1b9745c5389cfc413d24bd244c97957d1b90062e51",
+      "bytes": 16702
     },
     {
       "path": "shoppilot-erp/README.txt",
-      "sha256": "88a8dc5b68b8b0f4ef5307afedb9e0fe77ad4c5d17b9d3fe088f95a43116561f",
-      "bytes": 1170
+      "sha256": "95510e34bafdb6f4b5e1ba17322bbb5448f6b38e1bb3a3e8226175dc67df4635",
+      "bytes": 1174
     },
     {
       "path": "shoppilot-erp/robots.txt",
@@ -1843,8 +1843,8 @@
     },
     {
       "path": "shoppilot-erp/site.js",
-      "sha256": "b20c87ff339e8e5be5cf063dd1a3d0161b6206ea4845489a2c11e46b745b13db",
-      "bytes": 7419
+      "sha256": "5eb844532dfab11123afc34c231f2fa12ab0a9185f5e2f582aa4b9483d43d6d0",
+      "bytes": 9448
     },
     {
       "path": "shoppilot-erp/sitemap.xml",
@@ -1853,8 +1853,8 @@
     },
     {
       "path": "shoppilot-erp/styles.css",
-      "sha256": "167b4a91e82f15ec2a56bc644616feafcd45afa5bbfae9d7895631d4e9570591",
-      "bytes": 23998
+      "sha256": "b36dfc29ee89c8327a785b0131e0f46b2a2f9d82b96854716ba9fc0a2613edd9",
+      "bytes": 28755
     },
     {
       "path": "shoppilot-erp/terms-of-service.html",
@@ -1863,8 +1863,8 @@
     },
     {
       "path": "shoppilot-erp/user-manual.html",
-      "sha256": "af30f5810131b2961850b901f1ced1f3bec7764d46e96ce08b54597b5bb3ede7",
-      "bytes": 35293
+      "sha256": "6f7f70e4266c84072a7ceb8aa0881c7ad0f811a46d42c6a2b2699f7fe370cc35",
+      "bytes": 35359
     },
     {
       "path": "shoppilot-erp/user-manual.md",

@@ -87,6 +87,14 @@ if (/ca-pub-\d{10,20}/.test(config)) {
   failures.push('Repository source config must not ship a real or placeholder AdSense publisher ID');
 }
 
+const monetizationRuntime = await text('assets/monetization/monetization.js');
+if (!monetizationRuntime.includes('placements.forEach(renderPlacement)')) {
+  failures.push('Ad runtime must initialize eligible manual slots after the config and consent gate');
+}
+if (monetizationRuntime.includes('observer.observe(placement)')) {
+  failures.push('Ad runtime must not observe still-hidden placements before rendering them');
+}
+
 const adsTxt = await text('ads.txt');
 if (!adsTxt.includes('google.com, pub-1529558529658186, DIRECT, f08c47fec0942fa0')) {
   failures.push('ads.txt is missing the approved Baisalya AdSense publisher record');
@@ -96,6 +104,10 @@ const build = await text('scripts/build-release.mjs');
 for (const required of [
   'injectShopPilotManualAds',
   'siteSnapRuntimeFiles',
+  'constructionErpRelease',
+  'monetizationRelease',
+  'versionHtmlFiles(constructionOutput, versionConstructionErpRuntime)',
+  'versionHtmlFiles(outputRoot, versionMonetizationRuntime)',
   "path.join(outputRoot,'sitesnap')",
   "path.join(projectRoot,'notivault-website','sitemap.xml')",
 ]) if (!build.includes(required)) failures.push(`Release builder missing monetization/SEO integration: ${required}`);

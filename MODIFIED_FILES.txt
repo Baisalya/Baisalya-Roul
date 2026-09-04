@@ -1,17 +1,35 @@
-sitemap-pages.xml
-index.html
-sitemap.xml
-construction-erp/index.html
-construction-erp/sitemap.xml
-surveycam/index.html
-surveycam/sitemap.xml
-shoppilot-erp/index.html
-shoppilot-erp/sitemap.xml
-EduSheet/index.html
-EduSheet/sitemap.xml
-sitesnap/index.html
-sitesnap/sitemap.xml
-devdesk/index.html
-devdesk/sitemap.xml
-notivault-website/index.html
-notivault-website/sitemap.xml
+Homepage Software Release Hierarchy Update
+==========================================
+
+Modified files:
+1. index.html
+2. src/site/styles/components/software.css
+
+Release order:
+1. DevDesk — available now
+2. EduSheet — beta release
+3. ShopPilot — beta rollout
+4. SurveyCam — published
+5. Construction ERP — Coming Soon
+6. NotiVault — Coming Soon
+
+UI changes:
+- Released/beta products moved above unreleased products
+- EduSheet + ShopPilot grouped together as beta rollout
+- Construction ERP + NotiVault moved to a separate Coming Next area
+- Premium Windows and Google Play badge-style platform actions added
+- DevDesk Microsoft Store + Google Play buttons remain direct install links
+- SurveyCam Google Play button remains direct install link
+- EduSheet Google Play button uses the verified package com.baishalya.edusheet
+- EduSheet Windows button opens its official download page because no Microsoft Store public ID is present in the repository
+- ShopPilot beta platform buttons open its official beta/product surface because no public store URL is present yet
+- Existing validator-sensitive release/status text preserved
+- No fake Microsoft Store IDs added
+
+Validation:
+- Required root routes preserved
+- Required release-validator strings preserved
+- No href="#" placeholders introduced
+- JSON-LD parsed successfully
+- HTML parser check passed
+- CSS brace balance passed

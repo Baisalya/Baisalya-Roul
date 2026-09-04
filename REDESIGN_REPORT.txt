@@ -1,0 +1,24 @@
+Senior Software Showcase Redesign
+=================================
+
+Base:
+- Fresh v3 generated from current GitHub main
+- Homepage sections outside #software preserved
+
+Design upgrades:
+- Premium release-board header with live release summary
+- Full-width alternating launch panels for EduSheet + ShopPilot
+- Product-workflow visuals built with HTML/CSS (no heavy JS)
+- Large, explicit Android / Windows install badges
+- Compact live-product shelf for DevDesk + SurveyCam
+- Roadmap-style Coming Soon panel for Construction ERP + NotiVault
+- Better mobile hierarchy from 1080px down to 320px
+- Reduced-motion safe
+- No fake ShopPilot store IDs
+
+Validation:
+- Missing required strings: []
+- Forbidden legacy strings: []
+- JSON-LD valid: True
+- Section tags balanced: True (8/8)
+- CSS braces balanced: True

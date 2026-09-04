@@ -29,3 +29,6 @@
 
 /* Static-site support form delivery */
 .form-honey{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+
+/* Keep the two-column customer download grid inside narrow tablet viewports. */
+.download-card{min-width:0}

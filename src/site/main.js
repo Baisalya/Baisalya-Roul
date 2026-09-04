@@ -2,7 +2,7 @@ import { initTheme } from './core/theme.js';
 import { initNavigation } from './core/navigation.js';
 import { initReveal } from './interactions/reveal.js';
 import { initEasterEggLoader } from './interactions/easter-egg-loader.js';
-import { initIdentityCard } from './interactions/identity-card.js';
+import { initIdentityCard } from './interactions/identity-card.js?v=identity-card-20260904-about';
 
 function bootstrap() {
   initTheme();

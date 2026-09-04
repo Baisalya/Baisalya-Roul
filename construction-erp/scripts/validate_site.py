@@ -87,11 +87,34 @@ for page in DIST.glob('*.html'):
             problems.append(f'{page.name}: contains deprecated copy "{old}"; {guidance}')
 
 required_product_copy = {
-    'index.html': ('Contract Value', 'Project Cost Budget', 'Request walkthrough'),
-    'features.html': ('Tender', 'Daily Work', 'Stock', 'Labour', 'Machinery', 'Report'),
-    'manual.html': ('Tender → Project → Daily Work → Stock → Labour → Machinery → Report', 'budget-approval'),
+    'index.html': (
+        'Contract Value',
+        'Project Cost Budget',
+        'Construction ERP is sold per customer',
+        'Request customer walkthrough',
+    ),
+    'features.html': (
+        'Tender',
+        'Daily Work',
+        'Stock',
+        'Labour',
+        'Machinery',
+        'Report',
+        'Pricing and deployment are discussed for each customer',
+    ),
+    'manual.html': (
+        'Tender → Project → Daily Work → Stock → Labour → Machinery → Report',
+        'budget-approval',
+        'Customer rollout support',
+    ),
+    'downloads.html': (
+        'Customer deployments',
+        'not as a one-size-fits-all public download',
+        'Request your deployment plan',
+    ),
     'support.html': (
         'Product walkthrough',
+        'Per-customer rollout',
         'action="https://formsubmit.co/baishalya1999@gmail.com"',
         'name="_honey"',
         'Send request',

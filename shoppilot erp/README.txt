@@ -17,10 +17,10 @@ Supporting files:
 - assets/og.png: social preview artwork (generated during release preparation)
 
 Release position:
-- ShopPilot is presented as a private preview.
-- No public APK, Windows installer, or store listing is claimed.
-- Real-device backup and restore qualification must finish before public release.
-- Android and Windows are the planned first supported platforms.
+- Windows release is available through the Microsoft Store.
+- Android is available through Google Play closed testing for enrolled testers.
+- No public APK is claimed; Android access remains testing-gated.
+- Android and Windows are the first supported platforms.
 
 Portfolio integration:
 - The parent Vite build copies this folder to dist/shoppilot-erp.

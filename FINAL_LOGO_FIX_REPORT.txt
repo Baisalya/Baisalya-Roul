@@ -1,0 +1,23 @@
+Final Robust Logo Fix
+=====================
+
+What changed:
+- ShopPilot primary path: assets/images/shoppilot-logo.png
+  fallback path: shoppilot-erp/assets/shoppilot-logo.png
+
+- DevDesk primary path: devdesk/assets/img/devdesk-logo-256.png
+  fallback path: /devdesk/assets/img/devdesk-logo-256.png
+
+- SurveyCam primary path: assets/images/App_logo.png
+  fallback path: surveycam/assets/surveycam-logo.png
+
+Behavior:
+- Works in root-source preview and production build
+- If primary path fails, image retries once with fallback path
+- If both fail, clean fallback initials appear instead of broken alt text
+
+Kept intact:
+- release order
+- status labels
+- routes
+- validator-sensitive NotiVault/coming-soon content

@@ -61,7 +61,11 @@
     enableLink(store, p.storeUrl);
     enableLink(direct, p.directUrl);
     const live = Boolean(p.enabled && (p.storeUrl || p.directUrl));
-    if (status) { status.textContent = live ? 'Available' : 'Coming soon'; status.classList.toggle('live', live); }
+    const customerSale = cfg.salesModel === 'per-customer';
+    if (status) {
+      status.textContent = live ? 'Available' : customerSale ? 'Customer rollout' : 'Coming soon';
+      status.classList.toggle('live', live || customerSale);
+    }
   });
 
   const form = q('#support-form');

@@ -30,6 +30,16 @@
       href: 'user-manual.html#grocery-retail',
       link: 'Open the detailed grocery and retail guide →'
     },
+    retail: {
+      symbol: '🏪',
+      kicker: 'Retail workflow',
+      title: 'Move counter sales from product search to invoice',
+      description: 'Keep products, stock, customer details, payment, and invoice history connected for fast general-shop sales.',
+      flow: ['Add products and opening stock', 'Search items and confirm quantity', 'Add a customer when needed', 'Save payment and share the invoice'],
+      features: ['Retail dashboard and product catalogue', 'Fast sales and invoice workflow', 'Low-stock and inventory visibility', 'Customer, payment, and invoice history'],
+      href: 'user-manual.html#retail-guide',
+      link: 'Open the detailed retail guide →'
+    },
     restaurant: {
       symbol: '🍽',
       kicker: 'Restaurant workflow',
@@ -88,6 +98,9 @@
   const flow = document.querySelector('[data-shop-flow]');
   const features = document.querySelector('[data-shop-features]');
   const guideLink = document.querySelector('.shop-panel-features a');
+  const shopPanel = document.querySelector('#shop-panel');
+  const shopKeys = new Set(shopTabs.map((tab) => tab.dataset.shop).filter(Boolean));
+  const shopPreferenceKey = 'shoppilot-selected-shop';
 
   const renderList = (list, values) => {
     if (!list) return;
@@ -98,9 +111,28 @@
     }));
   };
 
-  const selectShop = (shopKey, focusTab = false) => {
+  const readStoredShop = () => {
+    try {
+      const stored = window.localStorage.getItem(shopPreferenceKey);
+      return shopKeys.has(stored) ? stored : null;
+    } catch (_) {
+      return null;
+    }
+  };
+
+  const updateShopUrl = (shopKey) => {
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set('shop', shopKey);
+      window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
+    } catch (_) {
+      // A restricted file/webview URL should not block the shop selector.
+    }
+  };
+
+  const selectShop = (shopKey, focusTab = false, persist = true) => {
     const data = shopData[shopKey];
-    if (!data) return;
+    if (!data || !shopKeys.has(shopKey)) return;
 
     shopTabs.forEach((tab) => {
       const selected = tab.dataset.shop === shopKey;
@@ -109,6 +141,9 @@
       tab.tabIndex = selected ? 0 : -1;
       if (selected && focusTab) tab.focus();
     });
+
+    const selectedTab = shopTabs.find((tab) => tab.dataset.shop === shopKey);
+    shopPanel?.setAttribute('aria-labelledby', selectedTab?.id || `shop-tab-${shopKey}`);
 
     if (symbol) symbol.textContent = data.symbol;
     if (kicker) kicker.textContent = data.kicker;
@@ -119,6 +154,11 @@
     if (guideLink) {
       guideLink.href = data.href;
       guideLink.textContent = data.link;
+    }
+
+    if (persist) {
+      try { window.localStorage.setItem(shopPreferenceKey, shopKey); } catch (_) { /* Storage is optional. */ }
+      updateShopUrl(shopKey);
     }
   };
 
@@ -135,6 +175,10 @@
       selectShop(shopTabs[nextIndex].dataset.shop, true);
     });
   });
+
+  const queryShop = new URLSearchParams(window.location.search).get('shop');
+  const initialShop = shopKeys.has(queryShop) ? queryShop : (readStoredShop() || 'repair');
+  selectShop(initialShop, false, false);
 
   document.querySelectorAll('[data-current-year]').forEach((node) => {
     node.textContent = String(new Date().getFullYear());

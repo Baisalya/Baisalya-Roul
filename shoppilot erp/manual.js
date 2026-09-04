@@ -3,25 +3,25 @@
   const status = document.getElementById('search-status');
   const noResults = document.getElementById('no-results');
   const sections = [...document.querySelectorAll('.searchable-section')];
-  const cards = [...document.querySelectorAll('.searchable-card')];
   const sidebarLinks = [...document.querySelectorAll('.sidebar-card a')];
 
   const normalise = (value) => (value || '').toLowerCase().replace(/\s+/g, ' ').trim();
 
   const filterManual = () => {
-    const query = normalise(search.value);
+    const query = normalise(search?.value);
 
     if (!query) {
       sections.forEach((section) => section.hidden = false);
-      cards.forEach((card) => card.hidden = false);
+      document.querySelectorAll('.searchable-card').forEach((card) => card.hidden = false);
       noResults.hidden = true;
       status.textContent = 'Showing the complete guide';
       return;
     }
 
     let matchingSections = 0;
+    let matchingCards = 0;
     sections.forEach((section) => {
-      const sectionText = normalise(`${section.dataset.search || ''} ${section.textContent}`);
+      const sectionText = normalise(`${section.dataset.search || ''} ${section.querySelector(':scope > .manual-section-heading')?.textContent || ''}`);
       const nestedCards = [...section.querySelectorAll('.searchable-card')];
       let nestedMatch = false;
 
@@ -30,21 +30,41 @@
         const match = cardText.includes(query);
         card.hidden = !match;
         nestedMatch ||= match;
-        if (match && card.tagName === 'DETAILS') card.open = true;
+        if (match) {
+          matchingCards += 1;
+          if (card.tagName === 'DETAILS') card.open = true;
+        }
       });
 
       const sectionMatch = sectionText.includes(query) || nestedMatch;
+      // A section-level match should keep its content readable. If a nested
+      // card matches, narrow the section to those cards instead of showing an
+      // empty heading or unrelated cards.
+      if (sectionText.includes(query) && !nestedMatch) {
+        nestedCards.forEach((card) => card.hidden = false);
+      }
       section.hidden = !sectionMatch;
       if (sectionMatch) matchingSections += 1;
     });
 
     noResults.hidden = matchingSections !== 0;
     status.textContent = matchingSections
-      ? `${matchingSections} manual section${matchingSections === 1 ? '' : 's'} found`
+      ? `${matchingSections} section${matchingSections === 1 ? '' : 's'} found${matchingCards ? ` · ${matchingCards} result${matchingCards === 1 ? '' : 's'}` : ''}`
       : 'No result found';
   };
 
   search?.addEventListener('input', filterManual);
+  search?.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape' || !search.value) return;
+    search.value = '';
+    filterManual();
+  });
+
+  const initialQuery = new URLSearchParams(window.location.search).get('q');
+  if (initialQuery && search) {
+    search.value = initialQuery;
+    filterManual();
+  }
 
   const observer = new IntersectionObserver((entries) => {
     const visible = entries

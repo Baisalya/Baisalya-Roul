@@ -11,6 +11,8 @@ const projectRoot = process.cwd();
 const outputRoot = path.join(projectRoot, 'dist');
 const planOnly = process.argv.includes('--plan');
 const devDeskRelease = '20260824.4';
+const constructionErpRelease = '20260904.1';
+const monetizationRelease = '20260904.2';
 
 const rootRuntimeFiles = [
   'index.html', 'privacy.html', 'main.js', 'style.css', 'robots.txt', 'sitemap.xml', 'sitemap-pages.xml',
@@ -66,12 +68,24 @@ function versionDevDeskRuntime(html) {
     `$1?v=${devDeskRelease}`,
   );
 }
-async function versionHtmlFiles(directory) {
+function versionConstructionErpRuntime(html) {
+  return html.replace(
+    /(assets\/(?:css\/styles\.css|js\/(?:runtime-config|site)\.js)|manifest\.webmanifest)(?:\?v=[^"']+)?(?=["'])/g,
+    `$1?v=${constructionErpRelease}`,
+  );
+}
+function versionMonetizationRuntime(html) {
+  return html.replace(
+    /(assets\/monetization\/(?:monetization\.css|config\.js|monetization\.js))(?:\?v=[^"']+)?(?=["'])/g,
+    `$1?v=${monetizationRelease}`,
+  );
+}
+async function versionHtmlFiles(directory, transform = versionDevDeskRuntime) {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
     const target = path.join(directory, entry.name);
-    if (entry.isDirectory()) await versionHtmlFiles(target);
+    if (entry.isDirectory()) await versionHtmlFiles(target, transform);
     else if (entry.name.endsWith('.html')) {
-      await writeFile(target, versionDevDeskRuntime(await readFile(target, 'utf8')), 'utf8');
+      await writeFile(target, transform(await readFile(target, 'utf8')), 'utf8');
     }
   }
 }
@@ -251,6 +265,7 @@ for (const file of constructionErpOptionalRuntimeFiles) {
   }
 }
 await cp(path.join(projectRoot,'construction-erp','assets'), path.join(constructionOutput,'assets'), {recursive:true,force:true});
+await versionHtmlFiles(constructionOutput, versionConstructionErpRuntime);
 
 const shopPilotOutput=path.join(outputRoot,'shoppilot-erp');
 await copyFiles(path.join(projectRoot,'shoppilot erp'), shopPilotOutput, shopPilotRuntimeFiles);
@@ -278,6 +293,7 @@ await cp(path.join(projectRoot,'notivault-website','public'), path.join(notiVaul
 const serverOutput=path.join(outputRoot,'server');
 await mkdir(serverOutput,{recursive:true});
 await copyFile(path.join(projectRoot,'sites-worker.js'),path.join(serverOutput,'index.js'));
+await versionHtmlFiles(outputRoot, versionMonetizationRuntime);
 await ensureSeoMetadata(outputRoot);
 await writeReleaseManifest();
 console.log('Production release build: passed');
