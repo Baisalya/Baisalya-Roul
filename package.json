@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "prebuild": "npm ci --prefix notivault-website",
     "build": "node scripts/build-release.mjs",
+    "postbuild": "node scripts/configure-adsense.mjs --root=dist --client=ca-pub-1529558529658186 --slot=9546051599 --consent-ready=true",
     "build:plan": "node scripts/build-release.mjs --plan",
     "test": "npm run test:site-boundary && npm run test:professional-home && npm run test:batch-b && npm run test:batch-c && npm run test:batch-d && npm run test:brand-experience && npm run test:surveycam && npm run test:revenue-ready && npm run test:protected-products && node scripts/validate-release.mjs",
     "test:dist": "node scripts/validate-dist.mjs",
