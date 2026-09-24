@@ -1538,8 +1538,8 @@
     },
     {
       "path": "EduSheet/privacy.html",
-      "sha256": "254ed5a1c48e154fefe0840ce5f74668a01c7bd5e521f308881d8b60b35bea21",
-      "bytes": 35288
+      "sha256": "f1dff971ce0cc1466c0ebf2272f38d7b322975f5470ff68c6be93d1ec4fdc9f5",
+      "bytes": 41400
     },
     {
       "path": "EduSheet/quick-start.html",
@@ -1558,8 +1558,8 @@
     },
     {
       "path": "EduSheet/sitemap.xml",
-      "sha256": "bba88d928897c29fa89cc53f60469f62239c289c63a1164cfcfca5ecbb1649e1",
-      "bytes": 682
+      "sha256": "16b1c77b8bf318056bdf8dfe9f95a47bf0c859332748a08ccf2853f8a86b22b5",
+      "bytes": 711
     },
     {
       "path": "EduSheet/teacher-planner.html",
