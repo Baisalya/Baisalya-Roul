@@ -33,6 +33,7 @@ limits instead of inventing verification.
 | OpenAPI Studio | `content/openapi-studio.md` | Developer tools > OpenAPI | Inspect contract/create collection | OpenAPI Studio | Static validation | Parser/collection tests unavailable | Validation does not prove server safety |
 | JSON Tools | `content/json-tools.md` | All tools > JSON | Format/validate structured data | JSON Tools | Static validation | Utility tests unavailable | Review sensitive clipboard/export data |
 | Scoped Git | `content/diff-git.md`, `content/developer-workspaces.md` | Developer tools > Git status | Review/stage bounded changes | Git Tools | Static validation | Process/pathspec tests unavailable | Trust is local; scope must not broaden |
+| Containers & Kubernetes | `C:\Users\baish\StudioProjects\devdesk\lib\features\container_ops\`; `content/container-operations.md` | Workspace > Containers & Kubernetes | Operate Docker/Compose and Kubernetes with application-first GUI plus advanced resource controls | Containers & Kubernetes; Complete user manual | Phase 13/14 focused operation/security/navigation tests and full user-run suite passed on 2026-09-09; static website validation | Physical Docker/kind/minikube/Kubernetes environment smoke checks remain runtime-specific | Desktop execution trust; exact context/namespace; RBAC preflight; destructive confirmations; Compatibility Packs are data only; Secret/activity redaction |
 | Backup/import | `content/backup-restore.md` | Settings > Backup | Protect app data | Moving and Backing Up | Static validation | Import rollback tests unavailable | External folders and secrets are separate |
 | Settings/onboarding | `content/settings-appearance.md` | Settings | Theme, manuals, replay onboarding | Windows/Android guides | Static validation | App navigation tests unavailable | Clear All Data removes private records |
 | Windows install/update | `content/downloads-installation.md`, `assets/js/site-config.js` | Downloads / Microsoft Store | Install/update Windows app | Windows Guide | Release content validator | MSIX/Windows source absent | Use official Store listing |
@@ -44,8 +45,8 @@ limits instead of inventing verification.
 
 - Added one beginner-first global manual with 24 required subject sections.
 - Added a complete “My First App Project” walkthrough.
-- Expanded the searchable manual to 49 topics with a visual feature atlas,
-  Diagram Studio, workspace workbench, and separate AI Workbench guide.
+- Expanded the searchable manual to 51 topics with a visual feature atlas,
+  Diagram Studio, workspace workbench, and separate AI Workbench guide, plus the current Containers & Kubernetes operations guide.
 - Added an app-matched HTML/CSS preview to every manual page without embedding
   private workspace screenshots.
 - Added global-manual navigation and official deeper-learning links.

@@ -17,20 +17,21 @@
 13. JSON Tools
 14. Git Tools
 15. Search, Navigation, and Shortcuts
-16. Moving and Backing Up a Workspace
-17. Windows Guide
-18. Android Guide
-19. Privacy and Security
-20. Troubleshooting
-21. Glossary
-22. Frequently Asked Questions
-23. Learn More and References
-24. Contact, Support, Downloads, and Microsoft Store
-25. Complete Beginner Walkthrough: My First App Project
+16. Containers & Kubernetes
+17. Moving and Backing Up a Workspace
+18. Windows Guide
+19. Android Guide
+20. Privacy and Security
+21. Troubleshooting
+22. Glossary
+23. Frequently Asked Questions
+24. Learn More and References
+25. Contact, Support, Downloads, and Microsoft Store
+26. Complete Beginner Walkthrough: My First App Project
 
 ## Focused manuals
 
-The website keeps 48 searchable manual pages under `manual/`, including a
+The website keeps 51 searchable manual pages under `manual/`, including a
 **Visual feature guide**, **Workspace workbench, tabs, and tools**, **Diagram
 Studio**, **Structured workspace views**, and **Visual Canvas**, grouped as:
 
@@ -38,7 +39,7 @@ Studio**, **Structured workspace views**, and **Visual Canvas**, grouped as:
 - Knowledge and Markdown
 - Structure checks (OKF)
 - API and documentation
-- Developer utilities
+- Developer utilities, including Containers & Kubernetes
 - Safety and reference
 
 Use `/` on the website to search every indexed topic.

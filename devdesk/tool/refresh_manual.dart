@@ -21,13 +21,13 @@ const _pages = <_Page>[
     slug: 'user-manual',
     title: 'Complete user manual',
     description:
-        'A beginner-first guide to local-first workspaces, focused AI project context, reviewed changes, knowledge, APIs, Git, backup, and platform help.',
+        'A beginner-first guide to local-first workspaces, reviewed changes, knowledge, APIs, Git, Containers & Kubernetes, backup, privacy, and platform help.',
   ),
   _Page(
     slug: 'visual-feature-guide',
     title: 'Visual feature guide',
     description:
-        'Recognize every major DevDesk screen through app-matched HTML and CSS illustrations, then open the exact focused guide.',
+        'Recognize every major DevDesk screen through app-matched HTML and CSS illustrations, including Containers & Kubernetes, then open the exact focused guide.',
   ),
   _Page(
     slug: 'getting-started',
@@ -195,13 +195,13 @@ const _pages = <_Page>[
     slug: 'troubleshooting',
     title: 'Troubleshooting',
     description:
-        'Resolve workspace, manifest, graph, automation, Git, file, API, and layout problems.',
+        'Resolve workspace, container/runtime, Kubernetes/RBAC, manifest, graph, automation, Git, file, API, and layout problems.',
   ),
   _Page(
     slug: 'faq',
     title: 'Frequently asked questions',
     description:
-        'Quick answers about purpose, everyday use, folders, graphs, APIs, OKF, backups, and onboarding.',
+        'Quick answers about purpose, everyday use, folders, graphs, APIs, Containers & Kubernetes, OKF, backups, and onboarding.',
   ),
   _Page(
     slug: 'settings-appearance',
@@ -216,10 +216,16 @@ const _pages = <_Page>[
         'Use keyboard navigation, conflict-safe saves, and accessible controls.',
   ),
   _Page(
+    slug: 'container-operations',
+    title: 'Containers & Kubernetes',
+    description:
+        'Operate Docker/Compose and Kubernetes with application-first views, guided cluster/deploy workflows, compatibility packs, deterministic troubleshooting, RBAC identity guards, and unified activity safety.',
+  ),
+  _Page(
     slug: 'privacy-security',
     title: 'Privacy and security',
     description:
-        'Understand local-first files, protected values, execution trust, and user-initiated network actions.',
+        'Understand local-first files, protected values, container/runtime execution, compatibility-pack boundaries, execution trust, and user-initiated network actions.',
   ),
 ];
 
@@ -524,6 +530,12 @@ String _prepareManualTemplate(String source, String slug) {
         'Project context',
         'Windows + Android',
       ),
+    'container-operations' => (
+        'Containers & Kubernetes',
+        'Docker + Kubernetes',
+        'Safety + compatibility',
+        'Windows desktop runtime',
+      ),
     'diagram-studio' => (
         'Diagram Studio',
         'Visual tools',
@@ -565,6 +577,11 @@ String _prepareManualTemplate(String source, String slug) {
         '<small>Previous</small><strong>Interface tour</strong></a>'
         '<a class="pager" href="developer-workspaces.html">'
         '<small>Next</small><strong>Folders and portability</strong></a></div>',
+    'container-operations' => '<div class="article-footer">'
+        '<a class="pager" href="workspace-workbench.html">'
+        '<small>Related</small><strong>Workspace workbench</strong></a>'
+        '<a class="pager" href="troubleshooting.html">'
+        '<small>Next</small><strong>Troubleshooting</strong></a></div>',
     'diagram-studio' => '<div class="article-footer">'
         '<a class="pager" href="visual-canvas.html">'
         '<small>Previous</small><strong>Visual Canvas</strong></a>'

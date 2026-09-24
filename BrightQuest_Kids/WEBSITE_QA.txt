@@ -1,0 +1,26 @@
+BrightQuest Kids Website v2 — QA
+Prepared: 14 September 2026
+
+Scope completed
+- Kid-friendly BrightQuest Kids landing page with existing generated app logo.
+- Dedicated downloads.html page.
+- Google Play card present and intentionally fail-closed as Coming soon until a verified listing URL exists.
+- Microsoft Store card present and intentionally fail-closed as Coming soon until a verified listing URL exists.
+- Baisalya.com navigation action present across the main site pages.
+- Privacy policy rewritten as an app-specific public policy for the current local-first/no-ad/no-remote-analytics architecture.
+- PLAYSTORE_PRIVACY_RELEASE_CHECKLIST.txt included for release-time verification.
+- Sitemap updated with Downloads and Privacy URLs.
+- More colorful child-friendly visual polish added without making the legal pages difficult for parents to read.
+
+Static validation
+PASS 5/5 HTML pages contain titles, descriptions, canonical URLs, and resolvable local links.
+PASS index.html contains Downloads + Baisalya.com navigation.
+PASS downloads.html contains Google Play + Microsoft Store status and no invented store listing URL.
+PASS privacy.html contains developer identity, handled-data categories, collection/sharing explanation, children section, permissions, third-party links, retention/deletion, security, parent choices, changes, and contact.
+PASS sitemap.xml contains Downloads + Privacy.
+PASS CSS brace balance: 426 opening / 426 closing braces.
+PASS JavaScript syntax: node --check.
+PASS local HTTP smoke: index.html, downloads.html, privacy.html, support.html, terms.html all returned HTTP 200.
+
+Release note
+This website does not claim that Google Play or Microsoft has approved the app. Before store publication, the exact shipping app, SDKs, permissions, Data safety answers, Target audience/Families answers, billing state, and public policy must be rechecked together. Store buttons should only be activated with verified listing URLs.

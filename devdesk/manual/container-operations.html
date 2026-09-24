@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Operate Docker/Compose and Kubernetes with application-first views, guided cluster/deploy workflows, compatibility packs, deterministic troubleshooting, RBAC identity guards, and unified activity safety." name="description"/><meta content="#5b47e8" name="theme-color"/><title>Containers &amp; Kubernetes · DevDesk Manual</title><link href="../assets/img/devdesk-logo-64.png" rel="icon" sizes="64x64" type="image/png"/><link href="../assets/css/styles.css?v=20260909.1" rel="stylesheet"/><script defer="" src="../assets/js/site-config.js?v=20260909.1"></script><script defer="" src="../assets/js/search-index.js?v=20260909.1"></script><script defer="" src="../assets/js/app.js?v=20260909.1"></script><script defer="" src="../assets/js/manual-visuals.js?v=20260909.1"></script> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<link href="https://baisalya.com/devdesk/manual/container-operations.html" rel="canonical"/>
+<meta content="https://baisalya.com/devdesk/manual/container-operations.html" property="og:url"/>
+<link href="../../assets/site-network.css" rel="stylesheet"/><link href="../../assets/monetization/monetization.css" rel="stylesheet"/></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+<button aria-label="Open documentation menu" class="icon-btn mobile-menu" data-menu="" type="button">☰</button>
+<a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Your files. Your workspace.</small></span></a>
+<nav aria-label="Primary navigation" class="top-nav">
+<a class="" href="../index.html">Home</a>
+<a class="active" href="../manual/user-manual.html">Manual</a>
+<a class="" href="../downloads.html">Downloads</a>
+<a class="nav-demo" href="../downloads.html#agent-demo">Demo project</a>
+<a href="https://baisalya.github.io/devdesk-support/" rel="noopener noreferrer" target="_blank">Support</a>
+<a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy</a>
+<a aria-label="Visit Baisalya.com portfolio and software hub" class="baisalya-network-link" href="https://baisalya.com/">Baisalya.com</a></nav>
+<div class="header-actions">
+<button aria-label="Search manual" class="search-btn" data-search="" type="button"><span>Search manual</span> <kbd>/</kbd></button>
+<button aria-label="Toggle light and dark theme" class="icon-btn" data-theme-toggle="" type="button">◐</button>
+</div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside aria-label="Manual contents" class="docs-sidebar"><h2>Start here</h2>
+<a class="" href="../manual/visual-feature-guide.html">Visual feature guide</a>
+<a class="" href="../manual/workspace-workbench.html">Workspace workbench and tabs</a><a aria-current="page" class="active" href="../manual/container-operations.html">Containers &amp; Kubernetes</a>
+<a class="" href="../manual/user-manual.html">Complete user manual</a>
+<a class="" href="../manual/getting-started.html">Getting started</a>
+<a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
+<a class="" href="../manual/interface-tour.html">Interface tour</a>
+<h2>Knowledge and Markdown</h2>
+<a class="" href="../manual/developer-workspaces.html">Folders, portability, and Git</a>
+<a class="" href="../manual/project-folder-structure.html">Create a project knowledge structure</a>
+<a class="" href="../manual/markdown-basics.html">Markdown basics</a>
+<a class="" href="../manual/frontmatter-properties.html">YAML frontmatter and properties</a>
+<a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
+<a class="" href="../manual/knowledge-workspace.html">Edit workspace Markdown</a>
+<a class="" href="../manual/knowledge-graph.html">Relationships and graph</a>
+<a class="" href="../manual/diagram-studio.html">Diagram Studio</a>
+<a class="" href="../manual/visual-canvas.html">Visual Canvas</a>
+<a class="" href="../manual/structured-views.html">Structured workspace views</a>
+<a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
+<a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
+<a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
+<h2>Structure checks (OKF)</h2>
+<a class="" href="../manual/structured-knowledge-okf.html">Structure checks (OKF)</a>
+<a class="" href="../manual/okf-bundle-structure.html">OKF bundle structure</a>
+<a class="" href="../manual/okf-concepts-metadata.html">OKF concepts and metadata</a>
+<a class="" href="../manual/okf-conversion-migration.html">Analyze, convert, and migrate folders</a>
+<a class="" href="../manual/okf-trust-sources-lifecycle.html">Sources, trust, freshness, and lifecycle</a>
+<a class="" href="../manual/okf-attested-computation.html">Attested Computation</a>
+<h2>API and documentation</h2>
+<a class="" href="../manual/readme-generator.html">README Generator</a>
+<a class="" href="../manual/api-workspaces.html">Saved API testing</a>
+<a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
+<a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
+<a class="" href="../manual/quick-api.html">Quick API</a>
+<a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
+<a class="" href="../manual/unified-search.html">Search this workspace</a>
+<h2>Developer utilities</h2>
+<a class="" href="../manual/json-tools.html">JSON Tools</a>
+<a class="" href="../manual/jwt-decoder.html">JWT Decoder</a>
+<a class="" href="../manual/regex-tester.html">Regex Tester</a>
+<a class="" href="../manual/base64.html">Base64 Tool</a>
+<a class="" href="../manual/url-tools.html">URL Encoder and Decoder</a>
+<a class="" href="../manual/timestamp.html">Timestamp Converter</a>
+<a class="" href="../manual/uuid.html">UUID Generator</a>
+<a class="" href="../manual/diff-git.html">Compare files and scoped Git</a>
+<a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
+<h2>Safety and reference</h2>
+<a class="" href="../manual/notifications-routines.html">Notifications and AI routines</a>
+<a class="" href="../manual/ai-workbench.html">AI Harness, Workbench, and coding agents</a>
+<a class="" href="../manual/agent-connector.html">AI Agent Connector</a>
+<a class="" href="../manual/backup-restore.html">Backup and restore</a>
+<a class="" href="../manual/settings-appearance.html">Settings and appearance</a>
+<a class="" href="../manual/privacy-security.html">Privacy and security</a>
+<a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
+<a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Containers &amp; Kubernetes</span></div><div class="doc-meta"><span class="doc-chip">Docker + Kubernetes</span><span class="doc-chip">Safety + compatibility</span><span class="doc-chip">Windows desktop runtime</span></div><h1 id="containers-kubernetes">Containers &amp; Kubernetes<a aria-label="Link to Containers &amp; Kubernetes" class="heading-anchor" href="#containers-kubernetes">#</a></h1>
+<p>DevDesk <strong>Containers &amp; Kubernetes</strong> is a workspace-aware desktop operations surface for Docker, Docker Compose, and Kubernetes. It is designed so a user who does not live in terminals can still understand runtime state, create or operate workloads from a GUI, and see why an action is blocked before a destructive command runs.</p>
+<section aria-label="Real DevDesk Containers and Kubernetes interface" class="container-manual-gallery">
+<h2 id="real-interface">Real interface<a aria-label="Link to Real interface" class="heading-anchor" href="#real-interface">#</a></h2>
+<p>These screenshots show real DevDesk container-management surfaces. The current manual below also covers newer application, cluster, compatibility, troubleshooting, and safety workflows that may not all appear in these two captures.</p>
+<div class="container-real-ui">
+<figure class="container-product-shot">
+<a href="../assets/img/devdesk-containers-runtime-readiness.png" rel="noopener noreferrer" target="_blank"><img alt="DevDesk runtime readiness screen for Docker and Kubernetes." decoding="async" height="1020" loading="lazy" src="../assets/img/devdesk-containers-runtime-readiness.png" width="1920"/></a>
+<figcaption><strong>Runtime readiness</strong><span>Docker engine and Kubernetes cluster health, versions, context, namespace, and guarded operations.</span></figcaption>
+</figure>
+<figure class="container-product-shot">
+<a href="../assets/img/devdesk-docker-containers-management.png" rel="noopener noreferrer" target="_blank"><img alt="DevDesk Docker containers management screen." decoding="async" height="1020" loading="lazy" src="../assets/img/devdesk-docker-containers-management.png" width="1920"/></a>
+<figcaption><strong>Docker containers</strong><span>Search, filter, create, and control containers without leaving the active workspace.</span></figcaption>
+</figure>
+</div>
+</section>
+<h2 id="start-from-a-workspace">Start from a workspace<a aria-label="Link to Start from a workspace" class="heading-anchor" href="#start-from-a-workspace">#</a></h2>
+<p>Open a project and choose <strong>Containers &amp; Kubernetes</strong> from its project tools. The tool receives the selected workspace context, so operations stay connected to the project you are already using instead of silently switching to unrelated files or runtime state.</p>
+<p>Local Docker and <code>kubectl</code> execution is a desktop capability and requires explicit execution trust. Opening a project or viewing the manual does not run Docker, <code>kubectl</code>, kind, minikube, Compose, or a shell command automatically.</p>
+<h2 id="runtime-doctor-and-setup-center">Runtime Doctor and Setup Center<a aria-label="Link to Runtime Doctor and Setup Center" class="heading-anchor" href="#runtime-doctor-and-setup-center">#</a></h2>
+<p>Use <strong>Overview / Runtime Doctor</strong> before debugging an application. DevDesk separates tool installation problems from runtime problems and can report the readiness of:</p>
+<ul>
+<li>Docker CLI and Docker Engine;</li>
+<li><code>kubectl</code>;</li>
+<li>kubeconfig and the selected Kubernetes context;</li>
+<li>Kubernetes API reachability;</li>
+<li>selected namespace;</li>
+<li>read-only RBAC checks;</li>
+<li>kind or minikube when a local-cluster workflow needs them;</li>
+<li>detected version compatibility.</li>
+</ul>
+<p>If Docker is not installed, the engine is stopped, <code>kubectl</code> is missing, a context is stale, or the cluster cannot be reached, DevDesk shows that state as a product-level problem instead of presenting only raw command output.</p>
+<p>DevDesk does not silently install Docker, <code>kubectl</code>, kind, or minikube for you.</p>
+<h2 id="capability-driven-navigation">Capability-driven navigation<a aria-label="Link to Capability-driven navigation" class="heading-anchor" href="#capability-driven-navigation">#</a></h2>
+<p>The sidebar is derived from the capabilities that are actually available on the current device and runtime. A feature can be:</p>
+<ul>
+<li>available and enabled;</li>
+<li>visible but disabled with a reason because its runtime is not ready;</li>
+<li>hidden when the platform cannot support it;</li>
+<li>disabled by a validated compatibility rule when a known tool/version combination is unsafe or unsupported.</li>
+</ul>
+<p>A compatibility file cannot force-enable a capability that the current platform or runtime does not provide.</p>
+<h2 id="docker-applications">Docker Applications<a aria-label="Link to Docker Applications" class="heading-anchor" href="#docker-applications">#</a></h2>
+<p><strong>Docker → Applications</strong> is the beginner-friendly application view.</p>
+<ul>
+<li>A Docker Compose project is shown as one logical application rather than as a pile of unrelated containers.</li>
+<li>Compose-managed containers are not duplicated as standalone applications.</li>
+<li>Standalone containers appear as their own application cards.</li>
+<li>Scaled Compose services are evaluated by distinct services, while total container count remains visible separately.</li>
+<li>Common application actions include Start, Stop, Restart, Logs, Inspect, and Compose lifecycle actions where applicable.</li>
+</ul>
+<p>The lower-level <strong>Containers</strong>, <strong>Images</strong>, <strong>Volumes</strong>, <strong>Networks</strong>, and <strong>Compose</strong> screens remain available for users who need direct resource control.</p>
+<h2 id="create-a-docker-container-from-the-gui">Create a Docker container from the GUI<a aria-label="Link to Create a Docker container from the GUI" class="heading-anchor" href="#create-a-docker-container-from-the-gui">#</a></h2>
+<p>Choose <strong>Docker → Containers → Create container</strong>. The canonical wizard provides <strong>Simple</strong> and <strong>Advanced</strong> paths so a beginner can start with image/name/ports while an experienced user can add supported options deliberately.</p>
+<p>DevDesk uses Docker's create-then-start model:</p>
+<ol type="1">
+<li>validate the requested configuration;</li>
+<li>create the container;</li>
+<li>optionally start it when <strong>Start after creation</strong> is enabled;</li>
+<li>refresh the authoritative Docker view.</li>
+</ol>
+<p>If creation succeeds but startup fails, DevDesk preserves the created container and reports the partial result. It does not silently delete the resource you just created.</p>
+<p>Deletion remains explicit. Built-in Docker networks such as <code>bridge</code>, <code>host</code>, and <code>none</code> are protected from the ordinary delete path.</p>
+<h2 id="docker-compose-projects">Docker Compose projects<a aria-label="Link to Docker Compose projects" class="heading-anchor" href="#docker-compose-projects">#</a></h2>
+<p>Compose project operations stay connected to the selected workspace. DevDesk can show the project as one application while retaining the lower-level Compose surface for direct control.</p>
+<p>High-impact actions are separate:</p>
+<ul>
+<li><strong>Down</strong> requires the intended project identity;</li>
+<li>removing Compose volumes is a separate destructive acknowledgement;</li>
+<li>logs or inspection failures are surfaced instead of disappearing silently.</li>
+</ul>
+<h2 id="create-a-local-kubernetes-cluster">Create a local Kubernetes cluster<a aria-label="Link to Create a local Kubernetes cluster" class="heading-anchor" href="#create-a-local-kubernetes-cluster">#</a></h2>
+<p>Choose <strong>Kubernetes → Clusters → Create cluster</strong> for the guided local-cluster wizard.</p>
+<p>The provider architecture is capability-based rather than hard-coded into the UI:</p>
+<ul>
+<li><strong>kind</strong> supports its actual create/list/delete capability set;</li>
+<li><strong>minikube</strong> supports create/list/start/stop/delete plus its supported resource sizing controls;</li>
+<li>DevDesk does not pretend a provider supports actions it does not expose;</li>
+<li>duplicate cluster/profile names are checked before mutation;</li>
+<li>cluster names are validated before command execution.</li>
+</ul>
+<p>The wizard walks through provider selection, configuration, review, create, context activation, and Kubernetes API readiness. If cluster creation succeeds but a later context/readiness check fails, DevDesk preserves the created cluster and reports that verification needs attention instead of deleting the cluster automatically.</p>
+<p>Cluster deletion requires exact-name confirmation.</p>
+<h2 id="kubernetes-applications">Kubernetes Applications<a aria-label="Link to Kubernetes Applications" class="heading-anchor" href="#kubernetes-applications">#</a></h2>
+<p><strong>Kubernetes → Applications</strong> composes lower-level resources into a logical application view while keeping the raw resource screens available.</p>
+<p>DevDesk correlates resources from Kubernetes metadata rather than guessing from name prefixes:</p>
+<ul>
+<li>workload selectors and pod-template labels → Pods;</li>
+<li><code>matchLabels</code> and supported <code>matchExpressions</code> → matching Pods;</li>
+<li>Service selectors → application Pods;</li>
+<li>EndpointSlice metadata → Services;</li>
+<li>Ingress backends → Services;</li>
+<li>pod owner references → managed controller/event relationships;</li>
+<li>exact resource identities → relevant Warning events.</li>
+</ul>
+<p>The application view can summarize health as <strong>Healthy</strong>, <strong>Progressing</strong>, <strong>Warning</strong>, <strong>Critical</strong>, or <strong>Unknown</strong> from observed Kubernetes state.</p>
+<h2 id="guided-kubernetes-troubleshooting">Guided Kubernetes troubleshooting<a aria-label="Link to Guided Kubernetes troubleshooting" class="heading-anchor" href="#guided-kubernetes-troubleshooting">#</a></h2>
+<p>The troubleshooting engine is deterministic. It does not invent an AI diagnosis from free-form command output. It maps observed Kubernetes state to known problem classes such as:</p>
+<ul>
+<li><code>CrashLoopBackOff</code>, <code>BackOff</code>, and <code>OOMKilled</code>;</li>
+<li><code>ImagePullBackOff</code>, <code>ErrImagePull</code>, and related image-pull failures;</li>
+<li>unschedulable Pods;</li>
+<li>container configuration/create failures;</li>
+<li>failed container exits or failed Pods;</li>
+<li>readiness failures;</li>
+<li>workload replica shortages;</li>
+<li><code>ProgressDeadlineExceeded</code> or other failed controller conditions;</li>
+<li>failed Jobs;</li>
+<li>required ConfigMap or Secret metadata that is missing;</li>
+<li>Services with no matching or ready application backends;</li>
+<li>relevant Kubernetes Warning events.</li>
+</ul>
+<p>Historical <code>lastState</code> data is not treated as a current crash after a container has recovered. Likewise, DevDesk avoids absence-based diagnoses when the relevant Pods, configuration, network, or Events collection could not be read successfully.</p>
+<p>Guided actions reuse the normal guarded operation paths, including Describe, Rollout Status, Restart, Scale, Logs, Previous Logs, and Terminal where supported.</p>
+<h2 id="deploy-app-without-writing-yaml-first">Deploy App without writing YAML first<a aria-label="Link to Deploy App without writing YAML first" class="heading-anchor" href="#deploy-app-without-writing-yaml-first">#</a></h2>
+<p>Choose <strong>Kubernetes → Deploy App</strong> for the visual application builder. The form can describe:</p>
+<ul>
+<li>container image;</li>
+<li>replicas;</li>
+<li>container and Service ports;</li>
+<li>environment values;</li>
+<li>CPU and memory requests/limits;</li>
+<li>readiness and liveness probes;</li>
+<li>optional Service exposure.</li>
+</ul>
+<p>DevDesk generates standard Deployment and optional Service YAML and shows the generated manifest for review before mutation. The visual builder does not hide declarative configuration from you.</p>
+<p>Do not place real secrets in ordinary environment-value fields. DevDesk does not generate Kubernetes Secret values from this beginner form.</p>
+<h2 id="advanced-kubernetes-resource-areas">Advanced Kubernetes resource areas<a aria-label="Link to Advanced Kubernetes resource areas" class="heading-anchor" href="#advanced-kubernetes-resource-areas">#</a></h2>
+<p>The raw resource architecture stays split so one busy collection does not become a monolithic state controller. Current areas include:</p>
+<ul>
+<li>Workloads;</li>
+<li>Pods;</li>
+<li>Network;</li>
+<li>Configuration;</li>
+<li>Storage;</li>
+<li>Nodes;</li>
+<li>Events.</li>
+</ul>
+<p>Common diagnostics and mutations use a shared coordination layer. Context or namespace changes invalidate the relevant cached collections, and stale requests are prevented from overwriting the newly selected identity.</p>
+<p>High-impact resource types such as Node, PersistentVolume, and StorageClass are protected from the ordinary delete workflow. Other resource deletion requires explicit confirmation.</p>
+<h2 id="safe-yaml-deployment-transaction">Safe YAML deployment transaction<a aria-label="Link to Safe YAML deployment transaction" class="heading-anchor" href="#safe-yaml-deployment-transaction">#</a></h2>
+<p>Both workspace YAML deployment and the visual Deploy App builder share a guarded deployment workflow:</p>
+<ol type="1">
+<li>client-side validation;</li>
+<li>Kubernetes server dry-run;</li>
+<li>diff;</li>
+<li>apply after explicit confirmation;</li>
+<li>bounded rollout verification;</li>
+<li>optional workload recovery when explicitly enabled.</li>
+</ol>
+<p>DevDesk does <strong>not</strong> claim that arbitrary Kubernetes Apply is an atomic transaction. Optional automatic recovery is limited to rollout-capable workloads such as Deployment, StatefulSet, and DaemonSet revisions. Service, ConfigMap, Secret, PVC, and other unrelated manifest changes are reported as non-rollbackable rather than being silently deleted or recreated.</p>
+<p>Automatic <code>--force-conflicts</code> is not used.</p>
+<p>If a rollout verification fails and recovery is enabled, DevDesk can attempt a workload-scoped rollout undo and report full, partial, or failed recovery without hiding the original deployment failure.</p>
+<h2 id="context-namespace-and-rbac-guard">Context, namespace, and RBAC guard<a aria-label="Link to Context, namespace, and RBAC guard" class="heading-anchor" href="#context-namespace-and-rbac-guard">#</a></h2>
+<p>Before guarded Kubernetes operations, DevDesk checks that the runtime still matches the selected <strong>context</strong> and, for namespaced work, the selected <strong>namespace</strong>.</p>
+<p>For supported operations it also performs a read-only <code>kubectl auth can-i --quiet</code> preflight for the required verb/resource or subresource. Examples include:</p>
+<ul>
+<li><code>get</code> for inspection;</li>
+<li><code>delete</code> for deletion;</li>
+<li><code>patch</code> for supported rollout restart paths;</li>
+<li><code>update</code> on a workload scale subresource;</li>
+<li><code>get</code> on the Pod log subresource;</li>
+<li><code>create</code> on the Pod exec subresource;</li>
+<li><code>get secrets</code> before an explicit Secret reveal.</li>
+</ul>
+<p>A failed or unavailable authorization check fails closed for the guarded action. DevDesk does not use Kubernetes impersonation flags such as <code>--as</code>, <code>--as-group</code>, or <code>--as-uid</code> in this workflow.</p>
+<p>Secret values remain behind an explicit reveal action and are not copied into ordinary application summaries or durable activity records.</p>
+<h2 id="unified-operation-engine">Unified Operation Engine<a aria-label="Link to Unified Operation Engine" class="heading-anchor" href="#unified-operation-engine">#</a></h2>
+<p>Docker and Kubernetes mutation controllers share a central operation engine for cross-screen safety.</p>
+<p>It provides:</p>
+<ul>
+<li>operation keys and conflict/exclusivity groups;</li>
+<li>duplicate/conflicting mutation blocking;</li>
+<li>bounded caller-facing timeouts;</li>
+<li>normalized failures;</li>
+<li>stale Kubernetes identity detection;</li>
+<li>unified activity lifecycle records.</li>
+</ul>
+<p>A timeout returned to the UI does not immediately release a conflicting-operation lock while the underlying Docker or Kubernetes future is still running. The lock remains until that underlying operation settles, preventing a second mutation from racing the first one on the same protected target.</p>
+<p>Local per-screen busy indicators remain as UI feedback, while the shared engine coordinates the actual cross-controller conflict boundary.</p>
+<h2 id="activity-safety">Activity &amp; Safety<a aria-label="Link to Activity &amp; Safety" class="heading-anchor" href="#activity-safety">#</a></h2>
+<p>The Activity &amp; Safety center keeps a bounded local history of operation metadata such as action, target, scope, runtime, safety class, status, timestamps, and user-safe failure information.</p>
+<p>It deliberately avoids persisting:</p>
+<ul>
+<li>stdout or stderr;</li>
+<li>environment values;</li>
+<li>kubeconfig credentials;</li>
+<li>Kubernetes Secret values;</li>
+<li>raw technical details that may contain sensitive data.</li>
+</ul>
+<p>If DevDesk restarts while a persisted operation still says <strong>running</strong>, that old record is recovered as an interrupted operation rather than being shown as permanently active.</p>
+<h2 id="compatibility-center-and-compatibility-packs">Compatibility Center and Compatibility Packs<a aria-label="Link to Compatibility Center and Compatibility Packs" class="heading-anchor" href="#compatibility-center-and-compatibility-packs">#</a></h2>
+<p>Use <strong>Compatibility</strong> to inspect detected runtime versions and compatibility decisions. DevDesk can evaluate Docker CLI/Engine, <code>kubectl</code>, Kubernetes server, kind, and minikube versions.</p>
+<p>Compatibility Packs are small JSON or YAML <strong>data files</strong>, not plugins or scripts. A validated pack can describe supported version ranges, warnings, feature disables, safe resource aliases, and narrowly bounded argument substitutions for known DevDesk-owned operations.</p>
+<p>Security boundaries:</p>
+<ul>
+<li>a pack cannot choose an executable or arbitrary subcommand chain;</li>
+<li>shell/PowerShell/script execution is not supported;</li>
+<li>dangerous or identity-changing flags are rejected;</li>
+<li>kubeconfig/context/namespace/file-target/credential/certificate injection is blocked;</li>
+<li>an unverified local pack cannot alter mutation-operation flags;</li>
+<li>signed packs can be verified with Ed25519 against a public key that the user explicitly trusts;</li>
+<li>DevDesk does not invent a trusted publisher key for you.</li>
+</ul>
+<p>This design lets many future Docker/Kubernetes CLI compatibility changes be handled as validated data while still requiring a real DevDesk update for fundamental protocol, security, authentication, or architectural changes.</p>
+<h2 id="beginner-workflows">Beginner workflows<a aria-label="Link to Beginner workflows" class="heading-anchor" href="#beginner-workflows">#</a></h2>
+<h3 id="i-only-want-to-run-one-docker-container">I only want to run one Docker container<a aria-label="Link to I only want to run one Docker container" class="heading-anchor" href="#i-only-want-to-run-one-docker-container">#</a></h3>
+<ol type="1">
+<li>Open <strong>Containers &amp; Kubernetes</strong>.</li>
+<li>Check Runtime Doctor until Docker Engine is ready.</li>
+<li>Open <strong>Docker → Containers → Create container</strong>.</li>
+<li>Enter the image and only the options you understand.</li>
+<li>Review the configuration and create it.</li>
+<li>Use <strong>Docker → Applications</strong> for the simpler application-level view.</li>
+</ol>
+<h3 id="i-want-a-local-kubernetes-cluster">I want a local Kubernetes cluster<a aria-label="Link to I want a local Kubernetes cluster" class="heading-anchor" href="#i-want-a-local-kubernetes-cluster">#</a></h3>
+<ol type="1">
+<li>Check that <code>kubectl</code> and your chosen provider are available.</li>
+<li>Open <strong>Kubernetes → Clusters → Create cluster</strong>.</li>
+<li>Choose kind or minikube according to the capabilities shown.</li>
+<li>Review the cluster configuration.</li>
+<li>Create the cluster and let DevDesk activate/verify the context.</li>
+<li>If verification needs attention, keep the created cluster and use Runtime Doctor instead of recreating it blindly.</li>
+</ol>
+<h3 id="i-want-to-deploy-an-application">I want to deploy an application<a aria-label="Link to I want to deploy an application" class="heading-anchor" href="#i-want-to-deploy-an-application">#</a></h3>
+<ol type="1">
+<li>Confirm the intended context and namespace.</li>
+<li>Use <strong>Deploy App</strong> for the visual builder, or choose workspace YAML.</li>
+<li>Review generated/configured YAML.</li>
+<li>Read validation, server dry-run, and diff results.</li>
+<li>Confirm Apply.</li>
+<li>Follow rollout verification and Activity &amp; Safety.</li>
+</ol>
+<h3 id="my-kubernetes-app-is-unhealthy">My Kubernetes app is unhealthy<a aria-label="Link to My Kubernetes app is unhealthy" class="heading-anchor" href="#my-kubernetes-app-is-unhealthy">#</a></h3>
+<ol type="1">
+<li>Open <strong>Kubernetes → Applications</strong>.</li>
+<li>Read the health summary and deterministic finding.</li>
+<li>Start with Describe, Logs, Previous Logs, or Rollout Status as suggested.</li>
+<li>Fix the underlying image/config/scheduling/readiness problem.</li>
+<li>Restart or scale only when the evidence supports that action.</li>
+</ol>
+<h2 id="common-problems">Common problems<a aria-label="Link to Common problems" class="heading-anchor" href="#common-problems">#</a></h2>
+<table>
+<thead>
+<tr class="header">
+<th>What you see</th>
+<th>What to check first</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Docker unavailable</td>
+<td>Docker CLI installation and Docker Engine state in Runtime Doctor</td>
+</tr>
+<tr class="even">
+<td><code>kubectl</code> unavailable</td>
+<td><code>kubectl</code> installation and PATH</td>
+</tr>
+<tr class="odd">
+<td>Cluster unreachable</td>
+<td>selected context, kubeconfig, API reachability, network/VPN</td>
+</tr>
+<tr class="even">
+<td>Wrong namespace</td>
+<td>current namespace in the Kubernetes header/Runtime Doctor</td>
+</tr>
+<tr class="odd">
+<td>Permission denied</td>
+<td>RBAC preflight result and the required verb/resource</td>
+</tr>
+<tr class="even">
+<td>Image pull failure</td>
+<td>image reference, registry access, and Pod events</td>
+</tr>
+<tr class="odd">
+<td>Crash loop</td>
+<td>Previous Logs, Pod Describe, exit reason, OOM state</td>
+</tr>
+<tr class="even">
+<td>Service has no ready backend</td>
+<td>Service selector and Pod readiness</td>
+</tr>
+<tr class="odd">
+<td>Apply succeeded but rollout failed</td>
+<td>rollout details; optional workload recovery if deliberately enabled</td>
+</tr>
+<tr class="even">
+<td>Compatibility Pack rejected</td>
+<td>schema, size, blocked fields/flags, signature/trust state</td>
+</tr>
+<tr class="odd">
+<td>Operation already running</td>
+<td>Activity &amp; Safety; wait for the underlying protected operation to settle</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="troubleshooting.html">Troubleshooting</a> for recovery steps shared with the rest of DevDesk.</p>
+<h2 id="desktop-and-android-boundary">Desktop and Android boundary<a aria-label="Link to Desktop and Android boundary" class="heading-anchor" href="#desktop-and-android-boundary">#</a></h2>
+<p>Local Docker, Docker Compose, <code>kubectl</code>, kind, and minikube execution requires a supported desktop runtime. The same DevDesk product or entitlement can be recognized on Android, but this release does <strong>not</strong> claim that Android runs a local Docker/Kubernetes runtime or that DevDesk provides a remote container-control service.</p>
+<h2 id="access-and-monetization">Access and monetization<a aria-label="Link to Access and monetization" class="heading-anchor" href="#access-and-monetization">#</a></h2>
+<p>Containers &amp; Kubernetes belongs to DevDesk's advanced Builder capability set. Access can be provided by the applicable Builder entitlement or an All Access entitlement according to the current store/app configuration. This manual does not replace the live offer or pricing shown by the app/store.</p>
+<h2 id="safety-checklist">Safety checklist<a aria-label="Link to Safety checklist" class="heading-anchor" href="#safety-checklist">#</a></h2>
+<ol type="1">
+<li>Confirm the workspace before opening container operations.</li>
+<li>Confirm Docker runtime readiness before changing containers.</li>
+<li>Confirm Kubernetes context <strong>and namespace</strong> before cluster mutations.</li>
+<li>Read RBAC/preflight failures instead of bypassing them externally.</li>
+<li>Review generated YAML, server dry-run, and diff before Apply.</li>
+<li>Keep automatic recovery opt-in; understand what Kubernetes resources are not rollbackable.</li>
+<li>Treat delete confirmations as final identity checks.</li>
+<li>Import Compatibility Packs only from sources you understand; trust signing keys deliberately.</li>
+<li>Never place credentials or Secret values in compatibility files or ordinary app-builder environment fields.</li>
+<li>Review <strong>Activity &amp; Safety</strong> after mutations and before assuming refreshed state is current.</li>
+</ol>
+<div class="article-footer"><a class="pager" href="workspace-workbench.html"><small>Related</small><strong>Workspace workbench</strong></a><a class="pager" href="troubleshooting.html"><small>Next</small><strong>Troubleshooting</strong></a></div></article><aside aria-label="Advertisement" class="monetization-ad" data-ad-context="getting-started" data-ad-unit="manual" hidden=""></aside></main><aside aria-label="On this page" class="toc"><h2>On this page</h2><a class="level-2" href="#real-interface">Real interface</a><a class="level-2" href="#start-from-a-workspace">Start from a workspace</a><a class="level-2" href="#runtime-doctor-and-setup-center">Runtime Doctor and Setup Center</a><a class="level-2" href="#capability-driven-navigation">Capability-driven navigation</a><a class="level-2" href="#docker-applications">Docker Applications</a><a class="level-2" href="#create-a-docker-container-from-the-gui">Create a Docker container from the GUI</a><a class="level-2" href="#docker-compose-projects">Docker Compose projects</a><a class="level-2" href="#create-a-local-kubernetes-cluster">Create a local Kubernetes cluster</a><a class="level-2" href="#kubernetes-applications">Kubernetes Applications</a><a class="level-2" href="#guided-kubernetes-troubleshooting">Guided Kubernetes troubleshooting</a><a class="level-2" href="#deploy-app-without-writing-yaml-first">Deploy App without writing YAML first</a><a class="level-2" href="#advanced-kubernetes-resource-areas">Advanced Kubernetes resource areas</a><a class="level-2" href="#safe-yaml-deployment-transaction">Safe YAML deployment transaction</a><a class="level-2" href="#context-namespace-and-rbac-guard">Context, namespace, and RBAC guard</a><a class="level-2" href="#unified-operation-engine">Unified Operation Engine</a><a class="level-2" href="#activity-safety">Activity &amp; Safety</a><a class="level-2" href="#compatibility-center-and-compatibility-packs">Compatibility Center and Compatibility Packs</a><a class="level-2" href="#beginner-workflows">Beginner workflows</a><a class="level-3" href="#i-only-want-to-run-one-docker-container">I only want to run one Docker container</a><a class="level-3" href="#i-want-a-local-kubernetes-cluster">I want a local Kubernetes cluster</a><a class="level-3" href="#i-want-to-deploy-an-application">I want to deploy an application</a><a class="level-3" href="#my-kubernetes-app-is-unhealthy">My Kubernetes app is unhealthy</a><a class="level-2" href="#common-problems">Common problems</a><a class="level-2" href="#desktop-and-android-boundary">Desktop and Android boundary</a><a class="level-2" href="#access-and-monetization">Access and monetization</a><a class="level-2" href="#safety-checklist">Safety checklist</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" rel="noopener noreferrer" target="_blank">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" rel="noopener noreferrer" target="_blank">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" rel="noopener noreferrer" target="_blank">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div aria-hidden="true" class="search-overlay" data-search-overlay=""><div aria-label="Search DevDesk documentation" aria-modal="true" class="search-panel" role="dialog"><input autocomplete="off" data-search-input="" placeholder="Search manuals, commands, OKF, graph, APIs…" type="search"/><div class="search-results" data-search-results=""><div class="empty-search">Start typing to search the complete manual.</div></div></div></div><script src="../../assets/monetization/config.js"></script><script defer="" src="../../assets/monetization/monetization.js"></script></body></html>

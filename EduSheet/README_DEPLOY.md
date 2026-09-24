@@ -19,3 +19,10 @@ The same folder can be uploaded directly to Netlify, Cloudflare Pages, Firebase 
 
 ## Language switch
 English/Hinglish selection is stored locally in the browser with `localStorage`. No language preference is sent anywhere.
+
+
+## Teacher Planner website update — 2026-09-09
+- Added `teacher-planner.html` with responsive product visualization and progress graph.
+- Added Planner navigation/footer links and homepage/features discovery.
+- Added sitemap entry.
+- Monetization remains consent-gated: the new page only declares the same hidden `monetization-ad` surface and does not add raw AdSense code or extra ad slots.

@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Privacy Policy for the DevDesk local-first developer workspace, AI Workbench, and optional network features on Android and Windows." name="description"/>
+<meta content="Privacy Policy for the DevDesk local-first workspace, AI Workbench, Containers & Kubernetes, and optional network features on Android and Windows." name="description"/>
 <link href="https://baisalya.com/devdesk/privacy-policy.html" rel="canonical"/>
 <title>DevDesk Privacy Policy</title>
 <style>
@@ -47,7 +47,7 @@
 <main><h1 id="devdesk-privacy-policy">DevDesk Privacy Policy</h1>
 <p><strong>Effective date:</strong> 20 August 2026
 <strong>Policy version:</strong> 2026-08-20.1</p>
-<p>DevDesk is a local-first developer workspace for Android and Windows. This policy explains what stays on your device, what is sent when you use a network feature, and how Android and Windows check for app updates.</p>
+<p>DevDesk is a local-first workspace for Android and Windows. This policy explains what stays on your device, what is sent when you use a network feature, and how Android and Windows check for app updates.</p>
 <blockquote>
 <p>DevDesk has no account, advertising, analytics, telemetry, cloud sync, or DevDesk-operated backend. Optional local feature packs are handled by Google Play or Microsoft Store.</p>
 </blockquote>
@@ -84,6 +84,7 @@
 <li>AI Harness sends a bounded device file or image only after you explicitly attach it and send the request. Image input requires a model that advertises vision support. Image bytes are transient request input and are not persisted in DevDesk chat history or backups.</li>
 <li>The optional AI Agent Connector accepts authenticated loopback requests from a compatible client on the same device. That client and its configured model provider determine where permitted connector context is processed.</li>
 <li>External MCP tools connect to the server you configure. Only explicitly trusted read-only tools are exposed by the current workbench policy; the server still receives the request needed to perform a permitted tool call.</li>
+<li>Desktop Containers &amp; Kubernetes actions can invoke the locally installed Docker/Compose/kubectl/kind/minikube toolchain after explicit execution trust. Image pulls, registry access, Compose actions, and Kubernetes commands can contact registries or cluster API endpoints configured by you or by those runtimes. DevDesk does not proxy these operations through a Baisalya-operated container service.</li>
 <li>When you explicitly enable the J1-J3 Browser Agent, loopback development URLs can be opened in its isolated visible browser. Public HTTP/HTTPS navigation additionally requires the External research &amp; MCP permission and connects directly from your device to the destination website. The Browser Agent does not reuse your normal Edge cookies, passwords, or signed-in state. J2 can read bounded semantic control labels/state and perform user-approved semantic interactions; typed values are not returned in tool results, and password/file/payment/OTP-marked fields are blocked.</li>
 <li>Rating, store, website, downloads, support, privacy, repository, and release actions open the external destination you select.</li>
 <li>After privacy acknowledgement and onboarding, the Android or Windows app may download a small public JSON release manifest from the official DevDesk GitHub Pages site. The installed package name, version, and build number are compared locally and are not added to the manifest request.</li>
@@ -113,6 +114,7 @@
 <p>Device administrators, malware, screen capture, clipboard managers, synchronized clipboard services, compromised devices, operating-system backups, and destination-service security are outside DevDesk control.</p>
 <p>Android application backup and device-transfer extraction are disabled for DevDesk private application data. Windows data follows the current Windows user profile and its configured backup policy.</p>
 <p>Approved Windows terminal commands and project checks run with the current Windows user's authority. DevDesk permission and classification controls are not an operating-system sandbox. Parallel implementation workers remain in isolated Git worktrees and require a reviewed integration proposal.</p>
+<p>Guarded Kubernetes operations verify the selected context/namespace and can use read-only RBAC authorization preflight. Container activity history is bounded and excludes stdout/stderr, environment values, kubeconfig credentials, and Kubernetes Secret values. Compatibility Packs are validated data files rather than executable plugins; they cannot define arbitrary shell/PowerShell commands or bypass the runtime/RBAC identity boundary.</p>
 <p>Browser Agent uses a visible isolated Edge profile, blocks automated sensitive-field entry, and supports explicit user-control handoff. No browser isolation or automatic redaction mechanism can guarantee that a destination page is trustworthy.</p>
 <h2 id="10-retention-and-deletion">10. Retention and deletion</h2>
 <p>Local records remain until you delete an available record, use Clear All Data, clear DevDesk data through the operating system, uninstall DevDesk, or an application limit removes older history.</p>

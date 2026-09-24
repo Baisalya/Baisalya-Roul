@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://baisalya.com/devdesk/</loc><lastmod>2026-08-28</lastmod></url>
+<url><loc>https://baisalya.com/devdesk/</loc><lastmod>2026-09-09</lastmod></url>
 <url><loc>https://baisalya.com/devdesk/downloads.html</loc></url>
-<url><loc>https://baisalya.com/devdesk/privacy-policy.html</loc></url>
+<url><loc>https://baisalya.com/devdesk/privacy-policy.html</loc><lastmod>2026-09-09</lastmod></url>
 <url><loc>https://baisalya.com/devdesk/manual/user-manual.html</loc></url>
 <url><loc>https://baisalya.com/devdesk/manual/visual-feature-guide.html</loc></url>
 <url><loc>https://baisalya.com/devdesk/manual/getting-started.html</loc></url>
@@ -52,5 +52,11 @@
 <url><loc>https://baisalya.com/devdesk/manual/privacy-security.html</loc></url>
 <url><loc>https://baisalya.com/devdesk/manual/keyboard-shortcuts.html</loc></url>
 <url><loc>https://baisalya.com/devdesk/manual/troubleshooting.html</loc></url>
-<url><loc>https://baisalya.com/devdesk/manual/faq.html</loc></url>
+<url><loc>https://baisalya.com/devdesk/manual/faq.html</loc><lastmod>2026-09-09</lastmod></url>
+  <url>
+    <loc>https://baisalya.com/devdesk/manual/container-operations.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

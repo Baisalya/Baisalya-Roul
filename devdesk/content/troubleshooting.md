@@ -71,6 +71,47 @@ with** for deliberate comparison.
 - On Android, use safe file editing or Compare & Diff, then open the same folder
   in Windows DevDesk for the Git workbench.
 
+## Containers & Kubernetes does not work
+
+Start with **Containers & Kubernetes → Overview / Runtime Doctor** instead of retrying the same mutation.
+
+### Docker is unavailable
+
+- Confirm the Docker CLI is installed.
+- Confirm Docker Engine/Desktop is actually running.
+- Recheck Runtime Doctor after Docker finishes starting.
+- If container creation succeeded but startup failed, look for the preserved created container before creating another one.
+
+### Kubernetes is unavailable or points to the wrong cluster
+
+- Confirm `kubectl` is installed and visible to DevDesk.
+- Check kubeconfig, the selected context, API reachability, and namespace.
+- Do not retry a mutation after switching context/namespace until the new identity is visible in DevDesk.
+- If a local-cluster create succeeded but readiness verification failed, keep that cluster and diagnose context/API readiness rather than recreating it blindly.
+
+### RBAC blocks an action
+
+DevDesk performs read-only `kubectl auth can-i --quiet` checks for guarded operations. A failed or unavailable authorization check fails closed. Confirm the required Kubernetes verb/resource or subresource with your cluster administrator instead of bypassing the guard.
+
+### An application is unhealthy
+
+Open **Kubernetes → Applications** and use the deterministic finding first. Common evidence includes image-pull errors, crash loops, OOM termination, scheduling failures, readiness problems, replica shortages, failed Jobs, missing required configuration metadata, Service backend problems, and Warning events. Historical recovered container state is not treated as a current failure.
+
+### Apply succeeded but rollout verification failed
+
+Review the rollout result. Optional automatic recovery is limited to rollout-capable workloads and is off unless deliberately enabled. Service, ConfigMap, Secret, PVC, and other arbitrary manifest changes are not falsely presented as rollbackable.
+
+### Compatibility Pack is rejected
+
+- Check that the file is supported JSON or YAML and within the documented size limit.
+- Remove unknown schema fields or blocked command/identity/credential options.
+- An unverified local pack cannot patch mutation-operation flags.
+- Only trust an Ed25519 signing key when you understand who controls it.
+
+### Operation says another action is already running
+
+Open **Activity & Safety**. The shared operation engine blocks conflicting mutations. A caller-facing timeout does not release that conflict lock until the underlying protected Docker/Kubernetes operation settles.
+
 ## API request fails
 
 - Check the final URL and HTTPS.

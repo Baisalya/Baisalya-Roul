@@ -1,0 +1,19 @@
+BrightQuest Kids — Google Play Privacy / Families release checklist
+Last prepared: 14 September 2026
+
+This is a release checklist, not a claim that Google has approved the app.
+
+Before Play submission:
+[ ] Host privacy.html at https://baisalya.com/brightquest-kids/privacy.html over HTTPS.
+[ ] Add that exact URL in Play Console > App content > Privacy policy.
+[ ] Keep an in-app path to the same privacy policy from the parent/about area.
+[ ] Complete Data safety even if the final app collects/shares no user data.
+[ ] Make every Data safety answer match the final AAB and all included SDKs.
+[ ] Complete Target audience and content accurately.
+[ ] If children are in the target audience, complete the Families requirements for the final build.
+[ ] Declare Ads accurately. Current site/app architecture states no ad SDK.
+[ ] Verify final AndroidManifest.xml permissions. Current release manifest has no location/camera/microphone/contacts/AD_ID permission.
+[ ] Verify no newly added SDK transmits child identifiers or learning data.
+[ ] Verify store listing, screenshots, website and privacy wording do not promise features absent from the shipping build.
+[ ] If billing becomes active, update privacy/data-safety disclosures if data handling changes.
+[ ] Replace Coming soon controls only with verified Google Play / Microsoft Store listing URLs.

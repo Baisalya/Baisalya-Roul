@@ -1,0 +1,7 @@
+assets/css/styles.css
+assets/js/site.js
+features.html
+index.html
+manual.html
+sitemap.xml
+teacher-planner.html

@@ -124,7 +124,7 @@ for(const required of [
   'index.html','privacy.html','style.css','main.js','robots.txt','sitemap.xml','sitemap-pages.xml','assets/brand/baisalya-og.png',
   'assets/monetization/config.js','assets/monetization/monetization.js','assets/monetization/monetization.css',
   'src/site/main.js','devdesk/index.html','construction-erp/index.html','shoppilot-erp/index.html',
-  'EduSheet/index.html','EduSheet/assets/css/styles.css','surveycam/index.html','surveycam/privacy.html',
+  'EduSheet/index.html','EduSheet/teacher-planner.html','EduSheet/assets/css/styles.css','surveycam/index.html','surveycam/privacy.html',
   'surveycam/support.html','surveycam/assets/surveycam-logo.png','notivault-website/index.html','notivault-website/sitemap.xml',
   'notivault-website/privacy-policy/index.html','notivault-website/public/og-deleted-message.png',
   'sitesnap/index.html','sitesnap/sitemap.xml','server/index.js','release-manifest.json',
@@ -138,6 +138,22 @@ const index=await readFile(path.join(root,'index.html'),'utf8');
 for(const expected of ['https://baisalya.com/','href="/EduSheet/"','href="/surveycam/"','href="/notivault-website/"','href="/sitesnap/"']){
   if(!index.includes(expected)) failures.push(`Production root identity missing: ${expected}`);
 }
+for(const expected of [
+  'https://apps.microsoft.com/detail/9N0ZK8C31X94?cid=DevShareMCLPCB',
+  'EduSheet is more than a question-paper maker',
+  'Syllabus management',
+]){
+  if(!index.includes(expected)) failures.push(`Production EduSheet portfolio contract missing: ${expected}`);
+}
+const eduSheetHome=await readFile(path.join(root,'EduSheet/index.html'),'utf8');
+const eduSheetConfig=await readFile(path.join(root,'EduSheet/assets/js/site.js'),'utf8');
+for(const expected of [
+  'complete teacher workspace—not only a question-paper maker',
+  'https://apps.microsoft.com/detail/9N0ZK8C31X94?cid=DevShareMCLPCB',
+]){
+  if(!`${eduSheetHome}\n${eduSheetConfig}`.includes(expected)) failures.push(`Production EduSheet site contract missing: ${expected}`);
+}
+if(`${eduSheetHome}\n${eduSheetConfig}`.includes('9N8NH1LMZX1S')) failures.push('Production EduSheet still points to the DevDesk Microsoft Store ID.');
 const monetizationConfig=await readFile(path.join(root,'assets/monetization/config.js'),'utf8');
 const notiVaultHome=await readFile(path.join(root,'notivault-website/index.html'),'utf8');
 if(!/type=["']application\/ld\+json["']/i.test(notiVaultHome)) failures.push('Production NotiVault structured data missing.');
@@ -156,6 +172,13 @@ if(adsEnabled){
   if(!monetizationConfig.includes('consentReady: true')) failures.push('AdSense enabled without consent-ready gate.');
   if(!/ca-pub-\d{10,20}/.test(monetizationConfig)) failures.push('AdSense enabled without a valid publisher client.');
   if(!(await exists('ads.txt'))) failures.push('AdSense enabled but ads.txt is missing.');
+}
+if(!(await exists('app-ads.txt'))) failures.push('AdMob app-ads.txt is missing from the domain root.');
+else {
+  const appAds=await readFile(path.join(root,'app-ads.txt'),'utf8');
+  if(!appAds.includes('google.com, pub-1529558529658186, DIRECT, f08c47fec0942fa0')) {
+    failures.push('AdMob app-ads.txt publisher authorization is incorrect.');
+  }
 }
 async function deployedAdCount(relativeFile){
   const source=await readFile(path.join(root,relativeFile),'utf8');

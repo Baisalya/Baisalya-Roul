@@ -132,6 +132,26 @@ protection. Save As exports an independent copy. Markdown, JSON, and OpenAPI
 documents keep their specialist editors, and binary files are not treated as
 general text.
 
+## Does DevDesk install Docker, kubectl, kind, or minikube for me?
+
+No. Runtime Doctor can explain what is missing or not ready, but DevDesk does not silently install or replace your container/Kubernetes toolchain. Install and manage those runtimes through their normal trusted channels.
+
+## Can I use Containers & Kubernetes without knowing every CLI command?
+
+Yes. Docker Applications, Create Container, Create Cluster, Kubernetes Applications, Deploy App, guided troubleshooting, and Compatibility Center are designed to expose common workflows through the GUI. Advanced resource screens remain available when you need the underlying Docker or Kubernetes objects.
+
+## Are Compatibility Packs executable plugins?
+
+No. They are validated JSON/YAML data. They can describe version compatibility, warnings, feature disables, bounded resource aliases, and narrowly allowed argument substitutions for DevDesk-owned operations. They cannot define arbitrary shell/PowerShell commands, replace the executable, inject kubeconfig/context/namespace/credential targets, or bypass identity/RBAC guards.
+
+## Can DevDesk automatically undo every failed Kubernetes Apply?
+
+No. Kubernetes Apply is not treated as an atomic transaction. Optional recovery is limited to rollout-capable workload revisions such as Deployment, StatefulSet, and DaemonSet. Service, ConfigMap, Secret, PVC, and other arbitrary manifest changes are reported separately rather than being falsely presented as rollbackable.
+
+## Does Android run Docker or Kubernetes through DevDesk?
+
+No. Local Docker, Compose, `kubectl`, kind, and minikube execution is a supported desktop-runtime capability. Android can share the DevDesk product experience and entitlement, but this release does not provide a local Android container runtime or a DevDesk-operated remote container service.
+
 ## Why is macOS shown without a download?
 
 A platform card communicates availability. It does not claim a signed, notarized package exists before one is released.

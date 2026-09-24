@@ -1,6 +1,6 @@
 # DevDesk website build report
 
-Date: 2026-07-29
+Date: 2026-09-09
 
 ## Delivered in this repository
 
@@ -40,6 +40,8 @@ uses preserve the supplied URL and open it with safe external-link attributes.
 - API Workspaces, OpenAPI Studio, JSON tools, utilities, and scoped Git.
 - Windows, Android, privacy, security, troubleshooting, FAQ, glossary, and
   official learning references.
+- Containers & Kubernetes documentation updated for Runtime Doctor, Docker/Kubernetes Applications, Create Container, Create Cluster, Deploy App, deterministic troubleshooting, compatibility packs, safe deployment/recovery, exact Kubernetes identity/RBAC guards, and the unified operation/activity engine.
+- The 2026-09-09 application runtime gate supplied with this documentation update reported `flutter analyze --no-pub` with no issues and the full Flutter suite at 1,635 passing tests after the Phase 13/14 compile fix.
 
 See:
 

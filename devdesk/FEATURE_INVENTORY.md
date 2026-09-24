@@ -61,3 +61,27 @@ No unavailable application behavior is reported as newly implemented.
 Fresh verification and modification of the complete Flutter app requires its
 source to be placed inside `C:\Users\baish\Baisalya-Roul` or explicit approval
 to add another project path to the task scope.
+
+## DevDesk 1.2.4 — Containers & Kubernetes
+
+- Workspace project tool: Containers & Kubernetes
+- Runtime Doctor / Setup Center for Docker CLI/Engine, kubectl, kubeconfig/context, cluster/API, namespace, RBAC and version compatibility
+- Capability-driven navigation with clear unavailable/disabled reasons
+- Docker Applications view for Compose projects and standalone containers
+- Canonical Create Container wizard with Simple/Advanced modes and optional start-after-create
+- Docker containers, images, volumes, networks and Compose advanced resource screens
+- Provider-neutral local-cluster architecture with guided kind/minikube Create Cluster wizard
+- Kubernetes Applications view derived from selectors, owners, Service/Ingress/EndpointSlice relationships and Warning events
+- Deterministic Kubernetes troubleshooting for crash loops, image pulls, scheduling, readiness, workload conditions, configuration references, backends and events
+- Visual Deploy App builder with generated Deployment/Service YAML, resources and probes
+- Split Kubernetes resource areas: Workloads, Pods, Network, Configuration, Storage, Nodes and Events
+- Shared YAML deployment transaction: client validate → server dry-run → diff → apply → bounded rollout verification
+- Optional workload-scoped rollout recovery; arbitrary Kubernetes Apply is not presented as atomic
+- Compatibility Center with JSON/YAML Compatibility Packs, version rules, safe aliases, feature warn/disable and Ed25519 trust support
+- Compatibility files are data only; arbitrary executable/shell/PowerShell, identity, credential and dangerous flag injection is blocked
+- Exact Kubernetes context/namespace guards plus read-only `kubectl auth can-i --quiet` RBAC preflight for guarded operations
+- Shared Container Operation Engine for duplicate/conflicting mutation protection, bounded timeouts and stale-identity protection
+- Durable Activity & Safety history with interrupted-operation recovery and no stdout/stderr, environment values, kubeconfig credentials or Kubernetes Secret values
+- Protected high-impact Docker/Kubernetes resources and exact destructive confirmations
+- Desktop runtime boundary; Android entitlement/product experience does not claim a local or remote container runtime
+

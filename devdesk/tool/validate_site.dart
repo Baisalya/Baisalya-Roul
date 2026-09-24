@@ -94,9 +94,9 @@ Future<void> main() async {
     final entries =
         jsonDecode(searchSource.substring(searchStart, searchEnd + 1))
             as List<dynamic>;
-    if (entries.length != 50) {
+    if (entries.length != 51) {
       failures.add(
-        'Expected 50 searchable manuals after adding notifications and AI routines; '
+        'Expected 51 searchable manuals after adding Containers & Kubernetes; '
         'found ${entries.length}.',
       );
     }
@@ -174,6 +174,7 @@ Future<void> main() async {
     'manual/diagram-studio.html',
     'manual/ai-workbench.html',
     'manual/notifications-routines.html',
+    'manual/container-operations.html',
   ]) {
     if (!File.fromUri(siteRoot.uri.resolve(requiredPath)).existsSync()) {
       failures.add('$requiredPath does not exist.');
@@ -187,6 +188,10 @@ Future<void> main() async {
     ('manual/knowledge-graph.html', 'floating play button'),
     ('manual/ai-workbench.html', 'current Windows user'),
     ('manual/notifications-routines.html', 'latest missed occurrence'),
+    ('manual/container-operations.html', 'Runtime Doctor and Setup Center'),
+    ('manual/container-operations.html', 'Compatibility Center and Compatibility Packs'),
+    ('manual/container-operations.html', 'Context, namespace, and RBAC guard'),
+    ('manual/container-operations.html', 'Unified Operation Engine'),
   ]) {
     final file = File.fromUri(siteRoot.uri.resolve(entry.$1));
     if (!file.existsSync()) continue;
@@ -196,6 +201,27 @@ Future<void> main() async {
     }
     if (!source.contains('manual-visuals.js')) {
       failures.add('${entry.$1} does not load manual-visuals.js.');
+    }
+  }
+
+  final serviceWorker = await File(
+    '${siteRoot.path}${Platform.pathSeparator}sw.js',
+  ).readAsString(encoding: utf8);
+  if (!serviceWorker.contains('./manual/container-operations.html')) {
+    failures.add('sw.js does not cache manual/container-operations.html.');
+  }
+
+  final compatibilityManual = await File(
+    '${siteRoot.path}${Platform.pathSeparator}manual'
+    '${Platform.pathSeparator}container-operations.html',
+  ).readAsString(encoding: utf8);
+  for (final required in const <String>[
+    'Compatibility Packs are small JSON or YAML',
+    'does not use Kubernetes impersonation flags',
+    'A timeout returned to the UI does not immediately release',
+  ]) {
+    if (!compatibilityManual.contains(required)) {
+      failures.add('Containers & Kubernetes manual is missing: $required');
     }
   }
 

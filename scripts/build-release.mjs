@@ -10,7 +10,7 @@ const execFileAsync = promisify(execFile);
 const projectRoot = process.cwd();
 const outputRoot = path.join(projectRoot, 'dist');
 const planOnly = process.argv.includes('--plan');
-const devDeskRelease = '20260824.4';
+const devDeskRelease = '20260909.1';
 const constructionErpRelease = '20260904.1';
 const monetizationRelease = '20260904.2';
 
@@ -19,7 +19,7 @@ const rootRuntimeFiles = [
   'javascript.svg', 'CNAME',
 ];
 const rootRuntimeDirectories = ['assets', 'src/site'];
-const rootOptionalRuntimeFiles = ['ads.txt'];
+const rootOptionalRuntimeFiles = ['ads.txt', 'app-ads.txt'];
 const devDeskRuntimeFiles = [
   '404.html', 'downloads.html', 'index.html', 'privacy-policy.html', 'releases.json', 'robots.txt',
   'site.webmanifest', 'sitemap.xml', 'sw.js',
@@ -37,7 +37,7 @@ const shopPilotRuntimeFiles = [
 ];
 const eduSheetRuntimeFiles = [
   '404.html', 'download.html', 'features.html', 'index.html', 'manual.html',
-  'privacy.html', 'quick-start.html', 'robots.txt', 'sitemap.xml',
+  'privacy.html', 'quick-start.html', 'teacher-planner.html', 'robots.txt', 'sitemap.xml',
 ];
 const surveyCamRuntimeFiles = [
   'index.html', 'privacy.html', 'support.html', 'robots.txt', 'sitemap.xml', 'site.js', 'styles.css',

@@ -1,0 +1,37 @@
+EduSheet Website Teacher Progress Graph Hotfix Validation
+
+Scope
+- Add a more attractive teacher progress visualization inspired by the in-app Insights & Backup screen.
+- Preserve existing site content; only extend the planner/progress presentation.
+
+Files changed: 4
+1. index.html
+2. features.html
+3. teacher-planner.html
+4. assets/css/styles.css
+
+What changed
+- Homepage planner hero now shows a compact progress status strip below the next-lesson card.
+- Features page Progress & Teaching Insights card now uses a richer dashboard-style visual with ring, mini KPIs and usage bars.
+- Teacher Planner page now includes a dedicated screenshot-inspired “Teachers progress, visualized” section with:
+  * teaching overview hero panel
+  * headline progress ring
+  * active/completed/needs-attention/next-7-days KPI cards
+  * lesson and topic completion rings
+  * period-usage bars
+  * subject-coverage bars
+  * planner move/protect backup panel
+- Shared CSS added for responsive dashboard visuals.
+
+Preservation checks
+- Existing math-first hero remained intact.
+- Existing Teacher Planner product visualization remained intact.
+- Existing workflow, benefits and CTA sections remained intact.
+- No existing page removed.
+
+Static checks performed
+- Relative paths preserved.
+- HTML class references match added CSS.
+- Full ZIP integrity: PASS.
+- Modified ZIP integrity: PASS.
+- Modified-file parity: PASS.

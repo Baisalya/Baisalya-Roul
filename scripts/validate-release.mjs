@@ -5,7 +5,9 @@ import process from 'node:process';
 const root = process.cwd();
 const storeUrl =
   'https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare';
-const devDeskRelease = '20260824.4';
+const eduSheetStoreUrl =
+  'https://apps.microsoft.com/detail/9N0ZK8C31X94?cid=DevShareMCLPCB';
+const devDeskRelease = '20260909.1';
 const failures = [];
 
 async function text(relativePath) {
@@ -58,6 +60,10 @@ const constructionSupport = await text('construction-erp/support.html');
 const shopPilotHome = await text('shoppilot erp/index.html');
 const shopPilotQuickStart = await text('shoppilot erp/quick-start.html');
 const shopPilotManual = await text('shoppilot erp/user-manual.html');
+const eduSheetHome = await text('EduSheet/index.html');
+const eduSheetFeatures = await text('EduSheet/features.html');
+const eduSheetPlanner = await text('EduSheet/teacher-planner.html');
+const eduSheetSiteConfig = await text('EduSheet/assets/js/site.js');
 const notivaultStaticHome = await text('notivault-website/index.html');
 const notivaultStaticPrivacy = await text(
   'notivault-website/privacy-policy/index.html',
@@ -65,6 +71,7 @@ const notivaultStaticPrivacy = await text(
 const manifest = JSON.parse(await text('devdesk/site.webmanifest'));
 
 requireText(portfolio, storeUrl, 'Portfolio Microsoft Store action');
+requireText(portfolio, eduSheetStoreUrl, 'Portfolio EduSheet Microsoft Store action');
 requireText(
   portfolio,
   'https://play.google.com/store/apps/details?id=com.baishalya.devdesk',
@@ -100,6 +107,35 @@ for (const expected of [
   requireText(portfolio, expected, 'Portfolio ShopPilot integration');
 }
 for (const expected of [
+  'EduSheet is more than a question-paper maker',
+  'Syllabus management',
+  'Lessons &amp; progress',
+  'Assessment studio',
+  'teaching-planner / syllabus',
+]) {
+  requireText(portfolio, expected, 'Portfolio EduSheet teacher-workspace positioning');
+}
+for (const [source, label] of [
+  [eduSheetHome, 'EduSheet homepage'],
+  [eduSheetFeatures, 'EduSheet features page'],
+  [eduSheetPlanner, 'EduSheet planner page'],
+]) {
+  for (const expected of [
+    'Teacher Workspace',
+    'syllabus',
+    'Lesson Planner',
+    'Progress',
+  ]) {
+    requireText(source, expected, label);
+  }
+}
+requireText(eduSheetSiteConfig, eduSheetStoreUrl, 'EduSheet Microsoft Store configuration');
+rejectText(
+  `${eduSheetHome}\n${eduSheetFeatures}\n${eduSheetPlanner}\n${eduSheetSiteConfig}`,
+  '9N8NH1LMZX1S',
+  'EduSheet surfaces',
+);
+for (const expected of [
   'project-card--notivault',
   'NotiVault',
   'notivault-website/public/og-deleted-message.png',
@@ -122,6 +158,13 @@ for (const expected of [
   requireText(portfolio, expected, 'Portfolio inquiry form');
 }
 await requireFile('construction-erp/index.html', 1_000);
+await requireFile('app-ads.txt');
+const appAds = await text('app-ads.txt');
+requireText(
+  appAds,
+  'google.com, pub-1529558529658186, DIRECT, f08c47fec0942fa0',
+  'Root app-ads.txt AdMob publisher authorization',
+);
 await requireFile('construction-erp/assets/icons/favicon.svg', 100);
 await requireFile('construction-erp/assets/images/og.png', 100_000);
 await requireFile('notivault-website/public/og.png', 100_000);
@@ -313,22 +356,22 @@ requireText(
   'DevDesk support assistant action',
 );
 for (const expected of [
-  'Bring your files, questions, and projects to one review-first AI Harness.',
-  'For normal &amp; non-technical users',
-  'Students, teachers, writers, researchers',
-  'For developers &amp; project teams',
+  'Study. Research. Organize. Build. Run projects from one workspace.',
+  'For students, researchers, professionals &amp; non-developers',
+  'Learn, collect research, connect ideas',
+  'For developers, builders &amp; technical project teams',
   'No coding needed',
   'devdesk-workspace-banner.webp',
 ]) {
   requireText(devdeskHome, expected, 'DevDesk inclusive homepage');
 }
 for (const expected of [
-  'No technical skills required. Developer power when the project demands it.',
+  'You do not need to be a developer to make DevDesk useful.',
   'id="non-tech-path"',
   'Bring the messy work. Leave with a clear next step.',
   'id="developer-path"',
   'Move from project context to a verified proposal',
-  'Prompt → reviewed + verified change',
+  'Project → reviewed + verified change',
   'The complete workspace around the answer.',
   'Tasks, goals, meetings, assignments, and decisions',
   'Browser + MCP agents',
@@ -337,11 +380,11 @@ for (const expected of [
   requireText(devdeskHome, expected, 'DevDesk audience and complete-app story');
 }
 for (const expected of [
-  'Coming in DevDesk 1.2',
+  'DevDesk 1.2.4',
   'id="ai-harness"',
   'One Harness. Four ways to move work forward.',
-  'Bounded file + supported photo input',
-  '1,266',
+  'Local-first files &amp; portable project context',
+  '1,532',
   'WACK PASS',
   'zero required failures',
   'Android + Windows builds validated',

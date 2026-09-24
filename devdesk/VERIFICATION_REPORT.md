@@ -289,3 +289,16 @@ Website checks after rewriting all focused OKF pages:
 - No browser console warnings or errors.
 - Full 46-page site validator and 42-entry search-index validator passed.
 - Vite production build and production-output tests passed.
+## 2026-09-09 Containers & Kubernetes application gate
+
+For the current Containers & Kubernetes documentation update, the supplied Windows PowerShell run from the separate DevDesk application repository reported:
+
+- `container_operation_engine_test.dart`: 4 tests passed;
+- `kubernetes_security_guard_test.dart`: 5 tests passed;
+- `kubernetes_authorization_driver_test.dart`: 3 tests passed;
+- `container_ops_page_test.dart`: 7 tests passed;
+- `flutter analyze --no-pub`: **No issues found**;
+- full `flutter test`: **1,635 tests passed**.
+
+These results certify the application state described by the Phase 13/14 container-security/operation documentation at the time of this website update. They do not replace physical Docker Engine, registry, kind, minikube, or external Kubernetes-cluster smoke tests, which remain environment-specific.
+

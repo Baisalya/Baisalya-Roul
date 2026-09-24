@@ -1,0 +1,46 @@
+EduSheet Website — Teacher Workspace Marketing Update Validation
+
+Baseline: uploaded EduSheet(1).zip
+App source audited: EduSheet_QuestionDocument_Phase9_CanonicalRoundTrip_Hotfix_Full.zip
+Audited app version: 1.2.2+6
+
+Requested behavior
+PASS - Original math-first homepage hero retained.
+PASS - Hero is horizontally scrollable/swipeable with scroll-snap.
+PASS - Dot navigation and Previous/Next desktop controls added.
+PASS - Teacher Workspace second hero slide added.
+PASS - Circular teaching-progress visualization added.
+PASS - Today / Backlog / Resources and next-lesson marketing indicators added.
+PASS - Existing website sections retained; new content is additive.
+
+Codebase-backed marketing additions
+PASS - Saved Papers + editable reopen.
+PASS - Lesson Planner.
+PASS - Weekly Planner / Teaching Calendar.
+PASS - Teaching Workspace and lesson resources.
+PASS - Shareable Teaching Packs.
+PASS - Progress & Insights / backlog / period variance / reflection.
+PASS - Guided workflow / adaptive Android + Windows messaging.
+PASS - Manual now includes Teaching Planner and current audited app version.
+
+Claims deliberately not promoted as finished
+PASS - Download AI Model remains coming soon.
+PASS - Backup Cloud remains coming soon.
+PASS - Settings Import/Export Data remains coming soon in audited baseline.
+PASS - No active Premium subscription claim added.
+PASS - No online school backend/realtime/server-permission claim added.
+
+Static quality checks
+PASS - JavaScript parses with `node --check`.
+PASS - CSS brace counts match.
+PASS - HTML duplicate-ID scan clean.
+PASS - Local sub-site links and assets resolve.
+PASS - JSON-LD blocks parse as JSON.
+PASS - sitemap.xml parses successfully.
+PASS - Homepage contains exactly 2 hero slides.
+PASS - Features page contains 15 feature cards.
+PASS - Original visible text on index.html and teacher-planner.html preserved exactly, apart from intentional additive structures/metadata.
+PASS - External ../assets references were already part of the baseline Baisalya site integration and were intentionally preserved.
+
+Runtime note
+A Chromium visual render could not be executed in this container because local/file navigation is blocked by the runtime administrator. Static HTML/CSS/JS validation above completed successfully.

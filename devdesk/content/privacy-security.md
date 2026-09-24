@@ -79,6 +79,18 @@ apps' notifications. Those platform-sensitive capabilities remain a separate
 roadmap phase requiring prominent consent, revocation, per-app controls, device
 tests, and Store-policy review.
 
+## Containers & Kubernetes security boundary
+
+Local Docker, Compose, `kubectl`, kind, and minikube operations are desktop execution features. Opening or indexing a project never runs them automatically. Container operations require the selected workspace/runtime context and use the same explicit execution-trust boundary as other local execution features.
+
+For guarded Kubernetes actions, DevDesk verifies the selected runtime identity and uses read-only RBAC preflight checks before supported mutations or sensitive reads. Context/namespace changes invalidate stale state, and a stale completion is not allowed to overwrite the newly selected identity. Secret values remain behind an explicit reveal action.
+
+The shared Container Operation Engine blocks duplicate/conflicting operations and records only bounded activity metadata. Durable activity intentionally excludes stdout/stderr, environment values, kubeconfig credentials, Kubernetes Secret values, and raw technical details. A record left running across an app restart is recovered as interrupted rather than remaining permanently active.
+
+Compatibility Packs are data, not executable extensions. They cannot define arbitrary shell/PowerShell commands, choose a new executable, inject kubeconfig/context/namespace/file/credential options, or bypass the runtime/RBAC guards. Unverified packs are restricted from mutation argument patches; signed packs are trusted only against a public key the user explicitly adds.
+
+Docker image pulls, registry access, Compose actions, and Kubernetes commands can contact registries, cluster API servers, or other destinations configured by the user/runtime. Those destinations receive the information required by the underlying Docker/Kubernetes operation under their own policies; DevDesk does not proxy those operations through a Baisalya-operated container service.
+
 ## User-initiated network actions
 
 Network activity can occur when you:

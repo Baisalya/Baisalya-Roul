@@ -1,0 +1,33 @@
+DevDesk website + manual refresh — 2026-09-09
+Scope: current Containers & Kubernetes documentation and homepage positioning through the validated Security/RBAC/Unified Operation Engine milestone.
+
+BUILD_REPORT.md
+DOCUMENTATION_COVERAGE_MATRIX.md
+FEATURE_INVENTORY.md
+MANUAL_TABLE_OF_CONTENTS.md
+MARKETING_POSITIONING_2026-09-08.md
+MODIFIED_FILES_MANIFEST.txt
+PRODUCT_POSITIONING.md
+README.md
+VERIFICATION_REPORT.md
+assets/js/search-index.js
+content/container-operations.md
+content/faq.md
+content/privacy-security.md
+content/troubleshooting.md
+content/user-manual.md
+content/visual-feature-guide.md
+content/workspace-workbench.md
+index.html
+manual/container-operations.html
+manual/faq.html
+manual/privacy-security.html
+manual/troubleshooting.html
+manual/user-manual.html
+manual/visual-feature-guide.html
+manual/workspace-workbench.html
+privacy-policy.html
+sitemap.xml
+sw.js
+tool/refresh_manual.dart
+tool/validate_site.dart

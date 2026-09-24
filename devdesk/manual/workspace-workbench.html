@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Manage five visible tabs, hidden editors, contextual tools, Source Control, project terminals, and responsive workspace panels." name="description"/><meta content="#5b47e8" name="theme-color"/><title>Workspace workbench, tabs, and tools · DevDesk Manual</title><link href="../assets/img/devdesk-logo-64.png" rel="icon" sizes="64x64" type="image/png"/><link href="../assets/css/styles.css?v=20260824.4" rel="stylesheet"/><script defer="" src="../assets/js/site-config.js?v=20260824.4"></script><script defer="" src="../assets/js/search-index.js?v=20260824.4"></script><script defer="" src="../assets/js/app.js?v=20260824.4"></script><script defer="" src="../assets/js/manual-visuals.js?v=20260824.4"></script> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+
+<html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Manage five visible tabs, hidden editors, contextual tools, Source Control, project terminals, Containers &amp; Kubernetes, and responsive workspace panels." name="description"/><meta content="#5b47e8" name="theme-color"/><title>Workspace workbench, tabs, and tools · DevDesk Manual</title><link href="../assets/img/devdesk-logo-64.png" rel="icon" sizes="64x64" type="image/png"/><link href="../assets/css/styles.css?v=20260909.1" rel="stylesheet"/><script defer="" src="../assets/js/site-config.js?v=20260909.1"></script><script defer="" src="../assets/js/search-index.js?v=20260909.1"></script><script defer="" src="../assets/js/app.js?v=20260909.1"></script><script defer="" src="../assets/js/manual-visuals.js?v=20260909.1"></script> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <link href="https://baisalya.com/devdesk/manual/workspace-workbench.html" rel="canonical"/>
 <meta content="https://baisalya.com/devdesk/manual/workspace-workbench.html" property="og:url"/>
 <link href="../../assets/site-network.css" rel="stylesheet"/><link href="../../assets/monetization/monetization.css" rel="stylesheet"/></head><body><a class="skip-link" href="#main-content">Skip to content</a>
@@ -73,8 +74,7 @@
 <a class="" href="../manual/privacy-security.html">Privacy and security</a>
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
-<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Workspace workbench and tabs</span></div><div class="doc-meta"><span class="doc-chip">Workspace</span><span class="doc-chip">Project context</span><span class="doc-chip">Windows + Android</span></div>
-<h1 id="workspace-workbench-tabs-and-tools">Workspace workbench, tabs, and tools<a aria-label="Link to Workspace workbench, tabs, and tools" class="heading-anchor" href="#workspace-workbench-tabs-and-tools">#</a></h1>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Workspace workbench and tabs</span></div><div class="doc-meta"><span class="doc-chip">Workspace</span><span class="doc-chip">Project context</span><span class="doc-chip">Windows + Android</span></div><h1 id="workspace-workbench-tabs-and-tools">Workspace workbench, tabs, and tools<a aria-label="Link to Workspace workbench, tabs, and tools" class="heading-anchor" href="#workspace-workbench-tabs-and-tools">#</a></h1>
 <p>The workspace workbench keeps files, focused tools, Source Control, context, and optional terminals inside one project window. Opening a compatible file or workspace tool creates or activates a project tab instead of sending you to a disconnected standalone screen.</p>
 <h2 id="understand-the-workspace-layout">Understand the workspace layout<a aria-label="Link to Understand the workspace layout" class="heading-anchor" href="#understand-the-workspace-layout">#</a></h2>
 <ul>
@@ -85,7 +85,7 @@
 <li><strong>Context panel:</strong> inspect properties, relationships, outline, or other information supported by the active surface.</li>
 <li><strong>Status area:</strong> shows the selected workspace and file boundary.</li>
 </ul>
-<p>When API Studio, Diagram Studio, Visual Canvas, Knowledge graph, JSON Tools, OpenAPI Studio, Diff, Source Control, or another compatible tool opens here, it receives only this workspace context. Independent tool data remains separate.</p>
+<p>When API Studio, Diagram Studio, Visual Canvas, Knowledge graph, JSON Tools, OpenAPI Studio, Diff, Source Control, Containers &amp; Kubernetes, or another compatible tool opens here, it receives only this workspace context. Independent tool data remains separate.</p>
 <h2 id="manage-many-tabs">Manage many tabs<a aria-label="Link to Manage many tabs" class="heading-anchor" href="#manage-many-tabs">#</a></h2>
 <p>DevDesk keeps at most five tabs visible in the strip. When more are open:</p>
 <ul>
@@ -107,39 +107,42 @@
 <p>If a selected file is compatible, its contextual <strong>Open with</strong> actions appear first. Examples:</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Selected project file</th>
 <th>Useful project actions</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td><code>.md</code> or <code>.markdown</code></td>
 <td>Edit Markdown, Structure check, Compare, Knowledge graph</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>.flowchart</code></td>
 <td>Diagram Studio, view source as text</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>.canvas</code></td>
 <td>Visual Canvas, view source as text</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>.json</code></td>
 <td>JSON Tools; API workspace or OpenAPI when compatible</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>.yaml</code> or <code>.yml</code></td>
 <td>OpenAPI Studio, Compare</td>
 </tr>
-<tr>
+<tr class="even">
 <td>supported source or text</td>
 <td>Project text editor, Compare</td>
 </tr>
 </tbody>
 </table>
 <p>Creating a workspace-ready JSON, OpenAPI, API, Canvas, or diagram artifact uses a new project path and does not silently replace an existing file.</p>
+<h2 id="containers-kubernetes">Containers &amp; Kubernetes<a aria-label="Link to Containers &amp; Kubernetes" class="heading-anchor" href="#containers-kubernetes">#</a></h2>
+<p><strong>Containers &amp; Kubernetes</strong> opens as a project tool inside the selected workspace and requires execution trust for local runtime actions. The current desktop workbench includes Runtime Doctor, application-level Docker and Kubernetes views, a Docker Create Container wizard, kind/minikube cluster creation, visual Kubernetes Deploy App, raw resource areas, deterministic Kubernetes troubleshooting, a Compatibility Center, guarded YAML deployment, RBAC/context/namespace checks, and unified Activity &amp; Safety history.</p>
+<p>The app keeps beginner and advanced paths together: Applications presents logical workloads, while Containers/Images/Volumes/Networks/Compose and Workloads/Pods/Network/Configuration/Storage/Nodes/Events remain available when you need the underlying resources. Compatibility files are validated data only and cannot execute arbitrary commands. See <a href="container-operations.html">Containers &amp; Kubernetes</a>.</p>
 <h2 id="source-control-and-project-terminals">Source Control and project terminals<a aria-label="Link to Source Control and project terminals" class="heading-anchor" href="#source-control-and-project-terminals">#</a></h2>
 <p>Source Control is contextual to the current workspace. On a trusted local Windows project it can show:</p>
 <ul>
@@ -162,7 +165,7 @@
 </ul>
 <p>Use <strong>Ctrl+B</strong> on Windows when you deliberately want to keep the main sidebar hidden. Reopen Project files from the activity rail when you need the tree again.</p>
 <h2 id="safe-working-habits">Safe working habits<a aria-label="Link to Safe working habits" class="heading-anchor" href="#safe-working-habits">#</a></h2>
-<ol>
+<ol type="1">
 <li>Confirm the workspace name before creating or saving a file.</li>
 <li>Watch for the unsaved indicator before closing a tab or window.</li>
 <li>Check the project path and repository root before Git or terminal work.</li>
@@ -170,7 +173,7 @@
 <li>Keep secrets and device-local trust out of portable project files.</li>
 </ol>
 <p>Continue with <a href="diagram-studio.html">Diagram Studio</a>, <a href="knowledge-graph.html">Relationships and graph</a>, <a href="api-workspaces.html">Saved API testing</a>, or <a href="diff-git.html">Compare files and scoped Git</a>.</p>
-<div class="article-footer"><a class="pager" href="interface-tour.html"><small>Previous</small><strong>Interface tour</strong></a><a class="pager" href="developer-workspaces.html"><small>Next</small><strong>Folders and portability</strong></a></div></article><aside aria-label="Advertisement" class="monetization-ad" data-ad-context="workspace-workbench" data-ad-unit="manual" hidden=""></aside></main><aside aria-label="On this page" class="toc"><h2>On this page</h2><a class="level-2" href="#understand-the-workspace-layout">Understand the workspace layout</a><a class="level-2" href="#manage-many-tabs">Manage many tabs</a><a class="level-2" href="#developer-tools-inside-a-workspace">Developer tools inside a workspace</a><a class="level-2" href="#source-control-and-project-terminals">Source Control and project terminals</a><a class="level-2" href="#responsive-behavior">Responsive behavior</a><a class="level-2" href="#safe-working-habits">Safe working habits</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div class="article-footer"><a class="pager" href="interface-tour.html"><small>Previous</small><strong>Interface tour</strong></a><a class="pager" href="developer-workspaces.html"><small>Next</small><strong>Folders and portability</strong></a></div></article><aside aria-label="Advertisement" class="monetization-ad" data-ad-context="workspace-workbench" data-ad-unit="manual" hidden=""></aside></main><aside aria-label="On this page" class="toc"><h2>On this page</h2><a class="level-2" href="#understand-the-workspace-layout">Understand the workspace layout</a><a class="level-2" href="#manage-many-tabs">Manage many tabs</a><a class="level-2" href="#developer-tools-inside-a-workspace">Developer tools inside a workspace</a><a class="level-2" href="#containers-kubernetes">Containers &amp; Kubernetes</a><a class="level-2" href="#source-control-and-project-terminals">Source Control and project terminals</a><a class="level-2" href="#responsive-behavior">Responsive behavior</a><a class="level-2" href="#safe-working-habits">Safe working habits</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" rel="noopener noreferrer" target="_blank">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" rel="noopener noreferrer" target="_blank">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy policy</a></div>

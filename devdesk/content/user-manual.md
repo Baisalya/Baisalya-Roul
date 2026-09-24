@@ -194,8 +194,8 @@ screen layout.
 
 From a project workspace, **Developer tools** can open the Markdown editor,
 workspace text editor, Diagram Studio, Visual Canvas, saved API testing,
-OpenAPI Studio, JSON tools, comparisons, scoped Git, and other tools with the
-current project already selected. If a tool needs a file, choose a compatible
+OpenAPI Studio, JSON tools, comparisons, scoped Git, Containers & Kubernetes,
+and other tools with the current project already selected. If a tool needs a file, choose a compatible
 project file rather than copying it into a separate global workspace. See
 [Workspace workbench, tabs, and tools](workspace-workbench.html) for the five
 visible-tab limit, hidden-tab menu, contextual tool cards, Source Control, and
@@ -997,6 +997,23 @@ of creating a duplicate workspace.
 
 For transfer, export or copy the complete workspace through a provider that can
 preserve all files. Verify the destination before deleting the source.
+
+## Containers & Kubernetes
+
+On a supported desktop runtime, a trusted project can open **Containers & Kubernetes** without leaving the workspace. Beginners can start from Runtime Doctor, Docker/Kubernetes Applications, Create Container, Create Cluster, or Deploy App. Advanced users can continue into raw Docker resources, Compose, Kubernetes resource areas, manifests, logs, exec, rollout, and diagnostics.
+
+DevDesk keeps high-impact operations review-first:
+
+- capability-driven navigation does not pretend an unavailable runtime exists;
+- Kubernetes context and namespace are identity guards;
+- supported operations use read-only RBAC `can-i` preflight checks;
+- YAML deployment follows validate → server dry-run → diff → apply → bounded rollout verification;
+- optional automatic recovery is workload-scoped and never claims arbitrary Kubernetes Apply is atomic;
+- Docker/Kubernetes duplicate or conflicting mutations share one operation-engine lock;
+- Activity & Safety avoids storing stdout/stderr, environment values, kubeconfig credentials, and Kubernetes Secret values;
+- Compatibility Packs are validated JSON/YAML data and cannot execute arbitrary shell commands.
+
+For a full beginner-to-advanced walkthrough, see [Containers & Kubernetes](container-operations.html). Local Docker/Kubernetes execution is a desktop capability; Android does not gain a local or remote container runtime from this feature.
 
 ## Privacy and Security
 

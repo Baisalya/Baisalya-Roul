@@ -1,0 +1,20 @@
+BRIGHTQUEST KIDS — APP ICON ASSETS
+==================================
+
+Brand concept:
+  Open storybook + rising star + rocket.
+  Meaning: learning opens a path to discovery and progress.
+
+Primary assets:
+  assets/icons/brightquest-icon-source.png  (high-resolution source)
+  assets/icons/app-icon-1024.png
+  assets/icons/app-icon-512.png              (store-ready source size)
+  assets/icons/app-icon-192.png
+  assets/icons/apple-touch-icon.png
+  assets/icons/favicon-64.png
+  assets/icons/favicon-32.png
+
+For the Flutter Android/Windows project, generate the final platform launcher
+icon set from app-icon-1024.png or the source image using your normal release
+icon pipeline. Keep the same artwork; let Android/Windows apply platform masks
+instead of drawing another rounded mask on top.

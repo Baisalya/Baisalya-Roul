@@ -83,6 +83,10 @@ See the DevDesk screen before you use it. Every illustration on this page is bui
     <div class="visual-feature-copy"><span>Developer</span><h3>Source Control, history, branches, and Diff</h3><p>Inspect real repository state, compare files, and run explicit Git actions only inside a trusted local Windows workspace.</p><a href="workspace-workbench.html#source-control-and-project-terminals">Understand Source Control</a></div>
   </article>
   <article class="visual-feature-card" data-visual-card data-category="developer">
+    <div data-manual-preview="workbench" data-preview-size="compact"></div>
+    <div class="visual-feature-copy"><span>Operator</span><h3>Containers &amp; Kubernetes</h3><p>Check runtime readiness, manage Docker applications, create local clusters, deploy Kubernetes apps, troubleshoot health, and keep mutations behind identity/RBAC/operation guards.</p><a href="container-operations.html">Operate containers safely</a></div>
+  </article>
+  <article class="visual-feature-card" data-visual-card data-category="developer">
     <div data-manual-preview="agent" data-preview-size="compact"></div>
     <div class="visual-feature-copy"><span>Developer</span><h3>AI Agent Connector</h3><p>Assign one workspace per session, enable only needed permissions, observe activity, and review proposals before any write.</p><a href="agent-connector.html">Connect a compatible agent</a></div>
   </article>

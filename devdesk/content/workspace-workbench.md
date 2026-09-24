@@ -11,7 +11,7 @@ The workspace workbench keeps files, focused tools, Source Control, context, and
 - **Context panel:** inspect properties, relationships, outline, or other information supported by the active surface.
 - **Status area:** shows the selected workspace and file boundary.
 
-When API Studio, Diagram Studio, Visual Canvas, Knowledge graph, JSON Tools, OpenAPI Studio, Diff, Source Control, or another compatible tool opens here, it receives only this workspace context. Independent tool data remains separate.
+When API Studio, Diagram Studio, Visual Canvas, Knowledge graph, JSON Tools, OpenAPI Studio, Diff, Source Control, Containers & Kubernetes, or another compatible tool opens here, it receives only this workspace context. Independent tool data remains separate.
 
 ## Manage many tabs
 
@@ -48,6 +48,12 @@ If a selected file is compatible, its contextual **Open with** actions appear fi
 | supported source or text | Project text editor, Compare |
 
 Creating a workspace-ready JSON, OpenAPI, API, Canvas, or diagram artifact uses a new project path and does not silently replace an existing file.
+
+## Containers & Kubernetes
+
+**Containers & Kubernetes** opens as a project tool inside the selected workspace and requires execution trust for local runtime actions. The current desktop workbench includes Runtime Doctor, application-level Docker and Kubernetes views, a Docker Create Container wizard, kind/minikube cluster creation, visual Kubernetes Deploy App, raw resource areas, deterministic Kubernetes troubleshooting, a Compatibility Center, guarded YAML deployment, RBAC/context/namespace checks, and unified Activity & Safety history.
+
+The app keeps beginner and advanced paths together: Applications presents logical workloads, while Containers/Images/Volumes/Networks/Compose and Workloads/Pods/Network/Configuration/Storage/Nodes/Events remain available when you need the underlying resources. Compatibility files are validated data only and cannot execute arbitrary commands. See [Containers & Kubernetes](container-operations.html).
 
 ## Source Control and project terminals
 

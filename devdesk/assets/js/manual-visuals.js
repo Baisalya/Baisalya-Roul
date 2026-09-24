@@ -382,7 +382,8 @@
 
   const slug = window.location.pathname.split('/').pop()?.replace(/\.html$/i, '') || '';
   const article = document.querySelector('.article');
-  if (article && slug !== 'visual-feature-guide' && !article.querySelector('.manual-screen-preview')) {
+  const skipAutoPreview = new Set(['container-operations']);
+  if (article && slug !== 'visual-feature-guide' && !skipAutoPreview.has(slug) && !article.querySelector('.manual-screen-preview')) {
     const scene = pageToScene[slug] || 'workspace';
     const details = sceneDetails[scene];
     const figure = document.createElement('figure');

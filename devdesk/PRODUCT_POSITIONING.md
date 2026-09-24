@@ -180,3 +180,7 @@ The positioning was checked against current official product documentation:
 
 These products solve real problems. DevDesk should win through a clear combined
 workflow and trustworthy execution, not an unverifiable exclusivity claim.
+
+## 2026-09-08 positioning expansion
+
+DevDesk should be presented as a cross-audience local-first workspace rather than a developer-only utility. The entry message covers students, researchers, professionals, creators and non-developers, while developer and technical-operator depth remains a differentiator. Containers & Kubernetes extends the Builder path with project-aware Docker/Compose applications, local-cluster creation, Kubernetes application health and troubleshooting, visual deployment, advanced resource control, Compatibility Packs, identity/RBAC safety, and unified operation history. Existing monetization remains part of the product: marketing must not imply that advanced capabilities are universally free, and current store/app configuration remains authoritative for offers and pricing.
