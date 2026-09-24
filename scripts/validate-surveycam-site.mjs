@@ -33,7 +33,8 @@ for (const expected of [
   'https://play.google.com/store/apps/details?id=com.baishalya.surveycam',
   'PDF proof reports',
   'Project-wise folders',
-  'No data collection declared',
+  'Optional rewarded ads',
+  'Captured media is not uploaded for ads',
   'baishalya1999@gmail.com',
 ]) {
   if (!home.includes(expected)) failures.push(`SurveyCam home missing: ${expected}`);
@@ -63,8 +64,10 @@ if (!rootHome.includes('href="/surveycam/"')) {
 
 const privacy = await readFile(path.join(root, 'surveycam/privacy.html'), 'utf8');
 for (const expected of [
-  'does not share data with third parties',
-  'does not collect data',
+  'Your field records stay on your device',
+  'Google Mobile Ads SDK',
+  'User Messaging Platform (UMP)',
+  'Subscriptions and purchase verification',
   'baishalya1999@gmail.com',
 ]) {
   if (!privacy.includes(expected)) failures.push(`SurveyCam privacy missing: ${expected}`);
