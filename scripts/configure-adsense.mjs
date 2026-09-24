@@ -35,7 +35,7 @@ const configPath = path.join(targetRoot, 'assets', 'monetization', 'config.js');
 try { await access(configPath); }
 catch { throw new Error(`Missing ${configPath}. Run npm run release before production AdSense configuration.`); }
 
-const config = `window.BAISALYA_MONETIZATION = Object.freeze({\n  enabled: true,\n  consentReady: true,\n  adsenseClient: '${client}',\n  manualSlot: '${slot}',\n});\n`;
+const config = `window.BAISALYA_MONETIZATION = Object.freeze({\n  enabled: true,\n  consentReady: true,\n  autoAds: true,\n  adsenseClient: '${client}',\n  manualSlot: '${slot}',\n});\n`;
 await writeFile(configPath, config, 'utf8');
 const publisher = client.replace(/^ca-/, '');
 await writeFile(path.join(targetRoot, 'ads.txt'), `google.com, ${publisher}, DIRECT, f08c47fec0942fa0\n`, 'utf8');

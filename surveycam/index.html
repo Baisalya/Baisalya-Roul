@@ -125,6 +125,7 @@
       name="twitter:description"
     />
     <link href="../assets/site-network.css" rel="stylesheet" />
+    <link href="../assets/campaign-banner.css" rel="stylesheet" />
   </head>
   <body>
     <header class="nav">
@@ -160,6 +161,31 @@
       </div>
     </header>
     <main>
+      <section
+        class="campaign-banner campaign-banner--surveycam"
+        aria-label="SurveyCam field documentation campaign"
+      >
+        <a
+          class="campaign-banner__link"
+          href="https://play.google.com/store/apps/details?id=com.baishalya.surveycam&amp;pcampaignid=web_share"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Install SurveyCam from Google Play"
+        >
+          <img
+            class="campaign-banner__image"
+            src="assets/surveycam-campaign-banner.png"
+            width="2048"
+            height="700"
+            alt="SurveyCam for GPS and timestamped construction-site photos, videos, notes and PDF reports"
+            fetchpriority="high"
+            decoding="async"
+          />
+          <span class="campaign-banner__cta"
+            >Install SurveyCam <span aria-hidden="true">↗</span></span
+          >
+        </a>
+      </section>
       <section class="hero">
         <div class="container hero__grid">
           <div>
@@ -350,6 +376,13 @@
           </div>
         </div>
       </section>
+      <aside
+        aria-label="Advertisement"
+        class="monetization-ad"
+        data-ad-context="home-after-features"
+        data-ad-unit="manual"
+        hidden
+      ></aside>
       <section class="section section--alt" id="use-cases">
         <div class="container">
           <div class="section__head">
@@ -465,12 +498,6 @@
         </div>
       </section>
     </main>
-    <aside
-      aria-label="Advertisement"
-      class="monetization-ad"
-      data-ad-unit="manual"
-      hidden=""
-    ></aside>
     <aside aria-label="Support SurveyCam development" class="creator-support">
       <div class="creator-support__copy">
         <span class="creator-support__eyebrow">Independent software</span

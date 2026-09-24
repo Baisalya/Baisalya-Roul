@@ -12,7 +12,7 @@ const outputRoot = path.join(projectRoot, 'dist');
 const planOnly = process.argv.includes('--plan');
 const devDeskRelease = '20260909.1';
 const constructionErpRelease = '20260904.1';
-const monetizationRelease = '20260904.2';
+const monetizationRelease = '20260924.1';
 
 const rootRuntimeFiles = [
   'index.html', 'privacy.html', 'main.js', 'style.css', 'robots.txt', 'sitemap.xml', 'sitemap-pages.xml',
@@ -153,9 +153,14 @@ async function injectShopPilotManualAds(outputDir) {
       html = html.replace('</head>', '    ' + css + '\n</head>');
     }
     if (!html.includes('data-ad-unit="manual"')) {
-      html = /<footer\b/i.test(html)
-        ? html.replace(/<footer\b/i, placement + '\n<footer')
-        : html.replace('</body>', placement + '\n</body>');
+      if (page === 'index.html' && html.includes('<section class="section" id="why">')) {
+        const homePlacement = '<aside class="monetization-ad" data-ad-context="home-after-features" data-ad-unit="manual" hidden aria-label="Advertisement"></aside>';
+        html = html.replace('<section class="section" id="why">', homePlacement + '\n    <section class="section" id="why">');
+      } else {
+        html = /<footer\b/i.test(html)
+          ? html.replace(/<footer\b/i, placement + '\n<footer')
+          : html.replace('</body>', placement + '\n</body>');
+      }
     }
     if (!html.includes('assets/monetization/config.js')) {
       html = html.replace('</body>', configScript + runtimeScript + '\n</body>');

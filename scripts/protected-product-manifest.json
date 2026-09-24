@@ -9,7 +9,7 @@
     "shoppilot erp",
     "shoppilot-erp"
   ],
-  "file_count": 391,
+  "file_count": 393,
   "files": [
     {
       "path": "construction-erp/_headers",
@@ -1462,6 +1462,11 @@
       "bytes": 268996
     },
     {
+      "path": "EduSheet/assets/images/edusheet-campaign-banner.png",
+      "sha256": "4bcedf5155d6f1e0bc6ccac367641ee18f12b5925610f1748b2c1b720a720253",
+      "bytes": 260464
+    },
+    {
       "path": "EduSheet/assets/images/favicon.png",
       "sha256": "3d8b1cf495df8e85f926d09b3f26049f198f1b3b13cacd001172f1aa9df2f2e1",
       "bytes": 2675
@@ -1528,8 +1533,8 @@
     },
     {
       "path": "EduSheet/index.html",
-      "sha256": "95fd608acd0e2d4223ae6d868b443a529f644d672aefafba1b8eeb024f1aa79e",
-      "bytes": 45721
+      "sha256": "5580dd94e63e83be7b02cb57bb7828e814fe7f959d3ebb53f44f49992669b47d",
+      "bytes": 46382
     },
     {
       "path": "EduSheet/manual.html",
@@ -1792,6 +1797,11 @@
       "bytes": 80976
     },
     {
+      "path": "shoppilot erp/assets/shoppilot-campaign-banner.png",
+      "sha256": "33ab7ad5ca7118d066589bacd1b37ce2efc45b40d97302813a66f1cae4a01243",
+      "bytes": 2046595
+    },
+    {
       "path": "shoppilot erp/assets/shoppilot-logo.png",
       "sha256": "2ad1c5e7a2f066cccbaa2590f12ad2d60c305367cd99d87d72e77d506808060e",
       "bytes": 898873
@@ -1803,8 +1813,8 @@
     },
     {
       "path": "shoppilot erp/index.html",
-      "sha256": "d9a8680a16fa6729062c93d81ba914d9a244e7b5b87671f048b64a2d81879b9a",
-      "bytes": 28132
+      "sha256": "70b14764bfa1442177c0901bd16740df3f2c7c72859463f68f2c372f900428a2",
+      "bytes": 28776
     },
     {
       "path": "shoppilot erp/manual.css",

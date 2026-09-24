@@ -1,0 +1,77 @@
+/* Shared top-of-page campaign creative for the three product landing pages. */
+.campaign-banner {
+  padding: clamp(12px, 2vw, 24px);
+  background: #f4f8ff;
+}
+
+.campaign-banner__link {
+  position: relative;
+  display: block;
+  width: min(1600px, 100%);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(9, 42, 91, .1);
+  border-radius: clamp(16px, 2.2vw, 28px);
+  background: #dceeff;
+  box-shadow: 0 22px 58px rgba(10, 43, 88, .16);
+  isolation: isolate;
+}
+
+.campaign-banner__link::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 58%, rgba(2, 15, 39, .3));
+}
+
+.campaign-banner__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+
+.campaign-banner__cta {
+  position: absolute;
+  right: clamp(14px, 2.4vw, 34px);
+  bottom: clamp(14px, 2.4vw, 30px);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: .78rem 1.05rem;
+  border: 1px solid rgba(255, 255, 255, .38);
+  border-radius: 999px;
+  background: rgba(5, 30, 72, .9);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(3, 19, 46, .3);
+  font: 800 .86rem/1.1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: .01em;
+  backdrop-filter: blur(10px);
+}
+
+.campaign-banner__link:hover .campaign-banner__image { transform: scale(1.008); }
+.campaign-banner__link:hover .campaign-banner__cta { background: #096ff5; }
+.campaign-banner__link:focus-visible { outline: 4px solid #1683ff; outline-offset: 4px; }
+
+.campaign-banner--surveycam { background: #edf7ff; }
+.campaign-banner--edusheet { background: #f4f8ff; }
+.campaign-banner--shoppilot { background: #f1f7ff; }
+
+@media (max-width: 700px) {
+  .campaign-banner { padding: 10px; }
+  .campaign-banner__link { border-radius: 18px; }
+  .campaign-banner__image { height: clamp(230px, 68vw, 330px); }
+  .campaign-banner--surveycam .campaign-banner__image { object-position: 55% center; }
+  .campaign-banner--edusheet .campaign-banner__image { object-position: 58% center; }
+  .campaign-banner--shoppilot .campaign-banner__image { object-position: 57% center; }
+  .campaign-banner__cta { right: 12px; bottom: 12px; min-height: 42px; padding: .7rem .9rem; font-size: .78rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .campaign-banner__image { transition: none; }
+}
