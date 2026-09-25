@@ -59,11 +59,15 @@
 .campaign-banner__link:focus-visible { outline: 4px solid #1683ff; outline-offset: 4px; }
 
 .campaign-banner--surveycam { background: #edf7ff; }
-.campaign-banner--edusheet { background: #f4f8ff; }
+.campaign-banner--edusheet {
+  background: #f4f8ff;
+  padding-top: calc(var(--nav-h, 74px) + clamp(12px, 2vw, 24px));
+}
 .campaign-banner--shoppilot { background: #f1f7ff; }
 
 @media (max-width: 700px) {
   .campaign-banner { padding: 10px; }
+  .campaign-banner--edusheet { padding-top: calc(var(--nav-h, 66px) + 10px); }
   .campaign-banner__link {
     display: grid;
     border-radius: 18px;
