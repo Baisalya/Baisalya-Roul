@@ -19,10 +19,10 @@ was uploaded. Confirm the matching release log and the live Store console.
 
 | App | Read first | Build/package helper | Release evidence log | Can an AI release now? |
 | --- | --- | --- | --- | --- |
-| SurveyCam | `C:\Users\baish\StudioProjects\siteSnap\docs\play_subscription_and_release_runbook.md`; `docs\play_console_subscription_runbook.md`; `docs\owner_play_console_guide.md` | `C:\Users\baish\StudioProjects\siteSnap\tool\build_play_subscription_release.ps1`; packaging-only by default, `-RunQualityChecks` is optional | Add the final Alpha billing QA and production promotion result to the subscription runbooks; a dedicated append-only release log is still recommended. | Select QA, AAB build, Closed upload, or Production promotion separately. Promotion uses the exact tested Play artifact. Windows has no verified MSIX path. |
-| EduSheet | `C:\Users\baish\StudioProjects\EduSheet\release\STORE_RELEASE_RUNBOOK.md` | `release\google_play\BUILD_PLAY_AAB.ps1`; `release\microsoft_store\BUILD_STORE_MSIX.ps1`; both package without full QA by default and accept `-RunQualityChecks` | `C:\Users\baish\StudioProjects\EduSheet\release\RELEASE_LOG.md` | Select QA, AAB, MSIX, upload, promotion, or remote monetization separately. Reuse valid QA evidence when the owner says the exact source was tested. |
+| SurveyCam | `C:\Users\baish\StudioProjects\siteSnap\docs\play_subscription_and_release_runbook.md`; `docs\play_console_subscription_runbook.md`; `docs\owner_play_console_guide.md` | `C:\Users\baish\StudioProjects\siteSnap\tool\build_play_subscription_release.ps1`; packaging-only and never runs QA | Add the final Alpha billing QA and production promotion result to the subscription runbooks; a dedicated append-only release log is still recommended. | Select QA, AAB build, Closed upload, or Production promotion separately. Promotion uses the exact tested Play artifact. Windows has no verified MSIX path. |
+| EduSheet | `C:\Users\baish\StudioProjects\EduSheet\release\STORE_RELEASE_RUNBOOK.md` | `release\google_play\BUILD_PLAY_AAB.ps1`; `release\microsoft_store\BUILD_STORE_MSIX.ps1`; both are strictly packaging-only and accept no QA switch | `C:\Users\baish\StudioProjects\EduSheet\release\RELEASE_LOG.md` | Select QA, AAB, MSIX, upload, promotion, or remote monetization separately. Reuse valid QA evidence when the owner says the exact source was tested. |
 | DevDesk | `C:\Users\baish\StudioProjects\devdesk\WINDOWS_STORE_RELEASE.md`; `docs\SUBSCRIPTION_ACTIVATION_GUIDE.md`; then `docs\release\RELEASE_RUNBOOK.md` and `docs\release\ANDROID_SIGNING.md` | Android packaging command is in `docs\SUBSCRIPTION_ACTIVATION_GUIDE.md`; Windows packager is `tool\release\package_windows_store_msix.ps1` and keeps output in `release\microsoft-store` | `C:\Users\baish\StudioProjects\devdesk\docs\DEVDESK_RELEASE_LOG.md` | Select QA, AAB, MSIX, upload/promotion, or monetization separately. Do not rerun valid QA merely as a packaging side effect. |
-| BrightQuest Kids | `C:\Users\baish\Downloads\ERP\brightquest_kids\docs\STORE_RELEASE_RUNBOOK.md`; then `docs\RELEASE_QA_CHECKLIST.md`, `docs\STORE_BILLING_INTEGRATION.md`, and `docs\PHASE_D_RELEASE_CANDIDATE_CHECKLIST.md` | `tool\qa\run_phase_d.ps1` is QA-only by default; optional `-BuildAndroidAab` / `-BuildWindows`; no canonical MSIX packager exists | No authoritative append-only Store release log exists yet. | Technical QA/AAB/Windows build actions are separate. Commercial release is blocked by identity, human/content/device/billing gates; MSIX is not implemented. |
+| BrightQuest Kids | `C:\Users\baish\Downloads\ERP\brightquest_kids\docs\STORE_RELEASE_RUNBOOK.md`; then `docs\RELEASE_QA_CHECKLIST.md`, `docs\STORE_BILLING_INTEGRATION.md`, and `docs\PHASE_D_RELEASE_CANDIDATE_CHECKLIST.md` | `tool\qa\run_phase_d.ps1` is permanently QA-only and has no build switches; no canonical MSIX packager exists | No authoritative append-only Store release log exists yet. | Technical QA/AAB/Windows build actions are separate. Commercial release is blocked by identity, human/content/device/billing gates; MSIX is not implemented. |
 
 ## Artifact evidence currently on disk
 
@@ -38,16 +38,18 @@ was uploaded. Confirm the matching release log and the live Store console.
 
 1. Read this index and the app's canonical runbook files from the table.
 2. Run `git status` and preserve unrelated or unfinished work.
-3. Select exactly one action: QA only, Android AAB packaging, Windows/MSIX
-   packaging, Store upload, Store promotion/submission, or monetization change.
+3. If the owner has not selected an action, ask for one of three jobs: QA only;
+   generate only (Android AAB or Windows/MSIX); or Store action only (upload or
+   promote/submit the exact existing artifact). Monetization changes remain an
+   additional explicit owner request.
 4. For a packaging action, confirm the app package/identity and choose a Store
    version that has never been uploaded.
 5. Confirm the intended monetization mode. Current policy is SurveyCam paid;
    EduSheet and DevDesk free; BrightQuest not commercially releasable yet.
-6. QA and packaging are independent. If the owner says the exact source was
-   already tested, reuse the recorded evidence and do not rerun the full suite.
-   Run fresh QA only when requested or when source/dependency/build settings no
-   longer match the evidence. Artifact identity/signature/hash checks still run.
+6. QA and packaging are independent commands. AAB/MSIX packaging must never run
+   analysis/tests, and a QA runner must never generate those Store artifacts.
+   If the owner says the exact source was already tested, reuse the recorded
+   evidence. Artifact identity/signature/hash checks still run.
 7. Record absolute artifact paths, sizes, SHA-256 hashes, versions, build flags,
    and test results in the app's release log before upload.
 8. Upload to internal/closed/private testing first when required by the app's
