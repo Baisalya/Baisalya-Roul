@@ -1,0 +1,25 @@
+{
+  "monetization": {
+    "enabled": false,
+    "showProEntryPoint": false,
+    "subscriptionsEnabled": false,
+    "rewardedAdsEnabled": false,
+    "premiumToolIds": [],
+    "rewardEligibleToolIds": [],
+    "proTitle": "PaperAid Pro",
+    "proBenefits": [
+      "All premium document and photo tools",
+      "Unlimited premium uses",
+      "No rewarded ads"
+    ],
+    "android": {
+      "androidMonthlyProductId": "",
+      "androidYearlyProductId": "",
+      "androidLifetimeProductId": "",
+      "androidRewardedAdUnitId": ""
+    },
+    "windows": {
+      "windowsStorePurchaseEnabled": false
+    }
+  }
+}

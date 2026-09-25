@@ -1,0 +1,17 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="top" x1="70" y1="70" x2="430" y2="220" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67C6FF"/><stop offset="1" stop-color="#2586F6"/>
+    </linearGradient>
+    <linearGradient id="stem" x1="160" y1="150" x2="170" y2="485" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3F6DF7"/><stop offset="1" stop-color="#7C45F4"/>
+    </linearGradient>
+    <linearGradient id="loop" x1="430" y1="110" x2="190" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#006BEF"/><stop offset="1" stop-color="#274DCB"/>
+    </linearGradient>
+  </defs>
+  <path d="M61 123L317 41C343 32 362 44 384 61L456 128L200 220L61 123Z" fill="url(#top)"/>
+  <path d="M123 174L220 143V410C220 438 205 451 184 462L128 489C106 500 92 486 92 459V215C92 193 101 181 123 174Z" fill="url(#stem)"/>
+  <path d="M205 148L338 102C429 72 489 140 471 211C452 288 389 326 292 337L220 346V260L302 249C352 242 380 218 383 188C387 157 359 142 324 153L220 188L205 148Z" fill="url(#loop)"/>
+  <path d="M220 220L312 190L240 261H220V220Z" fill="#F5F8FF"/>
+</svg>

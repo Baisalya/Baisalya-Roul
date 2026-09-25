@@ -145,7 +145,7 @@
 
 .software-release-strip {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0,1fr));
+    grid-template-columns: repeat(4, minmax(0,1fr));
     margin-bottom: 3.7rem;
     overflow: hidden;
     border: 1px solid var(--border);
@@ -855,6 +855,35 @@
     background: var(--surface);
 }
 
+.software-website-cta,
+.software-text-links .software-website-cta,
+.software-roadmap-item > .software-roadmap-item__body > .software-website-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .42rem;
+    min-height: 44px;
+    padding: .72rem .95rem;
+    border: 1px solid color-mix(in srgb, var(--accent) 72%, white 10%);
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 72%, #6ee7ff));
+    color: #04111e;
+    box-shadow: 0 10px 24px color-mix(in srgb, var(--accent) 20%, transparent);
+    font-size: .72rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-decoration: none;
+}
+
+.software-website-cta:hover,
+.software-text-links .software-website-cta:hover,
+.software-roadmap-item > .software-roadmap-item__body > .software-website-cta:hover {
+    border-color: color-mix(in srgb, var(--accent) 86%, white 14%);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 88%, white 12%), var(--accent));
+    color: #020b14;
+    transform: translateY(-1px);
+}
+
 .software-live-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0,1fr));
@@ -938,6 +967,12 @@
 .software-live-card__explore:hover {
     border-color: var(--border-strong);
     background: var(--surface);
+}
+
+.software-live-card__explore.software-website-cta {
+    max-width: 190px;
+    text-align: center;
+    white-space: normal;
 }
 
 .software-live-card__stores {
@@ -1091,6 +1126,11 @@
     padding: .68rem .82rem;
     font-size: .72rem;
     background: color-mix(in srgb, var(--surface) 76%, transparent);
+}
+
+.software-live-card--featured .software-live-card__explore.software-website-cta {
+    background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 72%, #6ee7ff));
+    color: #04111e;
 }
 
 .software-featured-project {
@@ -1462,8 +1502,11 @@
         flex-direction: column;
     }
 
-    .software-live-card__explore {
-        margin-left: 89px;
+    .software-live-card__explore,
+    .software-live-card__explore.software-website-cta {
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
     }
 
     .software-live-card__stores {
@@ -1513,8 +1556,9 @@
         height: 62px;
     }
 
-    .software-live-card__explore {
-        margin-left: 77px;
+    .software-live-card__explore,
+    .software-live-card__explore.software-website-cta {
+        margin-left: 0;
     }
 
     .software-roadmap-item {

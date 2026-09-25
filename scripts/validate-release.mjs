@@ -86,10 +86,9 @@ for (const expected of [
   'Construction ERP',
   'Customer deployment',
   'Sold per customer',
-  'View customer deployment',
-  'customer-specific Construction ERP deployments',
+  'Visit Construction ERP Website',
   'href="/construction-erp/"',
-  'aria-label="View the Construction ERP customer deployment page"',
+  'aria-label="Visit the Construction ERP website"',
 ]) {
   requireText(portfolio, expected, 'Portfolio Construction ERP card');
 }
@@ -140,13 +139,23 @@ for (const expected of [
   'NotiVault',
   'notivault-website/public/og-deleted-message.png',
   'href="/notivault-website/"',
-  'aria-label="View the NotiVault website"',
+  'aria-label="Visit the NotiVault website"',
   'Google Play &middot; Coming soon',
   'No public installer is offered yet.',
   'voice notes and media saved when the notification exposes them',
   '<option value="NotiVault">NotiVault</option>',
 ]) {
   requireText(portfolio, expected, 'Portfolio NotiVault integration');
+}
+for (const expected of [
+  'Visit BrightQuest Kids Website',
+  'href="/brightquest-kids/"',
+  'Visit PaperAid Website',
+  'href="/paperaid/"',
+  '<option value="BrightQuest Kids">BrightQuest Kids</option>',
+  '<option value="PaperAid">PaperAid</option>',
+]) {
+  requireText(portfolio, expected, 'Portfolio BrightQuest Kids and PaperAid integration');
 }
 for (const expected of [
   'action="https://formsubmit.co/baishalya1999@gmail.com"',

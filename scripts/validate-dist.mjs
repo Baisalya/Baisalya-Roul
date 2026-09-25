@@ -14,6 +14,7 @@ function isExternal(value){return !value || value.startsWith('#') || /^(?:https?
 async function validateRef(fromFile,value){
   if(isExternal(value)) return;
   const pathname=decodeURIComponent(value.split(/[?#]/,1)[0]); if(!pathname) return;
+  if(pathname.startsWith('#')) return;
   const dir=path.posix.dirname(fromFile.replaceAll('\\','/'));
   const target=pathname.startsWith('/')?pathname.slice(1):path.posix.normalize(path.posix.join(dir,pathname));
   await exists(target.endsWith('/')?`${target}index.html`:target);
@@ -81,6 +82,8 @@ async function validateSitemaps(){
     'surveycam/sitemap.xml',
     'notivault-website/sitemap.xml',
     'sitesnap/sitemap.xml',
+    'brightquest-kids/sitemap.xml',
+    'paperaid/sitemap.xml',
   ];
   const indexSource=await readFile(path.join(root,'sitemap.xml'),'utf8');
   if(!indexSource.includes('<sitemapindex')) failures.push('Root sitemap.xml is not a sitemap index.');
@@ -128,6 +131,8 @@ for(const required of [
   'surveycam/support.html','surveycam/assets/surveycam-logo.png','notivault-website/index.html','notivault-website/sitemap.xml',
   'notivault-website/privacy-policy/index.html','notivault-website/public/og-deleted-message.png',
   'sitesnap/index.html','sitesnap/sitemap.xml','server/index.js','release-manifest.json',
+  'brightquest-kids/index.html','brightquest-kids/downloads.html','brightquest-kids/sitemap.xml',
+  'paperaid/index.html','paperaid/download.html','paperaid/sitemap.xml',
 ]) await exists(required);
 
 await walk(root);
@@ -135,7 +140,7 @@ await validateSitemaps();
 await validateReleaseManifest();
 
 const index=await readFile(path.join(root,'index.html'),'utf8');
-for(const expected of ['https://baisalya.com/','href="/EduSheet/"','href="/surveycam/"','href="/notivault-website/"','href="/sitesnap/"']){
+for(const expected of ['https://baisalya.com/','href="/EduSheet/"','href="/surveycam/"','href="/notivault-website/"','href="/sitesnap/"','href="/brightquest-kids/"','href="/paperaid/"']){
   if(!index.includes(expected)) failures.push(`Production root identity missing: ${expected}`);
 }
 for(const expected of [
@@ -184,13 +189,17 @@ async function deployedAdCount(relativeFile){
   const source=await readFile(path.join(root,relativeFile),'utf8');
   return (source.match(/data-ad-unit="manual"/g)||[]).length;
 }
-for(const page of ['devdesk/index.html','construction-erp/index.html','shoppilot-erp/index.html','EduSheet/index.html','surveycam/index.html','sitesnap/index.html']){
+for(const page of ['devdesk/index.html','construction-erp/index.html','shoppilot-erp/index.html','EduSheet/index.html','surveycam/index.html','sitesnap/index.html','paperaid/index.html']){
   const count=await deployedAdCount(page);
   if(count!==1) failures.push(`Production manual-ad policy mismatch in ${page}: expected 1, found ${count}`);
 }
 for(const page of ['index.html','privacy.html','notivault-website/index.html','notivault-website/privacy-policy/index.html']){
   const count=await deployedAdCount(page);
   if(count!==0) failures.push(`Production ad-free policy mismatch in ${page}: found ${count}`);
+}
+for(const page of ['brightquest-kids/index.html','brightquest-kids/downloads.html','brightquest-kids/privacy.html','brightquest-kids/support.html','brightquest-kids/terms.html']){
+  const count=await deployedAdCount(page);
+  if(count!==0) failures.push(`Child-focused BrightQuest page must remain ad-free: ${page}`);
 }
 
 for(const forbidden of ['vite.config.js','package.json','package-lock.json','BATCH_A_REFACTOR_REPORT.md']){

@@ -1,0 +1,17 @@
+{
+  "name": "PaperAid",
+  "short_name": "PaperAid",
+  "description": "Document, PDF, image and ID-photo utility for Android and Windows.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f8ff",
+  "theme_color": "#315efb",
+  "icons": [
+    {
+      "src": "assets/paperaid-app-icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

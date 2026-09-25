@@ -54,6 +54,10 @@ for (const [expected, label] of [
   ['href="/EduSheet/"', 'EduSheet canonical route'],
   ['href="/surveycam/"', 'SurveyCam canonical route'],
   ['href="/sitesnap/"', 'SiteSnap canonical route'],
+  ['href="/brightquest-kids/"', 'BrightQuest Kids canonical route'],
+  ['href="/paperaid/"', 'PaperAid canonical route'],
+  ['Visit EduSheet Website', 'clear EduSheet website CTA'],
+  ['Visit ShopPilot Website', 'clear ShopPilot website CTA'],
   ['com.baishalya.surveycam', 'SurveyCam Play listing'],
   ['Independent software builder', 'professional hero positioning'],
 ]) requireText(expected, label);

@@ -12,6 +12,8 @@ The root-site refactor does not own or import implementation code from:
 - `notivault-website/`
 - `shoppilot erp/`
 - `shoppilot-erp/`
+- `BrightQuest_Kids/`
+- `paperaid/`
 
 The root page can link to these sites and display public product imagery, but their runtime code, styles, documentation, and release files remain independent.
 

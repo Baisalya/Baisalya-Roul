@@ -1,0 +1,24 @@
+{
+  "android": {
+    "latestVersion": "2.5.1",
+    "minimumVersion": "2.0.0",
+    "title": "PaperAid 2.5.1",
+    "notes": [
+      "Professional PaperAid brand and responsive UI",
+      "Manual background cleanup with Erase, Restore, smooth brush cursor, zoom, undo and redo",
+      "Free launch mode with dormant future Pro/rewarded architecture"
+    ],
+    "url": "https://baisalya.com/paperaid/download.html"
+  },
+  "windows": {
+    "latestVersion": "2.5.1",
+    "minimumVersion": "2.0.0",
+    "title": "PaperAid 2.5.1",
+    "notes": [
+      "Professional PaperAid brand and responsive UI",
+      "Manual background cleanup with Erase, Restore, smooth brush cursor, zoom, undo and redo",
+      "Free launch mode with dormant future Pro architecture"
+    ],
+    "url": "https://baisalya.com/paperaid/download.html"
+  }
+}

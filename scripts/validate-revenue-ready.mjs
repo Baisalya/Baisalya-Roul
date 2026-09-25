@@ -27,6 +27,8 @@ for (const file of [
   'scripts/build-release.mjs',
   'sitesnap/index.html',
   'notivault-website/sitemap.xml',
+  'paperaid/index.html',
+  'BrightQuest_Kids/index.html',
   'ads.txt',
 ]) await requireFile(file);
 
@@ -54,6 +56,7 @@ for (const page of [
   'EduSheet/index.html',
   'surveycam/index.html',
   'sitesnap/index.html',
+  'paperaid/index.html',
 ]) {
   const count = adCount(await text(page));
   if (count !== 1) failures.push(`${page} must contain exactly one restrained manual ad placement, found ${count}`);
@@ -74,6 +77,8 @@ for (const page of [
   'surveycam/privacy.html',
   'shoppilot erp/privacy-policy.html', 'shoppilot erp/terms-of-service.html', 'shoppilot erp/data-deletion.html',
   'notivault-website/index.html', 'notivault-website/privacy-policy/index.html',
+  'paperaid/download.html', 'paperaid/quick-start.html', 'paperaid/manual.html', 'paperaid/privacy-policy.html', 'paperaid/terms-of-service.html', 'paperaid/support.html',
+  'BrightQuest_Kids/index.html', 'BrightQuest_Kids/downloads.html', 'BrightQuest_Kids/privacy.html', 'BrightQuest_Kids/support.html', 'BrightQuest_Kids/terms.html',
 ]) {
   const count = adCount(await text(page));
   if (count !== 0) failures.push(`${page} must remain ad-free`);
@@ -104,6 +109,8 @@ const build = await text('scripts/build-release.mjs');
 for (const required of [
   'injectShopPilotManualAds',
   'siteSnapRuntimeFiles',
+  'brightQuestRuntimeFiles',
+  'paperAidRuntimeFiles',
   'constructionErpRelease',
   'monetizationRelease',
   'versionHtmlFiles(constructionOutput, versionConstructionErpRuntime)',

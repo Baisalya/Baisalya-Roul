@@ -1533,8 +1533,8 @@
     },
     {
       "path": "EduSheet/index.html",
-      "sha256": "5580dd94e63e83be7b02cb57bb7828e814fe7f959d3ebb53f44f49992669b47d",
-      "bytes": 46382
+      "sha256": "ff546dd96bc5a005574213ba5d7d0411d263e7a2d9474be81d4fc7b8dd723f52",
+      "bytes": 46395
     },
     {
       "path": "EduSheet/manual.html",
@@ -1813,8 +1813,8 @@
     },
     {
       "path": "shoppilot erp/index.html",
-      "sha256": "70b14764bfa1442177c0901bd16740df3f2c7c72859463f68f2c372f900428a2",
-      "bytes": 28776
+      "sha256": "393fb711eb91c9d0a8c0a01e2d105762dd3c8790fe80be23049699932994b909",
+      "bytes": 28789
     },
     {
       "path": "shoppilot erp/manual.css",

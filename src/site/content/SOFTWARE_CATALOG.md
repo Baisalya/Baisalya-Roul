@@ -12,6 +12,8 @@ independent product websites in this repository.
 | NotiVault | `notivault-website/` | Coming Soon | NotiVault website + existing root card |
 | EduSheet | `EduSheet/index.html` | Teacher tool | EduSheet site description: math-first question paper maker |
 | SurveyCam | `surveycam/index.html` | Published on Google Play | Dedicated SurveyCam website + verified Google Play listing |
+| BrightQuest Kids | `brightquest-kids/index.html` | Release preparation | Child-focused product website; no public store listing is claimed |
+| PaperAid | `paperaid/index.html` | Release preparation | Product website and release-status page; store links are not live yet |
 
 ## Rules
 

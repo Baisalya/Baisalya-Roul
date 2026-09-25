@@ -43,6 +43,15 @@ const surveyCamRuntimeFiles = [
   'index.html', 'privacy.html', 'support.html', 'robots.txt', 'sitemap.xml', 'site.js', 'styles.css',
 ];
 const siteSnapRuntimeFiles = ['index.html', 'sitemap.xml'];
+const brightQuestRuntimeFiles = [
+  'index.html', 'downloads.html', 'privacy.html', 'support.html', 'terms.html',
+  'robots.txt', 'sitemap.xml', 'site.webmanifest',
+];
+const paperAidRuntimeFiles = [
+  '404.html', 'index.html', 'download.html', 'quick-start.html', 'manual.html',
+  'privacy-policy.html', 'terms-of-service.html', 'support.html', 'robots.txt',
+  'sitemap.xml', 'site.webmanifest', 'site-config.js', 'update.json', 'config.json',
+];
 
 async function isFile(relativePath) {
   try { return (await stat(path.join(projectRoot, relativePath))).isFile(); }
@@ -184,6 +193,10 @@ async function validateSourcePlan() {
   for (const file of surveyCamRuntimeFiles) await requireSourceFile(path.join('surveycam', file));
   await requireSourceDirectory('surveycam/assets');
   for (const file of siteSnapRuntimeFiles) await requireSourceFile(path.join('sitesnap', file));
+  for (const file of brightQuestRuntimeFiles) await requireSourceFile(path.join('BrightQuest_Kids', file));
+  await requireSourceDirectory('BrightQuest_Kids/assets');
+  for (const file of paperAidRuntimeFiles) await requireSourceFile(path.join('paperaid', file));
+  await requireSourceDirectory('paperaid/assets');
   await requireSourceFile('notivault-website/package.json');
   await requireSourceFile('notivault-website/sitemap.xml');
   await requireSourceFile('notivault-website/index.html');
@@ -241,7 +254,7 @@ async function writeReleaseManifest() {
 await validateSourcePlan();
 if (planOnly) {
   console.log('Release build plan: passed');
-  console.log(`Root files: ${rootRuntimeFiles.length}; products: DevDesk, Construction ERP, ShopPilot, EduSheet, SurveyCam, NotiVault.`);
+  console.log(`Root files: ${rootRuntimeFiles.length}; products: DevDesk, Construction ERP, ShopPilot, EduSheet, SurveyCam, BrightQuest Kids, PaperAid, NotiVault.`);
   process.exit(0);
 }
 await assertNotiVaultBuildReady();
@@ -287,6 +300,14 @@ await cp(path.join(projectRoot,'surveycam','assets'), path.join(surveyCamOutput,
 
 const siteSnapOutput=path.join(outputRoot,'sitesnap');
 await copyFiles(path.join(projectRoot,'sitesnap'), siteSnapOutput, siteSnapRuntimeFiles);
+
+const brightQuestOutput=path.join(outputRoot,'brightquest-kids');
+await copyFiles(path.join(projectRoot,'BrightQuest_Kids'), brightQuestOutput, brightQuestRuntimeFiles);
+await cp(path.join(projectRoot,'BrightQuest_Kids','assets'), path.join(brightQuestOutput,'assets'), {recursive:true,force:true});
+
+const paperAidOutput=path.join(outputRoot,'paperaid');
+await copyFiles(path.join(projectRoot,'paperaid'), paperAidOutput, paperAidRuntimeFiles);
+await cp(path.join(projectRoot,'paperaid','assets'), path.join(paperAidOutput,'assets'), {recursive:true,force:true});
 
 const notiVaultOutput=path.join(outputRoot,'notivault-website');
 await exportNotiVaultStatic(projectRoot, notiVaultOutput);

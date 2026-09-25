@@ -64,12 +64,27 @@
 
 @media (max-width: 700px) {
   .campaign-banner { padding: 10px; }
-  .campaign-banner__link { border-radius: 18px; }
-  .campaign-banner__image { height: clamp(230px, 68vw, 330px); }
-  .campaign-banner--surveycam .campaign-banner__image { object-position: 55% center; }
-  .campaign-banner--edusheet .campaign-banner__image { object-position: 58% center; }
-  .campaign-banner--shoppilot .campaign-banner__image { object-position: 57% center; }
-  .campaign-banner__cta { right: 12px; bottom: 12px; min-height: 42px; padding: .7rem .9rem; font-size: .78rem; }
+  .campaign-banner__link {
+    display: grid;
+    border-radius: 18px;
+  }
+  .campaign-banner__link::after { display: none; }
+  .campaign-banner__image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+  .campaign-banner__cta {
+    position: static;
+    width: 100%;
+    min-height: 46px;
+    padding: .76rem 1rem;
+    border: 0;
+    border-radius: 0;
+    background: #06275d;
+    font-size: .8rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
