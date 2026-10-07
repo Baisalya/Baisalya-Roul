@@ -7,7 +7,7 @@ import { applySocialMetadata } from './social-metadata.mjs';
 const outputRoot = path.resolve(process.argv[2] || '.');
 const isDist = process.argv[2] === 'dist';
 const images = new Set();
-const ambassadorSettings = { portfolioImage: 'assets/social/baisalya-original-chair-v3.png', ambassadorEnabled: true, ambassadorImages: { devdesk: 'assets/social/devdesk-ambassador-v1.png' } };
+const ambassadorSettings = { portfolioImage: 'assets/social/baisalya-original-chair-v4.png', ambassadorEnabled: true, ambassadorImages: { devdesk: 'assets/social/devdesk-ambassador-v1.png' } };
 assert.equal(socialImagePath(socialSurfaces[0], ambassadorSettings), ambassadorSettings.portfolioImage);
 assert.equal(socialImagePath(socialSurfaces[1], ambassadorSettings), ambassadorSettings.ambassadorImages.devdesk);
 assert.equal(socialImagePath(socialSurfaces[2], ambassadorSettings), baseSocialImagePath(socialSurfaces[2]));
