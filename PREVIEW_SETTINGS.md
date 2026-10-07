@@ -5,7 +5,13 @@ Roul portfolio and separate ambassador cards for nine product sites. The
 ambassador ON/OFF switch affects products only: the portfolio keeps its owner's
 portrait. Search favicons continue to use the brand/product logos.
 
-Use ImageGen with the supplied identity reference to create a replacement card.
+The portfolio currently uses the owner's original photo with only crop and
+resize. Its face, lighting, clothing and expression are not generated or
+retouched. To reproduce that card locally, supply the original photo to
+`node scripts/generate-portfolio-preview.mjs <photo-path>` (requires Sharp or
+`SOCIAL_SHARP_MODULE`). The original full photo stays outside the repository.
+
+For product ambassador variants, use ImageGen with the supplied identity reference.
 Keep the name and logo readable. Save a **1200 × 630 PNG** in `assets/social/`
 with a new filename for each version. Keep original reference photos outside the
 repository, and preserve the existing logo cards as fallbacks.
@@ -13,7 +19,7 @@ repository, and preserve the existing logo cards as fallbacks.
 To replace the portfolio owner's portrait:
 
 ```powershell
-npm run preview:ambassador -- portrait assets/social/baisalya-portrait-v2.png
+npm run preview:ambassador -- portrait assets/social/baisalya-original-photo-v3.png
 ```
 
 To restore the portfolio's logo card without changing any product:

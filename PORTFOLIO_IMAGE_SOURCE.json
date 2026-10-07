@@ -1,0 +1,10 @@
+{
+  "method": "Original photograph cropped and resized into an existing brand layout using Sharp/SVG; no AI generation or facial retouching.",
+  "reference": "Owner-supplied Young Man by the Window.png; the original full photo remains outside the repository.",
+  "path": "assets/social/baisalya-original-photo-v2.png",
+  "dimensions": { "width": 1200, "height": 630 },
+  "crop": { "left": 310, "top": 609, "width": 700, "height": 800 },
+  "photoPanel": { "left": 674, "top": 36, "width": 488, "height": 558 },
+  "generator": "scripts/generate-portfolio-preview.mjs",
+  "constraints": "Preserve the original face, expression, skin tone, lighting and outfit; only crop/resize the photo."
+}
