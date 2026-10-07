@@ -1,10 +1,27 @@
 {
-  "method": "Original photograph cropped and resized into an existing brand layout using Sharp/SVG; no AI generation or facial retouching.",
-  "reference": "Owner-supplied Young Man by the Window.png; the original full photo remains outside the repository.",
-  "path": "assets/social/baisalya-original-photo-v2.png",
-  "dimensions": { "width": 1200, "height": 630 },
-  "crop": { "left": 310, "top": 609, "width": 700, "height": 800 },
-  "photoPanel": { "left": 674, "top": 36, "width": 488, "height": 558 },
+  "method": "ImageGen created only the foreground mask. Sharp applied that alpha mask to the original photograph; all visible RGB pixels are original. Only transparent margins were trimmed before proportional placement in the brand layout.",
+  "reference": "Owner-supplied Young Man by the Window.png; original full photo remains outside the repository.",
+  "path": "assets/social/baisalya-original-chair-v3.png",
+  "cutout": "assets/social/baisalya-owner-cutout-v3.png",
+  "mask": "assets/social/baisalya-owner-mask-v3.png",
+  "dimensions": {
+    "width": 1200,
+    "height": 630
+  },
+  "foregroundBounds": {
+    "left": 2,
+    "top": 688,
+    "width": 1070,
+    "height": 721
+  },
+  "placement": {
+    "left": 440,
+    "top": 118,
+    "width": 760,
+    "height": 512
+  },
   "generator": "scripts/generate-portfolio-preview.mjs",
-  "constraints": "Preserve the original face, expression, skin tone, lighting and outfit; only crop/resize the photo."
+  "maskTool": "Built-in ImageGen",
+  "maskPrompt": "Create a precise foreground segmentation MASK from the attached photograph, NOT a new portrait. Keep exactly the original full canvas framing and original subject position of the 1117 x 1409 portrait photo. The subject appears only in the bottom half of the full canvas; leave the large upper half empty/transparent. Do not zoom, crop, recenter, redraw anatomy or fill missing areas. Output a flat opaque pure-white silhouette on a fully transparent background of ONLY the seated man and his complete visible office chair together. The white silhouette must precisely follow their actual photograph boundaries, including the hair contour, raised hand, both arms, dark shirt, suspenders, trousers, black chair back, and visible brown padded chair armrests at the bottom left and right. Include every visible part of the seated man and his chair; no other foreground object. Remove wall, ceiling fan, shelf/books, light, door, window, electrical switch, bed and floor completely to alpha zero. No facial features, colors, shading, lettering or photographic texture: this is just a white foreground silhouette with antialiased edges. Preserve exact source composition, dimensions and placement so this mask can be applied to the ORIGINAL photo without ever changing the man's face or any original photo pixels. The original photo, not a generated face, will supply all RGB pixels later.",
+  "constraints": "Remove room background only. Preserve original face, expression, skin tone, lighting, pose, outfit and visible office chair. Do not synthesize or retouch any photo RGB."
 }
