@@ -17,6 +17,13 @@ export const socialSurfaces = [
 
 export const baseSocialImagePath = (surface) => `assets/social/${surface.key}-20261007.png`;
 export function socialImagePath(surface, settings = previewSettings) {
+  if (surface.key === 'baisalya') {
+    if (!settings.portfolioImage) return baseSocialImagePath(surface);
+    if (!/^assets\/social\/[a-z0-9-]+\.png$/.test(settings.portfolioImage)) {
+      throw new Error('Invalid portfolio preview path: use a PNG inside assets/social.');
+    }
+    return settings.portfolioImage;
+  }
   const ambassadorImage = settings.ambassadorImages?.[surface.key];
   if (settings.ambassadorEnabled === true && ambassadorImage) {
     if (!/^assets\/social\/[a-z0-9-]+\.png$/.test(ambassadorImage)) {

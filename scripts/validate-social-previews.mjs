@@ -7,11 +7,15 @@ import { applySocialMetadata } from './social-metadata.mjs';
 const outputRoot = path.resolve(process.argv[2] || '.');
 const isDist = process.argv[2] === 'dist';
 const images = new Set();
-const ambassadorSettings = { ambassadorEnabled: true, ambassadorImages: { baisalya: 'assets/social/baisalya-ambassador-v1.png' } };
-assert.equal(socialImagePath(socialSurfaces[0], ambassadorSettings), ambassadorSettings.ambassadorImages.baisalya);
-assert.equal(socialImagePath(socialSurfaces[1], ambassadorSettings), baseSocialImagePath(socialSurfaces[1]));
-assert.equal(socialImagePath(socialSurfaces[0], { ...ambassadorSettings, ambassadorEnabled: false }), baseSocialImagePath(socialSurfaces[0]));
-assert.throws(() => socialImagePath(socialSurfaces[0], { ambassadorEnabled: true, ambassadorImages: { baisalya: '../outside.png' } }), /Invalid ambassador/);
+const ambassadorSettings = { portfolioImage: 'assets/social/baisalya-portrait-v1.png', ambassadorEnabled: true, ambassadorImages: { devdesk: 'assets/social/devdesk-ambassador-v1.png' } };
+assert.equal(socialImagePath(socialSurfaces[0], ambassadorSettings), ambassadorSettings.portfolioImage);
+assert.equal(socialImagePath(socialSurfaces[1], ambassadorSettings), ambassadorSettings.ambassadorImages.devdesk);
+assert.equal(socialImagePath(socialSurfaces[2], ambassadorSettings), baseSocialImagePath(socialSurfaces[2]));
+assert.equal(socialImagePath(socialSurfaces[0], { ...ambassadorSettings, ambassadorEnabled: false }), ambassadorSettings.portfolioImage);
+assert.equal(socialImagePath(socialSurfaces[1], { ...ambassadorSettings, ambassadorEnabled: false }), baseSocialImagePath(socialSurfaces[1]));
+assert.equal(socialImagePath(socialSurfaces[0], { ambassadorEnabled: true, ambassadorImages: { baisalya: 'assets/social/old-ambassador.png' } }), baseSocialImagePath(socialSurfaces[0]));
+assert.throws(() => socialImagePath(socialSurfaces[0], { portfolioImage: '../outside.png' }), /Invalid portfolio/);
+assert.throws(() => socialImagePath(socialSurfaces[1], { ambassadorEnabled: true, ambassadorImages: { devdesk: '../outside.png' } }), /Invalid ambassador/);
 for (const surface of socialSurfaces) {
   const imagePath = socialImagePath(surface);
   assert(!images.has(imagePath), `Duplicate preview for ${surface.name}`);
@@ -47,6 +51,8 @@ if (isDist) {
   const root = await readFile(path.join(outputRoot, 'index.html'), 'utf8');
   assert(root.includes('rel="icon" href="/assets/brand/br-mark-192.png" type="image/png" sizes="192x192"'));
   assert(!root.includes('href="/assets/brand/apple-touch-icon.png"'));
+  if (socialImagePath(socialSurfaces[0]) !== baseSocialImagePath(socialSurfaces[0])) assert(root.includes('Baishalya Roul portrait'));
+  assert(!root.includes('Baishalya Roul with brand ambassador'));
   for (const guide of ['index', 'field-photo-report', 'weekly-teaching-plan', 'notification-history-limits']) {
     const html = await readFile(path.join(outputRoot, `guides/${guide}.html`), 'utf8');
     assert(html.includes(`https://baisalya.com/${socialImagePath(socialSurfaces[0])}`));

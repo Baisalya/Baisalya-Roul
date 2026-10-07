@@ -23,7 +23,7 @@ export function applySocialMetadata(html, relativePath) {
       'og:title': title, 'og:description': description,
       'og:image': image, 'og:image:secure_url': image, 'og:image:type': 'image/png',
       'og:image:width': '1200', 'og:image:height': '630',
-      'og:image:alt': `${surface.name}${imagePath !== baseSocialImagePath(surface) ? ' with brand ambassador' : ''} — ${surface.lines.join(' ')}`,
+      'og:image:alt': `${surface.name}${imagePath !== baseSocialImagePath(surface) ? (surface.key === 'baisalya' ? ' portrait' : ' with brand ambassador') : ''} — ${surface.lines.join(' ')}`,
     };
     const names = {
       'twitter:card': 'summary_large_image', 'twitter:title': title,

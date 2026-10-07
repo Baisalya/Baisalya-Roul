@@ -1,48 +1,59 @@
-# Optional brand ambassador previews
+# Portfolio portrait and optional product ambassador previews
 
-The selected generated cards and the current ON/OFF state are recorded in
-`scripts/preview-settings.json`. Every product retains its original logo card
-as a fallback. Search favicons keep the brand/product logo.
+`scripts/preview-settings.json` selects the owner's portrait for the Baishalya
+Roul portfolio and separate ambassador cards for nine product sites. The
+ambassador ON/OFF switch affects products only: the portfolio keeps its owner's
+portrait. Search favicons continue to use the brand/product logos.
 
-Use the supplied reference photo with the ImageGen tool to create a new,
-identity-preserving composition. Keep the product name and logo readable.
-Save the final approved card as a **1200 × 630 PNG** in `assets/social/`, using
-a new filename for each replacement (for example `baisalya-ambassador-v1.png`).
-Do not replace the original logo cards.
+Use ImageGen with the supplied identity reference to create a replacement card.
+Keep the name and logo readable. Save a **1200 × 630 PNG** in `assets/social/`
+with a new filename for each version. Keep original reference photos outside the
+repository, and preserve the existing logo cards as fallbacks.
 
-Assign the image to the main site, then enable the optional previews:
+To replace the portfolio owner's portrait:
 
 ```powershell
-npm run preview:ambassador -- set baisalya assets/social/baisalya-ambassador-v1.png
+npm run preview:ambassador -- portrait assets/social/baisalya-portrait-v2.png
+```
+
+To restore the portfolio's logo card without changing any product:
+
+```powershell
+npm run preview:ambassador -- portrait-off
+```
+
+Assign an ambassador card to a product, then enable product previews:
+
+```powershell
+npm run preview:ambassador -- set devdesk assets/social/devdesk-ambassador-v2.png
 npm run preview:ambassador -- on
 ```
 
-Assign other product cards individually with keys `devdesk`, `construction-erp`,
-`shoppilot`, `edusheet`, `surveycam`, `notivault`, `sitesnap`, `brightquest` or
-`paperaid`. Products with no assigned ambassador image keep their logo cards.
+Product keys are `devdesk`, `construction-erp`, `shoppilot`, `edusheet`,
+`surveycam`, `notivault`, `sitesnap`, `brightquest` and `paperaid`. A product
+without an assignment uses its logo card. `set baisalya` is rejected: the
+portfolio accepts its owner's image through the separate `portrait` command.
 
-To change a picture, save a new version and repeat `set` for that site's key.
-To turn the ambassador off everywhere and restore the original logo previews:
+To turn the ambassador off on every product, while keeping the owner on the
+portfolio:
 
 ```powershell
 npm run preview:ambassador -- off
 ```
 
-To see the current choices:
-
-```powershell
-npm run preview:ambassador -- status
-```
-
-To switch just one product back to its logo card, remove its assignment:
+To restore just one product's logo card:
 
 ```powershell
 npm run preview:ambassador -- unset devdesk
 ```
 
-These controls change static website metadata, so rebuild, validate and publish
-after a change. Link previews already cached by WhatsApp, Facebook or other
-services can take time to refresh; a setting cannot instantly erase their cache.
+To inspect all current choices:
 
-The settings live in `scripts/preview-settings.json`; they do not create a public
-admin page. You can also ask Codex to change a photo or switch the option off.
+```powershell
+npm run preview:ambassador -- status
+```
+
+Rebuild, validate and publish after a change, because these settings update
+static link metadata. WhatsApp, Facebook and other services may retain cached
+previews for a while. The controls do not create a public admin page; you can
+also ask Codex to change a picture or turn the option off.
