@@ -24,7 +24,8 @@
     "test:surveycam": "node scripts/validate-surveycam-site.mjs",
     "test:revenue-ready": "node scripts/validate-revenue-ready.mjs",
     "adsense:configure": "node scripts/configure-adsense.mjs",
-    "test:social-previews": "node scripts/validate-social-previews.mjs"
+    "test:social-previews": "node scripts/validate-social-previews.mjs",
+    "preview:ambassador": "node scripts/configure-preview-ambassador.mjs"
   },
   "engines": {
     "node": ">=20"

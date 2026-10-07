@@ -1,0 +1,15 @@
+{
+  "ambassadorEnabled": true,
+  "ambassadorImages": {
+    "baisalya": "assets/social/baisalya-ambassador-v1.png",
+    "devdesk": "assets/social/devdesk-ambassador-v1.png",
+    "construction-erp": "assets/social/construction-erp-ambassador-v1.png",
+    "shoppilot": "assets/social/shoppilot-ambassador-v1.png",
+    "edusheet": "assets/social/edusheet-ambassador-v1.png",
+    "surveycam": "assets/social/surveycam-ambassador-v1.png",
+    "notivault": "assets/social/notivault-ambassador-v1.png",
+    "sitesnap": "assets/social/sitesnap-ambassador-v1.png",
+    "brightquest": "assets/social/brightquest-ambassador-v1.png",
+    "paperaid": "assets/social/paperaid-ambassador-v1.png"
+  }
+}

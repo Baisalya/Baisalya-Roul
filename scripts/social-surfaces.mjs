@@ -1,3 +1,7 @@
+import { readFileSync } from 'node:fs';
+
+export const previewSettings = JSON.parse(readFileSync(new URL('./preview-settings.json', import.meta.url), 'utf8'));
+
 export const socialSurfaces = [
   { route: '', key: 'baisalya', name: 'Baishalya Roul', label: 'INDEPENDENT SOFTWARE BUILDER', lines: ['Practical software.', 'Built around your work.'], description: 'Explore practical Android, Windows and web products by Baishalya Roul, with product manuals and workflow guides.', logo: 'assets/brand/br-mark-premium.png', accent: '#7ab8ff' },
   { route: 'devdesk', key: 'devdesk', name: 'DevDesk', label: 'KNOWLEDGE & WORKSPACE', lines: ['Notes, research, APIs and code.', 'One connected workspace.'], description: 'A connected workspace for notes, research, developer tools, APIs and software projects, with a detailed visual user manual.', logo: 'devdesk/assets/img/devdesk-logo-512.png', accent: '#9aa5ff' },
@@ -11,4 +15,14 @@ export const socialSurfaces = [
   { route: 'paperaid', key: 'paperaid', name: 'PaperAid', label: 'PAPER CREATION WORKSPACE', lines: ['Prepare your next paper.', 'Explore the app and manual.'], description: 'Explore PaperAid paper creation features, downloads, quick start and the complete user manual.', logo: 'paperaid/assets/paperaid-app-icon.png', accent: '#afa3ff' },
 ];
 
-export const socialImagePath = (surface) => `assets/social/${surface.key}-20261007.png`;
+export const baseSocialImagePath = (surface) => `assets/social/${surface.key}-20261007.png`;
+export function socialImagePath(surface, settings = previewSettings) {
+  const ambassadorImage = settings.ambassadorImages?.[surface.key];
+  if (settings.ambassadorEnabled === true && ambassadorImage) {
+    if (!/^assets\/social\/[a-z0-9-]+\.png$/.test(ambassadorImage)) {
+      throw new Error(`Invalid ambassador preview path for ${surface.key}: use a PNG inside assets/social.`);
+    }
+    return ambassadorImage;
+  }
+  return baseSocialImagePath(surface);
+}

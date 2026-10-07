@@ -1,12 +1,17 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
-import { socialSurfaces, socialImagePath } from './social-surfaces.mjs';
+import { socialSurfaces, socialImagePath, baseSocialImagePath } from './social-surfaces.mjs';
 import { applySocialMetadata } from './social-metadata.mjs';
 
 const outputRoot = path.resolve(process.argv[2] || '.');
 const isDist = process.argv[2] === 'dist';
 const images = new Set();
+const ambassadorSettings = { ambassadorEnabled: true, ambassadorImages: { baisalya: 'assets/social/baisalya-ambassador-v1.png' } };
+assert.equal(socialImagePath(socialSurfaces[0], ambassadorSettings), ambassadorSettings.ambassadorImages.baisalya);
+assert.equal(socialImagePath(socialSurfaces[1], ambassadorSettings), baseSocialImagePath(socialSurfaces[1]));
+assert.equal(socialImagePath(socialSurfaces[0], { ...ambassadorSettings, ambassadorEnabled: false }), baseSocialImagePath(socialSurfaces[0]));
+assert.throws(() => socialImagePath(socialSurfaces[0], { ambassadorEnabled: true, ambassadorImages: { baisalya: '../outside.png' } }), /Invalid ambassador/);
 for (const surface of socialSurfaces) {
   const imagePath = socialImagePath(surface);
   assert(!images.has(imagePath), `Duplicate preview for ${surface.name}`);
@@ -28,7 +33,7 @@ for (const surface of socialSurfaces) {
 }
 const stale = '<html><head><title>A &amp; B</title><meta content="old-square.png" property="og:image"><meta property="og:image" content="duplicate.png"><meta content="192" property="og:image:width"><meta name="description" content="Page-specific guide."></head><body><p>Keep content.</p></body></html>';
 const patched = applySocialMetadata(stale, 'EduSheet/manual.html');
-assert(patched.includes('edusheet-20261007.png'));
+assert(patched.includes(socialImagePath(socialSurfaces.find(surface => surface.route === 'EduSheet'))));
 assert(!patched.includes('old-square.png') && !patched.includes('duplicate.png'));
 assert(patched.includes('content="1200"'));
 assert(patched.includes('content="Page-specific guide."'));
@@ -44,7 +49,7 @@ if (isDist) {
   assert(!root.includes('href="/assets/brand/apple-touch-icon.png"'));
   for (const guide of ['index', 'field-photo-report', 'weekly-teaching-plan', 'notification-history-limits']) {
     const html = await readFile(path.join(outputRoot, `guides/${guide}.html`), 'utf8');
-    assert(html.includes('https://baisalya.com/assets/social/baisalya-20261007.png'));
+    assert(html.includes(`https://baisalya.com/${socialImagePath(socialSurfaces[0])}`));
   }
 }
 console.log(`Brand favicon and ${socialSurfaces.length} product-specific social previews: passed${isDist ? ' (production HTML)' : ''}`);

@@ -6,6 +6,7 @@ import process from 'node:process';
 import { promisify } from 'node:util';
 import { exportNotiVaultStatic } from './export-notivault-static.mjs';
 import { applySocialMetadata } from './social-metadata.mjs';
+import { socialSurfaces, socialImagePath } from './social-surfaces.mjs';
 
 const execFileAsync = promisify(execFile);
 const projectRoot = process.cwd();
@@ -180,6 +181,7 @@ async function injectShopPilotManualAds(outputDir) {
 }
 
 async function validateSourcePlan() {
+  for (const surface of socialSurfaces) await requireSourceFile(socialImagePath(surface));
   for (const file of rootRuntimeFiles) await requireSourceFile(file);
   for (const directory of rootRuntimeDirectories) await requireSourceDirectory(directory);
   for (const file of devDeskRuntimeFiles) await requireSourceFile(path.join('devdesk', file));

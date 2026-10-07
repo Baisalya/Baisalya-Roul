@@ -1,6 +1,6 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
-import { socialSurfaces, socialImagePath } from './social-surfaces.mjs';
+import { socialSurfaces, baseSocialImagePath } from './social-surfaces.mjs';
 
 // Generated PNGs are checked in; production builds do not need Sharp.
 // To regenerate, install Sharp locally or set SOCIAL_SHARP_MODULE to its path.
@@ -25,7 +25,7 @@ for (const surface of socialSurfaces) {
     <text x="64" y="587" fill="#d9e8fa" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="600">baisalya.com${surface.route ? '/' + surface.route + '/' : ''}</text>
     <text x="1136" y="587" text-anchor="end" fill="${surface.accent}" font-family="Segoe UI,Arial,sans-serif" font-size="18">BY BAISHALYA ROUL</text>
   </svg>`;
-  await writeFile(socialImagePath(surface).replace('.png', '.svg'), svg);
-  await sharp(Buffer.from(svg)).png().toFile(socialImagePath(surface));
+  await writeFile(baseSocialImagePath(surface).replace('.png', '.svg'), svg);
+  await sharp(Buffer.from(svg)).png().toFile(baseSocialImagePath(surface));
 }
 console.log(`Generated ${socialSurfaces.length} product-specific social thumbnails (1200 × 630).`);

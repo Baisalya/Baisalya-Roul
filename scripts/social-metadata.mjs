@@ -1,4 +1,4 @@
-import { socialSurfaces, socialImagePath } from './social-surfaces.mjs';
+import { socialSurfaces, socialImagePath, baseSocialImagePath } from './social-surfaces.mjs';
 
 const escape = (text) => String(text).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const decode = (text) => text.replaceAll('&amp;', '&').replaceAll('&quot;', '"').replaceAll('&#39;', "'").replaceAll('&lt;', '<').replaceAll('&gt;', '>');
@@ -16,13 +16,14 @@ export function applySocialMetadata(html, relativePath) {
     const isHome = relativePath === (surface.route ? `${surface.route}/index.html` : 'index.html');
     const title = decode((head.match(/<title>([\s\S]*?)<\/title>/i)?.[1] ?? surface.name).replace(/\s+/g, ' ').trim());
     const description = isHome ? surface.description : (metaValue(head, 'description') || surface.description);
-    const image = `https://baisalya.com/${socialImagePath(surface)}`;
+    const imagePath = socialImagePath(surface);
+    const image = `https://baisalya.com/${imagePath}`;
     const properties = {
       'og:type': 'website', 'og:site_name': surface.route ? surface.name : 'Baisalya',
       'og:title': title, 'og:description': description,
       'og:image': image, 'og:image:secure_url': image, 'og:image:type': 'image/png',
       'og:image:width': '1200', 'og:image:height': '630',
-      'og:image:alt': `${surface.name} — ${surface.lines.join(' ')}`,
+      'og:image:alt': `${surface.name}${imagePath !== baseSocialImagePath(surface) ? ' with brand ambassador' : ''} — ${surface.lines.join(' ')}`,
     };
     const names = {
       'twitter:card': 'summary_large_image', 'twitter:title': title,
