@@ -5,6 +5,7 @@ import path from 'node:path';
 import process from 'node:process';
 import { promisify } from 'node:util';
 import { exportNotiVaultStatic } from './export-notivault-static.mjs';
+import { applySocialMetadata } from './social-metadata.mjs';
 
 const execFileAsync = promisify(execFile);
 const projectRoot = process.cwd();
@@ -18,7 +19,7 @@ const rootRuntimeFiles = [
   'index.html', 'privacy.html', 'main.js', 'style.css', 'robots.txt', 'sitemap.xml', 'sitemap-pages.xml',
   'javascript.svg', 'CNAME',
 ];
-const rootRuntimeDirectories = ['assets', 'src/site'];
+const rootRuntimeDirectories = ['assets', 'src/site', 'guides'];
 const rootOptionalRuntimeFiles = ['ads.txt', 'app-ads.txt'];
 const devDeskRuntimeFiles = [
   '404.html', 'downloads.html', 'index.html', 'privacy-policy.html', 'releases.json', 'robots.txt',
@@ -146,7 +147,7 @@ async function ensureSeoMetadata(directory, relative = '') {
         `<meta property="og:url" content="${canonical}">`,
       );
     }
-    await writeFile(target, html, 'utf8');
+    await writeFile(target, applySocialMetadata(html, nextRelative), 'utf8');
   }
 }
 async function injectShopPilotManualAds(outputDir) {

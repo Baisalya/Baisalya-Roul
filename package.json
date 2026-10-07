@@ -8,8 +8,8 @@
     "build": "node scripts/build-release.mjs",
     "postbuild": "node scripts/configure-adsense.mjs --root=dist --client=ca-pub-1529558529658186 --slot=9546051599 --consent-ready=true",
     "build:plan": "node scripts/build-release.mjs --plan",
-    "test": "npm run test:site-boundary && npm run test:professional-home && npm run test:batch-b && npm run test:batch-c && npm run test:batch-d && npm run test:brand-experience && npm run test:surveycam && npm run test:revenue-ready && npm run test:protected-products && node scripts/validate-release.mjs",
-    "test:dist": "node scripts/validate-dist.mjs",
+    "test": "npm run test:site-boundary && npm run test:professional-home && npm run test:batch-b && npm run test:batch-c && npm run test:batch-d && npm run test:brand-experience && npm run test:surveycam && npm run test:revenue-ready && npm run test:protected-products && npm run test:social-previews && node scripts/validate-release.mjs",
+    "test:dist": "node scripts/validate-dist.mjs && node scripts/validate-social-previews.mjs dist",
     "test:site-boundary": "node scripts/validate-site-boundary.mjs",
     "test:professional-home": "node scripts/validate-professional-home.mjs",
     "test:batch-b": "node scripts/validate-batch-b.mjs",
@@ -23,7 +23,8 @@
     "test:brand-experience": "node scripts/validate-brand-experience.mjs",
     "test:surveycam": "node scripts/validate-surveycam-site.mjs",
     "test:revenue-ready": "node scripts/validate-revenue-ready.mjs",
-    "adsense:configure": "node scripts/configure-adsense.mjs"
+    "adsense:configure": "node scripts/configure-adsense.mjs",
+    "test:social-previews": "node scripts/validate-social-previews.mjs"
   },
   "engines": {
     "node": ">=20"

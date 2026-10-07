@@ -26,7 +26,7 @@ async function rejectFile(relativePath) {
 for (const [expected, label] of [
   ['<link rel="canonical" href="https://baisalya.com/">', 'canonical URL'],
   ['property="og:url" content="https://baisalya.com/"', 'Open Graph URL'],
-  ['property="og:image" content="https://baisalya.com/assets/brand/baisalya-og.png"', 'Open Graph image'],
+  ['property="og:image" content="https://baisalya.com/assets/social/baisalya-20261007.png"', 'Open Graph image'],
   ['name="twitter:card" content="summary_large_image"', 'Twitter card'],
   ['type="application/ld+json"', 'JSON-LD structured data'],
   ['"@type": "Person"', 'Person structured data'],
