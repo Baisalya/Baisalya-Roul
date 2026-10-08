@@ -7,6 +7,27 @@ import { applySocialMetadata } from './social-metadata.mjs';
 const outputRoot = path.resolve(process.argv[2] || '.');
 const isDist = process.argv[2] === 'dist';
 const images = new Set();
+// Legacy discovery paths must carry the same current brand as the homepage.
+const brandIcon = await readFile(path.join(outputRoot, 'assets/brand/br-mark-192.png'));
+const touchIcon = await readFile(path.join(outputRoot, 'assets/brand/apple-touch-icon.png'));
+assert.equal(touchIcon.subarray(0, 8).toString('hex'), '89504e470d0a1a0a');
+assert.equal(touchIcon.readUInt32BE(16), 180);
+assert.equal(touchIcon.readUInt32BE(20), 180);
+const ico = await readFile(path.join(outputRoot, 'favicon.ico'));
+assert.equal(ico.readUInt16LE(0), 0);
+assert.equal(ico.readUInt16LE(2), 1);
+assert.equal(ico.readUInt16LE(4), 4);
+for (const [i, size] of [32, 48, 96, 192].entries()) {
+  const entry = 6 + 16 * i;
+  assert.equal(ico[entry], size);
+  assert.equal(ico[entry + 1], size);
+  const start = ico.readUInt32LE(entry + 12);
+  const png = ico.subarray(start, start + ico.readUInt32LE(entry + 8));
+  assert.equal(png.subarray(0, 8).toString('hex'), '89504e470d0a1a0a');
+  assert.equal(png.readUInt32BE(16), size);
+  assert.equal(png.readUInt32BE(20), size);
+  if (size === 192) assert.deepEqual(png, brandIcon, 'ICO fallback must contain the current brand icon');
+}
 const ambassadorSettings = { portfolioImage: 'assets/social/baisalya-original-chair-v4.png', ambassadorEnabled: true, ambassadorImages: { devdesk: 'assets/social/devdesk-ambassador-v1.png' } };
 assert.equal(socialImagePath(socialSurfaces[0], ambassadorSettings), ambassadorSettings.portfolioImage);
 assert.equal(socialImagePath(socialSurfaces[1], ambassadorSettings), ambassadorSettings.ambassadorImages.devdesk);
@@ -50,12 +71,14 @@ assert.equal(applySocialMetadata(redirect, 'devdesk/manual/index.html'), redirec
 if (isDist) {
   const root = await readFile(path.join(outputRoot, 'index.html'), 'utf8');
   assert(root.includes('rel="icon" href="/assets/brand/br-mark-192.png" type="image/png" sizes="192x192"'));
-  assert(!root.includes('href="/assets/brand/apple-touch-icon.png"'));
+  assert(root.includes('rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" sizes="180x180"'));
   if (socialImagePath(socialSurfaces[0]) !== baseSocialImagePath(socialSurfaces[0])) assert(root.includes('Baishalya Roul portrait'));
   assert(!root.includes('Baishalya Roul with brand ambassador'));
-  for (const guide of ['index', 'field-photo-report', 'weekly-teaching-plan', 'notification-history-limits']) {
-    const html = await readFile(path.join(outputRoot, `guides/${guide}.html`), 'utf8');
+  for (const page of ['privacy.html', ...['index', 'field-photo-report', 'weekly-teaching-plan', 'notification-history-limits'].map(guide => `guides/${guide}.html`)]) {
+    const html = await readFile(path.join(outputRoot, page), 'utf8');
     assert(html.includes(`https://baisalya.com/${socialImagePath(socialSurfaces[0])}`));
+    assert(html.includes('rel="icon" href="/assets/brand/br-mark-192.png" type="image/png" sizes="192x192"'), `${page}: current brand favicon`);
+    assert(html.includes('rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" sizes="180x180"'), `${page}: current touch icon`);
   }
 }
 console.log(`Brand favicon and ${socialSurfaces.length} product-specific social previews: passed${isDist ? ' (production HTML)' : ''}`);

@@ -18,7 +18,7 @@ const monetizationRelease = '20260924.1';
 
 const rootRuntimeFiles = [
   'index.html', 'privacy.html', 'main.js', 'style.css', 'robots.txt', 'sitemap.xml', 'sitemap-pages.xml',
-  'javascript.svg', 'CNAME',
+  'javascript.svg', 'favicon.ico', 'CNAME',
 ];
 const rootRuntimeDirectories = ['assets', 'src/site', 'guides'];
 const rootOptionalRuntimeFiles = ['ads.txt', 'app-ads.txt'];
