@@ -47,3 +47,5 @@
 @media (max-width: 420px) {
   .nav-coffee { display: none; }
 }
+
+@media(max-width:768px){.professional-nav__menu{max-height:calc(100vh - 70px);max-height:calc(100dvh - 70px);overflow-y:auto;overscroll-behavior:contain}}
