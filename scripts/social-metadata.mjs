@@ -37,7 +37,7 @@ export function applySocialMetadata(html, relativePath) {
     });
     if (!surface.route) {
       head = head.replace(/<link\b(?=[^>]*\brel=["'](?:icon|shortcut icon|apple-touch-icon)["'])[^>]*>/gi, '');
-      head = head.replace('</head>', '<link rel="icon" href="/assets/brand/br-mark-192.png" type="image/png" sizes="192x192">\n<link rel="apple-touch-icon" href="/assets/brand/br-mark-192.png" sizes="192x192">\n</head>');
+      head = head.replace('</head>', '<link rel="icon" href="/assets/brand/br-mark-192.png" type="image/png" sizes="192x192">\n<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" sizes="180x180">\n</head>');
     }
     const tags = [
       ...Object.entries(properties).map(([key, value]) => `<meta property="${key}" content="${escape(value)}">`),
