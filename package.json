@@ -20,7 +20,7 @@
     "release:preflight": "node scripts/validate-release-preflight.mjs",
     "release": "npm run test && npm run release:preflight && npm run build && npm run test:dist",
     "check": "npm run release",
-    "test:brand-experience": "node scripts/validate-brand-experience.mjs",
+    "test:brand-experience": "node scripts/validate-brand-experience.mjs && node scripts/test-mobile-interactions.mjs",
     "test:surveycam": "node scripts/validate-surveycam-site.mjs",
     "test:revenue-ready": "node scripts/validate-revenue-ready.mjs",
     "adsense:configure": "node scripts/configure-adsense.mjs",

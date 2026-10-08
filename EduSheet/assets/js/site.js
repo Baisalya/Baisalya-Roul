@@ -37,18 +37,26 @@ const EDUSHEET_CONFIG = {
   const menuBtn = document.querySelector('.menu-btn');
   const navLinks = document.querySelector('.nav-links');
   if(menuBtn && navLinks){
-    const closeMenu = () => {
-      navLinks.classList.remove('mobile-open');
-      body.classList.remove('menu-open');
-      menuBtn.setAttribute('aria-expanded','false');
-    };
-    menuBtn.addEventListener('click',()=>{
-      const open = navLinks.classList.toggle('mobile-open');
+    const setMenu = (open) => {
+      navLinks.classList.toggle('mobile-open',open);
       body.classList.toggle('menu-open',open);
-      menuBtn.setAttribute('aria-expanded',open?'true':'false');
+      menuBtn.setAttribute('aria-expanded',String(open));
+      menuBtn.setAttribute('aria-label',open ? 'Close menu' : 'Open menu');
+    };
+    const closeMenu = () => setMenu(false);
+    navLinks.id ||= 'edusheet-navigation';
+    menuBtn.setAttribute('aria-controls',navLinks.id);
+    closeMenu();
+    menuBtn.addEventListener('click',()=>{
+      setMenu(!navLinks.classList.contains('mobile-open'));
     });
     navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
     document.addEventListener('keydown', event => { if(event.key === 'Escape') closeMenu(); });
+    document.addEventListener('click', event => {
+      if(!navLinks.contains(event.target) && !menuBtn.contains(event.target)) closeMenu();
+    });
+    window.matchMedia('(max-width:1040px)').addEventListener('change',closeMenu);
+    window.addEventListener('pageshow',closeMenu);
   }
 
   document.querySelectorAll('[data-store]').forEach(link=>{

@@ -1448,13 +1448,13 @@
     },
     {
       "path": "EduSheet/404.html",
-      "sha256": "80bc7cf005ef9e17738c99576324d1cd55de5e9936d20a14eb5d90f984d58c41",
-      "bytes": 940
+      "sha256": "d52f00c870bdb853f10c83ef8c4a6749f656d419569019c3a11d190ba2182f35",
+      "bytes": 964
     },
     {
       "path": "EduSheet/assets/css/styles.css",
-      "sha256": "cc8db7254c8c21817f8bf8c913a732b9665b41bf412ef167ec60626031aadb8f",
-      "bytes": 70864
+      "sha256": "390f96f4928079bcaae628c9cf0b2ac7ea5e65819d1e0fbd8b6fc0d37517addb",
+      "bytes": 71211
     },
     {
       "path": "EduSheet/assets/images/edusheet-brand-mark.png",
@@ -1473,13 +1473,13 @@
     },
     {
       "path": "EduSheet/assets/js/site.js",
-      "sha256": "9a902088c7620c6b321f235c2d654a27c2af197e8119b1accd5a559a0aca854e",
-      "bytes": 13545
+      "sha256": "0702075da489c19c38f06f3d7a3f9a50dbb276cb90e324a655b434dc3b0f4657",
+      "bytes": 13966
     },
     {
       "path": "EduSheet/download.html",
-      "sha256": "874ac3f0b99482192d90023f3d284b32c4417634af8b788ff57c3cbc740f608b",
-      "bytes": 8679
+      "sha256": "f2d4531accb33e2c55f01cb71a06c8856db6d9810b09fb14bd4744e719418d44",
+      "bytes": 8727
     },
     {
       "path": "EduSheet/EDUSHEET_PREMIUM_PROGRESS_CHANGED_FILES.txt",
@@ -1528,28 +1528,28 @@
     },
     {
       "path": "EduSheet/features.html",
-      "sha256": "7ba6cd04991eacbbf88e391ede65f30ae9d78406ecff13e92e13975af3b1bd2a",
-      "bytes": 21857
+      "sha256": "84beaef9384e7d4ba300077ec1a56a91c4847f2d00e5ef68366b11c9b35a4f5f",
+      "bytes": 21876
     },
     {
       "path": "EduSheet/index.html",
-      "sha256": "f2e2c8b27c652628cd4931daba17a8142141195427e306b8687af908728badba",
-      "bytes": 46395
+      "sha256": "3ce1d8dcfde3a9c720d9aaa346fafb67d310c65dc8296e263f8499f239e819b7",
+      "bytes": 46385
     },
     {
       "path": "EduSheet/manual.html",
-      "sha256": "aa7482ee5d6f5b74ae783096500067a5362927c7606e4ca6ee5c3fa695048eee",
-      "bytes": 24799
+      "sha256": "c37abba3020a0d2337d554c982feaafcda653132e0f2fa34d9646c41a4629156",
+      "bytes": 24847
     },
     {
       "path": "EduSheet/privacy.html",
-      "sha256": "f1dff971ce0cc1466c0ebf2272f38d7b322975f5470ff68c6be93d1ec4fdc9f5",
-      "bytes": 41400
+      "sha256": "6c525abb37900432a9c43993afec62d1ce8683a9ae882acfba8457b7ba6652ce",
+      "bytes": 41448
     },
     {
       "path": "EduSheet/quick-start.html",
-      "sha256": "1b26c5b9bc036a00b46d7bdaf8e1a05d3b32da71360cefd6227d2506f734c396",
-      "bytes": 8846
+      "sha256": "8c89498052da1531455def4fd238dc748f8988dbf28825c65e89beff257642de",
+      "bytes": 8894
     },
     {
       "path": "EduSheet/README_DEPLOY.md",
@@ -1568,8 +1568,8 @@
     },
     {
       "path": "EduSheet/teacher-planner.html",
-      "sha256": "49753842a391e3a8836d7c6f72d29d2c2be4c36457bf8fd2c143ed8c9026fd45",
-      "bytes": 21580
+      "sha256": "a960cd735a306ce48cae2a7e69d7a2a4971f46c8effe451d8ee84ff79d5ac398",
+      "bytes": 21570
     },
     {
       "path": "notivault-website/_next/static/_vinext_fonts/geist-8ac0455e797f/geist-001175b1.woff2",

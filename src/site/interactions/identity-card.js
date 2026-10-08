@@ -7,6 +7,7 @@ function closeDialog(dialog, triggers) {
   if (typeof dialog.close === 'function' && dialog.open) dialog.close();
   else dialog.removeAttribute('open');
   dialog.hidden = true;
+  document.documentElement.classList.remove('identity-open');
   syncTriggers(triggers, false);
 }
 
@@ -20,6 +21,7 @@ function openDialog(dialog, triggers) {
     dialog.setAttribute('open', '');
   }
   syncTriggers(triggers, true);
+  document.documentElement.classList.add('identity-open');
 }
 
 export function initIdentityCard() {
@@ -38,25 +40,38 @@ export function initIdentityCard() {
   }
 
   const openIdentityCard = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    dialog.scrollTop = 0;
     if (!dialog.open || dialog.hidden) openDialog(dialog, triggers);
   };
 
   triggers.forEach((trigger) => {
+    // Native click handles touch, mouse and keyboard without opening before
+    // the release click, which can otherwise land on the newly shown backdrop.
     trigger.addEventListener('click', openIdentityCard);
-    trigger.addEventListener('pointerup', () => {
-      if (!dialog.open || dialog.hidden) openIdentityCard();
-    }, { passive: true });
   });
 
+  const isBackdrop = (event) => {
+    if (event.target !== dialog) return false;
+    const rect = dialog.getBoundingClientRect();
+    return event.clientX < rect.left || event.clientX > rect.right
+      || event.clientY < rect.top || event.clientY > rect.bottom;
+  };
+  let startedOnBackdrop = false;
+  dialog.addEventListener('pointerdown', (event) => {
+    startedOnBackdrop = isBackdrop(event);
+  });
+  dialog.addEventListener('pointercancel', () => { startedOnBackdrop = false; });
   dialog.addEventListener('click', (event) => {
-    if (event.target === dialog) closeDialog(dialog, triggers);
+    if (startedOnBackdrop && isBackdrop(event)) closeDialog(dialog, triggers);
+    startedOnBackdrop = false;
     if (event.target.closest('[data-identity-close]')) closeDialog(dialog, triggers);
   });
 
   dialog.addEventListener('cancel', () => closeDialog(dialog, triggers));
   dialog.addEventListener('close', () => {
     dialog.hidden = true;
+    document.documentElement.classList.remove('identity-open');
     syncTriggers(triggers, false);
   });
 }
