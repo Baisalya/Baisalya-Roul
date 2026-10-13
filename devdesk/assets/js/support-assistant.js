@@ -40,6 +40,11 @@
   ]);
   const topicRoutes = [
     {
+      terms: ['cli'],
+      url: 'manual/devdesk-cli.html',
+      answer: 'Use the standalone devdesk CLI for projects, knowledge, API tests, local data, and routines. Check --version and --help for your installed build. Supported routine commands and AI inspection can use the running GUI broker; other local-data mutations require closing the GUI.',
+    },
+    {
       terms: ['student'],
       url: 'manual/getting-started.html',
       answer: 'Choose the Study starter for subjects, assignments, notes, and resources. Its first views are Today, Board, Calendar, and Relationships; add a due date when you want an assignment to appear in Calendar.',

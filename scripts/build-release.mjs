@@ -12,7 +12,7 @@ const execFileAsync = promisify(execFile);
 const projectRoot = process.cwd();
 const outputRoot = path.join(projectRoot, 'dist');
 const planOnly = process.argv.includes('--plan');
-const devDeskRelease = '20260909.1';
+const devDeskRelease = '20261013.1';
 const constructionErpRelease = '20260904.1';
 const monetizationRelease = '20260924.1';
 

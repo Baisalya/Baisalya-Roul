@@ -1,4 +1,4 @@
-const BUILD_ID = '20260909.1';
+const BUILD_ID = '20261013.1';
 const CACHE_PREFIX = 'devdesk-docs-';
 const CACHE_NAME = `${CACHE_PREFIX}${BUILD_ID}`;
 const ASSETS = [
@@ -29,6 +29,8 @@ const ASSETS = [
   "./manual/agent-connector.html",
   "./manual/ai-workbench.html",
   "./manual/notifications-routines.html",
+  "./manual/devdesk-cli.html",
+  "./assets/downloads/devdesk-cli-help.txt",
   "./manual/getting-started.html",
   "./manual/downloads-installation.html",
   "./manual/interface-tour.html",

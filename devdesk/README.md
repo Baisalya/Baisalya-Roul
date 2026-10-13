@@ -37,12 +37,13 @@ See `PRODUCT_POSITIONING.md` for the message hierarchy and
 - transparent platform downloads page;
 - a featured graph-to-code video and downloadable Tiny Multi-Agent Graph Demo;
 - the original agent-ready workspace as a second guided practice demo;
-- a complete beginner-first global manual plus 50 focused and visual topics,
+- a complete beginner-first global manual plus 51 focused and visual topics,
   including a five-page API Studio section;
 - separate guides for the external MCP Agent Connector and the in-app AI
   Workbench coding, verification, parallel-worker, and Browser Agent flows;
 - dedicated AI Harness and notifications/routines guidance for non-technical,
   student, writing, planning, and developer use cases;
+- a standalone CLI guide with a complete command reference, examples, shell completion, and diagnostics;
 - an app-matched visual feature atlas and an HTML/CSS screen preview on every
   manual topic;
 - dedicated Diagram Studio and workspace workbench guides covering responsive
@@ -92,6 +93,22 @@ and shared brand message in manual chrome.
 
 Review generated HTML, links, search, theme, mobile navigation, and download
 destinations before publishing.
+
+### Refresh the CLI command reference
+
+From the repository root, run `node devdesk/tool/sync_cli_reference.mjs` with
+the intended DevDesk CLI installed. This reads `devdesk --help` and
+`devdesk api run --help`, updates the complete command reference in
+`content/devdesk-cli.md`, and saves a downloadable plain-text help snapshot.
+Then, from `devdesk/`, run `dart run tool/refresh_manual.dart devdesk-cli`.
+Use `node devdesk/tool/sync_cli_reference.mjs --check` from the repository root
+to verify that the reference still matches the installed CLI. Review the
+version/date in the guide and homepage when updating to a different build.
+
+The 13 October 2026 reference was checked against installed CLI 1.2.6+21 and
+covers all 86 top-level usage lines plus API collection runner options. The
+homepage now exposes files, knowledge, utilities, Docker/Kubernetes, ADB,
+local data, verification, AI, agents, and routine terminal workflows.
 
 ## Local preview
 

@@ -138,6 +138,12 @@ const _pages = <_Page>[
         'Review local alerts and schedule AI prompts that always wait for user confirmation.',
   ),
   _Page(
+    slug: 'devdesk-cli',
+    title: 'DevDesk command-line guide',
+    description:
+        'Complete CLI command reference with files, knowledge, API runner options, Docker, Kubernetes, Android ADB, AI, agents, routines, completion, and diagnostics.',
+  ),
+  _Page(
     slug: 'structured-knowledge-okf',
     title: 'Structure checks (OKF)',
     description:
@@ -314,11 +320,16 @@ Future<void> _refreshPage(
     '\n${_secureExternalLinks(rendered.html)}\n',
   );
 
-  final tocStart = document.indexOf('<aside class="toc"');
-  final tocEnd = document.indexOf('</aside>', tocStart) + '</aside>'.length;
-  if (tocStart < 0 || tocEnd < '</aside>'.length) {
+  final tocMatch = RegExp(r'<aside\b[^>]*\bclass="toc"[^>]*>').firstMatch(document);
+  if (tocMatch == null) {
     throw FormatException('Could not locate page outline in ${htmlFile.path}');
   }
+  final tocStart = tocMatch.start;
+  final tocClose = document.indexOf('</aside>', tocStart);
+  if (tocClose < 0) {
+    throw FormatException('Could not locate page outline end in ${htmlFile.path}');
+  }
+  final tocEnd = tocClose + '</aside>'.length;
   document = document.replaceRange(
     tocStart,
     tocEnd,
@@ -326,13 +337,17 @@ Future<void> _refreshPage(
   );
 
   document = document.replaceFirst(
-    RegExp(r'<meta name="description" content="[^"]*">'),
+    RegExp(r'<meta\b(?=[^>]*\bname="description")[^>]*>'),
     '<meta name="description" '
     'content="${_htmlEscape.convert(page.description)}">',
   );
   document = document.replaceFirst(
     RegExp(r'<title>.*?</title>'),
     '<title>${_htmlEscape.convert(page.title)} · DevDesk Manual</title>',
+  );
+  document = document.replaceFirst(
+    RegExp(r'data-ad-context="[^"]*"'),
+    'data-ad-context="${page.slug}"',
   );
   await htmlFile.writeAsString(document, encoding: utf8);
 
@@ -362,6 +377,14 @@ Future<void> _refreshPage(
 }
 
 String _prepareManualTemplate(String source, String slug) {
+  if (slug == 'devdesk-cli') {
+    source = source.replaceAllMapped(
+      RegExp(r'<a\b[^>]*href="\.\./manual/getting-started\.html"[^>]*>'),
+      (match) => match.group(0)!
+          .replaceAll('class="active"', 'class=""')
+          .replaceAll(RegExp(r'\saria-current="page"'), ''),
+    );
+  }
   source = source.replaceAll(
     '>AI Workbench and coding agents</a>',
     '>AI Harness, Workbench, and coding agents</a>',
@@ -385,6 +408,7 @@ String _prepareManualTemplate(String source, String slug) {
   for (final page in const <(String, String)>[
     ('workspace-workbench', 'Workspace workbench and tabs'),
     ('visual-feature-guide', 'Visual feature guide'),
+    ('devdesk-cli', 'DevDesk command-line guide'),
   ]) {
     final link = slug == page.$1
         ? '<a class="active" href="../manual/${page.$1}.html" '
@@ -554,6 +578,12 @@ String _prepareManualTemplate(String source, String slug) {
         'Review-first schedules',
         'Windows + Android',
       ),
+    'devdesk-cli' => (
+        'DevDesk command-line guide',
+        'Terminal workflows',
+        'GUI + CLI broker',
+        'Windows + Linux',
+      ),
     _ => null,
   };
   if (pageChrome != null) {
@@ -597,6 +627,11 @@ String _prepareManualTemplate(String source, String slug) {
         '<small>Previous</small><strong>AI Harness and Workbench</strong></a>'
         '<a class="pager" href="privacy-security.html">'
         '<small>Next</small><strong>Privacy and security</strong></a></div>',
+    'devdesk-cli' => '<div class="article-footer">'
+        '<a class="pager" href="downloads-installation.html">'
+        '<small>Related</small><strong>Installation</strong></a>'
+        '<a class="pager" href="notifications-routines.html">'
+        '<small>Related</small><strong>Notifications and routines</strong></a></div>',
     _ => null,
   };
   if (footer != null) {

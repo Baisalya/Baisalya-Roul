@@ -7,7 +7,7 @@ const storeUrl =
   'https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare';
 const eduSheetStoreUrl =
   'https://apps.microsoft.com/detail/9N0ZK8C31X94?cid=DevShareMCLPCB';
-const devDeskRelease = '20260909.1';
+const devDeskRelease = '20261013.1';
 const failures = [];
 
 async function text(relativePath) {

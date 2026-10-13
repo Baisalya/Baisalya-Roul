@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta name="description" content="Complete CLI command reference with files, knowledge, API runner options, Docker, Kubernetes, Android ADB, AI, agents, routines, completion, and diagnostics."><meta content="#5b47e8" name="theme-color"/><title>DevDesk command-line guide · DevDesk Manual</title><link href="../assets/img/devdesk-logo-64.png" rel="icon" sizes="64x64" type="image/png"/><link href="../assets/css/styles.css?v=20261013.1" rel="stylesheet"/><script defer="" src="../assets/js/site-config.js?v=20261013.1"></script><script defer="" src="../assets/js/search-index.js?v=20261013.1"></script><script defer="" src="../assets/js/app.js?v=20261013.1"></script><script defer="" src="../assets/js/manual-visuals.js?v=20261013.1"></script> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<link href="https://baisalya.com/devdesk/manual/getting-started.html" rel="canonical"/>
+<meta content="https://baisalya.com/devdesk/manual/getting-started.html" property="og:url"/>
+<link href="../../assets/site-network.css" rel="stylesheet"/><link href="../../assets/monetization/monetization.css" rel="stylesheet"/></head><body><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+<button aria-label="Open documentation menu" class="icon-btn mobile-menu" data-menu="" type="button">☰</button>
+<a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Your files. Your workspace.</small></span></a>
+<nav aria-label="Primary navigation" class="top-nav">
+<a class="" href="../index.html">Home</a>
+<a class="active" href="../manual/user-manual.html">Manual</a>
+<a class="" href="../downloads.html">Downloads</a>
+<a class="nav-demo" href="../downloads.html#agent-demo">Demo project</a>
+<a href="https://baisalya.github.io/devdesk-support/" rel="noopener noreferrer" target="_blank">Support</a>
+<a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy</a>
+<a aria-label="Visit Baisalya.com portfolio and software hub" class="baisalya-network-link" href="https://baisalya.com/">Baisalya.com</a></nav>
+<div class="header-actions">
+<button aria-label="Search manual" class="search-btn" data-search="" type="button"><span>Search manual</span> <kbd>/</kbd></button>
+<button aria-label="Toggle light and dark theme" class="icon-btn" data-theme-toggle="" type="button">◐</button>
+</div>
+</header><div class="mobile-drawer-backdrop"></div><div class="manual-layout"><aside aria-label="Manual contents" class="docs-sidebar"><h2>Start here</h2>
+<a class="active" href="../manual/devdesk-cli.html" aria-current="page">DevDesk command-line guide</a>
+<a class="" href="../manual/visual-feature-guide.html">Visual feature guide</a>
+<a class="" href="../manual/workspace-workbench.html">Workspace workbench and tabs</a>
+<a class="" href="../manual/user-manual.html">Complete user manual</a>
+<a class="" href="../manual/getting-started.html">Getting started</a>
+<a class="" href="../manual/downloads-installation.html">Downloads and installation</a>
+<a class="" href="../manual/interface-tour.html">Interface tour</a>
+<h2>Knowledge and Markdown</h2>
+<a class="" href="../manual/developer-workspaces.html">Folders, portability, and Git</a>
+<a class="" href="../manual/project-folder-structure.html">Create a project knowledge structure</a>
+<a class="" href="../manual/markdown-basics.html">Markdown basics</a>
+<a class="" href="../manual/frontmatter-properties.html">YAML frontmatter and properties</a>
+<a class="" href="../manual/links-backlinks-nodes.html">Links, backlinks, and nodes</a>
+<a class="" href="../manual/knowledge-workspace.html">Edit workspace Markdown</a>
+<a class="" href="../manual/knowledge-graph.html">Relationships and graph</a>
+<a class="" href="../manual/diagram-studio.html">Diagram Studio</a>
+<a class="" href="../manual/visual-canvas.html">Visual Canvas</a>
+<a class="" href="../manual/structured-views.html">Structured workspace views</a>
+<a class="" href="../manual/graph-connection-editing.html">Edit graph connections</a>
+<a class="" href="../manual/markdown-vault.html">Markdown Vault</a>
+<a class="" href="../manual/markdown-editor.html">Markdown Editor</a>
+<h2>Structure checks (OKF)</h2>
+<a class="" href="../manual/structured-knowledge-okf.html">Structure checks (OKF)</a>
+<a class="" href="../manual/okf-bundle-structure.html">OKF bundle structure</a>
+<a class="" href="../manual/okf-concepts-metadata.html">OKF concepts and metadata</a>
+<a class="" href="../manual/okf-conversion-migration.html">Analyze, convert, and migrate folders</a>
+<a class="" href="../manual/okf-trust-sources-lifecycle.html">Sources, trust, freshness, and lifecycle</a>
+<a class="" href="../manual/okf-attested-computation.html">Attested Computation</a>
+<h2>API and documentation</h2>
+<a class="" href="../manual/readme-generator.html">README Generator</a>
+<a class="" href="../manual/api-workspaces.html">Saved API testing</a>
+<a class="" href="../manual/api-environments-secrets.html">API environments and protected secrets</a>
+<a class="" href="../manual/api-assertions-extraction.html">Assertions, extraction, examples, and history</a>
+<a class="" href="../manual/quick-api.html">Quick API</a>
+<a class="" href="../manual/openapi-studio.html">OpenAPI Studio</a>
+<a class="" href="../manual/unified-search.html">Search this workspace</a>
+<h2>Developer utilities</h2>
+<a class="" href="../manual/json-tools.html">JSON Tools</a>
+<a class="" href="../manual/jwt-decoder.html">JWT Decoder</a>
+<a class="" href="../manual/regex-tester.html">Regex Tester</a>
+<a class="" href="../manual/base64.html">Base64 Tool</a>
+<a class="" href="../manual/url-tools.html">URL Encoder and Decoder</a>
+<a class="" href="../manual/timestamp.html">Timestamp Converter</a>
+<a class="" href="../manual/uuid.html">UUID Generator</a>
+<a class="" href="../manual/diff-git.html">Compare files and scoped Git</a>
+<a class="" href="../manual/snippets-notes.html">Snippets and Notes</a>
+<h2>Safety and reference</h2>
+<a class="" href="../manual/notifications-routines.html">Notifications and AI routines</a>
+<a class="" href="../manual/ai-workbench.html">AI Harness, Workbench, and coding agents</a>
+<a class="" href="../manual/agent-connector.html">AI Agent Connector</a>
+<a class="" href="../manual/backup-restore.html">Backup and restore</a>
+<a class="" href="../manual/settings-appearance.html">Settings and appearance</a>
+<a class="" href="../manual/privacy-security.html">Privacy and security</a>
+<a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
+<a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>DevDesk command-line guide</span></div><div class="doc-meta"><span class="doc-chip">Terminal workflows</span><span class="doc-chip">GUI + CLI broker</span><span class="doc-chip">Windows + Linux</span></div>
+<h1 id="devdesk-command-line-guide">DevDesk command-line guide<a class="heading-anchor" href="#devdesk-command-line-guide" aria-label="Link to DevDesk command-line guide">#</a></h1>
+<p>Use <code>devdesk</code> for project files, knowledge, API tests, local data, and bounded
+operations from a terminal. The standalone CLI does not require the Flutter
+window to be open or a DevDesk account. It shares services with the app;
+visual editing stays in the GUI.</p>
+<p>The command reference below was checked against installed <strong>DevDesk CLI
+1.2.6+21 on 13 October 2026</strong>. Store links install their currently published
+build. Check <code>devdesk --version</code> and <code>devdesk --help</code> to confirm which commands
+your installed package provides. The existing platform and GUI broker guidance
+also draws on the reviewed 1.2.5 source.</p>
+<h2 id="start-with-your-installed-package">Start with your installed package<a class="heading-anchor" href="#start-with-your-installed-package" aria-label="Link to Start with your installed package">#</a></h2>
+<pre><code class="language-text">devdesk --version
+devdesk --help
+devdesk doctor
+devdesk tools list
+</code></pre>
+<ul>
+<li><strong>Windows Store / MSIX:</strong> current packaging registers the <code>devdesk.exe</code>
+App execution alias for the console CLI. Open a new terminal. If missing,
+check Windows <strong>App execution aliases</strong> and your installed version.</li>
+<li><strong>Windows Classic installer:</strong> adds packaged <code>cli\bin</code> to the current
+user's PATH. Open a new terminal after installation.</li>
+<li><strong>Portable Windows bundle:</strong> run <code>cli\bin\devdesk.exe</code> directly and keep
+its packaged payload intact.</li>
+<li><strong>Linux packages:</strong> the Debian package installs <code>devdesk</code> and <code>devdesk-gui</code>;
+the portable archive uses <code>./bin/devdesk</code> and <code>./bin/devdesk-gui</code>. Build and
+packaging support exists in source; this site does not advertise a public
+Linux package download.</li>
+</ul>
+<p>For a source checkout with Dart installed, PowerShell uses
+<code>.\devdesk.ps1 doctor</code>; Command Prompt can use <code>devdesk.cmd doctor</code>.
+Prefer <code>--file</code> or <code>--stdin</code> for multiline content. The PowerShell launcher
+preserves multiline/quoted arguments; CMD has batch argument limitations.
+Installed native executables do not need Dart or the wrappers.</p>
+<h2 id="command-families">Command families<a class="heading-anchor" href="#command-families" aria-label="Link to Command families">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Workflow</th>
+<th>Commands</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Health and scripting</td>
+<td><code>doctor</code>, <code>completion</code>, <code>diagnostics</code>, <code>exit-codes</code></td>
+</tr>
+<tr>
+<td>Projects and tools</td>
+<td><code>files</code>, <code>run</code>, <code>project</code>, <code>verify</code>, <code>git</code></td>
+</tr>
+<tr>
+<td>Knowledge and comparison</td>
+<td><code>markdown</code>, <code>knowledge</code>, <code>search</code>, <code>diff</code></td>
+</tr>
+<tr>
+<td>API and utilities</td>
+<td><code>api</code>, <code>openapi</code>, <code>tools</code></td>
+</tr>
+<tr>
+<td>Identity and local data</td>
+<td><code>workspace</code>, <code>snippets</code>, <code>notes</code>, <code>settings</code>, <code>backup</code></td>
+</tr>
+<tr>
+<td>Operations</td>
+<td><code>containers</code>, <code>adb</code></td>
+</tr>
+<tr>
+<td>AI and routines</td>
+<td><code>ai</code>, <code>agents</code>, <code>routines</code></td>
+</tr>
+</tbody>
+</table>
+<p>Use <code>devdesk --help</code> for the full command list. Subcommand help is not universal:
+<code>devdesk api run --help</code> works, while <code>devdesk adb --help</code> is not accepted by
+the checked build. Many inspection commands support <code>--json</code> for scripts.
+Mutations use their documented confirmation flags. See the
+<a href="#complete-command-reference">complete command reference</a> for every usage line.</p>
+<h2 id="create-files-from-cmd-or-powershell">Create files from CMD or PowerShell<a class="heading-anchor" href="#create-files-from-cmd-or-powershell" aria-label="Link to Create files from CMD or PowerShell">#</a></h2>
+<p>The <code>.</code> workspace means your current folder. Replace it with a quoted folder
+path when working elsewhere. Relative file paths belong to that workspace.</p>
+<pre><code class="language-text">devdesk files mkdir . docs
+devdesk files create . docs/hello.md --content &quot;Hello from DevDesk&quot;
+devdesk files create . src/example.dart --content &quot;void main() {}&quot; --parents
+devdesk files read . docs/hello.md
+</code></pre>
+<p><code>mkdir</code> creates a folder; <code>--parents</code> creates missing parent directories for a
+new file. <code>create</code> never overwrites an existing file. Use <code>--stdin</code> for longer
+content; piping differs between CMD and PowerShell. For commands that support
+<code>--file</code>, pass a saved file to avoid shell quoting problems.</p>
+<h2 id="inspect-a-project">Inspect a project<a class="heading-anchor" href="#inspect-a-project" aria-label="Link to Inspect a project">#</a></h2>
+<pre><code class="language-text">devdesk files list . --depth 3
+devdesk files read . README.md
+devdesk project inspect . --json
+devdesk project search . &quot;retry&quot; --json
+devdesk project read . README.md --start 1 --max-chars 4000 --json
+devdesk git status . --json
+devdesk git diff . README.md
+devdesk git log . --limit 10 --json
+devdesk markdown list . --json
+devdesk markdown headings . README.md --json
+devdesk markdown metadata . README.md --json
+devdesk knowledge index . --documents 100 --json
+devdesk knowledge search . &quot;release&quot; --limit 10 --json
+devdesk knowledge links . notes/overview.md --json
+devdesk knowledge backlinks . notes/overview.md --json
+devdesk knowledge issues . --json
+devdesk knowledge path . notes/overview.md notes/release.md --json
+devdesk search . &quot;release&quot; --kind markdown,workspaceFile --json
+devdesk diff files before.md after.md --exit-code
+devdesk diff text &quot;before&quot; &quot;after&quot;
+devdesk diff folders before-folder after-folder --ignore node_modules --json
+</code></pre>
+<p>Project paths stay inside the selected root; enumeration does not follow links.
+<code>files create</code> refuses to overwrite files. Indexing/text sharing stays bounded
+and excludes known credential paths. With <code>--exit-code</code>, diff returns <code>1</code> when
+differences exist.</p>
+<h2 id="api-tests-openapi-and-utilities">API tests, OpenAPI, and utilities<a class="heading-anchor" href="#api-tests-openapi-and-utilities" aria-label="Link to API tests, OpenAPI, and utilities">#</a></h2>
+<pre><code class="language-text">devdesk api request GET https://api.example.com/health --json --fail
+devdesk api run devdesk-api-workspace.json --report junit --output api-report.xml
+devdesk openapi validate openapi.yaml --json
+devdesk openapi operations openapi.yaml --json
+devdesk tools list
+devdesk tools json pretty --file payload.json
+devdesk tools base64 encode &quot;hello&quot;
+devdesk tools uuid generate 3
+</code></pre>
+<p>Sending API requests contacts the selected destination. Collection assertions
+and failures produce a non-zero exit code for scripts/CI. Utilities cover JSON,
+Base64, URL, regex, UUID, timestamps, and JWT inspection.</p>
+<h2 id="portable-workspace-identity">Portable workspace identity<a class="heading-anchor" href="#portable-workspace-identity" aria-label="Link to Portable workspace identity">#</a></h2>
+<pre><code class="language-text">devdesk workspace manifest inspect .
+devdesk workspace manifest init . --name &quot;My Project&quot;
+devdesk workspace manifest validate devdesk.project
+devdesk workspace manifest print .
+devdesk workspace manifest upgrade .
+</code></pre>
+<p>The canonical manifest is <code>devdesk.project</code>. Legacy <code>project.devdesk</code> is still
+accepted. <code>init</code> never replaces an accepted manifest. <code>upgrade</code> verifies the
+legacy file and renames it only when the canonical destination is unused.</p>
+<h2 id="local-data-and-backup">Local data and backup<a class="heading-anchor" href="#local-data-and-backup" aria-label="Link to Local data and backup">#</a></h2>
+<pre><code class="language-text">devdesk snippets list --query retry
+devdesk notes search &quot;release checklist&quot;
+devdesk settings get theme_mode
+devdesk backup export backup.json
+devdesk backup validate backup.json
+devdesk backup preview backup.json
+devdesk backup restore backup.json
+devdesk backup restore backup.json --merge --apply
+</code></pre>
+<p>Restore is a dry run until <code>--apply</code>. Destructive note/snippet/settings actions
+require <code>--yes</code>. Secret-shaped settings are blocked and protected credentials
+are excluded from portable backups. Backup JSON can contain other confidential
+content. External workspace folders must be backed up separately.</p>
+<p>Use <code>--data-dir PATH</code> or <code>DEVDESK_DATA_DIR</code> for an isolated profile. Close the GUI
+before direct-storage mutations such as notes, snippets, settings, or restore.
+Concurrent broker support applies only to the commands below.</p>
+<h2 id="use-the-cli-while-the-gui-is-open">Use the CLI while the GUI is open<a class="heading-anchor" href="#use-the-cli-while-the-gui-is-open" aria-label="Link to Use the CLI while the GUI is open">#</a></h2>
+<p>The desktop GUI remains the single Hive storage owner. Supported CLI commands
+use an authenticated local broker: a Windows Named Pipe or Linux Unix Domain
+Socket, with no TCP/HTTP listener. When the GUI closes, the CLI uses direct storage.</p>
+<ul>
+<li>Brokered inspection: <code>routines list/get/history</code>, <code>ai status/providers</code>.</li>
+<li>Brokered mutations: <code>routines add/enable/disable/delete/run/check</code>.</li>
+<li>Consequential mutations retain <code>--yes</code>; forwarding never grants automatic
+AI provider-send authority.</li>
+</ul>
+<p>JSON storage-backed output reports <code>storageOwner</code> as <code>gui</code> or <code>cli</code> when that
+field applies. Bounded retries and short-lived replay protection guard retried
+mutations. An open GUI does not make every app-data command safe concurrently.
+Use the same intended data profile on both sides.</p>
+<h2 id="run-tools-and-inspect-operations">Run tools and inspect operations<a class="heading-anchor" href="#run-tools-and-inspect-operations" aria-label="Link to Run tools and inspect operations">#</a></h2>
+<pre><code class="language-text">devdesk run . --timeout 120 -- flutter test
+devdesk verify plan . --json
+devdesk containers docker runtime --json
+devdesk containers kube runtime --json
+devdesk adb devices --json
+</code></pre>
+<p><code>run</code> starts the exact program after <code>--</code> in the selected folder, without
+interpreting an arbitrary shell string. Explicitly launched programs run with
+your user's permissions. Timeout terminates the child process tree and returns <code>124</code>.</p>
+<p>Verification uses detected approved adapter plans and consent for execution.
+Docker offers inspection and guarded lifecycle actions. Kubernetes CLI inspection
+is read-only; pod exec, Secret reveal, delete, scale, and rollout mutations are
+absent. ADB offers bounded inspection and consent-gated control; root, fastboot,
+arbitrary shell, install/uninstall, and device wipe are absent. Install the
+relevant toolchains separately.</p>
+<h2 id="docker-kubernetes-and-android-inspection">Docker, Kubernetes, and Android inspection<a class="heading-anchor" href="#docker-kubernetes-and-android-inspection" aria-label="Link to Docker, Kubernetes, and Android inspection">#</a></h2>
+<pre><code class="language-text">devdesk containers doctor --json
+devdesk containers docker list
+devdesk containers docker inspect &lt;container&gt;
+devdesk containers docker logs &lt;container&gt;
+devdesk containers docker stats &lt;container&gt;
+devdesk containers kube contexts
+devdesk containers kube namespaces
+devdesk containers kube workloads --namespace default
+devdesk containers kube pods --namespace default
+devdesk containers kube describe deployment my-app --namespace default --json
+devdesk containers kube logs my-pod --tail 100 --namespace default --json
+devdesk adb capabilities --json
+devdesk adb devices --json
+devdesk adb screenshot emulator-5554 --output phone.png
+devdesk adb ui emulator-5554 --limit 100 --json
+devdesk adb logcat emulator-5554 --lines 100 --json
+</code></pre>
+<p>Replace angle-bracket placeholders with real IDs; do not type the brackets in
+CMD, where they are redirection operators. Use <code>--context NAME</code> and
+<code>--namespace NAME</code> to target Kubernetes inspection. ADB commands use a serial
+from <code>adb devices</code>. Screenshot output is a PNG file; <code>--force</code> permits replacing
+an existing output file.</p>
+<p>Docker <code>start</code>, <code>stop</code>, <code>restart</code>, <code>pause</code>, and <code>unpause</code> require <code>--yes</code>.
+ADB <code>connect</code>, <code>launch</code>, <code>tap</code>, <code>swipe</code>, <code>text</code>, and <code>key</code> also require <code>--yes</code>.
+The reference lists the top-level syntax; consult <code>adb capabilities</code> for the
+installed device-control capabilities. GUI container deployment and terminal
+features have their own workflows in <a href="container-operations.html">Containers &amp; Kubernetes</a>.</p>
+<h2 id="ai-and-saved-agents">AI and saved agents<a class="heading-anchor" href="#ai-and-saved-agents" aria-label="Link to AI and saved agents">#</a></h2>
+<pre><code class="language-text">devdesk ai status . --json
+devdesk ai providers . --json
+devdesk ai plan . --prompt &quot;Explain this error&quot; --json
+devdesk ai run . --file prompt.md --credential-env MY_AI_TOKEN --yes --json
+devdesk agents list . --json
+devdesk agents status . --json
+devdesk agents activity . --limit 20 --json
+devdesk agents automation list . --json
+</code></pre>
+<p><code>ai run</code> sends only your explicit prompt and, when selected, the saved agent
+system instruction. It requires <code>--yes</code>. Supply a credential environment-variable
+name, never a literal key argument. CLI inspection does not reveal GUI protected
+credentials. Workspace files, memory, terminal, browser, ADB, and model tools
+are not attached automatically; provider tool-call attempts are rejected.
+Saved-agent automation is limited to the read-only graph-health action and
+respects workspace policy and consent.
+<code>agents automation schedule-health</code> schedules the supported health task;
+<code>run</code>, <code>enable</code>, and <code>disable</code> target a saved task ID. These actions require
+<code>--yes</code>. <code>verify plan</code> lists detected verification command IDs before
+<code>verify run . &lt;command-id&gt; --yes</code> executes a selected check.</p>
+<h2 id="routines-from-a-terminal">Routines from a terminal<a class="heading-anchor" href="#routines-from-a-terminal" aria-label="Link to Routines from a terminal">#</a></h2>
+<pre><code class="language-text">devdesk routines list --json
+devdesk routines add --title &quot;Daily review&quot; --prompt &quot;Plan my next three tasks&quot; --cadence daily --at 2026-10-14T09:00:00+05:30 --json
+devdesk routines get &lt;routine-id&gt; --json
+devdesk routines disable &lt;routine-id&gt; --yes
+devdesk routines enable &lt;routine-id&gt; --yes
+devdesk routines run &lt;routine-id&gt; --yes --json
+devdesk routines check --yes --json
+devdesk routines history --limit 20 --json
+</code></pre>
+<p><code>routines run</code> requests manual review. <code>routines check</code> leaves due automatic
+modes for the app-owned runtime. Neither sends an AI provider request.
+See <a href="notifications-routines.html">Notifications and AI routines</a> for automatic
+modes and the optional Windows Classic closed-app worker.</p>
+<h2 id="completion-diagnostics-and-exit-codes">Completion, diagnostics, and exit codes<a class="heading-anchor" href="#completion-diagnostics-and-exit-codes" aria-label="Link to Completion, diagnostics, and exit codes">#</a></h2>
+<pre><code class="language-text">devdesk --no-color doctor
+devdesk --quiet --version
+devdesk completion powershell --output devdesk-completion.ps1
+devdesk completion bash
+devdesk completion zsh
+devdesk diagnostics bundle --output devdesk-diagnostics.json
+devdesk exit-codes --json
+</code></pre>
+<p>Global <code>--quiet</code> and <code>--no-color</code> go before the command. Quiet mode suppresses
+normal DevDesk stdout while retaining errors/status; child-program output stays
+visible. Completion/diagnostics do not overwrite files without <code>--force</code>.
+Default diagnostics omit secrets, environment values, workspace contents, and
+user/tool paths, and send no telemetry.</p>
+<table>
+<thead>
+<tr>
+<th align="right">Code</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td>Success</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td>Negative/status result, including a requested diff comparison</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>Unexpected internal CLI error</td>
+</tr>
+<tr>
+<td align="right">64</td>
+<td>Invalid command/arguments or consent gate</td>
+</tr>
+<tr>
+<td align="right">65</td>
+<td>Domain/data validation failure</td>
+</tr>
+<tr>
+<td align="right">66</td>
+<td>Filesystem/path failure</td>
+</tr>
+<tr>
+<td align="right">69</td>
+<td>Required executable/service unavailable</td>
+</tr>
+<tr>
+<td align="right">124</td>
+<td>Configured timeout exceeded</td>
+</tr>
+</tbody>
+</table>
+<p><code>run</code> normally returns the child program's exit code. Check each command's
+contract before treating every non-zero result as a crash.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="heading-anchor" href="#troubleshooting" aria-label="Link to Troubleshooting">#</a></h2>
+<p>For a missing command, open a fresh terminal, check the installed version and
+Windows alias/PATH, and confirm that another installation is not taking
+precedence. Use <code>doctor</code> for tool availability. For storage errors, confirm the
+profile and close the GUI for commands outside broker support.
+See <a href="downloads-installation.html">Downloads and installation</a> and
+<a href="troubleshooting.html">Troubleshooting</a>.</p>
+<!-- CLI_REFERENCE_START -->
+<h2 id="complete-command-reference">Complete command reference<a class="heading-anchor" href="#complete-command-reference" aria-label="Link to Complete command reference">#</a></h2>
+<p>Every usage line below comes from the installed <code>devdesk --help</code>. Square
+brackets mark optional arguments; angle brackets mark values you must replace.
+The <code>...</code> entries are exactly as summarized by the CLI, not expanded syntax.
+Download the <a href="../assets/downloads/devdesk-cli-help.txt">plain-text help snapshot</a>
+or run <code>devdesk --help</code> locally to check your installed build.</p>
+<h3 id="files-projects-git-and-verification">Files, projects, Git, and verification<a class="heading-anchor" href="#files-projects-git-and-verification" aria-label="Link to Files, projects, Git, and verification">#</a></h3>
+<pre><code class="language-text">devdesk files list &lt;workspace&gt; [--depth 4] [--json]
+devdesk files read &lt;workspace&gt; &lt;relative-path&gt;
+devdesk files create &lt;workspace&gt; &lt;relative-path&gt; [--content &lt;text&gt;|--stdin] [--parents]
+devdesk files mkdir &lt;workspace&gt; &lt;relative-path&gt;
+devdesk run &lt;workspace&gt; [--timeout SECONDS] [--] &lt;program&gt; [arguments]
+devdesk project inspect &lt;workspace&gt; [--json] [--files N]
+devdesk project search &lt;workspace&gt; &lt;query&gt; [--content] [--limit N] [--json]
+devdesk project read &lt;workspace&gt; &lt;relative-path&gt; [--start N] [--max-chars N] [--json]
+devdesk git status &lt;workspace&gt; [--json]
+devdesk git diff &lt;workspace&gt; &lt;relative-path&gt; [--staged]
+devdesk git log &lt;workspace&gt; [--limit N] [--json]
+devdesk verify plan &lt;workspace&gt; [--json]
+devdesk verify run &lt;workspace&gt; &lt;command-id...&gt;|--all --yes [--json]
+</code></pre>
+<h3 id="markdown-knowledge-search-and-diff">Markdown, knowledge, search, and diff<a class="heading-anchor" href="#markdown-knowledge-search-and-diff" aria-label="Link to Markdown, knowledge, search, and diff">#</a></h3>
+<pre><code class="language-text">devdesk markdown list &lt;workspace&gt; [--limit N] [--json]
+devdesk markdown read &lt;workspace&gt; &lt;relative-path&gt; [--json]
+devdesk markdown headings &lt;workspace&gt; &lt;relative-path&gt; [--json]
+devdesk markdown metadata &lt;workspace&gt; &lt;relative-path&gt; [--json]
+devdesk knowledge index &lt;workspace&gt; [--documents N] [--json]
+devdesk knowledge search &lt;workspace&gt; &lt;query&gt; [--limit N] [--json]
+devdesk knowledge links &lt;workspace&gt; &lt;document&gt; [--json]
+devdesk knowledge backlinks &lt;workspace&gt; &lt;document&gt; [--json]
+devdesk knowledge issues &lt;workspace&gt; [--json]
+devdesk knowledge path &lt;workspace&gt; &lt;from&gt; &lt;to&gt; [--json]
+devdesk search &lt;workspace&gt; &lt;query&gt; [--kind KIND[,KIND]] [--limit N] [--json]
+devdesk diff files &lt;left-file&gt; &lt;right-file&gt; [options]
+devdesk diff text &lt;left&gt; &lt;right&gt; [options]
+devdesk diff folders &lt;left-dir&gt; &lt;right-dir&gt; [--ignore NAME] [--all] [--json] [--exit-code]
+</code></pre>
+<h3 id="api-requests-openapi-and-utilities">API requests, OpenAPI, and utilities<a class="heading-anchor" href="#api-requests-openapi-and-utilities" aria-label="Link to API requests, OpenAPI, and utilities">#</a></h3>
+<pre><code class="language-text">devdesk api request &lt;method&gt; &lt;url&gt; [options]
+devdesk api run &lt;workspace.json&gt; [collection runner options]
+devdesk tools list
+devdesk tools &lt;json|base64|url|regex|uuid|timestamp|jwt&gt; ...
+devdesk openapi validate &lt;spec-file&gt; [--json]
+devdesk openapi summary &lt;spec-file&gt; [--json]
+devdesk openapi operations &lt;spec-file&gt; [--json]
+</code></pre>
+<h3 id="workspace-manifests-and-local-data">Workspace manifests and local data<a class="heading-anchor" href="#workspace-manifests-and-local-data" aria-label="Link to Workspace manifests and local data">#</a></h3>
+<pre><code class="language-text">devdesk workspace manifest inspect &lt;workspace&gt; [--json]
+devdesk workspace manifest init &lt;workspace&gt; [--name NAME] [--knowledge-root PATH] [--exclude PATH] [--json]
+devdesk workspace manifest validate &lt;file&gt; [--json]
+devdesk workspace manifest print &lt;workspace&gt; [--json]
+devdesk workspace manifest upgrade &lt;workspace&gt; [--json]
+devdesk snippets list [--query TEXT] [--tag TAG] [--limit N] [--json] [--data-dir PATH]
+devdesk snippets get &lt;id&gt; [--json] [--data-dir PATH]
+devdesk snippets add --title TITLE [--content TEXT|--file PATH|--stdin] [--tag TAG] [--json] [--data-dir PATH]
+devdesk snippets update &lt;id&gt; [--title TITLE] [--content TEXT|--file PATH|--stdin] [--tag TAG] [--json] [--data-dir PATH]
+devdesk snippets delete &lt;id&gt; --yes [--json] [--data-dir PATH]
+devdesk notes list [--query TEXT] [--tag TAG] [--folder PATH] [--limit N] [--json] [--data-dir PATH]
+devdesk notes get &lt;id-or-title&gt; [--json] [--data-dir PATH]
+devdesk notes search &lt;query&gt; [--folder PATH] [--limit N] [--json] [--data-dir PATH]
+devdesk notes add --title TITLE [--content TEXT|--file PATH|--stdin] [--folder PATH] [--json] [--data-dir PATH]
+devdesk notes update &lt;id&gt; [--title TITLE] [--content TEXT|--file PATH|--stdin] [--folder PATH] [--json] [--data-dir PATH]
+devdesk notes delete &lt;id-or-title&gt; --yes [--json] [--data-dir PATH]
+devdesk settings path [--json] [--data-dir PATH]
+devdesk settings list|get|set|delete|reset ... [--data-dir PATH]
+devdesk backup validate|preview &lt;backup.json&gt; [--json]
+devdesk backup export &lt;backup.json&gt; [--json] [--data-dir PATH]
+devdesk backup restore &lt;backup.json&gt; [--merge] [--apply] [--json] [--data-dir PATH]
+</code></pre>
+<h3 id="docker-kubernetes-and-adb">Docker, Kubernetes, and ADB<a class="heading-anchor" href="#docker-kubernetes-and-adb" aria-label="Link to Docker, Kubernetes, and ADB">#</a></h3>
+<pre><code class="language-text">devdesk containers doctor [--json]
+devdesk containers docker runtime|list|inspect|logs|stats ...
+devdesk containers docker start|stop|restart|pause|unpause &lt;container&gt; --yes [options]
+devdesk containers kube runtime|contexts|namespaces|workloads|pods ...
+devdesk containers kube describe &lt;kind&gt; &lt;name&gt; [--context NAME] [--namespace NAME] [--cluster] [--json]
+devdesk containers kube logs &lt;pod&gt; [--container NAME] [--tail N] [--previous] [--context NAME] [--namespace NAME] [--json]
+devdesk adb capabilities [--json]
+devdesk adb devices [--json]
+devdesk adb connect &lt;host:port&gt; --yes [--json]
+devdesk adb screenshot &lt;serial&gt; --output &lt;png&gt; [--max-bytes N] [--force] [--json]
+devdesk adb ui &lt;serial&gt; [--limit N] [--json]
+devdesk adb logcat &lt;serial&gt; [--lines N] [--json]
+devdesk adb launch|tap|swipe|text|key ... --yes [--json]
+</code></pre>
+<h3 id="ai-saved-agents-automation-and-routines">AI, saved agents, automation, and routines<a class="heading-anchor" href="#ai-saved-agents-automation-and-routines" aria-label="Link to AI, saved agents, automation, and routines">#</a></h3>
+<pre><code class="language-text">devdesk ai status|providers &lt;workspace&gt; [--json] [--data-dir PATH]
+devdesk ai plan &lt;workspace&gt; (--prompt TEXT|--file PATH|--stdin) [--provider ID] [--model ID] [--agent ID] [--credential-env NAME] [--json] [--data-dir PATH]
+devdesk ai run &lt;workspace&gt; (--prompt TEXT|--file PATH|--stdin) --yes [--provider ID] [--model ID] [--agent ID] [--credential-env NAME] [--allow-secret-values] [--json] [--data-dir PATH]
+devdesk agents list|status &lt;workspace&gt; [--json] [--data-dir PATH]
+devdesk agents activity &lt;workspace&gt; [--limit N] [--json] [--data-dir PATH]
+devdesk agents automation list &lt;workspace&gt; [--json] [--data-dir PATH]
+devdesk agents automation schedule-health &lt;workspace&gt; [--hours N] --yes [--json] [--data-dir PATH]
+devdesk agents automation run|enable|disable &lt;workspace&gt; &lt;task-id&gt; --yes [--json] [--data-dir PATH]
+devdesk routines list [--json] [--data-dir PATH]
+devdesk routines get &lt;id&gt; [--json] [--data-dir PATH]
+devdesk routines add --title TITLE (--prompt TEXT|--file PATH|--stdin) --cadence once|daily|weekdays|weekly --at ISO8601 [--mode review-first|ai-prepare|ai-auto-run] [--workspace-id ID] [--allow-workspace-context] [--allow-external-research] [--json] [--data-dir PATH]
+devdesk routines enable|disable|delete|run &lt;id&gt; --yes [--json] [--data-dir PATH]
+devdesk routines check --yes [--now ISO8601] [--json] [--data-dir PATH]
+devdesk routines history [--limit N] [--json] [--data-dir PATH]
+</code></pre>
+<h3 id="health-completion-diagnostics-and-exit-codes">Health, completion, diagnostics, and exit codes<a class="heading-anchor" href="#health-completion-diagnostics-and-exit-codes" aria-label="Link to Health, completion, diagnostics, and exit codes">#</a></h3>
+<pre><code class="language-text">devdesk doctor [--json]
+devdesk completion powershell|bash|zsh [--output PATH] [--force]
+devdesk diagnostics bundle --output &lt;diagnostics.json&gt; [--force] [--json]
+devdesk exit-codes [--json]
+</code></pre>
+<h3 id="global-run-and-http-request-options">Global, run, and HTTP request options<a class="heading-anchor" href="#global-run-and-http-request-options" aria-label="Link to Global, run, and HTTP request options">#</a></h3>
+<pre><code class="language-text">Global options (place before the command):
+  --quiet                      Suppress standard output; errors and exit codes remain.
+  --no-color                   Disable ANSI color output (future-proof/no-op today).
+
+Run options:
+  --timeout &lt;seconds&gt;          Stop the child after 1-86400 seconds; exits 124.
+
+API request options:
+  --header &quot;Name: value&quot;       Repeat for multiple headers.
+  --body &lt;text&gt;                Send a text body.
+  --body-file &lt;path&gt;           Read a body from a file (maximum 5 MB).
+  --body-stdin                 Read the body from stdin.
+  --timeout &lt;seconds&gt;          1-300 seconds (default: 30).
+  --no-redirect               Disable redirects.
+  --output &lt;path&gt;              Save response bytes.
+  --json                       Print a machine-readable response.
+  --fail                       Exit 1 for HTTP 4xx/5xx responses.
+</code></pre>
+<h3 id="api-collection-runner-options">API collection runner options<a class="heading-anchor" href="#api-collection-runner-options" aria-label="Link to API collection runner options">#</a></h3>
+<p><code>devdesk api run &lt;workspace.json&gt;</code> also accepts these options, checked with
+<code>devdesk api run --help</code>:</p>
+<pre><code class="language-text">  --environment &lt;id|name&gt;   Select an environment.
+  --collection &lt;id|name&gt;    Select a collection (default: first).
+  --folder &lt;id&gt;             Run one folder recursively.
+  --tag &lt;tag&gt;               Run tagged requests; repeatable.
+  --data &lt;csv|json&gt;         Iteration data file.
+  --iterations &lt;n&gt;          Iterations (default: 1).
+  --concurrency &lt;n&gt;         Parallel requests, 1-32 (default: 1).
+  --delay &lt;ms&gt;              Delay after requests.
+  --retries &lt;n&gt;             Retry errors and 5xx responses, 0-10.
+  --backoff &lt;ms&gt;            Exponential retry base delay.
+  --rate &lt;requests/sec&gt;     Global start-rate limit.
+  --stop-on-failure         Stop queued work after a failure.
+  --secrets-stdin           Read a JSON secret object from stdin.
+  --report &lt;json|junit|html|markdown&gt;
+  --output &lt;path&gt;           Save report instead of printing it.
+  --help
+</code></pre>
+<p>Secret environment variables use <code>DEVDESK_SECRET_&lt;VARIABLE_NAME&gt;</code>.</p>
+<!-- CLI_REFERENCE_END -->
+
+<div class="article-footer"><a class="pager" href="downloads-installation.html"><small>Related</small><strong>Installation</strong></a><a class="pager" href="notifications-routines.html"><small>Related</small><strong>Notifications and routines</strong></a></div></article><aside aria-label="Advertisement" class="monetization-ad" data-ad-context="devdesk-cli" data-ad-unit="manual" hidden=""></aside></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#start-with-your-installed-package">Start with your installed package</a><a class="level-2" href="#command-families">Command families</a><a class="level-2" href="#create-files-from-cmd-or-powershell">Create files from CMD or PowerShell</a><a class="level-2" href="#inspect-a-project">Inspect a project</a><a class="level-2" href="#api-tests-openapi-and-utilities">API tests, OpenAPI, and utilities</a><a class="level-2" href="#portable-workspace-identity">Portable workspace identity</a><a class="level-2" href="#local-data-and-backup">Local data and backup</a><a class="level-2" href="#use-the-cli-while-the-gui-is-open">Use the CLI while the GUI is open</a><a class="level-2" href="#run-tools-and-inspect-operations">Run tools and inspect operations</a><a class="level-2" href="#docker-kubernetes-and-android-inspection">Docker, Kubernetes, and Android inspection</a><a class="level-2" href="#ai-and-saved-agents">AI and saved agents</a><a class="level-2" href="#routines-from-a-terminal">Routines from a terminal</a><a class="level-2" href="#completion-diagnostics-and-exit-codes">Completion, diagnostics, and exit codes</a><a class="level-2" href="#troubleshooting">Troubleshooting</a><a class="level-2" href="#complete-command-reference">Complete command reference</a><a class="level-3" href="#files-projects-git-and-verification">Files, projects, Git, and verification</a><a class="level-3" href="#markdown-knowledge-search-and-diff">Markdown, knowledge, search, and diff</a><a class="level-3" href="#api-requests-openapi-and-utilities">API requests, OpenAPI, and utilities</a><a class="level-3" href="#workspace-manifests-and-local-data">Workspace manifests and local data</a><a class="level-3" href="#docker-kubernetes-and-adb">Docker, Kubernetes, and ADB</a><a class="level-3" href="#ai-saved-agents-automation-and-routines">AI, saved agents, automation, and routines</a><a class="level-3" href="#health-completion-diagnostics-and-exit-codes">Health, completion, diagnostics, and exit codes</a><a class="level-3" href="#global-run-and-http-request-options">Global, run, and HTTP request options</a><a class="level-3" href="#api-collection-runner-options">API collection runner options</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<div><a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
+<div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
+<div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" rel="noopener noreferrer" target="_blank">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" rel="noopener noreferrer" target="_blank">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy policy</a></div>
+<div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" rel="noopener noreferrer" target="_blank">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
+</div></footer><div aria-hidden="true" class="search-overlay" data-search-overlay=""><div aria-label="Search DevDesk documentation" aria-modal="true" class="search-panel" role="dialog"><input autocomplete="off" data-search-input="" placeholder="Search manuals, commands, OKF, graph, APIs…" type="search"/><div class="search-results" data-search-results=""><div class="empty-search">Start typing to search the complete manual.</div></div></div></div><script src="../../assets/monetization/config.js"></script><script defer="" src="../../assets/monetization/monetization.js"></script></body></html>

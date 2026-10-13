@@ -24,13 +24,13 @@
 <title>DevDesk – Workspace for Learning, Research &amp; Building | Baisalya</title>
 <link href="assets/img/devdesk-logo-64.png" rel="icon" sizes="64x64" type="image/png"/>
 <link href="assets/img/devdesk-logo-192.png" rel="apple-touch-icon" sizes="192x192"/>
-<link href="site.webmanifest?v=20260909.1" rel="manifest"/>
-<link href="assets/css/styles.css?v=20260909.1" rel="stylesheet"/>
-<script defer="" src="assets/js/site-config.js?v=20260909.1"></script>
-<script defer="" src="assets/js/marketing-model.js?v=20260909.1"></script>
-<script defer="" src="assets/js/search-index.js?v=20260909.1"></script>
-<script defer="" src="assets/js/app.js?v=20260909.1"></script>
-<script defer="" src="assets/js/manual-visuals.js?v=20260909.1"></script>
+<link href="site.webmanifest?v=20261013.1" rel="manifest"/>
+<link href="assets/css/styles.css?v=20261013.1" rel="stylesheet"/>
+<script defer="" src="assets/js/site-config.js?v=20261013.1"></script>
+<script defer="" src="assets/js/marketing-model.js?v=20261013.1"></script>
+<script defer="" src="assets/js/search-index.js?v=20261013.1"></script>
+<script defer="" src="assets/js/app.js?v=20261013.1"></script>
+<script defer="" src="assets/js/manual-visuals.js?v=20261013.1"></script>
 <link href="../assets/monetization/monetization.css" rel="stylesheet"/> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <link href="https://baisalya.com/devdesk/" rel="canonical"/>
 <meta content="https://baisalya.com/devdesk/" property="og:url"/>
@@ -273,11 +273,12 @@
 </ol>
 <ul aria-label="Developer DevDesk features" class="audience-feature-tags">
 <li>Code proposals</li><li>API Studio</li><li>JSON &amp; OpenAPI</li>
-<li>Diff &amp; Git</li><li>Docker &amp; Kubernetes</li><li>Browser + MCP agents</li>
+<li>Diff &amp; Git</li><li>Docker &amp; Kubernetes</li><li>Android / ADB</li><li>Browser + MCP agents</li><li>Standalone CLI</li>
 </ul>
 <div class="audience-track-actions">
 <a class="btn primary" href="manual/workspace-workbench.html">Explore the developer workbench</a>
 <a class="btn" href="manual/agent-connector.html">Connect an external agent</a>
+<a class="btn" href="manual/devdesk-cli.html">Use the CLI</a>
 </div>
 </article>
 </div>
@@ -287,6 +288,26 @@
 <span><strong>Small team</strong> Meetings → decisions + next actions</span>
 <span><strong>Developer</strong> Project → reviewed + verified change</span>
 <span><strong>Operator</strong> Workspace → Docker + Kubernetes controls</span>
+</div>
+</section>
+<section aria-labelledby="cli-heading" class="section section-tinted" id="cli">
+<div class="section-header">
+<span class="eyebrow">DevDesk from CMD, PowerShell, or your shell</span>
+<h2 id="cli-heading">Keep your project workflow moving from the terminal.</h2>
+<p>The standalone DevDesk CLI brings files, knowledge, API tests, local data, and operations to your shell. Explore the complete command reference checked against DevDesk CLI 1.2.6+21, with examples and options for all 86 top-level usage lines.</p>
+</div>
+<div class="cards">
+<article class="card"><h3>Files, projects &amp; knowledge</h3><p>Create folders and files, inspect and search a project, read Git status, compare files or folders, and query Markdown headings, metadata, links, backlinks, graph issues, and paths.</p></article>
+<article class="card"><h3>API tests &amp; everyday tools</h3><p>Send HTTP requests, run saved API collections with environment and report options, validate OpenAPI, and use JSON, Base64, URL, regex, UUID, timestamp, and JWT utilities.</p></article>
+<article class="card"><h3>Local data &amp; portability</h3><p>Manage workspace manifests, snippets, notes, settings, and backup files. Preview a restore before applying it, or use a separate data directory for an isolated profile.</p></article>
+<article class="card"><h3>Docker, Kubernetes &amp; Android</h3><p>Check runtimes, inspect containers and Kubernetes workloads, read logs, and use ADB device lists, screenshots, UI inspection, and logcat. Docker lifecycle actions and ADB controls require explicit confirmation flags.</p></article>
+<article class="card"><h3>AI, agents &amp; routines</h3><p>Inspect providers, plan an explicit prompt, run AI with consent, view saved agents and activity, schedule graph-health automation, and manage review-first routines from your terminal.</p></article>
+<article class="card"><h3>Verification &amp; scripting</h3><p>Inspect verification plans, run selected checks, set process timeouts, generate shell completion, export diagnostics, and use JSON output and documented exit codes in scripts.</p></article>
+</div>
+<div class="button-row">
+<a class="btn primary" href="manual/devdesk-cli.html#complete-command-reference">Browse every CLI command</a>
+<a class="btn" href="manual/devdesk-cli.html#create-files-from-cmd-or-powershell">Try file commands</a>
+<a class="btn" href="assets/downloads/devdesk-cli-help.txt" download>Download devdesk --help</a>
 </div>
 </section>
 <section aria-labelledby="containers-heading" class="section section-tinted container-showcase-section" id="containers">
@@ -615,6 +636,9 @@
 </a>
 <a class="home-doc-link" href="manual/notifications-routines.html">
 <div><strong>Notifications and AI routines</strong><span>Review local alerts and schedule prompts that always wait for your confirmation.</span></div>
+</a>
+<a class="home-doc-link" href="manual/devdesk-cli.html">
+<div><strong>DevDesk from your terminal</strong><span>Complete CLI command reference: files, knowledge, APIs, Docker/Kubernetes, Android ADB, agents, routines, completion, and diagnostics.</span></div>
 </a>
 <a class="home-doc-link" href="manual/api-workspaces.html">
 <div><strong>Saved API testing</strong><span>Requests, environments, checks, runners, and protected values.</span></div>

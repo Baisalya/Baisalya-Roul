@@ -1,0 +1,158 @@
+DevDesk CLI
+
+Usage:
+  devdesk doctor [--json]
+  devdesk files list <workspace> [--depth 4] [--json]
+  devdesk files read <workspace> <relative-path>
+  devdesk files create <workspace> <relative-path> [--content <text>|--stdin] [--parents]
+  devdesk files mkdir <workspace> <relative-path>
+  devdesk run <workspace> [--timeout SECONDS] [--] <program> [arguments]
+  devdesk api request <method> <url> [options]
+  devdesk api run <workspace.json> [collection runner options]
+  devdesk tools list
+  devdesk tools <json|base64|url|regex|uuid|timestamp|jwt> ...
+  devdesk project inspect <workspace> [--json] [--files N]
+  devdesk project search <workspace> <query> [--content] [--limit N] [--json]
+  devdesk project read <workspace> <relative-path> [--start N] [--max-chars N] [--json]
+  devdesk git status <workspace> [--json]
+  devdesk git diff <workspace> <relative-path> [--staged]
+  devdesk git log <workspace> [--limit N] [--json]
+  devdesk openapi validate <spec-file> [--json]
+  devdesk openapi summary <spec-file> [--json]
+  devdesk openapi operations <spec-file> [--json]
+  devdesk markdown list <workspace> [--limit N] [--json]
+  devdesk markdown read <workspace> <relative-path> [--json]
+  devdesk markdown headings <workspace> <relative-path> [--json]
+  devdesk markdown metadata <workspace> <relative-path> [--json]
+  devdesk knowledge index <workspace> [--documents N] [--json]
+  devdesk knowledge search <workspace> <query> [--limit N] [--json]
+  devdesk knowledge links <workspace> <document> [--json]
+  devdesk knowledge backlinks <workspace> <document> [--json]
+  devdesk knowledge issues <workspace> [--json]
+  devdesk knowledge path <workspace> <from> <to> [--json]
+  devdesk search <workspace> <query> [--kind KIND[,KIND]] [--limit N] [--json]
+  devdesk diff files <left-file> <right-file> [options]
+  devdesk diff text <left> <right> [options]
+  devdesk diff folders <left-dir> <right-dir> [--ignore NAME] [--all] [--json] [--exit-code]
+  devdesk workspace manifest inspect <workspace> [--json]
+  devdesk workspace manifest init <workspace> [--name NAME] [--knowledge-root PATH] [--exclude PATH] [--json]
+  devdesk workspace manifest validate <file> [--json]
+  devdesk workspace manifest print <workspace> [--json]
+  devdesk workspace manifest upgrade <workspace> [--json]
+  devdesk snippets list [--query TEXT] [--tag TAG] [--limit N] [--json] [--data-dir PATH]
+  devdesk snippets get <id> [--json] [--data-dir PATH]
+  devdesk snippets add --title TITLE [--content TEXT|--file PATH|--stdin] [--tag TAG] [--json] [--data-dir PATH]
+  devdesk snippets update <id> [--title TITLE] [--content TEXT|--file PATH|--stdin] [--tag TAG] [--json] [--data-dir PATH]
+  devdesk snippets delete <id> --yes [--json] [--data-dir PATH]
+  devdesk notes list [--query TEXT] [--tag TAG] [--folder PATH] [--limit N] [--json] [--data-dir PATH]
+  devdesk notes get <id-or-title> [--json] [--data-dir PATH]
+  devdesk notes search <query> [--folder PATH] [--limit N] [--json] [--data-dir PATH]
+  devdesk notes add --title TITLE [--content TEXT|--file PATH|--stdin] [--folder PATH] [--json] [--data-dir PATH]
+  devdesk notes update <id> [--title TITLE] [--content TEXT|--file PATH|--stdin] [--folder PATH] [--json] [--data-dir PATH]
+  devdesk notes delete <id-or-title> --yes [--json] [--data-dir PATH]
+  devdesk settings path [--json] [--data-dir PATH]
+  devdesk settings list|get|set|delete|reset ... [--data-dir PATH]
+  devdesk backup validate|preview <backup.json> [--json]
+  devdesk backup export <backup.json> [--json] [--data-dir PATH]
+  devdesk backup restore <backup.json> [--merge] [--apply] [--json] [--data-dir PATH]
+  devdesk verify plan <workspace> [--json]
+  devdesk verify run <workspace> <command-id...>|--all --yes [--json]
+  devdesk containers doctor [--json]
+  devdesk containers docker runtime|list|inspect|logs|stats ...
+  devdesk containers docker start|stop|restart|pause|unpause <container> --yes [options]
+  devdesk containers kube runtime|contexts|namespaces|workloads|pods ...
+  devdesk containers kube describe <kind> <name> [--context NAME] [--namespace NAME] [--cluster] [--json]
+  devdesk containers kube logs <pod> [--container NAME] [--tail N] [--previous] [--context NAME] [--namespace NAME] [--json]
+  devdesk adb capabilities [--json]
+  devdesk adb devices [--json]
+  devdesk adb connect <host:port> --yes [--json]
+  devdesk adb screenshot <serial> --output <png> [--max-bytes N] [--force] [--json]
+  devdesk adb ui <serial> [--limit N] [--json]
+  devdesk adb logcat <serial> [--lines N] [--json]
+  devdesk adb launch|tap|swipe|text|key ... --yes [--json]
+  devdesk ai status|providers <workspace> [--json] [--data-dir PATH]
+  devdesk ai plan <workspace> (--prompt TEXT|--file PATH|--stdin) [--provider ID] [--model ID] [--agent ID] [--credential-env NAME] [--json] [--data-dir PATH]
+  devdesk ai run <workspace> (--prompt TEXT|--file PATH|--stdin) --yes [--provider ID] [--model ID] [--agent ID] [--credential-env NAME] [--allow-secret-values] [--json] [--data-dir PATH]
+  devdesk agents list|status <workspace> [--json] [--data-dir PATH]
+  devdesk agents activity <workspace> [--limit N] [--json] [--data-dir PATH]
+  devdesk agents automation list <workspace> [--json] [--data-dir PATH]
+  devdesk agents automation schedule-health <workspace> [--hours N] --yes [--json] [--data-dir PATH]
+  devdesk agents automation run|enable|disable <workspace> <task-id> --yes [--json] [--data-dir PATH]
+  devdesk routines list [--json] [--data-dir PATH]
+  devdesk routines get <id> [--json] [--data-dir PATH]
+  devdesk routines add --title TITLE (--prompt TEXT|--file PATH|--stdin) --cadence once|daily|weekdays|weekly --at ISO8601 [--mode review-first|ai-prepare|ai-auto-run] [--workspace-id ID] [--allow-workspace-context] [--allow-external-research] [--json] [--data-dir PATH]
+  devdesk routines enable|disable|delete|run <id> --yes [--json] [--data-dir PATH]
+  devdesk routines check --yes [--now ISO8601] [--json] [--data-dir PATH]
+  devdesk routines history [--limit N] [--json] [--data-dir PATH]
+  devdesk completion powershell|bash|zsh [--output PATH] [--force]
+  devdesk diagnostics bundle --output <diagnostics.json> [--force] [--json]
+  devdesk exit-codes [--json]
+
+Global options (place before the command):
+  --quiet                      Suppress standard output; errors and exit codes remain.
+  --no-color                   Disable ANSI color output (future-proof/no-op today).
+
+Run options:
+  --timeout <seconds>          Stop the child after 1-86400 seconds; exits 124.
+
+API request options:
+  --header "Name: value"       Repeat for multiple headers.
+  --body <text>                Send a text body.
+  --body-file <path>           Read a body from a file (maximum 5 MB).
+  --body-stdin                 Read the body from stdin.
+  --timeout <seconds>          1-300 seconds (default: 30).
+  --no-redirect               Disable redirects.
+  --output <path>              Save response bytes.
+  --json                       Print a machine-readable response.
+  --fail                       Exit 1 for HTTP 4xx/5xx responses.
+
+Examples:
+  devdesk doctor
+  devdesk files list . --depth 3
+  devdesk files create . lib/example.dart --content "void main() {}" --parents
+  devdesk run . --timeout 120 -- flutter test
+  devdesk api request GET https://api.example.com/health --fail
+  devdesk api run devdesk-api-workspace.json --environment staging --report junit
+  devdesk tools json pretty --file payload.json
+  devdesk tools base64 encode 'hello'
+  devdesk tools uuid generate 3
+  devdesk project inspect . --files 25
+  devdesk project search . payment --content
+  devdesk git status .
+  devdesk openapi validate openapi.yaml
+  devdesk markdown headings . README.md
+  devdesk knowledge backlinks . Architecture.md
+  devdesk search . authentication --kind markdown,workspaceFile
+  devdesk diff files old.json new.json --json --exit-code
+  devdesk workspace manifest inspect .
+  devdesk snippets add --title "HTTP retry" --file retry.dart --tag dart
+  devdesk notes search "release checklist"
+  devdesk settings path
+  devdesk backup restore backup.json              # dry-run
+  devdesk backup restore backup.json --apply      # explicit mutation
+  devdesk verify plan .
+  devdesk verify run . flutter-analyze --yes
+  devdesk containers doctor
+  devdesk containers docker list
+  devdesk containers kube pods --namespace default
+  devdesk adb devices
+  devdesk adb screenshot emulator-5554 --output phone.png
+  devdesk ai status . --json
+  devdesk ai plan . --prompt "Explain this error" --json
+  devdesk ai run . --prompt "Explain this error" --yes
+  devdesk agents automation list .
+  devdesk routines list
+  devdesk completion powershell --output devdesk-completion.ps1
+  devdesk diagnostics bundle --output devdesk-diagnostics.json
+  devdesk exit-codes --json
+
+All file paths passed to files commands are bounded to the selected workspace.
+Create never overwrites an existing file. Run executes the exact program and
+arguments supplied by the current user without opening the DevDesk app.
+Phase D project verification runs only approved detected adapters and requires
+--yes. Container and ADB mutation commands also require --yes; arbitrary shell,
+container/pod exec, Kubernetes secret reveal, ADB root/fastboot, install/uninstall,
+and device-wipe operations are intentionally not exposed. Phase E AI runs require
+--yes, accept credentials only by environment-variable name, and never attach
+workspace files automatically. Routine execution is review-first and never sends
+an AI prompt automatically.

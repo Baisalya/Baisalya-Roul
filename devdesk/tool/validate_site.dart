@@ -94,9 +94,9 @@ Future<void> main() async {
     final entries =
         jsonDecode(searchSource.substring(searchStart, searchEnd + 1))
             as List<dynamic>;
-    if (entries.length != 51) {
+    if (entries.length != 52) {
       failures.add(
-        'Expected 51 searchable manuals after adding Containers & Kubernetes; '
+        'Expected 52 searchable manuals including the DevDesk CLI; '
         'found ${entries.length}.',
       );
     }
@@ -174,6 +174,7 @@ Future<void> main() async {
     'manual/diagram-studio.html',
     'manual/ai-workbench.html',
     'manual/notifications-routines.html',
+    'manual/devdesk-cli.html',
     'manual/container-operations.html',
   ]) {
     if (!File.fromUri(siteRoot.uri.resolve(requiredPath)).existsSync()) {
@@ -188,6 +189,7 @@ Future<void> main() async {
     ('manual/knowledge-graph.html', 'floating play button'),
     ('manual/ai-workbench.html', 'current Windows user'),
     ('manual/notifications-routines.html', 'latest missed occurrence'),
+    ('manual/devdesk-cli.html', 'storageOwner'),
     ('manual/container-operations.html', 'Runtime Doctor and Setup Center'),
     ('manual/container-operations.html', 'Compatibility Center and Compatibility Packs'),
     ('manual/container-operations.html', 'Context, namespace, and RBAC guard'),
@@ -209,6 +211,9 @@ Future<void> main() async {
   ).readAsString(encoding: utf8);
   if (!serviceWorker.contains('./manual/container-operations.html')) {
     failures.add('sw.js does not cache manual/container-operations.html.');
+  }
+  if (!serviceWorker.contains('./manual/devdesk-cli.html')) {
+    failures.add('sw.js does not cache manual/devdesk-cli.html.');
   }
 
   final compatibilityManual = await File(

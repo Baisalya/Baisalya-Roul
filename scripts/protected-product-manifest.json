@@ -9,7 +9,7 @@
     "shoppilot erp",
     "shoppilot-erp"
   ],
-  "file_count": 393,
+  "file_count": 397,
   "files": [
     {
       "path": "construction-erp/_headers",
@@ -408,7 +408,7 @@
     },
     {
       "path": "devdesk/404.html",
-      "sha256": "ef12a6757b19c5c327c63d171debdebbbda080ca149532839b69ea5d5bdf6828",
+      "sha256": "73d7b855cd4e61208bfb865514888785682db5385601a6dcbe6a0c592f9c3233",
       "bytes": 3506
     },
     {
@@ -530,6 +530,11 @@
       "path": "devdesk/assets/downloads/devdesk-agent-ready-workspace-demo.zip",
       "sha256": "13eac6d4febff6a7cd4ce5de46a633f3effe0801729f90248626546e91695938",
       "bytes": 12708
+    },
+    {
+      "path": "devdesk/assets/downloads/devdesk-cli-help.txt",
+      "sha256": "d0678c264e18fc6b0a39b25b5c95dab21a545796638f3b419fd3668002e44048",
+      "bytes": 9528
     },
     {
       "path": "devdesk/assets/downloads/devdesk-tiny-multi-agent-graph-demo.zip",
@@ -758,13 +763,13 @@
     },
     {
       "path": "devdesk/assets/js/app.js",
-      "sha256": "548b5f3992f910cb43681de1f3576abb061400917c1f6c33eecf089b369f68e6",
+      "sha256": "6c1f2f861a5524d8e00041b7ac00d3c2737f7ced9e9c749b112498d7c44e1513",
       "bytes": 16822
     },
     {
       "path": "devdesk/assets/js/manual-visuals.js",
-      "sha256": "c12d975e364c9aa9ca1cf384d4a973b63c7dcc08f24c2650a47f105715fefdcc",
-      "bytes": 22411
+      "sha256": "2846a8a29297fd0eae6cc1e08d7e78bbf095924fa0b6225186555517ba059114",
+      "bytes": 22426
     },
     {
       "path": "devdesk/assets/js/marketing-model.js",
@@ -773,8 +778,8 @@
     },
     {
       "path": "devdesk/assets/js/search-index.js",
-      "sha256": "d61996245cf078d89ea516a18c2e7549fe864db8283a3b1313aecbbc6b066173",
-      "bytes": 284578
+      "sha256": "d3cd230e1cff303ab2605ff802f5992d57b41cb88f360cb8db1a439f10cd4217",
+      "bytes": 305713
     },
     {
       "path": "devdesk/assets/js/site-config.js",
@@ -783,8 +788,8 @@
     },
     {
       "path": "devdesk/assets/js/support-assistant.js",
-      "sha256": "37bfe1f1fb3bab6d4dc9fe24c4fe192bd032b4fc397c9d5cb85ef02e96ed474d",
-      "bytes": 21006
+      "sha256": "98446fc801632f0d8338fef76691b0b77fd0afc31e7dff089d282b3827ab5bdc",
+      "bytes": 21371
     },
     {
       "path": "devdesk/assets/media/devdesk-tiny-multi-agent-graph-demo.mp4",
@@ -845,6 +850,11 @@
       "path": "devdesk/content/container-operations.md",
       "sha256": "37a3bc307e891ac3c681a385059f5e333b7db50c430db17efe0d80a27d4999e3",
       "bytes": 18421
+    },
+    {
+      "path": "devdesk/content/devdesk-cli.md",
+      "sha256": "a064b11f818d8a3795c98ee9278a6e7d9a33caaca8739b81d99b0f92299c621f",
+      "bytes": 22238
     },
     {
       "path": "devdesk/content/developer-workspaces.md",
@@ -1073,7 +1083,7 @@
     },
     {
       "path": "devdesk/downloads.html",
-      "sha256": "374076a2a769aa7598a3acd8ecd4e65d8de9688889c67698063f5487246dcfc1",
+      "sha256": "8338f677182e0bfd3bb17181067a42cf9ab77f287fe382a33642ec75f9bcc088",
       "bytes": 20992
     },
     {
@@ -1083,8 +1093,8 @@
     },
     {
       "path": "devdesk/index.html",
-      "sha256": "1b8bc61c3f7870503ee337be765918d6008b7ec9ec5dbdbe4db88ea82895db6b",
-      "bytes": 42084
+      "sha256": "cbd26fe76984c642293bdc727d1421505d9ee16359d50db13ecd61008bc6fe06",
+      "bytes": 44913
     },
     {
       "path": "devdesk/MANUAL_TABLE_OF_CONTENTS.md",
@@ -1093,83 +1103,88 @@
     },
     {
       "path": "devdesk/manual/agent-connector.html",
-      "sha256": "830be5ed952316855e40ac49d48918c1b0129ca15e85df051561f0c04006e00f",
-      "bytes": 43335
+      "sha256": "163717927e9f245407d461dc8f011fcd121a5181c517bc7401b69e676e773d6c",
+      "bytes": 43412
     },
     {
       "path": "devdesk/manual/ai-workbench.html",
-      "sha256": "837653eb807769a085671c52203024af2bb106993c0011b172e9944085849134",
-      "bytes": 26902
+      "sha256": "f649677817543c78af8617ad80eb5028f981283dd8294199bb2fc478f38ad848",
+      "bytes": 26979
     },
     {
       "path": "devdesk/manual/api-assertions-extraction.html",
-      "sha256": "572b570ac73cfb4e51dc88f5133766e2fb298a24b84718a6a4e6791bda4e5716",
-      "bytes": 20909
+      "sha256": "6cf8b44551cb4f7ea3c33d590538e365c23245b73cfc9bb4a51d3ccca3ce120d",
+      "bytes": 20986
     },
     {
       "path": "devdesk/manual/api-environments-secrets.html",
-      "sha256": "a77e297b36488131c72569072ed4492324045347852d5f5c57958bd7d5676190",
-      "bytes": 21997
+      "sha256": "ca404b88a07e43c2430f348e86073001fd056626f5b5d08732109a8e031b6b0e",
+      "bytes": 22074
     },
     {
       "path": "devdesk/manual/api-workspaces.html",
-      "sha256": "30196d61ee0820b7929570c6c8809454c30d56438f6d2ff32093566c70ea9242",
-      "bytes": 31499
+      "sha256": "a4af581940800d4cedb7dc6fe9766a0c07c90be146e0ba4fe3214edded2fcb12",
+      "bytes": 31576
     },
     {
       "path": "devdesk/manual/backup-restore.html",
-      "sha256": "1959ac34dbaa0e03701c69fdc58e56b199fb12e1efdb26502a8b06467e31cb9d",
-      "bytes": 15794
+      "sha256": "f2efc00eaaeea28c1b18c169203944fdd7a8091e947ca73472c162b2a2722438",
+      "bytes": 15871
     },
     {
       "path": "devdesk/manual/base64.html",
-      "sha256": "e0ff4dab2bdd905d4414f55f31bac61d8a76ca1ff9f89ee73c0ce1adaa486610",
-      "bytes": 11437
+      "sha256": "96dc2185fdb2b3789184935699bb0a6458209c1deb6c0856a1e6ea8469ad6956",
+      "bytes": 11514
     },
     {
       "path": "devdesk/manual/container-operations.html",
-      "sha256": "be7da9cfd967537d5a6507033cc5d497423fbe48dc5c50916d9151cc40f1ef99",
-      "bytes": 37869
+      "sha256": "bc00677c042dd601a83d48cc2b0f2cef87a664ddebb73646af67aafcf151c543",
+      "bytes": 37946
+    },
+    {
+      "path": "devdesk/manual/devdesk-cli.html",
+      "sha256": "bd8867a74decec8f6e87b304e44c1963c7b61a89646f74a8b089d4899e68d4b7",
+      "bytes": 42320
     },
     {
       "path": "devdesk/manual/developer-workspaces.html",
-      "sha256": "5d06b981b0d76b07c60a1cb586c8a9f1c680b9fd85f174356c21337fd5c3e44f",
-      "bytes": 30277
+      "sha256": "fe6796a33f8a943676a17ddabcf491889961bbc4f2bae30075adb5f4afb4bf92",
+      "bytes": 30354
     },
     {
       "path": "devdesk/manual/diagram-studio.html",
-      "sha256": "fd55587d721bbae617b4d6ec7b25c641858909127059b93b87e98279559a76ba",
-      "bytes": 17675
+      "sha256": "f4cdcb92840d451c636d2c62a0a6b21fc7df3a5d0f9dc2e94e389e2b86a86d06",
+      "bytes": 17752
     },
     {
       "path": "devdesk/manual/diff-git.html",
-      "sha256": "0e6cd600ecd0fbd4909291c9f861129e94289316540b7a0a1a86800b12b92ae8",
-      "bytes": 18988
+      "sha256": "bea6dc28cdde4c4f86fab82f3ea2359180894a5fa8604a2e24f3b5ceca62307a",
+      "bytes": 19065
     },
     {
       "path": "devdesk/manual/downloads-installation.html",
-      "sha256": "949bc84ae29c45d94453498fa773d93ea8547f087752c7eaa40917ed3aa0f4a5",
-      "bytes": 14516
+      "sha256": "87257b927ca7c0fdc17fbaeaf5e1a55562290fa16929dafe2078c48cd2bf2c81",
+      "bytes": 14593
     },
     {
       "path": "devdesk/manual/faq.html",
-      "sha256": "cb540b76e88c34bebc8f608db5e893e65aff930ca61976f6b2649eaca29e5acd",
-      "bytes": 28887
+      "sha256": "fee904f054aa8392814088a222c1ea0731937b52853390ba5f34ead121b72441",
+      "bytes": 28964
     },
     {
       "path": "devdesk/manual/frontmatter-properties.html",
-      "sha256": "32693aa1208e8b79e2a3c8e3436c90b52470458b462059097a5fb6b34ee3d44c",
-      "bytes": 13143
+      "sha256": "8b3668858de49da63dfe6b12ca834506be8853fe8adbefc5a1409e7fcd97cf6c",
+      "bytes": 13220
     },
     {
       "path": "devdesk/manual/getting-started.html",
-      "sha256": "c1c9b74d48da00f56b99c5395530e6cc529518dc7ed80b1718001d60215c523c",
-      "bytes": 23067
+      "sha256": "c7a07e2e632d59242e2defeae0202d51a17e3cf462b5ee9ccb5e72f5f948a793",
+      "bytes": 23144
     },
     {
       "path": "devdesk/manual/graph-connection-editing.html",
-      "sha256": "c4a4da336daa1d164d99b4bafd212a4cf4724f21df954d49b4fd6289118e58fe",
-      "bytes": 13242
+      "sha256": "82adfa135ca865e909b4f0a8e53a60c96dd85a2820e9296ebb1b4e26ce425934",
+      "bytes": 13319
     },
     {
       "path": "devdesk/manual/index.html",
@@ -1178,178 +1193,178 @@
     },
     {
       "path": "devdesk/manual/interface-tour.html",
-      "sha256": "8a73fa067d1229b7e2ae60cf0880ca42adc22772e22385f9d99b2c3236d54230",
-      "bytes": 14023
+      "sha256": "91acef3ea77b0278d80345eddd404228c97246166bc2210b67e74b632750e629",
+      "bytes": 14100
     },
     {
       "path": "devdesk/manual/json-tools.html",
-      "sha256": "88698efe181d1328578ccb787b62dc08cde1c486bc3901199ce4dbd9b256c765",
-      "bytes": 13303
+      "sha256": "a4d24c6e8b731083577225e58540e2185fe285489d34b773bbbfddbadfec3a14",
+      "bytes": 13380
     },
     {
       "path": "devdesk/manual/jwt-decoder.html",
-      "sha256": "68ae2e44a6fc9e5bf2c3e20099875092a6ce7a16e91c4ded8e0ce4b3791c5f0f",
-      "bytes": 11682
+      "sha256": "bdcf2af10608e8c9315f8e20b99f04cad163b9cf84a4ed668354b0ac2560f1fb",
+      "bytes": 11759
     },
     {
       "path": "devdesk/manual/keyboard-shortcuts.html",
-      "sha256": "48ee8be09c01079aa1d4af130210137ec1b98bacbb89d69bd8792b943a7fa500",
-      "bytes": 12524
+      "sha256": "559251403beea4585600e1511b22325efb194e5ae118a0355e7bc44eedd3b86e",
+      "bytes": 12601
     },
     {
       "path": "devdesk/manual/knowledge-graph.html",
-      "sha256": "51793c20ff130a6e358ac78a4e5a75ded6821801f985d7bcc09b7d2bcde4b000",
-      "bytes": 20522
+      "sha256": "bb294d0008583e63ac79f7731127b357c648a02a1fdb776a09f3b4400a06eca5",
+      "bytes": 20599
     },
     {
       "path": "devdesk/manual/knowledge-workspace.html",
-      "sha256": "67582af9e46551c62c238a0188649dd8b37f043f0b87086a1397e91739211260",
-      "bytes": 13883
+      "sha256": "5c6c5cde4eaff154105aadac1d0e564ab8b03be4fe8bb9b8f5a2aa94b20e9a14",
+      "bytes": 13960
     },
     {
       "path": "devdesk/manual/links-backlinks-nodes.html",
-      "sha256": "f6ddd2841fc78e3015d069e9eb688be26b203744fd37e18c1b8e8e67b5e2ee74",
-      "bytes": 14863
+      "sha256": "f29845b4fc7f655edc73bc1de274a2e857a20dcd2c94ff3a08931d82e255cb4a",
+      "bytes": 14940
     },
     {
       "path": "devdesk/manual/markdown-basics.html",
-      "sha256": "668435f0f249bbfec9add3b03fe395e6a6b0e4bf8c659ee78fc6ba50c1976c04",
-      "bytes": 12907
+      "sha256": "ead7bfbc846b9840a9a6c7f9273e44d5b784abe81da11f304ad3adc23331b2f5",
+      "bytes": 12984
     },
     {
       "path": "devdesk/manual/markdown-editor.html",
-      "sha256": "415769beec0abd0ac6e332a1dabc6f83d5a0b978a1bf5986ad0e4adbb88acdcb",
-      "bytes": 13607
+      "sha256": "e6e2428c17b32820da2e0c245988b8e21c578ac0a1b21c9bb179ed2bc969ff0f",
+      "bytes": 13684
     },
     {
       "path": "devdesk/manual/markdown-vault.html",
-      "sha256": "a5cf8911676dfd3c7d182fd7f93f07027848d4180f06433d70f0ea071a459198",
-      "bytes": 13044
+      "sha256": "f4feacd1bf24b2fd1f10b6303542a3d831fcfef1448e38244d36bc224d9ccb35",
+      "bytes": 13121
     },
     {
       "path": "devdesk/manual/notifications-routines.html",
-      "sha256": "50733f371360dd90b115875550d8be928560b186390c5d36cbba1a147721c141",
-      "bytes": 14251
+      "sha256": "a208eb0aceea73fad0fd1fc71627b3728173f9e5d585e82480e96ea97500985c",
+      "bytes": 14328
     },
     {
       "path": "devdesk/manual/okf-attested-computation.html",
-      "sha256": "67dbcc3c7bbba52c96df8639e4eb04063662d8e7b5c399462108ac7891c95b67",
-      "bytes": 16733
+      "sha256": "d3cf7a602ffb5792dc70bc82702d1bae7c5828aed440c2f62a5dda2b64393221",
+      "bytes": 16810
     },
     {
       "path": "devdesk/manual/okf-bundle-structure.html",
-      "sha256": "b0133210bb62ebb9788af3b91d3d66abfbda0b6c877692b7619902938d65c006",
-      "bytes": 16043
+      "sha256": "cc05c944fa45253bb694ea87f82f4b52ce04300317dbae55658be1c6841739b3",
+      "bytes": 16120
     },
     {
       "path": "devdesk/manual/okf-concepts-metadata.html",
-      "sha256": "83a87db41cb5fdc7dd68d462e3ec9ae4048b07d8325f52dfc812122393a98cb0",
-      "bytes": 17692
+      "sha256": "48d6df22fd1c3704f502835a422e19110526c3e9f63495cbe80d7d1018f1451c",
+      "bytes": 17769
     },
     {
       "path": "devdesk/manual/okf-conversion-migration.html",
-      "sha256": "b80a7e54e3dfc46d2ec09fd9d0f8c07b610edc72d0520fea9035a6f52f74bbf8",
-      "bytes": 19344
+      "sha256": "d9e196f5fe4840a98ec217f98bd4dae298598d3e658dee364a4ad9f012e8b28c",
+      "bytes": 19421
     },
     {
       "path": "devdesk/manual/okf-trust-sources-lifecycle.html",
-      "sha256": "982c6eed22774a6762198528554952666eab0f5935afad0b7964c6d2ae94a489",
-      "bytes": 17385
+      "sha256": "a5e627d332394718be7c20e39f9dd6168e184fff3dfa407fb2a6d499bdd7f362",
+      "bytes": 17462
     },
     {
       "path": "devdesk/manual/openapi-studio.html",
-      "sha256": "06f9a6a166a24188ee254a9880114208a5cc0eeb72927e4daed2e00dc08f675d",
-      "bytes": 19184
+      "sha256": "64023efb41295c9346da59568d273a754be8524636fcfbca8aea0cdbfab7c9b6",
+      "bytes": 19261
     },
     {
       "path": "devdesk/manual/privacy-security.html",
-      "sha256": "a4d95395b0602f6bea7bfe514f4f399af04f2e0867a1ba5591b1719bd18b6c20",
-      "bytes": 21389
+      "sha256": "73d8f738abfc244e9677921f7381721d7bed760cc70c950a7e20dae643a5b4ef",
+      "bytes": 21476
     },
     {
       "path": "devdesk/manual/project-folder-structure.html",
-      "sha256": "5c86eb07a3c61ef44634ed8e0758067bd51123d9232d0fad5880ee2626b9037d",
-      "bytes": 13263
+      "sha256": "02a6629af74cc5d8707d60f3e6fd66dfb08a68e838d2574d6102ae5e3c909419",
+      "bytes": 13340
     },
     {
       "path": "devdesk/manual/quick-api.html",
-      "sha256": "d06e9f0615a6335ecbec13f54cf1a694efbcf2f99fb6c728b6a7b680485e2df0",
-      "bytes": 18338
+      "sha256": "57cf853ec26573448d32ad9686f762c8151917ed10247516e96401f4d5b8e6ad",
+      "bytes": 18415
     },
     {
       "path": "devdesk/manual/readme-generator.html",
-      "sha256": "ec530ada7efb50d90a5a960ad432aa603f54affbfda2d86134125447b0a0bc18",
-      "bytes": 12107
+      "sha256": "6fe1d9b519c7a8e96e73900ee0fde41083ed09b52c013c8d595d92ab3ea98f63",
+      "bytes": 12184
     },
     {
       "path": "devdesk/manual/regex-tester.html",
-      "sha256": "c397d9cd24f912a028f1c4545b64b7f1cfe2576f792c74b1bd3517093d808ea0",
-      "bytes": 12436
+      "sha256": "9cd1037274d1587aec617ddb9f1618cdb4a74cc6abdcb5452901388c030d80e4",
+      "bytes": 12513
     },
     {
       "path": "devdesk/manual/settings-appearance.html",
-      "sha256": "224c2551583316baf3d429f609a618152e548a59a7df6d773cf1b0aff19686fc",
-      "bytes": 15687
+      "sha256": "0ab0ec3f0692e7e43740dc7419548e0621554db9e118ec8d1e2ebb77c8f373f1",
+      "bytes": 15764
     },
     {
       "path": "devdesk/manual/snippets-notes.html",
-      "sha256": "38dd5c8516e5de4c26d9444b3d38cda5c772a34266fa6f6adfc2cc3c966b8fe3",
-      "bytes": 11939
+      "sha256": "96eb88707f01ba4bb75ec562579e405b89961c0df26a65ecd7f6bb5af263dd75",
+      "bytes": 12016
     },
     {
       "path": "devdesk/manual/structured-knowledge-okf.html",
-      "sha256": "e7eb8ceb00bb1e5952a3a4f947dfc87a4d245d03bce299461ae8072b06e5bb88",
-      "bytes": 22710
+      "sha256": "b497fa33b9a9435e042fcb90f4ab70a647866b5af3e07fbd1ddf07e1de2dc36f",
+      "bytes": 22787
     },
     {
       "path": "devdesk/manual/structured-views.html",
-      "sha256": "8287480cd495ca1498ce506bb380bd0dca6a0b662df523459367543bf5a0cef3",
-      "bytes": 12874
+      "sha256": "6f4682591ca33f03a87d096cb61d70df1a5493a2bc417c4fb6b498713ea88c84",
+      "bytes": 12951
     },
     {
       "path": "devdesk/manual/timestamp.html",
-      "sha256": "20dba9b21cf749ec02c3e1d05459f953db4e17d488d0c84521e9ab207925a868",
-      "bytes": 11600
+      "sha256": "11a8c3bb7d24de17770e236defe41748ae5dd3d149b9156899ec065666eee3eb",
+      "bytes": 11677
     },
     {
       "path": "devdesk/manual/troubleshooting.html",
-      "sha256": "eb87e7a2bcfcd451bf8fe98d3f44f295848ca99b004907c43985a2f1564e9fe0",
-      "bytes": 26020
+      "sha256": "f1036c7e9bb7c57740b7b7fdfed4f82fb69385ff004593e9932dc5922887151d",
+      "bytes": 26097
     },
     {
       "path": "devdesk/manual/unified-search.html",
-      "sha256": "c76296c8bcb95a5eed73dfccee38d8cabd3034a9ba04cb9d80d4359cd4170c03",
-      "bytes": 11858
+      "sha256": "4fbd75af4cdaa6b98910f7e01bd2fa38847afc77e92e8d52bd8bf073c7bd76f5",
+      "bytes": 11935
     },
     {
       "path": "devdesk/manual/url-tools.html",
-      "sha256": "2c9313c1d2846d912343a13d282f0e6d5ca48f5a79d7bafe258c0eaec18f81a2",
-      "bytes": 11787
+      "sha256": "fc835890f28bd483ce18b3ccf111a21666568d7093de7d62a5e8636219eead6a",
+      "bytes": 11864
     },
     {
       "path": "devdesk/manual/user-manual.html",
-      "sha256": "0233cbc3970d0edd4f2d95190513fd213b710dfa334d8a683cf189c8b0e389bd",
-      "bytes": 109984
+      "sha256": "7f21bf418dfd44da1601b24e4daecea6b71191e237d547936196c7ea901c3537",
+      "bytes": 110075
     },
     {
       "path": "devdesk/manual/uuid.html",
-      "sha256": "8fd989e2ff26438fb2d64bfecdab0bd7f109bdca0847c7b7cd3ad2079c1abe19",
-      "bytes": 11328
+      "sha256": "4dc08946bba2dbe81a6dee3db82d63546b8c27245e881c40dd1e4e529779e43e",
+      "bytes": 11405
     },
     {
       "path": "devdesk/manual/visual-canvas.html",
-      "sha256": "a2f7d08670e2cb9095394eb21679615956ae2dcf9010eb709acc48927583fc6d",
-      "bytes": 12493
+      "sha256": "5917a9d67404e6840ae9d61d23dd2b34973c40c1a69c0d26c061905995534cc2",
+      "bytes": 12570
     },
     {
       "path": "devdesk/manual/visual-feature-guide.html",
-      "sha256": "ad3196bfb8ab099ba4351f5d897df51d6ecc77d0acce4a2fd66cdd07297535ad",
-      "bytes": 26160
+      "sha256": "b1d0d5d0cafc8bbebc4c5408eefe22f130803cbaf25292568c2516b675ec8a73",
+      "bytes": 26237
     },
     {
       "path": "devdesk/manual/workspace-workbench.html",
-      "sha256": "0a0742e7c2d78d3aa6f73e24dfcb56ffd3c0d8c768195e5f692fa438c74445d1",
-      "bytes": 19793
+      "sha256": "159de203f5c71e3f4817da6a260036538db2b3590453c1fcfbcd4454e50dd45e",
+      "bytes": 19870
     },
     {
       "path": "devdesk/MARKETING_POSITIONING_2026-09-08.md",
@@ -1373,8 +1388,8 @@
     },
     {
       "path": "devdesk/README.md",
-      "sha256": "51b59272615f03e6391de4c12279bd58b2ff8c1ae6518268dc42630730d6f13d",
-      "bytes": 5802
+      "sha256": "56952192cdeac9c596a9fff1d7cf7f116458ece38fc18fa13aa2c416e96e2a3f",
+      "bytes": 6840
     },
     {
       "path": "devdesk/releases.json",
@@ -1393,8 +1408,8 @@
     },
     {
       "path": "devdesk/sitemap.xml",
-      "sha256": "75f93c6affc51bdfc9938e434168fc67af0e0eeccd19f04a66b7b88f61b571f9",
-      "bytes": 4586
+      "sha256": "07080de5e7006c96fb72a54c65c68488a50f4633f5c26d0c5d13aa243ef8564e",
+      "bytes": 4690
     },
     {
       "path": "devdesk/STORE_CREATIVE_PROMPTS.md",
@@ -1403,8 +1418,8 @@
     },
     {
       "path": "devdesk/sw.js",
-      "sha256": "66506aeb7f07c128e4079ea8da47c0de1870aea50d3da865a6d7a074af82efcd",
-      "bytes": 4500
+      "sha256": "359c3ea087b899d394cb883457c3a11416afadcb9ee37870aaf3568bff901f5e",
+      "bytes": 4576
     },
     {
       "path": "devdesk/tool/.dart_tool/package_config.json",
@@ -1428,13 +1443,18 @@
     },
     {
       "path": "devdesk/tool/refresh_manual.dart",
-      "sha256": "b40ef4d45c0ab0968d8a73208f38950359b99b3d47559232906a041a360d5998",
-      "bytes": 30026
+      "sha256": "094edccd82d8447622f7999669932360876d5c718bf7bae22838f450a13c2fdf",
+      "bytes": 31423
+    },
+    {
+      "path": "devdesk/tool/sync_cli_reference.mjs",
+      "sha256": "6e9b94a9dc5b888171ff1aa0e5a119bb3e40f57023f95bb77bd61671ad34e77a",
+      "bytes": 4331
     },
     {
       "path": "devdesk/tool/validate_site.dart",
-      "sha256": "4ef43e58c7e6cc33667c4b51145c47dbd0a984b2af00d7ce37b2012dadff1ded",
-      "bytes": 9540
+      "sha256": "6c8398b01b94b1a07c63cb0836ee5783cd3e4fe7daf4e8d023a42bb90108ff5d",
+      "bytes": 9742
     },
     {
       "path": "devdesk/VERIFICATION_REPORT.md",
