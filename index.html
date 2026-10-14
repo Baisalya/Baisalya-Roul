@@ -65,7 +65,7 @@
       "@id": "https://baisalya.com/#profile",
       "url": "https://baisalya.com/",
       "name": "Baishalya Roul (Baisalya) — Software Builder",
-      "dateModified": "2026-10-07",
+      "dateModified": "2026-10-14",
       "mainEntity": {
         "@id": "https://baisalya.com/#person"
       },
@@ -289,7 +289,10 @@
       "applicationCategory": "EducationalApplication",
       "operatingSystem": "Android, Windows",
       "description": "Offline-first teacher workspace for syllabus management, lesson and weekly planning, teaching progress, classroom resources and math-first question-paper creation with PDF/Word export.",
-      "downloadUrl": "https://apps.microsoft.com/detail/9N0ZK8C31X94?cid=DevShareMCLPCB",
+      "downloadUrl": [
+        "https://play.google.com/store/apps/details?id=com.baishalya.edusheet",
+        "https://apps.microsoft.com/detail/9N0ZK8C31X94?cid=DevShareMCLPCB"
+      ],
       "author": {
         "@id": "https://baisalya.com/#person"
       },
@@ -302,6 +305,22 @@
       "sameAs": [
         "https://apps.microsoft.com/detail/9N0ZK8C31X94?cid=DevShareMCLPCB",
         "https://play.google.com/store/apps/details?id=com.baishalya.edusheet"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://baisalya.com/paperaid/#software",
+      "name": "PaperAid",
+      "url": "https://baisalya.com/paperaid/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Windows",
+      "description": "Local-first document, PDF, ID photo and image tools, publicly released on Windows through Microsoft Store.",
+      "downloadUrl": "https://apps.microsoft.com/detail/9PC123WB2SDH",
+      "author": {
+        "@id": "https://baisalya.com/#person"
+      },
+      "sameAs": [
+        "https://apps.microsoft.com/detail/9PC123WB2SDH"
       ]
     }
   ]
@@ -428,8 +447,8 @@
             </div>
 
             <div class="identity-card__stats" aria-label="Software product overview">
-                <div><strong>08</strong><span>Product surfaces</span></div>
-                <div><strong>04</strong><span>Active releases</span></div>
+                <div><strong>09</strong><span>Product surfaces</span></div>
+                <div><strong>05</strong><span>Active releases</span></div>
                 <div><strong>02</strong><span>Coming next</span></div>
             </div>
 
@@ -571,22 +590,22 @@
                         <span class="section-kicker">Software releases</span>
                         <h2 id="software-title">Software that gives every visitor a clear next step.</h2>
                         <p>
-                            Beta releases are promoted first, live apps keep direct install actions, and unreleased products stay
-                            clearly separated. Construction ERP is sold per customer through a workflow-led rollout rather than a
-                            one-size-fits-all public installer.
+                            EduSheet is fully released on Android and Windows, and PaperAid is now available on Windows.
+                            Use the official store links to install released apps or check each product's platform availability.
+                            Construction ERP is sold per customer through a workflow-led rollout.
                         </p>
                     </div>
 
                     <aside class="software-release-board" aria-label="Current software release overview">
                         <div class="software-release-board__top">
                             <span class="software-release-board__signal"><i></i>Release board</span>
-                            <small>Updated · 2026</small>
+                            <small>Updated · 14 Oct 2026</small>
                         </div>
                         <div class="software-release-board__stats">
                             <div><strong>01</strong><span>Closed test</span></div>
-                            <div><strong>03</strong><span>Public access</span></div>
+                            <div><strong>05</strong><span>Public access</span></div>
                             <div><strong>01</strong><span>Customer sale</span></div>
-                            <div><strong>03</strong><span>Preparing</span></div>
+                            <div><strong>02</strong><span>Preparing</span></div>
                         </div>
                         <div class="software-release-board__bar" aria-hidden="true">
                             <span></span><span></span><span></span>
@@ -597,12 +616,12 @@
                 <nav class="software-release-strip" aria-label="Software availability summary" data-reveal>
                     <a class="software-release-strip__item software-release-strip__item--active" href="#software-beta">
                         <b>01</b>
-                        <span><strong>Closed testing</strong><small>EduSheet Android</small></span>
-                        <i>Testing</i>
+                        <span><strong>Fully released</strong><small>EduSheet · Android + Windows</small></span>
+                        <i>Install now</i>
                     </a>
                     <a class="software-release-strip__item" href="#software-live">
                         <b>02</b>
-                        <span><strong>Available now</strong><small>DevDesk · ShopPilot · SurveyCam</small></span>
+                        <span><strong>Available now</strong><small>DevDesk · ShopPilot · SurveyCam · PaperAid Windows</small></span>
                     </a>
                     <a class="software-release-strip__item" href="#software-roadmap">
                         <b>03</b>
@@ -611,7 +630,7 @@
                     </a>
                     <a class="software-release-strip__item" href="#software-preparing">
                         <b>04</b>
-                        <span><strong>Release preparation</strong><small>BrightQuest Kids · PaperAid</small></span>
+                        <span><strong>Release preparation</strong><small>BrightQuest Kids · NotiVault · PaperAid Android</small></span>
                         <i>Websites live</i>
                     </a>
                 </nav>
@@ -625,7 +644,7 @@
                                 <h3 id="beta-release-title">Featured releases</h3>
                             </div>
                         </div>
-                        <p>EduSheet Windows is released on the Microsoft Store; Android is currently in Google Play closed testing.</p>
+                        <p>EduSheet is fully released on Android and Windows through Google Play and Microsoft Store.</p>
                     </div>
 
                     <div class="software-beta-stack">
@@ -634,7 +653,7 @@
                                 <div class="software-beta-card__visual-top">
                                     <span class="software-status-group" aria-label="EduSheet platform availability">
                                         <span class="software-status software-status--released">Windows released</span>
-                                        <span class="software-status software-status--beta">Android closed test</span>
+                                        <span class="software-status software-status--released">Android released</span>
                                     </span>
                                     <span class="software-beta-card__index">01 / EDU</span>
                                 </div>
@@ -674,7 +693,7 @@
                             <div class="software-beta-card__content">
                                 <div class="software-beta-card__meta">
                                     <span class="software-beta-card__eyebrow">Education · Productivity</span>
-                                    <span>Windows released · Android closed test</span>
+                                    <span>Android + Windows released</span>
                                 </div>
 
                                 <h3>Plan the syllabus, teach the week and build the paper—all in one workspace.</h3>
@@ -684,7 +703,7 @@
                                 </p>
 
                                 <p class="software-card__release-note">
-                                    <strong>Current access:</strong> Windows is publicly released through Microsoft Store. Android is in Google Play closed testing, so tester enrollment may be required.
+                                    <strong>Current access:</strong> Android and Windows are publicly released. Install directly from Google Play or Microsoft Store.
                                 </p>
 
                                 <div class="software-benefit-grid" aria-label="EduSheet key benefits">
@@ -696,7 +715,7 @@
                                 <div class="software-install-block">
                                     <div class="software-install-block__head">
                                         <span>Get EduSheet</span>
-                                        <small>Public Windows release · Android tester access</small>
+                                        <small>Public Android + Windows releases</small>
                                     </div>
                                     <div class="software-store-grid">
                                         <a class="software-store-badge software-store-badge--play"
@@ -705,7 +724,7 @@
                                            aria-label="Open EduSheet on Google Play">
                                             <span class="software-store-badge__logo software-store-badge__logo--play" aria-hidden="true"><img src="assets/brand/google-play.svg" alt="" width="28" height="28"></span>
                                             <span class="software-store-badge__copy">
-                                                <small>Android closed test</small>
+                                                <small>Android release</small>
                                                 <strong>Google Play</strong>
                                             </span>
                                             <span class="software-store-badge__arrow">↗</span>
@@ -962,6 +981,31 @@
                                 <a class="software-live-card__foot-link" href="https://github.com/Baisalya/siteSnap" target="_blank" rel="noopener noreferrer" aria-label="Open SiteSnap source code on GitHub"><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-github"></use></svg><span>Source on GitHub</span><span class="link-arrow" aria-hidden="true">↗</span></a>
                             </div>
                         </article>
+                        <article class="software-live-card" data-reveal>
+                            <div class="software-live-card__main">
+                                <div class="software-live-card__brand">
+                                    <div class="software-live-card__logo">
+                                        <img src="paperaid/assets/paperaid-app-icon.png" alt="PaperAid application logo" width="1024" height="1024" loading="lazy" decoding="async">
+                                    </div>
+                                    <div>
+                                        <span class="software-status software-status--released">Windows released</span>
+                                        <h3>PaperAid</h3>
+                                        <p>Local-first scanning, PDF, image and document tools. Windows is available now; Android is in preparation.</p>
+                                    </div>
+                                </div>
+                                <a class="software-live-card__explore software-website-cta" href="/paperaid/" target="_blank" rel="noopener noreferrer">Visit PaperAid Website <span>↗</span></a>
+                            </div>
+                            <div class="software-live-card__stores">
+                                <a class="software-compact-store software-compact-store--windows" href="https://apps.microsoft.com/detail/9PC123WB2SDH" target="_blank" rel="noopener noreferrer" aria-label="Install PaperAid from Microsoft Store">
+                                    <span class="software-compact-store__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 4.3 10.7 3v8.3H2v-7Zm9.8-1.5L22 1.4v9.9H11.8V2.8ZM2 12.4h8.7v8.3L2 19.5v-7.1Zm9.8 0H22v9.9l-10.2-1.4v-8.5Z"/></svg></span>
+                                    <span><small>Windows release</small><strong>Microsoft Store</strong></span><i>↗</i>
+                                </a>
+                            </div>
+                            <div class="software-live-card__foot">
+                                <a class="software-live-card__foot-link" href="/paperaid/download.html" target="_blank" rel="noopener noreferrer"><span>Downloads</span><span class="link-arrow" aria-hidden="true">↗</span></a>
+                                <a class="software-live-card__foot-link" href="/paperaid/manual.html" target="_blank" rel="noopener noreferrer"><span>Manual</span><span class="link-arrow" aria-hidden="true">↗</span></a>
+                            </div>
+                        </article>
                     </div>
                 </section>
 
@@ -995,26 +1039,6 @@
                             <div class="software-live-card__foot">
                                 <a class="software-live-card__foot-link" href="/brightquest-kids/downloads.html" target="_blank" rel="noopener noreferrer"><span>Release status</span><span class="link-arrow" aria-hidden="true">↗</span></a>
                                 <a class="software-live-card__foot-link" href="/brightquest-kids/support.html" target="_blank" rel="noopener noreferrer"><span>Support</span><span class="link-arrow" aria-hidden="true">↗</span></a>
-                            </div>
-                        </article>
-
-                        <article class="software-live-card" data-reveal>
-                            <div class="software-live-card__main">
-                                <div class="software-live-card__brand">
-                                    <div class="software-live-card__logo">
-                                        <img src="paperaid/assets/paperaid-app-icon.png" alt="PaperAid application logo" width="1024" height="1024" loading="lazy" decoding="async">
-                                    </div>
-                                    <div>
-                                        <span class="software-status software-status--soon">Release preparation</span>
-                                        <h3>PaperAid</h3>
-                                        <p>Local-first scanning, PDF, image and everyday document tools for Android and Windows.</p>
-                                    </div>
-                                </div>
-                                <a class="software-live-card__explore software-website-cta" href="/paperaid/" target="_blank" rel="noopener noreferrer">Visit PaperAid Website <span>↗</span></a>
-                            </div>
-                            <div class="software-live-card__foot">
-                                <a class="software-live-card__foot-link" href="/paperaid/download.html" target="_blank" rel="noopener noreferrer"><span>Release status</span><span class="link-arrow" aria-hidden="true">↗</span></a>
-                                <a class="software-live-card__foot-link" href="/paperaid/manual.html" target="_blank" rel="noopener noreferrer"><span>Manual</span><span class="link-arrow" aria-hidden="true">↗</span></a>
                             </div>
                         </article>
                     </div>

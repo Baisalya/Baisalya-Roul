@@ -135,7 +135,7 @@ for (const required of [
   '--root=dist',
   'ca-pub-1529558529658186',
   '9546051599',
-  "vars.ADSENSE_CONSENT_READY != 'false'",
+  "vars.ADSENSE_CONSENT_READY == 'true'",
   'actions/upload-pages-artifact@v3',
   'actions/deploy-pages@v4',
 ]) if (!workflow.includes(required)) failures.push(`Pages workflow missing ${required}`);

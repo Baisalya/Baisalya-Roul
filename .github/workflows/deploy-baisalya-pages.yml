@@ -31,8 +31,8 @@ jobs:
       - name: Build and validate all sites
         run: npm run release
       - name: Configure production AdSense
-        # Production ads are ON by default. Set ADSENSE_CONSENT_READY=false to pause.
-        if: ${{ vars.ADSENSE_CONSENT_READY != 'false' }}
+        # Enable only after the site's consent/CMP setup has been verified.
+        if: ${{ vars.ADSENSE_CONSENT_READY == 'true' }}
         run: npm run adsense:configure -- --root=dist --client=ca-pub-1529558529658186 --slot=9546051599 --consent-ready=true
       - name: Revalidate production output
         run: npm run test:dist

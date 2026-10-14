@@ -1498,8 +1498,8 @@
     },
     {
       "path": "EduSheet/download.html",
-      "sha256": "f2d4531accb33e2c55f01cb71a06c8856db6d9810b09fb14bd4744e719418d44",
-      "bytes": 8727
+      "sha256": "08fcd3b3e0033e8cc49f75ac862aa939498a1f1c36755498394203f3f48a562f",
+      "bytes": 8917
     },
     {
       "path": "EduSheet/EDUSHEET_PREMIUM_PROGRESS_CHANGED_FILES.txt",
@@ -1553,8 +1553,8 @@
     },
     {
       "path": "EduSheet/index.html",
-      "sha256": "3ce1d8dcfde3a9c720d9aaa346fafb67d310c65dc8296e263f8499f239e819b7",
-      "bytes": 46385
+      "sha256": "07cc85a6887e64146bca3827c3f5a62d5e2014b19f86651e97d9326648ddd2f7",
+      "bytes": 46566
     },
     {
       "path": "EduSheet/manual.html",
@@ -1583,8 +1583,8 @@
     },
     {
       "path": "EduSheet/sitemap.xml",
-      "sha256": "16b1c77b8bf318056bdf8dfe9f95a47bf0c859332748a08ccf2853f8a86b22b5",
-      "bytes": 711
+      "sha256": "d1e1319eff20b1bb379dd537a267b151add9359c6fdd791c92d26b99586031bc",
+      "bytes": 740
     },
     {
       "path": "EduSheet/teacher-planner.html",

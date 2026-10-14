@@ -28,7 +28,7 @@ The approved public identifiers are:
 ### Production activation
 AdSense is enabled **after** the release build, only in `dist/`, so the repository-safe source config remains disabled and protected product baselines stay stable.
 
-The production workflow now activates the approved AdSense client and responsive slot by default:
+The production workflow activates the approved AdSense client and responsive slot only when the repository variable `ADSENSE_CONSENT_READY` is explicitly `true`. A normal build keeps advertising disabled; there is no automatic post-build activation.
 
 - Publisher/client: `ca-pub-1529558529658186`
 - Responsive manual slot: `9546051599`
@@ -41,13 +41,13 @@ npm run adsense:configure -- --root=dist --client=ca-pub-1529558529658186 --slot
 npm run test:dist
 ```
 
-To temporarily stop production AdSense requests, create/set this GitHub Actions repository variable:
+Keep advertising disabled until the consent/CMP setup has been verified. To stop production AdSense requests on the next deployment, create/set this GitHub Actions repository variable (or remove it):
 
 `ADSENSE_CONSENT_READY=false`
 
 Path: **Repository Settings → Secrets and variables → Actions → Variables**.
 
-Before leaving production ads enabled for visitors in regions where consent is required, keep a Google-certified consent/CMP solution configured (for example through AdSense Privacy & messaging). The main portfolio, NotiVault, legal/privacy/deletion pages and 404 pages remain intentionally ad-free.
+Before enabling production ads, verify the consent/CMP solution, including Google-certified TCF consent where required, through AdSense Privacy & messaging. Then set `ADSENSE_CONSENT_READY=true` and deploy again. This flag is an operator acknowledgement, not visitor consent. The configurator uses `autoAds: false`; the loader only runs on eligible pages with an explicit manual slot and excludes the homepage, downloads, legal/privacy/deletion/404 pages, NotiVault and BrightQuest Kids. Disable Auto Ads in the AdSense account as well to prevent automatic placements on otherwise eligible pages; that account setting is not controlled by this repository.
 
 ## Local production test
 To test the fully activated output locally after your consent solution is ready:

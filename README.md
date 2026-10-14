@@ -18,9 +18,9 @@ This patch is designed for the current `Baisalya/Baisalya-Roul` main-branch stru
 - GitHub Pages `dist/` activates:
   - client: `ca-pub-1529558529658186`
   - slot: `9546051599`
-- Production activation is ON by default.
-- To pause ads, set GitHub Actions repository variable:
-  `ADSENSE_CONSENT_READY=false`
+- Production advertising is disabled by default. After verifying the consent/CMP setup,
+  explicitly enable it with GitHub Actions repository variable `ADSENSE_CONSENT_READY=true`.
+- An ordinary build does not activate ads. Set `ADSENSE_CONSENT_READY=false` or remove it to pause.
 - Existing ad-free policy is unchanged for main portfolio, NotiVault, legal/privacy/deletion and 404 pages.
 - Existing manual ad placements remain controlled; Auto Ads do not need to be enabled.
 
