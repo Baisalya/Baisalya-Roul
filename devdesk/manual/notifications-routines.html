@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Review local alerts and schedule AI prompts that always wait for user confirmation." name="description"/><meta content="#5b47e8" name="theme-color"/><title>Notifications and AI routines · DevDesk Manual</title><link href="../assets/img/devdesk-logo-64.png" rel="icon" sizes="64x64" type="image/png"/><link href="../assets/css/styles.css?v=20261013.1" rel="stylesheet"/><script defer="" src="../assets/js/site-config.js?v=20261013.1"></script><script defer="" src="../assets/js/search-index.js?v=20261013.1"></script><script defer="" src="../assets/js/app.js?v=20261013.1"></script><script defer="" src="../assets/js/manual-visuals.js?v=20261013.1"></script> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta name="description" content="Choose review-first reminders, AI Prepare, or read-only AI Auto-Run; understand native notifications and Windows Classic closed-app AI."><meta content="#5b47e8" name="theme-color"/><title>Notifications and AI routines · DevDesk Manual</title><link href="../assets/img/devdesk-logo-64.png" rel="icon" sizes="64x64" type="image/png"/><link href="../assets/css/styles.css?v=20261018.1" rel="stylesheet"/><script defer="" src="../assets/js/site-config.js?v=20261018.1"></script><script defer="" src="../assets/js/search-index.js?v=20261018.1"></script><script defer="" src="../assets/js/app.js?v=20261018.1"></script><script defer="" src="../assets/js/manual-visuals.js?v=20261018.1"></script> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <link href="https://baisalya.com/devdesk/manual/notifications-routines.html" rel="canonical"/>
 <meta content="https://baisalya.com/devdesk/manual/notifications-routines.html" property="og:url"/>
 <link href="../../assets/site-network.css" rel="stylesheet"/><link href="../../assets/monetization/monetization.css" rel="stylesheet"/></head><body><a class="skip-link" href="#main-content">Skip to content</a>
@@ -74,12 +74,12 @@
 <a class="" href="../manual/privacy-security.html">Privacy and security</a>
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
-<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Notifications and AI routines</span></div><div class="doc-meta"><span class="doc-chip">Local notifications</span><span class="doc-chip">Review-first schedules</span><span class="doc-chip">Windows + Android</span></div>
-<h1 id="notifications-and-ai-routines">Notifications and AI routines<a aria-label="Link to Notifications and AI routines" class="heading-anchor" href="#notifications-and-ai-routines">#</a></h1>
-<p>DevDesk includes a local Notification Center and review-first AI routines for
-students, professionals, and everyday users. Open the bell from Home or a
-standard tool bar.</p>
-<h2 id="notification-center">Notification Center<a aria-label="Link to Notification Center" class="heading-anchor" href="#notification-center">#</a></h2>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Notifications and AI routines</span></div><div class="doc-meta"><span class="doc-chip">Local notifications</span><span class="doc-chip">Three execution modes</span><span class="doc-chip">Windows + Android</span></div>
+<h1 id="notifications-and-ai-routines">Notifications and AI routines<a class="heading-anchor" href="#notifications-and-ai-routines" aria-label="Link to Notifications and AI routines">#</a></h1>
+<p>Use DevDesk's local Notification Center for app activity, reminders, and AI
+results. Open the bell from Home or a standard tool bar. Routines can remind
+you to review a prompt or, with explicit opt-in, prepare a result automatically.</p>
+<h2 id="notification-center">Notification Center<a class="heading-anchor" href="#notification-center" aria-label="Link to Notification Center">#</a></h2>
 <ul>
 <li>The badge shows unread DevDesk notifications.</li>
 <li>Open an item to mark it read and follow its in-app action.</li>
@@ -89,40 +89,148 @@ a DevDesk backup.</li>
 </ul>
 <p>The current release does <strong>not</strong> request access to notifications from WhatsApp,
 Facebook, or other apps. It does not silently reply or post.</p>
-<h2 id="create-a-review-first-ai-routine">Create a review-first AI routine<a aria-label="Link to Create a review-first AI routine" class="heading-anchor" href="#create-a-review-first-ai-routine">#</a></h2>
+<h2 id="create-an-ai-routine">Create an AI routine<a class="heading-anchor" href="#create-an-ai-routine" aria-label="Link to Create an AI routine">#</a></h2>
 <ol>
 <li>Open <strong>Notifications &amp; Routines</strong>.</li>
-<li>Select <strong>AI Routines</strong>, then <strong>New routine</strong>.</li>
+<li>Select <strong>AI Routines</strong> and enter a routine name and prompt.</li>
 <li>Start from Study plan, Deadline check, Daily summary, Message draft, or a
 custom prompt.</li>
 <li>Choose Once, Daily, Weekdays, or Weekly and select the next time.</li>
-<li>Keep the routine enabled.</li>
-<li>When it is due, open the notification and review the prepared prompt in AI
-Harness.</li>
+<li>Choose an execution mode. For automatic modes, select the workspace whose
+configured AI provider and model should be used.</li>
+<li>Keep the routine enabled and review its saved permissions.</li>
 </ol>
-<p>A routine never sends a provider request, contact reply, or social post on its
-own. It prepares a prompt and waits for the user's decision.</p>
-<h2 id="current-background-boundary">Current background boundary<a aria-label="Link to Current background boundary" class="heading-anchor" href="#current-background-boundary">#</a></h2>
-<p>Phase 1 routines are checked while DevDesk is running. If the app was closed at
-the scheduled time, the latest missed occurrence is recovered when DevDesk next
-opens. This is not yet an Android or Windows operating-system background alarm.</p>
-<h2 id="native-quick-access-roadmap">Native quick-access roadmap<a aria-label="Link to Native quick-access roadmap" class="heading-anchor" href="#native-quick-access-roadmap">#</a></h2>
-<p>The next platform-specific phases are deliberately separate because they need
-sensitive operating-system permissions and Store review:</p>
-<ul>
-<li>Android home-screen widget and app-owned scheduled notifications;</li>
-<li>optional Android notification listener with prominent disclosure, per-app
-allowlist, local-only default, revoke/delete controls, and inline reply only
-when the source notification exposes a supported reply action;</li>
-<li>Windows app-owned scheduled notifications and consent-based notification
-listener with AI draft, copy, share, and open-source-app actions;</li>
-<li>a separate Windows 11 Widget Board provider built with the Windows App SDK.</li>
-</ul>
-<p>Windows does not provide a generic reply API for arbitrary third-party
-notifications. Silent WhatsApp/Facebook personal-account automation is not a
-DevDesk feature. Future supported publishing must use a user-confirmed system
-share surface or an official, separately connected Business/Page integration.</p>
-<h2 id="useful-ideas">Useful ideas<a aria-label="Link to Useful ideas" class="heading-anchor" href="#useful-ideas">#</a></h2>
+<p>Saved routines appear under <strong>My routines</strong>. Expand one to see its prompt,
+next run, last result, and actions. <strong>Recent execution history</strong> shows bounded
+evidence of automatic runs.</p>
+<h2 id="choose-the-execution-mode">Choose the execution mode<a class="heading-anchor" href="#choose-the-execution-mode" aria-label="Link to Choose the execution mode">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>What happens when due</th>
+<th>Permissions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Review first</strong></td>
+<td>Creates a reminder and opens the saved prompt in AI Harness for review. No automatic provider request.</td>
+<td>Default for existing and new routines.</td>
+</tr>
+<tr>
+<td><strong>AI Prepare</strong></td>
+<td>Sends the saved prompt using the selected workspace's provider/model; keeps the response in AI Harness.</td>
+<td>Explicit opt-in; no workspace context or tools.</td>
+</tr>
+<tr>
+<td><strong>AI Auto-Run (read-only)</strong></td>
+<td>Runs the prompt with only the permissions saved on that routine.</td>
+<td>Explicit opt-in; optionally allow read-only workspace context and/or external research separately.</td>
+</tr>
+</tbody>
+</table>
+<p>Automatic modes require a configured provider and a live DevDesk-owned runtime.
+Provider usage may incur charges under your provider account. The notification
+reports that a result is ready; open AI Harness to inspect it.</p>
+<p>Routine permissions are separate from interactive AI Harness permissions.
+Automatic routines do not inherit your active agent, workspace instructions or
+skills, identity, project memory, or interactive tool approvals. File changes,
+terminal commands, publishing, browser/computer control, Android ADB, and nested
+automation remain blocked. An action outside the saved permission scope
+produces a manual-review notification.</p>
+<h2 id="background-behavior-by-platform">Background behavior by platform<a class="heading-anchor" href="#background-behavior-by-platform" aria-label="Link to Background behavior by platform">#</a></h2>
+<p>An operating-system reminder and an automatic AI request are separate actions.
+The notification itself never performs the provider request.</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Reminder while DevDesk is closed</th>
+<th>Automatic AI while DevDesk is closed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Android</td>
+<td>Native scheduled notifications, subject to permission and battery restrictions.</td>
+<td>Requires a live DevDesk runtime; missed automatic runs recover on startup/resume.</td>
+</tr>
+<tr>
+<td>Windows Microsoft Store / MSIX</td>
+<td>Scheduled toast reminders where OS/package support permits.</td>
+<td>Closed-app AI registration is not enabled in this implementation.</td>
+</tr>
+<tr>
+<td>Windows Classic</td>
+<td>Scheduled toast reminders where supported.</td>
+<td>Optional <strong>Windows closed-app AI</strong> worker for automatic modes while the user remains signed in.</td>
+</tr>
+<tr>
+<td>Linux desktop</td>
+<td>No native closed-app reminder guarantee in this implementation.</td>
+<td>No closed-app AI worker; use a live DevDesk runtime.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="android-reminders">Android reminders<a class="heading-anchor" href="#android-reminders" aria-label="Link to Android reminders">#</a></h3>
+<p>Notification permission is requested in the routine workflow when required.
+If denied, the routine remains saved and overdue recovery runs when DevDesk
+opens. Alarm-backed reminders use inexact allow-while-idle scheduling, so
+delivery may be later than the selected minute. DevDesk does not request
+special exact-alarm permission. Supported reboot/package-replacement events
+restore reminders; vendor battery restrictions can still delay delivery.</p>
+<h3 id="windows-reminders">Windows reminders<a class="heading-anchor" href="#windows-reminders" aria-label="Link to Windows reminders">#</a></h3>
+<p>Windows uses a rolling set of up to 64 upcoming occurrences because the
+cross-platform API does not repeat toasts. DevDesk refreshes it on startup or
+resume. Open DevDesk periodically to keep recurring reminders scheduled.
+Unpackaged builds can have stricter notification/cancellation limits than MSIX.</p>
+<h3 id="windows-closed-app-ai">Windows closed-app AI<a class="heading-anchor" href="#windows-closed-app-ai" aria-label="Link to Windows closed-app AI">#</a></h3>
+<p>On a Classic Windows build, enable <strong>Windows closed-app AI</strong> in the routine
+screen only when you want automatic AI while the window is closed. It is off
+by default. The <strong>DevDesk Background AI</strong> scheduled task checks about once a
+minute as your signed-in user with limited privileges.</p>
+<p>The task contains no API key; credentials remain in DevDesk's protected store.
+The worker skips Review first routines and exits if interactive DevDesk is
+running. It uses the same saved permissions and audit protection as the app,
+persists completion/failure, and attempts a result notification. Disable the
+setting to remove the task. It does not run while the computer is shut down or
+the user is logged out. Store/MSIX, Android, and Linux closed-app AI are not
+enabled by this implementation.</p>
+<h2 id="recovery-notification-taps-and-duplicate-safety">Recovery, notification taps, and duplicate safety<a class="heading-anchor" href="#recovery-notification-taps-and-duplicate-safety" aria-label="Link to Recovery, notification taps, and duplicate safety">#</a></h2>
+<p>DevDesk checks overdue routines on startup, resume, and while running. The
+latest missed occurrence is recovered when the app next opens. Concurrent due
+checks are serialized. Disabling/deleting a routine reconciles or cancels its
+pending OS schedules.</p>
+<p>Tap a native notification to open the matching workspace and AI Harness,
+including on a supported cold launch. Review first opens the saved prompt;
+automatic modes open the result/review surface without injecting a second prompt.</p>
+<p>Before an automatic provider request, DevDesk saves an occurrence lease and
+audit record. After interruption it does not automatically send that same
+occurrence again; it asks for manual review. This prevents duplicate scheduled
+submissions without claiming exactly-once remote-provider delivery.</p>
+<h2 id="execution-history-and-privacy">Execution history and privacy<a class="heading-anchor" href="#execution-history-and-privacy" aria-label="Link to Execution history and privacy">#</a></h2>
+<p>Automatic-run audits record trigger, mode, outcome, provider-send status,
+whether user action is needed, and the optional read-only permissions.
+They exclude prompt text, response text, credentials, environment values, and
+file/workspace paths. The response belongs to the AI Harness conversation,
+separately from the audit. If the pre-flight audit cannot be saved, the
+automatic provider request is not sent.</p>
+<h2 id="manage-routines-from-a-terminal">Manage routines from a terminal<a class="heading-anchor" href="#manage-routines-from-a-terminal" aria-label="Link to Manage routines from a terminal">#</a></h2>
+<p>The <a href="devdesk-cli.html">DevDesk CLI</a> can list, inspect, add, enable, disable,
+delete, and request manual review of routines. Supported routine commands
+can use the running GUI's local broker.</p>
+<pre><code class="language-text">devdesk routines list --json
+devdesk routines get &lt;routine-id&gt; --json
+devdesk routines history --limit 20 --json
+devdesk routines run &lt;routine-id&gt; --yes --json
+devdesk routines check --yes --json
+</code></pre>
+<p>CLI <code>run</code> creates a manual-review fallback. CLI <code>check</code> leaves due AI Prepare/
+AI Auto-Run occurrences for the app instead of consuming their schedule.
+Neither automatically sends to a provider. Routine history omits notification
+action payloads containing the prompt.</p>
+<h2 id="useful-ideas">Useful ideas<a class="heading-anchor" href="#useful-ideas" aria-label="Link to Useful ideas">#</a></h2>
 <ul>
 <li>Daily study priorities and a short self-test.</li>
 <li>Deadline review with the next three actions.</li>
@@ -130,9 +238,10 @@ share surface or an official, separately connected Business/Page integration.</p
 <li>A polite message draft that always waits for approval.</li>
 <li>Weekly personal plan, budget questions, or document checklist.</li>
 </ul>
-<div class="article-footer"><a class="pager" href="ai-workbench.html"><small>Previous</small><strong>AI Harness and Workbench</strong></a><a class="pager" href="privacy-security.html"><small>Next</small><strong>Privacy and security</strong></a></div></article><aside aria-label="Advertisement" class="monetization-ad" data-ad-context="notifications-routines" data-ad-unit="manual" hidden=""></aside></main><aside aria-label="On this page" class="toc"><h2>On this page</h2><a class="level-2" href="#notification-center">Notification Center</a><a class="level-2" href="#create-a-review-first-ai-routine">Create a review-first AI routine</a><a class="level-2" href="#current-background-boundary">Current background boundary</a><a class="level-2" href="#native-quick-access-roadmap">Native quick-access roadmap</a><a class="level-2" href="#useful-ideas">Useful ideas</a></aside></div><footer class="site-footer"><div class="footer-inner">
+
+<div class="article-footer"><a class="pager" href="ai-workbench.html"><small>Previous</small><strong>AI Harness and Workbench</strong></a><a class="pager" href="privacy-security.html"><small>Next</small><strong>Privacy and security</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#notification-center">Notification Center</a><a class="level-2" href="#create-an-ai-routine">Create an AI routine</a><a class="level-2" href="#choose-the-execution-mode">Choose the execution mode</a><a class="level-2" href="#background-behavior-by-platform">Background behavior by platform</a><a class="level-3" href="#android-reminders">Android reminders</a><a class="level-3" href="#windows-reminders">Windows reminders</a><a class="level-3" href="#windows-closed-app-ai">Windows closed-app AI</a><a class="level-2" href="#recovery-notification-taps-and-duplicate-safety">Recovery, notification taps, and duplicate safety</a><a class="level-2" href="#execution-history-and-privacy">Execution history and privacy</a><a class="level-2" href="#manage-routines-from-a-terminal">Manage routines from a terminal</a><a class="level-2" href="#useful-ideas">Useful ideas</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" rel="noopener noreferrer" target="_blank">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" rel="noopener noreferrer" target="_blank">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy policy</a></div>
 <div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" rel="noopener noreferrer" target="_blank">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
-</div></footer><div aria-hidden="true" class="search-overlay" data-search-overlay=""><div aria-label="Search DevDesk documentation" aria-modal="true" class="search-panel" role="dialog"><input autocomplete="off" data-search-input="" placeholder="Search manuals, commands, OKF, graph, APIs…" type="search"/><div class="search-results" data-search-results=""><div class="empty-search">Start typing to search the complete manual.</div></div></div></div><script src="../../assets/monetization/config.js"></script><script defer="" src="../../assets/monetization/monetization.js"></script></body></html>
+</div></footer><div aria-hidden="true" class="search-overlay" data-search-overlay=""><div aria-label="Search DevDesk documentation" aria-modal="true" class="search-panel" role="dialog"><input autocomplete="off" data-search-input="" placeholder="Search manuals, commands, OKF, graph, APIs…" type="search"/><div class="search-results" data-search-results=""><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>

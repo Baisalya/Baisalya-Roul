@@ -8,12 +8,12 @@ const enabledConfig = {
   adsenseClient: 'ca-pub-1529558529658186', manualSlot: '9546051599',
 };
 
-function load(pathname, config = enabledConfig, hasSlot = true) {
+function load(pathname, config = enabledConfig, hasSlot = true, approvedPath = null) {
   let activations = 0;
   const schedule = () => { activations++; };
   const context = {
     window: { location: { pathname }, BAISALYA_MONETIZATION: config, requestIdleCallback: schedule },
-    document: { querySelectorAll: () => hasSlot ? [{}] : [] },
+    document: { querySelector: () => approvedPath ? {content: approvedPath} : null, querySelectorAll: () => hasSlot ? [{}] : [] },
     requestIdleCallback: schedule,
   };
   vm.runInNewContext(runtime, context);
@@ -34,8 +34,13 @@ for (const pathname of [
 assert.equal(load('/paperaid/index.html', { ...enabledConfig, enabled: false }), 0);
 assert.equal(load('/paperaid/index.html', { ...enabledConfig, consentReady: false }), 0);
 assert.equal(load('/paperaid/index.html', enabledConfig, false), 0, 'Auto Ads cannot bypass the manual slot requirement');
-assert.equal(load('/paperaid/index.html', { ...enabledConfig, autoAds: false }), 1);
-assert.equal(load('/devdesk/manual/user-manual.html', { ...enabledConfig, autoAds: false }), 1);
+assert.equal(load('/paperaid/index.html', { ...enabledConfig, autoAds: false }), 0);
+const reviewed = '/devdesk/manual/user-manual.html';
+assert.equal(load(reviewed, { ...enabledConfig, autoAds: false }, true, reviewed), 1);
+assert.equal(load(reviewed, { ...enabledConfig, consentReady: false, autoAds: false }, true, reviewed), 0);
+assert.equal(load(reviewed, enabledConfig, true, reviewed), 0, 'Auto Ads cannot activate');
+assert.equal(load(reviewed, { ...enabledConfig, autoAds: false }, true, '/other.html'), 0);
+assert.equal(load(reviewed, { ...enabledConfig, autoAds: false }, false, reviewed), 0);
 
 const pkg = JSON.parse(await readFile('package.json', 'utf8'));
 assert.equal(pkg.scripts.postbuild, undefined, 'An ordinary build must not silently enable advertising');

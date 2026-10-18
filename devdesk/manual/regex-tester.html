@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Test patterns, flags, matches, capture groups, and performance edge cases." name="description"/><meta content="#5b47e8" name="theme-color"/><title>Regex Tester · DevDesk Manual</title><link href="../assets/img/devdesk-logo-64.png" rel="icon" sizes="64x64" type="image/png"/><link href="../assets/css/styles.css?v=20261013.1" rel="stylesheet"/><script defer="" src="../assets/js/site-config.js?v=20261013.1"></script><script defer="" src="../assets/js/search-index.js?v=20261013.1"></script><script defer="" src="../assets/js/app.js?v=20261013.1"></script><script defer="" src="../assets/js/manual-visuals.js?v=20261013.1"></script> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<html lang="en"><head><script>try{const t=localStorage.getItem('devdesk-theme');document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(_){document.documentElement.dataset.theme='dark'}</script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta name="description" content="Test version and identifier patterns with positive and negative samples before using them in code."><meta content="#5b47e8" name="theme-color"/><title>Regex Tester · DevDesk Manual</title><link href="../assets/img/devdesk-logo-64.png" rel="icon" sizes="64x64" type="image/png"/><link href="../assets/css/styles.css?v=20261018.1" rel="stylesheet"/><script defer="" src="../assets/js/site-config.js?v=20261018.1"></script><script defer="" src="../assets/js/search-index.js?v=20261018.1"></script><script defer="" src="../assets/js/app.js?v=20261018.1"></script><script defer="" src="../assets/js/manual-visuals.js?v=20261018.1"></script> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <link href="https://baisalya.com/devdesk/manual/regex-tester.html" rel="canonical"/>
 <meta content="https://baisalya.com/devdesk/manual/regex-tester.html" property="og:url"/>
 <link href="../../assets/site-network.css" rel="stylesheet"/><link href="../../assets/monetization/monetization.css" rel="stylesheet"/></head><body><a class="skip-link" href="#main-content">Skip to content</a>
@@ -73,9 +73,10 @@
 <a class="" href="../manual/privacy-security.html">Privacy and security</a>
 <a class="" href="../manual/keyboard-shortcuts.html">Keyboard shortcuts and accessibility</a>
 <a class="" href="../manual/troubleshooting.html">Troubleshooting</a>
-<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Developer utilities</span></div><div class="doc-meta"><span class="doc-chip">Developer utilities</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div><h1 id="regex-tester">Regex Tester<a aria-label="Link to Regex Tester" class="heading-anchor" href="#regex-tester">#</a></h1>
+<a class="" href="../manual/faq.html">Frequently asked questions</a></aside><main class="docs-main" id="main-content"><article class="article"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="user-manual.html">Manual</a><span>/</span><span>Developer utilities</span></div><div class="doc-meta"><span class="doc-chip">Developer utilities</span><span class="doc-chip">Offline documentation</span><span class="doc-chip">Android + Windows</span></div>
+<h1 id="regex-tester">Regex Tester<a class="heading-anchor" href="#regex-tester" aria-label="Link to Regex Tester">#</a></h1>
 <p>Regex Tester evaluates a regular expression against local test text.</p>
-<h2 id="steps">Steps<a aria-label="Link to Steps" class="heading-anchor" href="#steps">#</a></h2>
+<h2 id="steps">Steps<a class="heading-anchor" href="#steps" aria-label="Link to Steps">#</a></h2>
 <ol>
 <li>Enter a pattern.</li>
 <li>Configure supported flags.</li>
@@ -83,35 +84,51 @@
 <li>Review matches and groups.</li>
 <li>Copy the final expression after testing edge cases.</li>
 </ol>
-<h2 id="performance">Performance<a aria-label="Link to Performance" class="heading-anchor" href="#performance">#</a></h2>
+<h2 id="performance">Performance<a class="heading-anchor" href="#performance" aria-label="Link to Performance">#</a></h2>
 <p>Some patterns can cause expensive backtracking. DevDesk applies bounded processing where supported, but avoid nested ambiguous quantifiers on large input.</p>
-<h2 id="examples">Examples<a aria-label="Link to Examples" class="heading-anchor" href="#examples">#</a></h2>
+<h2 id="examples">Examples<a class="heading-anchor" href="#examples" aria-label="Link to Examples">#</a></h2>
 <ul>
 <li>Email-like text: test only for your application rules; do not treat a simple regex as complete email validation.</li>
 <li>Named identifiers: use anchors when the whole string must match.</li>
 <li>Search-and-extract: use capturing groups intentionally.</li>
 </ul>
-<h2 id="privacy">Privacy<a aria-label="Link to Privacy" class="heading-anchor" href="#privacy">#</a></h2>
+<h2 id="privacy">Privacy<a class="heading-anchor" href="#privacy" aria-label="Link to Privacy">#</a></h2>
 <p>Pattern and test text remain local unless you copy or export them.</p>
-<h2 id="simple-examples">Simple examples<a aria-label="Link to Simple examples" class="heading-anchor" href="#simple-examples">#</a></h2>
+<h2 id="simple-examples">Simple examples<a class="heading-anchor" href="#simple-examples" aria-label="Link to Simple examples">#</a></h2>
 <p>Whole-string identifier:</p>
 <pre><code class="language-regex">^[A-Za-z][A-Za-z0-9_-]{2,31}$
 </code></pre>
 <p>Capture a version:</p>
 <pre><code class="language-regex">version:\s+(\d+\.\d+\.\d+)
 </code></pre>
-<h2 id="read-the-result">Read the result<a aria-label="Link to Read the result" class="heading-anchor" href="#read-the-result">#</a></h2>
+<h2 id="read-the-result">Read the result<a class="heading-anchor" href="#read-the-result" aria-label="Link to Read the result">#</a></h2>
 <ul>
 <li>A <strong>match</strong> is text accepted by the pattern.</li>
 <li>A <strong>capture group</strong> is a parenthesized subpart.</li>
 <li>Anchors <code>^</code> and <code>$</code> constrain the start and end.</li>
 <li>Flags can change case sensitivity and multi-line behavior.</li>
 </ul>
-<aside class="callout caution"><strong>Caution</strong><p>A pattern that works on a short sample can become slow on a large hostile input. Avoid nested ambiguous quantifiers such as <code>(a+)+</code>.</p>
-</aside>
-<div class="article-footer"><a class="pager" href="jwt-decoder.html"><small>Previous</small><strong>JWT Decoder</strong></a><a class="pager" href="base64.html"><small>Next</small><strong>Base64 Tool</strong></a></div></article><aside aria-label="Advertisement" class="monetization-ad" data-ad-context="regex-tester" data-ad-unit="manual" hidden=""></aside></main><aside aria-label="On this page" class="toc"><h2>On this page</h2><a class="level-2" href="#steps">Steps</a><a class="level-2" href="#performance">Performance</a><a class="level-2" href="#examples">Examples</a><a class="level-2" href="#privacy">Privacy</a><a class="level-2" href="#simple-examples">Simple examples</a><a class="level-2" href="#read-the-result">Read the result</a></aside></div><footer class="site-footer"><div class="footer-inner">
+<blockquote>
+<p>[!CAUTION] A pattern that works on a short sample can become slow on a large hostile input. Avoid nested ambiguous quantifiers such as <code>(a+)+</code>.</p>
+</blockquote>
+<h2 id="worked-example-inspect-a-version-line">Worked example: inspect a version line<a class="heading-anchor" href="#worked-example-inspect-a-version-line" aria-label="Link to Worked example: inspect a version line">#</a></h2>
+<p>Enter <code>version:\s+(\d+\.\d+\.\d+)</code> in <strong>Regex Pattern</strong>. Use the following fictional <strong>Sample Text</strong>, keep <strong>Case sensitive</strong> enabled and choose <strong>Test</strong>:</p>
+<pre><code class="language-text">name: example-tool
+version: 2.5.1
+channel: demo
+</code></pre>
+<p>The intended full match is <code>version: 2.5.1</code>; the first capture group contains <code>2.5.1</code>. The escaped dots match literal periods. Without the backslashes, a dot normally accepts a character more broadly and could match a string you did not intend to recognize.</p>
+<p>Now test <code>version: 2x5x1</code>, a missing version and <code>Version: 2.5.1</code>. These should not match that case-sensitive pattern. This negative set is as useful as the successful example: it shows whether the expression rejects malformed or differently capitalized data. If you disable <strong>Case sensitive</strong>, deliberately recheck the capitalization case and confirm the changed behavior is wanted.</p>
+<h2 id="match-a-complete-value-or-search-inside-text">Match a complete value or search inside text<a class="heading-anchor" href="#match-a-complete-value-or-search-inside-text" aria-label="Link to Match a complete value or search inside text">#</a></h2>
+<p>The identifier expression above uses <code>^</code> and <code>$</code> to constrain the value. Try <code>abc_12</code> as a positive example and <code>12abc</code> or <code>ab</code> as negative examples. With <strong>Multiline</strong> enabled, anchors can apply to line boundaries, so testing a multi-line document is different from validating one isolated field.</p>
+<p>Use regex for the part of the format it can reliably express. Matching a date-shaped string does not establish that a calendar date exists, and a basic email-shaped match does not confirm that a mailbox is reachable. Add the appropriate parser or application validation after the text match.</p>
+<h2 id="transfer-the-result-carefully">Transfer the result carefully<a class="heading-anchor" href="#transfer-the-result-carefully" aria-label="Link to Transfer the result carefully">#</a></h2>
+<p>When copying an expression into source code, account for the destination language's string escaping. The backslashes entered directly in the tester may need another representation in a normal quoted string. Regex engines and supported syntax can also differ. Re-run the same positive and negative samples in the application where the final expression will execute.</p>
+<p>If the tester reports an error, simplify to a small pattern and check unclosed brackets, parentheses and trailing backslashes. For a slow expression, reduce the sample and remove ambiguous repetition before trying a larger input again.</p>
+
+<div class="article-footer"><a class="pager" href="jwt-decoder.html"><small>Previous</small><strong>JWT Decoder</strong></a><a class="pager" href="base64.html"><small>Next</small><strong>Base64 Tool</strong></a></div></article></main><aside class="toc" aria-label="On this page"><h2>On this page</h2><a class="level-2" href="#steps">Steps</a><a class="level-2" href="#performance">Performance</a><a class="level-2" href="#examples">Examples</a><a class="level-2" href="#privacy">Privacy</a><a class="level-2" href="#simple-examples">Simple examples</a><a class="level-2" href="#read-the-result">Read the result</a><a class="level-2" href="#worked-example-inspect-a-version-line">Worked example: inspect a version line</a><a class="level-2" href="#match-a-complete-value-or-search-inside-text">Match a complete value or search inside text</a><a class="level-2" href="#transfer-the-result-carefully">Transfer the result carefully</a></aside></div><footer class="site-footer"><div class="footer-inner">
 <div><a class="brand" href="../index.html"><img alt="DevDesk application logo" src="../assets/img/devdesk-logo-128.png"/><span>DevDesk<small>Everyday work, study, research, and software</small></span></a><p style="color:var(--muted)">Documentation generated from the DevDesk application source and maintained as a static, responsive website.</p></div>
 <div><h3>Learn</h3><a href="../manual/getting-started.html">Getting started</a><a href="../manual/links-backlinks-nodes.html">Links and graph</a><a href="../manual/structured-knowledge-okf.html">Structured Knowledge</a><a href="../manual/api-workspaces.html">Saved API testing</a></div>
 <div><h3>Product</h3><a href="../downloads.html">Downloads</a><a href="https://github.com/Baisalya/devdesk" rel="noopener noreferrer" target="_blank">Source repository</a><a href="https://github.com/Baisalya/devdesk-support/issues/new/choose" rel="noopener noreferrer" target="_blank">Support</a><a href="https://baisalya.com/devdesk/privacy-policy.html" rel="noopener noreferrer" target="_blank">Privacy policy</a></div>
 <div><h3>Reference</h3><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md" rel="noopener noreferrer" target="_blank">Official OKF v0.2 spec</a><a href="../manual/keyboard-shortcuts.html">Keyboard shortcuts</a><a href="../manual/troubleshooting.html">Troubleshooting</a><a href="../manual/faq.html">FAQ</a></div>
-</div></footer><div aria-hidden="true" class="search-overlay" data-search-overlay=""><div aria-label="Search DevDesk documentation" aria-modal="true" class="search-panel" role="dialog"><input autocomplete="off" data-search-input="" placeholder="Search manuals, commands, OKF, graph, APIs…" type="search"/><div class="search-results" data-search-results=""><div class="empty-search">Start typing to search the complete manual.</div></div></div></div><script src="../../assets/monetization/config.js"></script><script defer="" src="../../assets/monetization/monetization.js"></script></body></html>
+</div></footer><div aria-hidden="true" class="search-overlay" data-search-overlay=""><div aria-label="Search DevDesk documentation" aria-modal="true" class="search-panel" role="dialog"><input autocomplete="off" data-search-input="" placeholder="Search manuals, commands, OKF, graph, APIs…" type="search"/><div class="search-results" data-search-results=""><div class="empty-search">Start typing to search the complete manual.</div></div></div></div></body></html>

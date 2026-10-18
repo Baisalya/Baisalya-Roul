@@ -45,7 +45,8 @@ No unavailable application behavior is reported as newly implemented.
 | Visual tools | Portable JSON Canvas plus Diagram Studio `.flowchart` files with shape libraries, templates, auto layout, and PNG/SVG export |
 | Workspace workbench | Project tree, five visible tabs, hidden-tab dropdown, contextual tool cards, scoped Source Control, and explicit Windows project terminals |
 | AI Harness and Workbench | Standalone project selector, bounded redacted text files, transient vision input, provider profiles, review-first proposals, Windows terminal plans and verification, background recovery, read-only specialists, isolated worktree workers, and visible Edge Browser Agent handoff |
-| Notifications and AI routines | Local unread inbox, action routing, retention controls, Once/Daily/Weekdays/Weekly review-first prompt schedules, and missed-occurrence recovery on next app launch |
+| Notifications and AI routines | Local inbox, native Android/Windows reminders, Review first / AI Prepare / read-only AI Auto-Run, per-routine permissions, occurrence leases, privacy-safe audit, native activation, and optional Windows Classic signed-in-user closed-app AI |
+| Standalone CLI | 26 command families for projects, knowledge, APIs, local data, operations, AI, and routines; authenticated local GUI broker for supported commands; consent gates, JSON, completion, diagnostics, and stable exit codes |
 | Graph writes | Standard Markdown managed block, one source note, conflict-safe undo |
 | OKF | Code-verified Open Knowledge Format v0.2 analysis, concept templates, safe-fix preview, reviewed conversion, managed indexes/log, provenance, verification, lifecycle, recovery journal, rollback, and undo |
 | API | Quick API and saved API workspaces with collections, environments, assertions, extraction, runner, imports/exports |
@@ -84,4 +85,3 @@ to add another project path to the task scope.
 - Durable Activity & Safety history with interrupted-operation recovery and no stdout/stderr, environment values, kubeconfig credentials or Kubernetes Secret values
 - Protected high-impact Docker/Kubernetes resources and exact destructive confirmations
 - Desktop runtime boundary; Android entitlement/product experience does not claim a local or remote container runtime
-

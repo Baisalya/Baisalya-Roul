@@ -18,13 +18,15 @@ export function applySocialMetadata(html, relativePath) {
     const description = isHome ? surface.description : (metaValue(head, 'description') || surface.description);
     const imagePath = socialImagePath(surface);
     const image = `https://baisalya.com/${imagePath}`;
+    const isGuideArticle = route === 'guides' && !relativePath.endsWith('/index.html') && relativePath.endsWith('.html');
     const properties = {
-      'og:type': 'website', 'og:site_name': surface.route ? surface.name : 'Baisalya',
+      'og:type': isGuideArticle ? 'article' : 'website', 'og:site_name': surface.route ? surface.name : 'Baisalya',
       'og:title': title, 'og:description': description,
       'og:image': image, 'og:image:secure_url': image, 'og:image:type': 'image/png',
       'og:image:width': '1200', 'og:image:height': '630',
       'og:image:alt': `${surface.name}${imagePath !== baseSocialImagePath(surface) ? (surface.key === 'baisalya' ? ' portrait' : ' with brand ambassador') : ''} — ${surface.lines.join(' ')}`,
     };
+    if (isGuideArticle) properties['article:author'] = 'https://baisalya.com/';
     const names = {
       'twitter:card': 'summary_large_image', 'twitter:title': title,
       'twitter:description': description, 'twitter:image': image,

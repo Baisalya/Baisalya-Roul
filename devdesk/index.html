@@ -24,13 +24,13 @@
 <title>DevDesk – Workspace for Learning, Research &amp; Building | Baisalya</title>
 <link href="assets/img/devdesk-logo-64.png" rel="icon" sizes="64x64" type="image/png"/>
 <link href="assets/img/devdesk-logo-192.png" rel="apple-touch-icon" sizes="192x192"/>
-<link href="site.webmanifest?v=20261013.1" rel="manifest"/>
-<link href="assets/css/styles.css?v=20261013.1" rel="stylesheet"/>
-<script defer="" src="assets/js/site-config.js?v=20261013.1"></script>
-<script defer="" src="assets/js/marketing-model.js?v=20261013.1"></script>
-<script defer="" src="assets/js/search-index.js?v=20261013.1"></script>
-<script defer="" src="assets/js/app.js?v=20261013.1"></script>
-<script defer="" src="assets/js/manual-visuals.js?v=20261013.1"></script>
+<link href="site.webmanifest?v=20261018.1" rel="manifest"/>
+<link href="assets/css/styles.css?v=20261018.1" rel="stylesheet"/>
+<script defer="" src="assets/js/site-config.js?v=20261018.1"></script>
+<script defer="" src="assets/js/marketing-model.js?v=20261018.1"></script>
+<script defer="" src="assets/js/search-index.js?v=20261018.1"></script>
+<script defer="" src="assets/js/app.js?v=20261018.1"></script>
+<script defer="" src="assets/js/manual-visuals.js?v=20261018.1"></script>
 <link href="../assets/monetization/monetization.css" rel="stylesheet"/> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <link href="https://baisalya.com/devdesk/" rel="canonical"/>
 <meta content="https://baisalya.com/devdesk/" property="og:url"/>
@@ -135,7 +135,7 @@
 <main id="main-content">
 <section class="hero hero-product">
 <div>
-<span class="eyebrow">DevDesk 1.2.4 · One workspace, many kinds of work</span>
+<span class="eyebrow">One workspace, many kinds of work</span>
 <h1>Study. Research. Organize. Build. Run projects from one workspace.</h1>
 <p>
           DevDesk brings everyday planning, connected knowledge, study and research,
@@ -172,7 +172,7 @@
 <div class="ai-launch-shell">
 <div class="ai-launch-header">
 <div>
-<span class="release-pill">DevDesk 1.2.4 feature set</span>
+<span class="release-pill">DevDesk 1.2.5 source feature guide</span>
 <h2 id="ai-launch-heading">One Harness. Four ways to move work forward.</h2>
 </div>
 <p>
@@ -190,7 +190,7 @@
 <article>
 <span>02 · Plan</span>
 <h3>Let routines prepare the next step.</h3>
-<p>Local Once, Daily, Weekdays, and Weekly routines create a notification and wait for you to continue.</p>
+<p>Choose a review-first reminder, let AI Prepare draft a result, or opt into read-only AI Auto-Run with permissions saved per routine.</p>
 </article>
 <article>
 <span>03 · Create</span>
@@ -399,7 +399,7 @@
 <article><span>01</span><h3>Organize</h3><p>Tasks, goals, meetings, assignments, and decisions across Today, List, Board, Calendar, and Timeline.</p><strong>For everyday clarity</strong></article>
 <article><span>02</span><h3>Think &amp; connect</h3><p>Notes, backlinks, Relationships, Knowledge Graph, Visual Canvas, and Diagram Studio keep ideas understandable.</p><strong>For learning and research</strong></article>
 <article><span>03</span><h3>Ask &amp; create</h3><p>Use the AI Harness with bounded files and supported photos for plans, explanations, summaries, and drafts.</p><strong>For useful first versions</strong></article>
-<article><span>04</span><h3>Remember</h3><p>A local Notification Center and review-first Once, Daily, Weekdays, or Weekly routines surface the next step.</p><strong>For steady progress</strong></article>
+<article><span>04</span><h3>Remember &amp; prepare</h3><p>Native Android/Windows reminders surface the next step. Review first stays the default; automatic AI modes require your opt-in.</p><strong>For steady progress</strong></article>
 <article><span>05</span><h3>Build, run &amp; verify</h3><p>Markdown, JSON, OpenAPI, API testing, Diff, Git, code proposals, terminals, Docker, Kubernetes, worktrees, and Browser Agent.</p><strong>For serious projects</strong></article>
 <article><span>06</span><h3>Own &amp; move</h3><p>Ordinary files remain canonical. Copy, back up, clone, reopen, and grant sensitive permissions only when needed.</p><strong>For lasting control</strong></article>
 </div>
@@ -566,7 +566,7 @@
 <li>Review-first main-workspace changes</li>
 <li>Selected-workspace context</li>
 <li>Bounded file and vision input</li>
-<li>Review-first AI routines</li>
+<li>Routine permissions saved separately</li>
 <li>Exact terminal and browser approvals</li>
 <li>Isolated parallel worktrees</li>
 <li>Verification evidence and recovery</li>
@@ -635,7 +635,10 @@
 <div><strong>AI Harness and Workbench</strong><span>Attach bounded text or a photo, plan or study, and use reviewed coding, Windows verification, parallel workers, and Edge browser evidence.</span></div>
 </a>
 <a class="home-doc-link" href="manual/notifications-routines.html">
-<div><strong>Notifications and AI routines</strong><span>Review local alerts and schedule prompts that always wait for your confirmation.</span></div>
+<div><strong>Notifications and AI routines</strong><span>Native reminders, Review first, AI Prepare, read-only Auto-Run, and Windows Classic background AI.</span></div>
+</a>
+<a class="home-doc-link" href="manual/devdesk-cli.html">
+<div><strong>DevDesk from your terminal</strong><span>Complete CLI command reference: files, knowledge, APIs, Docker/Kubernetes, Android ADB, agents, routines, completion, and diagnostics.</span></div>
 </a>
 <a class="home-doc-link" href="manual/devdesk-cli.html">
 <div><strong>DevDesk from your terminal</strong><span>Complete CLI command reference: files, knowledge, APIs, Docker/Kubernetes, Android ADB, agents, routines, completion, and diagnostics.</span></div>
@@ -724,7 +727,7 @@
 </div>
 </div>
 </section>
-</main><aside aria-label="Advertisement" class="monetization-ad" data-ad-context="index" data-ad-unit="manual" hidden=""></aside>
+<section class="section"><div class="container"><h2>Debug one request with a repeatable example</h2><p>Use a fictional JSON body to check input syntax, URL encoding, identifiers and time units, then save a sanitized report another developer can reproduce.</p><a href="/guides/debug-api-request.html">Read the API debugging guide →</a></div></section></main>
 <aside aria-label="Support DevDesk development" class="creator-support"><div class="creator-support__copy"><span class="creator-support__eyebrow">Independent software</span><strong>Support thoughtful DevDesk development</strong><p>Help fund documentation, testing, accessibility work and dependable cross-platform releases.</p></div><div class="creator-support__actions"><a href="https://www.buymeacoffee.com/baisalya" rel="noopener noreferrer" target="_blank">Buy me a coffee ↗</a><a href="mailto:baishalya1999@gmail.com?subject=DevDesk%20business%20inquiry">Business inquiry</a></div></aside><footer class="site-footer">
 <div class="footer-inner">
 <div>
@@ -770,5 +773,5 @@
 </div>
 </div>
 <div class="mobile-drawer-backdrop"></div>
-<script src="../assets/monetization/config.js"></script><script defer="" src="../assets/monetization/monetization.js"></script></body>
+</body>
 </html>

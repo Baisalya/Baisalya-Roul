@@ -1,4 +1,4 @@
-const BUILD_ID = '20261013.1';
+const BUILD_ID = '20261018.1';
 const CACHE_PREFIX = 'devdesk-docs-';
 const CACHE_NAME = `${CACHE_PREFIX}${BUILD_ID}`;
 const ASSETS = [

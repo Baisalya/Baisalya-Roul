@@ -189,6 +189,7 @@ Future<void> main() async {
     ('manual/knowledge-graph.html', 'floating play button'),
     ('manual/ai-workbench.html', 'current Windows user'),
     ('manual/notifications-routines.html', 'latest missed occurrence'),
+    ('manual/notifications-routines.html', 'AI Auto-Run'),
     ('manual/devdesk-cli.html', 'storageOwner'),
     ('manual/container-operations.html', 'Runtime Doctor and Setup Center'),
     ('manual/container-operations.html', 'Compatibility Center and Compatibility Packs'),

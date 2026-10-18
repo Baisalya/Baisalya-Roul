@@ -264,6 +264,21 @@ AI can accelerate implementation and review. The release owner still decides
 what is accepted, which external services are trusted, and whether the retained
 evidence is sufficient to publish.
 
+## Scheduled AI and terminal workflows
+
+[AI routines](notifications-routines.html) offer **Review first** by default,
+opt-in **AI Prepare**, and **AI Auto-Run (read-only)**. Automatic routines use
+their own saved permission scope; they do not inherit the interactive agent,
+instructions, memory, terminal/browser permissions, or file-write authority.
+Windows Classic can optionally run automatic modes while the window is closed
+through the signed-in-user background worker. Other platforms require a live
+DevDesk runtime for automatic AI, even when native reminders work while closed.
+
+The [DevDesk CLI](devdesk-cli.html) inspects provider settings and saved agents,
+and supports explicit prompt-only `ai run ... --yes` with an environment-variable
+credential handle. It never automatically attaches project files or enables
+model tools. CLI routines remain manual-review requests.
+
 ## Related guides
 
 - [AI Agent Connector](agent-connector.html)

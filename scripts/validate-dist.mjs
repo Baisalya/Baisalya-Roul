@@ -2,6 +2,7 @@ import { access, readFile, readdir, stat } from 'node:fs/promises';
 import crypto from 'node:crypto';
 import path from 'node:path';
 import process from 'node:process';
+import { reviewedAdPages } from './ad-placement-policy.mjs';
 
 const root=path.resolve('dist');
 const failures=[];
@@ -68,6 +69,14 @@ async function walk(directory,relative=''){
     if(entry.isDirectory()) await walk(abs,rel);
     else {
       if(/\.(?:html|css|js|mjs)$/.test(entry.name)) await validateLocalReferences(rel);
+      if(entry.name.endsWith('.html')) {
+        const html = await readFile(abs, 'utf8');
+        const count = (html.match(/data-ad-unit="manual"/g) || []).length;
+        const expected = reviewedAdPages.has(rel) ? 1 : 0;
+        if(count !== expected) failures.push('Reviewed ad policy mismatch: ' + rel + ' expected ' + expected + ', found ' + count);
+        if(expected && !html.includes('name="baisalya-ad-page" content="/' + rel + '"')) failures.push('Exact-page ad gate missing: ' + rel);
+        if(!expected && /assets\/monetization\/(?:config|monetization)\.js/.test(html)) failures.push('Ad loader on ad-free page: ' + rel);
+      }
       if(/\.(?:html|xml|txt|json|js|mjs|webmanifest)$/.test(entry.name)) await validateSeoAndPublicMarkers(rel);
     }
   }
@@ -174,6 +183,7 @@ for(const expected of ['creator-support','https://www.buymeacoffee.com/baisalya'
 }
 const adsEnabled=monetizationConfig.includes('enabled: true');
 if(adsEnabled){
+  if(!monetizationConfig.includes('autoAds: false')) failures.push('Reviewed manual-ad policy requires Auto Ads disabled in production configuration.');
   if(!monetizationConfig.includes('consentReady: true')) failures.push('AdSense enabled without consent-ready gate.');
   if(!/ca-pub-\d{10,20}/.test(monetizationConfig)) failures.push('AdSense enabled without a valid publisher client.');
   if(!(await exists('ads.txt'))) failures.push('AdSense enabled but ads.txt is missing.');
@@ -189,7 +199,7 @@ async function deployedAdCount(relativeFile){
   const source=await readFile(path.join(root,relativeFile),'utf8');
   return (source.match(/data-ad-unit="manual"/g)||[]).length;
 }
-for(const page of ['devdesk/index.html','construction-erp/index.html','shoppilot-erp/index.html','EduSheet/index.html','surveycam/index.html','sitesnap/index.html','paperaid/index.html']){
+for(const page of reviewedAdPages){
   const count=await deployedAdCount(page);
   if(count!==1) failures.push(`Production manual-ad policy mismatch in ${page}: expected 1, found ${count}`);
 }

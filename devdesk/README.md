@@ -128,7 +128,9 @@ Open `http://localhost:8080/`.
 ## Documentation basis
 
 The site is synchronized with the reviewed DevDesk application source and
-bundled manuals as of 2026-09-09. It describes Android and Windows behavior
+bundled manuals as of 2026-10-07, including the 1.2.5 CLI and routine source.
+Store download/update metadata is retained independently of source features.
+It describes Android and Windows behavior
 without presenting unreleased Apple packages as available. When UI labels
 change, update the matching `content/*.md` source, regenerate, and verify the
 search entry.
@@ -136,3 +138,13 @@ search entry.
 ## Website update — DevDesk 1.2.4
 
 The website markets DevDesk across study, research, professional, non-developer and developer workflows. Containers & Kubernetes documentation now covers Runtime Doctor, application-level Docker/Kubernetes UX, Create Container, local cluster creation, Deploy App, deterministic troubleshooting, safe deployment/recovery, Compatibility Packs, RBAC/context/namespace guards, and the unified operation/activity model. Builder/All Access monetization language and existing monetization assets/hooks are intentionally preserved.
+
+## Website update — CLI and AI routines, 7 October 2026
+
+The reviewed 1.2.5 source is now documented in the standalone CLI guide and
+updated notification/routine manual. Landing and downloads copy, related AI,
+privacy, installation, FAQ and troubleshooting guidance, shared navigation,
+search/support routing, sitemap and offline cache are synchronized. There are
+52 searchable manual pages. Windows Classic closed-app AI remains explicitly
+separate from Store/MSIX, Android and Linux behavior. Published-release records
+were not changed. See `WEBSITE_UPDATE_2026-10-07.md` for basis and validation.

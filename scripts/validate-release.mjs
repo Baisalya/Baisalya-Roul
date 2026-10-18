@@ -7,7 +7,7 @@ const storeUrl =
   'https://apps.microsoft.com/detail/9N8NH1LMZX1S?hl=en-us&gl=IN&ocid=pdpshare';
 const eduSheetStoreUrl =
   'https://apps.microsoft.com/detail/9N0ZK8C31X94?cid=DevShareMCLPCB';
-const devDeskRelease = '20261013.1';
+const devDeskRelease = '20261018.1';
 const failures = [];
 
 async function text(relativePath) {
@@ -389,7 +389,7 @@ for (const expected of [
   requireText(devdeskHome, expected, 'DevDesk audience and complete-app story');
 }
 for (const expected of [
-  'DevDesk 1.2.4',
+  'DevDesk 1.2.5 source feature guide',
   'id="ai-harness"',
   'One Harness. Four ways to move work forward.',
   'Local-first files &amp; portable project context',
@@ -404,11 +404,12 @@ for (const expected of [
   requireText(devdeskHome, expected, 'DevDesk 1.2 AI Harness marketing');
 }
 for (const expected of [
-  'Coming in DevDesk 1.2',
-  'AI help that starts with your work',
-  'Preview AI Harness',
-  '1,266 tests, WACK PASS',
-  'currently published version until',
+  'DevDesk 1.2.5 source feature guide',
+  'Your workspace, in the app, in the terminal, and on schedule.',
+  'Explore the CLI',
+  'Explore local routines',
+  'Store buttons below install the currently published build',
+  'differ from reviewed source',
 ]) {
   requireText(downloads, expected, 'DevDesk downloads 1.2 preview');
 }
@@ -451,9 +452,11 @@ for (const expected of [
   requireText(aiWorkbenchGuide, expected, 'DevDesk AI Workbench guide');
 }
 for (const expected of [
-  'review-first AI routines',
+  '**Review first**',
+  '**AI Prepare**',
+  '**AI Auto-Run (read-only)**',
   'request access to notifications from WhatsApp',
-  'does not provide a generic reply API',
+  'It does not silently reply or post.',
   'latest missed occurrence is recovered',
 ]) {
   requireText(notificationsGuide, expected, 'DevDesk notifications guide');

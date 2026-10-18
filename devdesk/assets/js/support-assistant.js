@@ -45,6 +45,11 @@
       answer: 'Use the standalone devdesk CLI for projects, knowledge, API tests, local data, and routines. Check --version and --help for your installed build. Supported routine commands and AI inspection can use the running GUI broker; other local-data mutations require closing the GUI.',
     },
     {
+      terms: ['routine'],
+      url: 'manual/notifications-routines.html',
+      answer: 'Review first is the default. AI Prepare and read-only AI Auto-Run require explicit opt-in and saved permissions. Native Android/Windows reminders can appear while closed; closed-app automatic AI is limited to the optional Windows Classic signed-in-user worker. CLI routine run/check never sends automatically.',
+    },
+    {
       terms: ['student'],
       url: 'manual/getting-started.html',
       answer: 'Choose the Study starter for subjects, assignments, notes, and resources. Its first views are Today, Board, Calendar, and Relationships; add a due date when you want an assignment to appear in Calendar.',

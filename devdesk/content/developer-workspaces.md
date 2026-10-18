@@ -2,6 +2,18 @@
 
 A Developer Workspace connects DevDesk to a project folder you own. Source files remain in place; DevDesk does not create a private cloud copy.
 
+## Terminal access and manifest naming
+
+The current source uses **devdesk.project** as the canonical portable manifest;
+legacy **project.devdesk** remains accepted. Older workflows below may use the
+legacy name. The [CLI guide](devdesk-cli.html) covers manifest inspection,
+validation, safe initialization, and verified legacy rename through
+`devdesk workspace manifest upgrade .`.
+
+Use the standalone CLI to inspect project files, knowledge, APIs, and scoped Git
+without opening the GUI. Supported routine commands and AI inspection can also
+use the running GUI's authenticated local broker.
+
 ## Create a new project
 
 1. On Home, select **New workspace**.

@@ -60,6 +60,20 @@ appropriate files in Git, or back it up with your normal backup tool.
 - It does not put protected secrets into portable project files by default.
 - It does not replace a complete Git client. Verified Git actions are deliberately scoped.
 
+## Terminal workflows and scheduled AI
+
+The [DevDesk CLI](devdesk-cli.html) works headlessly for project inspection,
+knowledge, API tests, portable manifests, local data, and bounded operations.
+Supported routine commands and AI inspection can also use the running GUI's
+authenticated local broker. Check `devdesk --version` and `--help` for your build.
+
+[Notifications and AI routines](notifications-routines.html) combine native
+Android/Windows reminders with three modes: **Review first** (default),
+**AI Prepare**, and opt-in **AI Auto-Run (read-only)**. Automatic modes use their
+own saved permissions and never gain file writes, terminal, publishing, or
+device control. Windows Classic offers an optional signed-in-user closed-app
+AI worker; Store/MSIX, Android, and Linux automatic AI needs a live runtime.
+
 ## Start Here: Your First Five Minutes
 
 ### Create a workspace

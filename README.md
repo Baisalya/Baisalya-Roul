@@ -1,47 +1,33 @@
-# Baisalya Hero + AdSense Final Fix — 2026-08-28
+# baisalya.com
 
-This patch is designed for the current `Baisalya/Baisalya-Roul` main-branch structure.
+Baishalya Roul's software website, product documentation and practical workflow guides.
 
-## What it changes
+Public profile URLs and the owner's search/AdSense preferences are recorded in [CONTACT_CHANNELS.md](CONTACT_CHANNELS.md). This maintenance note is excluded from production output.
 
-### Homepage hero
-- Replaces the oversized sentence-style H1 with a compact two-line identity:
-  - `Baishalya Roul`
-  - `(Baisalya)`
-- Adds a concise professional product tagline.
-- Reduces desktop hero H1 from the previous very large 6.15rem ceiling to a balanced 4.9rem ceiling.
-- Reduces hero minimum height, visual-card size, grid gap, and mobile scaling.
-- Keeps the main name + Baisalya alias in the H1 for entity/brand SEO.
+## Content and advertising
 
-### AdSense production activation
-- Repository source `assets/monetization/config.js` remains OFF.
-- GitHub Pages `dist/` activates:
-  - client: `ca-pub-1529558529658186`
-  - slot: `9546051599`
-- Production advertising is disabled by default. After verifying the consent/CMP setup,
-  explicitly enable it with GitHub Actions repository variable `ADSENSE_CONSENT_READY=true`.
-- An ordinary build does not activate ads. Set `ADSENSE_CONSENT_READY=false` or remove it to pause.
-- Existing ad-free policy is unchanged for main portfolio, NotiVault, legal/privacy/deletion and 404 pages.
-- Existing manual ad placements remain controlled; Auto Ads do not need to be enabled.
+The homepage links directly to five worked guides. Short DevDesk references include reproducible examples and troubleshooting; PaperAid is publicly released on Android through Google Play and on Windows through Microsoft Store.
 
-## Apply
+Advertising is limited to the nine long-form manuals selected in scripts/ad-placement-policy.mjs. Product, download, support, legal and short reference pages stay ad-free. The source normalizer and release builder apply the same policy; the browser runtime also requires an exact page-path marker. Repository advertising configuration remains disabled. Public publisher identifiers and enabled configuration do not establish AdSense approval or consent compliance.
 
-From repository root:
+## Build and validate
 
-```powershell
-node .\apply-hero-ads-final-fix.mjs
-npm run test:professional-home
-npm run test:revenue-ready
+Requires Node.js 20 or newer. Run:
+
+~~~powershell
+npm ci --prefix notivault-website
 npm run release
-```
+~~~
 
-If all pass:
+The release command validates sources, builds dist/ with advertising disabled and validates assets, links, sitemaps, release hashes, content discovery and PaperAid release metadata. The production workflow enables manual advertising only when ADSENSE_CONSENT_READY is explicitly true. GitHub Pages deploys that output on pushes to main through .github/workflows/deploy-baisalya-pages.yml.
 
-```powershell
-git add -A
-git commit -m "Refine homepage hero and activate production AdSense"
-git push origin main
-```
+After editing guide source or ad selection:
 
-## Consent note
-Keep a Google-certified consent/CMP solution configured for regions where consent is required. If it is not ready, set `ADSENSE_CONSENT_READY=false` before deploying.
+~~~powershell
+npm run content:prepare
+npm run test:content-quality
+~~~
+
+Protected product edits require reviewing their diff and refreshing scripts/protected-product-manifest.json with npm run protected:refresh before release validation. DevDesk manual Markdown and generated HTML should be updated together using devdesk/tool/refresh_manual.dart in a Dart environment with the html and markdown packages available.
+
+See [the deployment guide](DEPLOYMENT_REVENUE_GUIDE.md) for production configuration and consent requirements. Content improvements do not guarantee an AdSense approval; the account's review process remains separate.

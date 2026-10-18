@@ -43,8 +43,8 @@ The distinctive DevDesk proposition is the complete combination:
    project work without making AI mandatory for the rest of the product;
 7. bounded text attachments and supported photos can add context without
    persisting raw image bytes in chat history or backups;
-8. local notifications and routines prepare work, then wait for the person to
-   confirm before a provider request;
+8. native reminders and Review first routines keep confirmation as the default;
+   AI Prepare and read-only AI Auto-Run require explicit per-routine opt-in;
 9. project changes can be Manual, Review changes, or bounded Safe automatic,
    with reviewed proposals, verification evidence, isolated worktrees, and
    recovery controls where supported.
@@ -63,8 +63,8 @@ Benefits:
 - one place for deadlines, notes, meetings, decisions, sources, and drafts;
 - optional AI assistance for turning existing notes or photos into a plan,
   summary, checklist, or first draft;
-- local routines that surface the next prompt without silently contacting an AI
-  provider;
+- local routines that remind you to review or prepare AI results with saved
+  opt-in permissions;
 - an accessible relationship List when the graph is not the best interface.
 
 ### Student
@@ -107,7 +107,7 @@ Benefits:
 - No silent replacement of existing paths.
 - No portable tokens, passwords, cookies, or execution trust by default.
 - No claim that automatic rules invent sources, verification, or project facts.
-- No silent AI provider request from a routine.
+- No automatic routine provider request without a saved automatic-mode opt-in.
 - No claim that DevDesk reads other apps' notifications, replies to WhatsApp or
   Facebook, posts on a person's behalf, or ships a native OS widget in 1.2.
 - No claim that an AI provider or subscription is bundled with DevDesk.

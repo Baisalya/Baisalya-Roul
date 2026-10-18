@@ -1,5 +1,23 @@
 # Troubleshooting
 
+## CLI or routine delivery does not work
+
+- For a missing `devdesk` command, open a new terminal, check your installed
+  version and Windows App execution alias/PATH, then run `devdesk doctor`.
+- For CLI storage locks, use the same intended data profile and close the GUI
+  for commands outside the supported routine/AI broker surface.
+- For missing Android reminders, check notification permission and vendor
+  battery restrictions. Inexact alarms may deliver later than the chosen minute.
+- On Windows, open DevDesk periodically to refresh the rolling reminder window.
+- AI Prepare/AI Auto-Run require a bound workspace and configured provider/model.
+  Inspect **Recent execution history** for failure or manual-review status.
+- Closed-app automatic AI requires the optional **Windows closed-app AI**
+  setting on a Classic build and a signed-in user. Store/MSIX, Android, and
+  Linux do not gain closed-app AI from native reminder support.
+
+See [DevDesk CLI](devdesk-cli.html) and
+[Notifications and AI routines](notifications-routines.html).
+
 ## A project does not open
 
 - Confirm the folder and `project.devdesk` still exist.

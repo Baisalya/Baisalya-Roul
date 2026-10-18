@@ -31,7 +31,7 @@
 
 ## Focused manuals
 
-The website keeps 51 searchable manual pages under `manual/`, including a
+The website keeps 52 searchable manual pages under `manual/`, including a
 **Visual feature guide**, **Workspace workbench, tabs, and tools**, **Diagram
 Studio**, **Structured workspace views**, and **Visual Canvas**, grouped as:
 
@@ -40,6 +40,12 @@ Studio**, **Structured workspace views**, and **Visual Canvas**, grouped as:
 - Structure checks (OKF)
 - API and documentation
 - Developer utilities, including Containers & Kubernetes
+- DevDesk CLI: installation, projects, APIs, local data, routines, GUI broker,
+  completion, diagnostics, and exit codes
 - Safety and reference
 
 Use `/` on the website to search every indexed topic.
+
+Notifications and AI routines covers Review first, AI Prepare, read-only
+AI Auto-Run, native Android/Windows reminders, privacy-safe history, and the
+optional Windows Classic closed-app worker.

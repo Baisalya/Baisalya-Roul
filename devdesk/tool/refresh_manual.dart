@@ -17,6 +17,14 @@ class _Page {
 }
 
 const _pages = <_Page>[
+  _Page(slug: 'uuid', title: 'UUID Generator', description: 'Generate stable sample identifiers, use them in test records, and diagnose format and copy errors.'),
+  _Page(slug: 'base64', title: 'Base64 Tool', description: 'Check a text round trip, encode and restore files, and distinguish Base64 from encryption.'),
+  _Page(slug: 'timestamp', title: 'Timestamp Converter', description: 'Compare seconds and milliseconds with a worked UTC and local-time example.'),
+  _Page(slug: 'snippets-notes', title: 'Snippets and Notes', description: 'Build reusable checklists and command notes, find them again, and keep project data portable.'),
+  _Page(slug: 'jwt-decoder', title: 'JWT Decoder', description: 'Inspect synthetic JWT claims and distinguish readable payloads from authenticated tokens.'),
+  _Page(slug: 'url-tools', title: 'URL Encoder and Decoder', description: 'Encode query components, check a round trip, and diagnose double encoding and malformed links.'),
+  _Page(slug: 'readme-generator', title: 'README Generator', description: 'Create a useful project README, verify setup instructions and check saved Markdown links and fences.'),
+  _Page(slug: 'regex-tester', title: 'Regex Tester', description: 'Test version and identifier patterns with positive and negative samples before using them in code.'),
   _Page(
     slug: 'user-manual',
     title: 'Complete user manual',
@@ -135,7 +143,13 @@ const _pages = <_Page>[
     slug: 'notifications-routines',
     title: 'Notifications and AI routines',
     description:
-        'Review local alerts and schedule AI prompts that always wait for user confirmation.',
+        'Choose review-first reminders, AI Prepare, or read-only AI Auto-Run; understand native notifications and Windows Classic closed-app AI.',
+  ),
+  _Page(
+    slug: 'devdesk-cli',
+    title: 'DevDesk command-line guide',
+    description:
+        'Complete CLI command reference with files, knowledge, API runner options, Docker, Kubernetes, Android ADB, AI, agents, routines, completion, and diagnostics.',
   ),
   _Page(
     slug: 'devdesk-cli',
@@ -575,7 +589,7 @@ String _prepareManualTemplate(String source, String slug) {
     'notifications-routines' => (
         'Notifications and AI routines',
         'Local notifications',
-        'Review-first schedules',
+        'Three execution modes',
         'Windows + Android',
       ),
     'devdesk-cli' => (
@@ -587,6 +601,9 @@ String _prepareManualTemplate(String source, String slug) {
     _ => null,
   };
   if (pageChrome != null) {
+    if (slug == 'notifications-routines') {
+      source = source.replaceAll('Review-first schedules', 'Three execution modes');
+    }
     source = source.replaceFirst(
       '<span>Start here</span></div><div class="doc-meta">'
           '<span class="doc-chip">Start here</span>'

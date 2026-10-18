@@ -7,14 +7,15 @@ import { promisify } from 'node:util';
 import { exportNotiVaultStatic } from './export-notivault-static.mjs';
 import { applySocialMetadata } from './social-metadata.mjs';
 import { socialSurfaces, socialImagePath } from './social-surfaces.mjs';
+import { applyAdPlacementPolicy } from './ad-placement-policy.mjs';
 
 const execFileAsync = promisify(execFile);
 const projectRoot = process.cwd();
 const outputRoot = path.join(projectRoot, 'dist');
 const planOnly = process.argv.includes('--plan');
-const devDeskRelease = '20261013.1';
+const devDeskRelease = '20261018.1';
 const constructionErpRelease = '20260904.1';
-const monetizationRelease = '20260924.1';
+const monetizationRelease = '20261018.1';
 
 const rootRuntimeFiles = [
   'index.html', 'privacy.html', 'main.js', 'style.css', 'robots.txt', 'sitemap.xml', 'sitemap-pages.xml',
@@ -148,35 +149,8 @@ async function ensureSeoMetadata(directory, relative = '') {
         `<meta property="og:url" content="${canonical}">`,
       );
     }
+    html = versionMonetizationRuntime(applyAdPlacementPolicy(html, nextRelative));
     await writeFile(target, applySocialMetadata(html, nextRelative), 'utf8');
-  }
-}
-async function injectShopPilotManualAds(outputDir) {
-  const pages = ['index.html', 'quick-start.html', 'user-manual.html'];
-  const css = '<link rel="stylesheet" href="../assets/monetization/monetization.css">';
-  const placement = '<aside class="monetization-ad" data-ad-unit="manual" hidden aria-label="Advertisement"></aside>';
-  const configScript = '<script src="../assets/monetization/config.js"></script>';
-  const runtimeScript = '<script src="../assets/monetization/monetization.js" defer></script>';
-  for (const page of pages) {
-    const file = path.join(outputDir, page);
-    let html = await readFile(file, 'utf8');
-    if (!html.includes('assets/monetization/monetization.css')) {
-      html = html.replace('</head>', '    ' + css + '\n</head>');
-    }
-    if (!html.includes('data-ad-unit="manual"')) {
-      if (page === 'index.html' && html.includes('<section class="section" id="why">')) {
-        const homePlacement = '<aside class="monetization-ad" data-ad-context="home-after-features" data-ad-unit="manual" hidden aria-label="Advertisement"></aside>';
-        html = html.replace('<section class="section" id="why">', homePlacement + '\n    <section class="section" id="why">');
-      } else {
-        html = /<footer\b/i.test(html)
-          ? html.replace(/<footer\b/i, placement + '\n<footer')
-          : html.replace('</body>', placement + '\n</body>');
-      }
-    }
-    if (!html.includes('assets/monetization/config.js')) {
-      html = html.replace('</body>', configScript + runtimeScript + '\n</body>');
-    }
-    await writeFile(file, html, 'utf8');
   }
 }
 
@@ -291,7 +265,6 @@ await versionHtmlFiles(constructionOutput, versionConstructionErpRuntime);
 const shopPilotOutput=path.join(outputRoot,'shoppilot-erp');
 await copyFiles(path.join(projectRoot,'shoppilot erp'), shopPilotOutput, shopPilotRuntimeFiles);
 await cp(path.join(projectRoot,'shoppilot erp','assets'), path.join(shopPilotOutput,'assets'), {recursive:true,force:true});
-await injectShopPilotManualAds(shopPilotOutput);
 
 const eduSheetOutput=path.join(outputRoot,'EduSheet');
 await copyFiles(path.join(projectRoot,'EduSheet'), eduSheetOutput, eduSheetRuntimeFiles);

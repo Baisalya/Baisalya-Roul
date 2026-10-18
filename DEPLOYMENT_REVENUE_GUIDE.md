@@ -12,21 +12,22 @@ The main Baisalya professional home stays ad-free. Product advertising is restra
 ### Manual ad policy
 - Maximum one manual responsive ad placement per eligible page.
 - No ads inside hero/navigation or as popups/interstitials.
-- DevDesk documentation, Construction ERP content, EduSheet content, SurveyCam content, SiteSnap, and selected ShopPilot content may carry one manual placement.
-- ShopPilot source files are protected; its ad is injected into the production copy during `build-release.mjs`.
+- Only the nine long-form manuals selected in `scripts/ad-placement-policy.mjs` carry one placement. Selection is editorial; there is no automatic word-count eligibility rule.
+- Product landing, download, support and short reference pages stay ad-free, including PaperAid, SurveyCam and SiteSnap. Guides stay ad-free.
+- The source normalizer and production builder apply the same selection. The browser runtime also requires a page-specific marker matching the actual path, and refuses Auto Ads.
 - NotiVault remains intentionally ad-free to preserve its privacy-first positioning.
 
 ### AdSense source safety
 `assets/monetization/config.js` is intentionally committed with advertising disabled and contains no publisher ID. This is the repository-safe default and must stay that way.
 
-The approved public identifiers are:
+The configured public identifiers are (their presence does not establish AdSense account approval):
 - Publisher/client: `ca-pub-1529558529658186`
 - Responsive manual slot: `9546051599`
 
 `ads.txt` contains the matching publisher record.
 
 ### Production activation
-AdSense is enabled **after** the release build, only in `dist/`, so the repository-safe source config remains disabled and protected product baselines stay stable.
+AdSense is enabled **after** the release build, only in `dist/`, so the repository source config remains disabled. Changes to protected product sources must be reviewed and their integrity manifest refreshed as part of an authorized update.
 
 The production workflow activates the approved AdSense client and responsive slot only when the repository variable `ADSENSE_CONSENT_READY` is explicitly `true`. A normal build keeps advertising disabled; there is no automatic post-build activation.
 

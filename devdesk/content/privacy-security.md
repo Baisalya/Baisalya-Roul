@@ -71,8 +71,27 @@ bounded and redacted locally. Supported images are transient vision input for
 the selected provider request and are not copied into chat history or backups.
 
 Notification Center records, read state, routine schedules, and routine prompts
-stay in local DevDesk storage and can be included in a backup. A routine
-prepares a reviewable prompt; it does not automatically send, reply, or post.
+stay in local DevDesk storage and can be included in a backup. **Review first**
+is the default and does not automatically send. Opt-in **AI Prepare** sends the
+saved prompt; **AI Auto-Run (read-only)** can additionally use only the workspace
+context/research permissions saved on that routine. They never gain file writes,
+terminal, publishing, browser/computer control, ADB, memory, or nested automation.
+
+Native Android/Windows reminders can appear while DevDesk is closed where the
+OS supports them. Automatic AI needs a live app-owned runtime, except for the
+optional Windows Classic signed-in-user worker. That worker is off by default,
+runs with limited privileges, and stores no credential in Task Scheduler.
+Store/MSIX, Android, and Linux closed-app AI are not enabled in this implementation.
+
+Automatic-run audit records exclude prompt/response text, credentials,
+environment values, and file paths. An occurrence lease prevents automatic
+duplicate submission after interruption. The response is stored separately in
+AI Harness. See [Notifications and AI routines](notifications-routines.html).
+
+The [standalone CLI](devdesk-cli.html) uses an authenticated local GUI broker
+for supported routine and AI inspection commands. It opens no TCP listener.
+CLI routine commands never automatically send to a provider; explicit
+`ai run --yes` uses an environment credential handle and prompt-only input.
 
 The current release does not request access to WhatsApp, Facebook, or other
 apps' notifications. Those platform-sensitive capabilities remain a separate

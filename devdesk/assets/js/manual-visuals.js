@@ -382,7 +382,7 @@
 
   const slug = window.location.pathname.split('/').pop()?.replace(/\.html$/i, '') || '';
   const article = document.querySelector('.article');
-  const skipAutoPreview = new Set(['container-operations', 'devdesk-cli']);
+  const skipAutoPreview = new Set(['container-operations', 'devdesk-cli', 'notifications-routines']);
   if (article && slug !== 'visual-feature-guide' && !skipAutoPreview.has(slug) && !article.querySelector('.manual-screen-preview')) {
     const scene = pageToScene[slug] || 'workspace';
     const details = sceneDetails[scene];

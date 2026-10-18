@@ -152,6 +152,30 @@ No. Kubernetes Apply is not treated as an atomic transaction. Optional recovery 
 
 No. Local Docker, Compose, `kubectl`, kind, and minikube execution is a supported desktop-runtime capability. Android can share the DevDesk product experience and entitlement, but this release does not provide a local Android container runtime or a DevDesk-operated remote container service.
 
+## Can I use DevDesk from a terminal?
+
+Yes. The standalone `devdesk` CLI covers projects, knowledge, APIs, utilities,
+local data, bounded operations, AI inspection, and routines. Use `--help` and
+`--version` to check your installed build. Supported routine commands and AI
+inspection can use the running GUI's local broker; other app-data mutations
+still require closing the GUI. See the [CLI guide](devdesk-cli.html).
+
+## Do AI routines send automatically?
+
+**Review first** is the default and never automatically sends. Explicitly
+opted-in **AI Prepare** sends the saved prompt; **AI Auto-Run (read-only)** may
+also use separately allowed workspace context/research. Neither grants file
+writes, terminal commands, publishing, or device control. CLI routine run/check
+never automatically sends. See [AI routines](notifications-routines.html).
+
+## Do routines work while DevDesk is closed?
+
+Native Android/Windows reminders can, subject to permissions and OS limits.
+Automatic AI requires a live runtime except for the opt-in Windows Classic
+worker while the Windows user remains signed in. Store/MSIX, Android, and Linux
+closed-app AI are not enabled in this implementation. Missed routines recover
+on startup/resume.
+
 ## Why is macOS shown without a download?
 
 A platform card communicates availability. It does not claim a signed, notarized package exists before one is released.

@@ -6,9 +6,9 @@
     "notes": [
       "Professional PaperAid brand and responsive UI",
       "Manual background cleanup with Erase, Restore, smooth brush cursor, zoom, undo and redo",
-      "Free launch mode with dormant future Pro/rewarded architecture"
+      "Android public release available through Google Play; closed-test enrollment is not required"
     ],
-    "url": "https://baisalya.com/paperaid/download.html"
+    "url": "https://play.google.com/store/apps/details?id=com.baishalya.paperaid"
   },
   "windows": {
     "latestVersion": "2.5.1",

@@ -1,10 +1,14 @@
 (() => {
   const config = window.BAISALYA_MONETIZATION || {};
   const client = String(config.adsenseClient || '').trim();
+  const autoAds = config.autoAds === true;
   const slot = String(config.manualSlot || '').trim();
   const validClient = /^ca-pub-\d{10,20}$/.test(client);
   const validSlot = /^\d{6,20}$/.test(slot);
   const placements = [...document.querySelectorAll('[data-ad-unit="manual"]')];
+  const approvedPath = document.querySelector('meta[name="baisalya-ad-page"]')?.content;
+  // A copied template or an old cached page must not initialize ads elsewhere.
+  if (!approvedPath || approvedPath !== window.location.pathname || autoAds) return;
 
   // Keep navigation, downloads, legal pages and child-focused pages ad-free,
   // even if a slot is accidentally added or an old config enables Auto Ads.
