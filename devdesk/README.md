@@ -37,12 +37,14 @@ See `PRODUCT_POSITIONING.md` for the message hierarchy and
 - transparent platform downloads page;
 - a featured graph-to-code video and downloadable Tiny Multi-Agent Graph Demo;
 - the original agent-ready workspace as a second guided practice demo;
-- a complete beginner-first global manual plus 50 focused and visual topics,
+- a complete beginner-first global manual plus 51 focused and visual topics,
   including a five-page API Studio section;
 - separate guides for the external MCP Agent Connector and the in-app AI
   Workbench coding, verification, parallel-worker, and Browser Agent flows;
 - dedicated AI Harness and notifications/routines guidance for non-technical,
   student, writing, planning, and developer use cases;
+- a standalone CLI guide with command families, GUI broker boundaries,
+  shell completion, diagnostics, and stable exit codes;
 - an app-matched visual feature atlas and an HTML/CSS screen preview on every
   manual topic;
 - dedicated Diagram Studio and workspace workbench guides covering responsive
@@ -93,6 +95,22 @@ and shared brand message in manual chrome.
 Review generated HTML, links, search, theme, mobile navigation, and download
 destinations before publishing.
 
+### Refresh the CLI command reference
+
+From the repository root, run `node devdesk/tool/sync_cli_reference.mjs` with
+the intended DevDesk CLI installed. This reads `devdesk --help` and
+`devdesk api run --help`, updates the complete command reference in
+`content/devdesk-cli.md`, and saves a downloadable plain-text help snapshot.
+Then, from `devdesk/`, run `dart run tool/refresh_manual.dart devdesk-cli`.
+Use `node devdesk/tool/sync_cli_reference.mjs --check` from the repository root
+to verify that the reference still matches the installed CLI. Review the
+version/date in the guide and homepage when updating to a different build.
+
+The 13 October 2026 reference was checked against installed CLI 1.2.6+21 and
+covers all 86 top-level usage lines plus API collection runner options. The
+homepage now exposes files, knowledge, utilities, Docker/Kubernetes, ADB,
+local data, verification, AI, agents, and routine terminal workflows.
+
 ## Local preview
 
 ```bash
@@ -111,7 +129,9 @@ Open `http://localhost:8080/`.
 ## Documentation basis
 
 The site is synchronized with the reviewed DevDesk application source and
-bundled manuals as of 2026-09-09. It describes Android and Windows behavior
+bundled manuals as of 2026-10-07, including the 1.2.5 CLI and routine source.
+Store download/update metadata is retained independently of source features.
+It describes Android and Windows behavior
 without presenting unreleased Apple packages as available. When UI labels
 change, update the matching `content/*.md` source, regenerate, and verify the
 search entry.
@@ -119,3 +139,13 @@ search entry.
 ## Website update — DevDesk 1.2.4
 
 The website markets DevDesk across study, research, professional, non-developer and developer workflows. Containers & Kubernetes documentation now covers Runtime Doctor, application-level Docker/Kubernetes UX, Create Container, local cluster creation, Deploy App, deterministic troubleshooting, safe deployment/recovery, Compatibility Packs, RBAC/context/namespace guards, and the unified operation/activity model. Builder/All Access monetization language and existing monetization assets/hooks are intentionally preserved.
+
+## Website update — CLI and AI routines, 7 October 2026
+
+The reviewed 1.2.5 source is now documented in the standalone CLI guide and
+updated notification/routine manual. Landing and downloads copy, related AI,
+privacy, installation, FAQ and troubleshooting guidance, shared navigation,
+search/support routing, sitemap and offline cache are synchronized. There are
+52 searchable manual pages. Windows Classic closed-app AI remains explicitly
+separate from Store/MSIX, Android and Linux behavior. Published-release records
+were not changed. See `WEBSITE_UPDATE_2026-10-07.md` for basis and validation.

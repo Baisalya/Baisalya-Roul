@@ -1,0 +1,31 @@
+{
+  "method": "ImageGen supplied the foreground mask and empty studio lighting background. Original photograph RGB supplies the person and chair. Only the outer alpha boundary is feathered inward before proportional placement; face, pose and interior photo colors are unaltered.",
+  "reference": "Owner-supplied Young Man by the Window.png; original full photo remains outside the repository.",
+  "path": "assets/social/baisalya-original-chair-v4.png",
+  "cutout": "assets/social/baisalya-owner-cutout-v4.png",
+  "mask": "assets/social/baisalya-owner-mask-v3.png",
+  "dimensions": {
+    "width": 1200,
+    "height": 630
+  },
+  "foregroundBounds": {
+    "left": 2,
+    "top": 688,
+    "width": 1070,
+    "height": 721
+  },
+  "placement": {
+    "left": 440,
+    "top": 118,
+    "width": 760,
+    "height": 512
+  },
+  "generator": "scripts/generate-portfolio-preview.mjs",
+  "maskTool": "Built-in ImageGen",
+  "maskPrompt": "Create a precise foreground segmentation MASK from the attached photograph, NOT a new portrait. Keep exactly the original full canvas framing and original subject position of the 1117 x 1409 portrait photo. The subject appears only in the bottom half of the full canvas; leave the large upper half empty/transparent. Do not zoom, crop, recenter, redraw anatomy or fill missing areas. Output a flat opaque pure-white silhouette on a fully transparent background of ONLY the seated man and his complete visible office chair together. The white silhouette must precisely follow their actual photograph boundaries, including the hair contour, raised hand, both arms, dark shirt, suspenders, trousers, black chair back, and visible brown padded chair armrests at the bottom left and right. Include every visible part of the seated man and his chair; no other foreground object. Remove wall, ceiling fan, shelf/books, light, door, window, electrical switch, bed and floor completely to alpha zero. No facial features, colors, shading, lettering or photographic texture: this is just a white foreground silhouette with antialiased edges. Preserve exact source composition, dimensions and placement so this mask can be applied to the ORIGINAL photo without ever changing the man's face or any original photo pixels. The original photo, not a generated face, will supply all RGB pixels later.",
+  "constraints": "Preserve original face, expression, skin tone, pose, outfit and visible chair. Add lighting only behind the subject. Smooth only the cutout alpha boundary. Do not synthesize or retouch any photo RGB.",
+  "background": "assets/social/baisalya-glow-background-v4.png",
+  "backgroundTool": "Built-in ImageGen",
+  "backgroundPrompt": "Create ONLY the empty photographic lighting background plate for the referenced Baishalya Roul website share card. Do NOT reproduce the person, chair, text or logo. Those will be placed later from exact original assets, so this image must contain no people, faces, objects, logos, writing or watermark. Landscape 1200 x 630 composition. Match the card's premium deep midnight navy base (#081222 through #15283e). Keep the left 54 percent very dark, calm and completely clean for white typography. On the right create tasteful, visible but soft studio backlighting: a broad diffused cyan/ice-blue elliptical halo centered behind where the seated man's head and shoulders will be (approximately x=930,y=280 in a 1200x630 canvas), fading smoothly outward to dark navy. A restrained blue-violet secondary glow near the far right shoulder/chair area ties into the BR brand colors. The light should provide subtle depth behind a foreground silhouette and make fine hair/shoulder edges integrate naturally. Light is only in the BACKGROUND, not a new photograph or relighting of a person. Elegant professional portfolio photography finish, moderate saturation, balanced brightness, no neon outline, no hard rings, no lightning, no visible lamps, no particles, no rays, no textures or dramatic effects. Retain ample dark negative space around all edges and especially the entire left text column. Output a finished empty landscape lighting plate.",
+  "edgeFinish": "One-source-pixel inward Gaussian coverage feather; original interior RGB and fully opaque face preserved."
+}

@@ -60,6 +60,11 @@ export function initNavigation() {
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') setOpen(false);
   });
+  document.addEventListener('click', (event) => {
+    if (!nav?.contains(event.target) || event.target.closest('[data-open-identity], #identity-trigger')) setOpen(false);
+  });
+  const mobileLayout = window.matchMedia('(max-width: 768px)');
+  mobileLayout.addEventListener('change', () => setOpen(false));
 
   const syncHeader = () => nav?.classList.toggle('is-scrolled', window.scrollY > 18);
   syncHeader();

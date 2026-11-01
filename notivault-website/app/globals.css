@@ -655,7 +655,7 @@ summary {
 .steps-list small { color: var(--muted); font-size: 12px; }
 
 .search-demo { position: relative; padding: 25px; border: 1px solid var(--line); border-radius: 31px; background: linear-gradient(145deg, #fff, #fff6fa); box-shadow: var(--shadow); }
-.search-demo::before { position: absolute; z-index: -1; inset: 42px -30px -35px 55px; border-radius: 35px; background: #efe4fa; content: ""; }
+.search-demo::before { position: absolute; z-index: -1; inset: 42px 0 -35px 55px; border-radius: 35px; background: #efe4fa; content: ""; }
 .demo-top { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; margin-bottom: 18px; padding: 15px; border: 1px solid #e7d9e4; border-radius: 16px; background: white; }
 .demo-top > span { color: var(--rose); font-size: 18px; }
 .demo-top strong { font-size: 13px; }

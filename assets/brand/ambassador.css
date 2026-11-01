@@ -1,0 +1,52 @@
+/* Shared campaign only: product layouts keep their own styles. */
+.ambassador-campaign {
+  --campaign-accent: #8fffd1;
+  --campaign-bg: #0a1514;
+  width: min(1120px, calc(100% - 40px));
+  margin: 24px auto 64px;
+  padding: 0;
+  color: #f5f8ff;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  text-align: left;
+  scroll-margin-top: 96px;
+}
+.ambassador-campaign *, .ambassador-campaign *::before, .ambassador-campaign *::after { box-sizing: border-box; }
+.ambassador-campaign__panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid #294439;
+  border-radius: 28px;
+  background: var(--campaign-bg);
+}
+.ambassador-campaign__copy { align-self: center; padding: clamp(24px, 4vw, 52px); min-width: 0; }
+.ambassador-campaign__eyebrow { margin: 0 0 18px; color: var(--campaign-accent); font-size: 11px; font-weight: 750; letter-spacing: .15em; text-transform: uppercase; }
+.ambassador-campaign h2 { margin: 0 0 18px; color: #f5f8ff; font-size: clamp(28px, 3.3vw, 44px); line-height: 1.12; letter-spacing: -.035em; font-weight: 750; text-wrap: balance; }
+.ambassador-campaign__description { margin: 0 0 22px; color: #b8ccc7; font-size: 16px; line-height: 1.65; max-width: 40ch; }
+.ambassador-campaign__link { display: inline-flex; align-items: center; gap: 12px; padding: 12px 18px; border: 1px solid #436257; border-radius: 12px; background: #172d25; color: #f5fff9; text-decoration: none; font-size: 14px; font-weight: 700; min-height: 46px; }
+.ambassador-campaign__link:hover { background: #254438; }
+.ambassador-campaign__link:focus-visible { outline: 3px solid var(--campaign-accent); outline-offset: 5px; }
+.ambassador-campaign__status { display: block; margin: 18px 0 0; color: #ffce8a; font-size: 13px; font-weight: 650; line-height: 1.6; }
+.ambassador-campaign__portrait { position: relative; overflow: hidden; min-width: 0; margin: 0; aspect-ratio: 600 / 630; background: #0c1b18; }
+.ambassador-campaign__portrait::after { content: ""; pointer-events: none; position: absolute; inset: 0; background: linear-gradient(90deg, var(--campaign-bg), transparent 12%); }
+.ambassador-campaign__portrait > .ambassador-campaign__image { position: absolute; right: 0; top: 0; display: block; width: 200%; max-width: none; height: 100%; object-fit: fill; }
+.ambassador-campaign__portrait--original > .ambassador-campaign__image { width: 100%; object-fit: cover; object-position: center top; }
+.ambassador-campaign__logo { position: absolute; z-index: 1; right: 20px; bottom: 20px; display: block; width: 76px; height: 76px; object-fit: contain; padding: 5px; background: #081510; border: 1px solid #3b6654; border-radius: 20px; }
+.ambassador-campaign__caption { margin: 12px 4px 0; color: var(--text-muted, var(--muted, #a5b8b0)); font-size: 12px; line-height: 1.5; }
+.ambassador-campaign:not([data-ambassador-campaign="baisalya"]):not([data-ambassador-campaign="friction-atlas"]) { --campaign-bg: #081222; }
+.ambassador-campaign[data-ambassador-campaign="devdesk"] { --campaign-accent: #9aa5ff; }
+.ambassador-campaign[data-ambassador-campaign="construction-erp"] { --campaign-accent: #ffbd76; }
+.ambassador-campaign[data-ambassador-campaign="shoppilot"] { --campaign-accent: #61dec5; }
+.ambassador-campaign[data-ambassador-campaign="edusheet"] { --campaign-accent: #91b7ff; }
+.ambassador-campaign[data-ambassador-campaign="surveycam"] { --campaign-accent: #66d4ff; }
+.ambassador-campaign[data-ambassador-campaign="notivault"] { --campaign-accent: #c2a5ff; }
+.ambassador-campaign[data-ambassador-campaign="brightquest"] { --campaign-accent: #ffd67d; }
+.ambassador-campaign[data-ambassador-campaign="paperaid"] { --campaign-accent: #afa3ff; }
+@media (max-width: 700px) {
+  .ambassador-campaign { width: calc(100% - 28px); margin: 20px auto 40px; }
+  .ambassador-campaign__panel { grid-template-columns: minmax(0, 1fr); border-radius: 22px; }
+  .ambassador-campaign__copy { padding: 28px 26px; }
+  .ambassador-campaign h2 { font-size: clamp(28px, 7.5vw, 38px); }
+  .ambassador-campaign__portrait { width: min(100%, 460px); justify-self: center; }
+  .ambassador-campaign__portrait::after { background: linear-gradient(180deg, var(--campaign-bg), transparent 9%); }
+}

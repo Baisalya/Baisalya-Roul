@@ -1,0 +1,17 @@
+{
+  "tool": "Built-in ImageGen",
+  "reference": "User-supplied woman in foreground of attached photograph",
+  "assets": [
+    {
+      "path": "friction-atlas/assets/img/brand/ambassador-mint-v1.png",
+      "prompt": "Use case: identity-preserve. Asset type: photorealistic website ambassador portrait, portrait 1024x1536. Image 1 is identity reference: ONLY the adult woman smiling in the pink sari in the foreground. Faithfully preserve her recognizable face, natural skin tone, eyes, nose, smile, long black hair, apparent age and body proportions. Transform her clothing into a modern softly tailored muted mint/sage blazer over a charcoal crew neck top, elegant contemporary global software brand ambassador, modest professional styling. Natural skin texture, natural body proportions, soft editorial studio lighting. Standing relaxed, looking directly at camera with same friendly smile, hands naturally relaxed in front, frame head to mid thigh, complete hair and head with generous breathing space. Dark deep green studio background #08100e with very subtle mint light, no objects or furnishings. Remove phone screenshot UI, other people, phone, sari and venue. No text, no logos, no watermark. Do not beautify, reshape, lighten skin, or substitute another face.",
+      "web_path": "friction-atlas/assets/img/brand/ambassador-mint-v1.jpg"
+    },
+    {
+      "path": "assets/social/friction-atlas-ambassador-v2.png",
+      "prompt": "Use case: precise-object-edit, text-localization. Edit target Image 1: Friction Atlas landscape social cover. Make this an evergreen brand asset requiring no edits after launch. Change ONLY release-status elements: completely remove the rounded 'NOT RELEASED YET' pill, reconstructing underlying dark mint landscape naturally. Replace the tiny 'Coming soon on' above Google Play with exact 'Android'. Replace 'Coming soon to' above Microsoft Store with exact 'Windows'. Preserve Google Play and Microsoft Store names and symbols. Keep ALL other elements unchanged: same woman's recognizable face, body, hair, skin tone, mint blazer and charcoal top, exact pose and portrait, mountain trail landscape, app icon, composition, Friction Atlas title, Habits & Focus label, Understand your habits. Find your focus. tagline and URL. Keep the same wide 1200x630 aspect ratio and crisp text. Do NOT add any date, release status, 'coming soon', 'not released', 'available now', or new copy. No watermark."
+    }
+  ],
+  "processing": "Only technical resizing/format conversion after image generation.",
+  "policy": "Evergreen artwork. Release status belongs only in editable website HTML, metadata descriptions and configuration."
+}

@@ -26,6 +26,24 @@ updates manually.
 5. Use **Settings → About → Check for Updates** to compare the installed
    Android build with the official Android release record.
 
+## Desktop CLI and routine support
+
+The reviewed 1.2.5 packaging includes a standalone `devdesk` CLI: Windows
+Store/MSIX uses an App execution alias; the Classic installer adds its CLI to
+the current user's PATH. Open a fresh terminal and run `devdesk --version`,
+`devdesk --help`, and `devdesk doctor` to confirm your installed build's surface.
+See the [command-line guide](devdesk-cli.html) for installation, examples, and
+the local broker used by supported commands while the GUI is open.
+
+Linux source packaging produces a portable archive and, when supported, a
+Debian package with `devdesk` and `devdesk-gui`. A public Linux package is not
+linked by this website yet.
+
+[Routine reminders](notifications-routines.html) use native Android/Windows
+notifications. Opt-in closed-app AI execution is limited to Windows Classic
+while signed in; it is not enabled for Store/MSIX, Android, or Linux. Store
+buttons install the published build, which can differ from reviewed source.
+
 ## What DevDesk checks
 
 DevDesk downloads only the small public

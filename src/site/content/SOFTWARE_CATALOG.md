@@ -10,10 +10,12 @@ independent product websites in this repository.
 | ShopPilot | `shoppilot-erp/index.html` | Private Preview | ShopPilot site copy and existing release truth contract |
 | Construction ERP | `construction-erp/index.html` | Coming Soon | Construction ERP website + existing root card |
 | NotiVault | `notivault-website/` | Coming Soon | NotiVault website + existing root card |
-| EduSheet | `EduSheet/index.html` | Teacher tool | EduSheet site description: math-first question paper maker |
+| EduSheet | `EduSheet/index.html` | Android + Windows publicly released | Release completion confirmed by owner on 14 October 2026; Google Play and Microsoft Store install links |
 | SurveyCam | `surveycam/index.html` | Published on Google Play | Dedicated SurveyCam website + verified Google Play listing |
 | BrightQuest Kids | `brightquest-kids/index.html` | Release preparation | Child-focused product website; no public store listing is claimed |
-| PaperAid | `paperaid/index.html` | Release preparation | Product website and release-status page; store links are not live yet |
+| PaperAid | `paperaid/index.html` | Android and Windows publicly released | Android public release confirmed by owner and public Google Play listing on 18 October 2026 (`com.baishalya.paperaid`); Windows Store ID `9PC123WB2SDH` |
+
+| Friction Atlas | `friction-atlas/index.html` | Not released yet | Owner confirmed pre-release on 1 November 2026; Android and Microsoft Store are upcoming, with no public download links |
 
 ## Rules
 

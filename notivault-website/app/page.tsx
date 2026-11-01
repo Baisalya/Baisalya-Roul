@@ -207,6 +207,23 @@ export default function Home() {
         </div>
       </section>
 
+<section className="ambassador-campaign" id="campaign-notivault" data-ambassador-campaign="notivault" aria-labelledby="ambassador-notivault">
+  <div className="ambassador-campaign__panel">
+    <div className="ambassador-campaign__copy">
+      <p className="ambassador-campaign__eyebrow">NotiVault · Brand ambassador</p>
+      <h2 id="ambassador-notivault">Capture notification previews. Keep your history on-device.</h2>
+      <p className="ambassador-campaign__description">Keep selected notification previews private and searchable on your Android device.</p>
+      <a className="ambassador-campaign__link" href="#features">Explore NotiVault <span aria-hidden="true">→</span></a>
+
+    </div>
+    <figure className="ambassador-campaign__portrait">
+      <img className="ambassador-campaign__image" src="../assets/brand/ambassadors/notivault-v1.jpg" width="1200" height="630" loading="lazy" decoding="async" alt="NotiVault brand ambassador with the app logo" />
+
+    </figure>
+  </div>
+  <p className="ambassador-campaign__caption">NotiVault · Represented by our brand ambassador</p>
+</section>
+
       <section className="trust-bar" aria-label="Core controls">
         <div><span>01</span><strong>You choose the apps</strong></div>
         <div><span>02</span><strong>Everything stays organized</strong></div>

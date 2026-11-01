@@ -6,6 +6,9 @@
   const validClient = /^ca-pub-\d{10,20}$/.test(client);
   const validSlot = /^\d{6,20}$/.test(slot);
   const placements = [...document.querySelectorAll('[data-ad-unit="manual"]')];
+  const approvedPath = document.querySelector('meta[name="baisalya-ad-page"]')?.content;
+  // A copied template or an old cached page must not initialize ads elsewhere.
+  if (!approvedPath || approvedPath !== window.location.pathname || autoAds) return;
 
   if (!config.enabled || !config.consentReady || !validClient || !validSlot || (!autoAds && !placements.length)) return;
 

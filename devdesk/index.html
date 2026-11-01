@@ -24,13 +24,13 @@
 <title>DevDesk – Workspace for Learning, Research &amp; Building | Baisalya</title>
 <link href="assets/img/devdesk-logo-64.png" rel="icon" sizes="64x64" type="image/png"/>
 <link href="assets/img/devdesk-logo-192.png" rel="apple-touch-icon" sizes="192x192"/>
-<link href="site.webmanifest?v=20260909.1" rel="manifest"/>
-<link href="assets/css/styles.css?v=20260909.1" rel="stylesheet"/>
-<script defer="" src="assets/js/site-config.js?v=20260909.1"></script>
-<script defer="" src="assets/js/marketing-model.js?v=20260909.1"></script>
-<script defer="" src="assets/js/search-index.js?v=20260909.1"></script>
-<script defer="" src="assets/js/app.js?v=20260909.1"></script>
-<script defer="" src="assets/js/manual-visuals.js?v=20260909.1"></script>
+<link href="site.webmanifest?v=20261018.1" rel="manifest"/>
+<link href="assets/css/styles.css?v=20261018.1" rel="stylesheet"/>
+<script defer="" src="assets/js/site-config.js?v=20261018.1"></script>
+<script defer="" src="assets/js/marketing-model.js?v=20261018.1"></script>
+<script defer="" src="assets/js/search-index.js?v=20261018.1"></script>
+<script defer="" src="assets/js/app.js?v=20261018.1"></script>
+<script defer="" src="assets/js/manual-visuals.js?v=20261018.1"></script>
 <link href="../assets/monetization/monetization.css" rel="stylesheet"/> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <link href="https://baisalya.com/devdesk/" rel="canonical"/>
 <meta content="https://baisalya.com/devdesk/" property="og:url"/>
@@ -107,7 +107,8 @@
   ]
 }
 </script>
-<link href="../assets/site-network.css" rel="stylesheet"/></head>
+<link href="../assets/site-network.css" rel="stylesheet"/><link rel="stylesheet" href="../assets/brand/ambassador.css">
+</head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
@@ -135,7 +136,7 @@
 <main id="main-content">
 <section class="hero hero-product">
 <div>
-<span class="eyebrow">DevDesk 1.2.4 · One workspace, many kinds of work</span>
+<span class="eyebrow">One workspace, many kinds of work</span>
 <h1>Study. Research. Organize. Build. Run projects from one workspace.</h1>
 <p>
           DevDesk brings everyday planning, connected knowledge, study and research,
@@ -168,11 +169,27 @@
 </figure>
 </div>
 </section>
+<section class="ambassador-campaign" id="campaign-devdesk" data-ambassador-campaign="devdesk" aria-labelledby="ambassador-devdesk">
+  <div class="ambassador-campaign__panel">
+    <div class="ambassador-campaign__copy">
+      <p class="ambassador-campaign__eyebrow">DevDesk · Brand ambassador</p>
+      <h2 id="ambassador-devdesk">Notes, research, APIs and code. One connected workspace.</h2>
+      <p class="ambassador-campaign__description">Bring notes, research, APIs and developer tools into one connected workspace.</p>
+      <a class="ambassador-campaign__link" href="downloads.html">Explore DevDesk <span aria-hidden="true">→</span></a>
+
+    </div>
+    <figure class="ambassador-campaign__portrait">
+      <img class="ambassador-campaign__image" src="../assets/brand/ambassadors/devdesk-v1.jpg" width="1200" height="630" loading="lazy" decoding="async" alt="DevDesk brand ambassador with the app logo">
+
+    </figure>
+  </div>
+  <p class="ambassador-campaign__caption">DevDesk · Represented by our brand ambassador</p>
+</section>
 <section aria-labelledby="ai-launch-heading" class="section ai-launch-section" id="ai-harness">
 <div class="ai-launch-shell">
 <div class="ai-launch-header">
 <div>
-<span class="release-pill">DevDesk 1.2.4 feature set</span>
+<span class="release-pill">DevDesk 1.2.5 source feature guide</span>
 <h2 id="ai-launch-heading">One Harness. Four ways to move work forward.</h2>
 </div>
 <p>
@@ -190,7 +207,7 @@
 <article>
 <span>02 · Plan</span>
 <h3>Let routines prepare the next step.</h3>
-<p>Local Once, Daily, Weekdays, and Weekly routines create a notification and wait for you to continue.</p>
+<p>Choose a review-first reminder, let AI Prepare draft a result, or opt into read-only AI Auto-Run with permissions saved per routine.</p>
 </article>
 <article>
 <span>03 · Create</span>
@@ -273,11 +290,12 @@
 </ol>
 <ul aria-label="Developer DevDesk features" class="audience-feature-tags">
 <li>Code proposals</li><li>API Studio</li><li>JSON &amp; OpenAPI</li>
-<li>Diff &amp; Git</li><li>Docker &amp; Kubernetes</li><li>Browser + MCP agents</li>
+<li>Diff &amp; Git</li><li>Docker &amp; Kubernetes</li><li>Android / ADB</li><li>Browser + MCP agents</li><li>Standalone CLI</li>
 </ul>
 <div class="audience-track-actions">
 <a class="btn primary" href="manual/workspace-workbench.html">Explore the developer workbench</a>
 <a class="btn" href="manual/agent-connector.html">Connect an external agent</a>
+<a class="btn" href="manual/devdesk-cli.html">Use the CLI</a>
 </div>
 </article>
 </div>
@@ -287,6 +305,26 @@
 <span><strong>Small team</strong> Meetings → decisions + next actions</span>
 <span><strong>Developer</strong> Project → reviewed + verified change</span>
 <span><strong>Operator</strong> Workspace → Docker + Kubernetes controls</span>
+</div>
+</section>
+<section aria-labelledby="cli-heading" class="section section-tinted" id="cli">
+<div class="section-header">
+<span class="eyebrow">DevDesk from CMD, PowerShell, or your shell</span>
+<h2 id="cli-heading">Keep your project workflow moving from the terminal.</h2>
+<p>The standalone DevDesk CLI brings files, knowledge, API tests, local data, and operations to your shell. Explore the complete command reference checked against DevDesk CLI 1.2.6+21, with examples and options for all 86 top-level usage lines.</p>
+</div>
+<div class="cards">
+<article class="card"><h3>Files, projects &amp; knowledge</h3><p>Create folders and files, inspect and search a project, read Git status, compare files or folders, and query Markdown headings, metadata, links, backlinks, graph issues, and paths.</p></article>
+<article class="card"><h3>API tests &amp; everyday tools</h3><p>Send HTTP requests, run saved API collections with environment and report options, validate OpenAPI, and use JSON, Base64, URL, regex, UUID, timestamp, and JWT utilities.</p></article>
+<article class="card"><h3>Local data &amp; portability</h3><p>Manage workspace manifests, snippets, notes, settings, and backup files. Preview a restore before applying it, or use a separate data directory for an isolated profile.</p></article>
+<article class="card"><h3>Docker, Kubernetes &amp; Android</h3><p>Check runtimes, inspect containers and Kubernetes workloads, read logs, and use ADB device lists, screenshots, UI inspection, and logcat. Docker lifecycle actions and ADB controls require explicit confirmation flags.</p></article>
+<article class="card"><h3>AI, agents &amp; routines</h3><p>Inspect providers, plan an explicit prompt, run AI with consent, view saved agents and activity, schedule graph-health automation, and manage review-first routines from your terminal.</p></article>
+<article class="card"><h3>Verification &amp; scripting</h3><p>Inspect verification plans, run selected checks, set process timeouts, generate shell completion, export diagnostics, and use JSON output and documented exit codes in scripts.</p></article>
+</div>
+<div class="button-row">
+<a class="btn primary" href="manual/devdesk-cli.html#complete-command-reference">Browse every CLI command</a>
+<a class="btn" href="manual/devdesk-cli.html#create-files-from-cmd-or-powershell">Try file commands</a>
+<a class="btn" href="assets/downloads/devdesk-cli-help.txt" download>Download devdesk --help</a>
 </div>
 </section>
 <section aria-labelledby="containers-heading" class="section section-tinted container-showcase-section" id="containers">
@@ -378,7 +416,7 @@
 <article><span>01</span><h3>Organize</h3><p>Tasks, goals, meetings, assignments, and decisions across Today, List, Board, Calendar, and Timeline.</p><strong>For everyday clarity</strong></article>
 <article><span>02</span><h3>Think &amp; connect</h3><p>Notes, backlinks, Relationships, Knowledge Graph, Visual Canvas, and Diagram Studio keep ideas understandable.</p><strong>For learning and research</strong></article>
 <article><span>03</span><h3>Ask &amp; create</h3><p>Use the AI Harness with bounded files and supported photos for plans, explanations, summaries, and drafts.</p><strong>For useful first versions</strong></article>
-<article><span>04</span><h3>Remember</h3><p>A local Notification Center and review-first Once, Daily, Weekdays, or Weekly routines surface the next step.</p><strong>For steady progress</strong></article>
+<article><span>04</span><h3>Remember &amp; prepare</h3><p>Native Android/Windows reminders surface the next step. Review first stays the default; automatic AI modes require your opt-in.</p><strong>For steady progress</strong></article>
 <article><span>05</span><h3>Build, run &amp; verify</h3><p>Markdown, JSON, OpenAPI, API testing, Diff, Git, code proposals, terminals, Docker, Kubernetes, worktrees, and Browser Agent.</p><strong>For serious projects</strong></article>
 <article><span>06</span><h3>Own &amp; move</h3><p>Ordinary files remain canonical. Copy, back up, clone, reopen, and grant sensitive permissions only when needed.</p><strong>For lasting control</strong></article>
 </div>
@@ -545,7 +583,7 @@
 <li>Review-first main-workspace changes</li>
 <li>Selected-workspace context</li>
 <li>Bounded file and vision input</li>
-<li>Review-first AI routines</li>
+<li>Routine permissions saved separately</li>
 <li>Exact terminal and browser approvals</li>
 <li>Isolated parallel worktrees</li>
 <li>Verification evidence and recovery</li>
@@ -614,7 +652,10 @@
 <div><strong>AI Harness and Workbench</strong><span>Attach bounded text or a photo, plan or study, and use reviewed coding, Windows verification, parallel workers, and Edge browser evidence.</span></div>
 </a>
 <a class="home-doc-link" href="manual/notifications-routines.html">
-<div><strong>Notifications and AI routines</strong><span>Review local alerts and schedule prompts that always wait for your confirmation.</span></div>
+<div><strong>Notifications and AI routines</strong><span>Native reminders, Review first, AI Prepare, read-only Auto-Run, and Windows Classic background AI.</span></div>
+</a>
+<a class="home-doc-link" href="manual/devdesk-cli.html">
+<div><strong>DevDesk from your terminal</strong><span>Complete CLI command reference: files, knowledge, APIs, Docker/Kubernetes, Android ADB, agents, routines, completion, and diagnostics.</span></div>
 </a>
 <a class="home-doc-link" href="manual/api-workspaces.html">
 <div><strong>Saved API testing</strong><span>Requests, environments, checks, runners, and protected values.</span></div>
@@ -700,7 +741,7 @@
 </div>
 </div>
 </section>
-</main><aside aria-label="Advertisement" class="monetization-ad" data-ad-context="index" data-ad-unit="manual" hidden=""></aside>
+<section class="section"><div class="container"><h2>Debug one request with a repeatable example</h2><p>Use a fictional JSON body to check input syntax, URL encoding, identifiers and time units, then save a sanitized report another developer can reproduce.</p><a href="/guides/debug-api-request.html">Read the API debugging guide →</a></div></section></main>
 <aside aria-label="Support DevDesk development" class="creator-support"><div class="creator-support__copy"><span class="creator-support__eyebrow">Independent software</span><strong>Support thoughtful DevDesk development</strong><p>Help fund documentation, testing, accessibility work and dependable cross-platform releases.</p></div><div class="creator-support__actions"><a href="https://www.buymeacoffee.com/baisalya" rel="noopener noreferrer" target="_blank">Buy me a coffee ↗</a><a href="mailto:baishalya1999@gmail.com?subject=DevDesk%20business%20inquiry">Business inquiry</a></div></aside><footer class="site-footer">
 <div class="footer-inner">
 <div>
@@ -746,5 +787,5 @@
 </div>
 </div>
 <div class="mobile-drawer-backdrop"></div>
-<script src="../assets/monetization/config.js"></script><script defer="" src="../assets/monetization/monetization.js"></script></body>
+</body>
 </html>

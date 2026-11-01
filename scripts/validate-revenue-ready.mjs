@@ -1,6 +1,7 @@
 import { access, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
+import { reviewedAdPages } from './ad-placement-policy.mjs';
 
 const root = process.cwd();
 const failures = [];
@@ -50,27 +51,20 @@ for (const expected of ['creator-support', 'https://www.buymeacoffee.com/baisaly
   if (!notiVaultSource.includes(expected)) failures.push(`NotiVault source missing revenue surface: ${expected}`);
 }
 
-for (const page of [
-  'devdesk/index.html',
-  'construction-erp/index.html',
-  'EduSheet/index.html',
-  'surveycam/index.html',
-  'sitesnap/index.html',
-  'paperaid/index.html',
-]) {
-  const count = adCount(await text(page));
-  if (count !== 1) failures.push(`${page} must contain exactly one restrained manual ad placement, found ${count}`);
-}
-
-// ShopPilot source is protected. The release builder injects its single ad into dist
-// so protected product hashes remain stable while production monetization stays consistent.
-for (const page of ['shoppilot erp/index.html', 'shoppilot erp/quick-start.html', 'shoppilot erp/user-manual.html']) {
-  const count = adCount(await text(page));
-  if (count !== 0) failures.push(`${page} source must stay ad-free; production injection belongs in build-release.mjs`);
+for (const page of reviewedAdPages) {
+  const sourcePage = page.replace(/^shoppilot-erp\//, 'shoppilot erp/');
+  const html = await text(sourcePage);
+  const count = adCount(html);
+  if (count !== 1) failures.push(sourcePage + ' must contain one reviewed manual placement');
+  if (!html.includes('name="baisalya-ad-page" content="/' + page + '"')) failures.push(sourcePage + ' missing exact-page ad gate');
 }
 
 for (const page of [
   'index.html', 'privacy.html',
+  'devdesk/index.html', 'devdesk/downloads.html', 'construction-erp/index.html', 'construction-erp/downloads.html', 'construction-erp/support.html',
+  'shoppilot erp/index.html', 'shoppilot erp/quick-start.html', 'EduSheet/index.html', 'EduSheet/download.html', 'EduSheet/quick-start.html', 'EduSheet/features.html', 'EduSheet/teacher-planner.html',
+  'surveycam/index.html', 'surveycam/support.html', 'sitesnap/index.html', 'paperaid/index.html',
+  'devdesk/manual/uuid.html', 'devdesk/manual/base64.html', 'devdesk/manual/timestamp.html', 'devdesk/manual/snippets-notes.html', 'devdesk/manual/jwt-decoder.html', 'devdesk/manual/url-tools.html', 'devdesk/manual/readme-generator.html', 'devdesk/manual/regex-tester.html', 'devdesk/manual/unified-search.html',
   'devdesk/privacy-policy.html', 'devdesk/404.html',
   'construction-erp/privacy.html', 'construction-erp/terms.html', 'construction-erp/account-deletion.html', 'construction-erp/data-safety.html', 'construction-erp/404.html',
   'EduSheet/privacy.html', 'EduSheet/404.html',
@@ -107,7 +101,7 @@ if (!adsTxt.includes('google.com, pub-1529558529658186, DIRECT, f08c47fec0942fa0
 
 const build = await text('scripts/build-release.mjs');
 for (const required of [
-  'injectShopPilotManualAds',
+  'applyAdPlacementPolicy',
   'siteSnapRuntimeFiles',
   'brightQuestRuntimeFiles',
   'paperAidRuntimeFiles',

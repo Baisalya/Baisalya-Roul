@@ -5,21 +5,29 @@ import path from 'node:path';
 import process from 'node:process';
 import { promisify } from 'node:util';
 import { exportNotiVaultStatic } from './export-notivault-static.mjs';
+import { applySocialMetadata } from './social-metadata.mjs';
+import { socialSurfaces, socialImagePath } from './social-surfaces.mjs';
+import { applyAdPlacementPolicy } from './ad-placement-policy.mjs';
+import { applyAmbassadorCampaign } from './ambassador-campaigns.mjs';
 
 const execFileAsync = promisify(execFile);
 const projectRoot = process.cwd();
 const outputRoot = path.join(projectRoot, 'dist');
 const planOnly = process.argv.includes('--plan');
-const devDeskRelease = '20260909.1';
+const devDeskRelease = '20261018.1';
 const constructionErpRelease = '20260904.1';
-const monetizationRelease = '20260924.1';
+const monetizationRelease = '20261018.1';
 
 const rootRuntimeFiles = [
   'index.html', 'privacy.html', 'main.js', 'style.css', 'robots.txt', 'sitemap.xml', 'sitemap-pages.xml',
-  'javascript.svg', 'CNAME',
+  'javascript.svg', 'favicon.ico', 'CNAME',
 ];
-const rootRuntimeDirectories = ['assets', 'src/site'];
+const rootRuntimeDirectories = ['assets', 'src/site', 'guides'];
 const rootOptionalRuntimeFiles = ['ads.txt', 'app-ads.txt'];
+const frictionAtlasRuntimeFiles = [
+  '404.html', 'index.html', 'bots.html', 'manual.html', 'download.html',
+  'privacy.html', 'terms.html', 'support.html', 'robots.txt', 'sitemap.xml', 'site.webmanifest',
+];
 const devDeskRuntimeFiles = [
   '404.html', 'downloads.html', 'index.html', 'privacy-policy.html', 'releases.json', 'robots.txt',
   'site.webmanifest', 'sitemap.xml', 'sw.js',
@@ -146,39 +154,15 @@ async function ensureSeoMetadata(directory, relative = '') {
         `<meta property="og:url" content="${canonical}">`,
       );
     }
-    await writeFile(target, html, 'utf8');
-  }
-}
-async function injectShopPilotManualAds(outputDir) {
-  const pages = ['index.html', 'quick-start.html', 'user-manual.html'];
-  const css = '<link rel="stylesheet" href="../assets/monetization/monetization.css">';
-  const placement = '<aside class="monetization-ad" data-ad-unit="manual" hidden aria-label="Advertisement"></aside>';
-  const configScript = '<script src="../assets/monetization/config.js"></script>';
-  const runtimeScript = '<script src="../assets/monetization/monetization.js" defer></script>';
-  for (const page of pages) {
-    const file = path.join(outputDir, page);
-    let html = await readFile(file, 'utf8');
-    if (!html.includes('assets/monetization/monetization.css')) {
-      html = html.replace('</head>', '    ' + css + '\n</head>');
-    }
-    if (!html.includes('data-ad-unit="manual"')) {
-      if (page === 'index.html' && html.includes('<section class="section" id="why">')) {
-        const homePlacement = '<aside class="monetization-ad" data-ad-context="home-after-features" data-ad-unit="manual" hidden aria-label="Advertisement"></aside>';
-        html = html.replace('<section class="section" id="why">', homePlacement + '\n    <section class="section" id="why">');
-      } else {
-        html = /<footer\b/i.test(html)
-          ? html.replace(/<footer\b/i, placement + '\n<footer')
-          : html.replace('</body>', placement + '\n</body>');
-      }
-    }
-    if (!html.includes('assets/monetization/config.js')) {
-      html = html.replace('</body>', configScript + runtimeScript + '\n</body>');
-    }
-    await writeFile(file, html, 'utf8');
+    html = versionMonetizationRuntime(applyAdPlacementPolicy(html, nextRelative));
+    await writeFile(target, applySocialMetadata(applyAmbassadorCampaign(html, nextRelative), nextRelative), 'utf8');
   }
 }
 
 async function validateSourcePlan() {
+  for (const file of frictionAtlasRuntimeFiles) await requireSourceFile(path.join('friction-atlas', file));
+  await requireSourceDirectory('friction-atlas/assets');
+  for (const surface of socialSurfaces) await requireSourceFile(socialImagePath(surface));
   for (const file of rootRuntimeFiles) await requireSourceFile(file);
   for (const directory of rootRuntimeDirectories) await requireSourceDirectory(directory);
   for (const file of devDeskRuntimeFiles) await requireSourceFile(path.join('devdesk', file));
@@ -254,10 +238,13 @@ async function writeReleaseManifest() {
 await validateSourcePlan();
 if (planOnly) {
   console.log('Release build plan: passed');
-  console.log(`Root files: ${rootRuntimeFiles.length}; products: DevDesk, Construction ERP, ShopPilot, EduSheet, SurveyCam, BrightQuest Kids, PaperAid, NotiVault.`);
+  console.log(`Root files: ${rootRuntimeFiles.length}; products: DevDesk, Construction ERP, ShopPilot, EduSheet, SurveyCam, BrightQuest Kids, PaperAid, NotiVault, Friction Atlas.`);
   process.exit(0);
 }
 await assertNotiVaultBuildReady();
+if (outputRoot !== path.resolve(projectRoot, 'dist') || !outputRoot.startsWith(path.resolve(projectRoot) + path.sep)) {
+  throw new Error('Release output must stay inside this workspace at dist/.');
+}
 await rm(outputRoot, { recursive: true, force: true });
 await mkdir(outputRoot, { recursive: true });
 
@@ -266,6 +253,10 @@ for (const file of rootOptionalRuntimeFiles) { if (await isFile(file)) await cop
 for (const directory of rootRuntimeDirectories) {
   await cp(path.join(projectRoot,directory), path.join(outputRoot,directory), {recursive:true,force:true});
 }
+
+const frictionAtlasOutput=path.join(outputRoot,'friction-atlas');
+await copyFiles(path.join(projectRoot,'friction-atlas'), frictionAtlasOutput, frictionAtlasRuntimeFiles);
+await cp(path.join(projectRoot,'friction-atlas','assets'), path.join(frictionAtlasOutput,'assets'), {recursive:true,force:true});
 
 const devDeskOutput=path.join(outputRoot,'devdesk');
 await copyFiles(path.join(projectRoot,'devdesk'), devDeskOutput, devDeskRuntimeFiles);
@@ -288,7 +279,6 @@ await versionHtmlFiles(constructionOutput, versionConstructionErpRuntime);
 const shopPilotOutput=path.join(outputRoot,'shoppilot-erp');
 await copyFiles(path.join(projectRoot,'shoppilot erp'), shopPilotOutput, shopPilotRuntimeFiles);
 await cp(path.join(projectRoot,'shoppilot erp','assets'), path.join(shopPilotOutput,'assets'), {recursive:true,force:true});
-await injectShopPilotManualAds(shopPilotOutput);
 
 const eduSheetOutput=path.join(outputRoot,'EduSheet');
 await copyFiles(path.join(projectRoot,'EduSheet'), eduSheetOutput, eduSheetRuntimeFiles);

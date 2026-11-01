@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Update if deploying under a subdirectory.
+Sitemap: https://baisalya.com/friction-atlas/sitemap.xml

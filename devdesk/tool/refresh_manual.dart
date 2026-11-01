@@ -17,6 +17,14 @@ class _Page {
 }
 
 const _pages = <_Page>[
+  _Page(slug: 'uuid', title: 'UUID Generator', description: 'Generate stable sample identifiers, use them in test records, and diagnose format and copy errors.'),
+  _Page(slug: 'base64', title: 'Base64 Tool', description: 'Check a text round trip, encode and restore files, and distinguish Base64 from encryption.'),
+  _Page(slug: 'timestamp', title: 'Timestamp Converter', description: 'Compare seconds and milliseconds with a worked UTC and local-time example.'),
+  _Page(slug: 'snippets-notes', title: 'Snippets and Notes', description: 'Build reusable checklists and command notes, find them again, and keep project data portable.'),
+  _Page(slug: 'jwt-decoder', title: 'JWT Decoder', description: 'Inspect synthetic JWT claims and distinguish readable payloads from authenticated tokens.'),
+  _Page(slug: 'url-tools', title: 'URL Encoder and Decoder', description: 'Encode query components, check a round trip, and diagnose double encoding and malformed links.'),
+  _Page(slug: 'readme-generator', title: 'README Generator', description: 'Create a useful project README, verify setup instructions and check saved Markdown links and fences.'),
+  _Page(slug: 'regex-tester', title: 'Regex Tester', description: 'Test version and identifier patterns with positive and negative samples before using them in code.'),
   _Page(
     slug: 'user-manual',
     title: 'Complete user manual',
@@ -135,7 +143,13 @@ const _pages = <_Page>[
     slug: 'notifications-routines',
     title: 'Notifications and AI routines',
     description:
-        'Review local alerts and schedule AI prompts that always wait for user confirmation.',
+        'Choose review-first reminders, AI Prepare, or read-only AI Auto-Run; understand native notifications and Windows Classic closed-app AI.',
+  ),
+  _Page(
+    slug: 'devdesk-cli',
+    title: 'DevDesk command-line guide',
+    description:
+        'Complete CLI command reference with files, knowledge, API runner options, Docker, Kubernetes, Android ADB, AI, agents, routines, completion, and diagnostics.',
   ),
   _Page(
     slug: 'structured-knowledge-okf',
@@ -314,11 +328,16 @@ Future<void> _refreshPage(
     '\n${_secureExternalLinks(rendered.html)}\n',
   );
 
-  final tocStart = document.indexOf('<aside class="toc"');
-  final tocEnd = document.indexOf('</aside>', tocStart) + '</aside>'.length;
-  if (tocStart < 0 || tocEnd < '</aside>'.length) {
+  final tocMatch = RegExp(r'<aside\b[^>]*\bclass="toc"[^>]*>').firstMatch(document);
+  if (tocMatch == null) {
     throw FormatException('Could not locate page outline in ${htmlFile.path}');
   }
+  final tocStart = tocMatch.start;
+  final tocClose = document.indexOf('</aside>', tocStart);
+  if (tocClose < 0) {
+    throw FormatException('Could not locate page outline end in ${htmlFile.path}');
+  }
+  final tocEnd = tocClose + '</aside>'.length;
   document = document.replaceRange(
     tocStart,
     tocEnd,
@@ -326,13 +345,17 @@ Future<void> _refreshPage(
   );
 
   document = document.replaceFirst(
-    RegExp(r'<meta name="description" content="[^"]*">'),
+    RegExp(r'<meta\b(?=[^>]*\bname="description")[^>]*>'),
     '<meta name="description" '
     'content="${_htmlEscape.convert(page.description)}">',
   );
   document = document.replaceFirst(
     RegExp(r'<title>.*?</title>'),
     '<title>${_htmlEscape.convert(page.title)} · DevDesk Manual</title>',
+  );
+  document = document.replaceFirst(
+    RegExp(r'data-ad-context="[^"]*"'),
+    'data-ad-context="${page.slug}"',
   );
   await htmlFile.writeAsString(document, encoding: utf8);
 
@@ -362,6 +385,14 @@ Future<void> _refreshPage(
 }
 
 String _prepareManualTemplate(String source, String slug) {
+  if (slug == 'devdesk-cli') {
+    source = source.replaceAllMapped(
+      RegExp(r'<a\b[^>]*href="\.\./manual/getting-started\.html"[^>]*>'),
+      (match) => match.group(0)!
+          .replaceAll('class="active"', 'class=""')
+          .replaceAll(RegExp(r'\saria-current="page"'), ''),
+    );
+  }
   source = source.replaceAll(
     '>AI Workbench and coding agents</a>',
     '>AI Harness, Workbench, and coding agents</a>',
@@ -385,6 +416,7 @@ String _prepareManualTemplate(String source, String slug) {
   for (final page in const <(String, String)>[
     ('workspace-workbench', 'Workspace workbench and tabs'),
     ('visual-feature-guide', 'Visual feature guide'),
+    ('devdesk-cli', 'DevDesk command-line guide'),
   ]) {
     final link = slug == page.$1
         ? '<a class="active" href="../manual/${page.$1}.html" '
@@ -551,12 +583,21 @@ String _prepareManualTemplate(String source, String slug) {
     'notifications-routines' => (
         'Notifications and AI routines',
         'Local notifications',
-        'Review-first schedules',
+        'Three execution modes',
         'Windows + Android',
+      ),
+    'devdesk-cli' => (
+        'DevDesk command-line guide',
+        'Terminal workflows',
+        'GUI + CLI broker',
+        'Windows + Linux',
       ),
     _ => null,
   };
   if (pageChrome != null) {
+    if (slug == 'notifications-routines') {
+      source = source.replaceAll('Review-first schedules', 'Three execution modes');
+    }
     source = source.replaceFirst(
       '<span>Start here</span></div><div class="doc-meta">'
           '<span class="doc-chip">Start here</span>'
@@ -597,6 +638,11 @@ String _prepareManualTemplate(String source, String slug) {
         '<small>Previous</small><strong>AI Harness and Workbench</strong></a>'
         '<a class="pager" href="privacy-security.html">'
         '<small>Next</small><strong>Privacy and security</strong></a></div>',
+    'devdesk-cli' => '<div class="article-footer">'
+        '<a class="pager" href="downloads-installation.html">'
+        '<small>Related</small><strong>Installation</strong></a>'
+        '<a class="pager" href="notifications-routines.html">'
+        '<small>Related</small><strong>Notifications and routines</strong></a></div>',
     _ => null,
   };
   if (footer != null) {

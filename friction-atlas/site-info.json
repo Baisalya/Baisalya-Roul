@@ -1,0 +1,16 @@
+{
+  "product": "Friction Atlas: Habits & Focus",
+  "short_name": "Friction Atlas",
+  "subtitle": "Understand your habits. Find your focus.",
+  "recommended_path": "https://baisalya.com/friction-atlas/",
+  "download_config": "assets/js/site-config.js",
+  "pages": [
+    "index.html",
+    "bots.html",
+    "manual.html",
+    "download.html",
+    "privacy.html",
+    "terms.html",
+    "support.html"
+  ]
+}
