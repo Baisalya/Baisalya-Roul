@@ -1,8 +1,8 @@
 (() => {
   const config = window.BAISALYA_MONETIZATION || {};
   const client = String(config.adsenseClient || '').trim();
-  const slot = String(config.manualSlot || '').trim();
   const autoAds = config.autoAds === true;
+  const slot = String(config.manualSlot || '').trim();
   const validClient = /^ca-pub-\d{10,20}$/.test(client);
   const validSlot = /^\d{6,20}$/.test(slot);
   const placements = [...document.querySelectorAll('[data-ad-unit="manual"]')];
@@ -10,7 +10,13 @@
   // A copied template or an old cached page must not initialize ads elsewhere.
   if (!approvedPath || approvedPath !== window.location.pathname || autoAds) return;
 
-  if (!config.enabled || !config.consentReady || !validClient || !validSlot || (!autoAds && !placements.length)) return;
+  // Keep navigation, downloads, legal pages and child-focused pages ad-free,
+  // even if a slot is accidentally added or an old config enables Auto Ads.
+  const currentPath = window.location.pathname.toLowerCase();
+  const excludedPage = currentPath === '/' || currentPath === '/index.html'
+    || /^\/(?:brightquest-kids|brightquest_kids|notivault-website)(?:\/|$)/.test(currentPath)
+    || /\/(?:downloads?|privacy(?:-policy)?|terms(?:-of-service)?|data-deletion|account-deletion|data-safety|404)(?:\.html)?\/?$/.test(currentPath);
+  if (excludedPage || !config.enabled || !config.consentReady || !validClient || !validSlot || !placements.length) return;
 
   const protectSideRailZones = () => {
     document

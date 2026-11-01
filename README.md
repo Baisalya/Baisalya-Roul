@@ -19,7 +19,7 @@ npm ci --prefix notivault-website
 npm run release
 ~~~
 
-The release command validates sources, builds dist/, configures production advertising and validates assets, links, sitemaps, release hashes, content discovery and PaperAid release metadata. GitHub Pages deploys that output on pushes to main through .github/workflows/deploy-baisalya-pages.yml.
+The release command validates sources, builds dist/ with advertising disabled and validates assets, links, sitemaps, release hashes, content discovery and PaperAid release metadata. The production workflow enables manual advertising only when ADSENSE_CONSENT_READY is explicitly true. GitHub Pages deploys that output on pushes to main through .github/workflows/deploy-baisalya-pages.yml.
 
 After editing guide source or ad selection:
 
