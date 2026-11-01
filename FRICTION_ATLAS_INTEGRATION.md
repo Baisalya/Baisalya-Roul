@@ -2,9 +2,9 @@
 
 Completed locally on 1 November 2026.
 
-- Added Friction Atlas to the portfolio navigation, release-preparation cards and software discovery metadata.
+- Added Friction Atlas to the portfolio software list, release-preparation cards and software discovery metadata.
 - Included the complete Friction Atlas website, assets and sitemap in the production release builder.
-- Added responsive ambassador sections after the hero on the portfolio and all ten product homepages. Existing product portraits retain their individual outfits and app logos; Friction Atlas uses a new mint-blazer portrait.
+- Added responsive ambassador sections after the hero on all ten product homepages. The portfolio itself displays no brand ambassador photograph or banner. Existing product portraits retain their individual outfits and app logos; Friction Atlas uses a new mint-blazer portrait.
 - Kept Friction Atlas explicitly **Not released yet** in website text, portfolio copy, metadata descriptions and download configuration. Both store links remain empty and download controls are unavailable.
 - Created evergreen artwork with Android/Google Play and Windows/Microsoft Store branding. Release status is not baked into either image, so artwork can remain after launch.
 - Optimized campaign JPEGs to approximately 100–125 KB each. The original social-preview PNGs remain available for link crawlers.

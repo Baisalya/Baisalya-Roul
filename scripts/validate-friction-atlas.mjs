@@ -27,7 +27,12 @@ for (const surface of socialSurfaces) {
     file = file.replace('brightquest-kids/', 'BrightQuest_Kids/');
   }
   const html = await read(file);
-  assert.equal((html.match(/data-ambassador-campaign=/g) || []).length, 1, `${file}: one campaign`);
+  assert.equal((html.match(/data-ambassador-campaign=/g) || []).length, surface.route ? 1 : 0, `${file}: product-only ambassador campaigns`);
+  if (!surface.route) {
+    assert(!/ambassador-mint|class="ambassador-campaign|assets\/brand\/ambassadors\//.test(html), 'Portfolio must not display the ambassador');
+    const software = html.match(/<section\b[^>]*\bid="software"[\s\S]*?<section\b[^>]*\bid="engineering"/)?.[0] || html.slice(html.indexOf('id="software"'));
+    assert(software.includes('<h3>Friction Atlas: Habits &amp; Focus</h3>'), 'Friction Atlas belongs in the software list');
+  }
   const route = (surface.route ? surface.route + '/' : '') + 'index.html';
   const once = applyAmbassadorCampaign(html, route);
   assert.equal(applyAmbassadorCampaign(once, route), once, `${file}: build must not duplicate campaigns`);
