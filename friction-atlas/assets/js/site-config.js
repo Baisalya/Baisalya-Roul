@@ -6,6 +6,10 @@ window.FA_CONFIG = {
   windowsUrl: "",
   androidLabel: "Google Play · Coming soon",
   windowsLabel: "Microsoft Store · Coming soon",
+  developerName: "Baishalya Roul",
+  coffeeUrl: "https://www.buymeacoffee.com/baisalya",
+  supportEmail: "baishalya1999@gmail.com",
+  appVersion: "1.15.0+21",
   developerUrl: "https://baisalya.com/",
   releaseLabel: "Not released yet"
 };

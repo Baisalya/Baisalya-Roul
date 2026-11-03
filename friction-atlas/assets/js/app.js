@@ -6,6 +6,34 @@ if(menu&&links){menu.addEventListener('click',()=>{const open=links.classList.to
 document.querySelectorAll('[data-download]').forEach(el=>{const k=el.dataset.download;const url=k==='android'?cfg.androidUrl:cfg.windowsUrl;const label=k==='android'?cfg.androidLabel:cfg.windowsLabel;if(url){el.classList.remove('btn-disabled');el.removeAttribute('aria-disabled');el.href=url;el.target='_blank';el.rel='noopener';}else{el.href='#';el.classList.add('btn-disabled');el.setAttribute('aria-disabled','true');if(label)el.querySelector('[data-label]')?.replaceChildren(label);el.addEventListener('click',e=>e.preventDefault());}});
 const botImg=document.querySelector('[data-bot-demo]');
 if(botImg){let bot='atlas_mini',mood='idle';const render=()=>{botImg.src=`assets/img/bots/${bot}/${mood}.png`;botImg.alt=`${bot.replaceAll('_',' ')} — ${mood} mood`;};document.querySelectorAll('[data-bot]').forEach(b=>b.addEventListener('click',()=>{bot=b.dataset.bot;document.querySelectorAll('[data-bot]').forEach(x=>x.classList.toggle('active',x===b));render();}));document.querySelectorAll('[data-mood]').forEach(b=>b.addEventListener('click',()=>{mood=b.dataset.mood;document.querySelectorAll('[data-mood]').forEach(x=>x.classList.toggle('active',x===b));render();}));render();}
-const search=document.querySelector('[data-manual-search]');if(search){search.addEventListener('input',()=>{const q=search.value.trim().toLowerCase();document.querySelectorAll('.prose section').forEach(s=>{const hit=!q||s.textContent.toLowerCase().includes(q);s.classList.toggle('hide',!hit);});});}
+const search=document.querySelector('[data-manual-search]');
+if(search){search.addEventListener('input',()=>{
+  const q=search.value.trim().toLowerCase();let matches=0;
+  document.querySelectorAll('.prose section').forEach(section=>{
+    const hit=!q||section.textContent.toLowerCase().includes(q);
+    section.classList.toggle('hide',!hit);if(hit)matches++;
+    const link=document.querySelector(`.toc a[href="#${section.id}"]`);
+    if(link)link.hidden=!hit;
+  });
+  const status=document.querySelector('[data-manual-status]');
+  if(status)status.textContent=q?(matches?`${matches} matching section${matches===1?'':'s'}`:'No match. Try focus, walk, backup or rating.'):'Find the feature you need.';
+});}
+const focusBot=document.querySelector('[data-focus-bot]');
+if(focusBot){
+  const states={
+    focus:{mood:'focus',title:'One thing at a time.',copy:'Your focus time is running. Keep your next small step in view.',status:'25:00 · Focus',alt:'Atlas Mini concentrating'},
+    guard:{mood:'concerned',title:'Let’s stay focused.',copy:'This app can wait a little. Return to your task, allow one minute or end focus.',status:'Your focus companion',alt:'Atlas Mini gently reminding you to return to your task'},
+    pause:{mood:'sleep',title:'Take the pause you need.',copy:'The timer is paused and selected apps are available. Resume when you’re ready.',status:'Paused · Apps available',alt:'Atlas Mini resting while focus is paused'},
+    walk:{mood:'happy',title:'A few steps for yourself.',copy:'Move toward your walking goal. Sensor steps belong to this session; manual entry is available too.',status:'Walk · Your step goal',alt:'Atlas Mini happily encouraging a walk'},
+  };
+  document.querySelectorAll('[data-focus-state]').forEach(button=>button.addEventListener('click',()=>{
+    const state=states[button.dataset.focusState];if(!state)return;
+    focusBot.src=`assets/img/bots/atlas_mini/${state.mood}.png`;focusBot.alt=state.alt;
+    document.querySelector('[data-focus-title]').textContent=state.title;
+    document.querySelector('[data-focus-copy]').textContent=state.copy;
+    document.querySelector('[data-focus-status]').textContent=state.status;
+    document.querySelectorAll('[data-focus-state]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
+  }));
+}
 const year=document.querySelector('[data-year]');if(year)year.textContent=new Date().getFullYear();
 })();
