@@ -4,8 +4,47 @@ const cfg=window.FA_CONFIG||{};
 const menu=document.querySelector('.menu-btn'),links=document.querySelector('.nav-links');
 if(menu&&links){menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});}
 document.querySelectorAll('[data-download]').forEach(el=>{const k=el.dataset.download;const url=k==='android'?cfg.androidUrl:cfg.windowsUrl;const label=k==='android'?cfg.androidLabel:cfg.windowsLabel;if(url){el.classList.remove('btn-disabled');el.removeAttribute('aria-disabled');el.href=url;el.target='_blank';el.rel='noopener';}else{el.href='#';el.classList.add('btn-disabled');el.setAttribute('aria-disabled','true');if(label)el.querySelector('[data-label]')?.replaceChildren(label);el.addEventListener('click',e=>e.preventDefault());}});
-const botImg=document.querySelector('[data-bot-demo]');
-if(botImg){let bot='atlas_mini',mood='idle';const render=()=>{botImg.src=`assets/img/bots/${bot}/${mood}.png`;botImg.alt=`${bot.replaceAll('_',' ')} — ${mood} mood`;};document.querySelectorAll('[data-bot]').forEach(b=>b.addEventListener('click',()=>{bot=b.dataset.bot;document.querySelectorAll('[data-bot]').forEach(x=>x.classList.toggle('active',x===b));render();}));document.querySelectorAll('[data-mood]').forEach(b=>b.addEventListener('click',()=>{mood=b.dataset.mood;document.querySelectorAll('[data-mood]').forEach(x=>x.classList.toggle('active',x===b));render();}));render();}
+const botLab = document.querySelector('[data-bot-lab]');
+if (botLab) {
+  const stage = botLab.querySelector('.companion-stage');
+  const image = botLab.querySelector('[data-bot-demo]');
+  const name = botLab.querySelector('[data-bot-name]');
+  const caption = botLab.querySelector('[data-bot-caption]');
+  const bots = [...botLab.querySelectorAll('[data-bot]')];
+  const looks = [...botLab.querySelectorAll('[data-look-option]')];
+  const moods = [...botLab.querySelectorAll('[data-mood]')];
+  const requestedBot = new URLSearchParams(window.location.search).get('bot');
+  let bot = bots.find(button => button.dataset.bot === requestedBot) || bots[0];
+  let look = looks[0];
+  let mood = moods[0];
+
+  const select = (buttons, active) => {
+    buttons.forEach(button => button.setAttribute('aria-pressed', String(button === active)));
+  };
+  const render = () => {
+    const id = bot.dataset.bot;
+    const expression = mood.dataset.mood;
+    const view = look.dataset.lookOption;
+    const is3d = view === '3d';
+    const character = bot.textContent.trim();
+    stage.dataset.character = id;
+    stage.dataset.look = view;
+    image.src = is3d
+      ? `assets/img/bots/3d/${id}/${expression}.webp`
+      : `assets/img/bots/${id}/${expression}.png`;
+    image.alt = `${character} in its ${expression} pose`;
+    name.textContent = character;
+    caption.textContent = `${look.textContent.trim()} · ${mood.textContent.trim()}`;
+    select(bots, bot);
+    select(looks, look);
+    select(moods, mood);
+  };
+
+  bots.forEach(button => button.addEventListener('click', () => { bot = button; render(); }));
+  looks.forEach(button => button.addEventListener('click', () => { look = button; render(); }));
+  moods.forEach(button => button.addEventListener('click', () => { mood = button; render(); }));
+  render();
+}
 const search=document.querySelector('[data-manual-search]');
 if(search){search.addEventListener('input',()=>{
   const q=search.value.trim().toLowerCase();let matches=0;
