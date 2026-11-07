@@ -6,16 +6,16 @@ if(menu&&links){menu.addEventListener('click',()=>{const open=links.classList.to
 document.querySelectorAll('[data-download]').forEach(el=>{const k=el.dataset.download;const url=k==='android'?cfg.androidUrl:cfg.windowsUrl;const label=k==='android'?cfg.androidLabel:cfg.windowsLabel;if(url){el.classList.remove('btn-disabled');el.removeAttribute('aria-disabled');el.href=url;el.target='_blank';el.rel='noopener';}else{el.href='#';el.classList.add('btn-disabled');el.setAttribute('aria-disabled','true');if(label)el.querySelector('[data-label]')?.replaceChildren(label);el.addEventListener('click',e=>e.preventDefault());}});
 const botLab = document.querySelector('[data-bot-lab]');
 if (botLab) {
-  const stage = botLab.querySelector('.companion-stage');
-  const image = botLab.querySelector('[data-bot-demo]');
+  const comparison = botLab.querySelector('.companion-comparison');
+  const original = botLab.querySelector('[data-bot-original]');
+  const image3d = botLab.querySelector('[data-bot-demo]');
   const name = botLab.querySelector('[data-bot-name]');
-  const caption = botLab.querySelector('[data-bot-caption]');
+  const moodLabel = botLab.querySelector('[data-bot-mood]');
+  const captions = botLab.querySelectorAll('[data-bot-caption]');
   const bots = [...botLab.querySelectorAll('[data-bot]')];
-  const looks = [...botLab.querySelectorAll('[data-look-option]')];
   const moods = [...botLab.querySelectorAll('[data-mood]')];
   const requestedBot = new URLSearchParams(window.location.search).get('bot');
   let bot = bots.find(button => button.dataset.bot === requestedBot) || bots[0];
-  let look = looks[0];
   let mood = moods[0];
 
   const select = (buttons, active) => {
@@ -24,24 +24,23 @@ if (botLab) {
   const render = () => {
     const id = bot.dataset.bot;
     const expression = mood.dataset.mood;
-    const view = look.dataset.lookOption;
-    const is3d = view === '3d';
     const character = bot.textContent.trim();
-    stage.dataset.character = id;
-    stage.dataset.look = view;
-    image.src = is3d
-      ? `assets/img/bots/3d/${id}/${expression}.webp`
-      : `assets/img/bots/${id}/${expression}.png`;
-    image.alt = `${character} in its ${expression} pose`;
+    const moodName = mood.textContent.trim();
+    const modelPath = `assets/img/bots/3d/${id}/${expression}`;
+    comparison.dataset.character = id;
+    original.src = `assets/img/bots/original/${id}/${expression}.webp`;
+    original.alt = `${character}, original look, ${expression} pose`;
+    image3d.srcset = `${modelPath}-640.webp 640w, ${modelPath}-1280.webp 1280w`;
+    image3d.src = `${modelPath}-1280.webp`;
+    image3d.alt = `${character}, 3D look, ${expression} pose`;
     name.textContent = character;
-    caption.textContent = `${look.textContent.trim()} · ${mood.textContent.trim()}`;
+    moodLabel.textContent = moodName;
+    captions.forEach(caption => { caption.textContent = moodName; });
     select(bots, bot);
-    select(looks, look);
     select(moods, mood);
   };
 
   bots.forEach(button => button.addEventListener('click', () => { bot = button; render(); }));
-  looks.forEach(button => button.addEventListener('click', () => { look = button; render(); }));
   moods.forEach(button => button.addEventListener('click', () => { mood = button; render(); }));
   render();
 }

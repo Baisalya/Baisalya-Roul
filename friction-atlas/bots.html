@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Friction Bots — Friction Atlas</title><meta name="description" content="Meet Atlas Mini, Mochi Bot, Pixel Panda, Neon Scout and Orbit Pup—the optional companion layer for Friction Atlas on Android and Windows."><meta name="theme-color" content="#08100e"><meta name="color-scheme" content="dark"><link rel="icon" href="assets/icons/favicon.ico"><link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png"><link rel="manifest" href="site.webmanifest"><link rel="stylesheet" href="assets/css/styles.css"><link rel="stylesheet" href="assets/css/companions.css">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Friction Bots — Friction Atlas</title><meta name="description" content="Meet Atlas Mini, Mochi Bot, Pixel Panda, Neon Scout and Orbit Pup—the optional companion layer for Friction Atlas on Android and Windows."><meta name="theme-color" content="#08100e"><meta name="color-scheme" content="dark"><link rel="icon" href="assets/icons/favicon.ico"><link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png"><link rel="manifest" href="site.webmanifest"><link rel="stylesheet" href="assets/css/styles.css"><link rel="stylesheet" href="assets/css/companions.css?v=20261107-pairs-hd">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Friction Atlas">
@@ -26,15 +26,23 @@
 <section class="section companion-lab" id="bot-lab" aria-labelledby="bot-lab-title">
   <div class="container">
     <div class="companion-lab-panel" data-bot-lab>
-      <figure class="companion-stage" data-character="atlas_mini" data-look="3d">
-        <div class="companion-stage-ring" aria-hidden="true"></div>
-        <img data-bot-demo src="assets/img/bots/3d/atlas_mini/idle.webp" alt="Atlas Mini in its idle pose" width="480" height="480">
-        <figcaption aria-live="polite"><strong data-bot-name>Atlas Mini</strong><span data-bot-caption>3D · Idle</span></figcaption>
-      </figure>
+      <div class="companion-comparison" data-character="atlas_mini">
+        <figure class="companion-stage">
+          <div class="companion-stage-ring" aria-hidden="true"></div>
+          <img data-bot-original src="assets/img/bots/original/atlas_mini/idle.webp" alt="Atlas Mini, original look, idle pose" width="512" height="512">
+          <figcaption><strong>Original</strong><span data-bot-caption>Idle</span></figcaption>
+        </figure>
+        <figure class="companion-stage">
+          <div class="companion-stage-ring" aria-hidden="true"></div>
+          <img data-bot-demo src="assets/img/bots/3d/atlas_mini/idle-1280.webp" srcset="assets/img/bots/3d/atlas_mini/idle-640.webp 640w, assets/img/bots/3d/atlas_mini/idle-1280.webp 1280w" sizes="(max-width: 540px) 43vw, (max-width: 900px) 40vw, 300px" alt="Atlas Mini, 3D look, idle pose" width="1280" height="1280">
+          <figcaption><strong>3D</strong><span data-bot-caption>Idle</span></figcaption>
+        </figure>
+        <p class="comparison-caption" aria-live="polite"><strong data-bot-name>Atlas Mini</strong><span data-bot-mood>Idle</span></p>
+      </div>
       <div class="companion-lab-controls">
         <div class="eyebrow">Interactive preview</div>
-        <h2 id="bot-lab-title">Say hello to the crew.</h2>
-        <p>Choose a bot, switch between its original and 3D looks, and try all eight moods from the app.</p>
+        <h2 id="bot-lab-title">One companion.<br>Two looks.</h2>
+        <p>Choose your companion and try a mood. Its original and 3D looks react together, right beside each other.</p>
         <div class="companion-controls" role="group" aria-labelledby="bot-picker-label">
           <span id="bot-picker-label">01 / Companion</span>
           <button type="button" data-bot="atlas_mini" aria-pressed="true">Atlas Mini</button>
@@ -43,13 +51,8 @@
           <button type="button" data-bot="neon_scout" aria-pressed="false">Neon Scout</button>
           <button type="button" data-bot="orbit_pup" aria-pressed="false">Orbit Pup</button>
         </div>
-        <div class="companion-controls" role="group" aria-labelledby="look-picker-label">
-          <span id="look-picker-label">02 / Look</span>
-          <button type="button" data-look-option="3d" aria-pressed="true">3D</button>
-          <button type="button" data-look-option="original" aria-pressed="false">Original</button>
-        </div>
         <div class="companion-controls" role="group" aria-labelledby="mood-picker-label">
-          <span id="mood-picker-label">03 / Mood</span>
+          <span id="mood-picker-label">02 / Mood</span>
           <button type="button" data-mood="idle" aria-pressed="true">Idle</button>
           <button type="button" data-mood="happy" aria-pressed="false">Happy</button>
           <button type="button" data-mood="proud" aria-pressed="false">Proud</button>
@@ -62,6 +65,92 @@
         <p class="micro">Atlas Mini is free. Each collectible is an optional one-time purchase, with pricing shown by the app store.</p>
       </div>
     </div>
+  </div>
+</section>
+<section class="section companion-collection" id="companions" aria-labelledby="companions-title">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">The Friction Bots</div><h2 id="companions-title">Find your kind of cute.</h2></div>
+      <p>Meet every companion in its original and 3D looks. Atlas Mini is free, and the other characters are optional one-time purchases.</p>
+    </div>
+    <div class="companion-lineup">
+      <a class="companion-card" data-character="atlas_mini" href="bots.html?bot=atlas_mini#bot-lab">
+        <div class="companion-card-pair">
+          <figure class="companion-card-art">
+            <img src="assets/img/bots/original/atlas_mini/happy.webp" alt="Atlas Mini, original look" width="512" height="512" loading="lazy">
+            <figcaption>Original</figcaption>
+          </figure>
+          <figure class="companion-card-art">
+            <img src="assets/img/bots/3d/atlas_mini/happy-1280.webp" srcset="assets/img/bots/3d/atlas_mini/happy-640.webp 640w, assets/img/bots/3d/atlas_mini/happy-1280.webp 1280w" sizes="(max-width: 540px) 45vw, (max-width: 900px) 22vw, 180px" alt="Atlas Mini, 3D look" width="1280" height="1280" loading="lazy">
+            <figcaption>3D</figcaption>
+          </figure>
+        </div>
+        <h3>Atlas Mini</h3>
+        <p>Your calm starter companion.</p>
+        <span class="companion-card-tag">Free · Default <span aria-hidden="true">↗</span></span>
+      </a>
+      <a class="companion-card" data-character="mochi_bot" href="bots.html?bot=mochi_bot#bot-lab">
+        <div class="companion-card-pair">
+          <figure class="companion-card-art">
+            <img src="assets/img/bots/original/mochi_bot/happy.webp" alt="Mochi Bot, original look" width="512" height="512" loading="lazy">
+            <figcaption>Original</figcaption>
+          </figure>
+          <figure class="companion-card-art">
+            <img src="assets/img/bots/3d/mochi_bot/happy-1280.webp" srcset="assets/img/bots/3d/mochi_bot/happy-640.webp 640w, assets/img/bots/3d/mochi_bot/happy-1280.webp 1280w" sizes="(max-width: 540px) 45vw, (max-width: 900px) 22vw, 180px" alt="Mochi Bot, 3D look" width="1280" height="1280" loading="lazy">
+            <figcaption>3D</figcaption>
+          </figure>
+        </div>
+        <h3>Mochi Bot</h3>
+        <p>Soft, round and extra expressive.</p>
+        <span class="companion-card-tag">Collectible <span aria-hidden="true">↗</span></span>
+      </a>
+      <a class="companion-card" data-character="pixel_panda" href="bots.html?bot=pixel_panda#bot-lab">
+        <div class="companion-card-pair">
+          <figure class="companion-card-art">
+            <img src="assets/img/bots/original/pixel_panda/happy.webp" alt="Pixel Panda, original look" width="512" height="512" loading="lazy">
+            <figcaption>Original</figcaption>
+          </figure>
+          <figure class="companion-card-art">
+            <img src="assets/img/bots/3d/pixel_panda/happy-1280.webp" srcset="assets/img/bots/3d/pixel_panda/happy-640.webp 640w, assets/img/bots/3d/pixel_panda/happy-1280.webp 1280w" sizes="(max-width: 540px) 45vw, (max-width: 900px) 22vw, 180px" alt="Pixel Panda, 3D look" width="1280" height="1280" loading="lazy">
+            <figcaption>3D</figcaption>
+          </figure>
+        </div>
+        <h3>Pixel Panda</h3>
+        <p>Playful panda energy for focus days.</p>
+        <span class="companion-card-tag">Collectible <span aria-hidden="true">↗</span></span>
+      </a>
+      <a class="companion-card" data-character="neon_scout" href="bots.html?bot=neon_scout#bot-lab">
+        <div class="companion-card-pair">
+          <figure class="companion-card-art">
+            <img src="assets/img/bots/original/neon_scout/happy.webp" alt="Neon Scout, original look" width="512" height="512" loading="lazy">
+            <figcaption>Original</figcaption>
+          </figure>
+          <figure class="companion-card-art">
+            <img src="assets/img/bots/3d/neon_scout/happy-1280.webp" srcset="assets/img/bots/3d/neon_scout/happy-640.webp 640w, assets/img/bots/3d/neon_scout/happy-1280.webp 1280w" sizes="(max-width: 540px) 45vw, (max-width: 900px) 22vw, 180px" alt="Neon Scout, 3D look" width="1280" height="1280" loading="lazy">
+            <figcaption>3D</figcaption>
+          </figure>
+        </div>
+        <h3>Neon Scout</h3>
+        <p>Cyber companion with electric reactions.</p>
+        <span class="companion-card-tag">Collectible <span aria-hidden="true">↗</span></span>
+      </a>
+      <a class="companion-card" data-character="orbit_pup" href="bots.html?bot=orbit_pup#bot-lab">
+        <div class="companion-card-pair">
+          <figure class="companion-card-art">
+            <img src="assets/img/bots/original/orbit_pup/happy.webp" alt="Orbit Pup, original look" width="512" height="512" loading="lazy">
+            <figcaption>Original</figcaption>
+          </figure>
+          <figure class="companion-card-art">
+            <img src="assets/img/bots/3d/orbit_pup/happy-1280.webp" srcset="assets/img/bots/3d/orbit_pup/happy-640.webp 640w, assets/img/bots/3d/orbit_pup/happy-1280.webp 1280w" sizes="(max-width: 540px) 45vw, (max-width: 900px) 22vw, 180px" alt="Orbit Pup, 3D look" width="1280" height="1280" loading="lazy">
+            <figcaption>3D</figcaption>
+          </figure>
+        </div>
+        <h3>Orbit Pup</h3>
+        <p>A space pup with a warm personality.</p>
+        <span class="companion-card-tag">Collectible <span aria-hidden="true">↗</span></span>
+      </a>
+    </div>
+    <div class="actions"><a class="btn btn-secondary" href="bots.html#bot-lab">Try their eight moods <span aria-hidden="true">→</span></a><a class="btn btn-secondary" href="bots.html#aster-01">See Aster 01 <span aria-hidden="true">↗</span></a></div>
   </div>
 </section>
 <section class="section aster-section" id="aster-01" aria-labelledby="aster-title">
@@ -78,4 +167,4 @@
     </video>
   </div>
 </section>
-<section class="section"><div class="container grid-2"><div class="card"><div class="iconbox">A</div><h3>Android floating overlay</h3><p>Optional draggable bot over other apps, edge snap, saved position, compact live context and explicit overlay permission.</p></div><div class="card"><div class="iconbox">W</div><h3>Windows mini companion</h3><p>Always-on-top mini window with habit progress, active experiment context and the selected bot skin. Windows does not fabricate Android usage telemetry.</p></div></div></section><section class="section alt"><div class="container"><div class="cta"><div><h2>Your companion, your choice.</h2><p>Use Atlas Mini forever for free or collect additional bot personalities as one-time purchases. Future Pro Lifetime includes all catalog bots; monthly and yearly Pro do not.</p></div><div class="actions"><a class="btn btn-primary" href="download.html">Get the app</a><a class="btn btn-secondary" href="manual.html#bots">Bot manual</a></div></div></div></section></main><footer class="footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><img src="assets/img/brand/app-icon-256.png" alt=""><span>Friction <b>Atlas</b></span></a><p>Understand your habits. Find your focus.</p><p class="tiny">Offline-first behavior intelligence for Android & Windows.</p></div><div><h4>Product</h4><a href="index.html#features">Features</a><a href="bots.html">Friction Bots</a><a href="index.html#plans">Pro plans</a><a href="download.html">Release status</a><a href="manual.html">User manual</a></div><div><h4>Trust</h4><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms & conditions</a><a href="support.html">Support</a></div><div><h4>Developer</h4><p class="developer-name">Baishalya Roul</p><a href="https://baisalya.com/" target="_blank" rel="noopener noreferrer">baisalya.com ↗</a><a href="https://www.buymeacoffee.com/baisalya" target="_blank" rel="noopener noreferrer">Buy me a coffee ↗</a><p class="tiny">© <span data-year></span> Friction Atlas.</p></div></div></footer><script src="assets/js/site-config.js"></script><script src="assets/js/app.js"></script></body></html>
+<section class="section"><div class="container grid-2"><div class="card"><div class="iconbox">A</div><h3>Android floating overlay</h3><p>Optional draggable bot over other apps, edge snap, saved position, compact live context and explicit overlay permission.</p></div><div class="card"><div class="iconbox">W</div><h3>Windows mini companion</h3><p>Always-on-top mini window with habit progress, active experiment context and the selected bot skin. Windows does not fabricate Android usage telemetry.</p></div></div></section><section class="section alt"><div class="container"><div class="cta"><div><h2>Your companion, your choice.</h2><p>Use Atlas Mini forever for free or collect additional bot personalities as one-time purchases. Future Pro Lifetime includes all catalog bots; monthly and yearly Pro do not.</p></div><div class="actions"><a class="btn btn-primary" href="download.html">Get the app</a><a class="btn btn-secondary" href="manual.html#bots">Bot manual</a></div></div></div></section></main><footer class="footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><img src="assets/img/brand/app-icon-256.png" alt=""><span>Friction <b>Atlas</b></span></a><p>Understand your habits. Find your focus.</p><p class="tiny">Offline-first behavior intelligence for Android & Windows.</p></div><div><h4>Product</h4><a href="index.html#features">Features</a><a href="bots.html">Friction Bots</a><a href="index.html#plans">Pro plans</a><a href="download.html">Release status</a><a href="manual.html">User manual</a></div><div><h4>Trust</h4><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms & conditions</a><a href="support.html">Support</a></div><div><h4>Developer</h4><p class="developer-name">Baishalya Roul</p><a href="https://baisalya.com/" target="_blank" rel="noopener noreferrer">baisalya.com ↗</a><a href="https://www.buymeacoffee.com/baisalya" target="_blank" rel="noopener noreferrer">Buy me a coffee ↗</a><p class="tiny">© <span data-year></span> Friction Atlas.</p></div></div></footer><script src="assets/js/site-config.js"></script><script src="assets/js/app.js?v=20261107-pairs-hd"></script></body></html>
