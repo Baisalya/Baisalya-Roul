@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f7f7f3">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<title>ModelBridge and NVIDIA OpenShell — Independent Engineering Note | Baisalya</title>
+<meta name="description" content="How Baishalya Roul built ModelBridge: a multi-provider routing and control layer for local AI-agent workflows, with NVIDIA OpenShell as a separate sandbox runtime.">
+<meta name="author" content="Baishalya Roul">
+<link rel="canonical" href="https://baisalya.com/journal/modelbridge-openshell.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Baisalya Engineering Journal">
+<meta property="og:title" content="ModelBridge and NVIDIA OpenShell — Independent Engineering Note">
+<meta property="og:description" content="A technical note on provider routing, control surfaces, sandbox execution, and the limits of an independent local AI-agent workflow.">
+<meta property="og:url" content="https://baisalya.com/journal/modelbridge-openshell.html">
+<meta property="og:image" content="https://baisalya.com/assets/social/baisalya-original-chair-v4.png">
+<meta property="og:image:secure_url" content="https://baisalya.com/assets/social/baisalya-original-chair-v4.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Baishalya Roul, independent software builder">
+<meta property="article:author" content="https://baisalya.com/">
+<meta property="article:published_time" content="2026-11-17">
+<meta property="article:modified_time" content="2026-11-18">
+<meta property="article:section" content="Engineering">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ModelBridge and NVIDIA OpenShell — Independent Engineering Note">
+<meta name="twitter:description" content="A technical note on provider routing, control surfaces, sandbox execution, and the limits of an independent local AI-agent workflow.">
+<meta name="twitter:image" content="https://baisalya.com/assets/social/baisalya-original-chair-v4.png">
+<meta name="twitter:image:alt" content="Baishalya Roul, independent software builder">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://baisalya.com/journal/modelbridge-openshell.html#article","headline":"ModelBridge and NVIDIA OpenShell — Independent Engineering Note","description":"How Baishalya Roul built ModelBridge: a multi-provider routing and control layer for local AI-agent workflows, with NVIDIA OpenShell as a separate sandbox runtime.","datePublished":"2026-11-17","dateModified":"2026-11-18","inLanguage":"en","image":"https://baisalya.com/assets/social/baisalya-original-chair-v4.png","author":{"@id":"https://baisalya.com/#person"},"publisher":{"@id":"https://baisalya.com/#person"},"isPartOf":{"@id":"https://baisalya.com/journal/#blog"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://baisalya.com/journal/modelbridge-openshell.html"},"keywords":["ModelBridge","AI-agent workflows","provider routing","sandbox execution","NVIDIA OpenShell"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://baisalya.com/"},{"@type":"ListItem","position":2,"name":"Engineering Journal","item":"https://baisalya.com/journal/"},{"@type":"ListItem","position":3,"name":"ModelBridge and NVIDIA OpenShell"}]}]}</script>
+</head>
+<body><div class="reading-progress" data-progress aria-hidden="true"></div><a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="shell header-inner">
+ <a class="brand" href="../index.html" aria-label="Baisalya home"><span class="brand-symbol">BR</span><span><span class="brand-name">Baisalya<span style="color:var(--accent)">.</span></span><span class="brand-sub">Independent software builder</span></span></a>
+ <button class="menu-button" type="button" data-menu aria-expanded="false" aria-label="Open menu">☰</button>
+ <nav class="main-nav" aria-label="Main navigation"><a href="../index.html">Home</a><a href="../index.html#software">Software</a><a class="active" aria-current="page" href="./">Journal</a><a href="../index.html#engineering">Engineering</a><a class="nav-contact" href="mailto:baishalya1999@gmail.com">Get in touch ↗</a></nav>
+</div></header><main id="main"><div class="shell article-header"><a class="back-link" href="./">← All engineering notes</a><div class="article-head-grid"><div class="article-heading"><div class="eyebrow">Engineering note / 001</div><h1>Why I built a <em>model bridge</em> around an OpenShell workflow</h1><p class="article-dek">The model API was only one part of the problem. I needed a way to connect providers, agents, sandbox execution and the control surface without making every task depend on one fixed setup.</p></div><aside class="article-meta"><div><p class="meta-key">Written by</p><p class="meta-value">Baishalya Roul</p></div><div><p class="meta-key">Dated</p><p class="meta-value">17 November 2026</p></div><div><p class="meta-key">Context</p><p class="meta-value">Independent integration work</p></div><div><p class="meta-key">Read time</p><p class="meta-value">6–8 minutes</p></div></aside></div></div>
+<div class="shell"><div class="article-hero-visual"><div class="hero-quote">The difficult part wasn't <em>calling a model.</em> It was managing everything around that call.</div><div class="hero-mini">USER-BUILT: ModelBridge + control tooling<br>THIRD PARTY: NVIDIA OpenShell runtime<br>ENVIRONMENT: Windows / WSL Ubuntu / local sandboxes<br>SCOPE: development workflow, not an official integration</div></div>
+<div class="article-layout"><nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><a href="#starting-point">The starting point</a><a href="#modelbridge">What ModelBridge does</a><a href="#runtime">Where OpenShell fits</a><a href="#control-surface">CLI and control surface</a><a href="#testing">What I tested</a><a href="#limits">Limits and trade-offs</a><a href="#attribution">Credit and licensing</a></nav>
+<article class="article-body"><p class="lede">I was experimenting with AI-assisted coding across several isolated workspaces. The setup could run tasks, but I kept running into the same issue: the part that chose a model, the part that executed code, and the part that showed me what had happened were all too tightly connected.</p>
+<p>When a provider changed, I wanted the rest of the workflow to stay understandable. When a sandbox failed, I wanted to know whether the problem was the model request, the route, the runtime or the task itself. That was the reason for <strong>ModelBridge</strong> — a separate routing and management layer I could work on independently.</p>
+<h2 id="starting-point">The starting point</h2><p>The original setup used a multi-sandbox workflow: an agent workspace, a code-execution workspace and a provider-facing path, coordinated around tasks written in a structured format. It worked well enough to be useful, but it also exposed the friction that appears when a local experiment grows beyond a few commands.</p>
+<p>My first goal wasn't to build another large AI framework. It was smaller: <strong>keep model access replaceable, give the surrounding workflow a stable interface, and make the current state visible without reading through scattered terminal output.</strong></p>
+<div class="pullquote">A useful integration should make the failure easier to locate, not just make the happy path shorter.</div>
+<h2 id="modelbridge">What ModelBridge does</h2><p>ModelBridge started as a lightweight, multi-provider model router. Its job was to give the task runner one place to send requests, while the configured provider could change underneath. An OpenAI-compatible <code>/v1/chat/completions</code> API shape helped keep the calling side predictable.</p>
+<p>Over time, I worked on routing rules, provider selection, health checks and an API/control layer. The intention was to avoid having to rewrite the agent workflow every time I tried a different model endpoint.</p>
+<div class="code-flow" aria-label="Conceptual model and execution flow">Task / agent request
+       │
+       ▼
+ModelBridge — routing &amp; request interface
+       ├──► Configured LLM provider / model endpoint
+       │
+       └──► Task &amp; runtime coordination
+                       │
+                       ▼
+                OpenShell-managed sandbox
+                       │
+                       ▼
+                Execution / result / logs</div>
+<p class="caption">Architecture sketch of the experiment. Provider inference and sandbox execution are different responsibilities; arrows simplify the task orchestration.</p>
+<p>This isn't a claim that I created an NVIDIA model, trained a foundation model or built the OpenShell runtime. <strong>ModelBridge is the independent integration layer.</strong> The underlying models belong to their providers, and OpenShell is a separate open-source project.</p>
+<h2 id="runtime">Where OpenShell fits</h2><p>For sandboxed execution, my local workflow used <a href="https://github.com/NVIDIA/OpenShell" target="_blank" rel="noopener noreferrer">NVIDIA OpenShell</a>. In the environment I documented, OpenShell ran through WSL Ubuntu on a Windows host. It provided the external runtime and sandbox operations that the higher-level tools interacted with.</p>
+<p>That distinction matters. A model router is concerned with requests, providers and responses. A sandbox runtime is concerned with where work runs and which operations are available there. Connecting the two was the integration work; neither component replaces the other.</p>
+<p>The experiments referenced an OpenShell <strong>0.0.36</strong> environment. OpenShell continues to change, so I would not describe a local integration that worked against that version as automatically compatible with later releases.</p>
+<div class="inline-callout"><p class="callout-title">Implementation boundary</p><p>My code operated around OpenShell CLI/runtime interfaces. Any real security guarantee depends on the specific runtime version, policies, host setup and deployment configuration. Using an isolated workspace does not remove every risk.</p></div>
+<h2 id="control-surface">Why I kept a CLI and a control surface</h2><p>The next problem was operational. I could run commands in a terminal, but checking a task across several sandboxes meant repeatedly switching context. I developed tooling around common operations such as runtime inspection, sandbox listing and execution, provider configuration and task status.</p>
+<p>I also worked on a browser-based control surface. The interface wasn't supposed to become a second, unrelated backend. The aim was for the CLI and the UI to expose the same underlying operations, with error messages and state that meant the same thing in both places.</p>
+<p>As the backend grew, I began breaking the control logic into smaller modules for gateway, sandbox, provider, policy and related operations. That was partly a maintenance decision: adding another command should not mean editing one enormous file and hoping the rest of the system still behaves.</p>
+<h2 id="testing">What I actually tested</h2><p>My development checkpoints included automated tests around command dispatch, routing, compatibility behavior and backend actions, alongside hands-on checks against the local OpenShell environment. I also used live runtime and sandbox checks rather than treating a green unit-test run as proof that all external services were available.</p>
+<p>There are test counts from individual development phases, but I have deliberately left them out of this public note. Without a linked commit, test log and dependency versions, those numbers would say less than they appear to.</p>
+<p>The useful outcome for me was practical: there was a clearer separation between <strong>model access</strong>, <strong>task orchestration</strong>, <strong>runtime execution</strong> and <strong>operator visibility</strong>.</p>
+<h2 id="limits">What it didn't solve</h2><p>Separating components made the workflow easier to reason about, but didn't turn a local development system into a production platform overnight. A public service would still need careful work around authentication, secrets, concurrency, timeouts, rate limits, failure recovery and compatibility across runtime versions.</p>
+<p>There is another maintenance cost, too. Every integration has to track upstream behavior. An implementation built against one version of an external CLI can break as commands, flags or APIs evolve. I would rather document that boundary clearly than advertise vague "supports everything" compatibility.</p>
+<p>That's why I treat this as an engineering record, not an unconditional release announcement. It documents what I built and why. It doesn't imply that a public installer, managed service or supported compatibility matrix is available from this page.</p>
+<h2 id="attribution">Credit, ownership and licensing</h2><p><strong>ModelBridge and the surrounding management work are independent projects by Baishalya Roul.</strong> NVIDIA OpenShell is a third-party project used in the experiments. I am not presenting this work as an NVIDIA product, collaboration, certification or endorsement.</p>
+<p><a href="https://docs.nvidia.com/openshell/resources/license" target="_blank" rel="noopener noreferrer">NVIDIA OpenShell is published under Apache License 2.0</a>. That license generally allows use, modification and redistribution of the covered code subject to conditions, including preserving required copyright and license information, marking modified files, and carrying applicable NOTICE attributions. It does not grant a general right to use the NVIDIA brand as my own.</p>
+<p>If I publish a binary or source distribution that incorporates third-party code, I need to review the actual files, dependencies, licenses and notices included in that distribution first. This article, by itself, isn't a software distribution or a claim that the entire project has been license-audited.</p>
+<div class="inline-callout"><p class="callout-title">Independent project disclosure</p><p>NVIDIA and OpenShell are referenced only to identify the third-party technology involved. NVIDIA does not sponsor, maintain or endorse ModelBridge or this website. Project source and installer links are intentionally not offered here until a separately reviewed public release is ready.</p></div>
+<p>For my own work, the bigger lesson was simple: making two tools talk to each other is only the beginning. The part worth maintaining is the contract between them, the visibility when something fails, and the discipline to say exactly which setup was tested.</p>
+<div class="article-bottom"><div class="article-author"><span class="author-avatar">BR</span><span><strong>Baishalya Roul</strong><span>Independent software builder · baisalya.com</span></span></div><a class="btn" href="./">More engineering notes <span class="arrow">↗</span></a></div></article>
+<aside class="sidebar-note"><div class="side-stamp"><strong>One naming distinction</strong>ModelBridge refers to the user-built routing/control layer.<br><br>OpenShell refers to third-party runtime technology from NVIDIA.<br><br>This is an independent technical account, not vendor documentation.</div></aside></div></div>
+<section class="related shell"><div class="eyebrow">Continue reading</div><h2>Another project, another set of trade-offs.</h2><div class="notes-grid"><article class="note-card"><span class="cat">Rust / architecture</span><h3>Starting clean with Xonext</h3><p>Why I wanted a smaller core and clearer runtime boundaries for the next engine.</p><div class="card-bottom"><a href="xonext-rust.html">Read the next note <span class="arrow">↗</span></a><span>WIP</span></div></article></div></section></main><footer class="site-footer"><div class="shell"><div class="footer-top"><div><h2>Built, tested, written down.</h2><p>Engineering notes by Baishalya Roul — independent software builder.</p></div><nav class="footer-links" aria-label="Footer links"><a href="../index.html">Main website</a><a href="https://github.com/Baisalya" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="mailto:baishalya1999@gmail.com">Email ↗</a></nav></div><div class="footer-base"><span>© 2026 Baishalya Roul</span><span>Independent work · No implied vendor affiliation</span></div></div></footer><script defer src="site.js"></script></body></html>

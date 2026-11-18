@@ -38,23 +38,23 @@ function createSectionObserver(links) {
 }
 
 export function initNavigation() {
+  if (window.__baisalyaNavigationInitialized) return;
   const nav = document.querySelector('.professional-nav');
   const menu = document.getElementById('nav-menu');
   const toggle = document.getElementById('nav-toggle');
   const links = [...document.querySelectorAll('.professional-nav .nav-link')];
+  if (!nav || !menu || !toggle) return;
+  window.__baisalyaNavigationInitialized = true;
 
   const setOpen = (open) => {
-    if (!menu || !toggle) return;
     menu.classList.toggle('active', open);
     toggle.classList.toggle('active', open);
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
   };
 
-  if (toggle) {
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.addEventListener('click', () => setOpen(!menu?.classList.contains('active')));
-  }
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.addEventListener('click', () => setOpen(!menu.classList.contains('active')));
 
   links.forEach((link) => link.addEventListener('click', () => setOpen(false)));
   document.addEventListener('keydown', (event) => {

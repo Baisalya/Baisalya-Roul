@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Baishalya Roul (Baisalya) builds Android and Windows apps. Explore DevDesk, PaperAid, EduSheet, SurveyCam, practical guides and public social profiles.">
+    <meta name="description" content="Baishalya Roul (Baisalya) builds Android and Windows apps. Explore DevDesk, PaperAid, EduSheet, SurveyCam, engineering notes, practical guides and public social profiles.">
     <meta name="author" content="Baishalya Roul">
     <meta name="google-adsense-account" content="ca-pub-1529558529658186">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -70,7 +70,7 @@
       "@id": "https://baisalya.com/#profile",
       "url": "https://baisalya.com/",
       "name": "Baishalya Roul (Baisalya) — Software Builder",
-      "dateModified": "2026-10-18",
+      "dateModified": "2026-11-18",
       "mainEntity": {
         "@id": "https://baisalya.com/#person"
       },
@@ -412,8 +412,12 @@
                 <li><a href="#about" class="nav-link" data-text="About">About</a></li>
                 <li><a href="#software" class="nav-link" data-text="Software">Software</a></li>
                 <li><a href="/guides/" class="nav-link" data-text="Guides">Guides</a></li>
+                <li><a href="/journal/" class="nav-link" data-text="Journal">Journal</a></li>
                 <li><a href="#engineering" class="nav-link" data-text="Engineering">Engineering</a></li>
                 <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+                <li class="professional-nav__identity-action">
+                    <button class="nav-link professional-nav__identity-link" type="button" data-open-identity aria-haspopup="dialog" aria-controls="identity-card">Open ID card <span aria-hidden="true">↗</span></button>
+                </li>
             </ul>
 
             <div class="nav-controls professional-nav__controls">
@@ -525,6 +529,7 @@
                     <div class="professional-hero__actions">
                         <a class="professional-button professional-button--primary" href="#software">Explore software <span aria-hidden="true">→</span></a>
                         <a class="professional-button professional-button--secondary" href="#contact">Start a conversation</a>
+                        <button class="professional-button professional-button--secondary" type="button" data-open-identity aria-haspopup="dialog" aria-controls="identity-card">Open ID card <span aria-hidden="true">↗</span></button>
                     </div>
                     <div class="professional-hero__proof" aria-label="Current engineering focus">
                         <span>Flutter</span>
@@ -1162,7 +1167,7 @@
                         <span class="section-kicker">Engineering</span>
                         <h2 id="engineering-title">Engineering choices shaped by the work, not a technology checklist.</h2>
                     </div>
-                    <p>I work across product structure, application behavior, local data, platform delivery, and release hardening. The emphasis changes by product, but the goal stays the same: software that is understandable, recoverable, and dependable in everyday use.</p>
+                    <p>I work across product structure, application behavior, local data, platform delivery, and release hardening. The emphasis changes by product, but the goal stays the same: software that is understandable, recoverable, and dependable in everyday use. <a href="/journal/">Read the Engineering Journal →</a></p>
                 </div>
 
                 <div class="capability-grid" aria-label="Engineering capabilities">
@@ -1397,11 +1402,71 @@
             <div class="professional-footer__links"><a href="privacy.html"><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-globe"></use></svg><span>Website privacy</span></a>
                 <a href="https://www.buymeacoffee.com/baisalya" target="_blank" rel="noopener noreferrer"><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-coffee"></use></svg><span>Support my work</span><span class="link-arrow" aria-hidden="true">↗</span></a>
                 <a href="/guides/">Guides &amp; manuals</a>
+                <a href="/journal/">Engineering Journal</a>
                 <a href="#home">Back to top ↑</a>
             </div>
         </div>
     </footer>
 
     <script type="module" src="main.js"></script>
+    <script>
+        // Keeps the identity card usable when this page is opened directly from
+        // disk and the browser declines to load the ES-module entrypoint.
+        window.addEventListener('DOMContentLoaded', () => {
+            if (!window.__baisalyaNavigationInitialized) {
+                const nav = document.querySelector('.professional-nav');
+                const menu = document.getElementById('nav-menu');
+                const toggle = document.getElementById('nav-toggle');
+                if (nav && menu && toggle) {
+                    const setMenuOpen = (open) => {
+                        menu.classList.toggle('active', open);
+                        toggle.classList.toggle('active', open);
+                        toggle.setAttribute('aria-expanded', String(open));
+                        toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+                    };
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.addEventListener('click', () => setMenuOpen(!menu.classList.contains('active')));
+                    menu.querySelectorAll('.nav-link').forEach((link) => {
+                        link.addEventListener('click', () => setMenuOpen(false));
+                    });
+                }
+            }
+
+            if (window.__baisalyaIdentityCardInitialized) return;
+
+            const dialog = document.getElementById('identity-card');
+            const triggers = [...document.querySelectorAll('[data-open-identity], #identity-trigger')];
+            if (!dialog || !triggers.length) return;
+
+            const sync = (expanded) => triggers.forEach((trigger) => {
+                trigger.setAttribute('aria-expanded', String(expanded));
+            });
+            const close = () => {
+                if (dialog.open && typeof dialog.close === 'function') dialog.close();
+                else dialog.removeAttribute('open');
+                dialog.hidden = true;
+                document.documentElement.classList.remove('identity-open');
+                sync(false);
+            };
+            const open = () => {
+                dialog.hidden = false;
+                try {
+                    if (!dialog.open && typeof dialog.showModal === 'function') dialog.showModal();
+                    else dialog.setAttribute('open', '');
+                } catch (_) {
+                    dialog.setAttribute('open', '');
+                }
+                dialog.scrollTop = 0;
+                document.documentElement.classList.add('identity-open');
+                sync(true);
+            };
+
+            triggers.forEach((trigger) => trigger.addEventListener('click', open));
+            dialog.addEventListener('click', (event) => {
+                if (event.target.closest('[data-identity-close]') || event.target === dialog) close();
+            });
+            dialog.addEventListener('cancel', close);
+        }, { once: true });
+    </script>
 </body>
 </html>

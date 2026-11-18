@@ -25,9 +25,11 @@ function openDialog(dialog, triggers) {
 }
 
 export function initIdentityCard() {
+  if (window.__baisalyaIdentityCardInitialized) return;
   const triggers = [...document.querySelectorAll('[data-open-identity], #identity-trigger')];
   const dialog = document.getElementById('identity-card');
   if (!triggers.length || !dialog) return;
+  window.__baisalyaIdentityCardInitialized = true;
 
   syncTriggers(triggers, false);
   dialog.hidden = true;
@@ -40,9 +42,14 @@ export function initIdentityCard() {
   }
 
   const openIdentityCard = () => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    dialog.scrollTop = 0;
     if (!dialog.open || dialog.hidden) openDialog(dialog, triggers);
+    dialog.scrollTop = 0;
+    try {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    } catch (_) {
+      // A scroll compatibility issue must never prevent the profile dialog opening.
+      try { window.scrollTo(0, 0); } catch (_) { /* no-op */ }
+    }
   };
 
   triggers.forEach((trigger) => {

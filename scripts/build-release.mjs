@@ -22,7 +22,7 @@ const rootRuntimeFiles = [
   'index.html', 'privacy.html', 'main.js', 'style.css', 'robots.txt', 'sitemap.xml', 'sitemap-pages.xml',
   'javascript.svg', 'favicon.ico', 'CNAME',
 ];
-const rootRuntimeDirectories = ['assets', 'src/site', 'guides'];
+const rootRuntimeDirectories = ['assets', 'src/site', 'guides', 'journal'];
 const rootOptionalRuntimeFiles = ['ads.txt', 'app-ads.txt'];
 const frictionAtlasRuntimeFiles = [
   '404.html', 'index.html', 'bots.html', 'manual.html', 'download.html',
@@ -238,7 +238,7 @@ async function writeReleaseManifest() {
 await validateSourcePlan();
 if (planOnly) {
   console.log('Release build plan: passed');
-  console.log(`Root files: ${rootRuntimeFiles.length}; products: DevDesk, Construction ERP, ShopPilot, EduSheet, SurveyCam, BrightQuest Kids, PaperAid, NotiVault, Friction Atlas.`);
+  console.log(`Root files: ${rootRuntimeFiles.length}; products: DevDesk, Construction ERP, ShopPilot, EduSheet, SurveyCam, BrightQuest Kids, PaperAid, NotiVault, Friction Atlas; publishing: Engineering Journal.`);
   process.exit(0);
 }
 await assertNotiVaultBuildReady();

@@ -88,6 +88,10 @@ assert.equal(dialog.open, true, 'About button and keyboard-generated click open'
 dialog.fire('click', { target: close });
 assert.equal(dialog.hidden, true, 'close control hides the dialog');
 assert.equal(env.doc.documentElement.classList.contains('identity-open'), false, 'closing releases page scroll');
+env.win.scrollTo = () => { throw new Error('scroll unsupported'); };
+aboutTrigger.fire('click');
+assert.equal(dialog.open, true, 'identity card opens even when page scrolling is unavailable');
+dialog.fire('click', { target: close });
 trigger.fire('click');
 dialog.fire('cancel');
 assert.equal(dialog.open, false, 'Escape closes and allows reopening');

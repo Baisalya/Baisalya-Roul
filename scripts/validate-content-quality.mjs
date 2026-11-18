@@ -87,6 +87,32 @@ for (const slug of ['prepare-document-upload', 'debug-api-request', 'field-photo
   }
   assert(!html.includes('data-ad-unit') && !html.includes('assets/monetization/config.js'));
 }
+const journalHome = await read('journal/index.html');
+const journalArticles = [
+  ['journal/modelbridge-openshell.html', 'ModelBridge and NVIDIA OpenShell'],
+  ['journal/xonext-rust.html', 'Starting Clean with Xonext Rust'],
+];
+const journalGraph = JSON.parse(journalHome.match(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/)[1])['@graph'];
+const journal = journalGraph.find(node => node['@type'] === 'Blog');
+assert.equal(journal['@id'], 'https://baisalya.com/journal/#blog');
+assert.equal(journal.author['@id'], person['@id']);
+assert.equal(journal.inLanguage, 'en');
+assert(journalHome.includes('name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"'));
+for (const [file, headline] of journalArticles) {
+  const html = await read(file);
+  const graph = JSON.parse(html.match(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/)[1])['@graph'];
+  const article = graph.find(node => node['@type'] === 'BlogPosting');
+  const suffix = file.includes('modelbridge') ? 'Independent Engineering Note' : 'Engineering Note';
+  assert.equal(article.headline, headline + ' — ' + suffix);
+  assert.equal(article.author['@id'], person['@id']);
+  assert.equal(article.publisher['@id'], person['@id']);
+  assert.equal(article.isPartOf['@id'], journal['@id']);
+  assert.equal(article.datePublished, '2026-11-17');
+  assert.equal(article.dateModified, '2026-11-18');
+  assert(html.includes('property="og:type" content="article"'));
+  assert(html.includes('name="twitter:card" content="summary_large_image"'));
+  assert(sitemap.includes('https://baisalya.com/' + file), file + ': discoverable through sitemap');
+}
 const sample = JSON.parse(await read('guides/examples/customer-request.json'));
 assert.equal(new Date(sample.createdAtSeconds * 1000).toISOString(), '2024-01-01T00:00:00.000Z');
 assert.equal(Buffer.from('DevDesk').toString('base64'), 'RGV2RGVzaw==');

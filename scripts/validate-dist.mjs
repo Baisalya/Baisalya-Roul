@@ -135,6 +135,7 @@ async function validateReleaseManifest(){
 
 for(const required of [
   'index.html','privacy.html','style.css','main.js','robots.txt','sitemap.xml','sitemap-pages.xml','assets/brand/baisalya-og.png',
+  'journal/index.html','journal/modelbridge-openshell.html','journal/xonext-rust.html','journal/styles.css','journal/site.js',
   'assets/monetization/config.js','assets/monetization/monetization.js','assets/monetization/monetization.css',
   'src/site/main.js','devdesk/index.html','construction-erp/index.html','shoppilot-erp/index.html',
   'EduSheet/index.html','EduSheet/teacher-planner.html','EduSheet/assets/css/styles.css','surveycam/index.html','surveycam/privacy.html',
@@ -152,7 +153,7 @@ await validateSitemaps();
 await validateReleaseManifest();
 
 const index=await readFile(path.join(root,'index.html'),'utf8');
-for(const expected of ['https://baisalya.com/','href="/EduSheet/"','href="/surveycam/"','href="/notivault-website/"','href="/sitesnap/"','href="/brightquest-kids/"','href="/paperaid/"']){
+for(const expected of ['https://baisalya.com/','href="/EduSheet/"','href="/surveycam/"','href="/notivault-website/"','href="/sitesnap/"','href="/brightquest-kids/"','href="/paperaid/"','href="/journal/"']){
   if(!index.includes(expected)) failures.push(`Production root identity missing: ${expected}`);
 }
 for(const expected of [
