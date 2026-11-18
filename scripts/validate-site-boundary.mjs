@@ -60,7 +60,7 @@ const index = await readFile(path.join(root, 'index.html'), 'utf8');
 if (!index.includes('<script type="module" src="main.js"></script>')) {
   failures.push('index.html must load the stable main.js entrypoint as an ES module.');
 }
-if (!index.includes('<link rel="stylesheet" href="style.css">')) {
+if (!/<link rel="stylesheet" href="style\.css(?:\?[^\"]*)?">/.test(index)) {
   failures.push('index.html must keep the stable style.css public entrypoint.');
 }
 if (index.includes('<!-- Buy Me a Coffee component styles -->')) {
@@ -73,7 +73,7 @@ if (!rootMain.includes("import './src/site/main.js';")) {
 }
 
 const rootStyle = await readFile(path.join(root, 'style.css'), 'utf8');
-if (!rootStyle.includes("@import url('./src/site/styles/site.css');")) {
+if (!/@import url\('\.\/src\/site\/styles\/site\.css(?:\?[^']*)?'\);/.test(rootStyle)) {
   failures.push('style.css must delegate to src/site/styles/site.css.');
 }
 
