@@ -1,85 +1,25 @@
-# Baisalya Ads + Cross-Site Navigation Upgrade
+# Baisalya Ads + Cross-Site Navigation Audit
 
-## Scope
-- Product HTML pages audited: **84**
-- Product pages with a direct navigation path to `https://baisalya.com/`: **84**
-- Pages configured for one responsive manual AdSense placement: **69**
+## Current ad policy — 18 November 2026
 
-## Professional ad policy
-Ads remain OFF until `assets/monetization/config.js` has a real AdSense client/slot and `consentReady: true`.
+The current release rule allows one responsive manual slot on nine reviewed, long-form user manuals. The release builder removes legacy ad slots and loaders from every page outside that explicit list.
 
-One responsive placement is allowed on useful content surfaces: product homepages, manuals/docs, downloads, quick-start/features and support pages. Ads are not inserted on 404, privacy/policy, terms, account/data deletion or data-safety pages. NotiVault remains ad-free to preserve its explicit privacy-first/no-ad positioning. The main Baisalya portfolio also remains ad-free.
+The portfolio homepage, product promotion pages, downloads, support and legal pages, brief references, NotiVault and BrightQuest Kids remain ad-free. The site config is disabled by default and sets autoAds to false. The production workflow writes the configured publisher and slot only when the GitHub Actions variable ADSENSE_CONSENT_READY equals true.
 
-## Cross-site navigation
-Every HTML page under DevDesk, SurveyCam, EduSheet, ShopPilot ERP, Construction ERP, NotiVault and SiteSnap now has a visible semantic navigation path labeled **Baisalya.com**. Nested DevDesk manual pages and minimal legal/404 pages are covered as well.
+That variable is a release gate, not a visitor-consent solution. The repository cannot show whether account-level Auto Ads or the AdSense Privacy & messaging/CMP setup is currently enabled; those settings need a separate account-side check.
 
-## Ad-enabled pages (69)
-- `devdesk/downloads.html`
-- `devdesk/index.html`
-- `devdesk/manual/agent-connector.html`
-- `devdesk/manual/ai-workbench.html`
-- `devdesk/manual/api-assertions-extraction.html`
-- `devdesk/manual/api-environments-secrets.html`
-- `devdesk/manual/api-workspaces.html`
-- `devdesk/manual/backup-restore.html`
-- `devdesk/manual/base64.html`
-- `devdesk/manual/developer-workspaces.html`
-- `devdesk/manual/diagram-studio.html`
-- `devdesk/manual/diff-git.html`
-- `devdesk/manual/downloads-installation.html`
-- `devdesk/manual/faq.html`
-- `devdesk/manual/frontmatter-properties.html`
-- `devdesk/manual/getting-started.html`
-- `devdesk/manual/graph-connection-editing.html`
-- `devdesk/manual/index.html`
-- `devdesk/manual/interface-tour.html`
-- `devdesk/manual/json-tools.html`
-- `devdesk/manual/jwt-decoder.html`
-- `devdesk/manual/keyboard-shortcuts.html`
-- `devdesk/manual/knowledge-graph.html`
-- `devdesk/manual/knowledge-workspace.html`
-- `devdesk/manual/links-backlinks-nodes.html`
-- `devdesk/manual/markdown-basics.html`
-- `devdesk/manual/markdown-editor.html`
-- `devdesk/manual/markdown-vault.html`
-- `devdesk/manual/notifications-routines.html`
-- `devdesk/manual/okf-attested-computation.html`
-- `devdesk/manual/okf-bundle-structure.html`
-- `devdesk/manual/okf-concepts-metadata.html`
-- `devdesk/manual/okf-conversion-migration.html`
-- `devdesk/manual/okf-trust-sources-lifecycle.html`
-- `devdesk/manual/openapi-studio.html`
-- `devdesk/manual/privacy-security.html`
-- `devdesk/manual/project-folder-structure.html`
-- `devdesk/manual/quick-api.html`
-- `devdesk/manual/readme-generator.html`
-- `devdesk/manual/regex-tester.html`
-- `devdesk/manual/settings-appearance.html`
-- `devdesk/manual/snippets-notes.html`
-- `devdesk/manual/structured-knowledge-okf.html`
-- `devdesk/manual/structured-views.html`
-- `devdesk/manual/timestamp.html`
-- `devdesk/manual/troubleshooting.html`
-- `devdesk/manual/unified-search.html`
-- `devdesk/manual/url-tools.html`
-- `devdesk/manual/user-manual.html`
-- `devdesk/manual/uuid.html`
-- `devdesk/manual/visual-canvas.html`
-- `devdesk/manual/visual-feature-guide.html`
-- `devdesk/manual/workspace-workbench.html`
-- `surveycam/index.html`
-- `surveycam/support.html`
-- `EduSheet/download.html`
-- `EduSheet/features.html`
-- `EduSheet/index.html`
-- `EduSheet/manual.html`
-- `EduSheet/quick-start.html`
-- `shoppilot-erp/index.html`
-- `shoppilot-erp/quick-start.html`
-- `shoppilot-erp/user-manual.html`
-- `construction-erp/downloads.html`
-- `construction-erp/features.html`
-- `construction-erp/index.html`
-- `construction-erp/manual.html`
-- `construction-erp/support.html`
-- `sitesnap/index.html`
+### Pages eligible for the manual slot
+
+- devdesk/manual/user-manual.html
+- devdesk/manual/getting-started.html
+- devdesk/manual/developer-workspaces.html
+- devdesk/manual/api-workspaces.html
+- devdesk/manual/backup-restore.html
+- devdesk/manual/container-operations.html
+- construction-erp/manual.html
+- shoppilot-erp/user-manual.html
+- EduSheet/manual.html
+
+## Historical navigation audit — 28 August 2026
+
+The earlier cross-site audit recorded 84 of 84 product HTML pages with a visible navigation path to Baisalya.com (79 appended navigation links and five fallback bars). Those figures describe that dated audit and were not recounted in the current ad-policy update.

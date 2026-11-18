@@ -2,6 +2,8 @@
 
 Date: 2026-08-28
 
+> Superseded on 18 November 2026: the 69-page placement count below describes the earlier policy. The current build has an explicit nine-manual allowlist in `scripts/ad-placement-policy.mjs`; the source config is disabled, and production ads are configured only when `ADSENSE_CONSENT_READY` is explicitly `true`. See `ADS_NAVIGATION_UPGRADE_REPORT.md` for the current scope.
+
 ## Configured AdSense unit
 - Publisher client: `ca-pub-1529558529658186`
 - Responsive ad slot: `9546051599`
@@ -12,7 +14,7 @@ Date: 2026-08-28
 ## Serving model
 Ads are enabled through the existing centralized lazy-loading runtime. The Google AdSense library is not duplicated in every HTML file; it is loaded only when a configured manual placement is approached in the viewport.
 
-Configured placement count: **69 pages**
+Historical configured placement count: **69 pages**
 - DevDesk: 53
 - Construction ERP: 5
 - EduSheet: 5

@@ -44,7 +44,7 @@ const siteSnap = schemaNodes.find((node) =>
 if (!siteSnap) failures.push('Professional home missing SiteSnap product identity');
 
 for (const [expected, label] of [
-  ['<title>Baishalya Roul (Baisalya) — DevDesk, SurveyCam & Software Builder</title>', 'professional SEO title'],
+  ['<title>Baishalya Roul (Baisalya) — Software Developer &amp; Product Builder</title>', 'professional SEO title'],
   ['id="software"', 'software section'],
   ['id="engineering"', 'engineering section'],
   ['href="/devdesk/"', 'DevDesk canonical route'],
