@@ -72,7 +72,7 @@ for (const html of [home, paperHome]) {
 
 const hub = await read('guides/index.html');
 const sitemap = await read('sitemap-pages.xml');
-for (const slug of ['prepare-document-upload', 'debug-api-request', 'field-photo-report', 'weekly-teaching-plan', 'notification-history-limits']) {
+for (const slug of ['prepare-document-upload', 'debug-api-request', 'field-photo-report', 'weekly-teaching-plan', 'notification-history-limits', 'devdesk-reinstall-backup']) {
   const file = `guides/${slug}.html`;
   const html = await read(file);
   const article = JSON.parse(html.match(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/)[1]);
