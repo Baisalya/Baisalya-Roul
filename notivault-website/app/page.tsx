@@ -130,7 +130,7 @@ export default function Home() {
             Deleted-message notification history for Android
           </div>
           <h1>
-            Deleted from the chat.<br /><em>Still safe in your vault.</em>
+            Deleted from the chat.<br /><em>Find the preview you saved.</em>
           </h1>
           <p className="hero-lede">
             NotiVault can preserve messages from WhatsApp and other selected apps
@@ -139,7 +139,7 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#deleted-messages">
-              How deleted capture works <span aria-hidden="true">→</span>
+              See how previews are saved <span aria-hidden="true">→</span>
             </a>
             <a className="button button-secondary" href="#privacy">
               Explore privacy
@@ -233,7 +233,7 @@ export default function Home() {
 
       <section className="deleted-section section-shell" id="deleted-messages">
         <div className="deleted-copy">
-          <span className="section-tag">The attention-grabbing reason</span>
+          <span className="section-tag">Before a message disappears</span>
           <h2>Someone deleted it.<br /><em>Your notification may remember it.</em></h2>
           <p>
             NotiVault watches only the apps you choose. When a chat notification
@@ -269,8 +269,8 @@ export default function Home() {
             <h2>Chats can disappear.<br />Captured context doesn’t have to.</h2>
           </div>
           <p>
-            A deletion or swipe should not decide whether a useful notification
-            preview survives. NotiVault gives selected alerts a searchable second home.
+            Find a saved address, message or update without searching through newer alerts. NotiVault keeps
+            selected notification previews searchable on your device.
           </p>
         </div>
         <div className="moment-grid">
@@ -385,7 +385,7 @@ export default function Home() {
         <div className="section-heading split-heading theme-heading">
           <div>
             <span className="section-tag">A vault that feels like yours</span>
-            <h2>Serious utility.<br />Twelve distinct moods.</h2>
+            <h2>Choose your style.<br />Twelve distinct themes.</h2>
           </div>
           <p>
             From quiet minimal surfaces to NotiVault’s Bunny Blossom signature,
@@ -475,7 +475,7 @@ export default function Home() {
         <div className="cta-card">
           <div className="cta-glow" />
           <span className="section-tag light-tag">Coming to Google Play</span>
-          <h2>Catch the notification<br />before the chat deletes it.</h2>
+          <h2>Keep useful previews<br />within reach.</h2>
           <p>Works after setup. Selected apps only. Media depends on what the notification exposes.</p>
           <div className="cta-actions">
             <a className="button button-light" href="#top">Meet NotiVault ↑</a>

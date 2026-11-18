@@ -22,8 +22,9 @@ export function initTheme() {
   const button = document.getElementById('theme-toggle');
   const initial = readStoredTheme();
   applyTheme(initial, button);
-  if (!button) return;
+  if (!button || button.dataset.themeBound === 'true') return;
 
+  button.dataset.themeBound = 'true';
   button.addEventListener('click', () => {
     const current = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
     const next = current === 'light' ? 'dark' : 'light';

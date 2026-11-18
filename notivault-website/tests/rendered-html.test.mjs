@@ -30,7 +30,7 @@ test("renders the NotiVault marketing page", async () => {
   const html = await response.text();
   assert.match(html, /<title>[^<]*NotiVault[^<]*<\/title>/i);
   assert.match(html, /Deleted from the chat/i);
-  assert.match(html, /Still safe in your vault/i);
+  assert.match(html, /Find the preview you saved/i);
   assert.match(html, /notification must arrive and be captured before/i);
   assert.match(html, /not affiliated with or endorsed by WhatsApp or Meta/i);
   assert.match(html, /Voice note · 0:24/i);

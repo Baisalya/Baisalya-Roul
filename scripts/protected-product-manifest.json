@@ -138,8 +138,8 @@
     },
     {
       "path": "construction-erp/downloads.html",
-      "sha256": "417ff98d43ccd90c2b24f0d0de637edb6c0de54868f281cb049445b3279c38b3",
-      "bytes": 9309
+      "sha256": "172123673b72ffe7021fc0a95471603f427528d6adb97477f107e970ed7d662d",
+      "bytes": 9270
     },
     {
       "path": "construction-erp/downloads/android/PUT_ANDROID_RELEASE_HERE.txt",
@@ -158,8 +158,8 @@
     },
     {
       "path": "construction-erp/index.html",
-      "sha256": "d8d36880aad7569b303ce57f68cac9ad8c2ddf631a9df9c3e3ff745b869e8776",
-      "bytes": 21730
+      "sha256": "38c738f3f8ec4bf7dba3c75765627a895f085b1d7144a270a0ce753f3ee40fb5",
+      "bytes": 21692
     },
     {
       "path": "construction-erp/manifest.webmanifest",
@@ -323,8 +323,8 @@
     },
     {
       "path": "construction-erp/src/downloads.html",
-      "sha256": "257ab7db162e6112c7f9e0a3d5492e7b43d2ed20a97a802ca31c6c5eb84cb388",
-      "bytes": 8790
+      "sha256": "7d16c62b02d704a689f2b8360499b154b81825c5997b61ca853a149cbc55b738",
+      "bytes": 8751
     },
     {
       "path": "construction-erp/src/features.html",
@@ -333,8 +333,8 @@
     },
     {
       "path": "construction-erp/src/index.html",
-      "sha256": "aa424483b4dc689035f433de5d2c0b95b5fbfcd61533c76d16d23962dc24e0a7",
-      "bytes": 17736
+      "sha256": "062a13f9e97b56b15d30f958abe6477c1d040041ddc0b99453a73953cde0cc45",
+      "bytes": 17698
     },
     {
       "path": "construction-erp/src/manifest.webmanifest",
@@ -1093,8 +1093,8 @@
     },
     {
       "path": "devdesk/index.html",
-      "sha256": "0cd5a7f52d9426226e72caa0e88c4ffbfc10264036671e2d4b3bb0c58b74ba73",
-      "bytes": 46204
+      "sha256": "013f10f7acd2a2bfd1ca527b1d32d6b778425fdf765030e7ebe86d0aba22deb6",
+      "bytes": 46009
     },
     {
       "path": "devdesk/MANUAL_TABLE_OF_CONTENTS.md",
@@ -1553,13 +1553,13 @@
     },
     {
       "path": "EduSheet/features.html",
-      "sha256": "074e53be1f679230f867868f22eb27673f05e800a7f0a21657969f2ed2e9e2d9",
-      "bytes": 22131
+      "sha256": "a314b61de764d50811edda9cbfca0ab1bb7b2223f9d16cd4406f37aec7941efd",
+      "bytes": 22168
     },
     {
       "path": "EduSheet/index.html",
-      "sha256": "614ee6da5ddcf6b19769178ba90a86e83f7e4a084cd724b30ae524257dc7110c",
-      "bytes": 47489
+      "sha256": "1f65f1c95b27c4247f2e557d3358c0873cc1865fdc8aa403cbf259291937eca3",
+      "bytes": 47022
     },
     {
       "path": "EduSheet/manual.html",
@@ -1593,8 +1593,8 @@
     },
     {
       "path": "EduSheet/teacher-planner.html",
-      "sha256": "da10568cdec995f185cd15943713895d1bfd4ec75181578abf9331a8ecce0147",
-      "bytes": 26096
+      "sha256": "459c380d8c9f4767da98bd6f4df5a7ac2089da003975e48ccd67d504848cb64d",
+      "bytes": 25937
     },
     {
       "path": "notivault-website/_next/static/_vinext_fonts/geist-8ac0455e797f/geist-001175b1.woff2",
@@ -1678,8 +1678,8 @@
     },
     {
       "path": "notivault-website/app/page.tsx",
-      "sha256": "7bb3dd1814637d0a761908380b7d3d7db003f5ea83ddff650376d6bbf960bee5",
-      "bytes": 25179
+      "sha256": "0a52a3a3efd4b95072093fa573a123c901e45cc335c54fb2bd6a8a8726757eee",
+      "bytes": 25177
     },
     {
       "path": "notivault-website/app/privacy-policy/page.tsx",
@@ -1698,8 +1698,8 @@
     },
     {
       "path": "notivault-website/index.html",
-      "sha256": "73e0fe1f9ffc4b3b16fe46e330ef96346b708f820aa74ef143c1fa0202026071",
-      "bytes": 29250
+      "sha256": "427a2475e26725b243e04a411f08c455a18812ae1a8fb4aed06e5950b6da66e3",
+      "bytes": 29248
     },
     {
       "path": "notivault-website/MARKETING_COPY.md",
@@ -1778,8 +1778,8 @@
     },
     {
       "path": "notivault-website/tests/rendered-html.test.mjs",
-      "sha256": "0bd30002e35ee10c3230bedf4db4240e9d67b5e40ab03411872909a7e024b4cf",
-      "bytes": 1989
+      "sha256": "427a60dbe1d4d7b9ce7b5b9a621b4c248aedbd317b6edfc5d771d579da137c82",
+      "bytes": 1991
     },
     {
       "path": "notivault-website/tsconfig.json",
@@ -1838,8 +1838,8 @@
     },
     {
       "path": "shoppilot erp/index.html",
-      "sha256": "34c8c7a3aa7d018ddce528e08aa28186ea2ca6da85e59b829758cad198d32e21",
-      "bytes": 29901
+      "sha256": "ab89b11ebe4a1808d0981e0a1a23f383e8a4a9419dc891c230ce047b31a4745a",
+      "bytes": 29895
     },
     {
       "path": "shoppilot erp/manual.css",
@@ -1938,8 +1938,8 @@
     },
     {
       "path": "shoppilot-erp/index.html",
-      "sha256": "b67067552ac52578d66b0144b5ec122d7458ca9aef0d7d91959c8290dc7faced",
-      "bytes": 29430
+      "sha256": "3e9d377d6bd40203e633a80358a92bf7095ebcc9b57fcec78d4fbd768cda32ad",
+      "bytes": 29424
     },
     {
       "path": "shoppilot-erp/manual.css",

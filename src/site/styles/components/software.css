@@ -5,9 +5,9 @@
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     background:
-        radial-gradient(circle at 12% 8%, color-mix(in srgb, var(--accent) 15%, transparent), transparent 31rem),
-        radial-gradient(circle at 92% 17%, color-mix(in srgb, var(--mint) 10%, transparent), transparent 32rem),
-        linear-gradient(180deg, color-mix(in srgb, var(--bg-elevated) 42%, transparent), color-mix(in srgb, var(--bg) 82%, transparent));
+        radial-gradient(ellipse at 12% 8%, color-mix(in srgb, var(--accent) 13%, transparent), transparent 33rem),
+        radial-gradient(ellipse at 90% 22%, color-mix(in srgb, var(--accent-violet) 9%, transparent), transparent 34rem),
+        linear-gradient(180deg, color-mix(in srgb, var(--bg-elevated) 50%, transparent), color-mix(in srgb, var(--bg) 88%, transparent));
 }
 
 .professional-software::before {
@@ -15,23 +15,26 @@
     position: absolute;
     inset: 0;
     z-index: -2;
-    opacity: .24;
+    opacity: .13;
     pointer-events: none;
     background-image:
         linear-gradient(color-mix(in srgb, var(--border) 50%, transparent) 1px, transparent 1px),
         linear-gradient(90deg, color-mix(in srgb, var(--border) 50%, transparent) 1px, transparent 1px);
-    background-size: 52px 52px;
+    background-size: 64px 64px;
     mask-image: linear-gradient(to bottom, black 0%, transparent 48%);
 }
 
-.professional-software::after {
-    content: "";
+.professional-software__watermark {
     position: absolute;
-    inset: 0;
+    right: clamp(1rem, 6vw, 5rem);
+    bottom: .8rem;
     z-index: -1;
     pointer-events: none;
-    background:
-        linear-gradient(115deg, transparent 0 44%, color-mix(in srgb, var(--accent) 4%, transparent) 44% 45%, transparent 45% 100%);
+    color: var(--accent-violet);
+    opacity: .045;
+    font: 800 clamp(3rem, 9vw, 8rem)/.9 var(--font-mono);
+    letter-spacing: .04em;
+    white-space: nowrap;
 }
 
 .software-showcase-head {

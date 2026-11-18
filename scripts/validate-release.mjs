@@ -106,7 +106,7 @@ for (const expected of [
   requireText(portfolio, expected, 'Portfolio ShopPilot integration');
 }
 for (const expected of [
-  'EduSheet is more than a question-paper maker',
+  'Keep syllabus management, lesson and weekly planning',
   'Syllabus management',
   'Lessons &amp; progress',
   'Assessment studio',
@@ -142,7 +142,7 @@ for (const expected of [
   'aria-label="Visit the NotiVault website"',
   'Google Play &middot; Coming soon',
   'No public installer is offered yet.',
-  'voice notes and media saved when the notification exposes them',
+  'Voice notes and media are saved only when the notification exposes them',
   '<option value="NotiVault">NotiVault</option>',
 ]) {
   requireText(portfolio, expected, 'Portfolio NotiVault integration');
@@ -314,7 +314,7 @@ for (const [source, label, expectedPhrases] of [
     'Construction ERP deployment page',
     [
       'Customer deployments',
-      'not as a one-size-fits-all public download',
+      'Construction ERP is sold per customer.',
       'Request your deployment plan',
     ],
   ],
@@ -365,9 +365,9 @@ requireText(
   'DevDesk support assistant action',
 );
 for (const expected of [
-  'Study. Research. Organize. Build. Run projects from one workspace.',
+  'Your notes, plans and projects. One workspace.',
   'For students, researchers, professionals &amp; non-developers',
-  'Learn, collect research, connect ideas',
+  'Connect research, organize notes, plan projects',
   'For developers, builders &amp; technical project teams',
   'No coding needed',
   'devdesk-workspace-banner.webp',
@@ -375,9 +375,9 @@ for (const expected of [
   requireText(devdeskHome, expected, 'DevDesk inclusive homepage');
 }
 for (const expected of [
-  'You do not need to be a developer to make DevDesk useful.',
+  'Start with your work. No coding needed.',
   'id="non-tech-path"',
-  'Bring the messy work. Leave with a clear next step.',
+  'Turn your notes and tasks into a clear plan.',
   'id="developer-path"',
   'Move from project context to a verified proposal',
   'Project → reviewed + verified change',
@@ -391,7 +391,7 @@ for (const expected of [
 for (const expected of [
   'DevDesk 1.2.5 source feature guide',
   'id="ai-harness"',
-  'One Harness. Four ways to move work forward.',
+  'AI Harness for learning, planning, writing and code.',
   'Local-first files &amp; portable project context',
   '1,532',
   'WACK PASS',

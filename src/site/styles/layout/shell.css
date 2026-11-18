@@ -1,5 +1,5 @@
 .container { width: min(var(--site-max), calc(100% - (var(--site-gutter) * 2))); margin-inline: auto; }
-.professional-section { padding: clamp(5rem, 10vw, 8.5rem) 0; }
+.professional-section { padding: clamp(5rem, 10vw, 8.5rem) 0; background: linear-gradient(112deg, color-mix(in srgb, var(--accent) 4%, transparent), transparent 46%, color-mix(in srgb, var(--accent-violet) 4%, transparent)); }
 .professional-section__heading { max-width: 760px; margin-bottom: 3.25rem; }
 .professional-section__heading h2 { margin: .8rem 0 1rem; font-size: clamp(2.45rem, 4.6vw, 4.5rem); line-height: 1.02; letter-spacing: -.05em; }
 .professional-section__heading > p, .professional-section__heading--split > p { max-width: 680px; font-size: 1rem; line-height: 1.75; }

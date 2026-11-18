@@ -1,4 +1,4 @@
-.professional-contact { border-top: 1px solid var(--border); background: color-mix(in srgb,var(--bg-elevated) 48%,transparent); }
+.professional-contact { border-top: 1px solid var(--border); background: radial-gradient(ellipse at 84% 4%, color-mix(in srgb,var(--accent-strong) 10%,transparent), transparent 32rem), linear-gradient(145deg,color-mix(in srgb,var(--bg-elevated) 58%,transparent),color-mix(in srgb,var(--bg) 82%,transparent)); }
 .professional-contact__grid { display: grid; grid-template-columns: minmax(0,.78fr) minmax(380px,1.02fr); gap: clamp(3rem,8vw,7rem); align-items: start; }
 .professional-contact__intro h2 { margin: .8rem 0 1rem; font-size: clamp(2.4rem,4.4vw,4.2rem); line-height: 1.03; letter-spacing: -.05em; }
 .professional-contact__intro p { font-size: .98rem; line-height: 1.8; }

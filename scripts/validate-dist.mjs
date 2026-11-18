@@ -158,7 +158,7 @@ for(const expected of ['https://baisalya.com/','href="/EduSheet/"','href="/surve
 }
 for(const expected of [
   'https://apps.microsoft.com/detail/9N0ZK8C31X94?cid=DevShareMCLPCB',
-  'EduSheet is more than a question-paper maker',
+  'Keep syllabus management, lesson and weekly planning',
   'Syllabus management',
 ]){
   if(!index.includes(expected)) failures.push(`Production EduSheet portfolio contract missing: ${expected}`);
@@ -166,7 +166,7 @@ for(const expected of [
 const eduSheetHome=await readFile(path.join(root,'EduSheet/index.html'),'utf8');
 const eduSheetConfig=await readFile(path.join(root,'EduSheet/assets/js/site.js'),'utf8');
 for(const expected of [
-  'complete teacher workspace—not only a question-paper maker',
+  'complete teacher workspace',
   'https://apps.microsoft.com/detail/9N0ZK8C31X94?cid=DevShareMCLPCB',
 ]){
   if(!`${eduSheetHome}\n${eduSheetConfig}`.includes(expected)) failures.push(`Production EduSheet site contract missing: ${expected}`);
