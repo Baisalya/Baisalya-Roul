@@ -153,6 +153,22 @@ await validateSitemaps();
 await validateReleaseManifest();
 
 const index=await readFile(path.join(root,'index.html'),'utf8');
+const promoJson = index.match(/<script type="application\/json" id="app-promo-playlist">([^<]*)<\/script>/)?.[1];
+if (!promoJson) {
+  failures.push('Production homepage is missing its app promo playlist.');
+} else {
+  const promos = JSON.parse(promoJson);
+  for (const promo of promos) {
+    if (!promo.app || !promo.title || !['image', 'video'].includes(promo.type) ||
+        !promo.src?.startsWith('/assets/app-promos/') || /\.poster\.[^/]+$/i.test(promo.src)) {
+      failures.push(`Invalid app promo entry: ${JSON.stringify(promo)}`);
+      continue;
+    }
+    await validateRef('index.html', promo.src);
+    if (promo.poster) await validateRef('index.html', promo.poster);
+    if (promo.href) await validateRef('index.html', promo.href);
+  }
+}
 for(const expected of ['https://baisalya.com/','href="/EduSheet/"','href="/surveycam/"','href="/notivault-website/"','href="/sitesnap/"','href="/brightquest-kids/"','href="/paperaid/"','href="/journal/"']){
   if(!index.includes(expected)) failures.push(`Production root identity missing: ${expected}`);
 }

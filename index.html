@@ -372,7 +372,7 @@
   ]
 }
 </script>
-    <link rel="stylesheet" href="style.css?v=20261120-workbench">
+    <link rel="stylesheet" href="style.css?v=app-promos-1">
     <link rel="stylesheet" href="src/site/styles/components/about-portrait.css?v=20261118-about-portrait">
 
 <link rel="icon" href="/assets/brand/br-mark-192.png" type="image/png" sizes="192x192">
@@ -562,20 +562,45 @@
                     </div>
                 </div>
 
-                <figure class="professional-hero__work">
-                    <a class="professional-hero__screenshot" href="/devdesk/" aria-label="Explore DevDesk">
-                        <img src="/devdesk/assets/img/agent-demo-graph.jpg" alt="DevDesk's knowledge graph connecting notes and tasks in a demo workspace" width="1920" height="1080" fetchpriority="high" decoding="async">
-                    </a>
-                    <figcaption>
-                        <div>
-                            <a href="/devdesk/">DevDesk</a>
-                            <p>A local workspace for notes, APIs, Git and AI-assisted work.</p>
+                <section class="app-promos" data-app-promos hidden aria-labelledby="app-promos-heading">
+                    <div class="app-promos__heading">
+                        <strong id="app-promos-heading">App promos</strong>
+                        <span data-promo-count></span>
+                    </div>
+                    <div class="app-promos__stage">
+                        <div class="app-promos__cover" data-promo-cover hidden aria-hidden="true"></div>
+                        <img data-promo-still alt="" decoding="async" hidden>
+                        <video data-promo-video muted playsinline preload="none" hidden></video>
+                        <div class="app-promos__up-next" data-promo-up-next hidden>
+                            <div class="app-promos__up-next-card">
+                                <div class="app-promos__art" data-promo-next-art></div>
+                                <div>
+                                    <small>Up next in <span data-promo-countdown>4</span>s</small>
+                                    <strong data-promo-next-title></strong>
+                                </div>
+                                <button type="button" data-promo-skip>Play next</button>
+                            </div>
                         </div>
-                        <a class="professional-hero__demo" href="/devdesk/manual/knowledge-graph.html">See how the graph works</a>
-                    </figcaption>
-                </figure>
+                    </div>
+                    <div class="app-promos__caption">
+                        <a data-promo-app></a>
+                        <p data-promo-title></p>
+                    </div>
+                    <div class="app-promos__controls" data-promo-controls hidden>
+                        <div class="app-promos__buttons" role="group" aria-label="Promo playback">
+                            <button type="button" data-promo-play>Play</button>
+                            <button type="button" data-promo-next>Next</button>
+                            <button type="button" data-promo-sound>Unmute</button>
+                        </div>
+                        <p data-promo-status role="status"></p>
+                    </div>
+                    <ul class="app-promos__playlist" data-promo-playlist hidden aria-label="Choose a promo"></ul>
+                </section>
+                <script type="application/json" id="app-promo-playlist">[]</script>
+                <script type="module" src="src/site/interactions/app-promos.js?v=1"></script>
 
                 <ul class="professional-hero__projects" aria-label="More software by Baishalya Roul">
+                    <li><a href="/devdesk/"><strong>DevDesk</strong><span>Notes, APIs and Git</span></a></li>
                     <li><a href="/surveycam/"><strong>SurveyCam / SiteSnap</strong><span>GPS photos and field reports</span></a></li>
                     <li><a href="/EduSheet/"><strong>EduSheet</strong><span>Lesson planning and assessments</span></a></li>
                     <li><a href="/paperaid/"><strong>PaperAid</strong><span>PDF, scan and photo tools</span></a></li>

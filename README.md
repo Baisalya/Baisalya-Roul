@@ -10,6 +10,12 @@ The homepage links directly to five worked guides. Short DevDesk references incl
 
 Advertising is limited to the nine long-form manuals selected in scripts/ad-placement-policy.mjs. Product, download, support, legal and short reference pages stay ad-free. The source normalizer and release builder apply the same policy; the browser runtime also requires an exact page-path marker. Repository advertising configuration remains disabled. Public publisher identifiers and enabled configuration do not establish AdSense approval or consent compliance.
 
+## Homepage app promos
+
+Add web-ready media to `assets/app-promos/<app-name>/` and commit the files. The normal release build adds them to the homepage playlist automatically. Use the product route name such as `paperaid`, `surveycam`, or `edusheet` to link a promo to its app page. Videos play first, followed by images. Numbered filenames set the order within each app and supply the display titles.
+
+Use MP4 (H.264/AAC), WebM, or compatible M4V for video, and AVIF, GIF, JPEG, PNG, or WebP for images. To give `01-demo.mp4` a preview frame, put `01-demo.poster.webp` beside it. Videos without a poster get an app-name preview automatically. Poster files do not become playlist items.
+
 ## Build and validate
 
 Requires Node.js 20 or newer. Run:

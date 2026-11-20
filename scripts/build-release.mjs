@@ -9,6 +9,7 @@ import { applySocialMetadata } from './social-metadata.mjs';
 import { socialSurfaces, socialImagePath } from './social-surfaces.mjs';
 import { applyAdPlacementPolicy } from './ad-placement-policy.mjs';
 import { applyAmbassadorCampaign } from './ambassador-campaigns.mjs';
+import { prepareAppPromos } from './app-promos.mjs';
 
 const execFileAsync = promisify(execFile);
 const projectRoot = process.cwd();
@@ -311,5 +312,6 @@ await mkdir(serverOutput,{recursive:true});
 await copyFile(path.join(projectRoot,'sites-worker.js'),path.join(serverOutput,'index.js'));
 await versionHtmlFiles(outputRoot, versionMonetizationRuntime);
 await ensureSeoMetadata(outputRoot);
+await prepareAppPromos(outputRoot);
 await writeReleaseManifest();
 console.log('Production release build: passed');
