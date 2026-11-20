@@ -1093,8 +1093,8 @@
     },
     {
       "path": "devdesk/index.html",
-      "sha256": "013f10f7acd2a2bfd1ca527b1d32d6b778425fdf765030e7ebe86d0aba22deb6",
-      "bytes": 46009
+      "sha256": "e6ba68a5f12d8b813f723230a86d6d44924e4b6add7a0956a5bd03e54a59cd71",
+      "bytes": 46352
     },
     {
       "path": "devdesk/MANUAL_TABLE_OF_CONTENTS.md",
@@ -1558,8 +1558,8 @@
     },
     {
       "path": "EduSheet/index.html",
-      "sha256": "1f65f1c95b27c4247f2e557d3358c0873cc1865fdc8aa403cbf259291937eca3",
-      "bytes": 47022
+      "sha256": "baf313ef784ec41f3ccffd0f48c32d05d4763b820100294640fd4fae909463f0",
+      "bytes": 47359
     },
     {
       "path": "EduSheet/manual.html",
@@ -1838,8 +1838,8 @@
     },
     {
       "path": "shoppilot erp/index.html",
-      "sha256": "ab89b11ebe4a1808d0981e0a1a23f383e8a4a9419dc891c230ce047b31a4745a",
-      "bytes": 29895
+      "sha256": "164cdb2c375aa0abfab362f1989798bba9bd3eeea3c3291894d45012551bc9c9",
+      "bytes": 29500
     },
     {
       "path": "shoppilot erp/manual.css",
@@ -1938,8 +1938,8 @@
     },
     {
       "path": "shoppilot-erp/index.html",
-      "sha256": "3e9d377d6bd40203e633a80358a92bf7095ebcc9b57fcec78d4fbd768cda32ad",
-      "bytes": 29424
+      "sha256": "845e58e54a5257c3af473fa61d91e98cd0fc049012876625c5325abc57f642a5",
+      "bytes": 28916
     },
     {
       "path": "shoppilot-erp/manual.css",

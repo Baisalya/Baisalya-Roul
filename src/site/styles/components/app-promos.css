@@ -80,18 +80,21 @@
 .app-promos button:hover:not(:disabled) { border-color: var(--accent); }
 .app-promos button:disabled { cursor: default; opacity: .55; }
 
-.app-promos__buttons button, .app-promos__up-next button {
-    min-height: 40px;
-    padding: .35rem .65rem;
-    font-size: .8125rem;
-    font-weight: 650;
+.app-promos__buttons button {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: .6rem;
 }
 
 .app-promos__buttons [data-promo-play] {
     background: var(--text);
     color: var(--bg);
-    min-width: 4.25rem;
 }
+
+.app-promos__buttons svg, .app-promos__up-next button svg { width: 20px; height: 20px; }
 
 .app-promos__playlist {
     display: grid;
@@ -170,7 +173,18 @@
 .app-promos__up-next-card small, .app-promos__up-next-card strong { display: block; line-height: 1.3; }
 .app-promos__up-next-card small { color: #b7c7dd; font-size: .8125rem; font-variant-numeric: tabular-nums; }
 .app-promos__up-next-card strong { font-size: .875rem; overflow-wrap: anywhere; }
-.app-promos__up-next button { border-color: rgba(255, 255, 255, .24); background: #263b58; }
+.app-promos__up-next button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .25rem;
+    min-height: 40px;
+    padding: .35rem .6rem;
+    border-color: rgba(255, 255, 255, .24);
+    background: #263b58;
+    font-size: .8125rem;
+    font-weight: 650;
+}
 
 @media (max-width: 480px) {
     .app-promos__playlist { grid-auto-columns: minmax(4.1rem, 1fr); }

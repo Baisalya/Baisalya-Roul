@@ -3,6 +3,8 @@ import { prefersReducedMotion } from '../utilities/motion.js';
 const imageDuration = 7000;
 const pausedPreviewDuration = 14000;
 const upNextSeconds = 4;
+const startingVolume = 0.35;
+const visibleStageFraction = 0.25;
 
 function mountAppPromos(player, promos) {
   const get = name => player.querySelector(`[data-promo-${name}]`);
@@ -29,6 +31,8 @@ function mountAppPromos(player, promos) {
   let timer;
   let ticker;
   let playAttempt = 0;
+  let stageVisible = !('IntersectionObserver' in window);
+  video.volume = startingVolume;
 
   function current() {
     return promos[index];
@@ -38,11 +42,25 @@ function mountAppPromos(player, promos) {
     return (index + 1) % promos.length;
   }
 
+  function canPlayInView() {
+    return stageVisible && !document.hidden;
+  }
+
+  function setControl(button, label, icon) {
+    button.setAttribute('aria-label', label);
+    button.title = label;
+    button.querySelector('use').setAttribute('href', '#icon-promo-' + icon);
+  }
+
+  function updateSound() {
+    setControl(sound, video.muted ? 'Unmute' : 'Mute', video.muted ? 'muted' : 'sound');
+  }
+
   function updatePlayback(message = '') {
-    play.textContent = running ? 'Pause' : 'Play';
+    setControl(play, running ? 'Pause' : 'Play', running ? 'pause' : 'play');
     status.textContent = message;
     sound.disabled = current().type !== 'video';
-    sound.textContent = video.muted ? 'Unmute' : 'Mute';
+    updateSound();
   }
 
   function clearSchedule() {
@@ -66,14 +84,14 @@ function mountAppPromos(player, promos) {
   }
 
   function schedulePreview() {
-    if (canRotate && pausedByVisitor && !reducedMotion && !document.hidden) {
+    if (canRotate && pausedByVisitor && !reducedMotion && canPlayInView()) {
       timer = setTimeout(() => show(nextIndex()), pausedPreviewDuration);
     }
   }
 
   function queueNext() {
     clearSchedule();
-    if (!running || document.hidden) return;
+    if (!running || !canPlayInView()) return;
     if (canRotate) {
       const upcoming = promos[nextIndex()];
       fillArt(nextArt, upcoming);
@@ -98,7 +116,7 @@ function mountAppPromos(player, promos) {
 
   function startCurrent() {
     clearSchedule();
-    if (document.hidden) return;
+    if (!canPlayInView()) return;
     if (!running) {
       schedulePreview();
       return;
@@ -118,7 +136,11 @@ function mountAppPromos(player, promos) {
     video.hidden = false;
     video.play().catch(error => {
       if (attempt !== playAttempt || !running) return;
-      if (error.name === 'NotAllowedError') {
+      if (error.name === 'NotAllowedError' && !video.muted) {
+        video.muted = true;
+        updatePlayback('Unmute for sound');
+        startCurrent();
+      } else if (error.name === 'NotAllowedError') {
         running = false;
         updatePlayback('Press Play to start');
       } else if (error.name !== 'AbortError') {
@@ -194,10 +216,14 @@ function mountAppPromos(player, promos) {
   get('skip').addEventListener('click', () => show(nextIndex()));
   sound.addEventListener('click', () => {
     video.muted = !video.muted;
-    sound.textContent = video.muted ? 'Unmute' : 'Mute';
+    updateSound();
+    if (running) {
+      status.textContent = '';
+      if (video.paused && !video.ended) startCurrent();
+    }
   });
   video.addEventListener('playing', () => {
-    if (!running || document.hidden) return;
+    if (!running || !canPlayInView()) return;
     video.hidden = false;
     still.hidden = true;
     cover.hidden = true;
@@ -206,8 +232,8 @@ function mountAppPromos(player, promos) {
   video.addEventListener('error', () => {
     if (video.hasAttribute('src')) onVideoError();
   });
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
+  function syncPlaybackToViewport() {
+    if (!canPlayInView()) {
       clearSchedule();
       ++playAttempt;
       video.pause();
@@ -216,7 +242,18 @@ function mountAppPromos(player, promos) {
     } else {
       startCurrent();
     }
-  });
+  }
+
+  document.addEventListener('visibilitychange', syncPlaybackToViewport);
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(([entry]) => {
+      const visible = entry.isIntersecting && entry.intersectionRatio >= visibleStageFraction;
+      if (visible === stageVisible) return;
+      stageVisible = visible;
+      syncPlaybackToViewport();
+    }, { threshold: visibleStageFraction, rootMargin: '-76px 0px 0px' });
+    observer.observe(video.parentElement);
+  }
 
   next.hidden = !canRotate;
   playlist.hidden = !canRotate;

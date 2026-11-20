@@ -94,10 +94,10 @@ for (const expected of [
 }
 for (const expected of [
   'ShopPilot',
-  'Windows release is now live',
+  'Android and Windows released.',
   '9N9XDS5G5F77',
   'https://play.google.com/store/apps/details?id=com.baishalya.shoppilot',
-  'Android closed testing',
+  'Android release',
   'href="/shoppilot-erp/"',
   'shoppilot-erp/quick-start.html',
   'shoppilot-erp/user-manual.html',
@@ -224,7 +224,7 @@ for (const [relativePath, minimumBytes] of [
   await requireFile(relativePath, minimumBytes);
 }
 for (const expected of [
-  'Windows release live · Android closed testing',
+  'Available on Google Play and Microsoft Store',
   'https://apps.microsoft.com/store/detail/9N9XDS5G5F77?cid=DevShareMCLPCB',
   'https://play.google.com/store/apps/details?id=com.baishalya.shoppilot',
   'Current release channels',
