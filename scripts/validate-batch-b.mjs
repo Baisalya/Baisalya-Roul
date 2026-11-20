@@ -24,7 +24,7 @@ async function rejectFile(relativePath) {
 }
 
 for (const [expected, label] of [
-  ['Engineering choices shaped by the work', 'deep engineering profile'],
+  ['<h2 id="engineering-title">How I build software</h2>', 'deep engineering profile'],
   ['Cross-platform product delivery', 'application engineering capability'],
   ['Offline and local-first systems', 'local-first capability'],
   ['Operational software, not isolated screens', 'workflow capability'],

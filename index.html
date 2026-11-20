@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Official portfolio of Baishalya Roul (Baisalya), an independent software developer building practical Android, Windows and web products, engineering notes and how-to guides.">
+    <meta name="description" content="Baishalya Roul (Baisalya) builds local-first software for Android, Windows and the web. Explore DevDesk, SurveyCam, EduSheet, PaperAid and the Engineering Journal.">
     <meta name="author" content="Baishalya Roul">
     <meta name="google-adsense-account" content="ca-pub-1529558529658186">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -47,7 +47,7 @@
       ],
       "jobTitle": "Software Developer",
       "email": "mailto:baishalya1999@gmail.com",
-      "description": "Independent software developer building practical Android, Windows and web products, including EduSheet, a complete teacher workspace for syllabus planning, lessons, teaching progress and assessments.",
+      "description": "Independent software developer and product builder of local-first Android, Windows and web applications, including DevDesk, SurveyCam, EduSheet and PaperAid.",
       "sameAs": [
         "https://github.com/Baisalya",
         "https://www.linkedin.com/in/baishalya-roul-02a0b9153/",
@@ -64,6 +64,7 @@
         "Offline-first software",
         "Software product engineering"
       ],
+      "subjectOf": { "@id": "https://baisalya.com/journal/#blog" },
       "mainEntityOfPage": {
         "@id": "https://baisalya.com/#profile"
       }
@@ -82,6 +83,8 @@
       "@id": "https://baisalya.com/assets/social/baishalya-roul-profile.png#portrait",
       "url": "https://baisalya.com/assets/social/baishalya-roul-profile.png",
       "contentUrl": "https://baisalya.com/assets/social/baishalya-roul-profile.png",
+      "width": 1254,
+      "height": 1254,
       "caption": "Portrait of Baishalya Roul, independent software builder"
     },
     {
@@ -89,7 +92,8 @@
       "@id": "https://baisalya.com/#profile",
       "url": "https://baisalya.com/",
       "name": "Baishalya Roul (Baisalya) — Software Developer & Product Builder",
-      "dateModified": "2026-11-18",
+      "description": "Baishalya Roul (Baisalya) builds local-first software for Android, Windows and the web. Explore DevDesk, SurveyCam, EduSheet, PaperAid and the Engineering Journal.",
+      "dateModified": "2026-11-20",
       "primaryImageOfPage": {
         "@id": "https://baisalya.com/assets/social/baishalya-github-profile.png#profile-photo"
       },
@@ -111,11 +115,19 @@
         "Baishalya",
         "baisalya.com"
       ],
-      "description": "Official portfolio of Baishalya Roul (Baisalya): practical software products, engineering notes and workflow guides.",
+      "description": "Software releases, engineering notes and workflow guides by Baishalya Roul (Baisalya).",
       "inLanguage": "en",
       "publisher": {
         "@id": "https://baisalya.com/#person"
       }
+    },
+    {
+      "@type": "Blog",
+      "@id": "https://baisalya.com/journal/#blog",
+      "name": "Baisalya Engineering Journal",
+      "url": "https://baisalya.com/journal/",
+      "author": { "@id": "https://baisalya.com/#person" },
+      "isPartOf": { "@id": "https://baisalya.com/#website" }
     },
     {
       "@type": "ItemList",
@@ -360,7 +372,7 @@
   ]
 }
 </script>
-    <link rel="stylesheet" href="style.css?v=20261118-theme-refresh">
+    <link rel="stylesheet" href="style.css?v=20261120-workbench">
     <link rel="stylesheet" href="src/site/styles/components/about-portrait.css?v=20261118-about-portrait">
 
 <link rel="icon" href="/assets/brand/br-mark-192.png" type="image/png" sizes="192x192">
@@ -368,7 +380,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Baisalya">
 <meta property="og:title" content="Baishalya Roul (Baisalya) — Software Developer &amp; Product Builder">
-<meta property="og:description" content="Official portfolio of Baishalya Roul (Baisalya), an independent software developer building practical Android, Windows and web products, engineering notes and how-to guides.">
+<meta property="og:description" content="Baishalya Roul (Baisalya) builds local-first software for Android, Windows and the web. Explore DevDesk, SurveyCam, EduSheet, PaperAid and the Engineering Journal.">
 <meta property="og:image" content="https://baisalya.com/assets/social/baisalya-original-chair-v4.png">
 <meta property="og:image:secure_url" content="https://baisalya.com/assets/social/baisalya-original-chair-v4.png">
 <meta property="og:image:type" content="image/png">
@@ -377,7 +389,7 @@
 <meta property="og:image:alt" content="Baishalya Roul portrait — Practical software. Built around your work.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Baishalya Roul (Baisalya) — Software Developer &amp; Product Builder">
-<meta name="twitter:description" content="Official portfolio of Baishalya Roul (Baisalya), an independent software developer building practical Android, Windows and web products, engineering notes and how-to guides.">
+<meta name="twitter:description" content="Baishalya Roul (Baisalya) builds local-first software for Android, Windows and the web. Explore DevDesk, SurveyCam, EduSheet, PaperAid and the Engineering Journal.">
 <meta name="twitter:image" content="https://baisalya.com/assets/social/baisalya-original-chair-v4.png">
 <meta name="twitter:image:alt" content="Baishalya Roul portrait — Practical software. Built around your work.">
 </head>
@@ -412,7 +424,7 @@
     </svg>
 
     <nav class="nav professional-nav" aria-label="Primary navigation">
-        <div class="nav-container professional-nav__inner">
+        <div class="nav-container container professional-nav__inner">
             <div class="professional-brand" aria-label="Baishalya Roul brand">
                 <button
                     class="professional-brand__mark"
@@ -432,10 +444,10 @@
 
             <ul class="nav-menu professional-nav__menu" id="nav-menu">
                 <li><a href="#home" class="nav-link" data-text="Home">Home</a></li>
-                <li><a href="#about" class="nav-link" data-text="About">About</a></li>
                 <li><a href="#software" class="nav-link" data-text="Software">Software</a></li>
-                <li><a href="/guides/" class="nav-link" data-text="Guides">Guides</a></li>
                 <li><a href="/journal/" class="nav-link" data-text="Journal">Journal</a></li>
+                <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+                <li><a href="/guides/" class="nav-link" data-text="Guides">Guides</a></li>
                 <li><a href="#engineering" class="nav-link" data-text="Engineering">Engineering</a></li>
                 <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
                 <li class="professional-nav__identity-action">
@@ -536,192 +548,66 @@
 
     <main id="main-content">
         <section id="home" class="professional-hero" aria-labelledby="hero-title">
-            <span class="professional-hero__watermark" aria-hidden="true">BR</span>
             <div class="container professional-hero__grid">
                 <div class="professional-hero__content">
-                    <div class="eyebrow professional-hero__eyebrow">
-                        <img
-                            class="professional-hero__portrait"
-                            src="/assets/social/baishalya-github-profile.png"
-                            alt="Baishalya Roul (Baisalya), independent software developer"
-                            width="460"
-                            height="460"
-                            loading="eager"
-                            decoding="async"
-                            fetchpriority="high"
-                        >
-                        <span class="eyebrow__dot"></span>
-                        Independent software builder
+                    <div class="professional-hero__byline">
+                        <img class="professional-hero__portrait" src="/assets/social/baishalya-github-profile.png" alt="Baishalya Roul (Baisalya), independent software developer" width="460" height="460" decoding="async">
+                        <p><strong>Baisalya</strong><span>Independent software builder</span></p>
                     </div>
-                    <h1 id="hero-title" class="professional-hero__title">
-                        <span class="professional-hero__name">Baishalya Roul</span>
-                        <span class="professional-hero__alias">(Baisalya)</span>
-                    </h1>
-                    <p class="professional-hero__tagline">
-                        Building practical software for developers, businesses, field teams, Android users, and educators.
-                    </p>
-                    <p class="professional-hero__lede">
-                        Android, Windows and web products with local-first workflows, clear product experiences, and dependable release engineering.
-                    </p>
+                    <h1 id="hero-title">Baishalya Roul</h1>
+                    <p class="professional-hero__lede">I build local-first software for Android, Windows and the web. My apps help developers keep their work together, field teams document what happened on site, and teachers turn a syllabus into a plan.</p>
                     <div class="professional-hero__actions">
-                        <a class="professional-button professional-button--primary" href="#software">Explore software <span aria-hidden="true">→</span></a>
-                        <a class="professional-button professional-button--secondary" href="#contact">Start a conversation</a>
-                        <button class="professional-button professional-button--secondary" type="button" data-open-identity aria-haspopup="dialog" aria-controls="identity-card">Open ID card <span aria-hidden="true">↗</span></button>
-                    </div>
-                    <div class="professional-hero__proof" aria-label="Current engineering focus">
-                        <span>Flutter</span>
-                        <span>Android</span>
-                        <span>Windows</span>
-                        <span>Local-first systems</span>
+                        <a class="professional-button professional-button--primary" href="#software">Explore my software</a>
+                        <a class="professional-button professional-button--secondary" href="/journal/">Read the Journal</a>
                     </div>
                 </div>
 
-                <div class="professional-hero__visual" aria-label="Software ecosystem overview">
-                    <div class="builder-window">
-                        <div class="builder-window__bar">
-                            <strong>Selected work</strong>
-                            <small>PRODUCT MAP / 01—08</small>
+                <figure class="professional-hero__work">
+                    <a class="professional-hero__screenshot" href="/devdesk/" aria-label="Explore DevDesk">
+                        <img src="/devdesk/assets/img/agent-demo-graph.jpg" alt="DevDesk's knowledge graph connecting notes and tasks in a demo workspace" width="1920" height="1080" fetchpriority="high" decoding="async">
+                    </a>
+                    <figcaption>
+                        <div>
+                            <a href="/devdesk/">DevDesk</a>
+                            <p>A local workspace for notes, APIs, Git and AI-assisted work.</p>
                         </div>
-                        <div class="builder-window__body">
-                            <p class="builder-window__command"><span>WORKFLOW</span> → PRODUCT</p>
-                            <div class="builder-window__line"><span class="builder-window__key">Developer tools</span><strong>DevDesk</strong></div>
-                            <div class="builder-window__line"><span class="builder-window__key">Business operations</span><strong>ShopPilot</strong></div>
-                            <div class="builder-window__line"><span class="builder-window__key">Construction teams</span><strong>Construction ERP</strong></div>
-                            <div class="builder-window__line"><span class="builder-window__key">Android utility</span><strong>NotiVault</strong></div>
-                            <div class="builder-window__line"><span class="builder-window__key">Teacher workspace</span><strong>EduSheet</strong></div>
-                            <div class="builder-window__line"><span class="builder-window__key">Kids learning</span><strong>BrightQuest Kids</strong></div>
-                            <div class="builder-window__line"><span class="builder-window__key">Document tools</span><strong>PaperAid</strong></div>
-                            <div class="builder-window__line"><span class="builder-window__key">Field camera</span><strong>SurveyCam / SiteSnap</strong></div>
-                            <div class="builder-window__status"><span></span>Android · Windows · Web</div>
-                        </div>
-                    </div>
-                    <div class="professional-hero__orbit professional-hero__orbit--one" aria-hidden="true"></div>
-                    <div class="professional-hero__orbit professional-hero__orbit--two" aria-hidden="true"></div>
-                    <div class="professional-hero__code-note professional-hero__code-note--one" aria-hidden="true"><span>BUILD</span> Flutter · Dart</div>
-                    <div class="professional-hero__code-note professional-hero__code-note--two" aria-hidden="true"><span>DATA</span> Local-first</div>
-                </div>
-            </div>
-        </section>
+                        <a class="professional-hero__demo" href="/devdesk/manual/knowledge-graph.html">See how the graph works</a>
+                    </figcaption>
+                </figure>
 
-
-        <section id="practical-guides" class="professional-section workflow-guides" aria-labelledby="workflow-guides-title"><div class="container"><div class="professional-section__heading"><span class="section-kicker">Practical guides</span><h2 id="workflow-guides-title">Solve a task, step by step.</h2><p>Worked examples with sample inputs, expected results and checks you can repeat. Choose a task, then use the product manual for the detailed controls.</p></div><div class="workflow-guides__grid"><article class="workflow-guide"><span class="section-kicker">PaperAid · Documents</span><h3><a href="/guides/prepare-document-upload.html">Prepare a readable upload<span aria-hidden="true"> ↗</span></a></h3><p>Crop a scan, arrange pages and reduce size while checking that the text survives.</p></article><article class="workflow-guide"><span class="section-kicker">DevDesk · API testing</span><h3><a href="/guides/debug-api-request.html">Make a failed request reproducible<span aria-hidden="true"> ↗</span></a></h3><p>Check a fictional JSON body, URL values, identifiers and time units before sharing a report.</p></article><article class="workflow-guide"><span class="section-kicker">SurveyCam · Field work</span><h3><a href="/guides/field-photo-report.html">Build a useful field report<span aria-hidden="true"> ↗</span></a></h3><p>Connect site photos to a location, an observation and a clear follow-up.</p></article><article class="workflow-guide"><span class="section-kicker">EduSheet · Teaching</span><h3><a href="/guides/weekly-teaching-plan.html">Plan a realistic teaching week<span aria-hidden="true"> ↗</span></a></h3><p>Turn one syllabus outcome into five sessions and track what students actually completed.</p></article><article class="workflow-guide"><span class="section-kicker">NotiVault · Android</span><h3><a href="/guides/notification-history-limits.html">Understand notification history<span aria-hidden="true"> ↗</span></a></h3><p>Check what notification previews can preserve and why some messages cannot be recovered.</p></article><article class="workflow-guide"><span class="section-kicker">DevDesk · Backup &amp; recovery</span><h3><a href="/guides/devdesk-reinstall-backup.html">Back up DevDesk before reinstalling<span aria-hidden="true"> ↗</span></a></h3><p>Separate the recovery kit from project folders, reconnect workspaces and re-enter protected credentials.</p></article></div><p class="workflow-guides__all"><a href="/guides/">Browse all guides and product manuals →</a></p></div></section>
-
-        <section id="about" class="professional-section professional-about" aria-labelledby="about-title">
-            <div class="container">
-                <div class="professional-section__heading" data-reveal>
-                    <span class="section-kicker">About</span>
-                    <h2 id="about-title">Software engineering with a product mindset.</h2>
-                    <p>
-                        My work sits between product design and implementation: understand the workflow, reduce unnecessary complexity, then build the software so it remains dependable in everyday use.
-                    </p>
-                </div>
-
-                <div class="professional-about__grid">
-                    <article class="professional-about__story">
-                        <figure class="professional-about__portrait">
-                            <img
-                                src="assets/social/baishalya-roul-profile.png"
-                                alt="Portrait of Baishalya Roul, independent software builder"
-                                width="1254"
-                                height="1254"
-                                loading="lazy"
-                            >
-                            <figcaption><strong>Baishalya Roul</strong><span>Independent software builder · Baisalya</span></figcaption>
-                        </figure>
-                        <p>I’m <strong>Baishalya Roul</strong>, known online as <strong>Baisalya</strong>. This is my official home for software, practical guides and public profiles.</p>
-                        <p>
-                            I work primarily with Flutter and Android, and I also build Windows and web experiences around the products I ship. The current software in this repository spans developer tooling, shop operations, construction workflows, teacher tools, notification history, and field documentation.
-                        </p>
-                        <p>
-                            A recurring theme across these products is ownership: ordinary files where possible, offline or local-first workflows where they matter, and product surfaces that explain what the software actually does rather than hiding behind feature lists.
-                        </p>
-                        <div class="professional-about__story-actions">
-                            <button
-                                class="professional-button professional-button--secondary professional-about__identity-button"
-                                type="button"
-                                data-open-identity
-                                aria-haspopup="dialog"
-                                aria-controls="identity-card"
-                            >
-                                <span>Open identity card</span><span aria-hidden="true">↗</span>
-                            </button>
-                            <span class="professional-about__story-note">A quick view of the builder behind these products.</span>
-                        </div>
-                    </article>
-
-                    <div class="professional-about__principles" aria-label="Working principles">
-                        <article class="principle-card">
-                            <span class="principle-card__number">01</span>
-                            <div><h3>Practical first</h3><p>Start from the real workflow and build around the job the software needs to finish.</p></div>
-                        </article>
-                        <article class="principle-card">
-                            <span class="principle-card__number">02</span>
-                            <div><h3>Local where it matters</h3><p>Use offline and local-first patterns when reliability, ownership, or field use makes them the better fit.</p></div>
-                        </article>
-                        <article class="principle-card">
-                            <span class="principle-card__number">03</span>
-                            <div><h3>Release-minded</h3><p>Treat documentation, validation, platform behavior, and recovery as part of the product — not cleanup after coding.</p></div>
-                        </article>
-                    </div>
-                </div>
-
-                <div class="professional-background" aria-label="Education background">
-                    <div><span>2021 — 2023</span><strong>Master of Computer Applications</strong><small>Centurion University</small></div>
-                    <div><span>2017 — 2020</span><strong>Bachelor of Computer Applications</strong><small>Utkal University</small></div>
-                </div>
+                <ul class="professional-hero__projects" aria-label="More software by Baishalya Roul">
+                    <li><a href="/surveycam/"><strong>SurveyCam / SiteSnap</strong><span>GPS photos and field reports</span></a></li>
+                    <li><a href="/EduSheet/"><strong>EduSheet</strong><span>Lesson planning and assessments</span></a></li>
+                    <li><a href="/paperaid/"><strong>PaperAid</strong><span>PDF, scan and photo tools</span></a></li>
+                </ul>
             </div>
         </section>
 
         <section id="software" class="professional-section professional-software" aria-labelledby="software-title">
-            <span class="professional-software__watermark" aria-hidden="true">LOCAL-FIRST</span>
             <div class="container">
-                <header class="software-showcase-head" data-reveal>
+                <header class="software-showcase-head">
                     <div class="software-showcase-head__copy">
-                        <span class="section-kicker">Software releases</span>
-                        <h2 id="software-title">Find the right software for your day.</h2>
-                        <p>
-                            EduSheet is fully released on Android and Windows, and PaperAid is now available on Android and Windows.
-                            Choose your app below. Check platform availability and install from the official store.
-                            Construction ERP is sold per customer through a workflow-led rollout.
-                        </p>
+                        <h2 id="software-title">Software by Baishalya Roul</h2>
+                        <p>Browse my apps, check platform availability and find official download links.</p>
                     </div>
-
-                    <aside class="software-release-board" aria-label="Current software release overview">
-                        <div class="software-release-board__top">
-                            <span class="software-release-board__signal"><i></i>Release board</span>
-                            <small>Updated · 18 Oct 2026</small>
-                        </div>
-                        <div class="software-release-board__stats">
-                            <div><strong>01</strong><span>Closed test</span></div>
-                            <div><strong>05</strong><span>Public access</span></div>
-                            <div><strong>01</strong><span>Customer sale</span></div>
-                            <div><strong>02</strong><span>Preparing</span></div>
-                        </div>
-                        <div class="software-release-board__bar" aria-hidden="true">
-                            <span></span><span></span><span></span>
-                        </div>
-                    </aside>
+                    <a class="software-release-author" href="#about" rel="author">
+                        <img src="/assets/social/baishalya-roul-profile.png" alt="" width="1254" height="1254" loading="lazy" decoding="async">
+                        <span><strong>Baishalya Roul</strong><small>Developer and publisher</small></span>
+                    </a>
                 </header>
 
-                <nav class="software-release-strip" aria-label="Software availability summary" data-reveal>
+                <nav class="software-release-strip" aria-label="Browse software releases">
                     <a class="software-release-strip__item software-release-strip__item--active" href="#software-beta">
-                        <b>01</b>
-                        <span><strong>Fully released</strong><small>EduSheet · Android + Windows</small></span>
-                        <i>Install now</i>
+                        <strong>Featured releases</strong><small>EduSheet and ShopPilot ERP</small>
                     </a>
                     <a class="software-release-strip__item" href="#software-live">
-                        <b>02</b>
-                        <span><strong>Available now</strong><small>DevDesk · ShopPilot · SurveyCam · PaperAid</small></span>
-                    </a>
-                    <a class="software-release-strip__item" href="#software-roadmap">
-                        <b>03</b>
-                        <span><strong>Customer deployment</strong><small>Construction ERP · enquiry-led</small></span>
-                        <i>By enquiry</i>
+                        <strong>Available now</strong><small>DevDesk, SurveyCam and PaperAid</small>
                     </a>
                     <a class="software-release-strip__item" href="#software-preparing">
-                        <b>04</b>
-                        <span><strong>Release preparation</strong><small>Friction Atlas · BrightQuest Kids · NotiVault</small></span>
-                        <i>Websites live</i>
+                        <strong>In testing and preparation</strong><small>NotiVault, BrightQuest Kids and Friction Atlas</small>
+                    </a>
+                    <a class="software-release-strip__item" href="#software-roadmap">
+                        <strong>Customer deployment</strong><small>Construction ERP</small>
                     </a>
                 </nav>
 
@@ -1129,7 +1015,7 @@
                             <div class="software-live-card__main">
                                 <div class="software-live-card__brand">
                                     <div class="software-live-card__logo">
-                                        <img src="brightquest-kids/assets/icons/app-icon-192.png" alt="BrightQuest Kids application logo" width="192" height="192" loading="lazy" decoding="async">
+                                        <img src="/brightquest-kids/assets/icons/app-icon-192.png" alt="BrightQuest Kids application logo" width="192" height="192" loading="lazy" decoding="async">
                                     </div>
                                     <div>
                                         <span class="software-status software-status--soon">Release preparation</span>
@@ -1210,12 +1096,100 @@
 
 
 
-<section id="engineering" class="professional-section professional-engineering" aria-labelledby="engineering-title">
+        <section id="journal" class="professional-section professional-journal" aria-labelledby="journal-title">
+            <div class="container professional-journal__grid">
+                <div class="professional-journal__intro">
+                    <h2 id="journal-title">Engineering Journal</h2>
+                    <p>My notes on building ModelBridge, integrating with OpenShell, and starting a Rust engine from scratch.</p>
+                    <a class="professional-button professional-button--secondary" href="/journal/">Browse the Journal</a>
+                </div>
+                <div class="professional-journal__notes">
+                    <article>
+                        <h3><a href="/journal/modelbridge-openshell.html">Why I built ModelBridge around OpenShell</a></h3>
+                        <p>How I connected model providers, local agents and sandbox execution in one workflow.</p>
+                    </article>
+                    <article>
+                        <h3><a href="/journal/xonext-rust.html">Starting clean with Xonext in Rust</a></h3>
+                        <p>What I put in the engine and what belongs in the runtime, storage and interface layers.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="professional-section professional-about" aria-labelledby="about-title">
+            <div class="container">
+                <div class="professional-section__heading" data-reveal>
+                    <span class="section-kicker">About</span>
+                    <h2 id="about-title">Software engineering with a product mindset.</h2>
+                    <p>
+                        My work sits between product design and implementation: understand the workflow, reduce unnecessary complexity, then build the software so it remains dependable in everyday use.
+                    </p>
+                </div>
+
+                <div class="professional-about__grid">
+                    <article class="professional-about__story">
+                        <figure class="professional-about__portrait">
+                            <img
+                                src="assets/social/baishalya-roul-profile.png"
+                                alt="Portrait of Baishalya Roul, independent software builder"
+                                width="1254"
+                                height="1254"
+                                loading="lazy"
+                            >
+                            <figcaption><strong>Baishalya Roul</strong><span>Independent software builder · Baisalya</span></figcaption>
+                        </figure>
+                        <p>I’m <strong>Baishalya Roul</strong>, known online as <strong>Baisalya</strong>. This is my official home for software, practical guides and public profiles.</p>
+                        <p>
+                            I work primarily with Flutter and Android, and I also build Windows and web experiences around the products I ship. The current software in this repository spans developer tooling, shop operations, construction workflows, teacher tools, notification history, and field documentation.
+                        </p>
+                        <p>
+                            A recurring theme across these products is ownership: ordinary files where possible, offline or local-first workflows where they matter, and product surfaces that explain what the software actually does rather than hiding behind feature lists.
+                        </p>
+                        <div class="professional-about__story-actions">
+                            <button
+                                class="professional-button professional-button--secondary professional-about__identity-button"
+                                type="button"
+                                data-open-identity
+                                aria-haspopup="dialog"
+                                aria-controls="identity-card"
+                            >
+                                <span>Open identity card</span><span aria-hidden="true">↗</span>
+                            </button>
+                            <span class="professional-about__story-note">A quick view of the builder behind these products.</span>
+                        </div>
+                    </article>
+
+                    <div class="professional-about__principles" aria-label="Working principles">
+                        <article class="principle-card">
+                            <span class="principle-card__number">01</span>
+                            <div><h3>Practical first</h3><p>Start from the real workflow and build around the job the software needs to finish.</p></div>
+                        </article>
+                        <article class="principle-card">
+                            <span class="principle-card__number">02</span>
+                            <div><h3>Local where it matters</h3><p>Use offline and local-first patterns when reliability, ownership, or field use makes them the better fit.</p></div>
+                        </article>
+                        <article class="principle-card">
+                            <span class="principle-card__number">03</span>
+                            <div><h3>Release-minded</h3><p>Treat documentation, validation, platform behavior, and recovery as part of the product — not cleanup after coding.</p></div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="professional-background" aria-label="Education background">
+                    <div><span>2021 — 2023</span><strong>Master of Computer Applications</strong><small>Centurion University</small></div>
+                    <div><span>2017 — 2020</span><strong>Bachelor of Computer Applications</strong><small>Utkal University</small></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="practical-guides" class="professional-section workflow-guides" aria-labelledby="workflow-guides-title"><div class="container"><div class="professional-section__heading"><span class="section-kicker">Practical guides</span><h2 id="workflow-guides-title">Solve a task, step by step.</h2><p>Worked examples with sample inputs, expected results and checks you can repeat. Choose a task, then use the product manual for the detailed controls.</p></div><div class="workflow-guides__grid"><article class="workflow-guide"><span class="section-kicker">PaperAid · Documents</span><h3><a href="/guides/prepare-document-upload.html">Prepare a readable upload<span aria-hidden="true"> ↗</span></a></h3><p>Crop a scan, arrange pages and reduce size while checking that the text survives.</p></article><article class="workflow-guide"><span class="section-kicker">DevDesk · API testing</span><h3><a href="/guides/debug-api-request.html">Make a failed request reproducible<span aria-hidden="true"> ↗</span></a></h3><p>Check a fictional JSON body, URL values, identifiers and time units before sharing a report.</p></article><article class="workflow-guide"><span class="section-kicker">SurveyCam · Field work</span><h3><a href="/guides/field-photo-report.html">Build a useful field report<span aria-hidden="true"> ↗</span></a></h3><p>Connect site photos to a location, an observation and a clear follow-up.</p></article><article class="workflow-guide"><span class="section-kicker">EduSheet · Teaching</span><h3><a href="/guides/weekly-teaching-plan.html">Plan a realistic teaching week<span aria-hidden="true"> ↗</span></a></h3><p>Turn one syllabus outcome into five sessions and track what students actually completed.</p></article><article class="workflow-guide"><span class="section-kicker">NotiVault · Android</span><h3><a href="/guides/notification-history-limits.html">Understand notification history<span aria-hidden="true"> ↗</span></a></h3><p>Check what notification previews can preserve and why some messages cannot be recovered.</p></article><article class="workflow-guide"><span class="section-kicker">DevDesk · Backup &amp; recovery</span><h3><a href="/guides/devdesk-reinstall-backup.html">Back up DevDesk before reinstalling<span aria-hidden="true"> ↗</span></a></h3><p>Separate the recovery kit from project folders, reconnect workspaces and re-enter protected credentials.</p></article></div><p class="workflow-guides__all"><a href="/guides/">Browse all guides and product manuals →</a></p></div></section>
+
+        <section id="engineering" class="professional-section professional-engineering" aria-labelledby="engineering-title">
             <div class="container">
                 <div class="professional-section__heading professional-section__heading--split" data-reveal>
                     <div>
                         <span class="section-kicker">Engineering</span>
-                        <h2 id="engineering-title">Engineering choices shaped by the work, not a technology checklist.</h2>
+                        <h2 id="engineering-title">How I build software</h2>
                     </div>
                     <p>I work across product structure, application behavior, local data, platform delivery, and release hardening. The emphasis changes by product, but the goal stays the same: software that is understandable, recoverable, and dependable in everyday use. <a href="/journal/">Read the Engineering Journal →</a></p>
                 </div>
