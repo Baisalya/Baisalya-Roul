@@ -15,6 +15,7 @@ function mountAppPromos(player, promos) {
   const next = get('next');
   const sound = get('sound');
   const enableSound = get('enable-sound');
+  const enableSoundLabel = enableSound.querySelector('span');
   const playlist = get('playlist');
   const app = get('app');
   const title = get('title');
@@ -33,8 +34,9 @@ function mountAppPromos(player, promos) {
   let ticker;
   let playAttempt = 0;
   let stageVisible = !('IntersectionObserver' in window);
-  let needsSoundGesture = false;
+  let playbackBlocked = false;
   video.volume = startingVolume;
+  video.muted = false;
 
   function current() {
     return promos[index];
@@ -56,7 +58,8 @@ function mountAppPromos(player, promos) {
 
   function updateSound() {
     setControl(sound, video.muted ? 'Unmute' : 'Mute', video.muted ? 'muted' : 'sound');
-    enableSound.hidden = !needsSoundGesture || !running || current().type !== 'video';
+    enableSound.hidden = !playbackBlocked || current().type !== 'video';
+    enableSoundLabel.textContent = video.muted ? 'Play video' : 'Play with sound';
   }
 
   function updatePlayback(message = '') {
@@ -139,21 +142,17 @@ function mountAppPromos(player, promos) {
     video.hidden = false;
     video.play().catch(error => {
       if (attempt !== playAttempt || !running) return;
-      if (error.name === 'NotAllowedError' && !video.muted) {
-        needsSoundGesture = true;
-        video.muted = true;
-        updateSound();
-        startCurrent();
-      } else if (error.name === 'NotAllowedError') {
+      if (error.name === 'NotAllowedError') {
         running = false;
-        updatePlayback('Press Play to start');
+        playbackBlocked = true;
+        updatePlayback();
       } else if (error.name !== 'AbortError') {
         onVideoError();
       }
     });
   }
 
-  function show(nextItem) {
+  function show(nextItem, fromPlaybackGesture = false) {
     clearSchedule();
     ++playAttempt;
     video.pause();
@@ -163,6 +162,10 @@ function mountAppPromos(player, promos) {
     }
     index = nextItem;
     const promo = current();
+    if (fromPlaybackGesture && playbackBlocked) {
+      playbackBlocked = false;
+      running = true;
+    }
     app.textContent = promo.app;
     if (promo.href) app.href = promo.href;
     else app.removeAttribute('href');
@@ -202,12 +205,13 @@ function mountAppPromos(player, promos) {
     button.append(art, label, clipTitle);
     item.append(button);
     playlist.append(item);
-    button.addEventListener('click', () => show(itemIndex));
+    button.addEventListener('click', () => show(itemIndex, true));
     return button;
   });
 
   play.addEventListener('click', () => {
     running = !running;
+    playbackBlocked = false;
     pausedByVisitor = !running;
     if (!running) {
       ++playAttempt;
@@ -216,11 +220,10 @@ function mountAppPromos(player, promos) {
     updatePlayback(pausedByVisitor && canRotate && !reducedMotion ? 'Paused · previews rotate' : '');
     startCurrent();
   });
-  next.addEventListener('click', () => show(nextIndex()));
-  get('skip').addEventListener('click', () => show(nextIndex()));
+  next.addEventListener('click', () => show(nextIndex(), true));
+  get('skip').addEventListener('click', () => show(nextIndex(), true));
   function setMuted(muted) {
     ++playAttempt;
-    needsSoundGesture = false;
     video.muted = muted;
     updateSound();
     if (running) {
@@ -230,8 +233,12 @@ function mountAppPromos(player, promos) {
   }
   sound.addEventListener('click', () => setMuted(!video.muted));
   enableSound.addEventListener('click', () => {
-    if (document.activeElement === enableSound) sound.focus({ preventScroll: true });
-    setMuted(false);
+    if (document.activeElement === enableSound) play.focus({ preventScroll: true });
+    playbackBlocked = false;
+    running = true;
+    pausedByVisitor = false;
+    updatePlayback();
+    startCurrent();
   });
   video.addEventListener('playing', () => {
     if (!running || !canPlayInView()) return;
