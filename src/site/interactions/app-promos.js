@@ -14,6 +14,7 @@ function mountAppPromos(player, promos) {
   const play = get('play');
   const next = get('next');
   const sound = get('sound');
+  const enableSound = get('enable-sound');
   const playlist = get('playlist');
   const app = get('app');
   const title = get('title');
@@ -32,6 +33,7 @@ function mountAppPromos(player, promos) {
   let ticker;
   let playAttempt = 0;
   let stageVisible = !('IntersectionObserver' in window);
+  let needsSoundGesture = false;
   video.volume = startingVolume;
 
   function current() {
@@ -54,6 +56,7 @@ function mountAppPromos(player, promos) {
 
   function updateSound() {
     setControl(sound, video.muted ? 'Unmute' : 'Mute', video.muted ? 'muted' : 'sound');
+    enableSound.hidden = !needsSoundGesture || !running || current().type !== 'video';
   }
 
   function updatePlayback(message = '') {
@@ -137,8 +140,9 @@ function mountAppPromos(player, promos) {
     video.play().catch(error => {
       if (attempt !== playAttempt || !running) return;
       if (error.name === 'NotAllowedError' && !video.muted) {
+        needsSoundGesture = true;
         video.muted = true;
-        updatePlayback('Unmute for sound');
+        updateSound();
         startCurrent();
       } else if (error.name === 'NotAllowedError') {
         running = false;
@@ -214,13 +218,20 @@ function mountAppPromos(player, promos) {
   });
   next.addEventListener('click', () => show(nextIndex()));
   get('skip').addEventListener('click', () => show(nextIndex()));
-  sound.addEventListener('click', () => {
-    video.muted = !video.muted;
+  function setMuted(muted) {
+    ++playAttempt;
+    needsSoundGesture = false;
+    video.muted = muted;
     updateSound();
     if (running) {
       status.textContent = '';
-      if (video.paused && !video.ended) startCurrent();
+      if (!video.ended) startCurrent();
     }
+  }
+  sound.addEventListener('click', () => setMuted(!video.muted));
+  enableSound.addEventListener('click', () => {
+    if (document.activeElement === enableSound) sound.focus({ preventScroll: true });
+    setMuted(false);
   });
   video.addEventListener('playing', () => {
     if (!running || !canPlayInView()) return;

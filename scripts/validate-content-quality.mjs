@@ -47,6 +47,18 @@ const identityGraph = JSON.parse(home.match(/<script\b[^>]*type="application\/ld
 const person = identityGraph.find(node => node['@type'] === 'Person');
 const profile = identityGraph.find(node => node['@type'] === 'ProfilePage');
 assert.equal(profile.mainEntity['@id'], person['@id'], 'Profile page must identify the same person as the guides');
+assert.match(profile.dateModified, /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})$/, 'Profile update must include a time and time zone');
+const storeCards = home.match(/<ul class="professional-hero__projects"[^>]*>([\s\S]*?)<\/ul>/)?.[1] ?? '';
+for (const [name, packageName] of [
+  ['DevDesk', 'devdesk'],
+  ['SurveyCam', 'surveycam'],
+  ['EduSheet', 'edusheet'],
+  ['PaperAid', 'paperaid'],
+  ['ShopPilot', 'shoppilot'],
+]) {
+  const href = `https://play.google.com/store/apps/details?id=com.baishalya.${packageName}`;
+  assert(storeCards.includes(`href="${href}">${name} on Google Play</a>`), `${name}: visible text identifies the app and links to its own listing`);
+}
 for (const url of ['https://www.instagram.com/baishalya/', 'https://www.facebook.com/baishalya.roul', 'https://www.youtube.com/@RelaxedInsaan']) {
   assert(person.sameAs.includes(url), 'Public identity must include the supplied profile URL');
 }

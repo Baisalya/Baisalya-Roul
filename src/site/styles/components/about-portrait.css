@@ -1,5 +1,5 @@
 .professional-about__portrait { display: flex; align-items: center; gap: 1rem; width: max-content; max-width: 100%; margin: 0 0 1.6rem; padding: .7rem; border: 1px solid var(--border); border-radius: 18px; background: var(--bg-elevated); }
 .professional-about__portrait img { display: block; width: 92px; height: 92px; flex: 0 0 92px; border-radius: 13px; object-fit: cover; object-position: center 35%; }
-.professional-about__portrait figcaption { display: grid; gap: .3rem; padding-right: .65rem; }
+.professional-about__portrait figcaption { display: grid; min-width: 0; gap: .3rem; padding-right: .65rem; overflow-wrap: anywhere; }
 .professional-about__portrait strong { color: var(--text); font-size: .9rem; }
 .professional-about__portrait span { color: var(--text-soft); font: 500 .64rem/1.5 var(--font-mono); }

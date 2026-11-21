@@ -96,6 +96,26 @@
 
 .app-promos__buttons svg, .app-promos__up-next button svg { width: 20px; height: 20px; }
 
+.app-promos button.app-promos__enable-sound {
+    position: absolute;
+    z-index: 2;
+    inset-block-start: .5rem;
+    inset-inline-end: .5rem;
+    display: inline-flex;
+    gap: .35rem;
+    align-items: center;
+    min-height: 44px;
+    padding: .35rem .65rem;
+    border-color: #ffffff66;
+    background: #101722;
+    color: #fff;
+    font-size: .875rem;
+    font-weight: 650;
+}
+
+.app-promos button.app-promos__enable-sound[hidden] { display: none; }
+.app-promos__enable-sound svg { width: 1.125rem; height: 1.125rem; }
+
 .app-promos__playlist {
     display: grid;
     grid-auto-flow: column;
@@ -151,7 +171,7 @@
 .app-promos__up-next {
     position: absolute;
     inset: 0;
-    z-index: 2;
+    z-index: 3;
     display: grid;
     align-items: end;
     padding: .65rem;
