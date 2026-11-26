@@ -23,7 +23,7 @@ const rootRuntimeFiles = [
   'index.html', 'privacy.html', 'main.js', 'style.css', 'robots.txt', 'sitemap.xml', 'sitemap-pages.xml',
   'javascript.svg', 'favicon.ico', 'CNAME',
 ];
-const rootRuntimeDirectories = ['assets', 'src/site', 'guides', 'journal'];
+const rootRuntimeDirectories = ['assets', 'src/site', 'guides', 'journal', 'brand'];
 const rootOptionalRuntimeFiles = ['ads.txt', 'app-ads.txt'];
 const frictionAtlasRuntimeFiles = [
   '404.html', 'index.html', 'bots.html', 'manual.html', 'download.html',
