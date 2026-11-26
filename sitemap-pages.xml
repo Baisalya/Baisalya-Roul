@@ -2,17 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://baisalya.com/</loc>
-    <lastmod>2026-11-21</lastmod>
-    <image:image><image:loc>https://baisalya.com/assets/social/baishalya-github-profile.png</image:loc></image:image>
+    <lastmod>2026-11-25</lastmod>
     <image:image><image:loc>https://baisalya.com/assets/social/baishalya-roul-profile.png</image:loc></image:image>
+    <image:image><image:loc>https://baisalya.com/assets/social/baishalya-github-profile.png</image:loc></image:image>
+    <image:image><image:loc>https://baisalya.com/assets/social/baisalya-original-chair-v4.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://baisalya.com/journal/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <image:image><image:loc>https://baisalya.com/assets/social/baishalya-github-profile.png</image:loc></image:image>
   </url>
-  <url><loc>https://baisalya.com/journal/modelbridge-openshell.html</loc><lastmod>2026-11-18</lastmod></url>
-  <url><loc>https://baisalya.com/journal/xonext-rust.html</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://baisalya.com/journal/modelbridge-openshell.html</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://baisalya.com/journal/xonext-rust.html</loc><lastmod>2026-11-25</lastmod></url>
   <url><loc>https://baisalya.com/guides/</loc><lastmod>2026-11-18</lastmod></url>
   <url><loc>https://baisalya.com/guides/field-photo-report.html</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://baisalya.com/guides/weekly-teaching-plan.html</loc><lastmod>2026-10-07</lastmod></url>

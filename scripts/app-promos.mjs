@@ -3,7 +3,7 @@ import path from 'node:path';
 import { socialSurfaces } from './social-surfaces.mjs';
 
 const directory = 'assets/app-promos';
-const playlistPlaceholder = '<script type="application/json" id="app-promo-playlist">[]</script>';
+const playlistScriptPattern = /<script type="application\/json" id="app-promo-playlist">([\s\S]*?)<\/script>/;
 const videoExtensions = new Set(['.mp4', '.m4v', '.webm']);
 const imageExtensions = new Set(['.avif', '.gif', '.jpeg', '.jpg', '.png', '.webp']);
 const sortByName = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
@@ -73,8 +73,16 @@ function escapeHtml(value) {
 export async function prepareAppPromos(outputRoot) {
   const file = path.join(outputRoot, 'index.html');
   const html = await readFile(file, 'utf8');
-  if (!html.includes(playlistPlaceholder)) throw new Error('Homepage app promo playlist placeholder is missing.');
-  const promos = await findPromos(outputRoot);
+  const match = html.match(playlistScriptPattern);
+  if (!match) throw new Error('Homepage app promo playlist placeholder is missing.');
+  let promos = [];
+  try {
+    const parsed = JSON.parse(match[1].trim() || '[]');
+    if (Array.isArray(parsed) && parsed.length) promos = parsed;
+  } catch {
+    promos = [];
+  }
+  if (!promos.length) promos = await findPromos(outputRoot);
   if (!promos.length) return;
 
   const [first] = promos;
@@ -85,7 +93,7 @@ export async function prepareAppPromos(outputRoot) {
   const appName = escapeHtml(first.app);
   const appHref = first.href ? ` href="${escapeHtml(first.href)}"` : '';
   const updated = html
-    .replace(playlistPlaceholder, () => `<script type="application/json" id="app-promo-playlist">${payload}</script>`)
+    .replace(playlistScriptPattern, () => `<script type="application/json" id="app-promo-playlist">${payload}</script>`)
     .replace('data-app-promos hidden', 'data-app-promos')
     .replace('<img data-promo-still alt="" decoding="async" hidden>', () => poster)
     .replace('<a data-promo-app></a>', () => `<a data-promo-app${appHref}>${appName}</a>`)
