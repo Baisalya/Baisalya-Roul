@@ -155,9 +155,8 @@
         .brand-kit__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(17.5rem, 100%), 1fr)); gap: 1.25rem; }
         .brand-kit__card { margin: 0; overflow: hidden; border: 1px solid var(--border); border-radius: 18px; background: var(--bg-elevated); display: flex; flex-direction: column; }
         .brand-kit__media { aspect-ratio: 4 / 3; background: #0b1723; display: grid; place-items: center; overflow: hidden; }
-        .brand-kit__media--square { aspect-ratio: 1 / 1; }
-        .brand-kit__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .brand-kit__media--contain img { object-fit: contain; padding: 1.25rem; }
+        .brand-kit__media img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; display: block; }
+        .brand-kit__media--contain img { object-fit: contain; object-position: center; padding: 1.25rem; }
         .brand-kit__card figcaption { padding: .95rem 1.1rem; border-top: 1px solid var(--border); display: grid; gap: .25rem; }
         .brand-kit__card strong { font-size: .95rem; color: var(--text); }
         .brand-kit__card span { font-size: .82rem; color: var(--text-muted); line-height: 1.5; }
@@ -209,7 +208,7 @@
                 <h2 id="official-portraits">Official Portraits — Baishalya Roul (Baisalya Roul)</h2>
                 <div class="brand-kit__grid">
                     <figure class="brand-kit__card">
-                        <div class="brand-kit__media brand-kit__media--square">
+                        <div class="brand-kit__media">
                             <img src="/assets/social/baishalya-roul-profile.png" alt="Official studio portrait of Baishalya Roul (Baisalya Roul), independent software builder" width="1254" height="1254" decoding="async">
                         </div>
                         <figcaption>
@@ -219,7 +218,7 @@
                     </figure>
 
                     <figure class="brand-kit__card">
-                        <div class="brand-kit__media brand-kit__media--square">
+                        <div class="brand-kit__media">
                             <img src="/assets/social/baishalya-github-profile.png" alt="Profile photo of Baishalya Roul (Baisalya Roul), software developer" width="460" height="460" decoding="async">
                         </div>
                         <figcaption>
@@ -244,7 +243,7 @@
                 <h2 id="brand-logos">BR Brand Logo &amp; Visual Identity</h2>
                 <div class="brand-kit__grid">
                     <figure class="brand-kit__card">
-                        <div class="brand-kit__media brand-kit__media--square brand-kit__media--contain">
+                        <div class="brand-kit__media brand-kit__media--contain">
                             <img src="/assets/brand/br-mark-premium.png" alt="BR brand logo — official monogram mark of Baishalya Roul (Baisalya)" width="1254" height="1254" decoding="async">
                         </div>
                         <figcaption>
@@ -264,7 +263,7 @@
                     </figure>
 
                     <figure class="brand-kit__card">
-                        <div class="brand-kit__media brand-kit__media--square brand-kit__media--contain">
+                        <div class="brand-kit__media brand-kit__media--contain">
                             <img src="/assets/brand/br-mark.svg" alt="BR vector emblem logo — Baishalya Roul" width="480" height="480" decoding="async">
                         </div>
                         <figcaption>
@@ -282,10 +281,11 @@
             <div><strong>Baishalya Roul</strong><span>Software Builder</span></div>
             <p>&copy; 2026 Baishalya Roul. Built for practical software and long-term work.</p>
             <div class="professional-footer__links">
-                <a href="/">Home</a>
                 <a href="/privacy.html">Website privacy</a>
+                <a href="https://www.buymeacoffee.com/baisalya" target="_blank" rel="noopener noreferrer">Support my work ↗</a>
                 <a href="/guides/">Guides &amp; manuals</a>
                 <a href="/journal/">Engineering Journal</a>
+                <a href="/">Home</a>
             </div>
         </div>
     </footer>
