@@ -87,15 +87,16 @@ export async function prepareAppPromos(outputRoot) {
 
   const [first] = promos;
   const payload = JSON.stringify(promos).replaceAll('<', '\\u003c');
+  const stillPlaceholder = '<div class="app-promos__still" data-promo-still hidden aria-hidden="true"></div>';
   const poster = first.poster
-    ? `<img data-promo-still src="${escapeHtml(first.poster)}" alt="${escapeHtml(first.title)}" decoding="async">`
-    : '<img data-promo-still alt="" decoding="async" hidden>';
+    ? `<div class="app-promos__still" data-promo-still style="background-image:url('${escapeHtml(first.poster)}')" aria-hidden="true"></div>`
+    : stillPlaceholder;
   const appName = escapeHtml(first.app);
   const appHref = first.href ? ` href="${escapeHtml(first.href)}"` : '';
   const updated = html
     .replace(playlistScriptPattern, () => `<script type="application/json" id="app-promo-playlist">${payload}</script>`)
     .replace('data-app-promos hidden', 'data-app-promos')
-    .replace('<img data-promo-still alt="" decoding="async" hidden>', () => poster)
+    .replace(stillPlaceholder, () => poster)
     .replace('<a data-promo-app></a>', () => `<a data-promo-app${appHref}>${appName}</a>`)
     .replace('<p data-promo-title></p>', () => `<p data-promo-title>${escapeHtml(first.title)}</p>`);
   await writeFile(file, updated, 'utf8');

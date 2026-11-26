@@ -108,13 +108,10 @@ function mountAppPromos(player, allPromos) {
 
   function fillArt(container, promo) {
     if (promo.poster) {
-      const image = new Image();
-      image.alt = '';
-      image.loading = 'lazy';
-      image.decoding = 'async';
-      image.src = promo.poster;
-      container.replaceChildren(image);
+      container.textContent = '';
+      container.style.backgroundImage = `url("${promo.poster}")`;
     } else {
+      container.style.backgroundImage = '';
       container.textContent = promo.app;
     }
   }
@@ -207,10 +204,9 @@ function mountAppPromos(player, allPromos) {
     still.hidden = !promo.poster;
     cover.hidden = !!promo.poster;
     if (promo.poster) {
-      still.alt = promo.type === 'image' ? promo.app + ' · ' + promo.title : '';
-      if (still.getAttribute('src') !== promo.poster) still.src = promo.poster;
+      still.style.backgroundImage = `url("${promo.poster}")`;
     } else {
-      still.removeAttribute('src');
+      still.style.backgroundImage = '';
       cover.textContent = promo.app;
     }
     buttons.forEach((button, itemIndex) => {
