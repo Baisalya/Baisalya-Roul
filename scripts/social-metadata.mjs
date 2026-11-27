@@ -3,6 +3,19 @@ import { socialSurfaces, socialImagePath, baseSocialImagePath } from './social-s
 const escape = (text) => String(text).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const decode = (text) => text.replaceAll('&amp;', '&').replaceAll('&quot;', '"').replaceAll('&#39;', "'").replaceAll('&lt;', '<').replaceAll('&gt;', '>');
 
+const profilePreviews = new Map([
+  ['index.html', {
+    path: 'assets/social/baishalya-roul-profile.png',
+    size: 1254,
+    alt: 'Baishalya Roul, independent software developer, in a grey shirt',
+  }],
+  ['brand/index.html', {
+    path: 'assets/social/baishalya-github-profile.png',
+    size: 460,
+    alt: 'Baishalya Roul in a blue shirt, developer profile photo',
+  }],
+]);
+
 // Work only on the static head: crawlers must not need to execute JavaScript.
 function metaValue(head, key) {
   const tag = [...head.matchAll(/<meta\b[^>]*>/gi)].find(([tag]) => new RegExp(`\\b(?:name|property)=["']${key}["']`, 'i').test(tag))?.[0] ?? '';
@@ -16,7 +29,8 @@ export function applySocialMetadata(html, relativePath) {
     const isHome = relativePath === (surface.route ? `${surface.route}/index.html` : 'index.html');
     const title = decode((head.match(/<title>([\s\S]*?)<\/title>/i)?.[1] ?? surface.name).replace(/\s+/g, ' ').trim());
     const description = isHome ? surface.description : (metaValue(head, 'description') || surface.description);
-    const imagePath = socialImagePath(surface);
+    const profilePreview = profilePreviews.get(relativePath);
+    const imagePath = profilePreview?.path ?? socialImagePath(surface);
     const image = `https://baisalya.com/${imagePath}`;
     const isGuideArticle = route === 'guides' && !relativePath.endsWith('/index.html') && relativePath.endsWith('.html');
     const isJournalArticle = route === 'journal' && !relativePath.endsWith('/index.html') && relativePath.endsWith('.html');
@@ -25,12 +39,12 @@ export function applySocialMetadata(html, relativePath) {
       'og:type': isArticle ? 'article' : 'website', 'og:site_name': surface.route ? surface.name : 'Baisalya',
       'og:title': title, 'og:description': description,
       'og:image': image, 'og:image:secure_url': image, 'og:image:type': 'image/png',
-      'og:image:width': '1200', 'og:image:height': '630',
-      'og:image:alt': `${surface.name}${imagePath !== baseSocialImagePath(surface) ? (surface.key === 'baisalya' ? ' portrait' : ' with brand ambassador') : ''} — ${surface.lines.join(' ')}`,
+      'og:image:width': profilePreview?.size ?? 1200, 'og:image:height': profilePreview?.size ?? 630,
+      'og:image:alt': profilePreview?.alt ?? `${surface.name}${imagePath !== baseSocialImagePath(surface) ? (surface.key === 'baisalya' ? ' portrait' : ' with brand ambassador') : ''} — ${surface.lines.join(' ')}`,
     };
     if (isArticle) properties['article:author'] = 'https://baisalya.com/';
     const names = {
-      'twitter:card': 'summary_large_image', 'twitter:title': title,
+      'twitter:card': profilePreview ? 'summary' : 'summary_large_image', 'twitter:title': title,
       'twitter:description': description, 'twitter:image': image,
       'twitter:image:alt': properties['og:image:alt'],
     };
