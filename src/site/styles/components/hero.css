@@ -20,9 +20,10 @@
 }
 
 .professional-hero__portrait {
-    width: 64px;
-    height: 64px;
+    width: 96px;
+    height: 96px;
     object-fit: cover;
+    object-position: center 25%;
     border-radius: 50%;
     border: 2px solid var(--border-strong);
 }
@@ -115,7 +116,7 @@
 @media (max-width: 540px) {
     .professional-hero { padding-top: 6rem; }
     .professional-hero__grid { row-gap: 1.5rem; }
-    .professional-hero__portrait { width: 52px; height: 52px; }
+    .professional-hero__portrait { width: 68px; height: 68px; }
     .professional-hero h1 { margin: .85rem 0 .75rem; font-size: clamp(2.35rem, 11.5vw, 3.5rem); }
     .professional-hero__lede { margin-bottom: 1rem; line-height: 1.55; }
     .professional-hero__actions { gap: .5rem; }
