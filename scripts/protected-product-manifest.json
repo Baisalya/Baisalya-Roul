@@ -433,8 +433,8 @@
     },
     {
       "path": "devdesk/assets/css/styles.css",
-      "sha256": "e3bb4d10ab41f86ed9df9b5a3087b6c8bfc0b3f6950e271d6e4bbd93c8fb79d7",
-      "bytes": 122047
+      "sha256": "1fc491912038f878716eb6b7ba83e1b63e3d19d973fcd41a95a55c351b056eaf",
+      "bytes": 121269
     },
     {
       "path": "devdesk/assets/downloads/devdesk-agent-ready-demo/AGENTS.md",
@@ -778,8 +778,8 @@
     },
     {
       "path": "devdesk/assets/js/search-index.js",
-      "sha256": "4a5808970c6782b2e69f1d06f3d7e18009100efdb1d7e82f6cca4408b7fe2622",
-      "bytes": 335799
+      "sha256": "880e7e414789a77a6eaf7c5eebaa2adf5e3bbe678de1c0ad0e0108adc1a92b6d",
+      "bytes": 338449
     },
     {
       "path": "devdesk/assets/js/site-config.js",
@@ -818,8 +818,8 @@
     },
     {
       "path": "devdesk/content/ai-workbench.md",
-      "sha256": "9ae2039876a18b1e4a4f15d7163590af7ca5d71130bbca7a5bd732dca3b1d3dd",
-      "bytes": 12622
+      "sha256": "3c5c583805168810f32856ff09646760aa14834d548c1c6237f2f833c4f04700",
+      "bytes": 14352
     },
     {
       "path": "devdesk/content/api-assertions-extraction.md",
@@ -833,8 +833,8 @@
     },
     {
       "path": "devdesk/content/api-workspaces.md",
-      "sha256": "442d2637f544e19c85e737117f13006691c4a1fe8ef7dfde2bd3f94da00dde1f",
-      "bytes": 13456
+      "sha256": "22f4dd5c996d21f877e156a002a4f146c2dceb7ad41d08e6f6c754f2916ac053",
+      "bytes": 13946
     },
     {
       "path": "devdesk/content/backup-restore.md",
@@ -868,8 +868,8 @@
     },
     {
       "path": "devdesk/content/diff-git.md",
-      "sha256": "9c43cc29b3a53bc35c3a52926808324d0d8d1aef9b3aa136b11dcb41b9613dcc",
-      "bytes": 6370
+      "sha256": "0cbd9cc16a77f486558f58d22b1577ecb56ed2a196fd36de3e297ab11acabda0",
+      "bytes": 6769
     },
     {
       "path": "devdesk/content/downloads-installation.md",
@@ -888,8 +888,8 @@
     },
     {
       "path": "devdesk/content/getting-started.md",
-      "sha256": "dd8f1737bb1dd7e073028ed5fd9911fa2875d449ba6e9c8fb2c1e59ce7c58475",
-      "bytes": 8230
+      "sha256": "2298d67e18e851c7ae51a015e601f64e6dde7450069b08c61562281bf4f25020",
+      "bytes": 8267
     },
     {
       "path": "devdesk/content/graph-connection-editing.md",
@@ -1048,8 +1048,8 @@
     },
     {
       "path": "devdesk/content/user-manual.md",
-      "sha256": "d1221f3995175aefb9f67cf5f22b247671428a3e34f677ea3e2f02399d9abb85",
-      "bytes": 55351
+      "sha256": "7d0c9f35508ddf060f9071d494e50a0b0e4828947fd3cb0bf9327ce486796bfe",
+      "bytes": 55735
     },
     {
       "path": "devdesk/content/uuid.md",
@@ -1093,8 +1093,8 @@
     },
     {
       "path": "devdesk/index.html",
-      "sha256": "e6ba68a5f12d8b813f723230a86d6d44924e4b6add7a0956a5bd03e54a59cd71",
-      "bytes": 46352
+      "sha256": "e6ad30042faf8cb5ef556b1845f9f741af68ba8a713bc3de9f7867cfb1126665",
+      "bytes": 46654
     },
     {
       "path": "devdesk/MANUAL_TABLE_OF_CONTENTS.md",
@@ -1108,8 +1108,8 @@
     },
     {
       "path": "devdesk/manual/ai-workbench.html",
-      "sha256": "5c6421f3cb86437d8b08ca999e06ce807d9099cf8f27e001eb312eecc8cbe6dc",
-      "bytes": 27975
+      "sha256": "b787bab20abb0bb8e03d3a118048f20704b904b3cbc31e3cfbf68f7c4932b376",
+      "bytes": 30311
     },
     {
       "path": "devdesk/manual/api-assertions-extraction.html",
@@ -1123,8 +1123,8 @@
     },
     {
       "path": "devdesk/manual/api-workspaces.html",
-      "sha256": "fcb04891fccfb08612165bb162bdaf425bddc365582f7629cd4a67afaffe6e99",
-      "bytes": 31617
+      "sha256": "021fee3035ef5905c08b8ab2366f39471b0e9cfd3753ff1e95b242f959b061a6",
+      "bytes": 32460
     },
     {
       "path": "devdesk/manual/backup-restore.html",
@@ -1158,8 +1158,8 @@
     },
     {
       "path": "devdesk/manual/diff-git.html",
-      "sha256": "4e02266e1c0bf95015e0369e3dc80931f12c70f4524e81441094e4e803009d0c",
-      "bytes": 18807
+      "sha256": "192db5f92ba1405abf64de3ef248388278feb2eaa9d03fa471b65299dc9179aa",
+      "bytes": 19505
     },
     {
       "path": "devdesk/manual/downloads-installation.html",
@@ -1178,8 +1178,8 @@
     },
     {
       "path": "devdesk/manual/getting-started.html",
-      "sha256": "bcac7afd118c27c9e1c5565b4053bac08ed6e6dcb67f98071d7637fde267942c",
-      "bytes": 23185
+      "sha256": "b4c1ac5d0eb5788f52ff95cc7fb9b97cedd133ac3931c64f8a4b1e80ab927759",
+      "bytes": 23252
     },
     {
       "path": "devdesk/manual/graph-connection-editing.html",
@@ -1343,8 +1343,8 @@
     },
     {
       "path": "devdesk/manual/user-manual.html",
-      "sha256": "c9197dd71d0a193a7057f28fab2c997bdeb30ed5e45e6506b7c2f9116e348f95",
-      "bytes": 102084
+      "sha256": "7536e28309e0adc463efda626ecad0c18ebbca5ca3214312dcfb58e77699de4e",
+      "bytes": 102750
     },
     {
       "path": "devdesk/manual/uuid.html",
@@ -1383,8 +1383,8 @@
     },
     {
       "path": "devdesk/PRODUCT_POSITIONING.md",
-      "sha256": "404c7761da7ac15806b4c5647b3109125423d5d66e5a8215f63269cbfc2c2637",
-      "bytes": 8139
+      "sha256": "56442e83800721147c5c1c771d13427c1fdb8d5333d36301978085c00b765ce9",
+      "bytes": 8458
     },
     {
       "path": "devdesk/README.md",
@@ -1443,8 +1443,8 @@
     },
     {
       "path": "devdesk/tool/refresh_manual.dart",
-      "sha256": "223946e1fce3800905ea7dd90cbe574f94a00b750a00704a1c4aab21aa17581a",
-      "bytes": 32926
+      "sha256": "77d84ad9f2d14671617b49a7934f131742b6c71c38dc3c9c77a5a6469f9cdd1a",
+      "bytes": 32892
     },
     {
       "path": "devdesk/tool/sync_cli_reference.mjs",

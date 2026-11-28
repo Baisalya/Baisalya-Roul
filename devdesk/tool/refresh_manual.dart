@@ -137,7 +137,7 @@ const _pages = <_Page>[
     slug: 'ai-workbench',
     title: 'AI Harness, Workbench, and coding agents',
     description:
-        'Use standalone review-first AI with bounded files and photos, or use project coding, Windows verification, parallel worktrees, and the isolated Edge Browser Agent safely.',
+        'Choose a model, share task context, follow project activity in chat, and review code proposals and verification in DevDesk AI Workbench.',
   ),
   _Page(
     slug: 'notifications-routines',

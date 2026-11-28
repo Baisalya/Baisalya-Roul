@@ -365,7 +365,7 @@ requireText(
   'DevDesk support assistant action',
 );
 for (const expected of [
-  'Your notes, plans and projects. One workspace.',
+  'Your project. Your files. Your AI.',
   'For students, researchers, professionals &amp; non-developers',
   'Connect research, organize notes, plan projects',
   'For developers, builders &amp; technical project teams',
@@ -389,19 +389,16 @@ for (const expected of [
   requireText(devdeskHome, expected, 'DevDesk audience and complete-app story');
 }
 for (const expected of [
-  'DevDesk 1.2.5 source feature guide',
   'id="ai-harness"',
-  'AI Harness for learning, planning, writing and code.',
+  'Choose the model. Follow the work. Review the change.',
   'Local-first files &amp; portable project context',
-  '1,532',
-  'WACK PASS',
-  'zero required failures',
-  'Android + Windows builds validated',
-  'DevDesk does not read WhatsApp',
-  'Native OS widgets are not included',
+  'Illustrated Windows preview',
+  'downloads.html#agent-demo',
+  'manual/ai-workbench.html#follow-a-coding-task-in-chat',
+  'The illustrated chat controls are from the Windows development preview.',
   'When work becomes a project, the Harness grows with it.',
 ]) {
-  requireText(devdeskHome, expected, 'DevDesk 1.2 AI Harness marketing');
+  requireText(devdeskHome, expected, 'DevDesk AI Harness feature marketing');
 }
 for (const expected of [
   'DevDesk 1.2.5 source feature guide',
@@ -444,6 +441,8 @@ for (const [source, label] of [
 for (const expected of [
   "AI Harness is DevDesk's standalone optional AI tool",
   'Attach a file or photo',
+  'Follow a coding task in chat',
+  'Copy code',
   'bytes are transient',
   'current Windows user',
   'Browser Agent on Windows',
@@ -513,6 +512,7 @@ for (const heading of [
   'JSON Tools',
   'Git Tools',
   'Search, Navigation, and Shortcuts',
+  'Work with AI inside DevDesk',
   'Connect an AI Agent',
   'Moving and Backing Up a Workspace',
   'Windows Guide',

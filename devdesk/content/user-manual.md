@@ -7,7 +7,7 @@ from this page.
 <section class="manual-audience-showcase" aria-labelledby="manual-audience-heading">
   <div class="manual-audience-copy">
     <span class="manual-audience-kicker">Choose your starting path</span>
-    <h2 id="manual-audience-heading">DevDesk is for the work—not a job title.</h2>
+    <h2 id="manual-audience-heading">Pick a workspace for the work you do.</h2>
     <p>Begin with ordinary tasks and notes. Choose a starter for everyday planning, study, research and writing, or software. The starter adds useful folders, files, and first views without locking or hiding features.</p>
     <div class="manual-audience-actions">
       <a class="manual-audience-action manual-audience-action-primary" href="getting-started.html">Start in five minutes</a>
@@ -29,18 +29,13 @@ from this page.
 
 ## Welcome to DevDesk
 
-DevDesk turns a normal folder into a workspace for everyday plans, tasks,
-study, notes, research, connected knowledge, project files, API testing, and
-optional developer tools.
+Start with a folder you own. Add a task, outline a draft, or link your
+research notes. When the work grows, keep diagrams, API tests, code, and
+project decisions in the same workspace.
 
-The main idea is simple:
-
-> Your folder remains the source of truth. DevDesk gives the same files useful
-> views and tools without locking them into a DevDesk cloud.
-
-DevDesk is useful for students, writers, project planners, researchers, and
-software developers. A beginner can start with tasks and notes. Technical tools
-stay optional.
+DevDesk gives your files useful views and tools. You can work from a board or
+calendar, explore connections in the Knowledge Graph, or choose an AI model
+to help with a draft or a reviewed code proposal.
 
 ### Local-first and user-owned files
 
@@ -805,6 +800,16 @@ See [Compare files and workspace-scoped Git](diff-git.html).
 
 Editor shortcuts such as `Ctrl+S` depend on the active tool. Tooltips are the
 authoritative local hint. See [Keyboard shortcuts](keyboard-shortcuts.html).
+
+## Work with AI inside DevDesk
+
+Open **All tools → AI Harness** for study, planning, or drafting. Open
+**AI Workbench** inside a project to give the model relevant files and notes,
+follow activity in chat, and inspect a proposed edit before applying it.
+
+- [Connect your provider and choose a model](ai-workbench.html#create-a-provider-safely).
+- [Follow a coding task in the Windows preview](ai-workbench.html#follow-a-coding-task-in-chat).
+- [Set a reminder or prepare a routine](notifications-routines.html).
 
 ## Connect an AI Agent
 

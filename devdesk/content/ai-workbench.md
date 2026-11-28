@@ -1,8 +1,12 @@
 # AI Harness, Workbench, and coding agents
 
-AI Harness is DevDesk's standalone optional AI tool. The same canonical engine
-also appears as AI Workbench inside a selected project. It is separate from
-the **AI Agent Connector**:
+AI Harness is DevDesk's standalone optional AI tool for study, writing, and
+planning. Open the same tool as **AI Workbench** inside a project to give
+your model task-specific context and review proposed code changes beside
+your files.
+
+Choose a model you can connect to, share the context it needs, then decide
+which proposed edits to apply. Here is how DevDesk connects to models and agents.
 
 - **AI Harness / Workbench** runs a model conversation inside DevDesk and can use
   DevDesk tools under the permissions you choose.
@@ -11,6 +15,15 @@ the **AI Agent Connector**:
 
 Neither feature is required for normal notes, project files, diagrams, API
 testing, knowledge graphs, or Git work.
+
+## Managed Windows pilot
+
+A separate managed Windows build lets an organization choose its own HTTPS
+model gateway, approved models, and permissions through signed device policy.
+IT can enable scoped project work or prompt-only CLI access and collect Windows
+audit events. The organization operates its gateway, credentials, device
+management, and log collection. Each rollout requires validation in that
+organization's environment.
 
 ## Before you start
 
@@ -43,6 +56,27 @@ system's protected storage boundary. They are not placed in project files,
 portable workspace manifests, supported backups, or exported AI transcripts.
 Do not paste API keys into chat messages, source files, tool arguments, or
 screenshots.
+
+## Follow a coding task in chat
+
+These composer and activity controls are shown in the Windows development
+preview. See [Downloads](../downloads.html) for published builds.
+
+1. Open a software workspace and choose **AI Workbench**. Check the active
+   model and provider in the composer. The connection type can show **API
+   key**, **Access token**, or **Local**. Manage credentials in provider
+   settings.
+2. Use **Ask** to understand the code, **Plan** to outline work, or **Agent**
+   to request a proposal. Give the model the relevant files. Project activity
+   can show which file is being read, when a check is running, and when
+   changes are being prepared.
+3. Use **Copy code** on a fenced code block if you want the snippet.
+   Open **Review changes** by the composer to inspect proposals and file diffs.
+4. Approve the edits you want and select relevant supported checks. The review
+   reports pending and applied changes and the checks that ran.
+
+> Read the failing parser test and the source file it covers. Propose a small
+> fix and show me which check can confirm it.
 
 ## Attach a file or photo
 

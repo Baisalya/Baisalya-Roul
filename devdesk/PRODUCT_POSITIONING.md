@@ -12,16 +12,19 @@ relevant.
 
 ## Primary message
 
-**Your files. One Harness. You stay in control.**
+**Your project. Your files. Your AI.**
 
-Supporting sentence:
+> Turn a folder into a workspace for notes, plans, API tests, and code. Bring
+> your own AI model, follow its work in chat, and review changes before they land.
 
-> Attach a note or photo, prepare a plan, study guide, draft, or code proposal,
-> and review important changes in one portable workspace built around your files.
+Lead with a workflow the reader can picture. A developer can save a redacted
+API response with a bug note, share the relevant project context with their
+model, and review the proposed patch. A student can link sources to class
+notes and create a study plan in the same folder.
 
-The durable product anchor remains:
-
-> One folder. Every view. Every tool. Still your files.
+Use the recorded graph-to-code run as evidence. Identify Windows development
+preview features where they appear and send readers to Downloads for current
+Store builds.
 
 ## Defensible USP
 

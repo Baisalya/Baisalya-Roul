@@ -9,6 +9,14 @@ Diff Workspace compares text, files, folders, supported GitHub content, or a sel
 3. Run the comparison.
 4. Review additions, deletions, and unchanged context.
 
+## Save a diff with your project notes
+
+In the development preview, choose **Attach to note** beside a completed
+comparison or in a Git file or commit diff. Preview the redacted patch
+snapshot, then link it to a note or save it as a new Markdown note in a writable
+project. This lets a bug report or decision record point to the exact change
+you reviewed. Large patches are labeled when truncated.
+
 ## Source control from a workspace
 
 Eligible local Windows projects can open a focused Source Control page:

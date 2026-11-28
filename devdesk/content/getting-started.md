@@ -1,8 +1,8 @@
 # Getting started with DevDesk
 
-**One folder. Work your way. Still your files.**
+**Your project. Your files. Your AI.**
 
-DevDesk turns an ordinary folder into a useful workspace for plans, tasks, notes, research, files, relationships, APIs, and developer work. Start simple. Open advanced tools only when you need them.
+Open a folder and add a note, a task, or both. The same workspace can grow with you into linked research, API tests, diagrams, and code review.
 
 You do not need to learn Markdown, frontmatter, JSON, nodes, edges, manifests, Git, or OKF before starting.
 
@@ -14,9 +14,7 @@ You do not need to learn Markdown, frontmatter, JSON, nodes, edges, manifests, G
 - **Keep ownership:** content stays as ordinary files in the folder you chose.
 - **Move without rebuilding:** copy or clone the folder and open `project.devdesk`.
 - **Grow without changing apps:** add Markdown, JSON, OpenAPI, saved API testing, OKF checks, Diff, and scoped Git when needed.
-- **Control automation:** choose Manual, Review changes, or bounded Safe automatic mode.
-
-This combination is DevDesk's distinctive value. It is not a claim that every individual feature is unique.
+- **Work with your AI model.** Use [AI Harness](ai-workbench.html) for study, planning, and drafting. Open project Workbench to use specific files and review proposed changes.
 
 ## Choose what you want to do
 
@@ -27,6 +25,7 @@ This combination is DevDesk's distinctive value. It is not a claim that every in
 | Track meetings, tasks, and decisions | **New workspace > Business project** |
 | Organise research or writing | **New workspace > Research / writing** |
 | Keep docs and tools with software | **New workspace > Software project** |
+| Keep an API result with a bug note | [Attach a response snapshot](api-workspaces.html#keep-api-evidence-with-a-project) |
 | Use a folder you already have | **Open folder** |
 | Continue recent work | **Continue working** |
 

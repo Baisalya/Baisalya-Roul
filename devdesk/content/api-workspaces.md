@@ -1,6 +1,6 @@
 # Saved API testing (API Workspaces)
 
-API Workspaces is the main saved-workflow area of DevDesk API Studio. It is designed for exact, reusable API work while keeping data local by default.
+Turn a one-off API call into a repeatable check. API Workspaces in DevDesk API Studio keeps saved requests, environments, assertions, and run history together.
 
 A workspace can contain collections, recursive folders, requests, environments, workspace/collection/folder/request variables, inherited authentication, cookies, examples, assertions, extraction rules, history, runner reports, documentation, and network settings.
 
@@ -19,6 +19,16 @@ Use API Workspaces when you need any of the following:
 - Exported API documentation.
 
 Use **Quick API** for a temporary one-off request that does not need this structure.
+
+## Keep API evidence with a project
+
+In the development preview, use **Attach to note** in a response toolbar to
+save a redacted Markdown snapshot in a writable project. Link it to a bug or
+investigation note, or create a new note for the result.
+
+Use **Preview snapshot** before saving. The snapshot keeps the captured response
+and appears in the source note's backlinks and Knowledge Graph when linked.
+Partial and truncated previews are labeled, and binary bodies are omitted.
 
 ## Portable API workspace inside a project
 
